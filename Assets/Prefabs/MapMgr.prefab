@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tfMapTile: {fileID: 3636127314762175340}
-  pfMapTile: {fileID: 0}
+  pfMapTile: {fileID: 531612181578970929, guid: 3ea994958584fd04caeea044513fb8e9,
+    type: 3}
 --- !u!1 &8724383461957668191
 GameObject:
   m_ObjectHideFlags: 0
