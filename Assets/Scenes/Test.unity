@@ -198,6 +198,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 717100793}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &717100795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5742788759783263134, guid: a030d15cafab96e4eb2b5b16f32ecab5,
+    type: 3}
+  m_PrefabInstance: {fileID: 717100793}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd33eb8be2460148aebdc3e728ea82e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1086871027
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d81486e129d15d45b2c2eee3a75a74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testMapMgr: {fileID: 717100795}
 --- !u!1 &1403257852
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +501,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1403257856}
   - component: {fileID: 1403257853}
-  - component: {fileID: 1403257855}
   - component: {fileID: 1403257854}
   m_Layer: 0
   m_Name: TestUICamera
@@ -573,14 +585,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &1403257855
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1403257852}
-  m_Enabled: 1
 --- !u!4 &1403257856
 Transform:
   m_ObjectHideFlags: 0

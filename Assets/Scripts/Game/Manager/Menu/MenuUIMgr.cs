@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuUIMgr : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class MenuUIMgr : MonoBehaviour
         btnTest.onClick.RemoveAllListeners();
         btnTest.onClick.AddListener(delegate ()
         {
-            Debug.Log("Init Menu UI");
+            SceneManager.LoadScene("Test");
         });
     }
 }
