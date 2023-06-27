@@ -8,6 +8,6 @@ public class MenuGameMgr : MonoBehaviour
 
     private void Start()
     {
-        
+        menuUIMgr.Init();
     }
 }
