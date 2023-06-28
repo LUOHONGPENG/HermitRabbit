@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6158713310601416999}
+  - component: {fileID: 5105078730895500704}
   m_Layer: 0
   m_Name: BattleUnitItem
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5105078730895500704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840154508100093419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a68d13c502190408b5b6d1b3b2b170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  srModel: {fileID: 1208642847756767454}
 --- !u!1 &6506263540170410504
 GameObject:
   m_ObjectHideFlags: 0
