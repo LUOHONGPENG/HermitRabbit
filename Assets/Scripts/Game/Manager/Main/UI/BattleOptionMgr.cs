@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class BattleOptionMgr : MonoBehaviour
 {
-    public GameObject objPopup;
-    public Transform tfOption;
-    public GameObject pfOption;
+    public Transform tfPage;
+    public GameObject pfPage;
 
     public void Init()
     {
-        objPopup.SetActive(true);
-
-        GameObject objOption = GameObject.Instantiate(pfOption, tfOption);
-        BattleOptionItem itemOption = objOption.GetComponent<BattleOptionItem>();
-        itemOption.Init("11", delegate () { 
-            Debug.Log(11); 
-        });
+        GameObject objPage = GameObject.Instantiate(pfPage, tfPage);
+        BattleOptionPage itemPage = objPage.GetComponent<BattleOptionPage>();
+        itemPage.Init();
     }
 }
