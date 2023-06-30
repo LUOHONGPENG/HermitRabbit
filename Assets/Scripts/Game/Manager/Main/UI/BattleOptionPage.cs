@@ -8,11 +8,14 @@ public class BattleOptionPage : MonoBehaviour
     public Transform tfOption;
     public GameObject pfOption;
 
+    [HideInInspector]
+    public BattleOptionPage parentPage;
+
     public void Init()
     {
-        InitOption("111", delegate () { Debug.Log(111); });
-        InitOption("222", delegate () { Debug.Log(111); });
-
+        InitOption("Move", delegate () { Debug.Log("Move"); });
+        InitOption("Action", delegate () { Debug.Log("Action Page"); });
+        InitOption("Wait", delegate () { Debug.Log("Wait"); });
     }
 
     public void InitOption(string strOption, UnityAction action)
