@@ -9,10 +9,12 @@ public class BattleOptionPage : MonoBehaviour
     public GameObject pfOption;
 
     [HideInInspector]
-    public BattleOptionPage parentPage;
+    private BattleOptionMgr parent;
 
-    public void Init()
+    public void Init(BattleOptionMgr parent)
     {
+        this.parent = parent;
+
         InitOption("Move", delegate () { Debug.Log("Move"); });
         InitOption("Action", delegate () { Debug.Log("Action Page"); });
         InitOption("Wait", delegate () { Debug.Log("Wait"); });
@@ -24,4 +26,5 @@ public class BattleOptionPage : MonoBehaviour
         BattleOptionItem itemOption = objOption.GetComponent<BattleOptionItem>();
         itemOption.Init(strOption, action);
     }
+
 }
