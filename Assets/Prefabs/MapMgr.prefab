@@ -48,6 +48,8 @@ MonoBehaviour:
   tfMapTile: {fileID: 3636127314762175340}
   pfMapTile: {fileID: 531612181578970929, guid: 3ea994958584fd04caeea044513fb8e9,
     type: 3}
+  pfCharacter: {fileID: 2840154508100093419, guid: 86921a8acf94c7b44bc56648f50ca41a,
+    type: 3}
 --- !u!1 &8724383461957668191
 GameObject:
   m_ObjectHideFlags: 0

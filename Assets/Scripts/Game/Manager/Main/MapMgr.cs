@@ -7,10 +7,13 @@ public class MapMgr : MonoBehaviour
     public Transform tfMapTile;
     public GameObject pfMapTile;
 
+    public GameObject pfCharacter;
 
     public void Init()
     {
         GenerateTile(5, 5);
+
+        GameObject objCharacter = GameObject.Instantiate(pfCharacter, new Vector3(0, 0.5f, 0), Quaternion.identity, this.transform);
     }
 
     public void GenerateTile(int sizeX,int sizeZ)

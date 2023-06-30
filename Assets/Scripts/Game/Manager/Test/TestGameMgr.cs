@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class TestGameMgr : MonoBehaviour
 {
-    public MapMgr testMapMgr;
+    public Camera mapCamera;
+    public Camera uiCamera;
 
+    public MapMgr testMapMgr;
+    public UIMgr testUIMgr;
 
     public void Start()
     {
         testMapMgr.Init();
+        testUIMgr.Init(uiCamera);
     }
 
 }
