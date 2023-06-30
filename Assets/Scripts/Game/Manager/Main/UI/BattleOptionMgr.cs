@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class BattleOptionMgr : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject objPopup;
 
-    // Update is called once per frame
-    void Update()
+    public void Init()
     {
-        
+
     }
 }
