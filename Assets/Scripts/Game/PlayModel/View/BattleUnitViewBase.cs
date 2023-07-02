@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class BattleUnitViewBase : MonoBehaviour
 {
-    public SpriteRenderer srModel;
+    public SpriteRenderer srUnit;
+
+    public Collider colUnit;
 
     private void LateUpdate()
     {
-        srModel.transform.LookAt(Camera.main.transform.forward + srModel.transform.position);
+        srUnit.transform.LookAt(Camera.main.transform.forward + srUnit.transform.position);
     }
 }

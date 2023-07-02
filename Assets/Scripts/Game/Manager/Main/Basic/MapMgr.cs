@@ -13,7 +13,7 @@ public class MapMgr : MonoBehaviour
     {
         GenerateTile(5, 5);
 
-        GameObject objCharacter = GameObject.Instantiate(pfCharacter, new Vector3(0, 0.5f, 0), Quaternion.identity, this.transform);
+        GameObject objCharacter = GameObject.Instantiate(pfCharacter, new Vector3(0, 0.35f, 0), Quaternion.identity, this.transform);
     }
 
     public void GenerateTile(int sizeX,int sizeZ)
