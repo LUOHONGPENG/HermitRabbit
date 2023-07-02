@@ -7,12 +7,12 @@ public class TestGameMgr : MonoBehaviour
     public Camera mapCamera;
     public Camera uiCamera;
 
-    public MapMgr testMapMgr;
+    public LevelMgr testLevelMgr;
     public UIMgr testUIMgr;
 
     public void Start()
     {
-        testMapMgr.Init();
+        testLevelMgr.Init();
         testUIMgr.Init(uiCamera);
     }
 

@@ -18,7 +18,7 @@ public class GameMgr : MonoSingleton<GameMgr>
         yield return StartCoroutine(DataMgr.Instance.IE_Init());
         yield return StartCoroutine(SoundMgr.Instance.IE_Init());
         SceneManager.LoadScene("Menu");
-        Debug.Log(DataMgr.Instance.characterSkillExcelData.GetExcelItem(1001).name);
+        Debug.Log("Init Game Manager");
     }
     #endregion
 }

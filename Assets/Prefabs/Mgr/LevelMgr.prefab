@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7614424164634144024}
   - component: {fileID: 5742788759783263134}
   m_Layer: 0
-  m_Name: MapMgr
+  m_Name: LevelMgr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,6 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3636127314762175340}
+  - {fileID: 1300102294986377050}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,8 +49,40 @@ MonoBehaviour:
   tfMapTile: {fileID: 3636127314762175340}
   pfMapTile: {fileID: 531612181578970929, guid: 3ea994958584fd04caeea044513fb8e9,
     type: 3}
+  tfCharacter: {fileID: 1300102294986377050}
   pfCharacter: {fileID: 2840154508100093419, guid: 86921a8acf94c7b44bc56648f50ca41a,
     type: 3}
+--- !u!1 &8231569930106958671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1300102294986377050}
+  m_Layer: 0
+  m_Name: tfCharacter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1300102294986377050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8231569930106958671}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7614424164634144024}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8724383461957668191
 GameObject:
   m_ObjectHideFlags: 0

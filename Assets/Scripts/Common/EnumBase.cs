@@ -4,7 +4,8 @@ using UnityEngine;
 
 public enum ExcelName
 {
-    CharacterSkill
+    CharacterSkill,
+    CharacterData
 }
 
 public enum MagicType

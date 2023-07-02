@@ -17,6 +17,7 @@ public class BattleOptionMgr : MonoBehaviour
         btnClose.onClick.RemoveAllListeners();
         btnClose.onClick.AddListener(ClosePage);
 
+        PublicTool.ClearChildItem(tfPage);
 
         ShowPage();
     }
