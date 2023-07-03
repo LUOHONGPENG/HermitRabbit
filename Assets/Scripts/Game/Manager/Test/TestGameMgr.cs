@@ -14,6 +14,8 @@ public class TestGameMgr : MonoBehaviour
     {
         testLevelMgr.Init();
         testUIMgr.Init(uiCamera);
+        GameMgr.Instance.curMapCamera = mapCamera;
+        GameMgr.Instance.curUICamera = uiCamera;
     }
 
 }

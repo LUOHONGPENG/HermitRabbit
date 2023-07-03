@@ -24,7 +24,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     ""name"": ""PlayerInput"",
     ""maps"": [
         {
-            ""name"": ""Player"",
+            ""name"": ""Gameplay"",
             ""id"": ""07242882-c159-44dd-ac39-9d94448e10c0"",
             ""actions"": [
                 {
@@ -138,11 +138,11 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // Player
-        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_MoveCamera = m_Player.FindAction("MoveCamera", throwIfNotFound: true);
-        m_Player_Touch = m_Player.FindAction("Touch", throwIfNotFound: true);
-        m_Player_TouchPosition = m_Player.FindAction("TouchPosition", throwIfNotFound: true);
+        // Gameplay
+        m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
+        m_Gameplay_MoveCamera = m_Gameplay.FindAction("MoveCamera", throwIfNotFound: true);
+        m_Gameplay_Touch = m_Gameplay.FindAction("Touch", throwIfNotFound: true);
+        m_Gameplay_TouchPosition = m_Gameplay.FindAction("TouchPosition", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -199,39 +199,39 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Player
-    private readonly InputActionMap m_Player;
-    private IPlayerActions m_PlayerActionsCallbackInterface;
-    private readonly InputAction m_Player_MoveCamera;
-    private readonly InputAction m_Player_Touch;
-    private readonly InputAction m_Player_TouchPosition;
-    public struct PlayerActions
+    // Gameplay
+    private readonly InputActionMap m_Gameplay;
+    private IGameplayActions m_GameplayActionsCallbackInterface;
+    private readonly InputAction m_Gameplay_MoveCamera;
+    private readonly InputAction m_Gameplay_Touch;
+    private readonly InputAction m_Gameplay_TouchPosition;
+    public struct GameplayActions
     {
         private @PlayerInput m_Wrapper;
-        public PlayerActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MoveCamera => m_Wrapper.m_Player_MoveCamera;
-        public InputAction @Touch => m_Wrapper.m_Player_Touch;
-        public InputAction @TouchPosition => m_Wrapper.m_Player_TouchPosition;
-        public InputActionMap Get() { return m_Wrapper.m_Player; }
+        public GameplayActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @MoveCamera => m_Wrapper.m_Gameplay_MoveCamera;
+        public InputAction @Touch => m_Wrapper.m_Gameplay_Touch;
+        public InputAction @TouchPosition => m_Wrapper.m_Gameplay_TouchPosition;
+        public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerActions instance)
+        public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
+        public void SetCallbacks(IGameplayActions instance)
         {
-            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
+            if (m_Wrapper.m_GameplayActionsCallbackInterface != null)
             {
-                @MoveCamera.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveCamera;
-                @MoveCamera.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveCamera;
-                @MoveCamera.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveCamera;
-                @Touch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouch;
-                @Touch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouch;
-                @Touch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouch;
-                @TouchPosition.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPosition;
-                @TouchPosition.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPosition;
-                @TouchPosition.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPosition;
+                @MoveCamera.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMoveCamera;
+                @MoveCamera.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMoveCamera;
+                @MoveCamera.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMoveCamera;
+                @Touch.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouch;
+                @Touch.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouch;
+                @Touch.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouch;
+                @TouchPosition.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouchPosition;
+                @TouchPosition.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouchPosition;
+                @TouchPosition.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouchPosition;
             }
-            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
+            m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @MoveCamera.started += instance.OnMoveCamera;
@@ -246,8 +246,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
             }
         }
     }
-    public PlayerActions @Player => new PlayerActions(this);
-    public interface IPlayerActions
+    public GameplayActions @Gameplay => new GameplayActions(this);
+    public interface IGameplayActions
     {
         void OnMoveCamera(InputAction.CallbackContext context);
         void OnTouch(InputAction.CallbackContext context);

@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameMgr : MonoSingleton<GameMgr>
 {
+    public Camera curMapCamera;
+    public Camera curUICamera;
+
+    public bool isInit = false;
 
     #region Init
     public override void Init()
@@ -16,9 +20,11 @@ public class GameMgr : MonoSingleton<GameMgr>
     public IEnumerator IE_InitGame()
     {
         yield return StartCoroutine(DataMgr.Instance.IE_Init());
+        yield return StartCoroutine(InputMgr.Instance.IE_Init());
         yield return StartCoroutine(SoundMgr.Instance.IE_Init());
         SceneManager.LoadScene("Menu");
         Debug.Log("Init Game Manager");
+        isInit = true;
     }
     #endregion
 }
