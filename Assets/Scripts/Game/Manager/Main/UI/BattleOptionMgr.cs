@@ -16,30 +16,46 @@ public class BattleOptionMgr : MonoBehaviour
     {
         btnClose.onClick.RemoveAllListeners();
         btnClose.onClick.AddListener(ClosePage);
+        btnClose.gameObject.SetActive(false);
 
         PublicTool.ClearChildItem(tfPage);
-
-        ShowPage();
     }
 
-    public void ShowPage()
+    public void OnEnable()
     {
-        GameObject objPage = GameObject.Instantiate(pfPage, tfPage);
-        BattleOptionPage itemPage = objPage.GetComponent<BattleOptionPage>();
-        itemPage.Init(this);
+        EventCenter.Instance.AddEventListener("ShowBattleOption", ShowBattlePageEvent);
+    }
 
-        stackPage.Push(itemPage);
-        btnClose.gameObject.SetActive(true);
+    public void OnDisable()
+    {
+        EventCenter.Instance.RemoveEventListener("ShowBattleOption", ShowBattlePageEvent);
+    }
+
+    public void ShowBattlePageEvent(object arg0)
+    {
+        if (stackPage.Count < 1)
+        {
+            GameObject objPage = GameObject.Instantiate(pfPage, tfPage);
+            BattleOptionPage itemPage = objPage.GetComponent<BattleOptionPage>();
+            itemPage.Init(this);
+
+            stackPage.Push(itemPage);
+            btnClose.gameObject.SetActive(true);
+        }
+
     }
 
     public void ClosePage()
     {
-        BattleOptionPage closePage = stackPage.Pop();
-        Destroy(closePage.gameObject);
-
-        if (stackPage.Count < 1)
+        if (stackPage.Count >= 1)
         {
-            btnClose.gameObject.SetActive(false);
+            BattleOptionPage closePage = stackPage.Pop();
+            Destroy(closePage.gameObject);
+
+            if (stackPage.Count < 1)
+            {
+                btnClose.gameObject.SetActive(false);
+            }
         }
     }
 }

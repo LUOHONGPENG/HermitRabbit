@@ -45,4 +45,9 @@ public class BattleCharacterData : BattleUnitData
             return WIS;
         }
     }
+
+    public int GetTypeID()
+    {
+        return characterID;
+    }
 }
