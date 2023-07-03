@@ -7,13 +7,19 @@ public class BattleOptionPage : MonoBehaviour
 {
     public Transform tfOption;
     public GameObject pfOption;
+    public RectTransform rtPage;
 
     [HideInInspector]
     private BattleOptionMgr parent;
 
-    public void Init(BattleOptionMgr parent)
+    public void Init(BattleOptionMgr parent,int count)
     {
         this.parent = parent;
+
+        if(count == 1)
+        {
+            SetPagePos(new Vector2(200F, -200F));
+        }
 
         InitOption("Move", delegate () { Debug.Log("Move"); });
         InitOption("Action", delegate () { Debug.Log("Action Page"); });
@@ -27,4 +33,8 @@ public class BattleOptionPage : MonoBehaviour
         itemOption.Init(strOption, action);
     }
 
+    public void SetPagePos(Vector2 pos)
+    {
+        rtPage.localPosition = pos;
+    }
 }

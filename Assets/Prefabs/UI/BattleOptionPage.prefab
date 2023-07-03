@@ -55,7 +55,7 @@ MonoBehaviour:
   tfOption: {fileID: 4842515659198741792}
   pfOption: {fileID: 1144756929539374185, guid: e1f85ebff9923ad42897540d9d02c181,
     type: 3}
-  parentPage: {fileID: 0}
+  rtPage: {fileID: 1089162656916216053}
 --- !u!222 &5547694992992230592
 CanvasRenderer:
   m_ObjectHideFlags: 0

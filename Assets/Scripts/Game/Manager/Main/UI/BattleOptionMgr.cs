@@ -35,14 +35,13 @@ public class BattleOptionMgr : MonoBehaviour
     {
         if (stackPage.Count < 1)
         {
-            GameObject objPage = GameObject.Instantiate(pfPage, tfPage);
+            GameObject objPage = GameObject.Instantiate(pfPage,tfPage);
             BattleOptionPage itemPage = objPage.GetComponent<BattleOptionPage>();
-            itemPage.Init(this);
+            itemPage.Init(this,stackPage.Count + 1);
 
             stackPage.Push(itemPage);
             btnClose.gameObject.SetActive(true);
         }
-
     }
 
     public void ClosePage()
