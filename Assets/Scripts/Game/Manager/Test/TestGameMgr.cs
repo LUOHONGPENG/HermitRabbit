@@ -12,10 +12,17 @@ public class TestGameMgr : MonoBehaviour
 
     public void Start()
     {
+        GameGlobal.targetScene = SceneName.Test;
+        StartCoroutine(IE_Init());
+    }
+
+
+    public IEnumerator IE_Init()
+    {
+        yield return new WaitUntil(() => GameMgr.Instance.isInit);
         testLevelMgr.Init();
         testUIMgr.Init(uiCamera);
         GameMgr.Instance.curMapCamera = mapCamera;
         GameMgr.Instance.curUICamera = uiCamera;
     }
-
 }

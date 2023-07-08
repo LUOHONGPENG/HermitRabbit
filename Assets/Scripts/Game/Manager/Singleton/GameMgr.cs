@@ -22,7 +22,7 @@ public class GameMgr : MonoSingleton<GameMgr>
         yield return StartCoroutine(ExcelDataMgr.Instance.IE_Init());
         yield return StartCoroutine(InputMgr.Instance.IE_Init());
         yield return StartCoroutine(SoundMgr.Instance.IE_Init());
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene(GameGlobal.targetScene.ToString());
         Debug.Log("Init Game Manager");
         isInit = true;
     }
