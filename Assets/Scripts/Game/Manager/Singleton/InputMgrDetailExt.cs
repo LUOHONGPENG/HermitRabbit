@@ -26,7 +26,7 @@ public partial class InputMgr
             {
                 BattleCharacterView battleCharacter = hitData.transform.parent.GetComponent<BattleCharacterView>();
                 EventCenter.Instance.EventTrigger("ShowBattleOption", battleCharacter.GetTypeID());
-                Debug.Log("HitCharacter");
+                Debug.Log("HitCharacter ATK" + battleCharacter.characterData.curATK);
                 return true;
             }
         }

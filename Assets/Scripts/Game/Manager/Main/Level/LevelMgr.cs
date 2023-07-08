@@ -5,11 +5,7 @@ using UnityEngine;
 public class LevelMgr : MonoBehaviour
 {
     public MapMgr mapMgr;
-
-    [Header("Character")]
-    public Transform tfCharacter;
-    public GameObject pfCharacter;
-    public Dictionary<int, BattleCharacterView> dicCharacter = new Dictionary<int, BattleCharacterView>();
+    public UnitMgr unitMgr;
 
     private LevelData levelData;
     private bool isInit = false;
@@ -21,8 +17,7 @@ public class LevelMgr : MonoBehaviour
         levelData.Init();
 
         mapMgr.Init(this);
-
-        InitCharacterView();
+        unitMgr.Init(this);
 
         isInit = true;
     }
@@ -38,13 +33,4 @@ public class LevelMgr : MonoBehaviour
     }
 
 
-    #region Character
-    public void InitCharacterView()
-    {
-        PublicTool.ClearChildItem(tfCharacter);
-        GameObject objCharacter = GameObject.Instantiate(pfCharacter, new Vector3(0, 0.35f, 0), Quaternion.identity, tfCharacter);
-        BattleCharacterView characterView = objCharacter.GetComponent<BattleCharacterView>();
-        characterView.Init(levelData.GetBattleCharacterData(1001));
-    }
-    #endregion
 }
