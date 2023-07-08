@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BattleCharacterData : BattleUnitData
 {
-    private int characterID = -1;
-
     public int STR;
     public int CON;
     public int INT;
@@ -13,9 +11,11 @@ public class BattleCharacterData : BattleUnitData
 
     public BattleCharacterData(int ID)
     {
-        this.characterID = ID;
-        CharacterDataExcelItem characterData = DataMgr.Instance.characterDataExcelData.GetExcelItem(ID);
-
+        //Basic Setting
+        this.typeID = ID;
+        this.battleUnitType = BattleUnitType.Character;
+        CharacterExcelItem characterData = ExcelDataMgr.Instance.characterExcelData.GetExcelItem(ID);
+        //Attribute Setting
         STR = characterData.STR;
         CON = characterData.CON;
         INT = characterData.INT;
@@ -44,10 +44,5 @@ public class BattleCharacterData : BattleUnitData
         {
             return WIS;
         }
-    }
-
-    public int GetTypeID()
-    {
-        return characterID;
     }
 }

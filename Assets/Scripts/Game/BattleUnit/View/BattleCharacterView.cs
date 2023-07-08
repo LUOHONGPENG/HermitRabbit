@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BattleCharacterView : BattleUnitViewBase
+public class BattleCharacterView : BattleUnitView
 {
     public BattleCharacterData characterData;
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BattleUnitViewBase : MonoBehaviour
+public class BattleUnitView : MonoBehaviour
 {
     public SpriteRenderer srUnit;
 
@@ -14,7 +14,7 @@ public class BattleUnitViewBase : MonoBehaviour
         Vector2 thisPos = new Vector2(this.transform.position.x, this.transform.position.z);
         Vector2 direction = cameraPos - thisPos;
         direction.Normalize();
-        srUnit.transform.localPosition = new Vector3(direction.x * 0.4f, 0, direction.y * 0.4f);
+        srUnit.transform.localPosition = new Vector3(direction.x * 0.35f, 0, direction.y * 0.35f);
         srUnit.transform.LookAt(Camera.main.transform.forward + srUnit.transform.position);
     }
 }

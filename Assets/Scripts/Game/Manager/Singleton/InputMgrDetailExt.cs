@@ -48,8 +48,6 @@ public partial class InputMgr
     }
     #endregion
 
-
-
     #region Touch Position
     private Vector2 GetMousePos()
     {

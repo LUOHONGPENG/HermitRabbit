@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eedd9ac6c999954a8682cbb20d5c0aa, type: 3}
-  m_Name: CharacterDataExcelData
+  m_Script: {fileID: 11500000, guid: 580d421020db27746b9f4f0c34d9e5b8, type: 3}
+  m_Name: CharacterExcelData
   m_EditorClassIdentifier: 
   items:
   - id: 1001
+    name: Leo
     HP: 20
     STR: 2
     CON: 4
@@ -22,6 +23,7 @@ MonoBehaviour:
     MOV: 4
     AP: 4
   - id: 2001
+    name: Kizuna
     HP: 40
     STR: 9
     CON: 8

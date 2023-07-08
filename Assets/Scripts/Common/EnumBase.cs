@@ -10,7 +10,14 @@ public enum ExcelName
 
 public enum MagicType
 {
-    Black,
-    White,
-    Life
+    Sun,
+    Moon,
+    Star
+}
+
+public enum BattleUnitType
+{
+    Character,
+    Plant,
+    Foe
 }

@@ -38,7 +38,7 @@ public partial class MapMgr : MonoBehaviour
         listMapTile.Clear();
         dicMapTile.Clear();
         PublicTool.ClearChildItem(tfMapTile);
-        GenerateTile(5, 5);
+        GenerateTile(7, 7);
     }
 
     public void GenerateTile(int sizeX, int sizeZ)
