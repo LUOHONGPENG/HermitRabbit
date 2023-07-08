@@ -40,6 +40,8 @@ public partial class InputMgr
         {
             if (hitData.transform.parent.parent.GetComponent<MapTileBase>() != null)
             {
+                MapTileBase mapTile = hitData.transform.parent.parent.GetComponent<MapTileBase>();
+                EventCenter.Instance.EventTrigger("CameraGoTo", mapTile.transform.position);
                 Debug.Log("HitMap");
                 return true;
             }

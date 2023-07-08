@@ -6,10 +6,12 @@ using UnityEngine.InputSystem;
 
 public partial class InputMgr : MonoSingleton<InputMgr>
 {
-    public Vector2 moveCamVector;
+    public Vector2 camMoveVector;
+    public float camRotateValue;
 
     private PlayerInput playerInput;
-    private InputAction moveCameraAction;
+    private InputAction camMoveAction;
+    private InputAction camRotateAction;
     private InputAction touchAction;
     private InputAction touchPositionAction;
 
@@ -27,7 +29,8 @@ public partial class InputMgr : MonoSingleton<InputMgr>
         if (!isInitInput)
         {
             playerInput = new PlayerInput();
-            moveCameraAction = playerInput.Gameplay.MoveCamera;
+            camMoveAction = playerInput.Gameplay.MoveCamera;
+            camRotateAction = playerInput.Gameplay.RotateCamera;
             touchAction = playerInput.Gameplay.Touch;
             touchPositionAction = playerInput.Gameplay.TouchPosition;
             isInitInput = true;
@@ -42,13 +45,17 @@ public partial class InputMgr : MonoSingleton<InputMgr>
         }
 
         playerInput.Enable();
-        moveCameraAction.performed += MoveCamera_performed;
+        camMoveAction.performed += CamMove_performed;
+        camRotateAction.performed += CamRotate_performed;
         touchAction.performed += Touch_performed;
     }
 
+
+
     private void DisableInput()
     {
-        moveCameraAction.performed -= MoveCamera_performed;
+        camMoveAction.performed -= CamMove_performed;
+        camRotateAction.performed -= CamRotate_performed;
         touchAction.performed -= Touch_performed;
         playerInput.Disable();
     }
@@ -66,10 +73,15 @@ public partial class InputMgr : MonoSingleton<InputMgr>
 
 
     #region Bind
-    private void MoveCamera_performed(InputAction.CallbackContext obj)
+    private void CamMove_performed(InputAction.CallbackContext obj)
     {
         Vector2 valueMove = obj.ReadValue<Vector2>();
-        moveCamVector = valueMove;
+        camMoveVector = valueMove;
+    }
+    private void CamRotate_performed(InputAction.CallbackContext obj)
+    {
+        float valueRotate = obj.ReadValue<float>();
+        camRotateValue = valueRotate;
     }
 
     private void Touch_performed(InputAction.CallbackContext obj)
