@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public partial class InputMgr : MonoSingleton<InputMgr>
 {
+    public Vector2 moveCamVector;
+
     private PlayerInput playerInput;
     private InputAction moveCameraAction;
     private InputAction touchAction;
@@ -39,11 +42,13 @@ public partial class InputMgr : MonoSingleton<InputMgr>
         }
 
         playerInput.Enable();
+        moveCameraAction.performed += MoveCamera_performed;
         touchAction.performed += Touch_performed;
     }
 
     private void DisableInput()
     {
+        moveCameraAction.performed -= MoveCamera_performed;
         touchAction.performed -= Touch_performed;
         playerInput.Disable();
     }
@@ -61,6 +66,11 @@ public partial class InputMgr : MonoSingleton<InputMgr>
 
 
     #region Bind
+    private void MoveCamera_performed(InputAction.CallbackContext obj)
+    {
+        Vector2 valueMove = obj.ReadValue<Vector2>();
+        moveCamVector = valueMove;
+    }
 
     private void Touch_performed(InputAction.CallbackContext obj)
     {
