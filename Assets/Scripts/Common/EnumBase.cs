@@ -27,3 +27,18 @@ public enum BattleUnitType
     Plant,
     Foe
 }
+
+public enum BattleTurnState
+{
+    Character,
+    Plant,
+    Foe
+}
+
+public enum BattleInteractState
+{
+    Choose,
+    Move,
+    Target,
+    Wait
+}
