@@ -22,6 +22,7 @@ MonoBehaviour:
     WIS: 8
     MOV: 4
     AP: 4
+    pixelUrl: Sprite/Character/PixelAlfven
   - id: 2001
     name: Kizuna
     HP: 40
@@ -31,3 +32,4 @@ MonoBehaviour:
     WIS: 4
     MOV: 3
     AP: 3
+    pixelUrl: Sprite/Character/PixelNormal

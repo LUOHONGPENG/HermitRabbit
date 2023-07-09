@@ -14,5 +14,6 @@ public class BattleCharacterView : BattleUnitView
     public void Init(BattleCharacterData characterData)
     {
         this.characterData = characterData;
+        srUnit.sprite = Resources.Load(characterData.GetItem().pixelUrl, typeof(Sprite)) as Sprite; 
     }
 }

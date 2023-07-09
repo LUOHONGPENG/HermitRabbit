@@ -9,17 +9,24 @@ public class BattleCharacterData : BattleUnitData
     public int INT;
     public int WIS;
 
+    private CharacterExcelItem item;
+
     public BattleCharacterData(int ID)
     {
         //Basic Setting
         this.typeID = ID;
         this.battleUnitType = BattleUnitType.Character;
-        CharacterExcelItem characterData = ExcelDataMgr.Instance.characterExcelData.GetExcelItem(ID);
+        item = ExcelDataMgr.Instance.characterExcelData.GetExcelItem(ID);
         //Attribute Setting
-        STR = characterData.STR;
-        CON = characterData.CON;
-        INT = characterData.INT;
-        WIS = characterData.WIS;
+        STR = item.STR;
+        CON = item.CON;
+        INT = item.INT;
+        WIS = item.WIS;
+    }
+
+    public CharacterExcelItem GetItem()
+    {
+        return item;
     }
 
     public new int curATK
