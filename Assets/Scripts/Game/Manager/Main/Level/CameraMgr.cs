@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CameraMgr : MonoBehaviour
 {
@@ -18,9 +19,7 @@ public class CameraMgr : MonoBehaviour
     private void CameraGoToEvent(object arg0)
     {
         Vector3 pos = (Vector3)arg0;
-
-        Debug.Log(pos);
-        transform.position = new Vector3(pos.x, transform.position.y, pos.z);
+        transform.DOMove(new Vector3(pos.x, transform.position.y, pos.z),0.5f);
     }
 
     private void FixedUpdate()
