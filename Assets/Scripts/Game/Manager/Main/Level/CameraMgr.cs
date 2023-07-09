@@ -25,6 +25,7 @@ public class CameraMgr : MonoBehaviour
     private void FixedUpdate()
     {
         FixedGoMoveCamera();
+        FixedGoStrictCamera();
         FixedGoRotateCamera();
     }
 
@@ -34,6 +35,31 @@ public class CameraMgr : MonoBehaviour
         Vector3 moveDir = transform.forward * moveInput.y + transform.right * moveInput.x;
         float moveSpeed = 5f;
         transform.position += moveDir * moveSpeed * Time.deltaTime;
+    }
+
+    private void FixedGoStrictCamera()
+    {
+        float limit = 4f;
+
+        if (transform.position.x < -limit)
+        {
+            transform.position = new Vector3(-limit, transform.position.y, transform.position.z);
+
+        }
+        else if (transform.position.x > limit)
+        {
+            transform.position = new Vector3(limit, transform.position.y, transform.position.z);
+        }
+
+        if (transform.position.z < -limit)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -limit);
+
+        }
+        else if (transform.position.z > limit)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, limit);
+        }
     }
 
     private void FixedGoRotateCamera()
