@@ -28,14 +28,14 @@ public enum BattleUnitType
     Foe
 }
 
-public enum BattleTurnState
+public enum BattleTurnPhase
 {
     Character,
     Plant,
     Foe
 }
 
-public enum BattleInteractState
+public enum InteractState
 {
     Choose,
     Move,

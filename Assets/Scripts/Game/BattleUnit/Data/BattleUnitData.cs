@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class BattleUnitData
 {
+    /// <summary>
+    ///  Basic Data
+    /// </summary>
     public BattleUnitType battleUnitType;
     public int typeID = -1;
+    public int keyID = -1;
+
+    /// <summary>
+    /// Pos Data
+    /// </summary>
+    public Vector2Int posUnit = new Vector2Int(0, 0);
 
     //The current HP of this unit
     public float curHP;

@@ -11,10 +11,10 @@ public class BattleCharacterData : BattleUnitData
 
     private CharacterExcelItem item;
 
-    public BattleCharacterData(int ID)
+    public BattleCharacterData(int typeID)
     {
         //Basic Setting
-        this.typeID = ID;
+        this.typeID = typeID;
         this.battleUnitType = BattleUnitType.Character;
         item = ExcelDataMgr.Instance.characterExcelData.GetExcelItem(ID);
         //Attribute Setting

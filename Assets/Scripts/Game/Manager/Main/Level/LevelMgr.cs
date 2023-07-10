@@ -12,9 +12,9 @@ public class LevelMgr : MonoBehaviour
 
     public void Init()
     {
-        //If New Game
         levelData = new LevelData();
-        levelData.Init();
+        //If New Game
+        levelData.NewGameData();
 
         mapMgr.Init(this);
         unitMgr.Init(this);
@@ -32,5 +32,9 @@ public class LevelMgr : MonoBehaviour
         mapMgr.TimeGo();
     }
 
+    #region Function
 
+
+
+    #endregion
 }

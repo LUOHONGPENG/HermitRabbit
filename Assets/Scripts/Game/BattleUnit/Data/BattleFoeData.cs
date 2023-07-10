@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class BattleFoeData : BattleUnitData
 {
-    public BattleFoeData(int ID)
+    public BattleFoeData(int typeID,int keyID)
     {
         //Basic Setting
-        this.typeID = ID;
+        this.typeID = typeID;
+        this.keyID = keyID;
         this.battleUnitType = BattleUnitType.Foe;
 
     }

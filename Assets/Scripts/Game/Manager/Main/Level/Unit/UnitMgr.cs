@@ -7,7 +7,15 @@ public class UnitMgr : MonoBehaviour
     [Header("Character")]
     public Transform tfCharacter;
     public GameObject pfCharacter;
+    //public List<BattleCharacterView>  
     public Dictionary<int, BattleCharacterView> dicCharacter = new Dictionary<int, BattleCharacterView>();
+
+    [Header("Foe")]
+    public Transform tfFoe;
+    public GameObject pfFoe;
+
+
+
 
     private LevelMgr parent;
 

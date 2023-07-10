@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class BattlePlantData : BattleUnitData
 {
-    public BattlePlantData(int ID)
+    public BattlePlantData(int typeID,int keyID)
     {
         //Basic Setting
-        this.typeID = ID;
+        this.typeID = typeID;
+        this.keyID = keyID;
         this.battleUnitType = BattleUnitType.Plant;
 
     }
