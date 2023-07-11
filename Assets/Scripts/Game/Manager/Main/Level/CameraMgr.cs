@@ -39,7 +39,7 @@ public class CameraMgr : MonoBehaviour
 
     private void FixedGoStrictCamera()
     {
-        float limit = 4f;
+        float limit = 6f;
 
         if (transform.position.x < -limit)
         {

@@ -38,7 +38,7 @@ public partial class MapMgr : MonoBehaviour
         listMapTile.Clear();
         dicMapTile.Clear();
         PublicTool.ClearChildItem(tfMapTile);
-        GenerateTile(7, 7);
+        GenerateTile(GameGlobal.mapSize, GameGlobal.mapSize);
     }
 
     public void GenerateTile(int sizeX, int sizeZ)
@@ -46,13 +46,16 @@ public partial class MapMgr : MonoBehaviour
         int centerX = (sizeX - 1) / 2;
         int centerZ = (sizeZ - 1) / 2;
 
+
         for (int i = 0; i < sizeX; i++)
         {
             for (int j = 0; j < sizeZ; j++)
             {
-                GameObject objMapTile = GameObject.Instantiate(pfMapTile, new Vector3(i - centerX, 0, j - centerZ), Quaternion.identity, tfMapTile);
+                Vector2Int posID = new Vector2Int(i, j);
+
+                GameObject objMapTile = GameObject.Instantiate(pfMapTile, PublicTool.ConvertPosFromID(posID), Quaternion.identity, tfMapTile);
                 MapTileBase itemMapTile = objMapTile.GetComponent<MapTileBase>();
-                itemMapTile.Init(new Vector2Int(i, j));
+                itemMapTile.Init(posID);
                 listMapTile.Add(itemMapTile);
                 dicMapTile.Add(new Vector2Int(i, j), objMapTile.GetComponent<MapTileBase>());
                 objMapTile.name = string.Format("MapTile{0}_{1}", i, j);

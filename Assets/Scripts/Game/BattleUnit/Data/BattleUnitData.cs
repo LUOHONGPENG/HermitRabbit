@@ -14,7 +14,7 @@ public class BattleUnitData
     /// <summary>
     /// Pos Data
     /// </summary>
-    public Vector2Int posUnit = new Vector2Int(0, 0);
+    public Vector2Int posID = new Vector2Int(0, 0);
 
     //The current HP of this unit
     public float curHP;

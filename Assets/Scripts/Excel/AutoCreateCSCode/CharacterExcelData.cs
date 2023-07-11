@@ -17,6 +17,7 @@ public partial class CharacterExcelItem : ExcelItemBase
 	public int MOV;
 	public int AP;
 	public string pixelUrl;
+	public List<int> startPos;
 }
 
 [CreateAssetMenu(fileName = "CharacterExcelData", menuName = "Excel To ScriptableObject/Create CharacterExcelData", order = 1)]
@@ -46,6 +47,7 @@ public class CharacterAssetAssignment
 			items[i].MOV = Convert.ToInt32(allItemValueRowList[i]["MOV"]);
 			items[i].AP = Convert.ToInt32(allItemValueRowList[i]["AP"]);
 			items[i].pixelUrl = allItemValueRowList[i]["pixelUrl"];
+			items[i].startPos = new List<int>(Array.ConvertAll((allItemValueRowList[i]["startPos"]).Split(';'), int.Parse));
 		}
 		CharacterExcelData excelDataAsset = ScriptableObject.CreateInstance<CharacterExcelData>();
 		excelDataAsset.items = items;

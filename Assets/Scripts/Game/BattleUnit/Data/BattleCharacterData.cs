@@ -16,7 +16,9 @@ public class BattleCharacterData : BattleUnitData
         //Basic Setting
         this.typeID = typeID;
         this.battleUnitType = BattleUnitType.Character;
-        item = ExcelDataMgr.Instance.characterExcelData.GetExcelItem(ID);
+        item = ExcelDataMgr.Instance.characterExcelData.GetExcelItem(typeID);
+        //Pos Setting
+        posID = new Vector2Int(item.startPos[0], item.startPos[1]);
         //Attribute Setting
         STR = item.STR;
         CON = item.CON;

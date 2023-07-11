@@ -29,7 +29,7 @@ public class UnitMgr : MonoBehaviour
     public void InitCharacterView()
     {
         PublicTool.ClearChildItem(tfCharacter);
-        GameObject objCharacter = GameObject.Instantiate(pfCharacter, new Vector3(0, 0.35f, 0), Quaternion.identity, tfCharacter);
+        GameObject objCharacter = GameObject.Instantiate(pfCharacter, tfCharacter);
         BattleCharacterView characterView = objCharacter.GetComponent<BattleCharacterView>();
         characterView.Init(parent.GetLevelData().GetBattleCharacterData(1001));
     }
