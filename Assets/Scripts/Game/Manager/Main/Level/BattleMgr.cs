@@ -17,6 +17,8 @@ public class BattleMgr : Singleton<BattleMgr>
     {
         numTurn = 1;
         battleTurnPhase = BattleTurnPhase.Character;
+
+
     }
 
     public void StartTurnPhase()

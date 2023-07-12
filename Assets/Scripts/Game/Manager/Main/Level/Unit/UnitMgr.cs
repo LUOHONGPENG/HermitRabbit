@@ -29,8 +29,19 @@ public class UnitMgr : MonoBehaviour
     public void InitCharacterView()
     {
         PublicTool.ClearChildItem(tfCharacter);
+        foreach(var character in parent.GetLevelData().listCharacter)
+        {
+            GenerateCharacterView(character);
+        }
+
+
+    }
+
+    public void GenerateCharacterView(BattleCharacterData characterData)
+    {
         GameObject objCharacter = GameObject.Instantiate(pfCharacter, tfCharacter);
         BattleCharacterView characterView = objCharacter.GetComponent<BattleCharacterView>();
-        characterView.Init(parent.GetLevelData().GetBattleCharacterData(1001));
+        characterView.Init(characterData);
+        //characterView.Init(parent.GetLevelData().GetBattleCharacterData(1001));
     }
 }
