@@ -86,6 +86,11 @@ public partial class InputMgr : MonoSingleton<InputMgr>
 
     private void Touch_performed(InputAction.CallbackContext obj)
     {
+        if (CheckWhetherHoverUI())
+        {
+            return;
+        }
+
         if (CheckWhetherHitUnit())
         {
             return;

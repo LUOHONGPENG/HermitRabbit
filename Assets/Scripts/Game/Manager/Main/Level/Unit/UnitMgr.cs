@@ -18,9 +18,6 @@ public class UnitMgr : MonoBehaviour
     public Transform tfFoe;
     public GameObject pfFoe;
 
-
-
-
     private LevelMgr parent;
 
     public void Init(LevelMgr parent)
@@ -37,8 +34,6 @@ public class UnitMgr : MonoBehaviour
         {
             GenerateCharacterView(character);
         }
-
-
     }
 
     public void GenerateCharacterView(BattleCharacterData characterData)

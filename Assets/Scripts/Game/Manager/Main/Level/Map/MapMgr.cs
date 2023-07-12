@@ -12,7 +12,7 @@ public partial class MapMgr : MonoBehaviour
     public Dictionary<Vector2Int, MapTileBase> dicMapTile = new Dictionary<Vector2Int, MapTileBase>();
 
     private LevelMgr parent;
-    private Vector2Int targetTileID = new Vector2Int(-99,-99);
+    private Vector2Int hoverTileID = new Vector2Int(-99,-99);
     private bool isInit = false;
 
     public void Init(LevelMgr parent)
@@ -24,12 +24,12 @@ public partial class MapMgr : MonoBehaviour
 
     public void OnEnable()
     {
-        EventCenter.Instance.AddEventListener("SetTargetTile", SetTargetTileEvent);
+        EventCenter.Instance.AddEventListener("SetHoverTile", SetHoverTileEvent);
     }
 
     public void OnDisable()
     {
-        EventCenter.Instance.RemoveEventListener("SetTargetTile", SetTargetTileEvent);
+        EventCenter.Instance.RemoveEventListener("SetHoverTile", SetHoverTileEvent);
     }
 
     #region MapTile
@@ -65,10 +65,10 @@ public partial class MapMgr : MonoBehaviour
 
     #endregion
 
-    #region TargetTile
-    private void SetTargetTileEvent(object arg0)
+    #region HoverTile
+    private void SetHoverTileEvent(object arg0)
     {
-        targetTileID = (Vector2Int)arg0;
+        hoverTileID = (Vector2Int)arg0;
     }
     #endregion
 

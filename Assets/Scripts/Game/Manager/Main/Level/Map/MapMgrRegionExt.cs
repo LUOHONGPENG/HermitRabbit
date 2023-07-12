@@ -13,8 +13,8 @@ public partial class MapMgr
             {
                 for (int j = -Range; j <= Range; j++)
                 {
-                    Vector2Int thisPos = new Vector2Int(targetTileID.x + i, targetTileID.y + j);
-                    if (Vector2Int.Distance(thisPos, targetTileID) <= Range)
+                    Vector2Int thisPos = new Vector2Int(hoverTileID.x + i, hoverTileID.y + j);
+                    if (Vector2Int.Distance(thisPos, hoverTileID) <= Range)
                     {
                         listRange.Add(thisPos);
                     }

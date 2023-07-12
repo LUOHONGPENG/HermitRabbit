@@ -87,8 +87,22 @@ public partial class InputMgr
 
     private void CheckRayHover()
     {
+        if (CheckWhetherHoverUI())
+        {
+            EventCenter.Instance.EventTrigger("SetHoverTile", new Vector2Int(-99, -99));
+            return;
+        }
+
         Ray ray = GetMouseRay();
-        //Mouse above Map
+        if (!CheckWhetherHoverMapTile(ray))
+        {
+            EventCenter.Instance.EventTrigger("SetHoverTile", new Vector2Int(-99, -99));
+        }
+    }
+
+    private bool CheckWhetherHoverMapTile(Ray ray)
+    {
+        //Mouse above MapTile
         if (Physics.Raycast(ray, out RaycastHit hitDataMap, 999f, LayerMask.GetMask("Map")))
         {
             if (hitDataMap.transform != null)
@@ -96,13 +110,23 @@ public partial class InputMgr
                 if (hitDataMap.transform.parent.parent.GetComponent<MapTileBase>() != null)
                 {
                     MapTileBase itemMapTile = hitDataMap.transform.parent.parent.GetComponent<MapTileBase>();
-                    EventCenter.Instance.EventTrigger("SetTargetTile", itemMapTile.posID);
-                    return;
+                    EventCenter.Instance.EventTrigger("SetHoverTile", itemMapTile.posID);
+                    return true;
                 }
             }
         }
-
-        EventCenter.Instance.EventTrigger("SetTargetTile", new Vector2Int(-99, -99));
+        return false;
     }
+
+
+    private bool CheckWhetherHoverUI()
+    {
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        {
+            return true;
+        }
+        return false;
+    }
+
     #endregion
 }

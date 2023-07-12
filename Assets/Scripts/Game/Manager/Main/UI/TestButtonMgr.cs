@@ -8,13 +8,21 @@ public class TestButtonMgr : MonoBehaviour
     public GameObject objPopup;
 
     public Button btnEndTurn;
+    public Button btnStartBattle;
+
 
     public void Init()
     {
+        btnStartBattle.onClick.RemoveAllListeners();
+        btnStartBattle.onClick.AddListener(delegate ()
+        {
+            EventCenter.Instance.EventTrigger("StartBattle", null);
+        });
+
         btnEndTurn.onClick.RemoveAllListeners();
         btnEndTurn.onClick.AddListener(delegate ()
         {
-            Debug.Log("EndTurn");
+            EventCenter.Instance.EventTrigger("EndTurn", null);
         });
     }
 }
