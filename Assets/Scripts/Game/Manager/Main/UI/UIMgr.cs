@@ -8,6 +8,7 @@ public class UIMgr : MonoBehaviour
     public Canvas thisCanvas;
 
     public BattleOptionMgr battleOptionMgr;
+    public TestButtonMgr testButtonMgr;
 
     public void Init(Camera camera)
     {
@@ -15,5 +16,6 @@ public class UIMgr : MonoBehaviour
 
         //Debug
         battleOptionMgr.Init();
+        testButtonMgr.Init();
     }
 }

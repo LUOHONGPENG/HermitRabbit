@@ -10,6 +10,10 @@ public class UnitMgr : MonoBehaviour
     //public List<BattleCharacterView>  
     public Dictionary<int, BattleCharacterView> dicCharacter = new Dictionary<int, BattleCharacterView>();
 
+    [Header("Plant")]
+    public Transform tfPlant;
+    public GameObject pfPlant;
+
     [Header("Foe")]
     public Transform tfFoe;
     public GameObject pfFoe;
