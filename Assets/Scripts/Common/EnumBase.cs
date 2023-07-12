@@ -37,7 +37,8 @@ public enum MapIndicatorType
 {
     Hide,
     Normal,
-    Red
+    Red,
+    Blue
 }
 
 public enum MagicType

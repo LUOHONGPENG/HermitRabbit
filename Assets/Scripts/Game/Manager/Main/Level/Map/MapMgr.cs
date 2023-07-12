@@ -124,9 +124,16 @@ public partial class MapMgr : MonoBehaviour
 
         foreach (MapTileBase mapTile in listMapTile)
         {
-            if (GetTargetCrossRange(posID,characterData.curMOV).Contains(mapTile.posID))
+            if (PublicTool.GetTargetCrossRange(posID,characterData.curMOV).Contains(mapTile.posID))
             {
-                mapTile.SetIndicator(MapIndicatorType.Normal);
+                if (PublicTool.GetTargetCrossRange(hoverTileID, 0).Contains(mapTile.posID))
+                {
+                    mapTile.SetIndicator(MapIndicatorType.Blue);
+                }
+                else
+                {
+                    mapTile.SetIndicator(MapIndicatorType.Normal);
+                }
             }
             else
             {
