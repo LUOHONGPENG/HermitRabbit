@@ -21,7 +21,7 @@ public class BattleOptionPage : MonoBehaviour
             SetPagePos(new Vector2(200F, -200F));
         }
 
-        InitOption("Move", delegate () { Debug.Log("Move"); });
+        InitOption("Move", delegate () { EventCenter.Instance.EventTrigger("ChangeInteract", new ChangeInteractStruct(InteractState.Move, -1)); });
         InitOption("Action", delegate () { Debug.Log("Action Page"); });
         InitOption("Wait", delegate () { Debug.Log("Wait"); });
     }

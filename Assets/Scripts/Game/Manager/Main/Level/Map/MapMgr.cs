@@ -11,6 +11,7 @@ public partial class MapMgr : MonoBehaviour
     public List<MapTileBase> listMapTile = new List<MapTileBase>();
     public Dictionary<Vector2Int, MapTileBase> dicMapTile = new Dictionary<Vector2Int, MapTileBase>();
 
+
     private LevelMgr parent;
     private Vector2Int hoverTileID = new Vector2Int(-99,-99);
     private bool isInit = false;
@@ -75,17 +76,63 @@ public partial class MapMgr : MonoBehaviour
 
     public void TimeGo()
     {
-        foreach(MapTileBase mapTile in listMapTile)
+        if (!isInit)
+        {
+            return;
+        }
+
+        UpdateMapUI();
+/*        foreach(MapTileBase mapTile in listMapTile)
         {
             //Try to reduce call time
             if (GetTargetCrossRange(1).Contains(mapTile.posID))
             {
-                mapTile.SetIndicator(MapTileBase.MapIndicatorType.Red);
+                mapTile.SetIndicator(MapIndicatorType.Red);
             }
             else
             {
-                mapTile.SetIndicator(MapTileBase.MapIndicatorType.Normal);
+                mapTile.SetIndicator(MapIndicatorType.Normal);
+            }
+        }*/
+    }
+
+    private void UpdateMapUI()
+    {
+        switch (parent.interactState)
+        {
+            case InteractState.Normal:
+                SetMapUI_Normal();
+                break;
+            case InteractState.Move:
+                SetMapUI_Move();
+                break;
+        }
+    }
+
+    private void SetMapUI_Normal()
+    {
+        foreach (MapTileBase mapTile in listMapTile)
+        {
+            mapTile.SetIndicator(MapIndicatorType.Hide);
+        }
+    }
+
+    private void SetMapUI_Move()
+    {
+        BattleCharacterData characterData = (BattleCharacterData)parent.GetCurrentUnit(BattleUnitType.Character);
+        Vector2Int posID = characterData.posID;
+
+        foreach (MapTileBase mapTile in listMapTile)
+        {
+            if (GetTargetCrossRange(posID,characterData.curMOV).Contains(mapTile.posID))
+            {
+                mapTile.SetIndicator(MapIndicatorType.Normal);
+            }
+            else
+            {
+                mapTile.SetIndicator(MapIndicatorType.Hide);
             }
         }
     }
+
 }

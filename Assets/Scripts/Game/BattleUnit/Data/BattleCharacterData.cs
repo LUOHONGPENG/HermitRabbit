@@ -24,6 +24,8 @@ public class BattleCharacterData : BattleUnitData
         CON = item.CON;
         INT = item.INT;
         WIS = item.WIS;
+        curMOV = item.MOV;
+        maxMOV = item.MOV;
     }
 
     public CharacterExcelItem GetItem()

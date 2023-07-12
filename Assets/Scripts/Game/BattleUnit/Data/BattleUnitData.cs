@@ -25,6 +25,9 @@ public class BattleUnitData
     public float curDEF { get; }
     public float curRES { get; }
 
+    public int curMOV = 0;
+    public int maxMOV = 0;
+
     public int GetTypeID()
     {
         return typeID;

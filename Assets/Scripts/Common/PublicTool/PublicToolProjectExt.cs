@@ -14,6 +14,11 @@ public partial class PublicTool
         return new Vector3(posID.x - centerX,0 ,posID.y - centerZ);
     }
 
-
+    public static int CalculateGlobalDis(Vector2Int start,Vector2Int end)
+    {
+        int disX = Mathf.Abs(start.x - end.x);
+        int disY = Mathf.Abs(start.y - end.y);
+        return disX + disY;
+    }
 
 }

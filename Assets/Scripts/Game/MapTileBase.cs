@@ -14,11 +14,7 @@ public class MapTileBase : MonoBehaviour
         this.posID = posID;
     }
 
-    public enum MapIndicatorType
-    {
-        Normal,
-        Red
-    }
+
 
     #region Indicator
     
@@ -36,10 +32,15 @@ public class MapTileBase : MonoBehaviour
     {
         switch (type)
         {
+            case MapIndicatorType.Hide:
+                HideIndicator();
+                break;
             case MapIndicatorType.Normal:
+                ShowIndicator();
                 spIndicator.color = listColorIndicator[0];
                 break;
             case MapIndicatorType.Red:
+                ShowIndicator();
                 spIndicator.color = listColorIndicator[1];
                 break;
         }

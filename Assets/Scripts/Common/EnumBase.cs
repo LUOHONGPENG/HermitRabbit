@@ -8,18 +8,8 @@ public enum SceneName
     Test
 }
 
-public enum ExcelName
-{
-    CharacterSkill,
-    CharacterData
-}
 
-public enum MagicType
-{
-    Sun,
-    Moon,
-    Star
-}
+#region BattleRelated
 
 public enum BattleUnitType
 {
@@ -37,8 +27,35 @@ public enum BattleTurnPhase
 
 public enum InteractState
 {
-    Choose,
+    Normal,
     Move,
     Target,
-    Wait
+    WaitAction
+}
+
+public enum MapIndicatorType
+{
+    Hide,
+    Normal,
+    Red
+}
+
+public enum MagicType
+{
+    Sun,
+    Moon,
+    Star
+}
+#endregion
+
+public struct ChangeInteractStruct
+{
+    public InteractState state;
+    public int data0;
+
+    public ChangeInteractStruct(InteractState state,int data0)
+    {
+        this.state = state;
+        this.data0 = data0;
+    }
 }

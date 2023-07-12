@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class LevelMgr : MonoBehaviour
 {
+    [Header("Manager")]
     public MapMgr mapMgr;
     public UnitMgr unitMgr;
     public BattleMgr battleMgr;
 
     private LevelData levelData;
     private bool isInit = false;
+
+    [Header("StateInfo")]
+    public InteractState interactState;
+    public int curActionUnitID = -1;
 
     #region Basic & Bind
     public void Init()
@@ -23,6 +28,8 @@ public class LevelMgr : MonoBehaviour
         unitMgr.Init(this);
         battleMgr = BattleMgr.Instance;
 
+        interactState = InteractState.Normal;
+
         isInit = true;
     }
 
@@ -30,13 +37,20 @@ public class LevelMgr : MonoBehaviour
     {
         EventCenter.Instance.AddEventListener("StartBattle", StartBattleEvent);
         EventCenter.Instance.AddEventListener("EndTurn", EndTurnEvent);
+        EventCenter.Instance.AddEventListener("ShowBattleOption", ShowBattlePageEvent);
+        EventCenter.Instance.AddEventListener("ChangeInteract", ChangeInteractEvent);
     }
 
     private void OnDisable()
     {
         EventCenter.Instance.RemoveEventListener("StartBattle", StartBattleEvent);
         EventCenter.Instance.RemoveEventListener("EndTurn", EndTurnEvent);
+        EventCenter.Instance.RemoveEventListener("ShowBattleOption", ShowBattlePageEvent);
+        EventCenter.Instance.RemoveEventListener("ChangeInteract", ChangeInteractEvent);
+
     }
+
+
 
     private void FixedUpdate()
     {
@@ -54,10 +68,45 @@ public class LevelMgr : MonoBehaviour
     {
         battleMgr.EndTurnPhase();
     }
+
+    private void ShowBattlePageEvent(object arg0)
+    {
+        curActionUnitID = (int)arg0;
+    }
+
+    private void ChangeInteractEvent(object arg0)
+    {
+        ChangeInteractStruct info = (ChangeInteractStruct)arg0;
+        switch (info.state)
+        {
+            case InteractState.Move:
+                interactState = InteractState.Move;
+                break;
+        }
+
+    }
     #endregion
+
+    #region GetInfo
 
     public LevelData GetLevelData()
     {
         return levelData;
     }
+
+    public BattleUnitData GetCurrentUnit(BattleUnitType type)
+    {
+        LevelData levelData = GetLevelData();
+        switch (type)
+        {
+            case BattleUnitType.Character:
+                if (levelData.dicCharacter.ContainsKey(curActionUnitID))
+                {
+                    return levelData.dicCharacter[curActionUnitID];
+                }
+                break;
+        }
+        return null;
+    }
+    #endregion
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public partial class MapMgr
 {
-    public List<Vector2Int> GetTargetCrossRange(int Range)
+    public List<Vector2Int> GetTargetCrossRange(Vector2Int targetPos,int Range)
     {
         List<Vector2Int> listRange = new List<Vector2Int>();
         if (Range > 0)
@@ -13,8 +13,8 @@ public partial class MapMgr
             {
                 for (int j = -Range; j <= Range; j++)
                 {
-                    Vector2Int thisPos = new Vector2Int(hoverTileID.x + i, hoverTileID.y + j);
-                    if (Vector2Int.Distance(thisPos, hoverTileID) <= Range)
+                    Vector2Int thisPos = new Vector2Int(targetPos.x + i, targetPos.y + j);
+                    if (PublicTool.CalculateGlobalDis(thisPos, targetPos) <= Range)
                     {
                         listRange.Add(thisPos);
                     }
