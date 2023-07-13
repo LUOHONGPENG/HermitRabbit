@@ -28,7 +28,7 @@ public partial class InputMgr
         {
             return;
         }
-        Debug.Log("ClickNoHit");
+        Debug.Log("Click No Action");
     }
 
 
@@ -43,8 +43,7 @@ public partial class InputMgr
             if (hitData.transform.parent.GetComponent<BattleCharacterView>() != null)
             {
                 BattleCharacterView character = hitData.transform.parent.GetComponent<BattleCharacterView>();
-                DealClickCharacterAction(character);
-                return true;
+                return DealClickCharacterAction(character);
             }
         }
         return false;
@@ -58,8 +57,7 @@ public partial class InputMgr
             if (hitData.transform.parent.parent.GetComponent<MapTileBase>() != null)
             {
                 MapTileBase mapTile = hitData.transform.parent.parent.GetComponent<MapTileBase>();
-                DealClickMapAction(mapTile);
-                return true;
+                return DealClickMapAction(mapTile);
             }
         }
         return false;
@@ -68,7 +66,7 @@ public partial class InputMgr
 
     #region DealClickAction
 
-    private void DealClickCharacterAction(BattleCharacterView character)
+    private bool DealClickCharacterAction(BattleCharacterView character)
     {
         LevelMgr level;
         if (PublicTool.GetLevelMgr() != null)
@@ -77,7 +75,7 @@ public partial class InputMgr
         }
         else
         {
-            return;
+            return false;
         }
 
         if(level.levelPhase == LevelPhase.Battle)
@@ -86,20 +84,19 @@ public partial class InputMgr
             {
                 case InteractState.Normal:
                     EventCenter.Instance.EventTrigger("InputChooseCharacter", character.GetTypeID());
-                    break;
+                    return true;
                 case InteractState.Move:
                     break;
                 case InteractState.Target:
-                    Debug.Log("Should Aim at this target");
                     break;
                 case InteractState.WaitAction:
                     break;
             }
         }
-
+        return false;
     }
 
-    private void DealClickMapAction(MapTileBase mapTile)
+    private bool DealClickMapAction(MapTileBase mapTile)
     {
         LevelMgr level;
         if (PublicTool.GetLevelMgr() != null)
@@ -108,7 +105,7 @@ public partial class InputMgr
         }
         else
         {
-            return;
+            return false;
         }
 
 
@@ -118,10 +115,10 @@ public partial class InputMgr
             {
                 case InteractState.Normal:
                     EventCenter.Instance.EventTrigger("CameraGoTo", mapTile.transform.position);
-                    break;
+                    return true;
                 case InteractState.Move:
                     EventCenter.Instance.EventTrigger("InputMoveAction", mapTile.posID);
-                    break;
+                    return true;
             }
         }
         else if(level.levelPhase == LevelPhase.Peace)
@@ -130,13 +127,13 @@ public partial class InputMgr
             {
                 case InteractState.Normal:
                     EventCenter.Instance.EventTrigger("CameraGoTo", mapTile.transform.position);
-                    break;
+                    return true;
                 case InteractState.Move:
 
                     break;
             }
         }
-
+        return false;
     }
     #endregion
 
