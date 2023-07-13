@@ -139,12 +139,15 @@ public class UnitMgr : MonoBehaviour
         BattleUnitData unitData = levelData.GetDataFromUnitInfo(unitInfo);
         if (unitData.listValidMove.Contains(targetPos))
         {
-            //Data
-            unitData.posID = targetPos;
+            int cost = PublicTool.CalculateGlobalDis(unitData.posID, targetPos);
             //View
             BattleUnitView unitView = GetViewFromUnitInfo(unitInfo);
             if (unitView != null)
             {
+                //Data Move
+                unitData.posID = targetPos;
+                unitData.curMOV -= cost;
+                //View Move
                 unitView.MoveToPos(targetPos);
                 EventCenter.Instance.EventTrigger("RefreshPosInfo", null);
             }

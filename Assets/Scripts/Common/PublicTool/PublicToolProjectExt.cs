@@ -4,6 +4,11 @@ using UnityEngine;
 
 public partial class PublicTool
 {
+    /// <summary>
+    /// Translate the PosID into the world position?
+    /// </summary>
+    /// <param name="posID"></param>
+    /// <returns></returns>
     public static Vector3 ConvertPosFromID(Vector2Int posID)
     {
         int centerX = (GameGlobal.mapSize - 1) / 2;
@@ -14,6 +19,12 @@ public partial class PublicTool
         return new Vector3(posID.x - centerX,0 ,posID.y - centerZ);
     }
 
+    /// <summary>
+    /// Calculate the Distance between two posID
+    /// </summary>
+    /// <param name="start"></param>
+    /// <param name="end"></param>
+    /// <returns></returns>
     public static int CalculateGlobalDis(Vector2Int start,Vector2Int end)
     {
         int disX = Mathf.Abs(start.x - end.x);
