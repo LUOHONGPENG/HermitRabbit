@@ -23,12 +23,12 @@ public class BattleOptionMgr : MonoBehaviour
 
     public void OnEnable()
     {
-        EventCenter.Instance.AddEventListener("ShowBattleOption", ShowBattlePageEvent);
+        EventCenter.Instance.AddEventListener("InputChooseCharacter", ShowBattlePageEvent);
     }
 
     public void OnDisable()
     {
-        EventCenter.Instance.RemoveEventListener("ShowBattleOption", ShowBattlePageEvent);
+        EventCenter.Instance.RemoveEventListener("InputChooseCharacter", ShowBattlePageEvent);
     }
 
     public void ShowBattlePageEvent(object arg0)

@@ -15,6 +15,7 @@ public class BattleCharacterData : BattleUnitData
     {
         //Basic Setting
         this.typeID = typeID;
+        this.keyID = typeID;
         this.battleUnitType = BattleUnitType.Character;
         item = ExcelDataMgr.Instance.characterExcelData.GetExcelItem(typeID);
         //Pos Setting

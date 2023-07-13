@@ -70,22 +70,73 @@ public partial class InputMgr
 
     private void DealClickCharacterAction(BattleCharacterView character)
     {
-        switch (interactState)
+        LevelMgr level;
+        if (PublicTool.GetLevelMgr() != null)
         {
-            case InteractState.Normal:
-                EventCenter.Instance.EventTrigger("ShowBattleOption", character.GetTypeID());
-                break;
+            level = PublicTool.GetLevelMgr();
         }
+        else
+        {
+            return;
+        }
+
+        if(level.levelPhase == LevelPhase.Battle)
+        {
+            switch (interactState)
+            {
+                case InteractState.Normal:
+                    EventCenter.Instance.EventTrigger("InputChooseCharacter", character.GetTypeID());
+                    break;
+                case InteractState.Move:
+                    break;
+                case InteractState.Target:
+                    Debug.Log("Should Aim at this target");
+                    break;
+                case InteractState.WaitAction:
+                    break;
+            }
+        }
+
     }
 
     private void DealClickMapAction(MapTileBase mapTile)
     {
-        switch (interactState)
+        LevelMgr level;
+        if (PublicTool.GetLevelMgr() != null)
         {
-            case InteractState.Normal:
-                EventCenter.Instance.EventTrigger("CameraGoTo", mapTile.transform.position);
-                break;
+            level = PublicTool.GetLevelMgr();
         }
+        else
+        {
+            return;
+        }
+
+
+        if (level.levelPhase == LevelPhase.Battle)
+        {
+            switch (interactState)
+            {
+                case InteractState.Normal:
+                    EventCenter.Instance.EventTrigger("CameraGoTo", mapTile.transform.position);
+                    break;
+                case InteractState.Move:
+                    EventCenter.Instance.EventTrigger("InputMoveAction", mapTile.posID);
+                    break;
+            }
+        }
+        else if(level.levelPhase == LevelPhase.Peace)
+        {
+            switch (interactState)
+            {
+                case InteractState.Normal:
+                    EventCenter.Instance.EventTrigger("CameraGoTo", mapTile.transform.position);
+                    break;
+                case InteractState.Move:
+
+                    break;
+            }
+        }
+
     }
     #endregion
 

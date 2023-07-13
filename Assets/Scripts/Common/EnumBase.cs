@@ -63,14 +63,16 @@ public enum MagicType
 }
 #endregion
 
-public struct ChangeInteractStruct
-{
-    public InteractState state;
-    public int data0;
 
-    public ChangeInteractStruct(InteractState state,int data0)
+
+public struct UnitInfo
+{
+    public BattleUnitType type;
+    public int keyID;
+
+    public UnitInfo(BattleUnitType type,int keyID)
     {
-        this.state = state;
-        this.data0 = data0;
+        this.type = type;
+        this.keyID = keyID;
     }
 }

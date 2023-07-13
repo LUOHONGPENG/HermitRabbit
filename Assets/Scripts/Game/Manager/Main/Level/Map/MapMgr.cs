@@ -98,6 +98,7 @@ public partial class MapMgr : MonoBehaviour
 
     private void UpdateMapUI()
     {
+        //I think this need a optimisation
         switch (InputMgr.Instance.interactState)
         {
             case InteractState.Normal:
@@ -111,20 +112,24 @@ public partial class MapMgr : MonoBehaviour
 
     private void SetMapUI_Normal()
     {
-        foreach (MapTileBase mapTile in listMapTile)
-        {
-            mapTile.SetIndicator(MapIndicatorType.Hide);
-        }
+        ResetAllTile();
     }
 
     private void SetMapUI_Move()
     {
-        BattleCharacterData characterData = (BattleCharacterData)parent.GetCurrentUnit(BattleUnitType.Character);
-        Vector2Int posID = characterData.posID;
+        //If Cur Target is not character, something went wrong!
+        if(parent.unitMgr.GetCurUnitInfo().type!= BattleUnitType.Character)
+        {
+            return;
+        }
 
+        BattleCharacterData characterData = (BattleCharacterData)parent.unitMgr.GetCurUnitData();
+        Vector2Int characterPosID = characterData.posID;
+
+        //Go through
         foreach (MapTileBase mapTile in listMapTile)
         {
-            if (PublicTool.GetTargetCrossRange(posID,characterData.curMOV).Contains(mapTile.posID))
+            if (characterData.listValidMove.Contains(mapTile.posID))
             {
                 if (PublicTool.GetTargetCrossRange(hoverTileID, 0).Contains(mapTile.posID))
                 {
@@ -139,6 +144,14 @@ public partial class MapMgr : MonoBehaviour
             {
                 mapTile.SetIndicator(MapIndicatorType.Hide);
             }
+        }
+    }
+
+    private void ResetAllTile()
+    {
+        foreach (MapTileBase mapTile in listMapTile)
+        {
+            mapTile.SetIndicator(MapIndicatorType.Hide);
         }
     }
 

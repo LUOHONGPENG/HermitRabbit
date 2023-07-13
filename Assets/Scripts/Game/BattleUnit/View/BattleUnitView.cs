@@ -8,6 +8,9 @@ public class BattleUnitView : MonoBehaviour
 
     public Collider colUnit;
 
+
+
+
     private void LateUpdate()
     {
         Vector2 cameraPos = new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.z);
@@ -17,4 +20,11 @@ public class BattleUnitView : MonoBehaviour
         srUnit.transform.localPosition = new Vector3(direction.x * 0.35f, 0, direction.y * 0.35f);
         srUnit.transform.LookAt(Camera.main.transform.forward + srUnit.transform.position);
     }
+
+    public void MoveToPos(Vector2Int posID)
+    {
+        Vector3 tilePos = PublicTool.ConvertPosFromID(posID);
+        this.transform.localPosition = new Vector3(tilePos.x, 0.35f, tilePos.z);
+    }
+
 }

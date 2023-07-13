@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Storing the Data
 /// </summary>
-public class LevelData
+public partial class LevelData
 {
     //CharacterData
     public List<BattleCharacterData> listCharacter = new List<BattleCharacterData>();
@@ -24,6 +24,15 @@ public class LevelData
         NewGameCharacterData();
         NewGamePlantData();
         NewGameFoeData();
+    }
+
+    public void LoadGameData()
+    {
+        //LoadCharacter
+
+        //LoadPlant
+
+        //LoadFoe(Maybe)
     }
 
     #region Basic-Character
@@ -115,4 +124,17 @@ public class LevelData
     }
     #endregion
 
+    public BattleUnitData GetDataFromUnitInfo(UnitInfo unitInfo)
+    {
+        switch (unitInfo.type)
+        {
+            case BattleUnitType.Character:
+                return GetBattleCharacterData(unitInfo.keyID);
+            case BattleUnitType.Plant:
+                return GetBattlePlantData(unitInfo.keyID);
+            case BattleUnitType.Foe:
+                return GetBattleFoeData(unitInfo.keyID);
+        }
+        return null;
+    }
 }

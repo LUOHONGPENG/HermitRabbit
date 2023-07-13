@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BattleMgr : Singleton<BattleMgr>
+public partial class BattleMgr : Singleton<BattleMgr>
 {
     public int numTurn;
     public BattlePhase battleTurnPhase;
@@ -14,10 +14,17 @@ public class BattleMgr : Singleton<BattleMgr>
 
     private LevelMgr parent;
 
-
     #region Basic Function
+
+    public void Init(LevelMgr parent)
+    {
+        this.parent = parent;
+    }
+
     public void StartNewBattle(LevelMgr parent)
     {
+        this.parent = parent;
+
         numTurn = 1;
         battleTurnPhase = BattlePhase.Character;
         StartTurnPhase();
@@ -38,6 +45,7 @@ public class BattleMgr : Singleton<BattleMgr>
                 break;
         }
         Debug.Log("Start Turn " + numTurn + " " + battleTurnPhase.ToString());
+        EventCenter.Instance.EventTrigger("RefreshPosInfo", null);
     }
 
     public void EndTurnPhase()
@@ -60,17 +68,21 @@ public class BattleMgr : Singleton<BattleMgr>
 
     private void StartCharacterPhase()
     {
-
+        EventCenter.Instance.EventTrigger("ChangeInteract", InteractState.Normal);
     }
 
     private void StartPlantPhase()
     {
+        EventCenter.Instance.EventTrigger("ChangeInteract", InteractState.WaitAction);
 
     }
 
     private void StartFoePhase()
     {
+        EventCenter.Instance.EventTrigger("ChangeInteract", InteractState.WaitAction);
 
     }
     #endregion
+
+
 }
