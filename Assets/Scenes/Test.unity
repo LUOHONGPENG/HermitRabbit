@@ -327,7 +327,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513405012}
-  m_LocalRotation: {x: 0.35172665, y: 0.000000027898038, z: -0.000000010482272, w: 0.93610275}
+  m_LocalRotation: {x: 0.35172668, y: -0.000000020422782, z: 0.000000007673555, w: 0.9361028}
   m_LocalPosition: {x: 0, y: 3.5, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -665,7 +665,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150353181}
-  m_LocalRotation: {x: 0.35172665, y: 0.000000027898038, z: -0.000000010482272, w: 0.93610275}
+  m_LocalRotation: {x: 0.35172668, y: -0.000000020422782, z: 0.000000007673555, w: 0.9361028}
   m_LocalPosition: {x: 0, y: 3.5, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -792,8 +792,8 @@ MonoBehaviour:
   mapCamera: {fileID: 1150353183}
   uiCamera: {fileID: 1403257853}
   virtualCamera: {fileID: 513405013}
-  testLevelMgr: {fileID: 1309668847}
-  testUIMgr: {fileID: 371758395}
+  levelMgr: {fileID: 1309668847}
+  uiMgr: {fileID: 371758395}
   cameraMgr: {fileID: 827270400}
 --- !u!1001 &1309668846
 PrefabInstance:

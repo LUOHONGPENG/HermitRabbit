@@ -98,7 +98,7 @@ public partial class MapMgr : MonoBehaviour
 
     private void UpdateMapUI()
     {
-        switch (parent.interactState)
+        switch (InputMgr.Instance.interactState)
         {
             case InteractState.Normal:
                 SetMapUI_Normal();

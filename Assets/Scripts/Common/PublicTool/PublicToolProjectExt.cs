@@ -42,8 +42,6 @@ public partial class PublicTool
         {
             listRange.Add(targetPos);
         }
-
         return listRange;
     }
-
 }

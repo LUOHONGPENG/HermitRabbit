@@ -6,7 +6,7 @@ using UnityEngine;
 public class BattleMgr : Singleton<BattleMgr>
 {
     public int numTurn;
-    public BattleTurnPhase battleTurnPhase;
+    public BattlePhase battleTurnPhase;
 
     public Stack<int> stackCharacter;
     public Stack<int> stackPlant;
@@ -19,7 +19,7 @@ public class BattleMgr : Singleton<BattleMgr>
     public void StartNewBattle(LevelMgr parent)
     {
         numTurn = 1;
-        battleTurnPhase = BattleTurnPhase.Character;
+        battleTurnPhase = BattlePhase.Character;
         StartTurnPhase();
     }
 
@@ -27,13 +27,13 @@ public class BattleMgr : Singleton<BattleMgr>
     {
         switch (battleTurnPhase)
         {
-            case BattleTurnPhase.Character:
+            case BattlePhase.Character:
                 StartCharacterPhase();
                 break;
-            case BattleTurnPhase.Plant:
+            case BattlePhase.Plant:
                 StartPlantPhase();
                 break;
-            case BattleTurnPhase.Foe:
+            case BattlePhase.Foe:
                 StartFoePhase();
                 break;
         }
@@ -44,14 +44,14 @@ public class BattleMgr : Singleton<BattleMgr>
     {
         switch (battleTurnPhase)
         {
-            case BattleTurnPhase.Character:
-                battleTurnPhase = BattleTurnPhase.Plant;
+            case BattlePhase.Character:
+                battleTurnPhase = BattlePhase.Plant;
                 break;
-            case BattleTurnPhase.Plant:
-                battleTurnPhase = BattleTurnPhase.Foe;
+            case BattlePhase.Plant:
+                battleTurnPhase = BattlePhase.Foe;
                 break;
-            case BattleTurnPhase.Foe:
-                battleTurnPhase = BattleTurnPhase.Character;
+            case BattlePhase.Foe:
+                battleTurnPhase = BattlePhase.Character;
                 numTurn++;
                 break;
         }

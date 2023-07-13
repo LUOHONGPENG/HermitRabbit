@@ -10,20 +10,12 @@ public enum SceneName
 
 
 #region BattleRelated
-
-public enum BattleUnitType
+public enum LevelPhase
 {
-    Character,
-    Plant,
-    Foe
+    Peace,
+    Battle
 }
 
-public enum BattleTurnPhase
-{
-    Character,
-    Plant,
-    Foe
-}
 
 public enum InteractState
 {
@@ -33,12 +25,34 @@ public enum InteractState
     WaitAction
 }
 
+public enum InteractTargetType
+{
+    None,
+    Map,
+    Character
+}
+
 public enum MapIndicatorType
 {
     Hide,
     Normal,
     Red,
     Blue
+}
+
+public enum BattleUnitType
+{
+    Character,
+    Plant,
+    Foe
+}
+
+
+public enum BattlePhase
+{
+    Character,
+    Plant,
+    Foe
 }
 
 public enum MagicType

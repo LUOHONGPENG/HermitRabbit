@@ -8,6 +8,7 @@ public class GameMgr : MonoSingleton<GameMgr>
 {
     public Camera curMapCamera;
     public Camera curUICamera;
+    public SceneGameMgr curSceneGameMgr = null;
 
     public bool isInit = false;
 
@@ -27,4 +28,6 @@ public class GameMgr : MonoSingleton<GameMgr>
         isInit = true;
     }
     #endregion
+
+
 }

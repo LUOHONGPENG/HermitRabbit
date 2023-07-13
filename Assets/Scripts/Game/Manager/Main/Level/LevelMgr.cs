@@ -14,7 +14,7 @@ public class LevelMgr : MonoBehaviour
     private bool isInit = false;
 
     [Header("StateInfo")]
-    public InteractState interactState;
+    public LevelPhase levelPhase = LevelPhase.Peace;
     public int curActionUnitID = -1;
 
     #region Basic & Bind
@@ -27,8 +27,6 @@ public class LevelMgr : MonoBehaviour
         mapMgr.Init(this);
         unitMgr.Init(this);
         battleMgr = BattleMgr.Instance;
-
-        interactState = InteractState.Normal;
 
         isInit = true;
     }
@@ -77,10 +75,13 @@ public class LevelMgr : MonoBehaviour
     private void ChangeInteractEvent(object arg0)
     {
         ChangeInteractStruct info = (ChangeInteractStruct)arg0;
+        InputMgr.Instance.SetInteractState(info.state);
         switch (info.state)
         {
+            case InteractState.Normal:
+
+                break;
             case InteractState.Move:
-                interactState = InteractState.Move;
                 break;
         }
 
