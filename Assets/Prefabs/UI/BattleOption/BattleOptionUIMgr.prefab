@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7137189649882327075}
   - component: {fileID: 6475762456286507595}
   m_Layer: 5
-  m_Name: BattleOptionMgr
+  m_Name: BattleOptionUIMgr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
