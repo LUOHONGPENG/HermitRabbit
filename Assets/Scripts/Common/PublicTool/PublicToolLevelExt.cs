@@ -15,4 +15,16 @@ public partial class PublicTool
             return null;
         }
     }
+
+    public static LevelData GetLevelData()
+    {
+        if (GameMgr.Instance.curSceneGameMgr != null && GameMgr.Instance.curSceneGameMgr.levelMgr != null)
+        {
+            return GameMgr.Instance.curSceneGameMgr.levelMgr.GetLevelData();
+        }
+        else
+        {
+            return null;
+        }
+    }
 }

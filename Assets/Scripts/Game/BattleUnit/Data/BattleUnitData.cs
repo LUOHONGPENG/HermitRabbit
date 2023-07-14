@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class BattleUnitData
 {
+    #region About Data Type
     /// <summary>
     ///  Basic Data
     /// </summary>
     public BattleUnitType battleUnitType;
     public int typeID = -1;
     public int keyID = -1;
-
+    #endregion
 
 
     //The current HP of this unit
@@ -24,6 +25,9 @@ public class BattleUnitData
 
     public int curMOV = 0;
     public int maxMOV = 0;
+
+    public int curSP = 1;
+    public int maxSP = 1;
 
     public int GetTypeID()
     {

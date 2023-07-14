@@ -86,6 +86,7 @@ public partial class InputMgr
                     EventCenter.Instance.EventTrigger("InputChooseCharacter", character.GetTypeID());
                     return true;
                 case InteractState.Move:
+                    EventCenter.Instance.EventTrigger("InputChooseCharacter", character.GetTypeID());
                     break;
                 case InteractState.Target:
                     break;

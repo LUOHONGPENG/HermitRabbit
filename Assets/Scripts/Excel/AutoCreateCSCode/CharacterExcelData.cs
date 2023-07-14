@@ -17,6 +17,7 @@ public partial class CharacterExcelItem : ExcelItemBase
 	public int MOV;
 	public int AP;
 	public string pixelUrl;
+	public string portraitUrl;
 	public List<int> startPos;
 }
 
@@ -47,6 +48,7 @@ public class CharacterAssetAssignment
 			items[i].MOV = Convert.ToInt32(allItemValueRowList[i]["MOV"]);
 			items[i].AP = Convert.ToInt32(allItemValueRowList[i]["AP"]);
 			items[i].pixelUrl = allItemValueRowList[i]["pixelUrl"];
+			items[i].portraitUrl = allItemValueRowList[i]["portraitUrl"];
 			items[i].startPos = new List<int>(Array.ConvertAll((allItemValueRowList[i]["startPos"]).Split(';'), int.Parse));
 		}
 		CharacterExcelData excelDataAsset = ScriptableObject.CreateInstance<CharacterExcelData>();

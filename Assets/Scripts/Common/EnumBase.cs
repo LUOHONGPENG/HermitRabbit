@@ -55,12 +55,20 @@ public enum BattlePhase
     Foe
 }
 
+public enum BarResourceType
+{
+    Health,
+    Skill,
+    Move
+}
+
 public enum MagicType
 {
     Sun,
     Moon,
     Star
 }
+
 #endregion
 
 
