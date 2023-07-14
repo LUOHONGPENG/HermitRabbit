@@ -29,6 +29,6 @@ public class BattleInfoBarItem : MonoBehaviour
 
     public void UpdateData(float cur, float max)
     {
-        imgFill.fillAmount = (float)cur / max;
+        imgFill.fillAmount = (float)cur / (float)max;
     }
 }

@@ -38,7 +38,12 @@ public class LevelMgr : MonoBehaviour
         EventCenter.Instance.AddEventListener("ChangeInteract", ChangeInteractEvent);
         EventCenter.Instance.AddEventListener("RefreshPosInfo", RefreshPosInfoEvent);
 
+        EventCenter.Instance.AddEventListener("InputChooseCharacter", InputChooseCharacterEvent);
+        EventCenter.Instance.AddEventListener("InputMoveAction", InputMoveActionEvent);
+
     }
+
+
 
     private void OnDisable()
     {
@@ -46,7 +51,12 @@ public class LevelMgr : MonoBehaviour
         EventCenter.Instance.RemoveEventListener("EndTurn", EndTurnEvent);
         EventCenter.Instance.RemoveEventListener("ChangeInteract", ChangeInteractEvent);
         EventCenter.Instance.RemoveEventListener("RefreshPosInfo", RefreshPosInfoEvent);
+
+        EventCenter.Instance.RemoveEventListener("InputChooseCharacter", InputChooseCharacterEvent);
+        EventCenter.Instance.RemoveEventListener("InputMoveAction", InputMoveActionEvent);
     }
+
+
 
     private void FixedUpdate()
     {
@@ -80,6 +90,17 @@ public class LevelMgr : MonoBehaviour
     private void RefreshPosInfoEvent(object arg0)
     {
         GetLevelData().RefreshTempPos();
+    }
+
+    private void InputChooseCharacterEvent(object arg0)
+    {
+        GetLevelData().SetCurUnitInfo(BattleUnitType.Character, (int)arg0);
+    }
+
+    private void InputMoveActionEvent(object arg0)
+    {
+        Vector2Int targetPos = (Vector2Int)arg0;
+        unitMgr.InvokeAction_SelfMove(targetPos);
     }
     #endregion
 

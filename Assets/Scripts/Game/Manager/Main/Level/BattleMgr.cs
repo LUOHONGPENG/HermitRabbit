@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controlling the flow of the battle
+/// </summary>
 public partial class BattleMgr : Singleton<BattleMgr>
 {
     public int numTurn;

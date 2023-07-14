@@ -17,6 +17,7 @@ public class SceneGameMgr : MonoBehaviour
     public IEnumerator IE_Init()
     {
         yield return new WaitUntil(() => GameMgr.Instance.isInit);
+        GameMgr.Instance.curSceneGameMgr = this;
         levelMgr.Init();
         uiMgr.Init(uiCamera);
         GameMgr.Instance.curMapCamera = mapCamera;
@@ -24,6 +25,5 @@ public class SceneGameMgr : MonoBehaviour
         virtualCamera.Follow = cameraMgr.transform;
         virtualCamera.LookAt = cameraMgr.transform;
         //Set Current SceneMgr
-        GameMgr.Instance.curSceneGameMgr = this;
     }
 }

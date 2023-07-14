@@ -4,6 +4,7 @@ using UnityEngine;
 
 public partial class LevelData
 {
+    #region CalculateMoveRegion
     public List<Vector2Int> listTempFriendPos = new List<Vector2Int>();
     public List<Vector2Int> listTempFoePos = new List<Vector2Int>();
     public List<Vector2Int> listTempAllPos = new List<Vector2Int>();
@@ -69,4 +70,6 @@ public partial class LevelData
         }
         return temp;
     }
+
+    #endregion
 }

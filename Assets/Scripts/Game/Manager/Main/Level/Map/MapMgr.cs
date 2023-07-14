@@ -118,13 +118,13 @@ public partial class MapMgr : MonoBehaviour
     private void SetMapUI_Move()
     {
         //If Cur Target is not character, something went wrong!
-        if(parent.unitMgr.GetCurUnitInfo().type!= BattleUnitType.Character)
+        if(PublicTool.GetLevelData().GetCurUnitInfo().type!= BattleUnitType.Character)
         {
             return;
         }
 
-        BattleCharacterData characterData = (BattleCharacterData)parent.unitMgr.GetCurUnitData();
-        Vector2Int characterPosID = characterData.posID;
+        BattleCharacterData characterData = (BattleCharacterData)PublicTool.GetLevelData().GetCurUnitData();
+        //Vector2Int characterPosID = characterData.posID;
 
         //Go through
         foreach (MapTileBase mapTile in listMapTile)

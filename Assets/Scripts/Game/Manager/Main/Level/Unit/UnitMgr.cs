@@ -23,7 +23,6 @@ public class UnitMgr : MonoBehaviour
     private bool isInit = false;
 
     #region Bind
-
     public void Init(LevelMgr parent)
     {
         this.parent = parent;
@@ -33,22 +32,6 @@ public class UnitMgr : MonoBehaviour
         this.isInit = true;
     }
 
-    private void OnEnable()
-    {
-        EventCenter.Instance.AddEventListener("InputChooseCharacter", InputChooseCharacterEvent);
-        EventCenter.Instance.AddEventListener("InputMoveAction", InputMoveActionEvent);
-
-    }
-
-
-
-    private void OnDisable()
-    {
-        EventCenter.Instance.RemoveEventListener("InputChooseCharacter", InputChooseCharacterEvent);
-        EventCenter.Instance.RemoveEventListener("InputMoveAction", InputMoveActionEvent);
-
-    }
-
     #endregion
 
     #region Character
@@ -56,7 +39,7 @@ public class UnitMgr : MonoBehaviour
     {
         dicCharacter.Clear();
         PublicTool.ClearChildItem(tfCharacter);
-        foreach(var character in parent.GetLevelData().listCharacter)
+        foreach(var character in PublicTool.GetLevelData().listCharacter)
         {
             GenerateCharacterView(character);
         }
@@ -87,33 +70,6 @@ public class UnitMgr : MonoBehaviour
 
     #endregion
 
-    #region Choose Unit
-    /// <summary>
-    /// Recording curActionUnit
-    /// </summary>
-    private UnitInfo curBattleUnitInfo = new UnitInfo(BattleUnitType.Character, -1);
-
-    private void InputChooseCharacterEvent(object arg0)
-    {
-        SetCurUnitInfo(BattleUnitType.Character, (int)arg0);
-    }
-
-    public UnitInfo GetCurUnitInfo()
-    {
-        return curBattleUnitInfo;
-    }
-    public void SetCurUnitInfo(BattleUnitType type, int keyID)
-    {
-        curBattleUnitInfo.type = type;
-        curBattleUnitInfo.keyID = keyID;
-    }
-
-    public BattleUnitData GetCurUnitData()
-    {
-        LevelData levelData = parent.GetLevelData();
-        return levelData.GetDataFromUnitInfo(curBattleUnitInfo);
-    }
-
     public BattleUnitView GetViewFromUnitInfo(UnitInfo unitInfo)
     {
         Debug.Log(unitInfo.type + " " + unitInfo.keyID);
@@ -124,24 +80,20 @@ public class UnitMgr : MonoBehaviour
         }
         return null;
     }
-    #endregion
 
-    #region MoveAction
-    private void InputMoveActionEvent(object arg0)
-    {
-        Vector2Int targetPos = (Vector2Int)arg0;
-        InvokeAction_MoveUnit(curBattleUnitInfo, targetPos);
-    }
+    #region ActionDeal
 
-    public void InvokeAction_MoveUnit(UnitInfo unitInfo,Vector2Int targetPos)
+    public void InvokeAction_SelfMove(Vector2Int targetPos)
     {
-        LevelData levelData = parent.GetLevelData();
-        BattleUnitData unitData = levelData.GetDataFromUnitInfo(unitInfo);
+        LevelData levelData = PublicTool.GetLevelData();
+        UnitInfo curUnitInfo = levelData.GetCurUnitInfo();
+        //Data
+        BattleUnitData unitData = levelData.GetCurUnitData();
         if (unitData.listValidMove.Contains(targetPos))
         {
             int cost = PublicTool.CalculateGlobalDis(unitData.posID, targetPos);
             //View
-            BattleUnitView unitView = GetViewFromUnitInfo(unitInfo);
+            BattleUnitView unitView = GetViewFromUnitInfo(curUnitInfo);
             if (unitView != null)
             {
                 //Data Move
@@ -153,6 +105,11 @@ public class UnitMgr : MonoBehaviour
                 EventCenter.Instance.EventTrigger("RefreshCharacterInfo", null);
             }
         }
+    }
+
+    public void InvokeAction_Skill(int SkillID,Vector2Int targetPos)
+    {
+
     }
     #endregion
 }

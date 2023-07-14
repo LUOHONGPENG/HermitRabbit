@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: CharacterSkillExcelData
   m_EditorClassIdentifier: 
   items:
-  - id: 1001
-    name: Water
+  - id: 11001
+    name: Elemental Bolt
     desc: 
-  - id: 2001
-    name: 
+    range: 4
+    radius: 1
+  - id: 21001
+    name: Strike
     desc: 
-  - id: 3001
-    name: 
-    desc: 
+    range: 1
+    radius: 1
