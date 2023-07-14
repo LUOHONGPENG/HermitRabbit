@@ -16,7 +16,7 @@ MonoBehaviour:
   - id: 11001
     name: Elemental Bolt
     desc: 
-    range: 4
+    range: 5
     radius: 1
   - id: 21001
     name: Strike

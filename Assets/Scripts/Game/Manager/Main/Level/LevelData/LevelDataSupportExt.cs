@@ -4,32 +4,40 @@ using UnityEngine;
 
 public partial class LevelData
 {
-    #region CalculateMoveRegion
+    #region CalculateRegion
     public List<Vector2Int> listTempFriendPos = new List<Vector2Int>();
     public List<Vector2Int> listTempFoePos = new List<Vector2Int>();
     public List<Vector2Int> listTempAllPos = new List<Vector2Int>();
 
     //Refresh Valid Range for display map
-    public void RefreshTempPos()
+    public void RefreshTileInfo()
     {
         listTempFriendPos = GetFriendPos();
         listTempFoePos = GetFoePos();
         listTempAllPos = GetFullPos();
 
-        foreach (var character in listCharacter)
-        {
-            character.RefreshValidMove();
-        }
         foreach (var foe in listFoe)
         {
             //foe.RefreshValidMove();
             foe.RefreshValidRange();
         }
 
+        foreach (var character in listCharacter)
+        {
+            character.RefreshValidMove();
+        }
         Debug.Log("Refresh Unit Move Range");
     }
 
-    public List<Vector2Int> GetFriendPos()
+    public void RefreshSkillTileInfo()
+    {
+        foreach (var character in listCharacter)
+        {
+            character.RefreshValidSkill();
+        }
+    }
+
+    private List<Vector2Int> GetFriendPos()
     {
         List<Vector2Int> temp = new List<Vector2Int>();
         foreach(var character in listCharacter)
@@ -43,7 +51,7 @@ public partial class LevelData
         return temp;
     }
 
-    public List<Vector2Int> GetFoePos()
+    private List<Vector2Int> GetFoePos()
     {
         List<Vector2Int> temp = new List<Vector2Int>();
         foreach (var foe in listFoe)
@@ -53,7 +61,7 @@ public partial class LevelData
         return temp;
     }
 
-    public List<Vector2Int> GetFullPos()
+    private List<Vector2Int> GetFullPos()
     {
         List<Vector2Int> temp = new List<Vector2Int>();
         foreach (var character in listCharacter)

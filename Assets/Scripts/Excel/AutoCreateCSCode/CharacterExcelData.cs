@@ -15,10 +15,11 @@ public partial class CharacterExcelItem : ExcelItemBase
 	public int INT;
 	public int WIS;
 	public int MOV;
-	public int AP;
+	public int SP;
+	public int AttackID;
+	public List<int> startPos;
 	public string pixelUrl;
 	public string portraitUrl;
-	public List<int> startPos;
 }
 
 [CreateAssetMenu(fileName = "CharacterExcelData", menuName = "Excel To ScriptableObject/Create CharacterExcelData", order = 1)]
@@ -46,10 +47,11 @@ public class CharacterAssetAssignment
 			items[i].INT = Convert.ToInt32(allItemValueRowList[i]["INT"]);
 			items[i].WIS = Convert.ToInt32(allItemValueRowList[i]["WIS"]);
 			items[i].MOV = Convert.ToInt32(allItemValueRowList[i]["MOV"]);
-			items[i].AP = Convert.ToInt32(allItemValueRowList[i]["AP"]);
+			items[i].SP = Convert.ToInt32(allItemValueRowList[i]["SP"]);
+			items[i].AttackID = Convert.ToInt32(allItemValueRowList[i]["AttackID"]);
+			items[i].startPos = new List<int>(Array.ConvertAll((allItemValueRowList[i]["startPos"]).Split(';'), int.Parse));
 			items[i].pixelUrl = allItemValueRowList[i]["pixelUrl"];
 			items[i].portraitUrl = allItemValueRowList[i]["portraitUrl"];
-			items[i].startPos = new List<int>(Array.ConvertAll((allItemValueRowList[i]["startPos"]).Split(';'), int.Parse));
 		}
 		CharacterExcelData excelDataAsset = ScriptableObject.CreateInstance<CharacterExcelData>();
 		excelDataAsset.items = items;

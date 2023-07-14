@@ -51,12 +51,29 @@ public class BattleUnitData
     public Vector2Int posID = new Vector2Int(0, 0);
 
     public List<Vector2Int> listValidMove = new List<Vector2Int>();
+    public List<Vector2Int> listViewSkill = new List<Vector2Int>();
+    public List<Vector2Int> listValidSkill = new List<Vector2Int>();
     public List<Vector2Int> listValidRange = new List<Vector2Int>();
 
     public void RefreshValidMove()
     {
         listValidMove = new List<Vector2Int>(PublicTool.GetTargetCrossRange(posID, curMOV));
-        listValidMove.Remove(posID);
+        foreach(var pos in PublicTool.GetLevelData().listTempAllPos)
+        {
+            if (listValidMove.Contains(pos))
+            {
+                listValidMove.Remove(pos);
+            }
+        }
+    }
+
+    public void RefreshValidSkill()
+    {
+        int curSkillID = PublicTool.GetLevelData().GetCurBattleSkillID();
+        CharacterSkillExcelItem skillItem = PublicTool.GetSkillItem(curSkillID);
+        listValidSkill = new List<Vector2Int>(PublicTool.GetTargetCrossRange(posID, skillItem.range));
+
+        //According to the SkillType to decide the skill range
     }
 
     public void RefreshValidRange()

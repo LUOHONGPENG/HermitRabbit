@@ -21,10 +21,11 @@ MonoBehaviour:
     INT: 10
     WIS: 8
     MOV: 4
-    AP: 4
+    SP: 4
+    AttackID: 11001
+    startPos: 0100000001000000
     pixelUrl: Sprite/Character/PixelAlfven
     portraitUrl: Sprite/Portrait/imgPortrait1001
-    startPos: 0100000001000000
   - id: 2001
     name: Kizuna
     HP: 40
@@ -33,7 +34,8 @@ MonoBehaviour:
     INT: 4
     WIS: 4
     MOV: 3
-    AP: 3
+    SP: 2
+    AttackID: 21001
+    startPos: 0200000003000000
     pixelUrl: Sprite/Character/PixelNormal
     portraitUrl: Sprite/Portrait/imgPortrait2001
-    startPos: 0200000003000000

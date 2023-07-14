@@ -27,13 +27,13 @@ public class BattleOptionUIMgr : MonoBehaviour
         btnMove.onClick.RemoveAllListeners();
         btnMove.onClick.AddListener(delegate ()
         {
-            EventCenter.Instance.EventTrigger("ChangeInteract", InteractState.Move);
+            EventCenter.Instance.EventTrigger("ChangeInteract", new InteractInfo(InteractState.Move));
         });
 
         btnAttack.onClick.RemoveAllListeners();
         btnAttack.onClick.AddListener(delegate ()
         {
-            EventCenter.Instance.EventTrigger("ChangeInteract", InteractState.Target);
+            EventCenter.Instance.EventTrigger("ChangeInteract", new InteractInfo(InteractState.Skill,curCharacterData.GetItem().AttackID));
         });
 
         infoBarHealth.Init(BarResourceType.Health);

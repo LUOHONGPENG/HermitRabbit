@@ -36,7 +36,7 @@ public class LevelMgr : MonoBehaviour
         EventCenter.Instance.AddEventListener("StartBattle", StartBattleEvent);
         EventCenter.Instance.AddEventListener("EndTurn", EndTurnEvent);
         EventCenter.Instance.AddEventListener("ChangeInteract", ChangeInteractEvent);
-        EventCenter.Instance.AddEventListener("RefreshPosInfo", RefreshPosInfoEvent);
+        EventCenter.Instance.AddEventListener("RefreshTileInfo", RefreshTileInfoEvent);
 
         EventCenter.Instance.AddEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.AddEventListener("InputMoveAction", InputMoveActionEvent);
@@ -50,7 +50,7 @@ public class LevelMgr : MonoBehaviour
         EventCenter.Instance.RemoveEventListener("StartBattle", StartBattleEvent);
         EventCenter.Instance.RemoveEventListener("EndTurn", EndTurnEvent);
         EventCenter.Instance.RemoveEventListener("ChangeInteract", ChangeInteractEvent);
-        EventCenter.Instance.RemoveEventListener("RefreshPosInfo", RefreshPosInfoEvent);
+        EventCenter.Instance.RemoveEventListener("RefreshTileInfo", RefreshTileInfoEvent);
 
         EventCenter.Instance.RemoveEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.RemoveEventListener("InputMoveAction", InputMoveActionEvent);
@@ -82,14 +82,21 @@ public class LevelMgr : MonoBehaviour
 
     private void ChangeInteractEvent(object arg0)
     {
-        InteractState state = (InteractState)arg0;
-        InputMgr.Instance.SetInteractState(state);
+        InteractInfo info = (InteractInfo)arg0;
+        InputMgr.Instance.SetInteractState(info.state);
+        switch (info.state)
+        {
+            case InteractState.Skill:
+                GetLevelData().SetCurBattleSkillID(info.data_0);
+                GetLevelData().RefreshSkillTileInfo();
+                break;
+        }
 
     }
 
-    private void RefreshPosInfoEvent(object arg0)
+    private void RefreshTileInfoEvent(object arg0)
     {
-        GetLevelData().RefreshTempPos();
+        GetLevelData().RefreshTileInfo();
     }
 
     private void InputChooseCharacterEvent(object arg0)

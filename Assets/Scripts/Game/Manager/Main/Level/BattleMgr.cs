@@ -48,7 +48,7 @@ public partial class BattleMgr : Singleton<BattleMgr>
                 break;
         }
         Debug.Log("Start Turn " + numTurn + " " + battleTurnPhase.ToString());
-        EventCenter.Instance.EventTrigger("RefreshPosInfo", null);
+        EventCenter.Instance.EventTrigger("RefreshTileInfo", null);
     }
 
     public void EndTurnPhase()
@@ -71,18 +71,18 @@ public partial class BattleMgr : Singleton<BattleMgr>
 
     private void StartCharacterPhase()
     {
-        EventCenter.Instance.EventTrigger("ChangeInteract", InteractState.Normal);
+        EventCenter.Instance.EventTrigger("ChangeInteract", new InteractInfo(InteractState.Normal));
     }
 
     private void StartPlantPhase()
     {
-        EventCenter.Instance.EventTrigger("ChangeInteract", InteractState.WaitAction);
+        EventCenter.Instance.EventTrigger("ChangeInteract", new InteractInfo(InteractState.WaitAction));
 
     }
 
     private void StartFoePhase()
     {
-        EventCenter.Instance.EventTrigger("ChangeInteract", InteractState.WaitAction);
+        EventCenter.Instance.EventTrigger("ChangeInteract", new InteractInfo(InteractState.WaitAction));
 
     }
     #endregion

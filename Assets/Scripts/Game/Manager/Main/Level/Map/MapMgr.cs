@@ -82,18 +82,6 @@ public partial class MapMgr : MonoBehaviour
         }
 
         UpdateMapUI();
-/*        foreach(MapTileBase mapTile in listMapTile)
-        {
-            //Try to reduce call time
-            if (GetTargetCrossRange(1).Contains(mapTile.posID))
-            {
-                mapTile.SetIndicator(MapIndicatorType.Red);
-            }
-            else
-            {
-                mapTile.SetIndicator(MapIndicatorType.Normal);
-            }
-        }*/
     }
 
     private void UpdateMapUI()
@@ -106,6 +94,9 @@ public partial class MapMgr : MonoBehaviour
                 break;
             case InteractState.Move:
                 SetMapUI_Move();
+                break;
+            case InteractState.Skill:
+                SetMapUI_Skill();
                 break;
         }
     }
@@ -124,7 +115,6 @@ public partial class MapMgr : MonoBehaviour
         }
 
         BattleCharacterData characterData = (BattleCharacterData)PublicTool.GetLevelData().GetCurUnitData();
-        //Vector2Int characterPosID = characterData.posID;
 
         //Go through
         foreach (MapTileBase mapTile in listMapTile)
@@ -134,6 +124,37 @@ public partial class MapMgr : MonoBehaviour
                 if (PublicTool.GetTargetCrossRange(hoverTileID, 0).Contains(mapTile.posID))
                 {
                     mapTile.SetIndicator(MapIndicatorType.Blue);
+                }
+                else
+                {
+                    mapTile.SetIndicator(MapIndicatorType.Normal);
+                }
+            }
+            else
+            {
+                mapTile.SetIndicator(MapIndicatorType.Hide);
+            }
+        }
+    }
+
+    private void SetMapUI_Skill()
+    {
+        //If Cur Target is not character, something went wrong!
+        if (PublicTool.GetLevelData().GetCurUnitInfo().type != BattleUnitType.Character)
+        {
+            return;
+        }
+
+        BattleCharacterData characterData = (BattleCharacterData)PublicTool.GetLevelData().GetCurUnitData();
+
+        //Go through
+        foreach (MapTileBase mapTile in listMapTile)
+        {
+            if (characterData.listValidSkill.Contains(mapTile.posID))
+            {
+                if (PublicTool.GetTargetCrossRange(hoverTileID, 0).Contains(mapTile.posID))
+                {
+                    mapTile.SetIndicator(MapIndicatorType.Red);
                 }
                 else
                 {

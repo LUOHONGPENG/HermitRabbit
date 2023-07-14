@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BattleCharacterData : BattleUnitData
 {
+    //Data
     public int STR;
     public int CON;
     public int INT;

@@ -31,5 +31,14 @@ public partial class LevelData
 
     private int curBattleSkillID = -1;
 
+    public int GetCurBattleSkillID()
+    {
+        return curBattleSkillID;
+    }
+
+    public void SetCurBattleSkillID(int skillID)
+    {
+        curBattleSkillID = skillID;
+    }
     #endregion
 }

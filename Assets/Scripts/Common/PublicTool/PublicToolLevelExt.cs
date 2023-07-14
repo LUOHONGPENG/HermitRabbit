@@ -27,4 +27,9 @@ public partial class PublicTool
             return null;
         }
     }
+
+    public static CharacterSkillExcelItem GetSkillItem(int SkillID)
+    {
+        return ExcelDataMgr.Instance.characterSkillExcelData.GetExcelItem(SkillID);
+    }
 }

@@ -101,7 +101,7 @@ public class UnitMgr : MonoBehaviour
                 unitData.curMOV -= cost;
                 //View Move
                 unitView.MoveToPos(targetPos);
-                EventCenter.Instance.EventTrigger("RefreshPosInfo", null);
+                EventCenter.Instance.EventTrigger("RefreshTileInfo", null);
                 EventCenter.Instance.EventTrigger("RefreshCharacterInfo", null);
             }
         }
