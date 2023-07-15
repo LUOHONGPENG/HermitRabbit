@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitMgr : MonoBehaviour
+public class UnitViewMgr : MonoBehaviour
 {
     [Header("Character")]
     public Transform tfCharacter;
     public GameObject pfCharacter;
     //public List<BattleCharacterView>  
-    public Dictionary<int, BattleCharacterView> dicCharacter = new Dictionary<int, BattleCharacterView>();
+    public Dictionary<int, BattleCharacterView> dicCharacterView = new Dictionary<int, BattleCharacterView>();
 
     [Header("Plant")]
     public Transform tfPlant;
@@ -37,7 +37,7 @@ public class UnitMgr : MonoBehaviour
     #region Character
     public void InitCharacterView()
     {
-        dicCharacter.Clear();
+        dicCharacterView.Clear();
         PublicTool.ClearChildItem(tfCharacter);
         foreach(var character in PublicTool.GetLevelData().listCharacter)
         {
@@ -50,17 +50,17 @@ public class UnitMgr : MonoBehaviour
         GameObject objCharacter = GameObject.Instantiate(pfCharacter, tfCharacter);
         BattleCharacterView characterView = objCharacter.GetComponent<BattleCharacterView>();
         characterView.Init(characterData);
-        if (!dicCharacter.ContainsKey(characterView.characterData.keyID))
+        if (!dicCharacterView.ContainsKey(characterView.characterData.keyID))
         {
-            dicCharacter.Add(characterView.characterData.keyID,characterView);
+            dicCharacterView.Add(characterView.characterData.keyID,characterView);
         }
     }
 
     public BattleCharacterView GetCharacterView(int keyID)
     {
-        if (dicCharacter.ContainsKey(keyID))
+        if (dicCharacterView.ContainsKey(keyID))
         {
-            return dicCharacter[keyID];
+            return dicCharacterView[keyID];
         }
         else
         {

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class MapMgr : MonoBehaviour
+public partial class MapViewMgr : MonoBehaviour
 {
     [Header("MapTile")]
     public Transform tfMapTile;

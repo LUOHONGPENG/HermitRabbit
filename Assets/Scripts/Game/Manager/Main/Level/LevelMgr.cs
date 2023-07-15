@@ -6,8 +6,8 @@ using UnityEngine;
 public class LevelMgr : MonoBehaviour
 {
     [Header("Manager")]
-    public MapMgr mapMgr;
-    public UnitMgr unitMgr;
+    public MapViewMgr mapViewMgr;
+    public UnitViewMgr unitMgr;
     public BattleMgr battleMgr;
 
     private LevelData levelData;
@@ -23,7 +23,7 @@ public class LevelMgr : MonoBehaviour
         //If New Game
         levelData.NewGameData();
 
-        mapMgr.Init(this);
+        mapViewMgr.Init(this);
         unitMgr.Init(this);
         battleMgr = BattleMgr.Instance;
         battleMgr.Init(this);
@@ -64,7 +64,7 @@ public class LevelMgr : MonoBehaviour
         {
             return;
         }
-        mapMgr.TimeGo();
+        mapViewMgr.TimeGo();
     }
     #endregion
 
