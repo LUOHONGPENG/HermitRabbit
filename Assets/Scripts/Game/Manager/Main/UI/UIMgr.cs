@@ -7,6 +7,7 @@ public class UIMgr : MonoBehaviour
 {
     public Canvas thisCanvas;
 
+    public EffectUIMgr effectUIMgr;
     public BattleOptionUIMgr battleOptionUIMgr;
     public TestButtonMgr testButtonMgr;
 

@@ -24,12 +24,16 @@ public class BattleCharacterData : BattleUnitData
         //Attribute Setting
         curHP = item.HP;
         maxHP = item.HP;
+        curSP = item.SP;
+        maxSP = item.SP;
+        curMOV = item.MOV;
+        maxMOV = item.MOV;
+
         STR = item.STR;
         CON = item.CON;
         INT = item.INT;
         WIS = item.WIS;
-        curMOV = item.MOV;
-        maxMOV = item.MOV;
+
     }
 
     public CharacterExcelItem GetItem()

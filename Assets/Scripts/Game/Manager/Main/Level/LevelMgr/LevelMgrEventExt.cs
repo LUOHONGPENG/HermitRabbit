@@ -20,6 +20,7 @@ public partial class LevelMgr
 
         //About Map
         EventCenter.Instance.AddEventListener("RefreshOccupancy", RefreshOccupancyEvent);
+        EventCenter.Instance.AddEventListener("RefreshSkillRange", RefreshSkillRangeEvent);
         EventCenter.Instance.AddEventListener("SetHoverTile", SetHoverTileEvent);
     }
 
@@ -38,8 +39,10 @@ public partial class LevelMgr
         EventCenter.Instance.RemoveEventListener("EndTurn", EndTurnEvent);
         EventCenter.Instance.RemoveEventListener("TestGenerateFoe", TestGenerateFoeEvent);
 
-        //About Map
+        //About Refresh
         EventCenter.Instance.RemoveEventListener("RefreshOccupancy", RefreshOccupancyEvent);
+        EventCenter.Instance.RemoveEventListener("RefreshSkillRange", RefreshSkillRangeEvent);
+
         EventCenter.Instance.RemoveEventListener("SetHoverTile", SetHoverTileEvent);
     }
 
@@ -54,7 +57,7 @@ public partial class LevelMgr
         {
             case InteractState.Skill:
                 gameData.SetCurBattleSkillID(info.data_0);
-                gameData.RefreshSkillTileInfo();
+                EventCenter.Instance.EventTrigger("RefreshSkillRange", null);
                 break;
         }
     }
@@ -112,8 +115,13 @@ public partial class LevelMgr
             {
                 if (gameData.dicTempMapUnit[pos].type == BattleUnitType.Foe && skillMapInfo.isTargetFoe)
                 {
+                    //Data
                     BattleFoeData foeData = (BattleFoeData)gameData.GetDataFromUnitInfo(gameData.dicTempMapUnit[pos]);
                     foeData.GetHurt(100);
+                    //View
+                    BattleFoeView foeView = unitViewMgr.GetFoeView(foeData.keyID);
+                    EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Damage, foeView.transform.position,100));
+                    //Dead
                     if (foeData.isDead)
                     {
                         unitViewMgr.RemoveFoeView(foeData.keyID);
@@ -121,6 +129,13 @@ public partial class LevelMgr
                 }
             }
         }
+
+        gameData.CheckClearFoe();
+
+        PublicTool.EventRefreshOccupancy();
+        EventCenter.Instance.EventTrigger("RefreshSkillRange", null);
+        EventCenter.Instance.EventTrigger("RefreshCharacterInfo", null);
+
     }
     #endregion
 
@@ -147,6 +162,11 @@ public partial class LevelMgr
     private void RefreshOccupancyEvent(object arg0)
     {
         gameData.RefreshOccupancyInfo();
+    }
+
+    private void RefreshSkillRangeEvent(object arg0)
+    {
+        gameData.RefreshSkillTileInfo();
     }
 
     private void SetHoverTileEvent(object arg0)

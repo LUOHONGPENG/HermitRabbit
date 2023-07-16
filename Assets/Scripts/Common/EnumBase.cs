@@ -83,6 +83,10 @@ public enum SkillElementType
 
 #endregion
 
+public enum EffectUITextType
+{
+    Damage
+}
 
 #region Data Struct
 
@@ -124,6 +128,20 @@ public struct SkillMapInfo
         this.radius = item.radius;
         this.isTargetFoe = item.isTargetFoe;
     }
+}
 
+public struct EffectUITextInfo
+{
+    public EffectUITextType type;
+    public Vector3 pos;
+    public int argNum;
+    public string argString;
+    public EffectUITextInfo(EffectUITextType type, Vector3 pos, int argNum, string argString = "")
+    {
+        this.type = type;
+        this.pos = pos;
+        this.argNum = argNum;
+        this.argString = argString;
+    }
 }
 #endregion
