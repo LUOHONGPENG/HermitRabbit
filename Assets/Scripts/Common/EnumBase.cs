@@ -10,7 +10,7 @@ public enum SceneName
 
 
 #region BattleRelated
-public enum LevelPhase
+public enum GamePhase
 {
     Peace,
     Battle

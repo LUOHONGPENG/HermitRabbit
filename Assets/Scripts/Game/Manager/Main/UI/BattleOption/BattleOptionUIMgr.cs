@@ -18,8 +18,6 @@ public class BattleOptionUIMgr : MonoBehaviour
     public Button btnMove;
     public Button btnAttack;
 
-    //public Stack<BattleOptionPage> stackPage = new Stack<BattleOptionPage>();
-
     public BattleCharacterData curCharacterData;
 
     public void Init()
@@ -56,7 +54,7 @@ public class BattleOptionUIMgr : MonoBehaviour
 
     public void InputChooseCharacterEvent(object arg0)
     {
-        curCharacterData = (BattleCharacterData)PublicTool.GetLevelData().GetDataFromUnitInfo(new UnitInfo(BattleUnitType.Character, (int)arg0));
+        curCharacterData = (BattleCharacterData)PublicTool.GetGameData().GetDataFromUnitInfo(new UnitInfo(BattleUnitType.Character, (int)arg0));
 
         imgPortrait.sprite = Resources.Load(curCharacterData.GetItem().portraitUrl, typeof(Sprite)) as Sprite;
 

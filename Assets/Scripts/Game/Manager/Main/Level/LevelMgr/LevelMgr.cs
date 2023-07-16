@@ -12,13 +12,13 @@ public partial class LevelMgr : MonoBehaviour
 
     private bool isInit = false;
 
-    private LevelData levelData;
+    private GameData gameData;
 
 
     #region Basic & Bind
     public void Init()
     {
-        levelData = PublicTool.GetLevelData();
+        gameData = PublicTool.GetGameData();
 
         mapViewMgr.Init();
         unitViewMgr.Init();

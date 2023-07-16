@@ -28,3 +28,8 @@ MonoBehaviour:
     desc: 
     range: 1
     radius: 0
+  - id: 22001
+    name: Wind Chop
+    desc: 
+    range: 0
+    radius: 1

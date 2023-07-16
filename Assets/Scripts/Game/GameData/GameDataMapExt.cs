@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class LevelData
+public partial class GameData
 {
     #region CalculateRegion
     public List<Vector2Int> listTempFriendPos = new List<Vector2Int>();

@@ -35,7 +35,7 @@ public class UnitViewMgr : MonoBehaviour
     {
         dicCharacterView.Clear();
         PublicTool.ClearChildItem(tfCharacter);
-        foreach(var character in PublicTool.GetLevelData().listCharacter)
+        foreach(var character in PublicTool.GetGameData().listCharacter)
         {
             GenerateCharacterView(character);
         }
@@ -81,10 +81,10 @@ public class UnitViewMgr : MonoBehaviour
 
     public void InvokeAction_SelfMove(Vector2Int targetPos)
     {
-        LevelData levelData = PublicTool.GetLevelData();
-        UnitInfo curUnitInfo = levelData.GetCurUnitInfo();
+        GameData gameData = PublicTool.GetGameData();
+        UnitInfo curUnitInfo = gameData.GetCurUnitInfo();
         //Data
-        BattleUnitData unitData = levelData.GetCurUnitData();
+        BattleUnitData unitData = gameData.GetCurUnitData();
         if (unitData.listValidMove.Contains(targetPos))
         {
             int cost = PublicTool.CalculateGlobalDis(unitData.posID, targetPos);

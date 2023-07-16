@@ -12,6 +12,7 @@ public partial class MapViewMgr : MonoBehaviour
     public Dictionary<Vector2Int, MapTileBase> dicMapTile = new Dictionary<Vector2Int, MapTileBase>();
 
     private bool isInit = false;
+    private BattleUnitData curUnitData;
 
     public void Init()
     {
@@ -53,7 +54,6 @@ public partial class MapViewMgr : MonoBehaviour
     #endregion
 
     #region Display the MapTile state
-
     public void TimeGo()
     {
         if (!isInit)
@@ -64,11 +64,17 @@ public partial class MapViewMgr : MonoBehaviour
         UpdateMapUI();
     }
 
+    public void RefreshCurUnit()
+    {
+        curUnitData = PublicTool.GetGameData().GetCurUnitData();
+    }
 
     private void UpdateMapUI()
     {
+        InteractState state = InputMgr.Instance.interactState;
+
         //I think this need a optimisation
-        switch (InputMgr.Instance.interactState)
+        switch (state)
         {
             case InteractState.Normal:
                 SetMapUI_Normal();
@@ -89,20 +95,12 @@ public partial class MapViewMgr : MonoBehaviour
 
     private void SetMapUI_Move()
     {
-        //If Cur Target is not character, something went wrong!
-        if(PublicTool.GetLevelData().GetCurUnitInfo().type!= BattleUnitType.Character)
-        {
-            return;
-        }
-
-        BattleCharacterData characterData = (BattleCharacterData)PublicTool.GetLevelData().GetCurUnitData();
-
         //Go through
         foreach (MapTileBase mapTile in listMapTile)
         {
-            if (characterData.listValidMove.Contains(mapTile.posID))
+            if (curUnitData.listValidMove.Contains(mapTile.posID))
             {
-                if (PublicTool.GetTargetCrossRange(PublicTool.GetLevelData().hoverTileID, 0).Contains(mapTile.posID))
+                if (PublicTool.GetTargetCrossRange(PublicTool.GetGameData().hoverTileID, 0).Contains(mapTile.posID))
                 {
                     mapTile.SetIndicator(MapIndicatorType.Blue);
                 }
@@ -120,20 +118,14 @@ public partial class MapViewMgr : MonoBehaviour
 
     private void SetMapUI_Skill()
     {
-        //If Cur Target is not character, something went wrong!
-        if (PublicTool.GetLevelData().GetCurUnitInfo().type != BattleUnitType.Character)
-        {
-            return;
-        }
-
-        BattleCharacterData characterData = (BattleCharacterData)PublicTool.GetLevelData().GetCurUnitData();
+        BattleCharacterData characterData = (BattleCharacterData)PublicTool.GetGameData().GetCurUnitData();
 
         //Go through
         foreach (MapTileBase mapTile in listMapTile)
         {
-            if (characterData.listValidSkill.Contains(mapTile.posID))
+            if (curUnitData.listValidSkill.Contains(mapTile.posID))
             {
-                if (PublicTool.GetTargetCrossRange(PublicTool.GetLevelData().hoverTileID, 0).Contains(mapTile.posID))
+                if (PublicTool.GetTargetCrossRange(PublicTool.GetGameData().hoverTileID, 0).Contains(mapTile.posID))
                 {
                     mapTile.SetIndicator(MapIndicatorType.Red);
                 }

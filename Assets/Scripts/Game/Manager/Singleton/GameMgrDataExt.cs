@@ -4,21 +4,21 @@ using UnityEngine;
 
 public partial class GameMgr
 {
-    public LevelData curLevelData = new LevelData();
+    public GameData curGameData = new GameData();
 
     public void NewLevelData()
     {
-        curLevelData = new LevelData();
-        curLevelData.NewGameData();
+        curGameData = new GameData();
+        curGameData.NewGame();
     }
 
 
-    public void LoadLevelData()
+    public void LoadGameData()
     {
 
     }
 
-    public void SaveLevelData()
+    public void SaveGameData()
     {
 
     }

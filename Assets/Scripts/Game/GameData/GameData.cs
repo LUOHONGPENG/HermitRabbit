@@ -5,10 +5,10 @@ using UnityEngine;
 /// <summary>
 /// Storing the Data
 /// </summary>
-public partial class LevelData
+public partial class GameData
 {
-    //Status Data
-    public LevelPhase levelPhase = LevelPhase.Peace;
+    //Current Phase
+    public GamePhase gamePhase = GamePhase.Peace;
 
     //CharacterData
     public List<BattleCharacterData> listCharacter = new List<BattleCharacterData>();
@@ -22,7 +22,7 @@ public partial class LevelData
     public Dictionary<int, BattleFoeData> dicFoe = new Dictionary<int, BattleFoeData>();
     private int curFoeKeyID = -1;
 
-    public void NewGameData()
+    public void NewGame()
     {
         NewGameCharacterData();
         NewGamePlantData();

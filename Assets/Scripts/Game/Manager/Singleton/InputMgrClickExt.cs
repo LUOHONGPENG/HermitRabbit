@@ -68,9 +68,9 @@ public partial class InputMgr
 
     private bool DealClickCharacterAction(BattleCharacterView character)
     {
-        LevelData levelData = PublicTool.GetLevelData();
+        GameData gameData = PublicTool.GetGameData();
 
-        if(levelData.levelPhase == LevelPhase.Battle)
+        if(gameData.gamePhase == GamePhase.Battle)
         {
             switch (interactState)
             {
@@ -91,10 +91,10 @@ public partial class InputMgr
 
     private bool DealClickMapAction(MapTileBase mapTile)
     {
-        LevelData levelData = PublicTool.GetLevelData();
+        GameData gameData = PublicTool.GetGameData();
 
 
-        if (levelData.levelPhase == LevelPhase.Battle)
+        if (gameData.gamePhase == GamePhase.Battle)
         {
             switch (interactState)
             {
@@ -106,7 +106,7 @@ public partial class InputMgr
                     return true;
             }
         }
-        else if(levelData.levelPhase == LevelPhase.Peace)
+        else if(gameData.gamePhase == GamePhase.Peace)
         {
             switch (interactState)
             {

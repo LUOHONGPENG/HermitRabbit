@@ -4,9 +4,9 @@ using UnityEngine;
 
 public partial class PublicTool
 {
-    public static LevelData GetLevelData()
+    public static GameData GetGameData()
     {
-        return GameMgr.Instance.curLevelData;
+        return GameMgr.Instance.curGameData;
     }
 
     public static CharacterSkillExcelItem GetSkillItem(int SkillID)

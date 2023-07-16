@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class LevelData
+public partial class GameData
 {
     #region Current Unit
     /// <summary>
     /// Recording curActionUnit
     /// </summary>
     private UnitInfo curBattleUnitInfo = new UnitInfo(BattleUnitType.Character, -1);
+
+    public BattleUnitType GetCurUnitType()
+    {
+        return curBattleUnitInfo.type;
+    }
 
     public UnitInfo GetCurUnitInfo()
     {
@@ -20,10 +25,10 @@ public partial class LevelData
         return GetDataFromUnitInfo(curBattleUnitInfo);
     }
 
-    public void SetCurUnitInfo(BattleUnitType type, int keyID)
+    public void SetCurUnitInfo(UnitInfo unitInfo)
     {
-        curBattleUnitInfo.type = type;
-        curBattleUnitInfo.keyID = keyID;
+        curBattleUnitInfo.type = unitInfo.type;
+        curBattleUnitInfo.keyID = unitInfo.keyID;
     }
     #endregion
 

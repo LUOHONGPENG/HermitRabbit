@@ -58,7 +58,7 @@ public class BattleUnitData
     public void RefreshValidMove()
     {
         listValidMove = new List<Vector2Int>(PublicTool.GetTargetCrossRange(posID, curMOV));
-        foreach(var pos in PublicTool.GetLevelData().listTempAllPos)
+        foreach(var pos in PublicTool.GetGameData().listTempAllPos)
         {
             if (listValidMove.Contains(pos))
             {
@@ -69,7 +69,7 @@ public class BattleUnitData
 
     public void RefreshValidSkill()
     {
-        int curSkillID = PublicTool.GetLevelData().GetCurBattleSkillID();
+        int curSkillID = PublicTool.GetGameData().GetCurBattleSkillID();
         CharacterSkillExcelItem skillItem = PublicTool.GetSkillItem(curSkillID);
         listValidSkill = new List<Vector2Int>(PublicTool.GetTargetCrossRange(posID, skillItem.range));
 
