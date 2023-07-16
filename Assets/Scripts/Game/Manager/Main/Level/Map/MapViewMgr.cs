@@ -11,29 +11,16 @@ public partial class MapViewMgr : MonoBehaviour
     public List<MapTileBase> listMapTile = new List<MapTileBase>();
     public Dictionary<Vector2Int, MapTileBase> dicMapTile = new Dictionary<Vector2Int, MapTileBase>();
 
-
-    private LevelMgr parent;
-    private Vector2Int hoverTileID = new Vector2Int(-99,-99);
     private bool isInit = false;
 
-    public void Init(LevelMgr parent)
+    public void Init()
     {
-        this.parent = parent;
         InitMapTileView();
         isInit = true;
     }
 
-    public void OnEnable()
-    {
-        EventCenter.Instance.AddEventListener("SetHoverTile", SetHoverTileEvent);
-    }
 
-    public void OnDisable()
-    {
-        EventCenter.Instance.RemoveEventListener("SetHoverTile", SetHoverTileEvent);
-    }
-
-    #region MapTile
+    #region Generate MapTile
     public void InitMapTileView()
     {
         listMapTile.Clear();
@@ -63,16 +50,9 @@ public partial class MapViewMgr : MonoBehaviour
             }
         }
     }
-
     #endregion
 
-    #region HoverTile
-    private void SetHoverTileEvent(object arg0)
-    {
-        hoverTileID = (Vector2Int)arg0;
-    }
-    #endregion
-
+    #region Display the MapTile state
 
     public void TimeGo()
     {
@@ -83,6 +63,7 @@ public partial class MapViewMgr : MonoBehaviour
 
         UpdateMapUI();
     }
+
 
     private void UpdateMapUI()
     {
@@ -121,7 +102,7 @@ public partial class MapViewMgr : MonoBehaviour
         {
             if (characterData.listValidMove.Contains(mapTile.posID))
             {
-                if (PublicTool.GetTargetCrossRange(hoverTileID, 0).Contains(mapTile.posID))
+                if (PublicTool.GetTargetCrossRange(PublicTool.GetLevelData().hoverTileID, 0).Contains(mapTile.posID))
                 {
                     mapTile.SetIndicator(MapIndicatorType.Blue);
                 }
@@ -152,7 +133,7 @@ public partial class MapViewMgr : MonoBehaviour
         {
             if (characterData.listValidSkill.Contains(mapTile.posID))
             {
-                if (PublicTool.GetTargetCrossRange(hoverTileID, 0).Contains(mapTile.posID))
+                if (PublicTool.GetTargetCrossRange(PublicTool.GetLevelData().hoverTileID, 0).Contains(mapTile.posID))
                 {
                     mapTile.SetIndicator(MapIndicatorType.Red);
                 }
@@ -175,5 +156,5 @@ public partial class MapViewMgr : MonoBehaviour
             mapTile.SetIndicator(MapIndicatorType.Hide);
         }
     }
-
+    #endregion
 }

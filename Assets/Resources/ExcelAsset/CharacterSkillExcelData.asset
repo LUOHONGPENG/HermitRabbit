@@ -17,9 +17,14 @@ MonoBehaviour:
     name: Elemental Bolt
     desc: 
     range: 4
+    radius: 0
+  - id: 12001
+    name: Fire Ball
+    desc: 
+    range: 4
     radius: 1
   - id: 21001
     name: Strike
     desc: 
     range: 1
-    radius: 1
+    radius: 0

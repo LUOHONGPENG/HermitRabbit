@@ -19,16 +19,12 @@ public class UnitViewMgr : MonoBehaviour
     public Transform tfFoe;
     public GameObject pfFoe;
 
-    private LevelMgr parent;
     private bool isInit = false;
 
     #region Bind
-    public void Init(LevelMgr parent)
+    public void Init()
     {
-        this.parent = parent;
-
         InitCharacterView();
-
         this.isInit = true;
     }
 

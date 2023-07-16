@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelMgr : MonoBehaviour
+public partial class LevelMgr : MonoBehaviour
 {
     [Header("Manager")]
     public MapViewMgr mapViewMgr;
-    public UnitViewMgr unitMgr;
+    public UnitViewMgr unitViewMgr;
     public BattleMgr battleMgr;
 
     private LevelData levelData;
@@ -23,8 +23,8 @@ public class LevelMgr : MonoBehaviour
         //If New Game
         levelData.NewGameData();
 
-        mapViewMgr.Init(this);
-        unitMgr.Init(this);
+        mapViewMgr.Init();
+        unitViewMgr.Init();
         battleMgr = BattleMgr.Instance;
         battleMgr.Init(this);
 
@@ -37,6 +37,8 @@ public class LevelMgr : MonoBehaviour
         EventCenter.Instance.AddEventListener("EndTurn", EndTurnEvent);
         EventCenter.Instance.AddEventListener("ChangeInteract", ChangeInteractEvent);
         EventCenter.Instance.AddEventListener("RefreshTileInfo", RefreshTileInfoEvent);
+
+        EventCenter.Instance.AddEventListener("SetHoverTile", SetHoverTileEvent);
 
         EventCenter.Instance.AddEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.AddEventListener("InputMoveAction", InputMoveActionEvent);
@@ -51,6 +53,8 @@ public class LevelMgr : MonoBehaviour
         EventCenter.Instance.RemoveEventListener("EndTurn", EndTurnEvent);
         EventCenter.Instance.RemoveEventListener("ChangeInteract", ChangeInteractEvent);
         EventCenter.Instance.RemoveEventListener("RefreshTileInfo", RefreshTileInfoEvent);
+
+        EventCenter.Instance.RemoveEventListener("SetHoverTile", SetHoverTileEvent);
 
         EventCenter.Instance.RemoveEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.RemoveEventListener("InputMoveAction", InputMoveActionEvent);
@@ -99,6 +103,14 @@ public class LevelMgr : MonoBehaviour
         GetLevelData().RefreshTileInfo();
     }
 
+    private void SetHoverTileEvent(object arg0)
+    {
+        if (levelData != null)
+        {
+            levelData.hoverTileID = (Vector2Int)arg0;
+        }
+    }
+
     private void InputChooseCharacterEvent(object arg0)
     {
         GetLevelData().SetCurUnitInfo(BattleUnitType.Character, (int)arg0);
@@ -107,7 +119,7 @@ public class LevelMgr : MonoBehaviour
     private void InputMoveActionEvent(object arg0)
     {
         Vector2Int targetPos = (Vector2Int)arg0;
-        unitMgr.InvokeAction_SelfMove(targetPos);
+        unitViewMgr.InvokeAction_SelfMove(targetPos);
     }
     #endregion
 

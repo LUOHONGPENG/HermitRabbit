@@ -71,19 +71,17 @@ public partial class BattleMgr : Singleton<BattleMgr>
 
     private void StartCharacterPhase()
     {
-        EventCenter.Instance.EventTrigger("ChangeInteract", new InteractInfo(InteractState.Normal));
+        PublicTool.EventChangeInteract(InteractState.Normal);
     }
 
     private void StartPlantPhase()
     {
-        EventCenter.Instance.EventTrigger("ChangeInteract", new InteractInfo(InteractState.WaitAction));
-
+        PublicTool.EventChangeInteract(InteractState.WaitAction);
     }
 
     private void StartFoePhase()
     {
-        EventCenter.Instance.EventTrigger("ChangeInteract", new InteractInfo(InteractState.WaitAction));
-
+        PublicTool.EventChangeInteract(InteractState.WaitAction);
     }
     #endregion
 

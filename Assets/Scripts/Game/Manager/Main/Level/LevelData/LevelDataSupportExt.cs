@@ -80,4 +80,8 @@ public partial class LevelData
     }
 
     #endregion
+
+    #region HoverPos
+    public Vector2Int hoverTileID = new Vector2Int(-99, -99);
+    #endregion
 }
