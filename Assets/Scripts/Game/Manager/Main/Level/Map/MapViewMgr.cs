@@ -111,8 +111,29 @@ public partial class MapViewMgr : MonoBehaviour
 
     private void SetMapUI_Skill()
     {
-        Vector2Int hoverTileID = PublicTool.GetGameData().hoverTileID;
         SkillMapInfo skillMapInfo = PublicTool.GetGameData().GetCurSkillMapInfo();
+
+        //Deal with the hover radius
+        Vector2Int hoverTileID = PublicTool.GetGameData().hoverTileID;
+        bool isHover = false;
+        List<Vector2Int> listHoverPos = new List<Vector2Int>();
+        if (curUnitData.listViewSkill.Contains(hoverTileID))
+        {
+            isHover = true;
+            switch (skillMapInfo.regionType)
+            {
+                case SkillRegionType.Circle:
+                    listHoverPos = PublicTool.GetTargetCircleRange(hoverTileID, skillMapInfo.radius);
+                    break;
+            }
+        }
+
+        //Check whether cover target
+        bool isCover = false;
+        if (curUnitData.listValidSkill.Contains(hoverTileID))
+        {
+            isCover = true;
+        }
 
         foreach (MapTileBase mapTile in listMapTile)
         {
@@ -126,17 +147,21 @@ public partial class MapViewMgr : MonoBehaviour
                 mapTile.SetIndicator(MapIndicatorType.Hide);
             }
 
-            //Go through and show the mapTile that select
-            if (curUnitData.listViewSkill.Contains(hoverTileID))
+            if (isHover)
             {
-                switch (skillMapInfo.regionType)
+                if (isCover)
                 {
-                    case SkillRegionType.Circle:
-                        if (PublicTool.GetTargetCircleRange(hoverTileID, skillMapInfo.radius).Contains(mapTile.posID))
-                        {
-                            mapTile.SetIndicator(MapIndicatorType.Red);
-                        }
-                        break;
+                    if (listHoverPos.Contains(mapTile.posID))
+                    {
+                        mapTile.SetIndicator(MapIndicatorType.AttackCover);
+                    }
+                }
+                else
+                {
+                    if (listHoverPos.Contains(mapTile.posID))
+                    {
+                        mapTile.SetIndicator(MapIndicatorType.AttackRadius);
+                    }
                 }
             }
         }

@@ -43,9 +43,13 @@ public class MapTileBase : MonoBehaviour
                 ShowIndicator();
                 spIndicator.color = listColorIndicator[1];
                 break;
-            case MapIndicatorType.Red:
+            case MapIndicatorType.AttackRadius:
                 ShowIndicator();
                 spIndicator.color = listColorIndicator[2];
+                break;
+            case MapIndicatorType.AttackCover:
+                ShowIndicator();
+                spIndicator.color = listColorIndicator[3];
                 break;
         }
     }

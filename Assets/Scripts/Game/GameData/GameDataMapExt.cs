@@ -9,6 +9,7 @@ public partial class GameData
     public List<Vector2Int> listTempFoePos = new List<Vector2Int>();
     public List<Vector2Int> listTempAllPos = new List<Vector2Int>();
     public List<Vector2Int> listTempEmptyPos = new List<Vector2Int>();
+    public Dictionary<Vector2Int, UnitInfo> dicTempMapUnit = new Dictionary<Vector2Int, UnitInfo>();
 
     //Refresh Valid Range for display map
     public void RefreshOccupancyInfo()
@@ -17,18 +18,18 @@ public partial class GameData
         listTempFoePos = GetFoePos();
         listTempAllPos = GetFullPos();
         listTempEmptyPos = GetEmptyPos();
+        GenerateDicMapUnit();
 
         foreach (var foe in listFoe)
         {
-            //foe.RefreshValidMove();
-            foe.RefreshValidRange();
+            foe.RefreshAttackRange();
         }
 
         foreach (var character in listCharacter)
         {
             character.RefreshValidMove();
         }
-        Debug.Log("Refresh Unit Move Range");
+        Debug.Log("Refresh Occupancy Info");
     }
 
     public void RefreshSkillTileInfo()
@@ -93,6 +94,24 @@ public partial class GameData
             }
         }
         return temp;
+    }
+
+    private void GenerateDicMapUnit()
+    {
+        dicTempMapUnit.Clear();
+
+        foreach (var character in listCharacter)
+        {
+            dicTempMapUnit.Add(character.posID, new UnitInfo(BattleUnitType.Character, character.keyID));
+        }
+        foreach (var plant in listPlant)
+        {
+            dicTempMapUnit.Add(plant.posID, new UnitInfo(BattleUnitType.Plant, plant.keyID));
+        }
+        foreach (var foe in listFoe)
+        {
+            dicTempMapUnit.Add(foe.posID, new UnitInfo(BattleUnitType.Foe, foe.keyID));
+        }
     }
 
     #endregion

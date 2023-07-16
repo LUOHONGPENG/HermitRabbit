@@ -27,4 +27,8 @@ public class BattleUnitView : MonoBehaviour
         this.transform.localPosition = new Vector3(tilePos.x, 0.35f, tilePos.z);
     }
 
+    public void SelfDestroy()
+    {
+        Destroy(this.gameObject);
+    }
 }

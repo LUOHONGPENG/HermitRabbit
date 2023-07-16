@@ -41,7 +41,7 @@ public partial class GameData
     {
         curBattleSkillID = skillID;
         CharacterSkillExcelItem skillItem = PublicTool.GetSkillItem(skillID);
-        curSkillMapInfo = new SkillMapInfo(skillItem.regionType, skillItem.range, skillItem.radius);
+        curSkillMapInfo = new SkillMapInfo(skillItem);
     }
 
     public int GetCurBattleSkillID()

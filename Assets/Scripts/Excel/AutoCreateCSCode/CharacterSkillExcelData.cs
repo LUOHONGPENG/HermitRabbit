@@ -14,6 +14,7 @@ public partial class CharacterSkillExcelItem : ExcelItemBase
 	public int range;
 	public int radius;
 	public SkillRegionType regionType;
+	public bool isTargetFoe;
 }
 
 [CreateAssetMenu(fileName = "CharacterSkillExcelData", menuName = "Excel To ScriptableObject/Create CharacterSkillExcelData", order = 1)]
@@ -40,6 +41,7 @@ public class CharacterSkillAssetAssignment
 			items[i].range = Convert.ToInt32(allItemValueRowList[i]["range"]);
 			items[i].radius = Convert.ToInt32(allItemValueRowList[i]["radius"]);
 			items[i].regionType = (SkillRegionType) Enum.Parse(typeof(SkillRegionType), allItemValueRowList[i]["regionType"], true);
+			items[i].isTargetFoe = Convert.ToBoolean(allItemValueRowList[i]["isTargetFoe"]);
 		}
 		CharacterSkillExcelData excelDataAsset = ScriptableObject.CreateInstance<CharacterSkillExcelData>();
 		excelDataAsset.items = items;

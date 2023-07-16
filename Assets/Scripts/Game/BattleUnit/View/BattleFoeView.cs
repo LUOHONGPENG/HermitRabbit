@@ -13,7 +13,6 @@ public class BattleFoeView : BattleUnitView
 
         List<Vector2Int> listPos = PublicTool.GetGameData().listTempEmptyPos;
         int ran = Random.Range(0, listPos.Count);
-        Debug.Log(listPos.Count + " " + ran);
         foeData.posID = listPos[ran];
         MoveToPos(foeData.posID);
     }

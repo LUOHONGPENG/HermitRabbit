@@ -11,6 +11,7 @@ public partial class LevelMgr
         EventCenter.Instance.AddEventListener("ChangeInteract", ChangeInteractEvent);
         EventCenter.Instance.AddEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.AddEventListener("InputMoveAction", InputMoveActionEvent);
+        EventCenter.Instance.AddEventListener("InputSkillAction", InputSkillActionEvent);
 
         //About Battle
         EventCenter.Instance.AddEventListener("StartBattle", StartBattleEvent);
@@ -30,6 +31,7 @@ public partial class LevelMgr
         EventCenter.Instance.RemoveEventListener("ChangeInteract", ChangeInteractEvent);
         EventCenter.Instance.RemoveEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.RemoveEventListener("InputMoveAction", InputMoveActionEvent);
+        EventCenter.Instance.RemoveEventListener("InputSkillAction", InputSkillActionEvent);
 
         //About Battle
         EventCenter.Instance.RemoveEventListener("StartBattle", StartBattleEvent);
@@ -80,6 +82,45 @@ public partial class LevelMgr
     {
         Vector2Int targetPos = (Vector2Int)arg0;
 
+        SkillMapInfo skillMapInfo = gameData.GetCurSkillMapInfo();
+        BattleUnitData skillMaster = gameData.GetCurUnitData();
+        if (!skillMaster.listValidSkill.Contains(targetPos))
+        {
+            Debug.Log("No target");
+            return;
+        }
+
+        if (skillMaster.curSP <= 0)
+        {
+            Debug.Log("SP not enough");
+            return;
+        }
+
+        //Spell Skill
+        skillMaster.curSP--;
+        List<Vector2Int> listPos = new List<Vector2Int>();
+        switch (skillMapInfo.regionType)
+        {
+            case SkillRegionType.Circle:
+                listPos = PublicTool.GetTargetCircleRange(targetPos, skillMapInfo.radius);
+                break;
+        }
+
+        foreach (var pos in listPos)
+        {
+            if (gameData.dicTempMapUnit.ContainsKey(pos))
+            {
+                if (gameData.dicTempMapUnit[pos].type == BattleUnitType.Foe && skillMapInfo.isTargetFoe)
+                {
+                    BattleFoeData foeData = (BattleFoeData)gameData.GetDataFromUnitInfo(gameData.dicTempMapUnit[pos]);
+                    foeData.GetHurt(100);
+                    if (foeData.isDead)
+                    {
+                        unitViewMgr.RemoveFoeView(foeData.keyID);
+                    }
+                }
+            }
+        }
     }
     #endregion
 

@@ -103,6 +103,16 @@ public class UnitViewMgr : MonoBehaviour
             return null;
         }
     }
+
+    public void RemoveFoeView(int keyID)
+    {
+        if (dicFoeView.ContainsKey(keyID))
+        {
+            BattleFoeView view = dicFoeView[keyID];
+            dicFoeView.Remove(keyID);
+            view.SelfDestroy();
+        }
+    }
     #endregion
 
     #region ActionDeal

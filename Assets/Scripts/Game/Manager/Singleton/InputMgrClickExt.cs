@@ -19,7 +19,6 @@ public partial class InputMgr
         {
             return;
         }
-
         if (CheckWhetherHitUnit())
         {
             return;
@@ -103,6 +102,9 @@ public partial class InputMgr
                     return true;
                 case InteractState.Move:
                     EventCenter.Instance.EventTrigger("InputMoveAction", mapTile.posID);
+                    return true;
+                case InteractState.Skill:
+                    EventCenter.Instance.EventTrigger("InputSkillAction", mapTile.posID);
                     return true;
             }
         }

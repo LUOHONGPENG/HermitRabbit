@@ -20,6 +20,7 @@ MonoBehaviour:
     range: 4
     radius: 0
     regionType: 0
+    isTargetFoe: 1
   - id: 1101
     name: Fire Ball
     desc: Use fire ball to attack multiple foe.
@@ -27,6 +28,7 @@ MonoBehaviour:
     range: 4
     radius: 1
     regionType: 0
+    isTargetFoe: 1
   - id: 2001
     name: Strike
     desc: Use weapon to strike a foe.
@@ -34,6 +36,7 @@ MonoBehaviour:
     range: 1
     radius: 0
     regionType: 0
+    isTargetFoe: 1
   - id: 2101
     name: Wind Chop
     desc: Cut the foes around you.
@@ -41,3 +44,4 @@ MonoBehaviour:
     range: 0
     radius: 1
     regionType: 1
+    isTargetFoe: 1

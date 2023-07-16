@@ -34,11 +34,6 @@ public class BattleUnitData
         return typeID;
     }
 
-    public void GetHurt(float damage)
-    {
-        curHP -= damage;
-    }
-
     public UnitInfo GetUnitInfo()
     {
         return new UnitInfo(battleUnitType, keyID);
@@ -75,12 +70,58 @@ public class BattleUnitData
         SkillMapInfo skillMapInfo = PublicTool.GetGameData().GetCurSkillMapInfo();
         listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, skillMapInfo.range));
 
-        //According to the SkillType to decide the skill range
+        //According to the SkillType to decide the skill radius
+        List<Vector2Int> listTemp = new List<Vector2Int>();
+
+        if (skillMapInfo.isTargetFoe)
+        {
+            //Get the position of All Foes
+            List<Vector2Int> listFoePos = PublicTool.GetGameData().listTempFoePos;
+            foreach (Vector2Int viewPos in listViewSkill)
+            {
+                //Get the radius of each view pos
+                List<Vector2Int> listRadius = new List<Vector2Int>();
+                switch (skillMapInfo.regionType)
+                {
+                    case SkillRegionType.Circle:
+                        listRadius = PublicTool.GetTargetCircleRange(viewPos, skillMapInfo.radius);
+                        break;
+                }
+                for(int i = 0; i < listRadius.Count; i++)
+                {
+                    if (listFoePos.Contains(listRadius[i]))
+                    {
+                        listTemp.Add(viewPos);
+                        Debug.Log(viewPos);
+                        break;
+                    }
+                }
+            }
+        }
+
+        //if(listTemp contains viewPos) continue;
+
+        listValidSkill = listTemp;
     }
 
-    public void RefreshValidRange()
+    public void RefreshAttackRange()
     {
         //I will write it later
+    }
+
+    #endregion
+
+    #region About Battle Action
+
+    public bool isDead = false;
+
+    public void GetHurt(float damage)
+    {
+        curHP -= damage;
+        if (curHP <= 0)
+        {
+            isDead = true;
+        }
     }
 
     #endregion

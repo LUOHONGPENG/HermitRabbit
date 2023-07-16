@@ -36,7 +36,8 @@ public enum MapIndicatorType
 {
     Hide,
     Normal,
-    Red,
+    AttackRadius,
+    AttackCover,
     Blue
 }
 
@@ -114,12 +115,14 @@ public struct SkillMapInfo
     public SkillRegionType regionType;
     public int range;
     public int radius;
+    public bool isTargetFoe;
 
-    public SkillMapInfo(SkillRegionType regionType,int range,int radius)
+    public SkillMapInfo(CharacterSkillExcelItem item)
     {
-        this.regionType = regionType;
-        this.range = range;
-        this.radius = radius;
+        this.regionType = item.regionType;
+        this.range = item.range;
+        this.radius = item.radius;
+        this.isTargetFoe = item.isTargetFoe;
     }
 
 }
