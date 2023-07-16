@@ -1,36 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class LevelMgr : MonoBehaviour
+public partial class LevelMgr
 {
-    [Header("Manager")]
-    public MapViewMgr mapViewMgr;
-    public UnitViewMgr unitViewMgr;
-    public BattleMgr battleMgr;
-
-    private LevelData levelData;
-    private bool isInit = false;
-
-    [Header("StateInfo")]
-    public LevelPhase levelPhase = LevelPhase.Peace;
-
-    #region Basic & Bind
-    public void Init()
-    {
-        levelData = new LevelData();
-        //If New Game
-        levelData.NewGameData();
-
-        mapViewMgr.Init();
-        unitViewMgr.Init();
-        battleMgr = BattleMgr.Instance;
-        battleMgr.Init(this);
-
-        isInit = true;
-    }
-
     private void OnEnable()
     {
         EventCenter.Instance.AddEventListener("StartBattle", StartBattleEvent);
@@ -59,18 +32,6 @@ public partial class LevelMgr : MonoBehaviour
         EventCenter.Instance.RemoveEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.RemoveEventListener("InputMoveAction", InputMoveActionEvent);
     }
-
-
-
-    private void FixedUpdate()
-    {
-        if (!isInit)
-        {
-            return;
-        }
-        mapViewMgr.TimeGo();
-    }
-    #endregion
 
     #region EventDeal
     private void StartBattleEvent(object arg0)
@@ -120,14 +81,6 @@ public partial class LevelMgr : MonoBehaviour
     {
         Vector2Int targetPos = (Vector2Int)arg0;
         unitViewMgr.InvokeAction_SelfMove(targetPos);
-    }
-    #endregion
-
-    #region GetInfo
-
-    public LevelData GetLevelData()
-    {
-        return levelData;
     }
     #endregion
 }
