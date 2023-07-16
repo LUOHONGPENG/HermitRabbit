@@ -13,23 +13,31 @@ MonoBehaviour:
   m_Name: CharacterSkillExcelData
   m_EditorClassIdentifier: 
   items:
-  - id: 11001
+  - id: 1001
     name: Elemental Ball
     desc: Use elemental ball to attack single foe.
+    element: 0
     range: 4
     radius: 0
-  - id: 12001
+    regionType: 0
+  - id: 1101
     name: Fire Ball
     desc: Use fire ball to attack multiple foe.
+    element: 1
     range: 4
     radius: 1
-  - id: 21001
+    regionType: 0
+  - id: 2001
     name: Strike
     desc: Use weapon to strike a foe.
+    element: 0
     range: 1
     radius: 0
-  - id: 22001
+    regionType: 0
+  - id: 2101
     name: Wind Chop
     desc: Cut the foes around you.
+    element: 0
     range: 0
     radius: 1
+    regionType: 1

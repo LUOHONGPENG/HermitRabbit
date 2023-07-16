@@ -49,10 +49,13 @@ public class BattleUnitData
     /// Pos Data
     /// </summary>
     public Vector2Int posID = new Vector2Int(0, 0);
-
+    //Store the valid Move 
     public List<Vector2Int> listValidMove = new List<Vector2Int>();
+    //Store the skill range display to the character
     public List<Vector2Int> listViewSkill = new List<Vector2Int>();
+    //Store the valid pos that the player can choose
     public List<Vector2Int> listValidSkill = new List<Vector2Int>();
+
     public List<Vector2Int> listValidRange = new List<Vector2Int>();
 
     public void RefreshValidMove()
@@ -69,9 +72,8 @@ public class BattleUnitData
 
     public void RefreshValidSkill()
     {
-        int curSkillID = PublicTool.GetGameData().GetCurBattleSkillID();
-        CharacterSkillExcelItem skillItem = PublicTool.GetSkillItem(curSkillID);
-        listValidSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, skillItem.range));
+        SkillMapInfo skillMapInfo = PublicTool.GetGameData().GetCurSkillMapInfo();
+        listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, skillMapInfo.range));
 
         //According to the SkillType to decide the skill range
     }

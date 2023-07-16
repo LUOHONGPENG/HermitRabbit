@@ -109,5 +109,18 @@ public struct InteractInfo
     }
 }
 
+public struct SkillMapInfo
+{
+    public SkillRegionType regionType;
+    public int range;
+    public int radius;
 
+    public SkillMapInfo(SkillRegionType regionType,int range,int radius)
+    {
+        this.regionType = regionType;
+        this.range = range;
+        this.radius = radius;
+    }
+
+}
 #endregion

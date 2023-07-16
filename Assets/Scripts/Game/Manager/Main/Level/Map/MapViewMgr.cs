@@ -118,23 +118,33 @@ public partial class MapViewMgr : MonoBehaviour
 
     private void SetMapUI_Skill()
     {
-        //Go through
+        Vector2Int hoverTileID = PublicTool.GetGameData().hoverTileID;
+        SkillMapInfo skillMapInfo = PublicTool.GetGameData().GetCurSkillMapInfo();
+
         foreach (MapTileBase mapTile in listMapTile)
         {
-            if (curUnitData.listValidSkill.Contains(mapTile.posID))
+            //Go through and show the view of range
+            if (curUnitData.listViewSkill.Contains(mapTile.posID))
             {
-                if (PublicTool.GetTargetCircleRange(PublicTool.GetGameData().hoverTileID, 0).Contains(mapTile.posID))
-                {
-                    mapTile.SetIndicator(MapIndicatorType.Red);
-                }
-                else
-                {
-                    mapTile.SetIndicator(MapIndicatorType.Normal);
-                }
+                mapTile.SetIndicator(MapIndicatorType.Normal);
             }
             else
             {
                 mapTile.SetIndicator(MapIndicatorType.Hide);
+            }
+
+            //Go through and show the mapTile that select
+            if (curUnitData.listViewSkill.Contains(hoverTileID))
+            {
+                switch (skillMapInfo.regionType)
+                {
+                    case SkillRegionType.Circle:
+                        if (PublicTool.GetTargetCircleRange(hoverTileID, skillMapInfo.radius).Contains(mapTile.posID))
+                        {
+                            mapTile.SetIndicator(MapIndicatorType.Red);
+                        }
+                        break;
+                }
             }
         }
     }
