@@ -9,7 +9,7 @@ public enum SceneName
 }
 
 
-#region BattleRelated
+#region Basic Status
 public enum GamePhase
 {
     Peace,
@@ -61,9 +61,20 @@ public enum BarResourceType
     Skill,
     Move
 }
+#endregion
 
-public enum MagicType
+#region SkillEnum
+
+public enum SkillRegionType
 {
+    Circle,
+    Square,
+    Cross
+}
+
+public enum SkillElementType
+{
+    None,
     Sun,
     Moon,
     Star

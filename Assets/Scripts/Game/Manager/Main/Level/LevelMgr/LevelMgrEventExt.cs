@@ -92,9 +92,6 @@ public partial class LevelMgr
     #endregion
 
     #region EventDeal_Map
-
-
-
     private void RefreshTileInfoEvent(object arg0)
     {
         gameData.RefreshTileInfo();
@@ -107,7 +104,5 @@ public partial class LevelMgr
             gameData.hoverTileID = (Vector2Int)arg0;
         }
     }
-
-
     #endregion
 }

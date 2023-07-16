@@ -32,7 +32,7 @@ public partial class PublicTool
         return disX + disY;
     }
 
-    public static List<Vector2Int> GetTargetCrossRange(Vector2Int targetPos, int Range)
+    public static List<Vector2Int> GetTargetCircleRange(Vector2Int targetPos, int Range)
     {
         List<Vector2Int> listRange = new List<Vector2Int>();
         if (Range > 0)

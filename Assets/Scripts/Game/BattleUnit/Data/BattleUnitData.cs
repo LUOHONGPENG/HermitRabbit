@@ -19,15 +19,15 @@ public class BattleUnitData
     //The maximum HP of this unit
     public float maxHP { get; }
 
-    public float curATK { get; }
-    public float curDEF { get; }
-    public float curRES { get; }
-
     public int curMOV = 0;
     public int maxMOV = 0;
 
     public int curSP = 1;
     public int maxSP = 1;
+
+    public float curATK { get; }
+    public float curDEF { get; }
+    public float curRES { get; }
 
     public int GetTypeID()
     {
@@ -57,7 +57,7 @@ public class BattleUnitData
 
     public void RefreshValidMove()
     {
-        listValidMove = new List<Vector2Int>(PublicTool.GetTargetCrossRange(posID, curMOV));
+        listValidMove = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, curMOV));
         foreach(var pos in PublicTool.GetGameData().listTempAllPos)
         {
             if (listValidMove.Contains(pos))
@@ -71,7 +71,7 @@ public class BattleUnitData
     {
         int curSkillID = PublicTool.GetGameData().GetCurBattleSkillID();
         CharacterSkillExcelItem skillItem = PublicTool.GetSkillItem(curSkillID);
-        listValidSkill = new List<Vector2Int>(PublicTool.GetTargetCrossRange(posID, skillItem.range));
+        listValidSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, skillItem.range));
 
         //According to the SkillType to decide the skill range
     }

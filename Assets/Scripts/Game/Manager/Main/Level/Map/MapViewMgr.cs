@@ -100,7 +100,7 @@ public partial class MapViewMgr : MonoBehaviour
         {
             if (curUnitData.listValidMove.Contains(mapTile.posID))
             {
-                if (PublicTool.GetTargetCrossRange(PublicTool.GetGameData().hoverTileID, 0).Contains(mapTile.posID))
+                if (PublicTool.GetTargetCircleRange(PublicTool.GetGameData().hoverTileID, 0).Contains(mapTile.posID))
                 {
                     mapTile.SetIndicator(MapIndicatorType.Blue);
                 }
@@ -118,14 +118,12 @@ public partial class MapViewMgr : MonoBehaviour
 
     private void SetMapUI_Skill()
     {
-        BattleCharacterData characterData = (BattleCharacterData)PublicTool.GetGameData().GetCurUnitData();
-
         //Go through
         foreach (MapTileBase mapTile in listMapTile)
         {
             if (curUnitData.listValidSkill.Contains(mapTile.posID))
             {
-                if (PublicTool.GetTargetCrossRange(PublicTool.GetGameData().hoverTileID, 0).Contains(mapTile.posID))
+                if (PublicTool.GetTargetCircleRange(PublicTool.GetGameData().hoverTileID, 0).Contains(mapTile.posID))
                 {
                     mapTile.SetIndicator(MapIndicatorType.Red);
                 }
