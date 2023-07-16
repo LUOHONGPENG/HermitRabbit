@@ -9,6 +9,7 @@ public class TestButtonMgr : MonoBehaviour
 
     public Button btnEndTurn;
     public Button btnStartBattle;
+    public Button btnGenerateFoe;
 
 
     public void Init()
@@ -23,6 +24,12 @@ public class TestButtonMgr : MonoBehaviour
         btnEndTurn.onClick.AddListener(delegate ()
         {
             EventCenter.Instance.EventTrigger("EndTurn", null);
+        });
+
+        btnGenerateFoe.onClick.RemoveAllListeners();
+        btnGenerateFoe.onClick.AddListener(delegate ()
+        {
+            EventCenter.Instance.EventTrigger("TestGenerateFoe", null);
         });
     }
 }

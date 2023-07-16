@@ -27,29 +27,22 @@ public partial class MapViewMgr : MonoBehaviour
         listMapTile.Clear();
         dicMapTile.Clear();
         PublicTool.ClearChildItem(tfMapTile);
-        GenerateTile(GameGlobal.mapSize, GameGlobal.mapSize);
+        //GenerateTile(GameGlobal.mapSize, GameGlobal.mapSize);
+        foreach(var mapTileData in PublicTool.GetGameData().listMapTile)
+        {
+            GenerateTile(mapTileData); 
+        }
     }
 
-    public void GenerateTile(int sizeX, int sizeZ)
+    public void GenerateTile(MapTileData mapTileData)
     {
-        int centerX = (sizeX - 1) / 2;
-        int centerZ = (sizeZ - 1) / 2;
-
-
-        for (int i = 0; i < sizeX; i++)
-        {
-            for (int j = 0; j < sizeZ; j++)
-            {
-                Vector2Int posID = new Vector2Int(i, j);
-
-                GameObject objMapTile = GameObject.Instantiate(pfMapTile, PublicTool.ConvertPosFromID(posID), Quaternion.identity, tfMapTile);
-                MapTileBase itemMapTile = objMapTile.GetComponent<MapTileBase>();
-                itemMapTile.Init(posID);
-                listMapTile.Add(itemMapTile);
-                dicMapTile.Add(new Vector2Int(i, j), objMapTile.GetComponent<MapTileBase>());
-                objMapTile.name = string.Format("MapTile{0}_{1}", i, j);
-            }
-        }
+        Vector2Int posID = mapTileData.posID;
+        GameObject objMapTile = GameObject.Instantiate(pfMapTile, PublicTool.ConvertPosFromID(posID), Quaternion.identity, tfMapTile);
+        MapTileBase itemMapTile = objMapTile.GetComponent<MapTileBase>();
+        itemMapTile.Init(mapTileData);
+        listMapTile.Add(itemMapTile);
+        dicMapTile.Add(posID, objMapTile.GetComponent<MapTileBase>());
+        objMapTile.name = string.Format("MapTile{0}_{1}", posID.x, posID.y);
     }
     #endregion
 

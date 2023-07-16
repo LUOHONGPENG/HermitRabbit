@@ -15,4 +15,9 @@ public partial class PublicTool
             EventCenter.Instance.EventTrigger("ChangeInteract", new InteractInfo(state));
         }
     }
+
+    public static void EventRefreshOccupancy()
+    {
+        EventCenter.Instance.EventTrigger("RefreshOccupancy", null);
+    }
 }

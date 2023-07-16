@@ -8,7 +8,6 @@ public class UnitViewMgr : MonoBehaviour
     [Header("Character")]
     public Transform tfCharacter;
     public GameObject pfCharacter;
-    //public List<BattleCharacterView>  
     public Dictionary<int, BattleCharacterView> dicCharacterView = new Dictionary<int, BattleCharacterView>();
 
     [Header("Plant")]
@@ -18,6 +17,7 @@ public class UnitViewMgr : MonoBehaviour
     [Header("Foe")]
     public Transform tfFoe;
     public GameObject pfFoe;
+    public Dictionary<int, BattleFoeView> dicFoeView = new Dictionary<int, BattleFoeView>();
 
     private bool isInit = false;
 
@@ -50,6 +50,7 @@ public class UnitViewMgr : MonoBehaviour
         {
             dicCharacterView.Add(characterView.characterData.keyID,characterView);
         }
+        PublicTool.EventRefreshOccupancy();
     }
 
     public BattleCharacterView GetCharacterView(int keyID)
@@ -63,9 +64,6 @@ public class UnitViewMgr : MonoBehaviour
             return null;
         }
     }
-
-    #endregion
-
     public BattleUnitView GetViewFromUnitInfo(UnitInfo unitInfo)
     {
         Debug.Log(unitInfo.type + " " + unitInfo.keyID);
@@ -73,9 +71,39 @@ public class UnitViewMgr : MonoBehaviour
         {
             case BattleUnitType.Character:
                 return GetCharacterView(unitInfo.keyID);
+            case BattleUnitType.Foe:
+                return GetFoeView(unitInfo.keyID);
         }
         return null;
     }
+
+    #endregion
+
+    #region Foe
+    public void GenerateFoeView(BattleFoeData foeData)
+    {
+        GameObject objFoe = GameObject.Instantiate(pfFoe, tfFoe);
+        BattleFoeView foeView = objFoe.GetComponent<BattleFoeView>();
+        foeView.Init(foeData);
+        if (!dicFoeView.ContainsKey(foeView.foeData.keyID))
+        {
+            dicFoeView.Add(foeView.foeData.keyID, foeView);
+        }
+        PublicTool.EventRefreshOccupancy();
+    }
+
+    public BattleFoeView GetFoeView(int keyID)
+    {
+        if (dicFoeView.ContainsKey(keyID))
+        {
+            return dicFoeView[keyID];
+        }
+        else
+        {
+            return null;
+        }
+    }
+    #endregion
 
     #region ActionDeal
 
@@ -97,7 +125,7 @@ public class UnitViewMgr : MonoBehaviour
                 unitData.curMOV -= cost;
                 //View Move
                 unitView.MoveToPos(targetPos);
-                EventCenter.Instance.EventTrigger("RefreshTileInfo", null);
+                PublicTool.EventRefreshOccupancy();
                 EventCenter.Instance.EventTrigger("RefreshCharacterInfo", null);
             }
         }

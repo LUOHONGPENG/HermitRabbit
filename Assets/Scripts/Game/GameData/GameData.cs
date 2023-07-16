@@ -2,6 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class MapTileData
+{
+    public Vector2Int posID;
+    public int typeID;
+
+    public MapTileData(Vector2Int posID,int typeID)
+    {
+        this.posID = posID;
+        this.typeID = typeID;
+    }
+}
+
+
 /// <summary>
 /// Storing the Data
 /// </summary>
@@ -10,6 +23,9 @@ public partial class GameData
     //Current Phase
     public GamePhase gamePhase = GamePhase.Peace;
 
+    //MapTileData
+    public List<MapTileData> listMapTile = new List<MapTileData>();
+    public Dictionary<Vector2Int, MapTileData> dicMapTile = new Dictionary<Vector2Int, MapTileData>();
     //CharacterData
     public List<BattleCharacterData> listCharacter = new List<BattleCharacterData>();
     public Dictionary<int, BattleCharacterData> dicCharacter = new Dictionary<int, BattleCharacterData>();
@@ -24,6 +40,7 @@ public partial class GameData
 
     public void NewGame()
     {
+        NewGameMapTileData();
         NewGameCharacterData();
         NewGamePlantData();
         NewGameFoeData();
@@ -37,6 +54,27 @@ public partial class GameData
 
         //LoadFoe(Maybe)
     }
+
+    #region Basic-Map
+    public void NewGameMapTileData()
+    {
+        listMapTile.Clear();
+        dicMapTile.Clear();
+
+        for (int i = 0; i < GameGlobal.mapSize; i++)
+        {
+            for (int j = 0; j < GameGlobal.mapSize; j++)
+            {
+                Vector2Int posID = new Vector2Int(i, j);
+
+                MapTileData mapTileData = new MapTileData(posID, 1);
+                listMapTile.Add(mapTileData);
+                dicMapTile.Add(posID, mapTileData);
+            }
+        }
+    }
+
+    #endregion
 
     #region Basic-Character
     public void NewGameCharacterData()
@@ -106,12 +144,13 @@ public partial class GameData
         curFoeKeyID = -1;
     }
 
-    public void GenerateFoeData(int typeID)
+    public BattleFoeData GenerateFoeData(int typeID)
     {
         curFoeKeyID++;
         BattleFoeData foeData = new BattleFoeData(typeID, curFoeKeyID);
         listFoe.Add(foeData);
         dicFoe.Add(curFoeKeyID, foeData);
+        return foeData;
     }
 
     public BattleFoeData GetBattleFoeData(int ID)

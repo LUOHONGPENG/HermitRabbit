@@ -22,6 +22,8 @@ public class BattleCharacterData : BattleUnitData
         //Pos Setting
         posID = new Vector2Int(item.startPos[0], item.startPos[1]);
         //Attribute Setting
+        curHP = item.HP;
+        maxHP = item.HP;
         STR = item.STR;
         CON = item.CON;
         INT = item.INT;

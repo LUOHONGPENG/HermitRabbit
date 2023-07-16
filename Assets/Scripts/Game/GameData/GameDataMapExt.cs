@@ -8,13 +8,15 @@ public partial class GameData
     public List<Vector2Int> listTempFriendPos = new List<Vector2Int>();
     public List<Vector2Int> listTempFoePos = new List<Vector2Int>();
     public List<Vector2Int> listTempAllPos = new List<Vector2Int>();
+    public List<Vector2Int> listTempEmptyPos = new List<Vector2Int>();
 
     //Refresh Valid Range for display map
-    public void RefreshTileInfo()
+    public void RefreshOccupancyInfo()
     {
         listTempFriendPos = GetFriendPos();
         listTempFoePos = GetFoePos();
         listTempAllPos = GetFullPos();
+        listTempEmptyPos = GetEmptyPos();
 
         foreach (var foe in listFoe)
         {
@@ -75,6 +77,20 @@ public partial class GameData
         foreach (var foe in listFoe)
         {
             temp.Add(foe.posID);
+        }
+        return temp;
+    }
+
+    private List<Vector2Int> GetEmptyPos()
+    {
+        List<Vector2Int> temp = new List<Vector2Int>();
+
+        foreach(var map in listMapTile)
+        {
+            if (!listTempAllPos.Contains(map.posID))
+            {
+                temp.Add(map.posID);
+            }
         }
         return temp;
     }

@@ -17,7 +17,7 @@ public class BattleUnitData
     //The current HP of this unit
     public float curHP;
     //The maximum HP of this unit
-    public float maxHP { get; }
+    public float maxHP;
 
     public int curMOV = 0;
     public int maxMOV = 0;

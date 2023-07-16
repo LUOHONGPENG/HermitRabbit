@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,9 +15,10 @@ public partial class LevelMgr
         //About Battle
         EventCenter.Instance.AddEventListener("StartBattle", StartBattleEvent);
         EventCenter.Instance.AddEventListener("EndTurn", EndTurnEvent);
+        EventCenter.Instance.AddEventListener("TestGenerateFoe", TestGenerateFoeEvent);
 
         //About Map
-        EventCenter.Instance.AddEventListener("RefreshTileInfo", RefreshTileInfoEvent);
+        EventCenter.Instance.AddEventListener("RefreshOccupancy", RefreshOccupancyEvent);
         EventCenter.Instance.AddEventListener("SetHoverTile", SetHoverTileEvent);
     }
 
@@ -32,11 +34,14 @@ public partial class LevelMgr
         //About Battle
         EventCenter.Instance.RemoveEventListener("StartBattle", StartBattleEvent);
         EventCenter.Instance.RemoveEventListener("EndTurn", EndTurnEvent);
-        
+        EventCenter.Instance.RemoveEventListener("TestGenerateFoe", TestGenerateFoeEvent);
+
         //About Map
-        EventCenter.Instance.RemoveEventListener("RefreshTileInfo", RefreshTileInfoEvent);
+        EventCenter.Instance.RemoveEventListener("RefreshOccupancy", RefreshOccupancyEvent);
         EventCenter.Instance.RemoveEventListener("SetHoverTile", SetHoverTileEvent);
     }
+
+
 
     #region EventDeal_Input
     private void ChangeInteractEvent(object arg0)
@@ -89,12 +94,18 @@ public partial class LevelMgr
     {
         battleMgr.EndTurnPhase();
     }
+
+    private void TestGenerateFoeEvent(object arg0)
+    {
+        BattleFoeData newFoeData = gameData.GenerateFoeData(1001);
+        unitViewMgr.GenerateFoeView(newFoeData);
+    }
     #endregion
 
     #region EventDeal_Map
-    private void RefreshTileInfoEvent(object arg0)
+    private void RefreshOccupancyEvent(object arg0)
     {
-        gameData.RefreshTileInfo();
+        gameData.RefreshOccupancyInfo();
     }
 
     private void SetHoverTileEvent(object arg0)

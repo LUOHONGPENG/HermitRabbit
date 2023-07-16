@@ -48,7 +48,7 @@ public partial class BattleMgr : Singleton<BattleMgr>
                 break;
         }
         Debug.Log("Start Turn " + numTurn + " " + battleTurnPhase.ToString());
-        EventCenter.Instance.EventTrigger("RefreshTileInfo", null);
+        PublicTool.EventRefreshOccupancy();
     }
 
     public void EndTurnPhase()

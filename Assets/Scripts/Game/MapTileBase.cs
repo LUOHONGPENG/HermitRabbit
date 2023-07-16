@@ -7,14 +7,14 @@ public class MapTileBase : MonoBehaviour
     public SpriteRenderer spIndicator;
     public List<Color> listColorIndicator;
 
+    public MapTileData mapTileData;
     public Vector2Int posID;
 
-    public void Init(Vector2Int posID)
+    public void Init(MapTileData mapTileData)
     {
-        this.posID = posID;
+        this.mapTileData = mapTileData;
+        this.posID = mapTileData.posID;
     }
-
-
 
     #region Indicator
     
