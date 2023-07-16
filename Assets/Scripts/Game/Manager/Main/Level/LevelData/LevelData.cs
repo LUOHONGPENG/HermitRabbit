@@ -7,6 +7,9 @@ using UnityEngine;
 /// </summary>
 public partial class LevelData
 {
+    //Status Data
+    public LevelPhase levelPhase = LevelPhase.Peace;
+
     //CharacterData
     public List<BattleCharacterData> listCharacter = new List<BattleCharacterData>();
     public Dictionary<int, BattleCharacterData> dicCharacter = new Dictionary<int, BattleCharacterData>();

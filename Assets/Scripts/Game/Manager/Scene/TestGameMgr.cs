@@ -7,7 +7,6 @@ public class TestGameMgr : SceneGameMgr
 {
     public void Start()
     {
-        GameGlobal.targetScene = SceneName.Test;
         StartCoroutine(IE_Init());
     }
 

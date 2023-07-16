@@ -68,17 +68,9 @@ public partial class InputMgr
 
     private bool DealClickCharacterAction(BattleCharacterView character)
     {
-        LevelMgr level;
-        if (PublicTool.GetLevelMgr() != null)
-        {
-            level = PublicTool.GetLevelMgr();
-        }
-        else
-        {
-            return false;
-        }
+        LevelData levelData = PublicTool.GetLevelData();
 
-        if(level.levelPhase == LevelPhase.Battle)
+        if(levelData.levelPhase == LevelPhase.Battle)
         {
             switch (interactState)
             {
@@ -99,18 +91,10 @@ public partial class InputMgr
 
     private bool DealClickMapAction(MapTileBase mapTile)
     {
-        LevelMgr level;
-        if (PublicTool.GetLevelMgr() != null)
-        {
-            level = PublicTool.GetLevelMgr();
-        }
-        else
-        {
-            return false;
-        }
+        LevelData levelData = PublicTool.GetLevelData();
 
 
-        if (level.levelPhase == LevelPhase.Battle)
+        if (levelData.levelPhase == LevelPhase.Battle)
         {
             switch (interactState)
             {
@@ -122,7 +106,7 @@ public partial class InputMgr
                     return true;
             }
         }
-        else if(level.levelPhase == LevelPhase.Peace)
+        else if(levelData.levelPhase == LevelPhase.Peace)
         {
             switch (interactState)
             {

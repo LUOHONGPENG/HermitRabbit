@@ -36,7 +36,7 @@ public partial class LevelMgr
     #region EventDeal
     private void StartBattleEvent(object arg0)
     {
-        levelPhase = LevelPhase.Battle;
+        PublicTool.GetLevelData().levelPhase = LevelPhase.Battle;
         battleMgr.StartNewBattle(this);
     }
 
@@ -52,8 +52,8 @@ public partial class LevelMgr
         switch (info.state)
         {
             case InteractState.Skill:
-                GetLevelData().SetCurBattleSkillID(info.data_0);
-                GetLevelData().RefreshSkillTileInfo();
+                levelData.SetCurBattleSkillID(info.data_0);
+                levelData.RefreshSkillTileInfo();
                 break;
         }
 
@@ -61,7 +61,7 @@ public partial class LevelMgr
 
     private void RefreshTileInfoEvent(object arg0)
     {
-        GetLevelData().RefreshTileInfo();
+        levelData.RefreshTileInfo();
     }
 
     private void SetHoverTileEvent(object arg0)
@@ -74,7 +74,7 @@ public partial class LevelMgr
 
     private void InputChooseCharacterEvent(object arg0)
     {
-        GetLevelData().SetCurUnitInfo(BattleUnitType.Character, (int)arg0);
+        levelData.SetCurUnitInfo(BattleUnitType.Character, (int)arg0);
     }
 
     private void InputMoveActionEvent(object arg0)

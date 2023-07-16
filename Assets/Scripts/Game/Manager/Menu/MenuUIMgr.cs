@@ -13,7 +13,7 @@ public class MenuUIMgr : MonoBehaviour
         btnTest.onClick.RemoveAllListeners();
         btnTest.onClick.AddListener(delegate ()
         {
-            SceneManager.LoadScene("Test");
+            GameMgr.Instance.LoadScene(SceneName.Test);
         });
     }
 }

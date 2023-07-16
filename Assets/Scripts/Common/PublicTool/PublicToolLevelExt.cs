@@ -4,28 +4,9 @@ using UnityEngine;
 
 public partial class PublicTool
 {
-    public static LevelMgr GetLevelMgr()
-    {
-        if (GameMgr.Instance.curSceneGameMgr != null && GameMgr.Instance.curSceneGameMgr.levelMgr != null)
-        {
-            return GameMgr.Instance.curSceneGameMgr.levelMgr;
-        }
-        else
-        {
-            return null;
-        }
-    }
-
     public static LevelData GetLevelData()
     {
-        if (GameMgr.Instance.curSceneGameMgr != null && GameMgr.Instance.curSceneGameMgr.levelMgr != null)
-        {
-            return GameMgr.Instance.curSceneGameMgr.levelMgr.GetLevelData();
-        }
-        else
-        {
-            return null;
-        }
+        return GameMgr.Instance.curLevelData;
     }
 
     public static CharacterSkillExcelItem GetSkillItem(int SkillID)

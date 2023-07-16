@@ -10,18 +10,15 @@ public partial class LevelMgr : MonoBehaviour
     public UnitViewMgr unitViewMgr;
     public BattleMgr battleMgr;
 
-    private LevelData levelData;
     private bool isInit = false;
 
-    [Header("StateInfo")]
-    public LevelPhase levelPhase = LevelPhase.Peace;
+    private LevelData levelData;
+
 
     #region Basic & Bind
     public void Init()
     {
-        levelData = new LevelData();
-        //If New Game
-        levelData.NewGameData();
+        levelData = PublicTool.GetLevelData();
 
         mapViewMgr.Init();
         unitViewMgr.Init();
@@ -43,11 +40,4 @@ public partial class LevelMgr : MonoBehaviour
     #endregion
 
 
-    #region GetInfo
-
-    public LevelData GetLevelData()
-    {
-        return levelData;
-    }
-    #endregion
 }

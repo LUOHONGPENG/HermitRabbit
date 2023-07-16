@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class GameMgr : MonoSingleton<GameMgr>
+public partial class GameMgr : MonoSingleton<GameMgr>
 {
     public Camera curMapCamera;
     public Camera curUICamera;
@@ -23,11 +23,27 @@ public class GameMgr : MonoSingleton<GameMgr>
         yield return StartCoroutine(ExcelDataMgr.Instance.IE_Init());
         yield return StartCoroutine(InputMgr.Instance.IE_Init());
         yield return StartCoroutine(SoundMgr.Instance.IE_Init());
-        SceneManager.LoadScene(GameGlobal.targetScene.ToString());
+
+        LoadScene(SceneName.Menu);
+
         Debug.Log("Init Game Manager");
         isInit = true;
     }
     #endregion
 
+    #region LoadScene
+
+    public void LoadScene(SceneName sceneName)
+    {
+        GameGlobal.targetScene = sceneName;
+        switch (GameGlobal.targetScene)
+        {
+            case SceneName.Test:
+                NewLevelData();
+                break;
+        }
+        SceneManager.LoadScene(GameGlobal.targetScene.ToString());
+    }
+    #endregion
 
 }
