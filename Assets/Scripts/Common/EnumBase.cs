@@ -85,7 +85,8 @@ public enum SkillElementType
 
 public enum EffectUITextType
 {
-    Damage
+    Damage,
+    Warning
 }
 
 #region Data Struct
@@ -133,13 +134,13 @@ public struct SkillMapInfo
 public struct EffectUITextInfo
 {
     public EffectUITextType type;
-    public Vector3 pos;
+    public Vector2Int posID;
     public int argNum;
     public string argString;
-    public EffectUITextInfo(EffectUITextType type, Vector3 pos, int argNum, string argString = "")
+    public EffectUITextInfo(EffectUITextType type, Vector2Int posID, int argNum, string argString = "")
     {
         this.type = type;
-        this.pos = pos;
+        this.posID = posID;
         this.argNum = argNum;
         this.argString = argString;
     }

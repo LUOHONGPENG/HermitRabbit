@@ -89,12 +89,14 @@ public partial class LevelMgr
         BattleUnitData skillMaster = gameData.GetCurUnitData();
         if (!skillMaster.listValidSkill.Contains(targetPos))
         {
+            EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Warning, targetPos, -1,"No target"));
             Debug.Log("No target");
             return;
         }
 
         if (skillMaster.curSP <= 0)
         {
+            EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Warning, targetPos, -1, "SP not enough"));
             Debug.Log("SP not enough");
             return;
         }
@@ -120,7 +122,7 @@ public partial class LevelMgr
                     foeData.GetHurt(100);
                     //View
                     BattleFoeView foeView = unitViewMgr.GetFoeView(foeData.keyID);
-                    EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Damage, foeView.transform.position,100));
+                    EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Damage, foeData.posID,100));
                     //Dead
                     if (foeData.isDead)
                     {

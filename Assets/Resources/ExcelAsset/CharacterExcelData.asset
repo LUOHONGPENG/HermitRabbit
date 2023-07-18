@@ -22,7 +22,7 @@ MonoBehaviour:
     WIS: 8
     MOV: 4
     SP: 4
-    AttackID: 1101
+    AttackID: 1102
     startPos: 0100000001000000
     pixelUrl: Sprite/Character/PixelAlfven
     portraitUrl: Sprite/Portrait/imgPortrait1001

@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class EffectUIMgr : MonoBehaviour
 {
-    public Transform tfDamageText;
+    public Transform tfEffectText;
     public GameObject pfDamageText;
+    public GameObject pfWarningText;
+
 
     private void OnEnable()
     {
@@ -24,17 +26,27 @@ public class EffectUIMgr : MonoBehaviour
         switch (info.type)
         {
             case EffectUITextType.Damage:
-                InitDamageText(info.argNum, info.pos);
+                InitDamageText(info.argNum, info.posID);
+                break;
+            case EffectUITextType.Warning:
+                InitWarningText(info.argString, info.posID);
                 break;
         }
 
 
     }
 
-    public void InitDamageText(float damage, Vector3 pos)
+    public void InitDamageText(float damage, Vector2Int posID)
     {
-        GameObject objDamage = GameObject.Instantiate(pfDamageText, tfDamageText);
+        GameObject objDamage = GameObject.Instantiate(pfDamageText, tfEffectText);
         EffectDamageTextItem efDamage = objDamage.GetComponent<EffectDamageTextItem>();
-        efDamage.Init(damage, pos);
+        efDamage.Init(damage, posID);
+    }
+
+    public void InitWarningText(string content, Vector2Int posID)
+    {
+        GameObject objWarning = GameObject.Instantiate(pfWarningText, tfEffectText);
+        EffectWarningTextItem efWarning = objWarning.GetComponent<EffectWarningTextItem>();
+        efWarning.Init(content, posID);
     }
 }

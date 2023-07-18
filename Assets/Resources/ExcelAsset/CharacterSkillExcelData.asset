@@ -23,10 +23,18 @@ MonoBehaviour:
     isTargetFoe: 1
   - id: 1101
     name: Fire Ball
-    desc: Use fire ball to attack multiple foe.
+    desc: Use fire ball to attack multiple foes.
     element: 1
     range: 4
     radius: 1
+    regionType: 0
+    isTargetFoe: 1
+  - id: 1102
+    name: Inferno
+    desc: Summon fire vortex to burn multiple foes.
+    element: 1
+    range: 4
+    radius: 2
     regionType: 0
     isTargetFoe: 1
   - id: 2001

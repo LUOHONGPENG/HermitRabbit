@@ -86,6 +86,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d46a90c0dbbb4b49bd36b03df46ab57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tfDamageText: {fileID: 3894039273186379246}
+  tfEffectText: {fileID: 3894039273186379246}
   pfDamageText: {fileID: 7723500433506330755, guid: 5e293128acf151e4e86c625fa6508707,
+    type: 3}
+  pfWarningText: {fileID: 5806294652876298043, guid: 6a3d9d45920311943a6a17daebad0ceb,
     type: 3}
