@@ -67,13 +67,13 @@ public class BattleUnitData
 
     public void RefreshValidSkill()
     {
-        SkillMapInfo skillMapInfo = PublicTool.GetGameData().GetCurSkillMapInfo();
-        listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, skillMapInfo.range));
+        SkillInfo skillInfo = PublicTool.GetGameData().GetCurSkillMapInfo();
+        listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, skillInfo.range));
 
         //According to the SkillType to decide the skill radius
         List<Vector2Int> listTemp = new List<Vector2Int>();
 
-        if (skillMapInfo.isTargetFoe)
+        if (skillInfo.isTargetFoe)
         {
             //Get the position of All Foes
             List<Vector2Int> listFoePos = PublicTool.GetGameData().listTempFoePos;
@@ -81,10 +81,10 @@ public class BattleUnitData
             {
                 //Get the radius of each view pos
                 List<Vector2Int> listRadius = new List<Vector2Int>();
-                switch (skillMapInfo.regionType)
+                switch (skillInfo.regionType)
                 {
                     case SkillRegionType.Circle:
-                        listRadius = PublicTool.GetTargetCircleRange(viewPos, skillMapInfo.radius);
+                        listRadius = PublicTool.GetTargetCircleRange(viewPos, skillInfo.radius);
                         break;
                 }
                 for(int i = 0; i < listRadius.Count; i++)

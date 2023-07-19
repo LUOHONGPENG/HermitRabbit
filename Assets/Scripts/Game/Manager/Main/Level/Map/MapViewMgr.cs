@@ -111,7 +111,7 @@ public partial class MapViewMgr : MonoBehaviour
 
     private void SetMapUI_Skill()
     {
-        SkillMapInfo skillMapInfo = PublicTool.GetGameData().GetCurSkillMapInfo();
+        SkillInfo skillMapInfo = PublicTool.GetGameData().GetCurSkillMapInfo();
 
         //Deal with the hover radius
         Vector2Int hoverTileID = PublicTool.GetGameData().hoverTileID;

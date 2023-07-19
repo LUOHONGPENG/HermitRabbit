@@ -115,14 +115,14 @@ public struct InteractInfo
     }
 }
 
-public struct SkillMapInfo
+public struct SkillInfo
 {
     public SkillRegionType regionType;
     public int range;
     public int radius;
     public bool isTargetFoe;
 
-    public SkillMapInfo(CharacterSkillExcelItem item)
+    public SkillInfo(CharacterSkillExcelItem item)
     {
         this.regionType = item.regionType;
         this.range = item.range;

@@ -84,9 +84,10 @@ public partial class LevelMgr
     private void InputSkillActionEvent(object arg0)
     {
         Vector2Int targetPos = (Vector2Int)arg0;
-
-        SkillMapInfo skillMapInfo = gameData.GetCurSkillMapInfo();
+        SkillInfo skillMapInfo = gameData.GetCurSkillMapInfo();
         BattleUnitData skillMaster = gameData.GetCurUnitData();
+
+
         if (!skillMaster.listValidSkill.Contains(targetPos))
         {
             EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Warning, targetPos, -1,"No target"));
