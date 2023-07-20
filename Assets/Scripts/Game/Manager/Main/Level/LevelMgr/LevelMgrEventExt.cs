@@ -95,15 +95,15 @@ public partial class LevelMgr
             return;
         }
 
-        if (skillMaster.curSP <= 0)
+        if (skillMaster.curAP <= 0)
         {
             EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Warning, targetPos, -1, "SP not enough"));
-            Debug.Log("SP not enough");
+            Debug.Log("AP not enough");
             return;
         }
 
         //Spell Skill
-        skillMaster.curSP--;
+        skillMaster.curAP--;
         List<Vector2Int> listPos = new List<Vector2Int>();
         switch (skillMapInfo.regionType)
         {

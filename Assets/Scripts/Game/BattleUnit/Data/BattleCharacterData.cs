@@ -24,8 +24,8 @@ public class BattleCharacterData : BattleUnitData
         //Attribute Setting
         curHP = item.HP;
         maxHP = item.HP;
-        curSP = item.SP;
-        maxSP = item.SP;
+        curAP = item.SP;
+        maxAP = item.SP;
         curMOV = item.MOV;
         maxMOV = item.MOV;
 

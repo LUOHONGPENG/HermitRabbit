@@ -22,8 +22,8 @@ public class BattleUnitData
     public int curMOV = 0;
     public int maxMOV = 0;
 
-    public int curSP = 1;
-    public int maxSP = 1;
+    public int curAP = 1;
+    public int maxAP = 1;
 
     public float curATK { get; }
     public float curDEF { get; }
