@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BattleUnitView : MonoBehaviour
 {
@@ -21,10 +22,17 @@ public class BattleUnitView : MonoBehaviour
         srUnit.transform.LookAt(Camera.main.transform.forward + srUnit.transform.position);
     }
 
-    public void MoveToPos(Vector2Int posID)
+    public void MoveToPos(Vector2Int posID,bool battleMove)
     {
         Vector3 tilePos = PublicTool.ConvertPosFromID(posID);
-        this.transform.localPosition = new Vector3(tilePos.x, 0.35f, tilePos.z);
+        if (battleMove)
+        {
+            this.transform.DOLocalMove(new Vector3(tilePos.x, 0.35f, tilePos.z), 0.5f);
+        }
+        else
+        {
+            this.transform.localPosition = new Vector3(tilePos.x, 0.35f, tilePos.z);
+        }
     }
 
     public virtual void RequestBattleText()

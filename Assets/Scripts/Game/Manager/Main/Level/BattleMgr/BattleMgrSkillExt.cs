@@ -24,10 +24,10 @@ public partial class BattleMgr
         }
 
         //StartTheSkill IEnumerator
-        StartCoroutine(IE_InvokeSkill());
+        StartCoroutine(IE_InvokeSkillAction());
     }
 
-    private IEnumerator IE_InvokeSkill()
+    private IEnumerator IE_InvokeSkillAction()
     {
         EventCenter.Instance.EventTrigger("CharacterSkillStart",null);
         PublicTool.EventChangeInteract(InteractState.WaitAction);
@@ -64,7 +64,6 @@ public partial class BattleMgr
                 if (gameData.dicTempMapUnit[pos].type == BattleUnitType.Foe && skillBattleInfo.isTargetFoe)
                 {
                     BattleFoeData foeData = (BattleFoeData)gameData.GetDataFromUnitInfo(gameData.dicTempMapUnit[pos]);
-                    //foeData.GetHurt(100);
                     foeData.ClearBattleTextQueue();
                     dicFoeSkillTarget.Add(foeData.keyID, foeData);
                 }
