@@ -17,8 +17,10 @@ public class BattleOptionUIMgr : MonoBehaviour
     [Header("Action")]
     public Button btnMove;
     public Button btnAttack;
+    public Transform tfSkillButton;
+    public GameObject pfSkillButton;
 
-    public BattleCharacterData curCharacterData;
+    private BattleCharacterData curCharacterData;
 
     public void Init()
     {
@@ -44,7 +46,6 @@ public class BattleOptionUIMgr : MonoBehaviour
         EventCenter.Instance.AddEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.AddEventListener("RefreshCharacterInfo", RefreshCharacterInfoEvent);
     }
-
 
     public void OnDisable()
     {

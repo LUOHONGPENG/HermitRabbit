@@ -18,10 +18,9 @@ public partial class BattleMgr
             return;
         }
 
+        //StartTheSkill IEnumerator
         StartCoroutine(IE_InvokeSkill(targetPos, skillBattleInfo, skillMaster));
     }
-
-
 
     private IEnumerator IE_InvokeSkill(Vector2Int targetPos, SkillBattleInfo skillBattleInfo, BattleUnitData skillMaster)
     {
