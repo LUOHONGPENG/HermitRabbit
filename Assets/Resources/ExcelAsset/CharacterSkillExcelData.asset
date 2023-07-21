@@ -16,7 +16,7 @@ MonoBehaviour:
   - id: 1001
     name: Elemental Ball
     desc: Use elemental ball to attack single foe.
-    costSP: 1
+    costAP: 1
     element: 0
     range: 4
     radius: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
   - id: 1101
     name: Fire Ball
     desc: Use fire ball to attack multiple foes.
-    costSP: 2
+    costAP: 2
     element: 1
     range: 3
     radius: 1
@@ -34,7 +34,7 @@ MonoBehaviour:
   - id: 1102
     name: Inferno
     desc: Summon fire vortex to burn multiple foes.
-    costSP: 3
+    costAP: 3
     element: 1
     range: 3
     radius: 2
@@ -43,7 +43,7 @@ MonoBehaviour:
   - id: 2001
     name: Strike
     desc: Use weapon to strike a foe.
-    costSP: 1
+    costAP: 1
     element: 0
     range: 1
     radius: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
   - id: 2101
     name: Wind Chop
     desc: Cut the foes around you.
-    costSP: 1
+    costAP: 1
     element: 0
     range: 0
     radius: 1

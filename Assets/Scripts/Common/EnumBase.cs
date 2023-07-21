@@ -113,6 +113,8 @@ public struct UnitInfo
 
 public struct SkillBattleInfo
 {
+    public int costAP;
+
     public SkillRegionType regionType;
     public int range;
     public int radius;
@@ -120,6 +122,8 @@ public struct SkillBattleInfo
 
     public SkillBattleInfo(CharacterSkillExcelItem item)
     {
+        this.costAP = item.costAP;
+
         this.regionType = item.regionType;
         this.range = item.range;
         this.radius = item.radius;

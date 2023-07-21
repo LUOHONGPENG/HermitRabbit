@@ -4,47 +4,52 @@ using UnityEngine;
 
 public partial class BattleMgr
 {
-    Dictionary<int, BattleFoeData> dicFoeSkillTarget = new Dictionary<int, BattleFoeData>();
-    Dictionary<int, BattleCharacterData> dicCharacterSkillTarget = new Dictionary<int, BattleCharacterData>();
+    private Vector2Int skillTargetPos;
+    private SkillBattleInfo skillBattleInfo;
+    private BattleUnitData skillSubject;
+    private Dictionary<int, BattleFoeData> dicFoeSkillTarget = new Dictionary<int, BattleFoeData>();
+    private Dictionary<int, BattleCharacterData> dicCharacterSkillTarget = new Dictionary<int, BattleCharacterData>();
 
     public void SkillActionRequest(Vector2Int targetPos)
     {
-        SkillBattleInfo skillBattleInfo = gameData.GetCurSkillBattleInfo();
-        BattleUnitData skillMaster = gameData.GetCurUnitData();
+        //Set initial Data
+        skillTargetPos = targetPos;
+        skillBattleInfo = gameData.GetCurSkillBattleInfo();
+        skillSubject = gameData.GetCurUnitData();
 
         //Check Skill Condition
-        if (!CheckSkillCondition(targetPos, skillBattleInfo, skillMaster))
+        if (!CheckSkillCondition())
         {
             return;
         }
 
         //StartTheSkill IEnumerator
-        StartCoroutine(IE_InvokeSkill(targetPos, skillBattleInfo, skillMaster));
+        StartCoroutine(IE_InvokeSkill());
     }
 
-    private IEnumerator IE_InvokeSkill(Vector2Int targetPos, SkillBattleInfo skillBattleInfo, BattleUnitData skillMaster)
+    private IEnumerator IE_InvokeSkill()
     {
         EventCenter.Instance.EventTrigger("CharacterSkillStart",null);
         PublicTool.EventChangeInteract(InteractState.WaitAction);
-        yield return StartCoroutine(BeforeSkill(targetPos,skillBattleInfo,skillMaster));
-        yield return StartCoroutine(InvokeSkillData(targetPos, skillBattleInfo, skillMaster));
+        yield return StartCoroutine(BeforeSkill());
+        yield return StartCoroutine(InvokeSkillData());
         yield return new WaitForSeconds(1f);
         yield return StartCoroutine(InvokeSkillText());
         AfterSkill();
         EventCenter.Instance.EventTrigger("CharacterSkillEnd", null);
     }
 
-    private IEnumerator BeforeSkill(Vector2Int targetPos, SkillBattleInfo skillBattleInfo, BattleUnitData skillMaster)
+    private IEnumerator BeforeSkill()
     {
         //Cost AP
-        skillMaster.curAP--;
+        skillSubject.curAP -= skillBattleInfo.costAP;
 
         //Calculate the target that will be affected
         List<Vector2Int> listPos = new List<Vector2Int>();
         switch (skillBattleInfo.regionType)
         {
             case SkillRegionType.Circle:
-                listPos = PublicTool.GetTargetCircleRange(targetPos, skillBattleInfo.radius);
+                listPos = PublicTool.GetTargetCircleRange(skillTargetPos, skillBattleInfo.radius);
                 break;
         }
 
@@ -68,13 +73,13 @@ public partial class BattleMgr
         yield break;
     }
 
-    private IEnumerator InvokeSkillData(Vector2Int targetPos, SkillBattleInfo skillBattleInfo, BattleUnitData skillMaster)
+    private IEnumerator InvokeSkillData()
     {
         //Deal Effect
         foreach (var item in dicFoeSkillTarget)
         {
             BattleFoeData foeData = item.Value;
-            SkillDamageRequest(skillMaster, foeData, 100);
+            SkillDamageRequest(skillSubject, foeData, 100);
         }
         yield break;
     }
@@ -113,17 +118,17 @@ public partial class BattleMgr
         }
     }
 
-    private bool CheckSkillCondition(Vector2Int targetPos, SkillBattleInfo skillBattleInfo, BattleUnitData skillMaster)
+    private bool CheckSkillCondition()
     {
-        if (!skillMaster.listValidSkill.Contains(targetPos))
+        if (!skillSubject.listValidSkill.Contains(skillTargetPos))
         {
-            EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Warning, targetPos, -1, "No target"));
+            EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Warning, skillTargetPos, -1, "No target"));
             Debug.Log("No target");
             return false;
         }
-        else if (skillMaster.curAP <= 0)
+        else if (skillSubject.curAP < skillBattleInfo.costAP)
         {
-            EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Warning, targetPos, -1, "SP not enough"));
+            EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Warning, skillTargetPos, -1, "SP not enough"));
             Debug.Log("AP not enough");
             return false;
         }

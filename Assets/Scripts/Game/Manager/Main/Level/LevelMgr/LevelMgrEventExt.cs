@@ -58,7 +58,8 @@ public partial class LevelMgr
     private void InputMoveActionEvent(object arg0)
     {
         Vector2Int targetPos = (Vector2Int)arg0;
-        unitViewMgr.InvokeAction_SelfMove(targetPos);
+        battleMgr.MoveActionRequest(targetPos);
+
     }
 
     private void InputSkillActionEvent(object arg0)

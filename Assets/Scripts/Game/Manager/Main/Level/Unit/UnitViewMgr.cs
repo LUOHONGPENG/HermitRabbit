@@ -115,35 +115,5 @@ public class UnitViewMgr : MonoBehaviour
     }
     #endregion
 
-    #region ActionDeal
 
-    public void InvokeAction_SelfMove(Vector2Int targetPos)
-    {
-        GameData gameData = PublicTool.GetGameData();
-        UnitInfo curUnitInfo = gameData.GetCurUnitInfo();
-        //Data
-        BattleUnitData unitData = gameData.GetCurUnitData();
-        if (unitData.listValidMove.Contains(targetPos))
-        {
-            int cost = PublicTool.CalculateGlobalDis(unitData.posID, targetPos);
-            //View
-            BattleUnitView unitView = GetViewFromUnitInfo(curUnitInfo);
-            if (unitView != null)
-            {
-                //Data Move
-                unitData.posID = targetPos;
-                unitData.curMOV -= cost;
-                //View Move
-                unitView.MoveToPos(targetPos);
-                PublicTool.EventRefreshOccupancy();
-                PublicTool.EventRefreshCharacterUI();
-            }
-        }
-    }
-
-    public void InvokeAction_Skill(int SkillID,Vector2Int targetPos)
-    {
-
-    }
-    #endregion
 }

@@ -10,7 +10,7 @@ public partial class CharacterSkillExcelItem : ExcelItemBase
 {
 	public string name;
 	public string desc;
-	public int costSP;
+	public int costAP;
 	public SkillElementType element;
 	public int range;
 	public int radius;
@@ -38,7 +38,7 @@ public class CharacterSkillAssetAssignment
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].name = allItemValueRowList[i]["name"];
 			items[i].desc = allItemValueRowList[i]["desc"];
-			items[i].costSP = Convert.ToInt32(allItemValueRowList[i]["costSP"]);
+			items[i].costAP = Convert.ToInt32(allItemValueRowList[i]["costAP"]);
 			items[i].element = (SkillElementType) Enum.Parse(typeof(SkillElementType), allItemValueRowList[i]["element"], true);
 			items[i].range = Convert.ToInt32(allItemValueRowList[i]["range"]);
 			items[i].radius = Convert.ToInt32(allItemValueRowList[i]["radius"]);
