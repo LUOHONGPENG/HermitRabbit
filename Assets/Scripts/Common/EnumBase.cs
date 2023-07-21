@@ -88,6 +88,14 @@ public enum EffectUITextType
     Warning
 }
 
+public enum BattleTextType
+{
+    Damage,
+    Heal,
+    Debuff,
+    Buff
+}
+
 #region Data Struct
 
 public struct UnitInfo
@@ -131,6 +139,18 @@ public struct EffectUITextInfo
         this.posID = posID;
         this.argNum = argNum;
         this.argString = argString;
+    }
+}
+
+public struct BattleTextInfo
+{
+    public BattleTextType type;
+    public string info;
+
+    public BattleTextInfo(BattleTextType type, string info)
+    {
+        this.type = type;
+        this.info = info;
     }
 }
 #endregion

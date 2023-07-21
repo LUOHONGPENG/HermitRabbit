@@ -27,7 +27,9 @@ public partial class BattleMgr
         EventCenter.Instance.EventTrigger("CharacterSkillStart",null);
         PublicTool.EventChangeInteract(InteractState.WaitAction);
         yield return StartCoroutine(BeforeSkill(targetPos,skillBattleInfo,skillMaster));
+        yield return StartCoroutine(InvokeSkillData(targetPos, skillBattleInfo, skillMaster));
         yield return new WaitForSeconds(1f);
+        yield return StartCoroutine(InvokeSkillText());
         AfterSkill();
         EventCenter.Instance.EventTrigger("CharacterSkillEnd", null);
     }
@@ -57,26 +59,40 @@ public partial class BattleMgr
                 if (gameData.dicTempMapUnit[pos].type == BattleUnitType.Foe && skillBattleInfo.isTargetFoe)
                 {
                     BattleFoeData foeData = (BattleFoeData)gameData.GetDataFromUnitInfo(gameData.dicTempMapUnit[pos]);
-                    foeData.GetHurt(100);
+                    //foeData.GetHurt(100);
+                    foeData.ClearBattleTextQueue();
                     dicFoeSkillTarget.Add(foeData.keyID, foeData);
                 }
             }
         }
-
         yield break;
     }
 
-    private void AfterSkill()
+    private IEnumerator InvokeSkillData(Vector2Int targetPos, SkillBattleInfo skillBattleInfo, BattleUnitData skillMaster)
+    {
+        //Deal Effect
+        foreach (var item in dicFoeSkillTarget)
+        {
+            BattleFoeData foeData = item.Value;
+            SkillDamageRequest(skillMaster, foeData, 100);
+        }
+        yield break;
+    }
+
+    private IEnumerator InvokeSkillText()
     {
         //ShowDamage
         foreach (var item in dicFoeSkillTarget)
         {
             BattleFoeData foeData = item.Value;
             BattleFoeView foeView = unitViewMgr.GetFoeView(foeData.keyID);
-            EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Damage, foeData.posID, 100));
+            foeView.RequestBattleText();
         }
+        yield break;
+    }
 
-
+    private void AfterSkill()
+    {
         //Clear Foe
         foreach (var item in dicFoeSkillTarget)
         {

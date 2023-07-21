@@ -26,7 +26,7 @@ public class EffectUIMgr : MonoBehaviour
         switch (info.type)
         {
             case EffectUITextType.Damage:
-                InitDamageText(info.argNum, info.posID);
+                InitDamageText(info.argString, info.posID);
                 break;
             case EffectUITextType.Warning:
                 InitWarningText(info.argString, info.posID);
@@ -36,11 +36,11 @@ public class EffectUIMgr : MonoBehaviour
 
     }
 
-    public void InitDamageText(float damage, Vector2Int posID)
+    public void InitDamageText(string info, Vector2Int posID)
     {
         GameObject objDamage = GameObject.Instantiate(pfDamageText, tfEffectText);
         EffectDamageTextItem efDamage = objDamage.GetComponent<EffectDamageTextItem>();
-        efDamage.Init(damage, posID);
+        efDamage.Init(info, posID);
     }
 
     public void InitWarningText(string content, Vector2Int posID)

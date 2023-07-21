@@ -124,4 +124,24 @@ public class BattleUnitData
     }
 
     #endregion
+
+    #region BattleTextQueue
+
+    private Queue<BattleTextInfo> queueBattleText = new Queue<BattleTextInfo>();
+
+    public void ClearBattleTextQueue()
+    {
+        queueBattleText.Clear();
+    }
+
+    public void EnqueueBattleText(BattleTextInfo info)
+    {
+        queueBattleText.Enqueue(info);
+    }
+
+    public Queue<BattleTextInfo> GetQueueBattleText()
+    {
+        return queueBattleText;
+    }
+    #endregion
 }
