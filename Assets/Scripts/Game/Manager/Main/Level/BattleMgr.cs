@@ -29,7 +29,7 @@ public partial class BattleMgr : Singleton<BattleMgr>
         this.parent = parent;
 
         numTurn = 1;
-        battleTurnPhase = BattlePhase.Character;
+        battleTurnPhase = BattlePhase.CharacterPhase;
         StartTurnPhase();
     }
 
@@ -37,13 +37,10 @@ public partial class BattleMgr : Singleton<BattleMgr>
     {
         switch (battleTurnPhase)
         {
-            case BattlePhase.Character:
+            case BattlePhase.CharacterPhase:
                 StartCharacterPhase();
                 break;
-            case BattlePhase.Plant:
-                StartPlantPhase();
-                break;
-            case BattlePhase.Foe:
+            case BattlePhase.FoePhase:
                 StartFoePhase();
                 break;
         }
@@ -55,14 +52,11 @@ public partial class BattleMgr : Singleton<BattleMgr>
     {
         switch (battleTurnPhase)
         {
-            case BattlePhase.Character:
-                battleTurnPhase = BattlePhase.Plant;
+            case BattlePhase.CharacterPhase:
+                battleTurnPhase = BattlePhase.FoePhase;
                 break;
-            case BattlePhase.Plant:
-                battleTurnPhase = BattlePhase.Foe;
-                break;
-            case BattlePhase.Foe:
-                battleTurnPhase = BattlePhase.Character;
+            case BattlePhase.FoePhase:
+                battleTurnPhase = BattlePhase.CharacterPhase;
                 numTurn++;
                 break;
         }
@@ -74,10 +68,6 @@ public partial class BattleMgr : Singleton<BattleMgr>
         PublicTool.EventChangeInteract(InteractState.Normal);
     }
 
-    private void StartPlantPhase()
-    {
-        PublicTool.EventChangeInteract(InteractState.WaitAction);
-    }
 
     private void StartFoePhase()
     {

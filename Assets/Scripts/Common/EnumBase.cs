@@ -51,9 +51,8 @@ public enum BattleUnitType
 
 public enum BattlePhase
 {
-    Character,
-    Plant,
-    Foe
+    CharacterPhase,
+    FoePhase
 }
 
 public enum BarResourceType
