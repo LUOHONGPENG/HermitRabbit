@@ -75,9 +75,11 @@ public partial class InputMgr
             {
                 case InteractState.Normal:
                     EventCenter.Instance.EventTrigger("InputChooseCharacter", character.GetTypeID());
+                    PublicTool.EventCameraGo(character.characterData.posID);
                     return true;
                 case InteractState.Move:
                     EventCenter.Instance.EventTrigger("InputChooseCharacter", character.GetTypeID());
+                    PublicTool.EventCameraGo(character.characterData.posID);
                     return true;
                 case InteractState.Skill:
                     break;
@@ -98,7 +100,7 @@ public partial class InputMgr
             switch (interactState)
             {
                 case InteractState.Normal:
-                    EventCenter.Instance.EventTrigger("CameraGoTo", mapTile.transform.position);
+                    PublicTool.EventCameraGo(mapTile.posID);
                     return true;
                 case InteractState.Move:
                     EventCenter.Instance.EventTrigger("InputMoveAction", mapTile.posID);
@@ -113,7 +115,7 @@ public partial class InputMgr
             switch (interactState)
             {
                 case InteractState.Normal:
-                    EventCenter.Instance.EventTrigger("CameraGoTo", mapTile.transform.position);
+                    PublicTool.EventCameraGo(mapTile.posID);
                     return true;
                 case InteractState.Move:
 

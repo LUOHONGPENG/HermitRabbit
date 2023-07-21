@@ -17,13 +17,13 @@ public class TestButtonMgr : MonoBehaviour
         btnStartBattle.onClick.RemoveAllListeners();
         btnStartBattle.onClick.AddListener(delegate ()
         {
-            EventCenter.Instance.EventTrigger("StartBattle", null);
+            EventCenter.Instance.EventTrigger("TestStartBattle", null);
         });
 
         btnEndTurn.onClick.RemoveAllListeners();
         btnEndTurn.onClick.AddListener(delegate ()
         {
-            EventCenter.Instance.EventTrigger("EndTurn", null);
+            EventCenter.Instance.EventTrigger("TestEndTurn", null);
         });
 
         btnGenerateFoe.onClick.RemoveAllListeners();

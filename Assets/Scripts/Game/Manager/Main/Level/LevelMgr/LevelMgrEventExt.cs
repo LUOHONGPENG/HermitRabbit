@@ -14,8 +14,8 @@ public partial class LevelMgr
         EventCenter.Instance.AddEventListener("InputSkillAction", InputSkillActionEvent);
 
         //About Battle
-        EventCenter.Instance.AddEventListener("StartBattle", StartBattleEvent);
-        EventCenter.Instance.AddEventListener("EndTurn", EndTurnEvent);
+        EventCenter.Instance.AddEventListener("TestStartBattle", TestStartBattleEvent);
+        EventCenter.Instance.AddEventListener("TestEndTurn", TestEndTurnEvent);
         EventCenter.Instance.AddEventListener("TestGenerateFoe", TestGenerateFoeEvent);
 
         //About Map
@@ -23,8 +23,6 @@ public partial class LevelMgr
         EventCenter.Instance.AddEventListener("RefreshSkillRange", RefreshSkillRangeEvent);
         EventCenter.Instance.AddEventListener("SetHoverTile", SetHoverTileEvent);
     }
-
-
 
     private void OnDisable()
     {        
@@ -35,18 +33,17 @@ public partial class LevelMgr
         EventCenter.Instance.RemoveEventListener("InputSkillAction", InputSkillActionEvent);
 
         //About Battle
-        EventCenter.Instance.RemoveEventListener("StartBattle", StartBattleEvent);
-        EventCenter.Instance.RemoveEventListener("EndTurn", EndTurnEvent);
+        EventCenter.Instance.RemoveEventListener("TestStartBattle", TestStartBattleEvent);
+        EventCenter.Instance.RemoveEventListener("TestEndTurn", TestEndTurnEvent);
         EventCenter.Instance.RemoveEventListener("TestGenerateFoe", TestGenerateFoeEvent);
 
         //About Refresh
         EventCenter.Instance.RemoveEventListener("RefreshOccupancy", RefreshOccupancyEvent);
         EventCenter.Instance.RemoveEventListener("RefreshSkillRange", RefreshSkillRangeEvent);
-
+        
+        //About Hover Tile
         EventCenter.Instance.RemoveEventListener("SetHoverTile", SetHoverTileEvent);
     }
-
-
 
     #region EventDeal_Input
     private void ChangeInteractEvent(object arg0)
@@ -68,6 +65,7 @@ public partial class LevelMgr
     private void InputChooseCharacterEvent(object arg0)
     {
         ChangeCurUnit(new UnitInfo(BattleUnitType.Character, (int)arg0));
+        PublicTool.EventChangeInteract(InteractState.Move);
     }
 
     private void ChangeCurUnit(UnitInfo unitInfo)
@@ -92,13 +90,13 @@ public partial class LevelMgr
     #endregion
 
     #region EventDeal_Battle
-    private void StartBattleEvent(object arg0)
+    private void TestStartBattleEvent(object arg0)
     {
         PublicTool.GetGameData().gamePhase = GamePhase.Battle;
         battleMgr.StartNewBattle(this);
     }
 
-    private void EndTurnEvent(object arg0)
+    private void TestEndTurnEvent(object arg0)
     {
         battleMgr.EndTurnPhase();
     }

@@ -20,7 +20,6 @@ public partial class MapViewMgr : MonoBehaviour
         isInit = true;
     }
 
-
     #region Generate MapTile
     public void InitMapTileView()
     {
@@ -127,7 +126,7 @@ public partial class MapViewMgr : MonoBehaviour
             }
         }
 
-        //Check whether cover target
+        //Check whether cover a target
         bool isCover = false;
         if (curUnitData.listValidSkill.Contains(hoverTileID))
         {
