@@ -136,7 +136,7 @@ public class UnitViewMgr : MonoBehaviour
                 //View Move
                 unitView.MoveToPos(targetPos);
                 PublicTool.EventRefreshOccupancy();
-                EventCenter.Instance.EventTrigger("RefreshCharacterInfo", null);
+                PublicTool.EventRefreshCharacterUI();
             }
         }
     }

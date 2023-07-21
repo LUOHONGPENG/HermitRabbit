@@ -11,7 +11,6 @@ public class TestButtonMgr : MonoBehaviour
     public Button btnStartBattle;
     public Button btnGenerateFoe;
 
-
     public void Init()
     {
         btnStartBattle.onClick.RemoveAllListeners();

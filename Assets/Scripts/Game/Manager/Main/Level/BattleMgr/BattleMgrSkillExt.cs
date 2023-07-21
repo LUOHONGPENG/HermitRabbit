@@ -88,10 +88,10 @@ public partial class BattleMgr
         gameData.CheckClearFoe();
 
         PublicTool.EventRefreshOccupancy();
-        EventCenter.Instance.EventTrigger("RefreshSkillRange", null);
-        EventCenter.Instance.EventTrigger("RefreshCharacterInfo", null);
+        PublicTool.EventRefreshSkill();
+        PublicTool.EventRefreshCharacterUI();
 
-        if(battleTurnPhase == BattlePhase.CharacterPhase)
+        if (battleTurnPhase == BattlePhase.CharacterPhase)
         {
             PublicTool.EventChangeInteract(InteractState.Skill);
         }

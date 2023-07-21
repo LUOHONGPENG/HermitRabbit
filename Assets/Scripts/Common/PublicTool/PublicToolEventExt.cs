@@ -20,7 +20,7 @@ public partial class PublicTool
                 {
                     GetGameData().SetCurBattleSkillID(data_0);
                 }
-                EventCenter.Instance.EventTrigger("RefreshSkillRange", null);
+                EventRefreshSkill();
                 break;
         }
     }
@@ -28,5 +28,15 @@ public partial class PublicTool
     public static void EventRefreshOccupancy()
     {
         EventCenter.Instance.EventTrigger("RefreshOccupancy", null);
+    }
+
+    public static void EventRefreshSkill()
+    {
+        EventCenter.Instance.EventTrigger("RefreshSkillRange", null);
+    }
+
+    public static void EventRefreshCharacterUI()
+    {
+        EventCenter.Instance.EventTrigger("RefreshCharacterInfo", null);
     }
 }

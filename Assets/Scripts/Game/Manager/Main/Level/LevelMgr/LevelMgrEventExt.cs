@@ -11,14 +11,15 @@ public partial class LevelMgr
         EventCenter.Instance.AddEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.AddEventListener("InputMoveAction", InputMoveActionEvent);
         EventCenter.Instance.AddEventListener("InputSkillAction", InputSkillActionEvent);
+        EventCenter.Instance.AddEventListener("InputSetHoverTile", InputSetHoverTileEvent);
 
-        //About Battle
-        EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
 
         //About Map
         EventCenter.Instance.AddEventListener("RefreshOccupancy", RefreshOccupancyEvent);
         EventCenter.Instance.AddEventListener("RefreshSkillRange", RefreshSkillRangeEvent);
-        EventCenter.Instance.AddEventListener("SetHoverTile", SetHoverTileEvent);
+
+        //About Test
+        EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
     }
 
     private void OnDisable()
@@ -27,16 +28,14 @@ public partial class LevelMgr
         EventCenter.Instance.RemoveEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.RemoveEventListener("InputMoveAction", InputMoveActionEvent);
         EventCenter.Instance.RemoveEventListener("InputSkillAction", InputSkillActionEvent);
-
-        //About Test
-        EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
+        EventCenter.Instance.RemoveEventListener("InputSetHoverTile", InputSetHoverTileEvent);
 
         //About Refresh
         EventCenter.Instance.RemoveEventListener("RefreshOccupancy", RefreshOccupancyEvent);
         EventCenter.Instance.RemoveEventListener("RefreshSkillRange", RefreshSkillRangeEvent);
-        
-        //About Hover Tile
-        EventCenter.Instance.RemoveEventListener("SetHoverTile", SetHoverTileEvent);
+
+        //About Test
+        EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
     }
 
 
@@ -104,7 +103,7 @@ public partial class LevelMgr
         gameData.RefreshSkillTileInfo();
     }
 
-    private void SetHoverTileEvent(object arg0)
+    private void InputSetHoverTileEvent(object arg0)
     {
         if (gameData != null)
         {

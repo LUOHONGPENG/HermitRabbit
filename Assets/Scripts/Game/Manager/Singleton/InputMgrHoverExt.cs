@@ -69,7 +69,7 @@ public partial class InputMgr
                 if (hitDataMap.transform.parent.parent.GetComponent<MapTileBase>() != null)
                 {
                     MapTileBase itemMapTile = hitDataMap.transform.parent.parent.GetComponent<MapTileBase>();
-                    EventCenter.Instance.EventTrigger("SetHoverTile", itemMapTile.posID);
+                    EventCenter.Instance.EventTrigger("InputSetHoverTile", itemMapTile.posID);
                     return true;
                 }
             }
@@ -79,7 +79,7 @@ public partial class InputMgr
 
     private void CancelHoverMapTile()
     {
-        EventCenter.Instance.EventTrigger("SetHoverTile", new Vector2Int(-99, -99));
+        EventCenter.Instance.EventTrigger("InputSetHoverTile", new Vector2Int(-99, -99));
     }
 
 
