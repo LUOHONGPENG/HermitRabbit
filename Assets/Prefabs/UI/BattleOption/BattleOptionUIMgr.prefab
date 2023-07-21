@@ -51,12 +51,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objPopup: {fileID: 5750551539341809449}
+  groupActionButton: {fileID: 2365694611119616413}
   imgPortrait: {fileID: 5396570573422358038}
   infoBarHealth: {fileID: 3817721915832853694}
   infoBarSkill: {fileID: 1431857536739684035}
   infoBarMove: {fileID: 1819605126364139547}
   btnMove: {fileID: 7903563704282852295}
   btnAttack: {fileID: 5191932467369754945}
+  tfSkillButton: {fileID: 0}
+  pfSkillButton: {fileID: 0}
 --- !u!1 &3509769134432345989
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2120965055520059152
 RectTransform:
   m_ObjectHideFlags: 0
@@ -144,8 +147,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5218448834006811272}
+  - component: {fileID: 2365694611119616413}
   m_Layer: 5
-  m_Name: groupAction
+  m_Name: groupActionButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,6 +177,18 @@ RectTransform:
   m_AnchoredPosition: {x: 480, y: 0}
   m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &2365694611119616413
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6317774780858817591}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7764875217911148597
 GameObject:
   m_ObjectHideFlags: 0

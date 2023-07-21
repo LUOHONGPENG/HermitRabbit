@@ -24,10 +24,12 @@ public partial class BattleMgr
 
     private IEnumerator IE_InvokeSkill(Vector2Int targetPos, SkillBattleInfo skillBattleInfo, BattleUnitData skillMaster)
     {
+        EventCenter.Instance.EventTrigger("CharacterSkillStart",null);
         PublicTool.EventChangeInteract(InteractState.WaitAction);
         yield return StartCoroutine(BeforeSkill(targetPos,skillBattleInfo,skillMaster));
         yield return new WaitForSeconds(1f);
         AfterSkill();
+        EventCenter.Instance.EventTrigger("CharacterSkillEnd", null);
     }
 
     private IEnumerator BeforeSkill(Vector2Int targetPos, SkillBattleInfo skillBattleInfo, BattleUnitData skillMaster)

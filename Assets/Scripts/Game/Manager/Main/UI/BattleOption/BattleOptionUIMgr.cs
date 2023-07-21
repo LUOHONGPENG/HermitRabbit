@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class BattleOptionUIMgr : MonoBehaviour
 {
     public GameObject objPopup;
-    public CanvasGroup canvasGroupButton;
+    public CanvasGroup groupActionButton;
 
     [Header("CharacterInfo")]
     public Image imgPortrait;
@@ -40,18 +41,46 @@ public class BattleOptionUIMgr : MonoBehaviour
         infoBarHealth.Init(BarResourceType.Health);
         infoBarSkill.Init(BarResourceType.Skill);
         infoBarMove.Init(BarResourceType.Move);
+
+        if(InputMgr.Instance.interactState == InteractState.Normal)
+        {
+            HidePopup();
+        }
+    }
+
+    public void HidePopup()
+    {
+        objPopup.SetActive(false);
     }
 
     public void OnEnable()
     {
         EventCenter.Instance.AddEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.AddEventListener("RefreshCharacterInfo", RefreshCharacterInfoEvent);
+        EventCenter.Instance.AddEventListener("CharacterSkillStart", CharacterSkillStartEvent);
+        EventCenter.Instance.AddEventListener("CharacterSkillEnd", CharacterSkillEndEvent);
+
     }
 
     public void OnDisable()
     {
         EventCenter.Instance.RemoveEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.RemoveEventListener("RefreshCharacterInfo", RefreshCharacterInfoEvent);
+        EventCenter.Instance.RemoveEventListener("CharacterSkillStart", CharacterSkillStartEvent);
+        EventCenter.Instance.RemoveEventListener("CharacterSkillEnd", CharacterSkillEndEvent);
+
+    }
+
+    private void CharacterSkillStartEvent(object arg0)
+    {
+        groupActionButton.interactable = false;
+        groupActionButton.DOFade(0, 0.5f);
+    }
+
+    private void CharacterSkillEndEvent(object arg0)
+    {
+        groupActionButton.interactable = true;
+        groupActionButton.DOFade(1, 0.5f);
     }
 
     public void InputChooseCharacterEvent(object arg0)
