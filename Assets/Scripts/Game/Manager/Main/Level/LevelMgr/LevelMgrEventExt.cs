@@ -13,9 +13,7 @@ public partial class LevelMgr
         EventCenter.Instance.AddEventListener("InputSkillAction", InputSkillActionEvent);
 
         //About Battle
-        EventCenter.Instance.AddEventListener("TestStartBattle", TestStartBattleEvent);
-        EventCenter.Instance.AddEventListener("TestEndTurn", TestEndTurnEvent);
-        EventCenter.Instance.AddEventListener("TestGenerateFoe", TestGenerateFoeEvent);
+        EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
 
         //About Map
         EventCenter.Instance.AddEventListener("RefreshOccupancy", RefreshOccupancyEvent);
@@ -30,10 +28,8 @@ public partial class LevelMgr
         EventCenter.Instance.RemoveEventListener("InputMoveAction", InputMoveActionEvent);
         EventCenter.Instance.RemoveEventListener("InputSkillAction", InputSkillActionEvent);
 
-        //About Battle
-        EventCenter.Instance.RemoveEventListener("TestStartBattle", TestStartBattleEvent);
-        EventCenter.Instance.RemoveEventListener("TestEndTurn", TestEndTurnEvent);
-        EventCenter.Instance.RemoveEventListener("TestGenerateFoe", TestGenerateFoeEvent);
+        //About Test
+        EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
 
         //About Refresh
         EventCenter.Instance.RemoveEventListener("RefreshOccupancy", RefreshOccupancyEvent);
@@ -42,6 +38,8 @@ public partial class LevelMgr
         //About Hover Tile
         EventCenter.Instance.RemoveEventListener("SetHoverTile", SetHoverTileEvent);
     }
+
+
 
     #region EventDeal_Input
     private void InputChooseCharacterEvent(object arg0)
@@ -72,22 +70,27 @@ public partial class LevelMgr
     #endregion
 
     #region EventDeal_Battle
-    private void TestStartBattleEvent(object arg0)
+
+    private void TestButtonEvent(object arg0)
     {
-        PublicTool.GetGameData().gamePhase = GamePhase.Battle;
-        battleMgr.StartNewBattle(this);
+        string info = (string)arg0;
+        switch (info)
+        {
+            case "StartBattle":
+                PublicTool.GetGameData().gamePhase = GamePhase.Battle;
+                battleMgr.StartNewBattle(this);
+                break;
+            case "EndTurn":
+                battleMgr.EndTurnPhase();
+                break;
+            case "GenerateFoe":
+                BattleFoeData newFoeData = gameData.GenerateFoeData(1001);
+                unitViewMgr.GenerateFoeView(newFoeData);
+                break;
+        }
     }
 
-    private void TestEndTurnEvent(object arg0)
-    {
-        battleMgr.EndTurnPhase();
-    }
 
-    private void TestGenerateFoeEvent(object arg0)
-    {
-        BattleFoeData newFoeData = gameData.GenerateFoeData(1001);
-        unitViewMgr.GenerateFoeView(newFoeData);
-    }
     #endregion
 
     #region EventDeal_Map
