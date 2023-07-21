@@ -114,14 +114,14 @@ public struct InteractInfo
     }
 }
 
-public struct SkillInfo
+public struct SkillBattleInfo
 {
     public SkillRegionType regionType;
     public int range;
     public int radius;
     public bool isTargetFoe;
 
-    public SkillInfo(CharacterSkillExcelItem item)
+    public SkillBattleInfo(CharacterSkillExcelItem item)
     {
         this.regionType = item.regionType;
         this.range = item.range;

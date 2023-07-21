@@ -6,22 +6,28 @@ using UnityEngine;
 /// <summary>
 /// Controlling the flow of the battle
 /// </summary>
-public partial class BattleMgr : Singleton<BattleMgr>
+public partial class BattleMgr : MonoSingleton<BattleMgr>
 {
     public int numTurn;
     public BattlePhase battleTurnPhase;
 
     public Stack<int> stackCharacter;
-    public Stack<int> stackPlant;
     public Stack<int> stackFoe;
 
     private LevelMgr parent;
+    private MapViewMgr mapView;
+    private UnitViewMgr unitView;
+    private GameData gameData;
+
 
     #region Basic Function
 
     public void Init(LevelMgr parent)
     {
         this.parent = parent;
+        this.mapView = parent.mapViewMgr;
+        this.unitView = parent.unitViewMgr;
+        this.gameData = PublicTool.GetGameData();
     }
 
     public void StartNewBattle(LevelMgr parent)

@@ -35,13 +35,13 @@ public partial class GameData
     #region Current Skill
 
     private int curBattleSkillID = -1;
-    private SkillInfo curSkillMapInfo;
+    private SkillBattleInfo curSkillBattleInfo;
 
     public void SetCurBattleSkillID(int skillID)
     {
         curBattleSkillID = skillID;
         CharacterSkillExcelItem skillItem = PublicTool.GetSkillItem(skillID);
-        curSkillMapInfo = new SkillInfo(skillItem);
+        curSkillBattleInfo = new SkillBattleInfo(skillItem);
     }
 
     public int GetCurBattleSkillID()
@@ -49,9 +49,9 @@ public partial class GameData
         return curBattleSkillID;
     }
 
-    public SkillInfo GetCurSkillMapInfo()
+    public SkillBattleInfo GetCurSkillBattleInfo()
     {
-        return curSkillMapInfo;
+        return curSkillBattleInfo;
     }
     #endregion
 }

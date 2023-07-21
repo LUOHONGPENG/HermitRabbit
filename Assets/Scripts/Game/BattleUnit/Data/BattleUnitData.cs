@@ -67,7 +67,7 @@ public class BattleUnitData
 
     public void RefreshValidSkill()
     {
-        SkillInfo skillInfo = PublicTool.GetGameData().GetCurSkillMapInfo();
+        SkillBattleInfo skillInfo = PublicTool.GetGameData().GetCurSkillBattleInfo();
         listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, skillInfo.range));
 
         //According to the SkillType to decide the skill radius

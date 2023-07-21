@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapViewMgr: {fileID: 6484074230406974591}
   unitViewMgr: {fileID: 1930772821540827935}
-  levelPhase: 0
+  battleMgr: {fileID: 0}
 --- !u!1001 &5326118525853209522
 PrefabInstance:
   m_ObjectHideFlags: 0

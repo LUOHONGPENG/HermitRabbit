@@ -84,7 +84,7 @@ public partial class LevelMgr
     private void InputSkillActionEvent(object arg0)
     {
         Vector2Int targetPos = (Vector2Int)arg0;
-        SkillInfo skillMapInfo = gameData.GetCurSkillMapInfo();
+        SkillBattleInfo skillMapInfo = gameData.GetCurSkillBattleInfo();
         BattleUnitData skillMaster = gameData.GetCurUnitData();
 
 
