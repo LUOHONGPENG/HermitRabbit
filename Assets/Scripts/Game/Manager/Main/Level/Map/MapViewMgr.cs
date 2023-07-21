@@ -70,7 +70,7 @@ public partial class MapViewMgr : MonoBehaviour
         switch (state)
         {
             case InteractState.Normal:
-                SetMapUI_Normal();
+                ResetAllTile();
                 break;
             case InteractState.Move:
                 SetMapUI_Move();
@@ -78,13 +78,12 @@ public partial class MapViewMgr : MonoBehaviour
             case InteractState.Skill:
                 SetMapUI_Skill();
                 break;
+            case InteractState.WaitAction:
+                ResetAllTile();
+                break;
         }
     }
 
-    private void SetMapUI_Normal()
-    {
-        ResetAllTile();
-    }
 
     private void SetMapUI_Move()
     {

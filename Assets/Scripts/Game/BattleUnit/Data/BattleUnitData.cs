@@ -92,7 +92,6 @@ public class BattleUnitData
                     if (listFoePos.Contains(listRadius[i]))
                     {
                         listTemp.Add(viewPos);
-                        Debug.Log(viewPos);
                         break;
                     }
                 }

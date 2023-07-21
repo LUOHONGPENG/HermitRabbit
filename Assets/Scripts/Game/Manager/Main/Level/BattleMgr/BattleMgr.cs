@@ -15,8 +15,8 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     public Stack<int> stackFoe;
 
     private LevelMgr parent;
-    private MapViewMgr mapView;
-    private UnitViewMgr unitView;
+    private MapViewMgr mapViewMgr;
+    private UnitViewMgr unitViewMgr;
     private GameData gameData;
 
 
@@ -25,8 +25,8 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     public void Init(LevelMgr parent)
     {
         this.parent = parent;
-        this.mapView = parent.mapViewMgr;
-        this.unitView = parent.unitViewMgr;
+        this.mapViewMgr = parent.mapViewMgr;
+        this.unitViewMgr = parent.unitViewMgr;
         this.gameData = PublicTool.GetGameData();
     }
 

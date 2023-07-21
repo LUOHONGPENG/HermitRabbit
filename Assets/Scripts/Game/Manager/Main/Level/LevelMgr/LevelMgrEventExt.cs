@@ -56,7 +56,10 @@ public partial class LevelMgr
         switch (info.state)
         {
             case InteractState.Skill:
-                gameData.SetCurBattleSkillID(info.data_0);
+                if (info.data_0 > 0)
+                {
+                    gameData.SetCurBattleSkillID(info.data_0);
+                }
                 EventCenter.Instance.EventTrigger("RefreshSkillRange", null);
                 break;
         }
@@ -84,61 +87,7 @@ public partial class LevelMgr
     private void InputSkillActionEvent(object arg0)
     {
         Vector2Int targetPos = (Vector2Int)arg0;
-        SkillBattleInfo skillMapInfo = gameData.GetCurSkillBattleInfo();
-        BattleUnitData skillMaster = gameData.GetCurUnitData();
-
-
-        if (!skillMaster.listValidSkill.Contains(targetPos))
-        {
-            EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Warning, targetPos, -1,"No target"));
-            Debug.Log("No target");
-            return;
-        }
-
-        if (skillMaster.curAP <= 0)
-        {
-            EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Warning, targetPos, -1, "SP not enough"));
-            Debug.Log("AP not enough");
-            return;
-        }
-
-        //Spell Skill
-        skillMaster.curAP--;
-        List<Vector2Int> listPos = new List<Vector2Int>();
-        switch (skillMapInfo.regionType)
-        {
-            case SkillRegionType.Circle:
-                listPos = PublicTool.GetTargetCircleRange(targetPos, skillMapInfo.radius);
-                break;
-        }
-
-        foreach (var pos in listPos)
-        {
-            if (gameData.dicTempMapUnit.ContainsKey(pos))
-            {
-                if (gameData.dicTempMapUnit[pos].type == BattleUnitType.Foe && skillMapInfo.isTargetFoe)
-                {
-                    //Data
-                    BattleFoeData foeData = (BattleFoeData)gameData.GetDataFromUnitInfo(gameData.dicTempMapUnit[pos]);
-                    foeData.GetHurt(100);
-                    //View
-                    BattleFoeView foeView = unitViewMgr.GetFoeView(foeData.keyID);
-                    EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Damage, foeData.posID,100));
-                    //Dead
-                    if (foeData.isDead)
-                    {
-                        unitViewMgr.RemoveFoeView(foeData.keyID);
-                    }
-                }
-            }
-        }
-
-        gameData.CheckClearFoe();
-
-        PublicTool.EventRefreshOccupancy();
-        EventCenter.Instance.EventTrigger("RefreshSkillRange", null);
-        EventCenter.Instance.EventTrigger("RefreshCharacterInfo", null);
-
+        battleMgr.SkillActionRequest(targetPos);
     }
     #endregion
 
