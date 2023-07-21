@@ -12,13 +12,16 @@ public partial class PublicTool
 
     public static void EventChangeInteract(InteractState state, int data_0=-1)
     {
-        if (data_0 >= 0)
+        InputMgr.Instance.SetInteractState(state);
+        switch (state)
         {
-            EventCenter.Instance.EventTrigger("ChangeInteract", new InteractInfo(state, data_0));
-        }
-        else
-        {
-            EventCenter.Instance.EventTrigger("ChangeInteract", new InteractInfo(state));
+            case InteractState.Skill:
+                if (data_0 > 0)
+                {
+                    GetGameData().SetCurBattleSkillID(data_0);
+                }
+                EventCenter.Instance.EventTrigger("RefreshSkillRange", null);
+                break;
         }
     }
 

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class BattleOptionUIMgr : MonoBehaviour
 {
     public GameObject objPopup;
+    public CanvasGroup canvasGroupButton;
 
     [Header("CharacterInfo")]
     public Image imgPortrait;

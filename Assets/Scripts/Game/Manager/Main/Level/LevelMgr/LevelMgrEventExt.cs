@@ -8,7 +8,6 @@ public partial class LevelMgr
     private void OnEnable()
     {
         //About Input
-        EventCenter.Instance.AddEventListener("ChangeInteract", ChangeInteractEvent);
         EventCenter.Instance.AddEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.AddEventListener("InputMoveAction", InputMoveActionEvent);
         EventCenter.Instance.AddEventListener("InputSkillAction", InputSkillActionEvent);
@@ -27,7 +26,6 @@ public partial class LevelMgr
     private void OnDisable()
     {        
         //About Input
-        EventCenter.Instance.RemoveEventListener("ChangeInteract", ChangeInteractEvent);
         EventCenter.Instance.RemoveEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.RemoveEventListener("InputMoveAction", InputMoveActionEvent);
         EventCenter.Instance.RemoveEventListener("InputSkillAction", InputSkillActionEvent);
@@ -46,22 +44,6 @@ public partial class LevelMgr
     }
 
     #region EventDeal_Input
-    private void ChangeInteractEvent(object arg0)
-    {
-        InteractInfo info = (InteractInfo)arg0;
-        InputMgr.Instance.SetInteractState(info.state);
-        switch (info.state)
-        {
-            case InteractState.Skill:
-                if (info.data_0 > 0)
-                {
-                    gameData.SetCurBattleSkillID(info.data_0);
-                }
-                EventCenter.Instance.EventTrigger("RefreshSkillRange", null);
-                break;
-        }
-    }
-
     private void InputChooseCharacterEvent(object arg0)
     {
         ChangeCurUnit(new UnitInfo(BattleUnitType.Character, (int)arg0));

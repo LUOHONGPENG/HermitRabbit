@@ -102,17 +102,6 @@ public struct UnitInfo
     }
 }
 
-public struct InteractInfo
-{
-    public InteractState state;
-    public int data_0;
-
-    public InteractInfo(InteractState state,int data_0 = -1)
-    {
-        this.state = state;
-        this.data_0 = data_0;
-    }
-}
 
 public struct SkillBattleInfo
 {
