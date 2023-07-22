@@ -17,8 +17,8 @@ public class BattleOptionUIMgr : MonoBehaviour
     public BattleInfoBarItem infoBarMove;
 
     [Header("Action")]
-    public Button btnMove;
-    public Button btnAttack;
+    public BattleBasicBtnItem btnMove;
+    public BattleBasicBtnItem btnAttack;
     public Transform tfSkillButton;
     public GameObject pfSkillButton;
 
@@ -26,14 +26,13 @@ public class BattleOptionUIMgr : MonoBehaviour
 
     public void Init()
     {
-        btnMove.onClick.RemoveAllListeners();
-        btnMove.onClick.AddListener(delegate ()
+        btnMove.Init(BattleBasicBtnItem.BattleBasicBtnType.Move);
+        btnMove.InitButton(delegate ()
         {
             PublicTool.EventChangeInteract(InteractState.Move);
         });
-
-        btnAttack.onClick.RemoveAllListeners();
-        btnAttack.onClick.AddListener(delegate ()
+        btnAttack.Init(BattleBasicBtnItem.BattleBasicBtnType.Attack);
+        btnAttack.InitButton(delegate ()
         {
             PublicTool.EventChangeInteract(InteractState.Skill, curCharacterData.GetItem().AttackID);
         });
