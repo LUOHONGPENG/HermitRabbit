@@ -11,7 +11,6 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     public int numTurn;
     public BattlePhase battleTurnPhase;
 
-    public Stack<int> stackCharacter;
     public Stack<int> stackFoe;
 
     private LevelMgr parent;
@@ -35,6 +34,7 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
         this.parent = parent;
 
         numTurn = 1;
+        ResetNewTurn();
         battleTurnPhase = BattlePhase.CharacterPhase;
         StartTurnPhase();
     }
@@ -64,13 +64,28 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
             case BattlePhase.FoePhase:
                 battleTurnPhase = BattlePhase.CharacterPhase;
                 numTurn++;
+                ResetNewTurn();
                 break;
         }
         StartTurnPhase();
     }
 
+    private void ResetNewTurn()
+    {
+        List<BattleCharacterData> listCharacter = gameData.listCharacter;
+        for(int i = 0; i < listCharacter.Count; i++)
+        {
+            listCharacter[i].ResetNewTurn();
+        }
+
+        PublicTool.EventRefreshCharacterUI();
+    }
+
+
     private void StartCharacterPhase()
     {
+
+
         PublicTool.EventChangeInteract(InteractState.Normal);
     }
 

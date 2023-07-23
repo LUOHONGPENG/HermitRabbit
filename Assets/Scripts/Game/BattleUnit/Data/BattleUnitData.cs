@@ -114,6 +114,8 @@ public class BattleUnitData
 
     public bool isDead = false;
 
+    public virtual void ResetNewTurn() { }
+
     public void GetHurt(float damage)
     {
         curHP -= damage;

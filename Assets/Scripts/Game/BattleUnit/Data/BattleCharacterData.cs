@@ -64,4 +64,10 @@ public class BattleCharacterData : BattleUnitData
             return WIS;
         }
     }
+
+    public override void ResetNewTurn()
+    {
+        curAP = maxAP;
+        curMOV = maxMOV;
+    }
 }
