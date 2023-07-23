@@ -13,6 +13,7 @@ public partial class BattleMgr
     private BattleUnitData skillSubject;
     private Dictionary<int, BattleFoeData> dicFoeSkillTarget = new Dictionary<int, BattleFoeData>();
     private Dictionary<int, BattleCharacterData> dicCharacterSkillTarget = new Dictionary<int, BattleCharacterData>();
+    private Dictionary<int, BattlePlantData> dicPlantSkillTarget = new Dictionary<int, BattlePlantData>();
 
     public void SkillActionRequest(Vector2Int targetPos)
     {
@@ -35,18 +36,29 @@ public partial class BattleMgr
     {
         EventCenter.Instance.EventTrigger("CharacterSkillStart",null);
         PublicTool.EventChangeInteract(InteractState.WaitAction);
-        yield return StartCoroutine(BeforeSkill());
-        yield return StartCoroutine(InvokeSkillData());
+        yield return StartCoroutine(IE_ExecuteSkillCost());
+        yield return StartCoroutine(IE_FindSkillTarget());
+        yield return StartCoroutine(IE_InvokeSkillData());
         yield return new WaitForSeconds(1f);
         yield return StartCoroutine(InvokeSkillText());
         AfterSkill();
         EventCenter.Instance.EventTrigger("CharacterSkillEnd", null);
     }
 
-    private IEnumerator BeforeSkill()
+    private IEnumerator IE_ExecuteSkillCost()
     {
-        //Cost AP
-        skillSubject.curAP -= skillBattleInfo.costAP;
+        if(skillSubject is BattleCharacterData)
+        {
+            //Cost AP
+            skillSubject.curAP -= skillBattleInfo.costAP;
+            Debug.Log("CharacterSkillCost");
+        }
+        yield break;
+    }
+
+
+    private IEnumerator IE_FindSkillTarget()
+    {
 
         //Calculate the position that will be affected
         List<Vector2Int> listPos = new List<Vector2Int>();
@@ -62,32 +74,63 @@ public partial class BattleMgr
 
         dicFoeSkillTarget.Clear();
         dicCharacterSkillTarget.Clear();
+        dicPlantSkillTarget.Clear();
 
         //Find Foe
         foreach (var pos in listPos)
         {
             if (gameData.dicTempMapUnit.ContainsKey(pos))
             {
-                if (gameData.dicTempMapUnit[pos].type == BattleUnitType.Foe && skillBattleInfo.isTargetFoe)
+                if (skillBattleInfo.isTargetFoe && gameData.dicTempMapUnit[pos].type == BattleUnitType.Foe)
                 {
                     BattleFoeData foeData = (BattleFoeData)gameData.GetDataFromUnitInfo(gameData.dicTempMapUnit[pos]);
                     foeData.ClearBattleTextQueue();
                     dicFoeSkillTarget.Add(foeData.keyID, foeData);
                 }
+
+                if (skillBattleInfo.isTargetCharacter && gameData.dicTempMapUnit[pos].type == BattleUnitType.Character)
+                {
+                    BattleCharacterData characterData = (BattleCharacterData)gameData.GetDataFromUnitInfo(gameData.dicTempMapUnit[pos]);
+                    characterData.ClearBattleTextQueue();
+                    dicCharacterSkillTarget.Add(characterData.keyID, characterData);
+                }
+
+                if (skillBattleInfo.isTargetPlant && gameData.dicTempMapUnit[pos].type == BattleUnitType.Plant)
+                {
+                    BattlePlantData plantData = (BattlePlantData)gameData.GetDataFromUnitInfo(gameData.dicTempMapUnit[pos]);
+                    plantData.ClearBattleTextQueue();
+                    dicPlantSkillTarget.Add(plantData.keyID, plantData);
+                }
             }
         }
+
+        
+
         yield break;
     }
 
-    private IEnumerator InvokeSkillData()
+    private IEnumerator IE_InvokeSkillData()
     {
         //Deal Effect
         foreach (var item in dicFoeSkillTarget)
         {
             BattleFoeData foeData = item.Value;
-            if(skillBattleInfo.foeEffect == SkillEffectType.Harm)
+            switch (skillBattleInfo.foeEffect)
             {
-                SkillHarmRequest(skillSubject, foeData);
+                case SkillEffectType.Harm:
+                    SkillHarmRequest(skillSubject, foeData);
+                    break;
+            }
+        }
+
+        foreach(var item in dicCharacterSkillTarget)
+        {
+            BattleCharacterData characterData = item.Value;
+            switch (skillBattleInfo.characterEffect)
+            {
+                case SkillEffectType.Harm:
+                    SkillHarmRequest(skillSubject, characterData);
+                    break;
             }
         }
         yield break;
@@ -101,6 +144,20 @@ public partial class BattleMgr
             BattleFoeData foeData = item.Value;
             BattleFoeView foeView = unitViewMgr.GetFoeView(foeData.keyID);
             foeView.RequestBattleText();
+        }
+
+        foreach (var item in dicCharacterSkillTarget)
+        {
+            BattleCharacterData characterData = item.Value;
+            BattleCharacterView characterView = unitViewMgr.GetCharacterView(characterData.keyID);
+            characterView.RequestBattleText();
+        }
+
+        foreach (var item in dicPlantSkillTarget)
+        {
+            BattlePlantData plantData = item.Value;
+            BattlePlantView plantView = unitViewMgr.GetPlantView(plantData.keyID);
+            plantView.RequestBattleText();
         }
         yield break;
     }

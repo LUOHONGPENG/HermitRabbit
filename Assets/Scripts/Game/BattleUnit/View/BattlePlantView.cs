@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class BattlePlantView : BattleUnitView
 {
-    
+    public BattlePlantData plantData;
+
+    public void Init(BattlePlantData plantData)
+    {
+        this.plantData = plantData;
+    }
 }

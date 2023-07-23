@@ -13,6 +13,7 @@ public class UnitViewMgr : MonoBehaviour
     [Header("Plant")]
     public Transform tfPlant;
     public GameObject pfPlant;
+    public Dictionary<int, BattlePlantView> dicPlantView = new Dictionary<int, BattlePlantView>();
 
     [Header("Foe")]
     public Transform tfFoe;
@@ -46,9 +47,9 @@ public class UnitViewMgr : MonoBehaviour
         GameObject objCharacter = GameObject.Instantiate(pfCharacter, tfCharacter);
         BattleCharacterView characterView = objCharacter.GetComponent<BattleCharacterView>();
         characterView.Init(characterData);
-        if (!dicCharacterView.ContainsKey(characterView.characterData.keyID))
+        if (!dicCharacterView.ContainsKey(characterData.keyID))
         {
-            dicCharacterView.Add(characterView.characterData.keyID,characterView);
+            dicCharacterView.Add(characterData.keyID,characterView);
         }
         PublicTool.EventRefreshOccupancy();
     }
@@ -85,9 +86,9 @@ public class UnitViewMgr : MonoBehaviour
         GameObject objFoe = GameObject.Instantiate(pfFoe, tfFoe);
         BattleFoeView foeView = objFoe.GetComponent<BattleFoeView>();
         foeView.Init(foeData);
-        if (!dicFoeView.ContainsKey(foeView.foeData.keyID))
+        if (!dicFoeView.ContainsKey(foeData.keyID))
         {
-            dicFoeView.Add(foeView.foeData.keyID, foeView);
+            dicFoeView.Add(foeData.keyID, foeView);
         }
         PublicTool.EventRefreshOccupancy();
     }
@@ -115,5 +116,42 @@ public class UnitViewMgr : MonoBehaviour
     }
     #endregion
 
+    #region Plant
+    public void GeneratePlantView(BattlePlantData plantData)
+    {
+        GameObject objPlant = GameObject.Instantiate(pfPlant, tfPlant);
+        BattlePlantView plantView = objPlant.GetComponent<BattlePlantView>();
+        plantView.Init(plantData);
+        if (!dicPlantView.ContainsKey(plantData.keyID))
+        {
+            dicPlantView.Add(plantData.keyID, plantView);
+        }
+        PublicTool.EventRefreshOccupancy();
+    }
+
+    public BattlePlantView GetPlantView(int keyID)
+    {
+        if (dicPlantView.ContainsKey(keyID))
+        {
+            return dicPlantView[keyID];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public void RemovePlantView(int keyID)
+    {
+        if (dicPlantView.ContainsKey(keyID))
+        {
+            BattlePlantView view = dicPlantView[keyID];
+            dicPlantView.Remove(keyID);
+            view.SelfDestroy();
+        }
+    }
+
+
+    #endregion
 
 }
