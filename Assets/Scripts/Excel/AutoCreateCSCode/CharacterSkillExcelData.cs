@@ -17,8 +17,11 @@ public partial class CharacterSkillExcelItem : ExcelItemBase
 	public int radius;
 	public SkillRegionType regionType;
 	public SkillDamageType damageType;
-	public bool isTargetFoe;
-	public bool isTargetCharacter;
+	public int damageDelta;
+	public SkillDamageDeltaStd damageDeltaStd;
+	public SkillEffectType foeEffect;
+	public SkillEffectType characterEffect;
+	public SkillEffectType plantEffect;
 	public bool isNormalAttack;
 	public int characterID;
 }
@@ -50,8 +53,11 @@ public class CharacterSkillAssetAssignment
 			items[i].radius = Convert.ToInt32(allItemValueRowList[i]["radius"]);
 			items[i].regionType = (SkillRegionType) Enum.Parse(typeof(SkillRegionType), allItemValueRowList[i]["regionType"], true);
 			items[i].damageType = (SkillDamageType) Enum.Parse(typeof(SkillDamageType), allItemValueRowList[i]["damageType"], true);
-			items[i].isTargetFoe = Convert.ToBoolean(allItemValueRowList[i]["isTargetFoe"]);
-			items[i].isTargetCharacter = Convert.ToBoolean(allItemValueRowList[i]["isTargetCharacter"]);
+			items[i].damageDelta = Convert.ToInt32(allItemValueRowList[i]["damageDelta"]);
+			items[i].damageDeltaStd = (SkillDamageDeltaStd) Enum.Parse(typeof(SkillDamageDeltaStd), allItemValueRowList[i]["damageDeltaStd"], true);
+			items[i].foeEffect = (SkillEffectType) Enum.Parse(typeof(SkillEffectType), allItemValueRowList[i]["foeEffect"], true);
+			items[i].characterEffect = (SkillEffectType) Enum.Parse(typeof(SkillEffectType), allItemValueRowList[i]["characterEffect"], true);
+			items[i].plantEffect = (SkillEffectType) Enum.Parse(typeof(SkillEffectType), allItemValueRowList[i]["plantEffect"], true);
 			items[i].isNormalAttack = Convert.ToBoolean(allItemValueRowList[i]["isNormalAttack"]);
 			items[i].characterID = Convert.ToInt32(allItemValueRowList[i]["characterID"]);
 		}

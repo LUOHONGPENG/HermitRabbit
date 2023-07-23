@@ -15,7 +15,7 @@ public partial class CharacterExcelItem : ExcelItemBase
 	public int INT;
 	public int WIS;
 	public int MOV;
-	public int SP;
+	public int AP;
 	public int AttackID;
 	public List<int> startPos;
 	public string pixelUrl;
@@ -47,7 +47,7 @@ public class CharacterAssetAssignment
 			items[i].INT = Convert.ToInt32(allItemValueRowList[i]["INT"]);
 			items[i].WIS = Convert.ToInt32(allItemValueRowList[i]["WIS"]);
 			items[i].MOV = Convert.ToInt32(allItemValueRowList[i]["MOV"]);
-			items[i].SP = Convert.ToInt32(allItemValueRowList[i]["SP"]);
+			items[i].AP = Convert.ToInt32(allItemValueRowList[i]["AP"]);
 			items[i].AttackID = Convert.ToInt32(allItemValueRowList[i]["AttackID"]);
 			items[i].startPos = new List<int>(Array.ConvertAll((allItemValueRowList[i]["startPos"]).Split(';'), int.Parse));
 			items[i].pixelUrl = allItemValueRowList[i]["pixelUrl"];

@@ -25,9 +25,9 @@ public class BattleUnitData
     public int curAP = 1;
     public int maxAP = 1;
 
-    public float curATK { get; }
-    public float curDEF { get; }
-    public float curRES { get; }
+    public virtual float curATK { get; }
+    public virtual float curDEF { get; }
+    public virtual float curRES { get; }
 
     public int GetTypeID()
     {

@@ -91,12 +91,14 @@ public enum SkillDamageType
 public enum SkillEffectType
 {
     None,
-    Damage,
-    Debuff,
-    DaDebuff,
-    Heal,
-    Buff,
-    Special
+    Harm,
+    Help
+}
+
+public enum SkillDamageDeltaStd
+{
+    ATK,
+    MAXHP
 }
 
 #endregion
@@ -132,21 +134,49 @@ public struct UnitInfo
 
 public struct SkillBattleInfo
 {
+    //Basic
+    public int ID;
     public int costAP;
-
+    //Range
     public SkillRegionType regionType;
+    public bool isRangeSelf;
     public int range;
     public int radius;
+    //Target
     public bool isTargetFoe;
+    public bool isTargetCharacter;
+    public bool isTargetPlant;
+    //EffectType
+    public SkillEffectType foeEffect;
+    public SkillEffectType characterEffect;
+    public SkillEffectType plantEffect;
+    //Damage
+    public SkillDamageType damageType;
+    public float damageDeltaFloat;
+    public SkillDamageDeltaStd damageDeltaStd;
+
 
     public SkillBattleInfo(CharacterSkillExcelItem item)
     {
+        this.ID = item.id;
         this.costAP = item.costAP;
-
+        //Range
         this.regionType = item.regionType;
+        this.isRangeSelf = item.isRangeSelf;
         this.range = item.range;
         this.radius = item.radius;
+        //Target
         this.isTargetFoe = item.isTargetFoe;
+        this.isTargetCharacter = item.isTargetCharacter;
+        this.isTargetPlant = item.isTargetPlant;
+        //EffectType
+        this.foeEffect = item.foeEffect;
+        this.characterEffect = item.characterEffect;
+        this.plantEffect = item.plantEffect;
+        //Damage
+        this.damageType = item.damageType;
+        this.damageDeltaFloat = item.damageDeltaFloat;
+        this.damageDeltaStd = item.damageDeltaStd;
     }
 }
 

@@ -78,7 +78,10 @@ public partial class BattleMgr
         foreach (var item in dicFoeSkillTarget)
         {
             BattleFoeData foeData = item.Value;
-            SkillDamageRequest(skillSubject, foeData, 100);
+            if(skillBattleInfo.foeEffect == SkillEffectType.Harm)
+            {
+                SkillHarmRequest(skillSubject, foeData);
+            }
         }
         yield break;
     }

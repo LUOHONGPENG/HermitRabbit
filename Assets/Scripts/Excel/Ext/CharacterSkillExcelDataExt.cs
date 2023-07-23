@@ -32,3 +32,59 @@ public partial class CharacterSkillExcelData
         }
     }
 }
+
+public partial class CharacterSkillExcelItem
+{
+    public bool isTargetFoe
+    {
+        get
+        {
+            if(foeEffect != SkillEffectType.None)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    public bool isTargetCharacter
+    {
+        get
+        {
+            if (characterEffect != SkillEffectType.None)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    public bool isTargetPlant
+    {
+        get
+        {
+            if (plantEffect != SkillEffectType.None)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    public float damageDeltaFloat
+    {
+        get
+        {
+            return 0.01f * damageDelta;
+        }
+    }
+}

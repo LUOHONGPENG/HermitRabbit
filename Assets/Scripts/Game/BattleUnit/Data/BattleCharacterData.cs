@@ -24,8 +24,8 @@ public class BattleCharacterData : BattleUnitData
         //Attribute Setting
         curHP = item.HP;
         maxHP = item.HP;
-        curAP = item.SP;
-        maxAP = item.SP;
+        curAP = item.AP;
+        maxAP = item.AP;
         curMOV = item.MOV;
         maxMOV = item.MOV;
 
@@ -41,15 +41,22 @@ public class BattleCharacterData : BattleUnitData
         return item;
     }
 
-    public new int curATK
+    public override float curATK
     {
         get
         {
-            return STR;
+            if(typeID == 1001)
+            {
+                return INT;
+            }
+            else
+            {
+                return STR;
+            }
         }
     }
 
-    public new int curDEF
+    public override float curDEF
     {
         get
         {
@@ -57,7 +64,7 @@ public class BattleCharacterData : BattleUnitData
         }
     }
 
-    public new int curRES
+    public override float curRES
     {
         get
         {
