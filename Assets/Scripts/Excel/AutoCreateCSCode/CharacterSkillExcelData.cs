@@ -22,6 +22,7 @@ public partial class CharacterSkillExcelItem : ExcelItemBase
 	public SkillEffectType foeEffect;
 	public SkillEffectType characterEffect;
 	public SkillEffectType plantEffect;
+	public BattleUnitType skillSubjectType;
 	public bool isNormalAttack;
 	public int characterID;
 }
@@ -58,6 +59,7 @@ public class CharacterSkillAssetAssignment
 			items[i].foeEffect = (SkillEffectType) Enum.Parse(typeof(SkillEffectType), allItemValueRowList[i]["foeEffect"], true);
 			items[i].characterEffect = (SkillEffectType) Enum.Parse(typeof(SkillEffectType), allItemValueRowList[i]["characterEffect"], true);
 			items[i].plantEffect = (SkillEffectType) Enum.Parse(typeof(SkillEffectType), allItemValueRowList[i]["plantEffect"], true);
+			items[i].skillSubjectType = (BattleUnitType) Enum.Parse(typeof(BattleUnitType), allItemValueRowList[i]["skillSubjectType"], true);
 			items[i].isNormalAttack = Convert.ToBoolean(allItemValueRowList[i]["isNormalAttack"]);
 			items[i].characterID = Convert.ToInt32(allItemValueRowList[i]["characterID"]);
 		}

@@ -17,6 +17,10 @@ public partial class CharacterSkillExcelData
             {
                 continue;
             }
+            if(skillItem.skillSubjectType != BattleUnitType.Character)
+            {
+                continue;
+            }
             if (dicAllCharacterSkill.ContainsKey(skillItem.characterID))
             {
                 List<CharacterSkillExcelItem> listSkill = dicAllCharacterSkill[skillItem.characterID];
