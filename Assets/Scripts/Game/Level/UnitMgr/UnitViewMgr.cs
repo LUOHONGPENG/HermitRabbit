@@ -67,7 +67,6 @@ public class UnitViewMgr : MonoBehaviour
     }
     public BattleUnitView GetViewFromUnitInfo(UnitInfo unitInfo)
     {
-        Debug.Log(unitInfo.type + " " + unitInfo.keyID);
         switch (unitInfo.type)
         {
             case BattleUnitType.Character:

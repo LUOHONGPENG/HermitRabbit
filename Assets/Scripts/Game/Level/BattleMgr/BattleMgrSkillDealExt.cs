@@ -26,8 +26,6 @@ public partial class BattleMgr
                 break;
         }
 
-        Debug.Log("CUR ATK "+source.curATK);
-
         switch (skillBattleInfo.damageType)
         {
             case SkillDamageType.Physical:
