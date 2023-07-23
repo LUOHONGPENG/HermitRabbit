@@ -55,6 +55,9 @@ public partial class BattleMgr
             case SkillRegionType.Circle:
                 listPos = PublicTool.GetTargetCircleRange(skillTargetPos, skillBattleInfo.radius);
                 break;
+            case SkillRegionType.Square:
+                listPos = PublicTool.GetTargetSquareRange(skillTargetPos, skillBattleInfo.radius);
+                break;
         }
 
         dicFoeSkillTarget.Clear();

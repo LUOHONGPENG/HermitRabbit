@@ -123,6 +123,9 @@ public partial class MapViewMgr : MonoBehaviour
                 case SkillRegionType.Circle:
                     listHoverPos = PublicTool.GetTargetCircleRange(hoverTileID, skillMapInfo.radius);
                     break;
+                case SkillRegionType.Square:
+                    listHoverPos = PublicTool.GetTargetSquareRange(hoverTileID, skillMapInfo.radius);
+                    break;
             }
         }
 

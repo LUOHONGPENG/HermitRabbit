@@ -15,7 +15,7 @@ MonoBehaviour:
   items:
   - id: 1001
     name: LinkedList
-    HP: 30
+    HP: 12
     ATK: 6
     DEF: 5
     RES: 5
