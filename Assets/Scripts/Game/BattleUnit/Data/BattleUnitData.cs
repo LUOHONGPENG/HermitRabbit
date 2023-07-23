@@ -154,6 +154,15 @@ public class BattleUnitData
         }
     }
 
+    public void GetHeal(float healPoint)
+    {
+        curHP += healPoint;
+        if(curHP >= maxHP)
+        {
+            curHP = maxHP;
+        }
+    }
+
     #endregion
 
     #region BattleTextQueue

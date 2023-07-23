@@ -51,7 +51,6 @@ public partial class BattleMgr
         {
             //Cost AP
             skillSubject.curAP -= skillBattleInfo.costAP;
-            Debug.Log("CharacterSkillCost");
         }
         yield break;
     }
@@ -115,23 +114,13 @@ public partial class BattleMgr
         foreach (var item in dicFoeSkillTarget)
         {
             BattleFoeData foeData = item.Value;
-            switch (skillBattleInfo.foeEffect)
-            {
-                case SkillEffectType.Harm:
-                    SkillHarmRequest(skillSubject, foeData);
-                    break;
-            }
+            SkillEffectRequest(skillSubject, foeData, skillBattleInfo.foeEffect);
         }
 
-        foreach(var item in dicCharacterSkillTarget)
+        foreach (var item in dicCharacterSkillTarget)
         {
             BattleCharacterData characterData = item.Value;
-            switch (skillBattleInfo.characterEffect)
-            {
-                case SkillEffectType.Harm:
-                    SkillHarmRequest(skillSubject, characterData);
-                    break;
-            }
+            SkillEffectRequest(skillSubject, characterData, skillBattleInfo.characterEffect);
         }
         yield break;
     }

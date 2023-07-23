@@ -9,6 +9,8 @@ public class BattleUnitView : MonoBehaviour
 
     public Collider colUnit;
 
+    public BattleUnitData unitData;
+
 
 
 
@@ -35,13 +37,43 @@ public class BattleUnitView : MonoBehaviour
         }
     }
 
-    public virtual void RequestBattleText()
-    {
-
-    }
 
     public void SelfDestroy()
     {
         Destroy(this.gameObject);
+    }
+
+
+    public bool isExecutingBattleText = false;
+
+    public void RequestBattleText()
+    {
+        Queue<BattleTextInfo> queueInfo = unitData.GetQueueBattleText();
+        if (queueInfo != null)
+        {
+            StartCoroutine(IE_ExecuteBattleText(queueInfo));
+        }
+    }
+
+    public IEnumerator IE_ExecuteBattleText(Queue<BattleTextInfo> queueInfo)
+    {
+        isExecutingBattleText = true;
+        while (queueInfo.Count > 0)
+        {
+            BattleTextInfo info = queueInfo.Dequeue();
+
+            switch (info.type)
+            {
+                case BattleTextType.Damage:
+                    EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Damage, unitData.posID, -1, info.info));
+                    break;
+                case BattleTextType.Heal:
+                    EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Damage, unitData.posID, -1, info.info));
+                    break;
+            }
+
+            yield return new WaitForSeconds(0.2f);
+        }
+        isExecutingBattleText = false;
     }
 }
