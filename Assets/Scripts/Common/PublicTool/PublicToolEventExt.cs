@@ -18,7 +18,7 @@ public partial class PublicTool
             case InteractState.CharacterSkill:
                 if (data_0 > 0)
                 {
-                    GetGameData().SetCurBattleSkillID(data_0);
+                    GetGameData().SetCurBattleSkill(data_0);
                 }
                 EventRefreshSkill();
                 break;

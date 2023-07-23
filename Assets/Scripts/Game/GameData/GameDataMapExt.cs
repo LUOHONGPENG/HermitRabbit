@@ -36,10 +36,7 @@ public partial class GameData
 
     public void RefreshSkillTileInfo()
     {
-        foreach (var character in listCharacter)
-        {
-            character.RefreshValidSkill();
-        }
+        GetCurUnitData().RefreshValidSkill();
     }
 
     private List<Vector2Int> GetCharacterPos()

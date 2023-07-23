@@ -14,6 +14,7 @@ public partial class FoeExcelItem : ExcelItemBase
 	public int DEF;
 	public int RES;
 	public int MOV;
+	public int skillID;
 	public string pixelUrl;
 }
 
@@ -41,6 +42,7 @@ public class FoeAssetAssignment
 			items[i].DEF = Convert.ToInt32(allItemValueRowList[i]["DEF"]);
 			items[i].RES = Convert.ToInt32(allItemValueRowList[i]["RES"]);
 			items[i].MOV = Convert.ToInt32(allItemValueRowList[i]["MOV"]);
+			items[i].skillID = Convert.ToInt32(allItemValueRowList[i]["skillID"]);
 			items[i].pixelUrl = allItemValueRowList[i]["pixelUrl"];
 		}
 		FoeExcelData excelDataAsset = ScriptableObject.CreateInstance<FoeExcelData>();

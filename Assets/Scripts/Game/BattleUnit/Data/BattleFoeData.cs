@@ -24,6 +24,11 @@ public class BattleFoeData : BattleUnitData
         return item;
     }
 
+    public CharacterSkillExcelItem GetSkillItem()
+    {
+        return PublicTool.GetSkillItem(item.skillID);
+    }
+
     public new float curATK 
     {
         get

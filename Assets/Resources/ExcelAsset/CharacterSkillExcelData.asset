@@ -28,6 +28,7 @@ MonoBehaviour:
     foeEffect: 1
     characterEffect: 0
     plantEffect: 0
+    skillSubjectType: 0
     isNormalAttack: 1
     characterID: 1001
   - id: 1101
@@ -45,6 +46,7 @@ MonoBehaviour:
     foeEffect: 1
     characterEffect: 1
     plantEffect: 1
+    skillSubjectType: 0
     isNormalAttack: 0
     characterID: 1001
   - id: 1102
@@ -62,6 +64,7 @@ MonoBehaviour:
     foeEffect: 1
     characterEffect: 1
     plantEffect: 1
+    skillSubjectType: 0
     isNormalAttack: 0
     characterID: 1001
   - id: 2001
@@ -79,6 +82,7 @@ MonoBehaviour:
     foeEffect: 1
     characterEffect: 1
     plantEffect: 0
+    skillSubjectType: 0
     isNormalAttack: 1
     characterID: 2001
   - id: 2101
@@ -96,6 +100,7 @@ MonoBehaviour:
     foeEffect: 1
     characterEffect: 0
     plantEffect: 0
+    skillSubjectType: 0
     isNormalAttack: 0
     characterID: 2001
   - id: 2201
@@ -113,5 +118,24 @@ MonoBehaviour:
     foeEffect: 0
     characterEffect: 2
     plantEffect: 0
+    skillSubjectType: 0
     isNormalAttack: 0
     characterID: 2001
+  - id: 9001
+    name: Bite
+    desc: 
+    costAP: 1
+    element: 0
+    range: 4
+    isRangeSelf: 0
+    radius: 0
+    regionType: 0
+    damageType: 1
+    damageDelta: 100
+    damageDeltaStd: 0
+    foeEffect: 0
+    characterEffect: 1
+    plantEffect: 1
+    skillSubjectType: 2
+    isNormalAttack: 0
+    characterID: 0
