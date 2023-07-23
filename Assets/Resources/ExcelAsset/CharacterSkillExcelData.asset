@@ -61,7 +61,7 @@ MonoBehaviour:
     name: Wind Chop
     desc: Cut the foes around you.
     costAP: 1
-    element: 0
+    element: 1
     range: 0
     radius: 1
     regionType: 1

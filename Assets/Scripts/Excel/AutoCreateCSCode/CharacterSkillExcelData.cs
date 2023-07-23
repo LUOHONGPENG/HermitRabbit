@@ -13,9 +13,12 @@ public partial class CharacterSkillExcelItem : ExcelItemBase
 	public int costAP;
 	public SkillElementType element;
 	public int range;
+	public bool isRangeSelf;
 	public int radius;
 	public SkillRegionType regionType;
+	public SkillDamageType damageType;
 	public bool isTargetFoe;
+	public bool isTargetCharacter;
 	public bool isNormalAttack;
 	public int characterID;
 }
@@ -43,9 +46,12 @@ public class CharacterSkillAssetAssignment
 			items[i].costAP = Convert.ToInt32(allItemValueRowList[i]["costAP"]);
 			items[i].element = (SkillElementType) Enum.Parse(typeof(SkillElementType), allItemValueRowList[i]["element"], true);
 			items[i].range = Convert.ToInt32(allItemValueRowList[i]["range"]);
+			items[i].isRangeSelf = Convert.ToBoolean(allItemValueRowList[i]["isRangeSelf"]);
 			items[i].radius = Convert.ToInt32(allItemValueRowList[i]["radius"]);
 			items[i].regionType = (SkillRegionType) Enum.Parse(typeof(SkillRegionType), allItemValueRowList[i]["regionType"], true);
+			items[i].damageType = (SkillDamageType) Enum.Parse(typeof(SkillDamageType), allItemValueRowList[i]["damageType"], true);
 			items[i].isTargetFoe = Convert.ToBoolean(allItemValueRowList[i]["isTargetFoe"]);
+			items[i].isTargetCharacter = Convert.ToBoolean(allItemValueRowList[i]["isTargetCharacter"]);
 			items[i].isNormalAttack = Convert.ToBoolean(allItemValueRowList[i]["isNormalAttack"]);
 			items[i].characterID = Convert.ToInt32(allItemValueRowList[i]["characterID"]);
 		}

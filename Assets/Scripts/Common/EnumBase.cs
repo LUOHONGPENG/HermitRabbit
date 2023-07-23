@@ -80,6 +80,25 @@ public enum SkillElementType
     Star
 }
 
+public enum SkillDamageType
+{
+    None,
+    Physical,
+    Magic,
+    Real
+}
+
+public enum SkillEffectType
+{
+    None,
+    Damage,
+    Debuff,
+    DaDebuff,
+    Heal,
+    Buff,
+    Special
+}
+
 #endregion
 
 public enum EffectUITextType
