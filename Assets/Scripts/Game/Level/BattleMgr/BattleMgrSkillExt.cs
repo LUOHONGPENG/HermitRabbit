@@ -47,9 +47,8 @@ public partial class BattleMgr
 
     private IEnumerator IE_ExecuteSkillCost()
     {
-        if(skillSubject is BattleCharacterData)
+        if(skillBattleInfo.skillSubjectType == BattleUnitType.Character && skillSubject is BattleCharacterData)
         {
-            //Cost AP
             skillSubject.curAP -= skillBattleInfo.costAP;
         }
         yield break;

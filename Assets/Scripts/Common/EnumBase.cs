@@ -136,6 +136,7 @@ public struct SkillBattleInfo
 {
     //Basic
     public int ID;
+    public BattleUnitType skillSubjectType;
     public int costAP;
     //Range
     public SkillRegionType regionType;
@@ -159,6 +160,7 @@ public struct SkillBattleInfo
     public SkillBattleInfo(CharacterSkillExcelItem item)
     {
         this.ID = item.id;
+        this.skillSubjectType = item.skillSubjectType;
         this.costAP = item.costAP;
         //Range
         this.regionType = item.regionType;
