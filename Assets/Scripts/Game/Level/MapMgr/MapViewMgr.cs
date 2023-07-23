@@ -71,10 +71,10 @@ public partial class MapViewMgr : MonoBehaviour
             case InteractState.Normal:
                 ResetAllTile();
                 break;
-            case InteractState.Move:
-                SetMapUI_Move();
+            case InteractState.CharacterMove:
+                SetMapUI_CharacterMove();
                 break;
-            case InteractState.Skill:
+            case InteractState.CharacterSkill:
                 SetMapUI_Skill();
                 break;
             case InteractState.WaitAction:
@@ -84,7 +84,7 @@ public partial class MapViewMgr : MonoBehaviour
     }
 
 
-    private void SetMapUI_Move()
+    private void SetMapUI_CharacterMove()
     {
         //Go through
         foreach (MapTileBase mapTile in listMapTile)

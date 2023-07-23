@@ -77,11 +77,11 @@ public partial class InputMgr
                     EventCenter.Instance.EventTrigger("InputChooseCharacter", character.GetTypeID());
                     PublicTool.EventCameraGo(character.characterData.posID);
                     return true;
-                case InteractState.Move:
+                case InteractState.CharacterMove:
                     EventCenter.Instance.EventTrigger("InputChooseCharacter", character.GetTypeID());
                     PublicTool.EventCameraGo(character.characterData.posID);
                     return true;
-                case InteractState.Skill:
+                case InteractState.CharacterSkill:
                     break;
                 case InteractState.WaitAction:
                     break;
@@ -102,10 +102,10 @@ public partial class InputMgr
                 case InteractState.Normal:
                     PublicTool.EventCameraGo(mapTile.posID);
                     return true;
-                case InteractState.Move:
+                case InteractState.CharacterMove:
                     EventCenter.Instance.EventTrigger("InputMoveAction", mapTile.posID);
                     return true;
-                case InteractState.Skill:
+                case InteractState.CharacterSkill:
                     EventCenter.Instance.EventTrigger("InputSkillAction", mapTile.posID);
                     return true;
             }
@@ -117,9 +117,6 @@ public partial class InputMgr
                 case InteractState.Normal:
                     PublicTool.EventCameraGo(mapTile.posID);
                     return true;
-                case InteractState.Move:
-
-                    break;
             }
         }
         return false;

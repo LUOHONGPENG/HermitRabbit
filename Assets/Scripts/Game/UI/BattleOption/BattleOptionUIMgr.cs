@@ -29,12 +29,12 @@ public class BattleOptionUIMgr : MonoBehaviour
         btnMove.Init(BattleBasicBtnItem.BattleBasicBtnType.Move);
         btnMove.InitButton(delegate ()
         {
-            PublicTool.EventChangeInteract(InteractState.Move);
+            PublicTool.EventChangeInteract(InteractState.CharacterMove);
         });
         btnAttack.Init(BattleBasicBtnItem.BattleBasicBtnType.Attack);
         btnAttack.InitButton(delegate ()
         {
-            PublicTool.EventChangeInteract(InteractState.Skill, curCharacterData.GetItem().AttackID);
+            PublicTool.EventChangeInteract(InteractState.CharacterSkill, curCharacterData.GetItem().AttackID);
         });
 
         infoBarHealth.Init(BarResourceType.Health);

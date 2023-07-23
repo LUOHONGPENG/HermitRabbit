@@ -15,7 +15,7 @@ public class BattleSkillBtnItem : BattleBtnBase
         this.skillItem = skill;
         InitButton(delegate ()
         {
-            PublicTool.EventChangeInteract(InteractState.Skill, skillItem.id);
+            PublicTool.EventChangeInteract(InteractState.CharacterSkill, skillItem.id);
         });
     }
 

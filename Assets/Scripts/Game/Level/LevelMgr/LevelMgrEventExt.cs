@@ -44,7 +44,7 @@ public partial class LevelMgr
     private void InputChooseCharacterEvent(object arg0)
     {
         ChangeCurUnit(new UnitInfo(BattleUnitType.Character, (int)arg0));
-        PublicTool.EventChangeInteract(InteractState.Move);
+        PublicTool.EventChangeInteract(InteractState.CharacterMove);
     }
 
     private void ChangeCurUnit(UnitInfo unitInfo)

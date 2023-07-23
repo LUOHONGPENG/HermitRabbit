@@ -20,8 +20,8 @@ public enum GamePhase
 public enum InteractState
 {
     Normal,
-    Move,
-    Skill,
+    CharacterMove,
+    CharacterSkill,
     WaitAction
 }
 

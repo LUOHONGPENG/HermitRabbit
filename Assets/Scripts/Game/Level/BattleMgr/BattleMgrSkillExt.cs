@@ -123,7 +123,7 @@ public partial class BattleMgr
 
         if (battleTurnPhase == BattlePhase.CharacterPhase)
         {
-            PublicTool.EventChangeInteract(InteractState.Skill);
+            PublicTool.EventChangeInteract(InteractState.CharacterSkill);
         }
     }
 

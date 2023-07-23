@@ -94,7 +94,7 @@ MonoBehaviour:
     damageDelta: 100
     damageDeltaStd: 0
     foeEffect: 1
-    characterEffect: 1
+    characterEffect: 0
     plantEffect: 0
     isNormalAttack: 0
     characterID: 2001

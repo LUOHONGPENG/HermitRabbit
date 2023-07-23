@@ -57,7 +57,7 @@ public partial class BattleMgr
 
         if (battleTurnPhase == BattlePhase.CharacterPhase)
         {
-            PublicTool.EventChangeInteract(InteractState.Move);
+            PublicTool.EventChangeInteract(InteractState.CharacterMove);
         }
     }
 }

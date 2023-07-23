@@ -15,7 +15,7 @@ public partial class PublicTool
         InputMgr.Instance.SetInteractState(state);
         switch (state)
         {
-            case InteractState.Skill:
+            case InteractState.CharacterSkill:
                 if (data_0 > 0)
                 {
                     GetGameData().SetCurBattleSkillID(data_0);
