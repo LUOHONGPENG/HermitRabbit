@@ -22,6 +22,8 @@ MonoBehaviour:
     radius: 0
     regionType: 0
     isTargetFoe: 1
+    isNormalAttack: 1
+    characterID: 1001
   - id: 1101
     name: Fire Ball
     desc: Use fire ball to attack multiple foes.
@@ -31,6 +33,8 @@ MonoBehaviour:
     radius: 1
     regionType: 0
     isTargetFoe: 1
+    isNormalAttack: 0
+    characterID: 1001
   - id: 1102
     name: Inferno
     desc: Summon fire vortex to burn multiple foes.
@@ -40,6 +44,8 @@ MonoBehaviour:
     radius: 2
     regionType: 0
     isTargetFoe: 1
+    isNormalAttack: 0
+    characterID: 1001
   - id: 2001
     name: Strike
     desc: Use weapon to strike a foe.
@@ -49,6 +55,8 @@ MonoBehaviour:
     radius: 0
     regionType: 0
     isTargetFoe: 1
+    isNormalAttack: 1
+    characterID: 2001
   - id: 2101
     name: Wind Chop
     desc: Cut the foes around you.
@@ -58,3 +66,5 @@ MonoBehaviour:
     radius: 1
     regionType: 1
     isTargetFoe: 1
+    isNormalAttack: 0
+    characterID: 2001

@@ -85,13 +85,22 @@ public class BattleOptionUIMgr : MonoBehaviour
     public void InputChooseCharacterEvent(object arg0)
     {
         curCharacterData = (BattleCharacterData)PublicTool.GetGameData().GetDataFromUnitInfo(new UnitInfo(BattleUnitType.Character, (int)arg0));
-
+        //Portrait Part
         imgPortrait.sprite = Resources.Load(curCharacterData.GetItem().portraitUrl, typeof(Sprite)) as Sprite;
-
         RefreshBarInfo();
+        //Skill Part
+        PublicTool.ClearChildItem(tfSkillButton);
+        List<CharacterSkillExcelItem> listSkill = ExcelDataMgr.Instance.characterSkillExcelData.dicAllCharacterSkill[curCharacterData.typeID];
+        for(int i = 0;i < listSkill.Count; i++)
+        {
+            GameObject objSkill = GameObject.Instantiate(pfSkillButton, tfSkillButton);
+            BattleSkillBtnItem itemSkill = objSkill.GetComponent<BattleSkillBtnItem>();
+            itemSkill.Init(listSkill[i]);
+        }
         objPopup.SetActive(true);
     }
 
+    #region Refresh
     private void RefreshCharacterInfoEvent(object arg0)
     {
         RefreshBarInfo();
@@ -106,4 +115,6 @@ public class BattleOptionUIMgr : MonoBehaviour
             infoBarMove.UpdateData(curCharacterData.curMOV, curCharacterData.maxMOV);
         }
     }
+    #endregion
+
 }

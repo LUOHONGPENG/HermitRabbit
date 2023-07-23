@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class ExcelDataMgr : MonoSingleton<ExcelDataMgr>
 {
-    public CharacterSkillExcelData characterSkillExcelData;
     public CharacterExcelData characterExcelData;
+    public CharacterSkillExcelData characterSkillExcelData;
     public FoeExcelData foeExcelData;
 
     public IEnumerator IE_Init()
     {
-        characterSkillExcelData = ExcelManager.Instance.GetExcelData<CharacterSkillExcelData, CharacterSkillExcelItem>();
         characterExcelData = ExcelManager.Instance.GetExcelData<CharacterExcelData, CharacterExcelItem>();
+        characterSkillExcelData = ExcelManager.Instance.GetExcelData<CharacterSkillExcelData, CharacterSkillExcelItem>();
         foeExcelData = ExcelManager.Instance.GetExcelData<FoeExcelData, FoeExcelItem>();
+        characterSkillExcelData.Init();
         yield break;
     }
     
