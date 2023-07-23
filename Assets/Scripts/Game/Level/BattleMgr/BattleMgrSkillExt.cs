@@ -176,14 +176,12 @@ public partial class BattleMgr
     {
         if (!skillSubject.listValidSkill.Contains(skillTargetPos))
         {
-            EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Warning, skillTargetPos, -1, "No target"));
-            Debug.Log("No target");
+            EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("No Target", skillTargetPos));
             return false;
         }
         else if (skillSubject.curAP < skillBattleInfo.costAP)
         {
-            EventCenter.Instance.EventTrigger("EffectUIText", new EffectUITextInfo(EffectUITextType.Warning, skillTargetPos, -1, "SP not enough"));
-            Debug.Log("AP not enough");
+            EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("AP not enough", skillTargetPos));
             return false;
         }
         else

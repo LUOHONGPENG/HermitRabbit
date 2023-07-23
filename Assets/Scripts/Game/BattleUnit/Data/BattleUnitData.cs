@@ -167,19 +167,19 @@ public class BattleUnitData
 
     #region BattleTextQueue
 
-    private Queue<BattleTextInfo> queueBattleText = new Queue<BattleTextInfo>();
+    private Queue<EffectBattleTextInfo> queueBattleText = new Queue<EffectBattleTextInfo>();
 
     public void ClearBattleTextQueue()
     {
         queueBattleText.Clear();
     }
 
-    public void EnqueueBattleText(BattleTextInfo info)
+    public void EnqueueBattleText(EffectBattleTextInfo info)
     {
         queueBattleText.Enqueue(info);
     }
 
-    public Queue<BattleTextInfo> GetQueueBattleText()
+    public Queue<EffectBattleTextInfo> GetQueueBattleText()
     {
         return queueBattleText;
     }

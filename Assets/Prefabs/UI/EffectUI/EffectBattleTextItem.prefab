@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 2087102162944174884}
   - component: {fileID: 632676319549776148}
   m_Layer: 5
-  m_Name: EffectDamageTextItem
+  m_Name: EffectBattleTextItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,3 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txContent: {fileID: 275782241540194308}
+  listColor:
+  - {r: 1, g: 0.39308167, b: 0.39308167, a: 1}
+  - {r: 0.13427073, g: 0.6886792, b: 0.4026281, a: 1}

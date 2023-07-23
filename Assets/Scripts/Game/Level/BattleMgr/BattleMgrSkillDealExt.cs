@@ -49,12 +49,12 @@ public partial class BattleMgr
         if(effectType == SkillEffectType.Harm)
         {
             target.GetHurt(realDamage);
-            target.EnqueueBattleText(new BattleTextInfo(BattleTextType.Damage, (-realDamage).ToString()));
+            target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-realDamage).ToString(),target.posID));
         }
         else if(effectType == SkillEffectType.Help)
         {
             target.GetHeal(realDamage);
-            target.EnqueueBattleText(new BattleTextInfo(BattleTextType.Heal, (realDamage).ToString()));
+            target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Heal, (realDamage).ToString(), target.posID));
         }
     }
 

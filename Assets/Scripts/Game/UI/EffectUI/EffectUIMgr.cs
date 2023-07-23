@@ -6,47 +6,55 @@ using UnityEngine;
 public class EffectUIMgr : MonoBehaviour
 {
     public Transform tfEffectText;
-    public GameObject pfDamageText;
+    public GameObject pfBattleText;
     public GameObject pfWarningText;
 
 
     private void OnEnable()
     {
-        EventCenter.Instance.AddEventListener("EffectUIText", EffectUITextEvent);
+        EventCenter.Instance.AddEventListener("EffectWarningText", EffectWarningTextEvent);
+        EventCenter.Instance.AddEventListener("EffectBattleText", EffectBattleTextEvent);
+
     }
 
     private void OnDisable()
     {
-        EventCenter.Instance.RemoveEventListener("EffectUIText", EffectUITextEvent);
+        EventCenter.Instance.RemoveEventListener("EffectWarningText", EffectWarningTextEvent);
+        EventCenter.Instance.RemoveEventListener("EffectBattleText", EffectBattleTextEvent);
+
     }
 
-    private void EffectUITextEvent(object arg0)
+
+
+    #region Warning
+    private void EffectWarningTextEvent(object arg0)
     {
-        EffectUITextInfo info = (EffectUITextInfo)arg0;
-        switch (info.type)
-        {
-            case EffectUITextType.Damage:
-                InitDamageText(info.argString, info.posID);
-                break;
-            case EffectUITextType.Warning:
-                InitWarningText(info.argString, info.posID);
-                break;
-        }
-
-
+        EffectWarningTextInfo info = (EffectWarningTextInfo)arg0;
+        InitWarningText(info);
     }
 
-    public void InitDamageText(string info, Vector2Int posID)
-    {
-        GameObject objDamage = GameObject.Instantiate(pfDamageText, tfEffectText);
-        EffectDamageTextItem efDamage = objDamage.GetComponent<EffectDamageTextItem>();
-        efDamage.Init(info, posID);
-    }
-
-    public void InitWarningText(string content, Vector2Int posID)
+    public void InitWarningText(EffectWarningTextInfo info)
     {
         GameObject objWarning = GameObject.Instantiate(pfWarningText, tfEffectText);
         EffectWarningTextItem efWarning = objWarning.GetComponent<EffectWarningTextItem>();
-        efWarning.Init(content, posID);
+        efWarning.Init(info);
     }
+
+    #endregion
+
+
+    private void EffectBattleTextEvent(object arg0)
+    {
+        EffectBattleTextInfo info = (EffectBattleTextInfo)arg0;
+        InitBattleText(info);
+    }
+
+    public void InitBattleText(EffectBattleTextInfo info)
+    {
+        GameObject objBattle = GameObject.Instantiate(pfBattleText, tfEffectText);
+        EffectBattleTextItem efBattle = objBattle.GetComponent<EffectBattleTextItem>();
+        efBattle.Init(info);
+    }
+
+
 }

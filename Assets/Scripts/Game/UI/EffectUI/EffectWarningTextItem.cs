@@ -6,11 +6,11 @@ using DG.Tweening;
 
 public class EffectWarningTextItem : EffectPosTextItem
 {
-    public void Init(string info, Vector2Int posID)
+    public void Init(EffectWarningTextInfo info)
     {
-        Vector3 pos3D = PublicTool.ConvertPosFromID(posID);
+        Vector3 pos3D = PublicTool.ConvertPosFromID(info.posID);
         pos3D = new Vector3(pos3D.x, 0.5f, pos3D.z);
-        SetPosContent(info, pos3D);
+        SetPosContent(info.content, pos3D);
 
         transform.localPosition = PublicTool.CalculateScreenUIPos(posSource, GameMgr.Instance.curMapCamera);
 
