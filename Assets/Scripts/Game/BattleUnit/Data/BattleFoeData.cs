@@ -24,12 +24,12 @@ public class BattleFoeData : BattleUnitData
         return item;
     }
 
-    public CharacterSkillExcelItem GetSkillItem()
+    public int GetSkillID()
     {
-        return PublicTool.GetSkillItem(item.skillID);
+        return item.skillID;
     }
 
-    public new float curATK 
+    public override int curATK 
     {
         get
         {
@@ -37,7 +37,7 @@ public class BattleFoeData : BattleUnitData
         }
     }
 
-    public new float curDEF
+    public override int curDEF
     {
         get
         {
@@ -45,7 +45,7 @@ public class BattleFoeData : BattleUnitData
         }
     }
 
-    public new float curRES
+    public override int curRES
     {
         get
         {

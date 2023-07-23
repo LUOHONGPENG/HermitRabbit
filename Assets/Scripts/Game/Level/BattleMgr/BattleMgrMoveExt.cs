@@ -52,7 +52,7 @@ public partial class BattleMgr
 
     private void AfterMove()
     {
-        PublicTool.EventRefreshOccupancy();
+        PublicTool.RecalculateOccupancy();
         PublicTool.EventRefreshCharacterUI();
 
         if (battleTurnPhase == BattlePhase.CharacterPhase)

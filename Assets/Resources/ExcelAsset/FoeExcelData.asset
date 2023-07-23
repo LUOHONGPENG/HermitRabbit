@@ -16,8 +16,9 @@ MonoBehaviour:
   - id: 1001
     name: LinkedList
     HP: 12
-    ATK: 6
+    ATK: 8
     DEF: 5
     RES: 5
     MOV: 3
+    skillID: 9001
     pixelUrl: Sprite/Foe/PixelEvilGod

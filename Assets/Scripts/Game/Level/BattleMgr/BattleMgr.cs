@@ -11,9 +11,7 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     public int numTurn;
     public BattlePhase battleTurnPhase;
 
-    public Stack<int> stackFoe;
 
-    private LevelMgr parent;
     private MapViewMgr mapViewMgr;
     private UnitViewMgr unitViewMgr;
     private GameData gameData;
@@ -21,18 +19,15 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
 
     #region Basic Function
 
-    public void Init(LevelMgr parent)
+    public void Init(LevelMgr levelMgr)
     {
-        this.parent = parent;
-        this.mapViewMgr = parent.mapViewMgr;
-        this.unitViewMgr = parent.unitViewMgr;
+        this.mapViewMgr = levelMgr.mapViewMgr;
+        this.unitViewMgr = levelMgr.unitViewMgr;
         this.gameData = PublicTool.GetGameData();
     }
 
     public void StartNewBattle(LevelMgr parent)
     {
-        this.parent = parent;
-
         numTurn = 1;
         ResetNewTurn();
         battleTurnPhase = BattlePhase.CharacterPhase;
@@ -51,7 +46,7 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
                 break;
         }
         Debug.Log("Start Turn " + numTurn + " " + battleTurnPhase.ToString());
-        PublicTool.EventRefreshOccupancy();
+        PublicTool.RecalculateOccupancy();
     }
 
     public void EndTurnPhase()
@@ -84,8 +79,6 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
 
     private void StartCharacterPhase()
     {
-
-
         PublicTool.EventChangeInteract(InteractState.Normal);
     }
 
@@ -93,7 +86,11 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     private void StartFoePhase()
     {
         PublicTool.EventChangeInteract(InteractState.WaitAction);
+        ScanFoeStack();
+        StartCoroutine(IE_ExecuteFoeTurn());
     }
+
+
     #endregion
 
 

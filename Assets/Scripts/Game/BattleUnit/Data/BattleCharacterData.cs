@@ -41,7 +41,7 @@ public class BattleCharacterData : BattleUnitData
         return item;
     }
 
-    public override float curATK
+    public override int curATK
     {
         get
         {
@@ -56,7 +56,7 @@ public class BattleCharacterData : BattleUnitData
         }
     }
 
-    public override float curDEF
+    public override int curDEF
     {
         get
         {
@@ -64,7 +64,7 @@ public class BattleCharacterData : BattleUnitData
         }
     }
 
-    public override float curRES
+    public override int curRES
     {
         get
         {

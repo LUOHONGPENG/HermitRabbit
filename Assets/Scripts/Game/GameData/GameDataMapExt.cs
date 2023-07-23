@@ -13,7 +13,7 @@ public partial class GameData
     public Dictionary<Vector2Int, UnitInfo> dicTempMapUnit = new Dictionary<Vector2Int, UnitInfo>();
 
     //Refresh Valid Range for display map
-    public void RefreshOccupancyInfo()
+    public void RecalculateOccupancy()
     {
         listTempCharacterPos = GetCharacterPos();
         listTempFoePos = GetFoePos();
@@ -31,10 +31,9 @@ public partial class GameData
         {
             character.RefreshValidMove();
         }
-        Debug.Log("Refresh Occupancy Info");
     }
 
-    public void RefreshSkillTileInfo()
+    public void RecalculateSkillCover()
     {
         GetCurUnitData().RefreshValidSkill();
     }

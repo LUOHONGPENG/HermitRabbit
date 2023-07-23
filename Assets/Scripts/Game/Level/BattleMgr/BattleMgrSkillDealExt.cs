@@ -26,6 +26,8 @@ public partial class BattleMgr
                 break;
         }
 
+        Debug.Log("CUR ATK "+source.curATK);
+
         switch (skillBattleInfo.damageType)
         {
             case SkillDamageType.Physical:
@@ -39,7 +41,12 @@ public partial class BattleMgr
                 break;
         }
 
+        if (realDamage < 0)
+        {
+            realDamage = 0;
+        }
         realDamage = Mathf.RoundToInt(realDamage);
+
 
         if(effectType == SkillEffectType.Harm)
         {

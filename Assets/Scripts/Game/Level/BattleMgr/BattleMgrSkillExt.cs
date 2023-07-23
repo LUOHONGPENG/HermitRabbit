@@ -39,7 +39,7 @@ public partial class BattleMgr
         yield return StartCoroutine(IE_ExecuteSkillCost());
         yield return StartCoroutine(IE_FindSkillTarget());
         yield return StartCoroutine(IE_InvokeSkillData());
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         yield return StartCoroutine(InvokeSkillText());
         AfterSkill();
         EventCenter.Instance.EventTrigger("CharacterSkillEnd", null);
@@ -162,8 +162,8 @@ public partial class BattleMgr
         }
         gameData.CheckClearFoe();
 
-        PublicTool.EventRefreshOccupancy();
-        PublicTool.EventRefreshSkill();
+        PublicTool.RecalculateOccupancy();
+        PublicTool.RecalculateSkillCover();
         PublicTool.EventRefreshCharacterUI();
 
         if (battleTurnPhase == BattlePhase.CharacterPhase)

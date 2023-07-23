@@ -51,7 +51,7 @@ public class UnitViewMgr : MonoBehaviour
         {
             dicCharacterView.Add(characterData.keyID,characterView);
         }
-        PublicTool.EventRefreshOccupancy();
+        PublicTool.RecalculateOccupancy();
     }
 
     public BattleCharacterView GetCharacterView(int keyID)
@@ -90,7 +90,7 @@ public class UnitViewMgr : MonoBehaviour
         {
             dicFoeView.Add(foeData.keyID, foeView);
         }
-        PublicTool.EventRefreshOccupancy();
+        PublicTool.RecalculateOccupancy();
     }
 
     public BattleFoeView GetFoeView(int keyID)
@@ -126,7 +126,7 @@ public class UnitViewMgr : MonoBehaviour
         {
             dicPlantView.Add(plantData.keyID, plantView);
         }
-        PublicTool.EventRefreshOccupancy();
+        PublicTool.RecalculateOccupancy();
     }
 
     public BattlePlantView GetPlantView(int keyID)

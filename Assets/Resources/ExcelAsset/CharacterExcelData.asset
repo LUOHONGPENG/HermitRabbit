@@ -17,7 +17,7 @@ MonoBehaviour:
     name: Leo
     HP: 25
     STR: 2
-    CON: 4
+    CON: 3
     INT: 10
     WIS: 8
     MOV: 4
@@ -30,7 +30,7 @@ MonoBehaviour:
     name: Kizuna
     HP: 45
     STR: 9
-    CON: 8
+    CON: 5
     INT: 4
     WIS: 4
     MOV: 6

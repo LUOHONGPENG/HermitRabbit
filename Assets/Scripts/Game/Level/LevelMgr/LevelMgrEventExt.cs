@@ -13,11 +13,6 @@ public partial class LevelMgr
         EventCenter.Instance.AddEventListener("InputSkillAction", InputSkillActionEvent);
         EventCenter.Instance.AddEventListener("InputSetHoverTile", InputSetHoverTileEvent);
 
-
-        //About Map
-        EventCenter.Instance.AddEventListener("RefreshOccupancy", RefreshOccupancyEvent);
-        EventCenter.Instance.AddEventListener("RefreshSkillRange", RefreshSkillRangeEvent);
-
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
     }
@@ -30,9 +25,6 @@ public partial class LevelMgr
         EventCenter.Instance.RemoveEventListener("InputSkillAction", InputSkillActionEvent);
         EventCenter.Instance.RemoveEventListener("InputSetHoverTile", InputSetHoverTileEvent);
 
-        //About Refresh
-        EventCenter.Instance.RemoveEventListener("RefreshOccupancy", RefreshOccupancyEvent);
-        EventCenter.Instance.RemoveEventListener("RefreshSkillRange", RefreshSkillRangeEvent);
 
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
@@ -94,15 +86,6 @@ public partial class LevelMgr
     #endregion
 
     #region EventDeal_Map
-    private void RefreshOccupancyEvent(object arg0)
-    {
-        gameData.RefreshOccupancyInfo();
-    }
-
-    private void RefreshSkillRangeEvent(object arg0)
-    {
-        gameData.RefreshSkillTileInfo();
-    }
 
     private void InputSetHoverTileEvent(object arg0)
     {

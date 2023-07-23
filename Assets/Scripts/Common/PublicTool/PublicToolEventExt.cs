@@ -20,23 +20,32 @@ public partial class PublicTool
                 {
                     GetGameData().SetCurBattleSkill(data_0);
                 }
-                EventRefreshSkill();
+                RecalculateSkillCover();
                 break;
         }
     }
 
-    public static void EventRefreshOccupancy()
+    public static void RecalculateOccupancy()
     {
-        EventCenter.Instance.EventTrigger("RefreshOccupancy", null);
+        if (GetGameData() != null)
+        {
+            GetGameData().RecalculateOccupancy();
+        }
     }
 
-    public static void EventRefreshSkill()
+    public static void RecalculateSkillCover()
     {
-        EventCenter.Instance.EventTrigger("RefreshSkillRange", null);
+        if (GetGameData() != null)
+        {
+            GetGameData().RecalculateSkillCover();
+        }
     }
 
+
+    #region RefreshUI
     public static void EventRefreshCharacterUI()
     {
         EventCenter.Instance.EventTrigger("RefreshCharacterInfo", null);
     }
+    #endregion
 }
