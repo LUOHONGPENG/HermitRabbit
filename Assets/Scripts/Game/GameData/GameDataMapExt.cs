@@ -5,8 +5,9 @@ using UnityEngine;
 public partial class GameData
 {
     #region CalculateRegion
-    public List<Vector2Int> listTempFriendPos = new List<Vector2Int>();
+    public List<Vector2Int> listTempCharacterPos = new List<Vector2Int>();
     public List<Vector2Int> listTempFoePos = new List<Vector2Int>();
+    public List<Vector2Int> listTempPlantPos = new List<Vector2Int>();
     public List<Vector2Int> listTempAllPos = new List<Vector2Int>();
     public List<Vector2Int> listTempEmptyPos = new List<Vector2Int>();
     public Dictionary<Vector2Int, UnitInfo> dicTempMapUnit = new Dictionary<Vector2Int, UnitInfo>();
@@ -14,9 +15,10 @@ public partial class GameData
     //Refresh Valid Range for display map
     public void RefreshOccupancyInfo()
     {
-        listTempFriendPos = GetFriendPos();
+        listTempCharacterPos = GetCharacterPos();
         listTempFoePos = GetFoePos();
-        listTempAllPos = GetFullPos();
+        listTempPlantPos = GetPlantPos();
+        listTempAllPos = GetAllPos();
         listTempEmptyPos = GetEmptyPos();
         GenerateDicMapUnit();
 
@@ -40,16 +42,12 @@ public partial class GameData
         }
     }
 
-    private List<Vector2Int> GetFriendPos()
+    private List<Vector2Int> GetCharacterPos()
     {
         List<Vector2Int> temp = new List<Vector2Int>();
         foreach(var character in listCharacter)
         {
             temp.Add(character.posID);
-        }
-        foreach (var plant in listPlant)
-        {
-            temp.Add(plant.posID);
         }
         return temp;
     }
@@ -64,7 +62,18 @@ public partial class GameData
         return temp;
     }
 
-    private List<Vector2Int> GetFullPos()
+    private List<Vector2Int> GetPlantPos()
+    {
+        List<Vector2Int> temp = new List<Vector2Int>();
+        foreach (var plant in listPlant)
+        {
+            temp.Add(plant.posID);
+        }
+        return temp;
+    }
+
+
+    private List<Vector2Int> GetAllPos()
     {
         List<Vector2Int> temp = new List<Vector2Int>();
         foreach (var character in listCharacter)

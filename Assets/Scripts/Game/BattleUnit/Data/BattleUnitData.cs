@@ -56,6 +56,7 @@ public class BattleUnitData
     public void RefreshValidMove()
     {
         listValidMove = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, curMOV));
+        //Remove the position where there is a unit
         foreach(var pos in PublicTool.GetGameData().listTempAllPos)
         {
             if (listValidMove.Contains(pos))
@@ -68,7 +69,15 @@ public class BattleUnitData
     public void RefreshValidSkill()
     {
         SkillBattleInfo skillInfo = PublicTool.GetGameData().GetCurSkillBattleInfo();
+
+        //Range Type
         listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, skillInfo.range));
+
+        //If not range self
+        if (!skillInfo.isRangeSelf)
+        {
+            listViewSkill.Remove(posID);
+        }
 
         //According to the SkillType to decide the skill radius
         List<Vector2Int> listTemp = new List<Vector2Int>();
@@ -77,31 +86,51 @@ public class BattleUnitData
         {
             //Get the position of All Foes
             List<Vector2Int> listFoePos = PublicTool.GetGameData().listTempFoePos;
-            foreach (Vector2Int viewPos in listViewSkill)
-            {
-                //Get the radius of each view pos
-                List<Vector2Int> listRadius = new List<Vector2Int>();
-                switch (skillInfo.regionType)
-                {
-                    case SkillRegionType.Circle:
-                        listRadius = PublicTool.GetTargetCircleRange(viewPos, skillInfo.radius);
-                        break;
-                }
-                for(int i = 0; i < listRadius.Count; i++)
-                {
-                    if (listFoePos.Contains(listRadius[i]))
-                    {
-                        listTemp.Add(viewPos);
-                        break;
-                    }
-                }
-            }
+            CheckWhetherSkillContainTarget(listTemp, listFoePos, listViewSkill, skillInfo);
         }
 
-        //if(listTemp contains viewPos) continue;
+        if (skillInfo.isTargetCharacter)
+        {
+            List<Vector2Int> listCharacterPos = PublicTool.GetGameData().listTempCharacterPos;
+            CheckWhetherSkillContainTarget(listTemp, listCharacterPos, listViewSkill, skillInfo);
+        }
+
+        if (skillInfo.isTargetPlant)
+        {
+            List<Vector2Int> listPlantPos = PublicTool.GetGameData().listTempPlantPos;
+            CheckWhetherSkillContainTarget(listTemp, listPlantPos, listViewSkill, skillInfo);
+        }
 
         listValidSkill = listTemp;
     }
+
+    private void CheckWhetherSkillContainTarget(List<Vector2Int> listStore, List<Vector2Int> listTarget, List<Vector2Int> listToCheck,SkillBattleInfo skillInfo)
+    {
+        foreach (Vector2Int viewPos in listToCheck)
+        {
+            //Get the radius of each view pos
+            List<Vector2Int> listRadius = new List<Vector2Int>();
+            switch (skillInfo.regionType)
+            {
+                case SkillRegionType.Circle:
+                    listRadius = PublicTool.GetTargetCircleRange(viewPos, skillInfo.radius);
+                    break;
+                case SkillRegionType.Square:
+                    listRadius = PublicTool.GetTargetSquareRange(viewPos, skillInfo.radius);
+                    break;
+            }
+            for (int i = 0; i < listRadius.Count; i++)
+            {
+                if (listTarget.Contains(listRadius[i]) && !listStore.Contains(viewPos))
+                {
+                    listStore.Add(viewPos);
+                    break;
+                }
+            }
+        }
+    }
+
+
 
     public void RefreshAttackRange()
     {

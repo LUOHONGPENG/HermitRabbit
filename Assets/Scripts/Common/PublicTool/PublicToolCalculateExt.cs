@@ -32,6 +32,7 @@ public partial class PublicTool
         return disX + disY;
     }
 
+    #region CalculateRange
     public static List<Vector2Int> GetTargetCircleRange(Vector2Int targetPos, int Range)
     {
         List<Vector2Int> listRange = new List<Vector2Int>();
@@ -55,4 +56,27 @@ public partial class PublicTool
         }
         return listRange;
     }
+
+    public static List<Vector2Int> GetTargetSquareRange(Vector2Int targetPos,int Range)
+    {
+        List<Vector2Int> listRange = new List<Vector2Int>();
+        if(Range > 0)
+        {
+            for (int i = -Range; i <= Range; i++)
+            {
+                for (int j = -Range; j <= Range; j++)
+                {
+                    Vector2Int thisPos = new Vector2Int(targetPos.x + i, targetPos.y + j);
+                    listRange.Add(thisPos);
+                }
+            }
+        }
+        else
+        {
+            listRange.Add(targetPos);
+        }
+        return listRange;
+    }
+
+    #endregion
 }

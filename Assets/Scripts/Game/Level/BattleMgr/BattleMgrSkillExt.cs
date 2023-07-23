@@ -4,6 +4,10 @@ using UnityEngine;
 
 public partial class BattleMgr
 {
+    /// <summary>
+    /// Character Skill
+    /// </summary>
+
     private Vector2Int skillTargetPos;
     private SkillBattleInfo skillBattleInfo;
     private BattleUnitData skillSubject;
@@ -44,7 +48,7 @@ public partial class BattleMgr
         //Cost AP
         skillSubject.curAP -= skillBattleInfo.costAP;
 
-        //Calculate the target that will be affected
+        //Calculate the position that will be affected
         List<Vector2Int> listPos = new List<Vector2Int>();
         switch (skillBattleInfo.regionType)
         {
