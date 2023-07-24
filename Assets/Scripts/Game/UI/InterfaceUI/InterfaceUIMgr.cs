@@ -6,10 +6,12 @@ using UnityEngine;
 public class InterfaceUIMgr : MonoBehaviour
 {
     public BattleOptionUIMgr battleOptionUIMgr;
+    public BattleInterfaceUIMgr battleInterfaceUIMgr;
 
     public void Init()
     {
         battleOptionUIMgr.Init();
+        battleInterfaceUIMgr.Init();
     }
 
     private void OnEnable()
