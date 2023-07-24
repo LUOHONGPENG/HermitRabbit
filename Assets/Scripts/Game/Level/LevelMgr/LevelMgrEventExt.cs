@@ -12,7 +12,7 @@ public partial class LevelMgr
         EventCenter.Instance.AddEventListener("InputMoveAction", InputMoveActionEvent);
         EventCenter.Instance.AddEventListener("InputSkillAction", InputSkillActionEvent);
         EventCenter.Instance.AddEventListener("InputSetHoverTile", InputSetHoverTileEvent);
-        EventCenter.Instance.AddEventListener("InputEndCharacterPhase", InputEndCharacterPhaseEvent);
+        EventCenter.Instance.AddEventListener("CharacterPhaseEnd", InputEndCharacterPhaseEvent);
 
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
@@ -25,15 +25,11 @@ public partial class LevelMgr
         EventCenter.Instance.RemoveEventListener("InputMoveAction", InputMoveActionEvent);
         EventCenter.Instance.RemoveEventListener("InputSkillAction", InputSkillActionEvent);
         EventCenter.Instance.RemoveEventListener("InputSetHoverTile", InputSetHoverTileEvent);
-        EventCenter.Instance.RemoveEventListener("InputEndCharacterPhase", InputEndCharacterPhaseEvent);
+        EventCenter.Instance.RemoveEventListener("CharacterPhaseEnd", InputEndCharacterPhaseEvent);
 
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
     }
-
-
-
-
 
     #region EventDeal_Input
     private void InputChooseCharacterEvent(object arg0)

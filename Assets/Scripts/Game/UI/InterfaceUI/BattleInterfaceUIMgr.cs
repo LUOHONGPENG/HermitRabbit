@@ -6,13 +6,17 @@ using UnityEngine.UI;
 public class BattleInterfaceUIMgr : MonoBehaviour
 {
     public GameObject objPopup;
+
+    public BattleMiniCharacterUIItem miniCharacterUI1001;
+    public BattleMiniCharacterUIItem miniCharacterUI2001;
+
     public Button btnEndTurn;
 
     public void Init()
     {
         btnEndTurn.onClick.RemoveAllListeners();
         btnEndTurn.onClick.AddListener(delegate() {
-            EventCenter.Instance.EventTrigger("InputEndCharacterPhase", null);
+            EventCenter.Instance.EventTrigger("CharacterPhaseEnd", null);
         });
     }
 
@@ -36,5 +40,18 @@ public class BattleInterfaceUIMgr : MonoBehaviour
     {
 
     }
+    #endregion
+
+    #region CharacterUI
+
+    public void BindCharacterData()
+    {
+        GameData gameData = PublicTool.GetGameData();
+
+        miniCharacterUI1001.Init(gameData.GetBattleCharacterData(1001));
+        miniCharacterUI2001.Init(gameData.GetBattleCharacterData(2001));
+
+    }
+
     #endregion
 }

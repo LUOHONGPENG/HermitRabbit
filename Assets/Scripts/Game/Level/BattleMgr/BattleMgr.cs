@@ -93,7 +93,6 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
 
     private void StartFoePhase()
     {
-        EventCenter.Instance.EventTrigger("CharacterPhaseEnd",null);
         PublicTool.EventChangeInteract(InteractState.WaitAction);
         ScanFoeStack();
         StartCoroutine(IE_ExecuteFoeTurn());

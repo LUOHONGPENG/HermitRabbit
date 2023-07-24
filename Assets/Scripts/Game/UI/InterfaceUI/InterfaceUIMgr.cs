@@ -18,6 +18,7 @@ public class InterfaceUIMgr : MonoBehaviour
     {
         EventCenter.Instance.AddEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.AddEventListener("RefreshCharacterInfo", RefreshCharacterInfoEvent);
+
         EventCenter.Instance.AddEventListener("CharacterActionStart", CharacterActionStartEvent);
         EventCenter.Instance.AddEventListener("CharacterActionEnd", CharacterActionEndEvent);
         EventCenter.Instance.AddEventListener("CharacterPhaseStart", CharacterPhaseStartEvent);
@@ -28,11 +29,11 @@ public class InterfaceUIMgr : MonoBehaviour
     {
         EventCenter.Instance.RemoveEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.RemoveEventListener("RefreshCharacterInfo", RefreshCharacterInfoEvent);
+
         EventCenter.Instance.RemoveEventListener("CharacterActionStart", CharacterActionStartEvent);
         EventCenter.Instance.RemoveEventListener("CharacterActionEnd", CharacterActionEndEvent);
         EventCenter.Instance.RemoveEventListener("CharacterPhaseStart", CharacterPhaseStartEvent);
         EventCenter.Instance.RemoveEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
-
     }
 
     private void InputChooseCharacterEvent(object arg0)
@@ -54,8 +55,8 @@ public class InterfaceUIMgr : MonoBehaviour
     private void CharacterActionStartEvent(object arg0)
     {
         battleOptionUIMgr.HideAction();
-
     }
+
     private void CharacterPhaseStartEvent(object arg0)
     {
 
@@ -66,6 +67,13 @@ public class InterfaceUIMgr : MonoBehaviour
         battleOptionUIMgr.HideBattleOptionPage();
     }
 
+    private void BattleStartEvent(object arg0)
+    {
 
+    }
 
+    private void BattleEndEvent(object arg0)
+    {
+
+    }
 }
