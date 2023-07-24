@@ -76,7 +76,6 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
         PublicTool.EventRefreshCharacterUI();
     }
 
-
     private void StartCharacterPhase()
     {
         EventCenter.Instance.EventTrigger("CharacterPhaseStart", null);
@@ -92,7 +91,6 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
         }
     }
 
-
     private void StartFoePhase()
     {
         EventCenter.Instance.EventTrigger("CharacterPhaseEnd",null);
@@ -100,8 +98,6 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
         ScanFoeStack();
         StartCoroutine(IE_ExecuteFoeTurn());
     }
-
-
     #endregion
 
 
