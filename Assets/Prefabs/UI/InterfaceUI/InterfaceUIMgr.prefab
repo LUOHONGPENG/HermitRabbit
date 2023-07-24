@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleOptionUIMgr: {fileID: 2836473685131505334}
-  battleInterfaceUIMgr: {fileID: 0}
+  battleInterfaceUIMgr: {fileID: 6045996678127200820}
 --- !u!1001 &1709510013094576348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -172,6 +172,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08fdf547be1984c42aabf22ef2c5bdfe, type: 3}
+--- !u!114 &6045996678127200820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4926612256496511720, guid: 08fdf547be1984c42aabf22ef2c5bdfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 1709510013094576348}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3e1915f3e63f2b48b5996608223f45b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7363428570944998106 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8181141705045199366, guid: 08fdf547be1984c42aabf22ef2c5bdfe,
