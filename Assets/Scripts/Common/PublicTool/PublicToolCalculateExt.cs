@@ -79,4 +79,15 @@ public partial class PublicTool
     }
 
     #endregion
+
+    public static List<Vector2Int> GetNearPos(Vector2Int posID)
+    {
+        List<Vector2Int> listNear = new List<Vector2Int>();
+        listNear.Add(posID + new Vector2Int(0, 1));
+        listNear.Add(posID + new Vector2Int(1, 0));
+        listNear.Add(posID + new Vector2Int(0, -1));
+        listNear.Add(posID + new Vector2Int(-1, 0));
+
+        return listNear;
+    }
 }

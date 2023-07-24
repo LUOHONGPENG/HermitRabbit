@@ -44,8 +44,9 @@ public class BattleUnitData
     /// Pos Data
     /// </summary>
     public Vector2Int posID = new Vector2Int(0, 0);
-    //Store the valid Move 
-    public List<Vector2Int> listValidMove = new List<Vector2Int>();
+    //Store the valid Move Path
+    public Dictionary<Vector2Int, List<Vector2Int>> dicValidMovePath = new Dictionary<Vector2Int, List<Vector2Int>>();
+
     //Store the skill range display to the character
     public List<Vector2Int> listViewSkill = new List<Vector2Int>();
     //Store the valid pos that the player can choose
@@ -53,18 +54,82 @@ public class BattleUnitData
 
     public List<Vector2Int> listValidRange = new List<Vector2Int>();
 
-    public void RefreshValidMove()
+
+
+    #region CharacterMoveBFS
+
+    public void RefreshValidCharacterMoveBFS()
     {
-        listValidMove = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, curMOV));
-        //Remove the position where there is a unit
-        foreach(var pos in PublicTool.GetGameData().listTempAllPos)
+        dicValidMovePath.Clear();
+        Dictionary<Vector2Int, Vector2Int> dicParentChild = new Dictionary<Vector2Int, Vector2Int>();
+        List<Vector2Int> listFoe = PublicTool.GetGameData().listTempFoePos;
+        Queue<Vector2Int> ququeOpen = new Queue<Vector2Int>();
+        ququeOpen.Enqueue(posID);
+        while (ququeOpen.Count > 0)
         {
-            if (listValidMove.Contains(pos))
+            Vector2Int tarPos = ququeOpen.Dequeue();
+            List<Vector2Int> path;
+            if (dicParentChild.ContainsKey(tarPos))
             {
-                listValidMove.Remove(pos);
+                Vector2Int parent = dicParentChild[tarPos];
+                if (dicValidMovePath.ContainsKey(parent))
+                {
+                    path = new List<Vector2Int>(dicValidMovePath[parent]);
+                }
+                else
+                {
+                    Debug.LogError("!!!!");
+                    path = new List<Vector2Int>();
+                }
+            }
+            else
+            {
+                path = new List<Vector2Int>();
+            }
+
+            if(path.Count> curMOV)
+            {
+                continue;
+            }
+            path.Add(tarPos);
+            dicValidMovePath.Add(tarPos, path);
+
+            //Next Four
+            List<Vector2Int> listNear = PublicTool.GetNearPos(tarPos);
+            for(int i = 0; i < listNear.Count; i++)
+            {
+                if (dicParentChild.ContainsKey(listNear[i]))
+                {
+                    continue;
+                }
+                else if(dicValidMovePath.ContainsKey(listNear[i]))
+                {
+                    continue;
+                }
+                else if (listFoe.Contains(listNear[i]))
+                {
+                    continue;
+                }
+                dicParentChild.Add(listNear[i], tarPos);
+                ququeOpen.Enqueue(listNear[i]);
             }
         }
+
+        foreach (Vector2Int tarPos in PublicTool.GetGameData().listTempAllPos)
+        {
+            if (dicValidMovePath.ContainsKey(tarPos))
+            {
+                dicValidMovePath.Remove(tarPos);
+            }
+        }
+
+
     }
+
+
+
+    #endregion
+
 
     public void RefreshValidSkill()
     {

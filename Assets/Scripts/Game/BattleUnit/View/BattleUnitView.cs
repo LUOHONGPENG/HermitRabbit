@@ -24,16 +24,19 @@ public class BattleUnitView : MonoBehaviour
         srUnit.transform.LookAt(Camera.main.transform.forward + srUnit.transform.position);
     }
 
-    public void MoveToPos(Vector2Int posID,bool battleMove)
+    public void MoveToPos(Vector2Int posID)
     {
         Vector3 tilePos = PublicTool.ConvertPosFromID(posID);
-        if (battleMove)
+        this.transform.localPosition = new Vector3(tilePos.x, 0.35f, tilePos.z);
+    }
+
+    public IEnumerator IE_MovePath(List<Vector2Int> path)
+    {
+        for(int i = 1; i < path.Count; i++)
         {
-            this.transform.DOLocalMove(new Vector3(tilePos.x, 0.35f, tilePos.z), 0.5f);
-        }
-        else
-        {
-            this.transform.localPosition = new Vector3(tilePos.x, 0.35f, tilePos.z);
+            Vector3 tilePos = PublicTool.ConvertPosFromID(path[i]);
+            this.transform.DOLocalMove(new Vector3(tilePos.x, 0.35f, tilePos.z), 0.2f);
+            yield return new WaitForSeconds(0.2f);
         }
     }
 

@@ -14,40 +14,41 @@ public partial class BattleMgr
         moveSubjectData = gameData.GetCurUnitData();
         moveSubjectInfo = gameData.GetCurUnitInfo();
 
-        if (moveSubjectData.listValidMove.Contains(targetPos))
+        if (moveSubjectData.dicValidMovePath.ContainsKey(targetPos))
         {
-            StartCoroutine(IE_InvokeMoveAction());
+            StartCoroutine(IE_InvokeMoveAction(moveSubjectData.dicValidMovePath[targetPos]));
         }
     }
 
-    private IEnumerator IE_InvokeMoveAction()
+    private IEnumerator IE_InvokeMoveAction(List<Vector2Int> path)
     {
         EventCenter.Instance.EventTrigger("CharacterActionStart", null);
         PublicTool.EventChangeInteract(InteractState.WaitAction);
-        yield return StartCoroutine(IE_InvokeMoveData());
-        yield return StartCoroutine(IE_InvokeMoveView());
+        yield return StartCoroutine(IE_InvokeMoveData(path));
+        yield return StartCoroutine(IE_InvokeMoveView(path));
         AfterMove();
         EventCenter.Instance.EventTrigger("CharacterActionEnd", null);
     }
 
-    private IEnumerator IE_InvokeMoveData()
+    private IEnumerator IE_InvokeMoveData(List<Vector2Int> path)
     {
-        int costMOV = PublicTool.CalculateGlobalDis(moveSubjectData.posID, moveTargetPos);
+        int costMOV = path.Count - 1;
+        //int costMOV = PublicTool.CalculateGlobalDis(moveSubjectData.posID, moveTargetPos);
         //Data Move
         moveSubjectData.posID = moveTargetPos;
         moveSubjectData.curMOV -= costMOV;
         yield break;
     }
 
-    private IEnumerator IE_InvokeMoveView()
+    private IEnumerator IE_InvokeMoveView(List<Vector2Int> path)
     {
         //ViewMove
         BattleUnitView moveView = unitViewMgr.GetViewFromUnitInfo(moveSubjectInfo);
         if (moveView != null)
         {
-            moveView.MoveToPos(moveTargetPos, true);
+            yield return StartCoroutine(moveView.IE_MovePath(path));
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
     }
 
     private void AfterMove()

@@ -27,9 +27,13 @@ public partial class GameData
             foe.RefreshAttackRange();
         }
 
-        foreach (var character in listCharacter)
+        //Need Optimise
+        if(BattleMgr.Instance.battleTurnPhase == BattlePhase.CharacterPhase)
         {
-            character.RefreshValidMove();
+            foreach (var character in listCharacter)
+            {
+                character.RefreshValidCharacterMoveBFS();
+            }
         }
     }
 
@@ -38,6 +42,7 @@ public partial class GameData
         GetCurUnitData().RefreshValidSkill();
     }
 
+    #region ScanUnitPos
     private List<Vector2Int> GetCharacterPos()
     {
         List<Vector2Int> temp = new List<Vector2Int>();
@@ -100,6 +105,7 @@ public partial class GameData
         }
         return temp;
     }
+    #endregion
 
     private void GenerateDicMapUnit()
     {
