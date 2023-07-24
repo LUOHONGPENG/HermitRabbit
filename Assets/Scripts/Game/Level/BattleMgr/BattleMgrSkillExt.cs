@@ -34,7 +34,7 @@ public partial class BattleMgr
 
     private IEnumerator IE_InvokeSkillAction()
     {
-        EventCenter.Instance.EventTrigger("CharacterSkillStart",null);
+        EventCenter.Instance.EventTrigger("CharacterActionStart",null);
         PublicTool.EventChangeInteract(InteractState.WaitAction);
         yield return StartCoroutine(IE_ExecuteSkillCost());
         yield return StartCoroutine(IE_FindSkillTarget());
@@ -42,7 +42,7 @@ public partial class BattleMgr
         yield return new WaitForSeconds(0.5f);
         yield return StartCoroutine(InvokeSkillText());
         AfterSkill();
-        EventCenter.Instance.EventTrigger("CharacterSkillEnd", null);
+        EventCenter.Instance.EventTrigger("CharacterActionEnd", null);
     }
 
     private IEnumerator IE_ExecuteSkillCost()

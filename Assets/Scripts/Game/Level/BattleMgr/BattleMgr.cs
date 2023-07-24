@@ -36,6 +36,7 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
 
     public void StartTurnPhase()
     {
+        PublicTool.RecalculateOccupancy();
         switch (battleTurnPhase)
         {
             case BattlePhase.CharacterPhase:
@@ -46,7 +47,6 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
                 break;
         }
         Debug.Log("Start Turn " + numTurn + " " + battleTurnPhase.ToString());
-        PublicTool.RecalculateOccupancy();
     }
 
     public void EndTurnPhase()
@@ -79,12 +79,23 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
 
     private void StartCharacterPhase()
     {
+        EventCenter.Instance.EventTrigger("CharacterPhaseStart", null);
         PublicTool.EventChangeInteract(InteractState.Normal);
+        //Auto Click
+        List<BattleCharacterData> listCharacter = gameData.listCharacter;
+        for(int i = 0; i < listCharacter.Count; i++)
+        {
+            if (!listCharacter[i].isDead)
+            {
+                EventCenter.Instance.EventTrigger("InputChooseCharacter", listCharacter[i].keyID);
+            }
+        }
     }
 
 
     private void StartFoePhase()
     {
+        EventCenter.Instance.EventTrigger("CharacterPhaseEnd",null);
         PublicTool.EventChangeInteract(InteractState.WaitAction);
         ScanFoeStack();
         StartCoroutine(IE_ExecuteFoeTurn());

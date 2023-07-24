@@ -4,7 +4,7 @@ using UnityEngine;
 
 public partial class PublicTool
 {
-    public static void EventCameraGo(Vector2Int posID)
+    public static void EventCameraGoPosID(Vector2Int posID)
     {
         Vector3 targetPos = ConvertPosFromID(posID);
         EventCenter.Instance.EventTrigger("CameraGoTo", targetPos);

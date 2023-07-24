@@ -16,6 +16,7 @@ public class CameraMgr : MonoBehaviour
         EventCenter.Instance.RemoveEventListener("CameraGoTo", CameraGoToEvent);
     }
 
+
     private void CameraGoToEvent(object arg0)
     {
         Vector3 pos = (Vector3)arg0;

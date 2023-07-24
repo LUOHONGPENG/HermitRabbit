@@ -24,8 +24,9 @@ public partial class BattleMgr
         {
             int foeKeyID = stackFoe.Pop();            
             BattleFoeData foeData = gameData.GetBattleFoeData(foeKeyID);
+            //SetCurUnit
             gameData.SetCurUnitInfo(new UnitInfo(BattleUnitType.Foe, foeKeyID));
-            PublicTool.EventCameraGo(foeData.posID);
+            PublicTool.EventCameraGoPosID(foeData.posID);
             yield return new WaitForSeconds(0.5f);
 
             yield return StartCoroutine(IE_ExecuteFoeMove(foeData));

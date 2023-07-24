@@ -35,17 +35,16 @@ public partial class LevelMgr
     #region EventDeal_Input
     private void InputChooseCharacterEvent(object arg0)
     {
-        ChangeCurUnit(new UnitInfo(BattleUnitType.Character, (int)arg0));
-        PublicTool.EventChangeInteract(InteractState.CharacterMove);
-    }
-
-    private void ChangeCurUnit(UnitInfo unitInfo)
-    {
+        BattleCharacterData characterData = (BattleCharacterData)PublicTool.GetGameData().GetDataFromUnitInfo(new UnitInfo(BattleUnitType.Character, (int)arg0));
         //Set Data
-        gameData.SetCurUnitInfo(unitInfo);
+        gameData.SetCurUnitInfo(new UnitInfo(BattleUnitType.Character, characterData.keyID));
         //BoardCast to view
         mapViewMgr.RefreshCurUnit();
+        //Event
+        PublicTool.EventChangeInteract(InteractState.CharacterMove);
+        PublicTool.EventCameraGoPosID(characterData.posID);
     }
+
 
     private void InputMoveActionEvent(object arg0)
     {

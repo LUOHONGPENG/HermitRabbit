@@ -22,12 +22,12 @@ public partial class BattleMgr
 
     private IEnumerator IE_InvokeMoveAction()
     {
-        EventCenter.Instance.EventTrigger("CharacterSkillStart", null);
+        EventCenter.Instance.EventTrigger("CharacterActionStart", null);
         PublicTool.EventChangeInteract(InteractState.WaitAction);
         yield return StartCoroutine(IE_InvokeMoveData());
         yield return StartCoroutine(IE_InvokeMoveView());
         AfterMove();
-        EventCenter.Instance.EventTrigger("CharacterSkillEnd", null);
+        EventCenter.Instance.EventTrigger("CharacterActionEnd", null);
     }
 
     private IEnumerator IE_InvokeMoveData()

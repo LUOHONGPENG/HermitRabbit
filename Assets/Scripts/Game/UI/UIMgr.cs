@@ -8,7 +8,7 @@ public class UIMgr : MonoBehaviour
     public Canvas thisCanvas;
 
     public EffectUIMgr effectUIMgr;
-    public BattleOptionUIMgr battleOptionUIMgr;
+    public InterfaceUIMgr interfaceUIMgr;
     public TestButtonMgr testButtonMgr;
 
     public void Init(Camera camera)
@@ -16,7 +16,7 @@ public class UIMgr : MonoBehaviour
         thisCanvas.worldCamera = camera;
 
         //Debug
-        battleOptionUIMgr.Init();
+        interfaceUIMgr.Init();
         testButtonMgr.Init();
     }
 }

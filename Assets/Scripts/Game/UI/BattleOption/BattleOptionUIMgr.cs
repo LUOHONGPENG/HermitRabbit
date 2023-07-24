@@ -41,67 +41,58 @@ public class BattleOptionUIMgr : MonoBehaviour
         infoBarSkill.Init(BarResourceType.Skill);
         infoBarMove.Init(BarResourceType.Move);
 
+        //When player load the game and the game is in Normal phase
         if(InputMgr.Instance.interactState == InteractState.Normal)
         {
-            HidePopup();
+            HideBattleOptionPage();
         }
     }
 
-    public void HidePopup()
+
+
+    #region Show&Hide
+
+    public void ShowBattleOptionPage(BattleCharacterData characterData)
     {
-        objPopup.SetActive(false);
-    }
-
-    public void OnEnable()
-    {
-        EventCenter.Instance.AddEventListener("InputChooseCharacter", InputChooseCharacterEvent);
-        EventCenter.Instance.AddEventListener("RefreshCharacterInfo", RefreshCharacterInfoEvent);
-        EventCenter.Instance.AddEventListener("CharacterSkillStart", CharacterSkillStartEvent);
-        EventCenter.Instance.AddEventListener("CharacterSkillEnd", CharacterSkillEndEvent);
-
-    }
-
-    public void OnDisable()
-    {
-        EventCenter.Instance.RemoveEventListener("InputChooseCharacter", InputChooseCharacterEvent);
-        EventCenter.Instance.RemoveEventListener("RefreshCharacterInfo", RefreshCharacterInfoEvent);
-        EventCenter.Instance.RemoveEventListener("CharacterSkillStart", CharacterSkillStartEvent);
-        EventCenter.Instance.RemoveEventListener("CharacterSkillEnd", CharacterSkillEndEvent);
-
-    }
-
-    private void CharacterSkillStartEvent(object arg0)
-    {
-        groupActionButton.interactable = false;
-        groupActionButton.DOFade(0, 0.5f);
-    }
-
-    private void CharacterSkillEndEvent(object arg0)
-    {
-        groupActionButton.interactable = true;
-        groupActionButton.DOFade(1, 0.5f);
-    }
-
-    public void InputChooseCharacterEvent(object arg0)
-    {
-        curCharacterData = (BattleCharacterData)PublicTool.GetGameData().GetDataFromUnitInfo(new UnitInfo(BattleUnitType.Character, (int)arg0));
+        //Set Character
+        curCharacterData = characterData;
         //Portrait Part
         imgPortrait.sprite = Resources.Load(curCharacterData.GetItem().portraitUrl, typeof(Sprite)) as Sprite;
         RefreshBarInfo();
         //Skill Part
         PublicTool.ClearChildItem(tfSkillButton);
         List<CharacterSkillExcelItem> listSkill = ExcelDataMgr.Instance.characterSkillExcelData.dicAllCharacterSkill[curCharacterData.typeID];
-        for(int i = 0;i < listSkill.Count; i++)
+        for (int i = 0; i < listSkill.Count; i++)
         {
             GameObject objSkill = GameObject.Instantiate(pfSkillButton, tfSkillButton);
             BattleSkillBtnItem itemSkill = objSkill.GetComponent<BattleSkillBtnItem>();
             itemSkill.Init(listSkill[i]);
         }
+        ShowAction();
         objPopup.SetActive(true);
     }
 
+    public void HideBattleOptionPage()
+    {
+        objPopup.SetActive(false);
+    }
+
+    public void ShowAction()
+    {
+        groupActionButton.interactable = true;
+        groupActionButton.DOFade(1, 0.5f);
+    }
+
+    public void HideAction()
+    {
+        groupActionButton.interactable = false;
+        groupActionButton.DOFade(0, 0.5f);
+    }
+
+    #endregion
+
     #region Refresh
-    private void RefreshCharacterInfoEvent(object arg0)
+    public void RefreshCharacterInfo()
     {
         RefreshBarInfo();
     }
