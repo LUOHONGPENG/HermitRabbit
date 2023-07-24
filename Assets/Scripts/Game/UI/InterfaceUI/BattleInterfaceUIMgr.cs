@@ -17,6 +17,7 @@ public class BattleInterfaceUIMgr : MonoBehaviour
         btnEndTurn.onClick.RemoveAllListeners();
         btnEndTurn.onClick.AddListener(delegate() {
             EventCenter.Instance.EventTrigger("CharacterPhaseEnd", null);
+            HideEndTurnBtn();
         });
     }
 
@@ -33,12 +34,12 @@ public class BattleInterfaceUIMgr : MonoBehaviour
 
     public void ShowEndTurnBtn()
     {
-
+        btnEndTurn.gameObject.SetActive(true);
     }
 
     public void HideEndTurnBtn()
     {
-
+        btnEndTurn.gameObject.SetActive(false);
     }
     #endregion
 
@@ -53,5 +54,10 @@ public class BattleInterfaceUIMgr : MonoBehaviour
 
     }
 
+    public void RefreshCharacterInfo()
+    {
+        miniCharacterUI1001.RefreshUI();
+        miniCharacterUI2001.RefreshUI();
+    }
     #endregion
 }

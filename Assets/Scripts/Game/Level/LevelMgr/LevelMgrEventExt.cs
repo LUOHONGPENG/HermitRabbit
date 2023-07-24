@@ -12,7 +12,9 @@ public partial class LevelMgr
         EventCenter.Instance.AddEventListener("InputMoveAction", InputMoveActionEvent);
         EventCenter.Instance.AddEventListener("InputSkillAction", InputSkillActionEvent);
         EventCenter.Instance.AddEventListener("InputSetHoverTile", InputSetHoverTileEvent);
-        EventCenter.Instance.AddEventListener("CharacterPhaseEnd", InputEndCharacterPhaseEvent);
+
+        EventCenter.Instance.AddEventListener("BattleStart", BattleStartEvent);
+        EventCenter.Instance.AddEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
 
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
@@ -25,11 +27,15 @@ public partial class LevelMgr
         EventCenter.Instance.RemoveEventListener("InputMoveAction", InputMoveActionEvent);
         EventCenter.Instance.RemoveEventListener("InputSkillAction", InputSkillActionEvent);
         EventCenter.Instance.RemoveEventListener("InputSetHoverTile", InputSetHoverTileEvent);
-        EventCenter.Instance.RemoveEventListener("CharacterPhaseEnd", InputEndCharacterPhaseEvent);
+
+        EventCenter.Instance.RemoveEventListener("BattleStart", BattleStartEvent);
+        EventCenter.Instance.RemoveEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
 
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
     }
+
+
 
     #region EventDeal_Input
     private void InputChooseCharacterEvent(object arg0)
@@ -67,11 +73,7 @@ public partial class LevelMgr
         switch (info)
         {
             case "StartBattle":
-                PublicTool.GetGameData().gamePhase = GamePhase.Battle;
-                battleMgr.StartNewBattle(this);
-                break;
-            case "EndTurn":
-                battleMgr.EndTurnPhase();
+                EventCenter.Instance.EventTrigger("BattleStart", null);
                 break;
             case "GenerateFoe":
                 BattleFoeData newFoeData = gameData.GenerateFoeData(1001);
@@ -80,7 +82,13 @@ public partial class LevelMgr
         }
     }
 
-    private void InputEndCharacterPhaseEvent(object arg0)
+    private void BattleStartEvent(object arg0)
+    {
+        PublicTool.GetGameData().gamePhase = GamePhase.Battle;
+        battleMgr.StartNewBattle(this);
+    }
+
+    private void CharacterPhaseEndEvent(object arg0)
     {
         battleMgr.EndTurnPhase();
     }

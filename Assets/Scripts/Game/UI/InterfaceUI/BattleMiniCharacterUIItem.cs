@@ -16,13 +16,23 @@ public class BattleMiniCharacterUIItem : MonoBehaviour
     public void Init(BattleCharacterData characterData)
     {
         this.characterData = characterData;
+
+        btnBg.onClick.RemoveAllListeners();
+        btnBg.onClick.AddListener(delegate ()
+        {
+            if (PublicTool.GetGameData().gamePhase == GamePhase.Battle && BattleMgr.Instance.battleTurnPhase == BattlePhase.CharacterPhase)
+            {
+                EventCenter.Instance.EventTrigger("InputChooseCharacter", characterData.typeID);
+            }
+        });
+
         RefreshUI();
     }
 
     public void RefreshUI()
     {
         imgFillHP.fillAmount = characterData.curHP / characterData.maxHP;
-        imgFillAP.fillAmount = characterData.curAP / characterData.maxAP;
-        imgFillMove.fillAmount = characterData.curMOV / characterData.maxMOV;
+        imgFillAP.fillAmount = characterData.curAP * 1f / characterData.maxAP;
+        imgFillMove.fillAmount = characterData.curMOV * 1f / characterData.maxMOV;
     }
 }

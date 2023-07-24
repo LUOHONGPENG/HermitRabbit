@@ -41,11 +41,7 @@ public class BattleOptionUIMgr : MonoBehaviour
         infoBarSkill.Init(BarResourceType.Skill);
         infoBarMove.Init(BarResourceType.Move);
 
-        //When player load the game and the game is in Normal phase
-        if(InputMgr.Instance.interactState == InteractState.Normal)
-        {
-            HideBattleOptionPage();
-        }
+
     }
 
 
