@@ -32,8 +32,9 @@ public partial class BattleMgr
             IEnumerator itorReturn = null;
             itorReturn = IE_ExecuteFoeScan(foeData);
             yield return itorReturn;
-            if (((Vector2Int)itorReturn.Current).x > 0)
+            if (((Vector2Int)itorReturn.Current).x >= 0)
             {
+                Debug.Log(foeData.keyID + "target " + ((Vector2Int)itorReturn.Current));
                 yield return StartCoroutine(IE_ExecuteFoeMove(foeData, ((Vector2Int)itorReturn.Current)));
             }
             else
@@ -84,6 +85,7 @@ public partial class BattleMgr
         }
         else
         {
+            Debug.Log(foeData.keyID + "Cant Find Friend");
             yield return new Vector2Int(-1,-1);
         }
     }
@@ -93,6 +95,8 @@ public partial class BattleMgr
         int touchRange = foeData.GetSkillTouchRange();
         foeData.RefreshDistanceFromAimNode(aimPos, touchRange);
 
+
+        Debug.Log(foeData.keyID + "dicValidCount " + foeData.dicValidMoveNode.Count +"CurMP " + foeData.curMOV);
         List<FindPathNode> listValidNode = new List<FindPathNode>();
         foreach (KeyValuePair<Vector2Int, FindPathNode> pair in foeData.dicValidMoveNode)
         {

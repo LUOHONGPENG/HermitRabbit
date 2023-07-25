@@ -15,7 +15,7 @@ MonoBehaviour:
   items:
   - id: 1001
     name: Leo
-    HP: 25
+    HP: 80
     STR: 2
     CON: 3
     INT: 10
@@ -28,7 +28,7 @@ MonoBehaviour:
     portraitUrl: Sprite/Portrait/imgPortrait1001
   - id: 2001
     name: Kizuna
-    HP: 45
+    HP: 100
     STR: 9
     CON: 5
     INT: 4

@@ -151,7 +151,7 @@ MonoBehaviour:
     desc: 
     costAP: 1
     element: 0
-    range: 4
+    range: 1
     isRangeSelf: 0
     radius: 0
     regionType: 0

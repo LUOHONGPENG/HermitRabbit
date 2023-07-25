@@ -8,11 +8,9 @@ public partial class BattleUnitData
     /// Pos Data
     /// </summary>
     public Vector2Int posID = new Vector2Int(0, 0);
-    
-    public Dictionary<Vector2Int, FindPathNode> dicValidMoveNode = new Dictionary<Vector2Int, FindPathNode>();
 
+    public Dictionary<Vector2Int, FindPathNode> dicValidMoveNode = new Dictionary<Vector2Int, FindPathNode>();
     public Dictionary<Vector2Int, FindPathNode> dicBFSAllNode = new Dictionary<Vector2Int, FindPathNode>();
-    public Dictionary<Vector2Int, FindPathNode> dicBlockTargetNode = new Dictionary<Vector2Int, FindPathNode>();
 
     //Store the skill range display to the character
     public List<Vector2Int> listViewSkill = new List<Vector2Int>();
