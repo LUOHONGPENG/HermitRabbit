@@ -18,24 +18,19 @@ public class MapTileData
 public class FindPathNode
 {
     public Vector2Int pos;
-    public int fCost;
     public int gCost = int.MaxValue;
-    public int hCost;
+    public int hCostReal;
 
     public List<Vector2Int> path;
     public FindPathNode parentNode;
+    public FindPathNode hParentNode;
 
     public FindPathNode(Vector2Int nodePos)
     {
         this.pos = nodePos;
         this.path = null;
         this.parentNode = null;
+        this.hParentNode = null;
     }
 
-
-
-    public void GetFCost()
-    {
-        fCost = gCost + hCost;
-    }
 }

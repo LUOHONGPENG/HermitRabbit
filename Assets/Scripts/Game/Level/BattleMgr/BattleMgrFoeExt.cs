@@ -54,6 +54,10 @@ public partial class BattleMgr
 
     private IEnumerator IE_ExecuteFoeMove(BattleFoeData foeData)
     {
+        foeData.RefreshFoeMoveAllBFSNode();
+        
+
+
         yield break;
     }
 

@@ -11,6 +11,8 @@ public partial class BattleUnitData
     
     public Dictionary<Vector2Int, FindPathNode> dicValidMoveNode = new Dictionary<Vector2Int, FindPathNode>();
 
+    public Dictionary<Vector2Int, FindPathNode> dicBFSAllNode = new Dictionary<Vector2Int, FindPathNode>();
+
     //Store the skill range display to the character
     public List<Vector2Int> listViewSkill = new List<Vector2Int>();
     //Store the valid pos that the player can choose
@@ -23,7 +25,7 @@ public partial class BattleUnitData
 
     public void RefreshValidCharacterMoveBFSNode()
     {
-        //Init 
+        //Init the virtual Grid
         Dictionary<Vector2Int, FindPathNode> dicPathNode = new Dictionary<Vector2Int, FindPathNode>();
         List<MapTileData> listMap = PublicTool.GetGameData().listMapTile;
         for(int i = 0;i < listMap.Count; i++)
@@ -31,14 +33,18 @@ public partial class BattleUnitData
             dicPathNode.Add(listMap[i].posID, new FindPathNode(listMap[i].posID));
         }
 
+        //Clear Valid Node
         dicValidMoveNode.Clear();
 
+        //Get Block Pos
         List<Vector2Int> listBlock = PublicTool.GetGameData().listTempFoePos;
 
+        //Prepare the container for search
         Queue<FindPathNode> ququeOpen = new Queue<FindPathNode>();
         Dictionary<Vector2Int, FindPathNode> dicClose = new Dictionary<Vector2Int, FindPathNode>();
         dicClose.Clear();
 
+        //Start searching
         FindPathNode startNode = GetFindPathNode(dicPathNode,posID);
         ququeOpen.Enqueue(startNode);
         while (ququeOpen.Count > 0)
@@ -84,6 +90,173 @@ public partial class BattleUnitData
                 }
                 nextNode.parentNode = tarNode;
                 
+                ququeOpen.Enqueue(nextNode);
+            }
+        }
+
+        foreach (Vector2Int tarPos in PublicTool.GetGameData().listTempAllPos)
+        {
+            if (dicValidMoveNode.ContainsKey(tarPos))
+            {
+                dicValidMoveNode.Remove(tarPos);
+            }
+        }
+    }
+
+
+    public void RefreshFoeMoveAllBFSNode()
+    {
+        //Init the virtual Grid
+        Dictionary<Vector2Int, FindPathNode> dicPathNode = new Dictionary<Vector2Int, FindPathNode>();
+        List<MapTileData> listMap = PublicTool.GetGameData().listMapTile;
+        for (int i = 0; i < listMap.Count; i++)
+        {
+            dicPathNode.Add(listMap[i].posID, new FindPathNode(listMap[i].posID));
+        }
+
+        //Clear Valid Node
+        dicBFSAllNode.Clear();
+        dicValidMoveNode.Clear();
+
+        //GetBlockPos
+        List<Vector2Int> listBlock = new List<Vector2Int>();
+        foreach(Vector2Int blockPos in PublicTool.GetGameData().listTempCharacterPos)
+        {
+            if (!listBlock.Contains(blockPos))
+            {
+                listBlock.Add(blockPos);
+            }
+        }
+        foreach (Vector2Int blockPos in PublicTool.GetGameData().listTempPlantPos)
+        {
+            if (!listBlock.Contains(blockPos))
+            {
+                listBlock.Add(blockPos);
+            }
+        }
+
+        //Prepare the container for search
+        Queue<FindPathNode> ququeOpen = new Queue<FindPathNode>();
+        Dictionary<Vector2Int, FindPathNode> dicClose = new Dictionary<Vector2Int, FindPathNode>();
+        dicClose.Clear();
+
+        //Start searching
+        FindPathNode startNode = GetFindPathNode(dicPathNode, posID);
+        ququeOpen.Enqueue(startNode);
+        while (ququeOpen.Count > 0)
+        {
+            FindPathNode tarNode = ququeOpen.Dequeue();
+            //Calculate gCost or the move
+            if (tarNode.parentNode != null)
+            {
+                FindPathNode parentNode = tarNode.parentNode;
+                tarNode.path = new List<Vector2Int>(parentNode.path);
+                tarNode.gCost = parentNode.gCost + 1;
+            }
+            else
+            {
+                tarNode.path = new List<Vector2Int>();
+                tarNode.gCost = 0;
+            }
+
+            //Read and deal with cost and remember node
+            if (tarNode.gCost <= curMOV)
+            {
+                tarNode.path.Add(tarNode.pos);
+                dicValidMoveNode.Add(tarNode.pos, tarNode);
+            }
+            dicClose.Add(tarNode.pos, tarNode);
+            dicBFSAllNode.Add(tarNode.pos, tarNode);
+
+            List<FindPathNode> listNearNode = GetNearFindPathNode(dicPathNode, tarNode.pos);
+            for (int i = 0; i < listNearNode.Count; i++)
+            {
+                FindPathNode nextNode = listNearNode[i];
+                if (dicClose.ContainsKey(nextNode.pos))
+                {
+                    continue;
+                }
+                if (ququeOpen.Contains(nextNode))
+                {
+                    continue;
+                }
+                if (listBlock.Contains(nextNode.pos))
+                {
+                    continue;
+                }
+                nextNode.parentNode = tarNode;
+
+                ququeOpen.Enqueue(nextNode);
+            }
+        }
+    }
+
+    public void RefreshDistanceFromAimNode(Vector2Int aimPos,int touchRange)
+    {
+        //GetBlockPos
+        List<Vector2Int> listBlock = new List<Vector2Int>();
+        foreach (Vector2Int blockPos in PublicTool.GetGameData().listTempCharacterPos)
+        {
+            if (!listBlock.Contains(blockPos))
+            {
+                listBlock.Add(blockPos);
+            }
+        }
+        foreach (Vector2Int blockPos in PublicTool.GetGameData().listTempPlantPos)
+        {
+            if (!listBlock.Contains(blockPos))
+            {
+                listBlock.Add(blockPos);
+            }
+        }
+
+        //Prepare the container for search
+        Queue<FindPathNode> ququeOpen = new Queue<FindPathNode>();
+        Dictionary<Vector2Int, FindPathNode> dicClose = new Dictionary<Vector2Int, FindPathNode>();
+
+        //StartSearching
+        FindPathNode startNode = GetFindPathNode(dicBFSAllNode, aimPos);
+        ququeOpen.Enqueue(startNode);
+        while (ququeOpen.Count > 0)
+        {
+            FindPathNode tarNode = ququeOpen.Dequeue();
+            //Calculate hCost
+            if (PublicTool.CalculateGlobalDis(tarNode.pos, aimPos) <= touchRange)
+            {
+                tarNode.hCostReal = 0;
+            }
+            else
+            {
+                if (tarNode.hParentNode != null)
+                {
+                    FindPathNode hParentNode = tarNode.hParentNode;
+                    tarNode.hCostReal = hParentNode.hCostReal + 1;
+                }
+                else
+                {
+                    tarNode.hCostReal = 0;
+                }
+            }
+            dicClose.Add(tarNode.pos, tarNode);
+
+            List<FindPathNode> listNearNode = GetNearFindPathNode(dicBFSAllNode, tarNode.pos);
+            for (int i = 0; i < listNearNode.Count; i++)
+            {
+                FindPathNode nextNode = listNearNode[i];
+                if (dicClose.ContainsKey(nextNode.pos))
+                {
+                    continue;
+                }
+                if (ququeOpen.Contains(nextNode))
+                {
+                    continue;
+                }
+                if (listBlock.Contains(nextNode.pos))
+                {
+                    continue;
+                }
+                nextNode.hParentNode = tarNode;
+
                 ququeOpen.Enqueue(nextNode);
             }
         }
