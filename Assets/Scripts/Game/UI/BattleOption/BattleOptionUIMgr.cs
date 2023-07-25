@@ -21,6 +21,7 @@ public class BattleOptionUIMgr : MonoBehaviour
     public BattleBasicBtnItem btnAttack;
     public Transform tfSkillButton;
     public GameObject pfSkillButton;
+    private List<BattleSkillBtnItem> listSkillBtn = new List<BattleSkillBtnItem>();
 
     private BattleCharacterData curCharacterData;
 
@@ -44,7 +45,13 @@ public class BattleOptionUIMgr : MonoBehaviour
 
     }
 
-
+    private void Update()
+    {
+        if (objPopup.activeSelf)
+        {
+            RefreshButton();
+        }
+    }
 
     #region Show&Hide
 
@@ -57,12 +64,14 @@ public class BattleOptionUIMgr : MonoBehaviour
         RefreshBarInfo();
         //Skill Part
         PublicTool.ClearChildItem(tfSkillButton);
+        listSkillBtn.Clear();
         List<CharacterSkillExcelItem> listSkill = ExcelDataMgr.Instance.characterSkillExcelData.dicAllCharacterSkill[curCharacterData.typeID];
         for (int i = 0; i < listSkill.Count; i++)
         {
             GameObject objSkill = GameObject.Instantiate(pfSkillButton, tfSkillButton);
             BattleSkillBtnItem itemSkill = objSkill.GetComponent<BattleSkillBtnItem>();
             itemSkill.Init(listSkill[i]);
+            listSkillBtn.Add(itemSkill);
         }
         ShowAction();
         objPopup.SetActive(true);
@@ -102,6 +111,50 @@ public class BattleOptionUIMgr : MonoBehaviour
             infoBarMove.UpdateData(curCharacterData.curMOV, curCharacterData.maxMOV);
         }
     }
+
+    public void RefreshButton()
+    {
+
+
+        switch (InputMgr.Instance.interactState)
+        {
+            case InteractState.CharacterMove:
+                btnMove.RefreshOnSelect();
+                btnAttack.RefreshOffSelect();
+                foreach(BattleSkillBtnItem item in listSkillBtn)
+                {
+                    item.RefreshOffSelect();
+                }
+                break;
+            case InteractState.CharacterSkill:
+                btnMove.RefreshOffSelect();
+                if (PublicTool.GetGameData().GetCurSkillBattleInfo().isNormalAttack)
+                {
+                    btnAttack.RefreshOnSelect();
+                    foreach (BattleSkillBtnItem item in listSkillBtn)
+                    {
+                        item.RefreshOffSelect();
+                    }
+                }
+                else
+                {
+                    btnAttack.RefreshOffSelect();
+                    foreach (BattleSkillBtnItem item in listSkillBtn)
+                    {
+                        if (PublicTool.GetGameData().GetCurSkillBattleInfo().ID == item.GetSkillItem().id)
+                        {
+                            item.RefreshOnSelect();
+                        }
+                        else
+                        {
+                            item.RefreshOffSelect();
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
     #endregion
 
 }

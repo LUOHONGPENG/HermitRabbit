@@ -40,7 +40,7 @@ public struct SkillBattleInfo
     public SkillDamageType damageType;
     public float damageDeltaFloat;
     public SkillDamageDeltaStd damageDeltaStd;
-
+    public bool isNormalAttack;
 
     public SkillBattleInfo(CharacterSkillExcelItem item)
     {
@@ -64,6 +64,8 @@ public struct SkillBattleInfo
         this.damageType = item.damageType;
         this.damageDeltaFloat = item.damageDeltaFloat;
         this.damageDeltaStd = item.damageDeltaStd;
+
+        this.isNormalAttack = item.isNormalAttack;
     }
 }
 
