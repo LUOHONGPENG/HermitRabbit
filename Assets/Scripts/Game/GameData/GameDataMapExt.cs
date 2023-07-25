@@ -38,8 +38,6 @@ public partial class GameData
         GetCurUnitData().RefreshValidSkill();
     }
 
-
-
     private void ScanMapUnitInfo()
     {
         dicTempMapUnit.Clear();

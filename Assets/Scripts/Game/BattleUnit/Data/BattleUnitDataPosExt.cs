@@ -193,6 +193,14 @@ public partial class BattleUnitData
                 ququeOpen.Enqueue(nextNode);
             }
         }
+
+        foreach (Vector2Int tarPos in PublicTool.GetGameData().listTempAllPos)
+        {
+            if (dicValidMoveNode.ContainsKey(tarPos))
+            {
+                dicValidMoveNode.Remove(tarPos);
+            }
+        }
     }
 
     public void RefreshDistanceFromAimNode(Vector2Int aimPos,int touchRange)

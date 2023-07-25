@@ -97,6 +97,7 @@ public enum SkillEffectType
 
 public enum SkillDamageDeltaStd
 {
+    None,
     ATK,
     MAXHP
 }

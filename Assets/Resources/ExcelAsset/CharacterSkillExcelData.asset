@@ -27,7 +27,8 @@ MonoBehaviour:
     plantEffect: 0
     damageType: 2
     damageDelta: 100
-    damageDeltaStd: 0
+    damageDeltaStd: 1
+    listSpecialEffect: 00000000
     skillSubjectType: 0
     isNormalAttack: 1
     characterID: 1001
@@ -45,7 +46,8 @@ MonoBehaviour:
     plantEffect: 1
     damageType: 2
     damageDelta: 200
-    damageDeltaStd: 0
+    damageDeltaStd: 1
+    listSpecialEffect: 00000000
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 1001
@@ -63,7 +65,8 @@ MonoBehaviour:
     plantEffect: 1
     damageType: 2
     damageDelta: 300
-    damageDeltaStd: 0
+    damageDeltaStd: 1
+    listSpecialEffect: 00000000
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 1001
@@ -81,7 +84,8 @@ MonoBehaviour:
     plantEffect: 0
     damageType: 1
     damageDelta: 120
-    damageDeltaStd: 0
+    damageDeltaStd: 1
+    listSpecialEffect: 00000000
     skillSubjectType: 0
     isNormalAttack: 1
     characterID: 2001
@@ -99,7 +103,8 @@ MonoBehaviour:
     plantEffect: 0
     damageType: 1
     damageDelta: 100
-    damageDeltaStd: 0
+    damageDeltaStd: 1
+    listSpecialEffect: 00000000
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 2001
@@ -117,7 +122,27 @@ MonoBehaviour:
     plantEffect: 0
     damageType: 3
     damageDelta: 20
-    damageDeltaStd: 1
+    damageDeltaStd: 2
+    listSpecialEffect: 00000000
+    skillSubjectType: 0
+    isNormalAttack: 0
+    characterID: 2001
+  - id: 2301
+    name: Inspire
+    desc: Regain AP by 1.
+    costAP: 1
+    element: 3
+    range: 4
+    isRangeSelf: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 2
+    plantEffect: 0
+    damageType: 0
+    damageDelta: 0
+    damageDeltaStd: 0
+    listSpecialEffect: e9030000
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 2001
@@ -135,7 +160,8 @@ MonoBehaviour:
     plantEffect: 1
     damageType: 1
     damageDelta: 100
-    damageDeltaStd: 0
+    damageDeltaStd: 1
+    listSpecialEffect: 00000000
     skillSubjectType: 2
     isNormalAttack: 0
     characterID: 0

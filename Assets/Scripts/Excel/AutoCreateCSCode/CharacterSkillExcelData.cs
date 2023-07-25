@@ -22,6 +22,7 @@ public partial class CharacterSkillExcelItem : ExcelItemBase
 	public SkillDamageType damageType;
 	public int damageDelta;
 	public SkillDamageDeltaStd damageDeltaStd;
+	public List<int> listSpecialEffect;
 	public BattleUnitType skillSubjectType;
 	public bool isNormalAttack;
 	public int characterID;
@@ -59,6 +60,7 @@ public class CharacterSkillAssetAssignment
 			items[i].damageType = (SkillDamageType) Enum.Parse(typeof(SkillDamageType), allItemValueRowList[i]["damageType"], true);
 			items[i].damageDelta = Convert.ToInt32(allItemValueRowList[i]["damageDelta"]);
 			items[i].damageDeltaStd = (SkillDamageDeltaStd) Enum.Parse(typeof(SkillDamageDeltaStd), allItemValueRowList[i]["damageDeltaStd"], true);
+			items[i].listSpecialEffect = new List<int>(Array.ConvertAll((allItemValueRowList[i]["listSpecialEffect"]).Split(';'), int.Parse));
 			items[i].skillSubjectType = (BattleUnitType) Enum.Parse(typeof(BattleUnitType), allItemValueRowList[i]["skillSubjectType"], true);
 			items[i].isNormalAttack = Convert.ToBoolean(allItemValueRowList[i]["isNormalAttack"]);
 			items[i].characterID = Convert.ToInt32(allItemValueRowList[i]["characterID"]);

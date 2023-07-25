@@ -91,8 +91,6 @@ public partial class BattleMgr
         int touchRange = foeData.GetSkillTouchRange();
         foeData.RefreshDistanceFromAimNode(aimPos, touchRange);
 
-        Debug.Log("AimPos" + aimPos + " touchRange" + touchRange);
-
         List<FindPathNode> listValidNode = new List<FindPathNode>();
         foreach (KeyValuePair<Vector2Int, FindPathNode> pair in foeData.dicValidMoveNode)
         {
@@ -104,13 +102,21 @@ public partial class BattleMgr
         {
             FindPathNode tarNode = listValidNode[0];
 
-            moveTargetPos = tarNode.pos;
-            moveSubjectData = gameData.GetCurUnitData();
-            moveSubjectInfo = gameData.GetCurUnitInfo();
+            FindPathNode curNode = foeData.dicBFSAllNode[foeData.posID];
+            if(tarNode.hCostReal < curNode.hCostReal)
+            {
+                moveTargetPos = tarNode.pos;
+                moveSubjectData = gameData.GetCurUnitData();
+                moveSubjectInfo = gameData.GetCurUnitInfo();
 
-            yield return StartCoroutine(IE_InvokeMoveData(tarNode.path));
-            yield return StartCoroutine(IE_InvokeMoveView(tarNode.path));
-            AfterMove();
+                yield return StartCoroutine(IE_InvokeMoveData(tarNode.path));
+                yield return StartCoroutine(IE_InvokeMoveView(tarNode.path));
+                AfterMove();
+            }
+            else
+            {
+                yield break;
+            }
         }
         yield break;
     }
