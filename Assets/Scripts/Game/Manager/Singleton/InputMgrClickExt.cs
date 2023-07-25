@@ -27,7 +27,6 @@ public partial class InputMgr
         {
             return;
         }
-        Debug.Log("Click No Action");
     }
 
 
