@@ -66,4 +66,9 @@ public class BattleFoeData : BattleUnitData
             return item.RES;
         }
     }
+
+    public override void ResetNewTurn()
+    {
+        curMOV = maxMOV;
+    }
 }

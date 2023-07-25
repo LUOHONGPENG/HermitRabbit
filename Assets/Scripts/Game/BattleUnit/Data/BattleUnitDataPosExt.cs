@@ -118,7 +118,6 @@ public partial class BattleUnitData
         //Clear Valid Node
         dicBFSAllNode.Clear();
         dicValidMoveNode.Clear();
-        dicBlockTargetNode.Clear();
 
         //GetBlockPos
         List<Vector2Int> listBlockTarget = new List<Vector2Int>();
@@ -165,7 +164,6 @@ public partial class BattleUnitData
             dicBFSAllNode.Add(tarNode.pos, tarNode);
             if (listBlockTarget.Contains(tarNode.pos))
             {
-                dicBlockTargetNode.Add(tarNode.pos, tarNode);
                 continue;
             }
 
@@ -267,6 +265,7 @@ public partial class BattleUnitData
             for (int i = 0; i < listNearNode.Count; i++)
             {
                 FindPathNode nextNode = listNearNode[i];
+
                 if (dicClose.ContainsKey(nextNode.pos))
                 {
                     continue;

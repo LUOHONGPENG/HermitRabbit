@@ -73,6 +73,12 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
             listCharacter[i].ResetNewTurn();
         }
 
+        List<BattleFoeData> listFoe = gameData.listFoe;
+        for (int i = 0; i < listFoe.Count; i++)
+        {
+            listFoe[i].ResetNewTurn();
+        }
+
         PublicTool.EventRefreshCharacterUI();
     }
 

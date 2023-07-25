@@ -70,9 +70,11 @@ public partial class BattleMgr
         foeData.RefreshFoeMoveAllBFSNode();
         //Get Friend
         List<FindPathNode> listFriendNode = new List<FindPathNode>();
-        foreach(KeyValuePair<Vector2Int,FindPathNode> pair in foeData.dicBlockTargetNode)
+        List<Vector2Int> listFriendPos = PublicTool.GetGameData().listTempFriendPos;
+
+        foreach(Vector2Int pos in listFriendPos)
         {
-            listFriendNode.Add(pair.Value);
+            listFriendNode.Add(foeData.dicBFSAllNode[pos]);
         }
         PublicTool.FindPathNodeSortLowestGCost(listFriendNode);
 
@@ -98,13 +100,17 @@ public partial class BattleMgr
         }
         PublicTool.FindPathNodeSortLowestHCost(listValidNode);
 
+
         if (listValidNode.Count > 0)
         {
             FindPathNode tarNode = listValidNode[0];
 
             FindPathNode curNode = foeData.dicBFSAllNode[foeData.posID];
+
             if(tarNode.hCostReal < curNode.hCostReal)
             {
+                Debug.Log(foeData.keyID +" Move cur"+ curNode.hCostReal);
+
                 moveTargetPos = tarNode.pos;
                 moveSubjectData = gameData.GetCurUnitData();
                 moveSubjectInfo = gameData.GetCurUnitInfo();
@@ -115,6 +121,9 @@ public partial class BattleMgr
             }
             else
             {
+                Debug.Log(foeData.keyID + "DontMove cur" + curNode.hCostReal);
+
+
                 yield break;
             }
         }
