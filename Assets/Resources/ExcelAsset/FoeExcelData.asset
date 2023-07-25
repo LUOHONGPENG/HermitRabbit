@@ -16,8 +16,8 @@ MonoBehaviour:
   - id: 1001
     name: LinkedList
     HP: 12
-    ATK: 8
-    DEF: 5
+    ATK: 9
+    DEF: 3
     RES: 5
     MOV: 3
     skillID: 9001

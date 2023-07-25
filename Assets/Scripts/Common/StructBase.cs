@@ -114,3 +114,4 @@ public struct EffectWarningTextInfo
     }
 }
 #endregion
+

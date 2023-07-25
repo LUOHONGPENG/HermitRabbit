@@ -2,18 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapTileData
-{
-    public Vector2Int posID;
-    public int typeID;
-
-    public MapTileData(Vector2Int posID,int typeID)
-    {
-        this.posID = posID;
-        this.typeID = typeID;
-    }
-}
-
 
 /// <summary>
 /// Storing the Data
@@ -71,6 +59,26 @@ public partial class GameData
                 listMapTile.Add(mapTileData);
                 dicMapTile.Add(posID, mapTileData);
             }
+        }
+    }
+
+    public FindPathNode GetFindPathNode(Vector2Int posID)
+    {
+        if (dicMapTile.ContainsKey(posID))
+        {
+            return dicMapTile[posID].findPathNode;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public void ResetFindPathNode()
+    {
+        foreach(var mapData in listMapTile)
+        {
+            mapData.ResetFindPath();
         }
     }
 
