@@ -16,7 +16,6 @@ public partial class GameData
     //Refresh Valid Range for display map
     public void RecalculateOccupancy()
     {
-
         ScanMapUnitInfo();
 
         foreach (var foe in listFoe)

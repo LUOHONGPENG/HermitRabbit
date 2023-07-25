@@ -36,6 +36,7 @@ public class BattleUnitView : MonoBehaviour
         {
             Vector3 tilePos = PublicTool.ConvertPosFromID(path[i]);
             this.transform.DOLocalMove(new Vector3(tilePos.x, 0.35f, tilePos.z), 0.2f);
+            PublicTool.EventCameraGoPosID(path[i]);
             yield return new WaitForSeconds(0.2f);
         }
     }

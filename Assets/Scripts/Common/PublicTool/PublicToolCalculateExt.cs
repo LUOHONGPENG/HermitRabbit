@@ -80,14 +80,57 @@ public partial class PublicTool
 
     #endregion
 
-    public static List<Vector2Int> GetNearPos(Vector2Int posID)
-    {
-        List<Vector2Int> listNear = new List<Vector2Int>();
-        listNear.Add(posID + new Vector2Int(0, 1));
-        listNear.Add(posID + new Vector2Int(1, 0));
-        listNear.Add(posID + new Vector2Int(0, -1));
-        listNear.Add(posID + new Vector2Int(-1, 0));
+    #region FindPathSupporter
 
-        return listNear;
+
+    public static FindPathNode GetFindPathNode(Dictionary<Vector2Int, FindPathNode> dic, Vector2Int tarPos)
+    {
+        if (dic.ContainsKey(tarPos))
+        {
+            return dic[tarPos];
+        }
+        else
+        {
+            return null;
+        }
     }
+
+    public static List<FindPathNode> GetNearFindPathNode(Dictionary<Vector2Int, FindPathNode> dic, Vector2Int tarPos)
+    {
+        List<FindPathNode> listPathNode = new List<FindPathNode>();
+
+        FindPathNode node1 = GetFindPathNode(dic, tarPos + new Vector2Int(0, 1));
+        FindPathNode node2 = GetFindPathNode(dic, tarPos + new Vector2Int(1, 0));
+        FindPathNode node3 = GetFindPathNode(dic, tarPos + new Vector2Int(0, -1));
+        FindPathNode node4 = GetFindPathNode(dic, tarPos + new Vector2Int(-1, 0));
+        if (node1 != null)
+        {
+            listPathNode.Add(node1);
+        }
+        if (node2 != null)
+        {
+            listPathNode.Add(node2);
+        }
+        if (node3 != null)
+        {
+            listPathNode.Add(node3);
+        }
+        if (node4 != null)
+        {
+            listPathNode.Add(node4);
+        }
+        return listPathNode;
+    }
+
+    public static void FindPathNodeSortLowestGCost(List<FindPathNode> list)
+    {
+        list.Sort((x,y)=> {return x.gCost.CompareTo(y.gCost); });
+    }
+
+    public static void FindPathNodeSortLowestHCost(List<FindPathNode> list)
+    {
+        list.Sort((x, y) => { return x.hCostReal.CompareTo(y.hCostReal); });
+    }
+
+    #endregion
 }

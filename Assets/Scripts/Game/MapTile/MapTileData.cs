@@ -19,7 +19,7 @@ public class FindPathNode
 {
     public Vector2Int pos;
     public int gCost = int.MaxValue;
-    public int hCostReal;
+    public int hCostReal = int.MaxValue;
 
     public List<Vector2Int> path;
     public FindPathNode parentNode;

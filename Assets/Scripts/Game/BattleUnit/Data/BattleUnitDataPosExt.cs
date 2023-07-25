@@ -12,6 +12,7 @@ public partial class BattleUnitData
     public Dictionary<Vector2Int, FindPathNode> dicValidMoveNode = new Dictionary<Vector2Int, FindPathNode>();
 
     public Dictionary<Vector2Int, FindPathNode> dicBFSAllNode = new Dictionary<Vector2Int, FindPathNode>();
+    public Dictionary<Vector2Int, FindPathNode> dicBlockTargetNode = new Dictionary<Vector2Int, FindPathNode>();
 
     //Store the skill range display to the character
     public List<Vector2Int> listViewSkill = new List<Vector2Int>();
@@ -21,7 +22,7 @@ public partial class BattleUnitData
     public List<Vector2Int> listValidRange = new List<Vector2Int>();
 
 
-    #region FindPath
+    #region FindPathForMove
 
     public void RefreshValidCharacterMoveBFSNode()
     {
@@ -45,7 +46,7 @@ public partial class BattleUnitData
         dicClose.Clear();
 
         //Start searching
-        FindPathNode startNode = GetFindPathNode(dicPathNode,posID);
+        FindPathNode startNode = PublicTool.GetFindPathNode(dicPathNode,posID);
         ququeOpen.Enqueue(startNode);
         while (ququeOpen.Count > 0)
         {
@@ -62,17 +63,17 @@ public partial class BattleUnitData
                 tarNode.gCost = 0;
             }
 
+            //No matter whether it is valid
             dicClose.Add(tarNode.pos, tarNode);
 
             if (tarNode.gCost > curMOV)
             {
-                Debug.Log(tarNode.gCost);
                 continue;
             }
             tarNode.path.Add(tarNode.pos);
             dicValidMoveNode.Add(tarNode.pos,tarNode);
 
-            List<FindPathNode> listNearNode = GetNearFindPathNode(dicPathNode, tarNode.pos);
+            List<FindPathNode> listNearNode = PublicTool.GetNearFindPathNode(dicPathNode, tarNode.pos);
             for(int i = 0; i < listNearNode.Count; i++)
             {
                 FindPathNode nextNode = listNearNode[i];
@@ -117,21 +118,22 @@ public partial class BattleUnitData
         //Clear Valid Node
         dicBFSAllNode.Clear();
         dicValidMoveNode.Clear();
+        dicBlockTargetNode.Clear();
 
         //GetBlockPos
-        List<Vector2Int> listBlock = new List<Vector2Int>();
+        List<Vector2Int> listBlockTarget = new List<Vector2Int>();
         foreach(Vector2Int blockPos in PublicTool.GetGameData().listTempCharacterPos)
         {
-            if (!listBlock.Contains(blockPos))
+            if (!listBlockTarget.Contains(blockPos))
             {
-                listBlock.Add(blockPos);
+                listBlockTarget.Add(blockPos);
             }
         }
         foreach (Vector2Int blockPos in PublicTool.GetGameData().listTempPlantPos)
         {
-            if (!listBlock.Contains(blockPos))
+            if (!listBlockTarget.Contains(blockPos))
             {
-                listBlock.Add(blockPos);
+                listBlockTarget.Add(blockPos);
             }
         }
 
@@ -141,7 +143,7 @@ public partial class BattleUnitData
         dicClose.Clear();
 
         //Start searching
-        FindPathNode startNode = GetFindPathNode(dicPathNode, posID);
+        FindPathNode startNode = PublicTool.GetFindPathNode(dicPathNode, posID);
         ququeOpen.Enqueue(startNode);
         while (ququeOpen.Count > 0)
         {
@@ -159,16 +161,22 @@ public partial class BattleUnitData
                 tarNode.gCost = 0;
             }
 
+            dicClose.Add(tarNode.pos, tarNode);
+            dicBFSAllNode.Add(tarNode.pos, tarNode);
+            if (listBlockTarget.Contains(tarNode.pos))
+            {
+                dicBlockTargetNode.Add(tarNode.pos, tarNode);
+                continue;
+            }
+
             //Read and deal with cost and remember node
             if (tarNode.gCost <= curMOV)
             {
                 tarNode.path.Add(tarNode.pos);
                 dicValidMoveNode.Add(tarNode.pos, tarNode);
             }
-            dicClose.Add(tarNode.pos, tarNode);
-            dicBFSAllNode.Add(tarNode.pos, tarNode);
 
-            List<FindPathNode> listNearNode = GetNearFindPathNode(dicPathNode, tarNode.pos);
+            List<FindPathNode> listNearNode = PublicTool.GetNearFindPathNode(dicPathNode, tarNode.pos);
             for (int i = 0; i < listNearNode.Count; i++)
             {
                 FindPathNode nextNode = listNearNode[i];
@@ -177,10 +185,6 @@ public partial class BattleUnitData
                     continue;
                 }
                 if (ququeOpen.Contains(nextNode))
-                {
-                    continue;
-                }
-                if (listBlock.Contains(nextNode.pos))
                 {
                     continue;
                 }
@@ -215,11 +219,18 @@ public partial class BattleUnitData
         Dictionary<Vector2Int, FindPathNode> dicClose = new Dictionary<Vector2Int, FindPathNode>();
 
         //StartSearching
-        FindPathNode startNode = GetFindPathNode(dicBFSAllNode, aimPos);
+        FindPathNode startNode = PublicTool.GetFindPathNode(dicBFSAllNode, aimPos);
         ququeOpen.Enqueue(startNode);
         while (ququeOpen.Count > 0)
         {
             FindPathNode tarNode = ququeOpen.Dequeue();
+            FindPathNode validNode = new FindPathNode(new Vector2Int(-1,-1));
+            bool haveValidNode = false;
+            if(PublicTool.GetFindPathNode(dicValidMoveNode, tarNode.pos) != null)
+            {
+                haveValidNode = true;
+                validNode = PublicTool.GetFindPathNode(dicValidMoveNode, tarNode.pos);
+            }
             //Calculate hCost
             if (PublicTool.CalculateGlobalDis(tarNode.pos, aimPos) <= touchRange)
             {
@@ -237,9 +248,14 @@ public partial class BattleUnitData
                     tarNode.hCostReal = 0;
                 }
             }
+            if (haveValidNode)
+            {
+                validNode.hCostReal = tarNode.hCostReal;
+            }
+
             dicClose.Add(tarNode.pos, tarNode);
 
-            List<FindPathNode> listNearNode = GetNearFindPathNode(dicBFSAllNode, tarNode.pos);
+            List<FindPathNode> listNearNode = PublicTool.GetNearFindPathNode(dicBFSAllNode, tarNode.pos);
             for (int i = 0; i < listNearNode.Count; i++)
             {
                 FindPathNode nextNode = listNearNode[i];
@@ -265,49 +281,7 @@ public partial class BattleUnitData
     #endregion
 
 
-    #region FindPathSupporter
 
-
-    public FindPathNode GetFindPathNode(Dictionary<Vector2Int, FindPathNode> dic, Vector2Int tarPos)
-    {
-        if (dic.ContainsKey(tarPos))
-        {
-            return dic[tarPos];
-        }
-        else
-        {
-            return null;
-        }
-    }
-
-    public List<FindPathNode> GetNearFindPathNode(Dictionary<Vector2Int, FindPathNode> dic, Vector2Int tarPos)
-    {
-        List<FindPathNode> listPathNode = new List<FindPathNode>();
-
-        FindPathNode node1 = GetFindPathNode(dic, tarPos + new Vector2Int(0, 1));
-        FindPathNode node2 = GetFindPathNode(dic, tarPos + new Vector2Int(1, 0));
-        FindPathNode node3 = GetFindPathNode(dic, tarPos + new Vector2Int(0, -1));
-        FindPathNode node4 = GetFindPathNode(dic, tarPos + new Vector2Int(-1, 0));
-        if (node1 != null)
-        {
-            listPathNode.Add(node1);
-        }
-        if (node2 != null)
-        {
-            listPathNode.Add(node2);
-        }
-        if (node3 != null)
-        {
-            listPathNode.Add(node3);
-        }
-        if (node4 != null)
-        {
-            listPathNode.Add(node4);
-        }
-        return listPathNode;
-    }
-
-    #endregion
 
 
 

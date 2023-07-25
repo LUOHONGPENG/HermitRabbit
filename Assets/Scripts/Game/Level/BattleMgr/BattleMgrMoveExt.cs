@@ -22,12 +22,18 @@ public partial class BattleMgr
 
     private IEnumerator IE_InvokeMoveAction(FindPathNode findPathNode)
     {
-        EventCenter.Instance.EventTrigger("CharacterActionStart", null);
+        if (moveSubjectInfo.type == BattleUnitType.Character)
+        {
+            EventCenter.Instance.EventTrigger("CharacterActionStart", null);
+        }
         PublicTool.EventChangeInteract(InteractState.WaitAction);
         yield return StartCoroutine(IE_InvokeMoveData(findPathNode.path));
         yield return StartCoroutine(IE_InvokeMoveView(findPathNode.path));
         AfterMove();
-        EventCenter.Instance.EventTrigger("CharacterActionEnd", null);
+        if (moveSubjectInfo.type == BattleUnitType.Character)
+        {
+            EventCenter.Instance.EventTrigger("CharacterActionEnd", null);
+        }
     }
 
     private IEnumerator IE_InvokeMoveData(List<Vector2Int> path)
@@ -54,10 +60,10 @@ public partial class BattleMgr
     private void AfterMove()
     {
         PublicTool.RecalculateOccupancy();
-        PublicTool.EventRefreshCharacterUI();
 
         if (battleTurnPhase == BattlePhase.CharacterPhase)
         {
+            PublicTool.EventRefreshCharacterUI();
             PublicTool.EventChangeInteract(InteractState.CharacterMove);
         }
     }
