@@ -14,18 +14,18 @@ public partial class BattleMgr
         moveSubjectData = gameData.GetCurUnitData();
         moveSubjectInfo = gameData.GetCurUnitInfo();
 
-        if (moveSubjectData.dicValidMovePath.ContainsKey(targetPos))
+        if (moveSubjectData.dicValidMoveNode.ContainsKey(targetPos))
         {
-            StartCoroutine(IE_InvokeMoveAction(moveSubjectData.dicValidMovePath[targetPos]));
+            StartCoroutine(IE_InvokeMoveAction(moveSubjectData.dicValidMoveNode[targetPos]));
         }
     }
 
-    private IEnumerator IE_InvokeMoveAction(List<Vector2Int> path)
+    private IEnumerator IE_InvokeMoveAction(FindPathNode findPathNode)
     {
         EventCenter.Instance.EventTrigger("CharacterActionStart", null);
         PublicTool.EventChangeInteract(InteractState.WaitAction);
-        yield return StartCoroutine(IE_InvokeMoveData(path));
-        yield return StartCoroutine(IE_InvokeMoveView(path));
+        yield return StartCoroutine(IE_InvokeMoveData(findPathNode.path));
+        yield return StartCoroutine(IE_InvokeMoveView(findPathNode.path));
         AfterMove();
         EventCenter.Instance.EventTrigger("CharacterActionEnd", null);
     }

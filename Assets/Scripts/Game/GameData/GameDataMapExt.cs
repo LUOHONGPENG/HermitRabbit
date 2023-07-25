@@ -32,7 +32,7 @@ public partial class GameData
         {
             foreach (var character in listCharacter)
             {
-                character.RefreshValidCharacterMoveBFS();
+                character.RefreshValidCharacterMoveBFSNode();
             }
         }
     }

@@ -8,9 +8,7 @@ public partial class BattleUnitData
     /// Pos Data
     /// </summary>
     public Vector2Int posID = new Vector2Int(0, 0);
-    //Store the valid Move Path
-    public Dictionary<Vector2Int, List<Vector2Int>> dicValidMovePath = new Dictionary<Vector2Int, List<Vector2Int>>();
-
+    
     public Dictionary<Vector2Int, FindPathNode> dicValidMoveNode = new Dictionary<Vector2Int, FindPathNode>();
 
     //Store the skill range display to the character
@@ -21,97 +19,119 @@ public partial class BattleUnitData
     public List<Vector2Int> listValidRange = new List<Vector2Int>();
 
 
+    #region FindPath
 
-    #region CharacterMoveBFS
-
-/*    public void RefreshValidCharacterMoveBFSNode()
+    public void RefreshValidCharacterMoveBFSNode()
     {
-        GameData gameData = PublicTool.GetGameData();
-        gameData.ResetFindPathNode();
+        //Init 
+        Dictionary<Vector2Int, FindPathNode> dicPathNode = new Dictionary<Vector2Int, FindPathNode>();
+        List<MapTileData> listMap = PublicTool.GetGameData().listMapTile;
+        for(int i = 0;i < listMap.Count; i++)
+        {
+            dicPathNode.Add(listMap[i].posID, new FindPathNode(listMap[i].posID));
+        }
 
         dicValidMoveNode.Clear();
 
-        List<Vector2Int> listFoe = PublicTool.GetGameData().listTempFoePos;
+        List<Vector2Int> listBlock = PublicTool.GetGameData().listTempFoePos;
 
         Queue<FindPathNode> ququeOpen = new Queue<FindPathNode>();
         Dictionary<Vector2Int, FindPathNode> dicClose = new Dictionary<Vector2Int, FindPathNode>();
+        dicClose.Clear();
 
-        ququeOpen.Enqueue(gameData.GetFindPathNode(posID));
+        FindPathNode startNode = GetFindPathNode(dicPathNode,posID);
+        ququeOpen.Enqueue(startNode);
         while (ququeOpen.Count > 0)
         {
             FindPathNode tarNode = ququeOpen.Dequeue();
-
-
-
-        }
-
-
-    }*/
-
-    public void RefreshValidCharacterMoveBFS()
-    {
-        dicValidMovePath.Clear();
-        Dictionary<Vector2Int, Vector2Int> dicParentChild = new Dictionary<Vector2Int, Vector2Int>();
-        List<Vector2Int> listFoe = PublicTool.GetGameData().listTempFoePos;
-        Queue<Vector2Int> ququeOpen = new Queue<Vector2Int>();
-        ququeOpen.Enqueue(posID);
-        while (ququeOpen.Count > 0)
-        {
-            Vector2Int tarPos = ququeOpen.Dequeue();
-            List<Vector2Int> path;
-            if (dicParentChild.ContainsKey(tarPos))
+            if (tarNode.parentNode != null)
             {
-                Vector2Int parent = dicParentChild[tarPos];
-                if (dicValidMovePath.ContainsKey(parent))
-                {
-                    path = new List<Vector2Int>(dicValidMovePath[parent]);
-                }
-                else
-                {
-                    Debug.LogError("!!!!");
-                    path = new List<Vector2Int>();
-                }
+                FindPathNode parentNode = tarNode.parentNode;
+                tarNode.path = new List<Vector2Int>(parentNode.path);
+                tarNode.gCost = parentNode.gCost + 1;
             }
             else
             {
-                path = new List<Vector2Int>();
+                tarNode.path = new List<Vector2Int>();
+                tarNode.gCost = 0;
             }
 
-            if (path.Count > curMOV)
+            dicClose.Add(tarNode.pos, tarNode);
+
+            if (tarNode.gCost > curMOV)
             {
+                Debug.Log(tarNode.gCost);
                 continue;
             }
-            path.Add(tarPos);
-            dicValidMovePath.Add(tarPos, path);
+            tarNode.path.Add(tarNode.pos);
+            dicValidMoveNode.Add(tarNode.pos,tarNode);
 
-            //Next Four
-            List<Vector2Int> listNear = PublicTool.GetNearPos(tarPos);
-            for (int i = 0; i < listNear.Count; i++)
+            List<FindPathNode> listNearNode = GetNearFindPathNode(dicPathNode, tarNode.pos);
+            for(int i = 0; i < listNearNode.Count; i++)
             {
-                if (dicParentChild.ContainsKey(listNear[i]))
+                FindPathNode nextNode = listNearNode[i];
+                if (dicClose.ContainsKey(nextNode.pos))
                 {
                     continue;
                 }
-                else if (dicValidMovePath.ContainsKey(listNear[i]))
+                if (ququeOpen.Contains(nextNode))
                 {
                     continue;
                 }
-                else if (listFoe.Contains(listNear[i]))
+                if (listBlock.Contains(nextNode.pos))
                 {
                     continue;
                 }
-                dicParentChild.Add(listNear[i], tarPos);
-                ququeOpen.Enqueue(listNear[i]);
+                nextNode.parentNode = tarNode;
+                
+                ququeOpen.Enqueue(nextNode);
             }
         }
+    }
 
-        foreach (Vector2Int tarPos in PublicTool.GetGameData().listTempAllPos)
+    #endregion
+
+
+    #region FindPathSupporter
+
+
+    public FindPathNode GetFindPathNode(Dictionary<Vector2Int, FindPathNode> dic, Vector2Int tarPos)
+    {
+        if (dic.ContainsKey(tarPos))
         {
-            if (dicValidMovePath.ContainsKey(tarPos))
-            {
-                dicValidMovePath.Remove(tarPos);
-            }
+            return dic[tarPos];
         }
+        else
+        {
+            return null;
+        }
+    }
+
+    public List<FindPathNode> GetNearFindPathNode(Dictionary<Vector2Int, FindPathNode> dic, Vector2Int tarPos)
+    {
+        List<FindPathNode> listPathNode = new List<FindPathNode>();
+
+        FindPathNode node1 = GetFindPathNode(dic, tarPos + new Vector2Int(0, 1));
+        FindPathNode node2 = GetFindPathNode(dic, tarPos + new Vector2Int(1, 0));
+        FindPathNode node3 = GetFindPathNode(dic, tarPos + new Vector2Int(0, -1));
+        FindPathNode node4 = GetFindPathNode(dic, tarPos + new Vector2Int(-1, 0));
+        if (node1 != null)
+        {
+            listPathNode.Add(node1);
+        }
+        if (node2 != null)
+        {
+            listPathNode.Add(node2);
+        }
+        if (node3 != null)
+        {
+            listPathNode.Add(node3);
+        }
+        if (node4 != null)
+        {
+            listPathNode.Add(node4);
+        }
+        return listPathNode;
     }
 
     #endregion

@@ -12,15 +12,8 @@ public class MapTileData
     {
         this.posID = posID;
         this.typeID = typeID;
-
-        findPathNode = new FindPathNode(posID);
     }
 
-    public FindPathNode findPathNode;
-    public void ResetFindPath()
-    {
-        findPathNode.ResetFindPath();
-    }
 }
 public class FindPathNode
 {
@@ -35,17 +28,11 @@ public class FindPathNode
     public FindPathNode(Vector2Int nodePos)
     {
         this.pos = nodePos;
+        this.path = null;
+        this.parentNode = null;
     }
 
-    public void ResetFindPath()
-    {
-        fCost = int.MaxValue;
-        gCost = int.MaxValue;
-        hCost = 0;
-        //Path
-        parentNode = null;
-        path = new List<Vector2Int>();
-    }
+
 
     public void GetFCost()
     {

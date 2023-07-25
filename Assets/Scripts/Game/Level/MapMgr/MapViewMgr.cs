@@ -89,7 +89,7 @@ public partial class MapViewMgr : MonoBehaviour
         //Go through
         foreach (MapTileBase mapTile in listMapTile)
         {
-            if (curUnitData.dicValidMovePath.ContainsKey(mapTile.posID))
+            if (curUnitData.dicValidMoveNode.ContainsKey(mapTile.posID))
             {
                 if (PublicTool.GetTargetCircleRange(PublicTool.GetGameData().hoverTileID, 0).Contains(mapTile.posID))
                 {

@@ -40,6 +40,7 @@ public class UnitViewMgr : MonoBehaviour
         {
             GenerateCharacterView(character);
         }
+        PublicTool.RecalculateOccupancy();
     }
 
     public void GenerateCharacterView(BattleCharacterData characterData)
@@ -51,7 +52,6 @@ public class UnitViewMgr : MonoBehaviour
         {
             dicCharacterView.Add(characterData.keyID,characterView);
         }
-        PublicTool.RecalculateOccupancy();
     }
 
     public BattleCharacterView GetCharacterView(int keyID)

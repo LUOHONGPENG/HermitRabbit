@@ -62,25 +62,8 @@ public partial class GameData
         }
     }
 
-    public FindPathNode GetFindPathNode(Vector2Int posID)
-    {
-        if (dicMapTile.ContainsKey(posID))
-        {
-            return dicMapTile[posID].findPathNode;
-        }
-        else
-        {
-            return null;
-        }
-    }
 
-    public void ResetFindPathNode()
-    {
-        foreach(var mapData in listMapTile)
-        {
-            mapData.ResetFindPath();
-        }
-    }
+    
 
     #endregion
 
