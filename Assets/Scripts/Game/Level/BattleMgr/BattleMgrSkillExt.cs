@@ -121,6 +121,12 @@ public partial class BattleMgr
             BattleCharacterData characterData = item.Value;
             SkillEffectRequest(skillSubject, characterData, skillBattleInfo.characterEffect);
         }
+
+        foreach (var item in dicPlantSkillTarget)
+        {
+            BattlePlantData plantData = item.Value;
+            SkillEffectRequest(skillSubject, plantData, skillBattleInfo.plantEffect);
+        }
         yield break;
     }
 
