@@ -9,8 +9,8 @@ public partial class PublicTool
         return GameMgr.Instance.curGameData;
     }
 
-    public static CharacterSkillExcelItem GetSkillItem(int SkillID)
+    public static SkillExcelItem GetSkillItem(int SkillID)
     {
-        return ExcelDataMgr.Instance.characterSkillExcelData.GetExcelItem(SkillID);
+        return ExcelDataMgr.Instance.skillExcelData.GetExcelItem(SkillID);
     }
 }

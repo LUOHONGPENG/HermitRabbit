@@ -65,7 +65,7 @@ public class BattleOptionUIMgr : MonoBehaviour
         //Skill Part
         PublicTool.ClearChildItem(tfSkillButton);
         listSkillBtn.Clear();
-        List<CharacterSkillExcelItem> listSkill = ExcelDataMgr.Instance.characterSkillExcelData.dicAllCharacterSkill[curCharacterData.typeID];
+        List<SkillExcelItem> listSkill = ExcelDataMgr.Instance.skillExcelData.dicAllCharacterSkill[curCharacterData.typeID];
         for (int i = 0; i < listSkill.Count; i++)
         {
             GameObject objSkill = GameObject.Instantiate(pfSkillButton, tfSkillButton);

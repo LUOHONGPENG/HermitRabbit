@@ -37,7 +37,7 @@ public partial class GameData
 
     public void SetCurBattleSkill(int skillID)
     {
-        CharacterSkillExcelItem skillItem = PublicTool.GetSkillItem(skillID);
+        SkillExcelItem skillItem = PublicTool.GetSkillItem(skillID);
         curSkillBattleInfo = new SkillBattleInfo(skillItem);
     }
 

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class CharacterSkillExcelData
+public partial class SkillExcelData
 {
-    public Dictionary<int, List<CharacterSkillExcelItem>> dicAllCharacterSkill = new Dictionary<int, List<CharacterSkillExcelItem>>();
+    public Dictionary<int, List<SkillExcelItem>> dicAllCharacterSkill = new Dictionary<int, List<SkillExcelItem>>();
 
     public void Init()
     {
@@ -12,7 +12,7 @@ public partial class CharacterSkillExcelData
 
         for (int i = 0; i < items.Length; i++)
         {
-            CharacterSkillExcelItem skillItem = items[i];
+            SkillExcelItem skillItem = items[i];
             if (skillItem.isNormalAttack)
             {
                 continue;
@@ -23,12 +23,12 @@ public partial class CharacterSkillExcelData
             }
             if (dicAllCharacterSkill.ContainsKey(skillItem.characterID))
             {
-                List<CharacterSkillExcelItem> listSkill = dicAllCharacterSkill[skillItem.characterID];
+                List<SkillExcelItem> listSkill = dicAllCharacterSkill[skillItem.characterID];
                 listSkill.Add(skillItem);
             }
             else
             {
-                List<CharacterSkillExcelItem> listSkill = new List<CharacterSkillExcelItem>();
+                List<SkillExcelItem> listSkill = new List<SkillExcelItem>();
                 listSkill.Add(skillItem);
                 dicAllCharacterSkill.Add(skillItem.characterID, listSkill);
             }
@@ -37,7 +37,7 @@ public partial class CharacterSkillExcelData
     }
 }
 
-public partial class CharacterSkillExcelItem
+public partial class SkillExcelItem
 {
     public bool isTargetFoe
     {

@@ -7,10 +7,10 @@ public class BattleSkillBtnItem : BattleBtnBase
 {
     public Image imgIcon;
 
-    private CharacterSkillExcelItem skillItem;
+    private SkillExcelItem skillItem;
 
 
-    public void Init(CharacterSkillExcelItem skill)
+    public void Init(SkillExcelItem skill)
     {
         this.skillItem = skill;
         InitButton(delegate ()
@@ -19,7 +19,7 @@ public class BattleSkillBtnItem : BattleBtnBase
         });
     }
 
-    public CharacterSkillExcelItem GetSkillItem()
+    public SkillExcelItem GetSkillItem()
     {
         return skillItem;
     }

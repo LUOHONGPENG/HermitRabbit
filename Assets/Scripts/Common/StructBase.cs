@@ -42,7 +42,7 @@ public struct SkillBattleInfo
     public SkillDamageDeltaStd damageDeltaStd;
     public bool isNormalAttack;
 
-    public SkillBattleInfo(CharacterSkillExcelItem item)
+    public SkillBattleInfo(SkillExcelItem item)
     {
         this.ID = item.id;
         this.skillSubjectType = item.skillSubjectType;

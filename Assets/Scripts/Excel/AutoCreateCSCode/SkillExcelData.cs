@@ -6,7 +6,7 @@ using System;
 using System.IO;
 
 [Serializable]
-public partial class CharacterSkillExcelItem : ExcelItemBase
+public partial class SkillExcelItem : ExcelItemBase
 {
 	public string name;
 	public string desc;
@@ -28,23 +28,23 @@ public partial class CharacterSkillExcelItem : ExcelItemBase
 	public int characterID;
 }
 
-[CreateAssetMenu(fileName = "CharacterSkillExcelData", menuName = "Excel To ScriptableObject/Create CharacterSkillExcelData", order = 1)]
-public partial class CharacterSkillExcelData : ExcelDataBase<CharacterSkillExcelItem>
+[CreateAssetMenu(fileName = "SkillExcelData", menuName = "Excel To ScriptableObject/Create SkillExcelData", order = 1)]
+public partial class SkillExcelData : ExcelDataBase<SkillExcelItem>
 {
 }
 
 #if UNITY_EDITOR
-public class CharacterSkillAssetAssignment
+public class SkillAssetAssignment
 {
 	public static bool CreateAsset(List<Dictionary<string, string>> allItemValueRowList, string excelAssetPath)
 	{
 		if (allItemValueRowList == null || allItemValueRowList.Count == 0)
 			return false;
 		int rowCount = allItemValueRowList.Count;
-		CharacterSkillExcelItem[] items = new CharacterSkillExcelItem[rowCount];
+		SkillExcelItem[] items = new SkillExcelItem[rowCount];
 		for (int i = 0; i < items.Length; i++)
 		{
-			items[i] = new CharacterSkillExcelItem();
+			items[i] = new SkillExcelItem();
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].name = allItemValueRowList[i]["name"];
 			items[i].desc = allItemValueRowList[i]["desc"];
@@ -65,11 +65,11 @@ public class CharacterSkillAssetAssignment
 			items[i].isNormalAttack = Convert.ToBoolean(allItemValueRowList[i]["isNormalAttack"]);
 			items[i].characterID = Convert.ToInt32(allItemValueRowList[i]["characterID"]);
 		}
-		CharacterSkillExcelData excelDataAsset = ScriptableObject.CreateInstance<CharacterSkillExcelData>();
+		SkillExcelData excelDataAsset = ScriptableObject.CreateInstance<SkillExcelData>();
 		excelDataAsset.items = items;
 		if (!Directory.Exists(excelAssetPath))
 			Directory.CreateDirectory(excelAssetPath);
-		string pullPath = excelAssetPath + "/" + typeof(CharacterSkillExcelData).Name + ".asset";
+		string pullPath = excelAssetPath + "/" + typeof(SkillExcelData).Name + ".asset";
 		UnityEditor.AssetDatabase.DeleteAsset(pullPath);
 		UnityEditor.AssetDatabase.CreateAsset(excelDataAsset, pullPath);
 		UnityEditor.AssetDatabase.Refresh();

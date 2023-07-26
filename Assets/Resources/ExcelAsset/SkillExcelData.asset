@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 291a9d48ca1d6e341ba8696a2a7c85ae, type: 3}
-  m_Name: CharacterSkillExcelData
+  m_Script: {fileID: 11500000, guid: 2857dd76375b91e499877fb5ecc65965, type: 3}
+  m_Name: SkillExcelData
   m_EditorClassIdentifier: 
   items:
   - id: 1001
