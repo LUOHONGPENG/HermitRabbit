@@ -146,12 +146,31 @@ MonoBehaviour:
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 2001
+  - id: 3001
+    name: Tadpole Strike
+    desc: Attack a enemy.
+    costAP: 0
+    element: 0
+    range: 2
+    isRangeSelf: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 1
+    characterEffect: 0
+    plantEffect: 0
+    damageType: 3
+    damageDelta: 100
+    damageDeltaStd: 1
+    listSpecialEffect: 00000000
+    skillSubjectType: 1
+    isNormalAttack: 0
+    characterID: 0
   - id: 9001
     name: Bite
     desc: 
     costAP: 1
     element: 0
-    range: 4
+    range: 1
     isRangeSelf: 0
     radius: 0
     regionType: 0

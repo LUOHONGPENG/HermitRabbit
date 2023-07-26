@@ -43,6 +43,13 @@ public class BattleFoeData : BattleUnitData
 
     }
 
+    public override void ResetNewTurn()
+    {
+        curMOV = maxMOV;
+    }
+
+    #region Basic Attribute
+
     public override int curATK 
     {
         get
@@ -66,9 +73,6 @@ public class BattleFoeData : BattleUnitData
             return item.RES;
         }
     }
+    #endregion
 
-    public override void ResetNewTurn()
-    {
-        curMOV = maxMOV;
-    }
 }

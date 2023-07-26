@@ -106,12 +106,13 @@ public partial class GameData
         curPlantKeyID = -1;
     }
 
-    public void GeneratePlantData(int typeID)
+    public BattlePlantData GeneratePlantData(int typeID)
     {
         curPlantKeyID++;
         BattlePlantData plantData = new BattlePlantData(typeID,curPlantKeyID);
         listPlant.Add(plantData);
         dicPlant.Add(curPlantKeyID, plantData);
+        return plantData;
     }
 
     public BattlePlantData GetBattlePlantData(int ID)

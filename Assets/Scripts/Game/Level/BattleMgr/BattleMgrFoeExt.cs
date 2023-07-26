@@ -111,7 +111,7 @@ public partial class BattleMgr
 
             FindPathNode curNode = foeData.dicBFSAllNode[foeData.posID];
 
-            if(tarNode.hCostReal < curNode.hCostReal)
+            if(tarNode.hCostReal <= curNode.hCostReal && curNode.hCostReal > 0)
             {
                 Debug.Log(foeData.keyID +" Move cur"+ curNode.hCostReal);
 

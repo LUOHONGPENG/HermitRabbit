@@ -79,6 +79,10 @@ public partial class LevelMgr
                 BattleFoeData newFoeData = gameData.GenerateFoeData(1001);
                 unitViewMgr.GenerateFoeView(newFoeData);
                 break;
+            case "GeneratePlant":
+                BattlePlantData newPlantData = gameData.GeneratePlantData(1001);
+                unitViewMgr.GeneratePlantView(newPlantData);
+                break;
         }
     }
 
