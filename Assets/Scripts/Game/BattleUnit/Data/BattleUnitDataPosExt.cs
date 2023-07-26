@@ -218,6 +218,16 @@ public partial class BattleUnitData
             }
         }
 
+        //GetFoePos
+        List<Vector2Int> listTeam = new List<Vector2Int>();
+        foreach (Vector2Int TeamPos in PublicTool.GetGameData().listTempFoePos)
+        {
+            if (TeamPos!=posID)
+            {
+                listTeam.Add(TeamPos);
+            }
+        }
+
         //Prepare the container for search
         Queue<FindPathNode> ququeOpen = new Queue<FindPathNode>();
         Dictionary<Vector2Int, FindPathNode> dicClose = new Dictionary<Vector2Int, FindPathNode>();
@@ -238,7 +248,14 @@ public partial class BattleUnitData
             //Calculate hCost
             if (PublicTool.CalculateGlobalDis(tarNode.pos, aimPos) <= touchRange)
             {
-                tarNode.hCostReal = 0;
+                if (listTeam.Contains(tarNode.pos))
+                {
+                    tarNode.hCostReal = 1;
+                }
+                else
+                {
+                    tarNode.hCostReal = 0;
+                }
             }
             else
             {
@@ -252,6 +269,10 @@ public partial class BattleUnitData
                     tarNode.hCostReal = 0;
                 }
             }
+
+
+
+
             if (haveValidNode)
             {
                 validNode.hCostReal = tarNode.hCostReal;
@@ -270,6 +291,10 @@ public partial class BattleUnitData
                 }
                 if (ququeOpen.Contains(nextNode))
                 {
+                    if(nextNode.hParentNode.hCostReal < tarNode.hCostReal)
+                    {
+                        nextNode.hParentNode = tarNode;
+                    }
                     continue;
                 }
                 if (listBlock.Contains(nextNode.pos))
