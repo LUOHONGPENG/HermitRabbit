@@ -113,7 +113,7 @@ MonoBehaviour:
   pfCharacter: {fileID: 2840154508100093419, guid: 86921a8acf94c7b44bc56648f50ca41a,
     type: 3}
   tfPlant: {fileID: 1900132225143214732}
-  pfPlant: {fileID: 0}
+  pfPlant: {fileID: 5177278666146262910, guid: 64c44d9ad64cf0347ac43fd27d737dee, type: 3}
   tfFoe: {fileID: 9150781127082084372}
   pfFoe: {fileID: 8408593359070805061, guid: bd7c8569190141f409a38970921e239b, type: 3}
 --- !u!1 &7168277888787779449
