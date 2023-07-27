@@ -126,6 +126,27 @@ public partial class GameData
             return null;
         }
     }
+
+    public void CheckClearPlant()
+    {
+        for (int i = listPlant.Count - 1; i >= 0; i--)
+        {
+            if (listPlant[i].isDead)
+            {
+                RemovePlantData(listPlant[i].keyID);
+            }
+        }
+    }
+
+    public void RemovePlantData(int keyID)
+    {
+        if (dicPlant.ContainsKey(keyID))
+        {
+            BattlePlantData plantData = dicPlant[keyID];
+            listPlant.Remove(plantData);
+            dicPlant.Remove(keyID);
+        }
+    }
     #endregion
 
     #region Basic-Foe
@@ -145,9 +166,21 @@ public partial class GameData
         return foeData;
     }
 
+    public BattleFoeData GetBattleFoeData(int ID)
+    {
+        if (dicFoe.ContainsKey(ID))
+        {
+            return dicFoe[ID];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public void CheckClearFoe()
     {
-        for(int i = listFoe.Count - 1;i >= 0; i--)
+        for (int i = listFoe.Count - 1; i >= 0; i--)
         {
             if (listFoe[i].isDead)
             {
@@ -163,18 +196,6 @@ public partial class GameData
             BattleFoeData foeData = dicFoe[keyID];
             listFoe.Remove(foeData);
             dicFoe.Remove(keyID);
-        }
-    }
-
-    public BattleFoeData GetBattleFoeData(int ID)
-    {
-        if (dicFoe.ContainsKey(ID))
-        {
-            return dicFoe[ID];
-        }
-        else
-        {
-            return null;
         }
     }
     #endregion

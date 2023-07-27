@@ -20,7 +20,10 @@ public class BattleUnitView : MonoBehaviour
         Vector2 thisPos = new Vector2(this.transform.position.x, this.transform.position.z);
         Vector2 direction = cameraPos - thisPos;
         direction.Normalize();
-        srUnit.transform.localPosition = new Vector3(direction.x * 0.35f, 0, direction.y * 0.35f);
+
+        srUnit.transform.localPosition = new Vector3(direction.x * 0.2f, 0, direction.y * 0.2f);
+
+        //srUnit.transform.localPosition = new Vector3(direction.x * 0.35f, 0, direction.y * 0.35f);
         srUnit.transform.LookAt(Camera.main.transform.forward + srUnit.transform.position);
     }
 

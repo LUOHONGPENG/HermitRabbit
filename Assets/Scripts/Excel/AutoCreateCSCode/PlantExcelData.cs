@@ -13,6 +13,7 @@ public partial class PlantExcelItem : ExcelItemBase
 	public int ATK;
 	public int DEF;
 	public int RES;
+	public PlantTriggerType triggerCondition;
 	public int skillID;
 }
 
@@ -39,6 +40,7 @@ public class PlantAssetAssignment
 			items[i].ATK = Convert.ToInt32(allItemValueRowList[i]["ATK"]);
 			items[i].DEF = Convert.ToInt32(allItemValueRowList[i]["DEF"]);
 			items[i].RES = Convert.ToInt32(allItemValueRowList[i]["RES"]);
+			items[i].triggerCondition = (PlantTriggerType) Enum.Parse(typeof(PlantTriggerType), allItemValueRowList[i]["triggerCondition"], true);
 			items[i].skillID = Convert.ToInt32(allItemValueRowList[i]["skillID"]);
 		}
 		PlantExcelData excelDataAsset = ScriptableObject.CreateInstance<PlantExcelData>();

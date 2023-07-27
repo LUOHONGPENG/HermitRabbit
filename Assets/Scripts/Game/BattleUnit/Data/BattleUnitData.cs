@@ -40,31 +40,7 @@ public partial class BattleUnitData
     }
 
 
-    #region About Battle Action
 
-    public bool isDead = false;
-
-    public virtual void ResetNewTurn() { }
-
-    public void GetHurt(float damage)
-    {
-        curHP -= damage;
-        if (curHP <= 0)
-        {
-            isDead = true;
-        }
-    }
-
-    public void GetHeal(float healPoint)
-    {
-        curHP += healPoint;
-        if(curHP >= maxHP)
-        {
-            curHP = maxHP;
-        }
-    }
-
-    #endregion
 
     #region BattleTextQueue
 

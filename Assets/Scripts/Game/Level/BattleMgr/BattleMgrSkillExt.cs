@@ -168,6 +168,16 @@ public partial class BattleMgr
         }
         gameData.CheckClearFoe();
 
+        //Clear Plant
+        foreach (var item in dicPlantSkillTarget)
+        {
+            if (item.Value.isDead)
+            {
+                unitViewMgr.RemovePlantView(item.Value.keyID);
+            }
+        }
+        gameData.CheckClearPlant();
+
         PublicTool.RecalculateOccupancy();
         PublicTool.RecalculateSkillCover();
         PublicTool.EventRefreshCharacterUI();

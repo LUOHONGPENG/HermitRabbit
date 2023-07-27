@@ -102,6 +102,11 @@ public enum SkillDamageDeltaStd
     MAXHP
 }
 
+public enum PlantTriggerType
+{
+    CharacterNormalAttack
+}
+
 #endregion
 
 public enum EffectUITextType
