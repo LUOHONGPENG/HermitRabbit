@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-#region Data Struct
 
 public struct UnitInfo
 {
@@ -69,6 +68,20 @@ public struct SkillBattleInfo
     }
 }
 
+public struct PlantSkillRequestInfo
+{
+    public int keyID;
+    public int skillID;
+    public UnitInfo tarUnit;
+
+    public PlantSkillRequestInfo(int keyID,int skillID, UnitInfo tarUnit)
+    {
+        this.keyID = keyID;
+        this.skillID = skillID;
+        this.tarUnit = tarUnit;
+    }
+}
+
 public struct EffectUITextInfo
 {
     public EffectUITextType type;
@@ -115,5 +128,4 @@ public struct EffectWarningTextInfo
         this.posID = posID;
     }
 }
-#endregion
 

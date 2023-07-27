@@ -151,7 +151,7 @@ MonoBehaviour:
     desc: Attack a enemy.
     costAP: 0
     element: 0
-    range: 2
+    range: 3
     isRangeSelf: 0
     radius: 0
     regionType: 0

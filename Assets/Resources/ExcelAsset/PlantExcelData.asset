@@ -19,4 +19,5 @@ MonoBehaviour:
     ATK: 10
     DEF: 3
     RES: 3
+    triggerCondition: 0
     skillID: 3001

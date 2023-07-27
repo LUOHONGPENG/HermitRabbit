@@ -5,6 +5,7 @@ using UnityEngine;
 public partial class GameData
 {
     #region CalculateRegion
+    public List<Vector2Int> listTempDeadCharacterPos = new List<Vector2Int>();
     public List<Vector2Int> listTempCharacterPos = new List<Vector2Int>();
     public List<Vector2Int> listTempFoePos = new List<Vector2Int>();
     public List<Vector2Int> listTempPlantPos = new List<Vector2Int>();
@@ -51,12 +52,21 @@ public partial class GameData
         foreach (var character in listCharacter)
         {
             dicTempMapUnit.Add(character.posID, new UnitInfo(BattleUnitType.Character, character.keyID));
+            if (character.isDead)
+            {
+                listTempDeadCharacterPos.Add(character.posID);
+                continue;
+            }
             listTempCharacterPos.Add(character.posID);
             listTempFriendPos.Add(character.posID);
             listTempAllPos.Add(character.posID);
         }
         foreach (var plant in listPlant)
         {
+            if (plant.isDead)
+            {
+                continue;
+            }
             dicTempMapUnit.Add(plant.posID, new UnitInfo(BattleUnitType.Plant, plant.keyID));
             listTempPlantPos.Add(plant.posID);
             listTempFriendPos.Add(plant.posID);
@@ -64,6 +74,10 @@ public partial class GameData
         }
         foreach (var foe in listFoe)
         {
+            if (foe.isDead)
+            {
+                continue;
+            }
             dicTempMapUnit.Add(foe.posID, new UnitInfo(BattleUnitType.Foe, foe.keyID));
             listTempFoePos.Add(foe.posID);
             listTempAllPos.Add(foe.posID);

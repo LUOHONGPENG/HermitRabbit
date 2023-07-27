@@ -36,13 +36,22 @@ public partial class BattleMgr
     {
         EventCenter.Instance.EventTrigger("CharacterActionStart",null);
         PublicTool.EventChangeInteract(InteractState.WaitAction);
+        yield return StartCoroutine(IE_CheckPlantBeforeSkill());
         yield return StartCoroutine(IE_ExecuteSkillCost());
         yield return StartCoroutine(IE_FindSkillTarget());
         yield return StartCoroutine(IE_InvokeSkillData());
         yield return new WaitForSeconds(0.5f);
         yield return StartCoroutine(InvokeSkillText());
-        AfterSkill();
-        EventCenter.Instance.EventTrigger("CharacterActionEnd", null);
+        yield return StartCoroutine(IE_AfterSkill());
+        if (skillSubject.battleUnitType != BattleUnitType.Plant)
+        {
+            yield return StartCoroutine(IE_ExecutePlantSkill());
+            if (battleTurnPhase == BattlePhase.CharacterPhase)
+            {
+                PublicTool.EventChangeInteract(InteractState.CharacterSkill);
+                EventCenter.Instance.EventTrigger("CharacterActionEnd", null);
+            }
+        }
     }
 
     private IEnumerator IE_ExecuteSkillCost()
@@ -156,8 +165,10 @@ public partial class BattleMgr
         yield break;
     }
 
-    private void AfterSkill()
+    private IEnumerator IE_AfterSkill()
     {
+        //If there is no a foe that is not in the dic are hurt
+
         //Clear Foe
         foreach (var item in dicFoeSkillTarget)
         {
@@ -181,11 +192,12 @@ public partial class BattleMgr
         PublicTool.RecalculateOccupancy();
         PublicTool.RecalculateSkillCover();
         PublicTool.EventRefreshCharacterUI();
+        isInFoeSkill = false;
+        isInPlantSkill = false;
 
-        if (battleTurnPhase == BattlePhase.CharacterPhase)
-        {
-            PublicTool.EventChangeInteract(InteractState.CharacterSkill);
-        }
+        yield break;
+
+
     }
 
     private bool CheckSkillCondition()

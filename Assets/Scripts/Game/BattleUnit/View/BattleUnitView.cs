@@ -69,8 +69,10 @@ public class BattleUnitView : MonoBehaviour
         {
             EffectBattleTextInfo info = queueInfo.Dequeue();
             EventCenter.Instance.EventTrigger("EffectBattleText", info);
-
-            yield return new WaitForSeconds(0.2f);
+            if (queueInfo.Count > 0)
+            {
+                yield return new WaitForSeconds(0.2f);
+            }
         }
         isExecutingBattleText = false;
     }

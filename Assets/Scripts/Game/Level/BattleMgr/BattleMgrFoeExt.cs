@@ -5,6 +5,7 @@ using UnityEngine;
 public partial class BattleMgr
 {
     public Stack<int> stackFoe = new Stack<int>();
+    private bool isInFoeSkill = false;
 
     private void ScanFoeStack()
     {
@@ -75,7 +76,10 @@ public partial class BattleMgr
 
         foreach(Vector2Int pos in listFriendPos)
         {
-            listFriendNode.Add(foeData.dicBFSAllNode[pos]);
+            if (foeData.dicBFSAllNode.ContainsKey(pos))
+            {
+                listFriendNode.Add(foeData.dicBFSAllNode[pos]);
+            }
         }
         PublicTool.FindPathNodeSortLowestGCost(listFriendNode);
 
@@ -126,8 +130,6 @@ public partial class BattleMgr
             else
             {
                 Debug.Log(foeData.keyID + "DontMove cur" + curNode.hCostReal);
-
-
                 yield break;
             }
         }
@@ -137,7 +139,9 @@ public partial class BattleMgr
     private IEnumerator IE_ExecuteFoeSkill(BattleFoeData foeData)
     {
         SkillActionRequest(foeData.listValidSkill[0]);
-        yield return new WaitForSeconds(1f);
+        isInFoeSkill = true;
+        //This condition need to be changed
+        yield return new WaitUntil(() => !isInFoeSkill);
     }
 
 }
