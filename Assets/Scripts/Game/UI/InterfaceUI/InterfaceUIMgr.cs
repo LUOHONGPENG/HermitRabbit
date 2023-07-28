@@ -2,12 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InterfaceUIMgr : MonoBehaviour
 {
     public PeaceInterfaceUIMgr peaceInterfaceUIMgr;
     public BattleOptionUIMgr battleOptionUIMgr;
     public BattleInterfaceUIMgr battleInterfaceUIMgr;
+    public Text txPhase;
+    public Text txDayInfo;
+
+    private bool isInit = false;
 
     public void Init()
     {
@@ -21,6 +26,8 @@ public class InterfaceUIMgr : MonoBehaviour
             battleOptionUIMgr.HideBattleOptionPage();
             battleInterfaceUIMgr.HidePopup();
         }
+        RefreshPhaseUI();
+        isInit = true;
     }
 
     private void OnEnable()
@@ -46,7 +53,6 @@ public class InterfaceUIMgr : MonoBehaviour
         EventCenter.Instance.RemoveEventListener("CharacterPhaseStart", CharacterPhaseStartEvent);
         EventCenter.Instance.RemoveEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
     }
-
 
     private void RefreshCharacterInfoEvent(object arg0)
     {
@@ -83,6 +89,7 @@ public class InterfaceUIMgr : MonoBehaviour
     private void CharacterPhaseStartEvent(object arg0)
     {
         battleInterfaceUIMgr.ShowEndTurnBtn();
+        RefreshPhaseUI();
     }
 
     private void CharacterPhaseEndEvent(object arg0)
@@ -96,6 +103,8 @@ public class InterfaceUIMgr : MonoBehaviour
 
         battleInterfaceUIMgr.ShowPopup();
         battleInterfaceUIMgr.BindCharacterData();
+
+        RefreshPhaseUI();
     }
 
     private void BattleEndEvent(object arg0)
@@ -104,6 +113,29 @@ public class InterfaceUIMgr : MonoBehaviour
 
         battleInterfaceUIMgr.HidePopup();
 
+        RefreshPhaseUI();
     }
     #endregion
+
+    private void Update()
+    {
+        if (isInit)
+        {
+            //RefreshPhaseUI();
+        }
+    }
+
+    private void RefreshPhaseUI()
+    {
+        if (PublicTool.GetGameData().gamePhase == GamePhase.Peace)
+        {
+            txPhase.text = "Peace";
+            txDayInfo.text = String.Format("Day {0}", PublicTool.GetGameData().numDay.ToString());
+        }
+        else if (PublicTool.GetGameData().gamePhase == GamePhase.Battle)
+        {
+            txPhase.text = "Battle";
+            txDayInfo.text = String.Format("Turn {0}", BattleMgr.Instance.numTurn.ToString());
+        }
+    }
 }

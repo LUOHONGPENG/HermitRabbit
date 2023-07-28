@@ -10,6 +10,7 @@ public partial class GameData
 {
     //Current Phase
     public GamePhase gamePhase = GamePhase.Peace;
+    public int numDay = 1;
 
     //MapTileData
     public List<MapTileData> listMapTile = new List<MapTileData>();
@@ -28,6 +29,7 @@ public partial class GameData
 
     public void NewGame()
     {
+        numDay = 1;
         NewGameMapTileData();
         NewGameCharacterData();
         NewGamePlantData();
