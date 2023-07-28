@@ -5,16 +5,19 @@ using UnityEngine;
 
 public class InterfaceUIMgr : MonoBehaviour
 {
+    public PeaceInterfaceUIMgr peaceInterfaceUIMgr;
     public BattleOptionUIMgr battleOptionUIMgr;
     public BattleInterfaceUIMgr battleInterfaceUIMgr;
 
     public void Init()
     {
+        peaceInterfaceUIMgr.Init();
         battleOptionUIMgr.Init();
         battleInterfaceUIMgr.Init();
 
-        if (InputMgr.Instance.interactState == InteractState.Normal)
+        if (InputMgr.Instance.interactState == InteractState.PeaceNormal)
         {
+            peaceInterfaceUIMgr.ShowPopup();
             battleOptionUIMgr.HideBattleOptionPage();
             battleInterfaceUIMgr.HidePopup();
         }
@@ -89,13 +92,18 @@ public class InterfaceUIMgr : MonoBehaviour
 
     private void BattleStartEvent(object arg0)
     {
+        peaceInterfaceUIMgr.HidePopup();
+
         battleInterfaceUIMgr.ShowPopup();
         battleInterfaceUIMgr.BindCharacterData();
     }
 
     private void BattleEndEvent(object arg0)
     {
+        peaceInterfaceUIMgr.ShowPopup();
+
         battleInterfaceUIMgr.HidePopup();
+
     }
     #endregion
 }

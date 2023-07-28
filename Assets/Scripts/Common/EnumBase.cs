@@ -19,7 +19,8 @@ public enum GamePhase
 
 public enum InteractState
 {
-    Normal,
+    PeaceNormal,
+    BattleNormal,
     CharacterMove,
     CharacterSkill,
     WaitAction

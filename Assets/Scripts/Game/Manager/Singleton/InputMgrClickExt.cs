@@ -29,9 +29,6 @@ public partial class InputMgr
         }
     }
 
-
-
-
     private bool CheckWhetherHitUnit()
     {
         Physics.Raycast(GetMouseRay(), out RaycastHit hitData, 1000f, LayerMask.GetMask("Unit"));
@@ -68,23 +65,11 @@ public partial class InputMgr
     {
         GameData gameData = PublicTool.GetGameData();
 
-        if(gameData.gamePhase == GamePhase.Battle)
+        switch (interactState)
         {
-            switch (interactState)
-            {
-                case InteractState.Normal:
-                    EventCenter.Instance.EventTrigger("InputChooseCharacter", character.GetTypeID());
-                    return true;
-                case InteractState.CharacterMove:
-                    break;
-                    /*
-                    EventCenter.Instance.EventTrigger("InputChooseCharacter", character.GetTypeID());
-                    return true;*/
-                case InteractState.CharacterSkill:
-                    break;
-                case InteractState.WaitAction:
-                    break;
-            }
+            case InteractState.BattleNormal:
+                EventCenter.Instance.EventTrigger("InputChooseCharacter", character.GetTypeID());
+                return true;
         }
         return false;
     }
@@ -92,32 +77,22 @@ public partial class InputMgr
     private bool DealClickMapAction(MapTileBase mapTile)
     {
         GameData gameData = PublicTool.GetGameData();
-
-
-        if (gameData.gamePhase == GamePhase.Battle)
+        switch (interactState)
         {
-            switch (interactState)
-            {
-                case InteractState.Normal:
-                    PublicTool.EventCameraGoPosID(mapTile.posID);
-                    return true;
-                case InteractState.CharacterMove:
-                    EventCenter.Instance.EventTrigger("InputMoveAction", mapTile.posID);
-                    return true;
-                case InteractState.CharacterSkill:
-                    EventCenter.Instance.EventTrigger("InputSkillAction", mapTile.posID);
-                    return true;
-            }
+            case InteractState.PeaceNormal:
+                PublicTool.EventCameraGoPosID(mapTile.posID);
+                return true;
+            case InteractState.BattleNormal:
+                PublicTool.EventCameraGoPosID(mapTile.posID);
+                return true;
+            case InteractState.CharacterMove:
+                EventCenter.Instance.EventTrigger("InputMoveAction", mapTile.posID);
+                return true;
+            case InteractState.CharacterSkill:
+                EventCenter.Instance.EventTrigger("InputSkillAction", mapTile.posID);
+                return true;
         }
-        else if(gameData.gamePhase == GamePhase.Peace)
-        {
-            switch (interactState)
-            {
-                case InteractState.Normal:
-                    PublicTool.EventCameraGoPosID(mapTile.posID);
-                    return true;
-            }
-        }
+
         return false;
     }
     #endregion

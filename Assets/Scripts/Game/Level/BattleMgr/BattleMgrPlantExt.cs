@@ -93,11 +93,7 @@ public partial class BattleMgr
                 SkillActionRequest(tarUnitData.posID);
             }
             yield return new WaitUntil(() => !isInPlantSkill);
-
-            Debug.Log("PlantSkill End");
         }
-
-
 
         if (battleTurnPhase == BattlePhase.CharacterPhase && plantRecordCharacter!=null)
         {

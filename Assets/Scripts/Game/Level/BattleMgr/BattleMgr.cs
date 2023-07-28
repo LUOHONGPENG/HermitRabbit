@@ -86,7 +86,7 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     private void StartCharacterPhase()
     {
         EventCenter.Instance.EventTrigger("CharacterPhaseStart", null);
-        PublicTool.EventChangeInteract(InteractState.Normal);
+        PublicTool.EventChangeInteract(InteractState.BattleNormal);
         //Auto Click
         List<BattleCharacterData> listCharacter = gameData.listCharacter;
         for(int i = 0; i < listCharacter.Count; i++)

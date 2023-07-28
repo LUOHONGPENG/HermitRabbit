@@ -68,7 +68,7 @@ public partial class MapViewMgr : MonoBehaviour
         //I think this need a optimisation
         switch (state)
         {
-            case InteractState.Normal:
+            case InteractState.PeaceNormal:
                 ResetAllTile();
                 break;
             case InteractState.CharacterMove:

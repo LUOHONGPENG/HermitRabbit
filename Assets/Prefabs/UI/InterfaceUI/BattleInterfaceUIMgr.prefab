@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 4666416004064885718}
   - component: {fileID: 3843719557535151540}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: txEndTurn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,7 +273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8712627645691098950
 RectTransform:
   m_ObjectHideFlags: 0
