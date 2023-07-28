@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class PeaceInterfaceUIMgr : MonoBehaviour
 {
     public GameObject objPopup;
+    public CanvasGroup groupBottom;
+
     public Button btnStartBattle;
+    public Button btnStartPlant;
 
     public void Init()
     {
@@ -15,6 +19,13 @@ public class PeaceInterfaceUIMgr : MonoBehaviour
         {
             EventCenter.Instance.EventTrigger("BattleStart", null);
         });
+
+        btnStartPlant.onClick.RemoveAllListeners();
+        btnStartPlant.onClick.AddListener(delegate ()
+        {
+            EventCenter.Instance.EventTrigger("PlantMode", null);
+        });
+
     }
 
     public void ShowPopup()

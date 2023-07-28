@@ -34,24 +34,30 @@ public class InterfaceUIMgr : MonoBehaviour
     {
         EventCenter.Instance.AddEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.AddEventListener("RefreshCharacterInfo", RefreshCharacterInfoEvent);
-
+        //Battle
         EventCenter.Instance.AddEventListener("BattleStart", BattleStartEvent);
         EventCenter.Instance.AddEventListener("CharacterActionStart", CharacterActionStartEvent);
         EventCenter.Instance.AddEventListener("CharacterActionEnd", CharacterActionEndEvent);
         EventCenter.Instance.AddEventListener("CharacterPhaseStart", CharacterPhaseStartEvent);
         EventCenter.Instance.AddEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
+        //Peace
+        EventCenter.Instance.AddEventListener("PlantMode", PlantModeEvent);
+
     }
+
+
 
     private void OnDisable()
     {
         EventCenter.Instance.RemoveEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.RemoveEventListener("RefreshCharacterInfo", RefreshCharacterInfoEvent);
-
+        //Battle
         EventCenter.Instance.RemoveEventListener("BattleStart", BattleStartEvent);
         EventCenter.Instance.RemoveEventListener("CharacterActionStart", CharacterActionStartEvent);
         EventCenter.Instance.RemoveEventListener("CharacterActionEnd", CharacterActionEndEvent);
         EventCenter.Instance.RemoveEventListener("CharacterPhaseStart", CharacterPhaseStartEvent);
         EventCenter.Instance.RemoveEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
+        EventCenter.Instance.RemoveEventListener("PlantMode", PlantModeEvent);
     }
 
     private void RefreshCharacterInfoEvent(object arg0)
@@ -117,13 +123,11 @@ public class InterfaceUIMgr : MonoBehaviour
     }
     #endregion
 
-    private void Update()
+    private void PlantModeEvent(object arg0)
     {
-        if (isInit)
-        {
-            //RefreshPhaseUI();
-        }
+        throw new NotImplementedException();
     }
+
 
     private void RefreshPhaseUI()
     {
