@@ -9,6 +9,7 @@ public partial class LevelMgr : MonoBehaviour
     public MapViewMgr mapViewMgr;
     public UnitViewMgr unitViewMgr;
     public BattleMgr battleMgr;
+    public PeaceMgr peaceMgr;
 
     private bool isInit = false;
 
@@ -24,6 +25,8 @@ public partial class LevelMgr : MonoBehaviour
         unitViewMgr.Init();
         battleMgr = BattleMgr.Instance;
         battleMgr.Init(this);
+        peaceMgr = PeaceMgr.Instance;
+        peaceMgr.Init(this);
 
         isInit = true;
     }

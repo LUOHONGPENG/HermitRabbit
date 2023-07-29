@@ -23,7 +23,7 @@ public class PeaceInterfaceUIMgr : MonoBehaviour
         btnStartPlant.onClick.RemoveAllListeners();
         btnStartPlant.onClick.AddListener(delegate ()
         {
-            EventCenter.Instance.EventTrigger("PlantMode", null);
+            EventCenter.Instance.EventTrigger("PeacePlantStart", null);
         });
 
     }
@@ -36,5 +36,17 @@ public class PeaceInterfaceUIMgr : MonoBehaviour
     public void HidePopup()
     {
         objPopup.SetActive(false);
+    }
+
+    public void ScrollHide()
+    {
+        objPopup.SetActive(false);
+
+    }
+
+    public void ScrollShow()
+    {
+        objPopup.SetActive(true);
+
     }
 }

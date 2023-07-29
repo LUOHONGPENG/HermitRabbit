@@ -18,9 +18,10 @@ public partial class GameData
     //CharacterData
     public List<BattleCharacterData> listCharacter = new List<BattleCharacterData>();
     public Dictionary<int, BattleCharacterData> dicCharacter = new Dictionary<int, BattleCharacterData>();
-    //PlantData
+    //CurPlantData
     public List<BattlePlantData> listPlant = new List<BattlePlantData>();
     public Dictionary<int, BattlePlantData> dicPlant = new Dictionary<int, BattlePlantData>();
+    public List<int> listCurUnlockPlant = new List<int>();
     private int curPlantKeyID = -1;
     //FoeData
     public List<BattleFoeData> listFoe = new List<BattleFoeData>();
@@ -103,9 +104,14 @@ public partial class GameData
     #region Basic-Plant
     public void NewGamePlantData()
     {
+        //Cur Plant
         listPlant.Clear();
         dicPlant.Clear();
         curPlantKeyID = -1;
+        //Unlock Plant
+        listCurUnlockPlant.Clear();
+        //Test
+        listCurUnlockPlant.Add(1001);
     }
 
     public BattlePlantData GeneratePlantData(int typeID)

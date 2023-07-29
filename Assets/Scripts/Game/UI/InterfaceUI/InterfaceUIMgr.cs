@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class InterfaceUIMgr : MonoBehaviour
 {
-    public PeaceInterfaceUIMgr peaceInterfaceUIMgr;
-    public BattleOptionUIMgr battleOptionUIMgr;
     public BattleInterfaceUIMgr battleInterfaceUIMgr;
+    public BattleOptionUIMgr battleOptionUIMgr;
+    public PeaceInterfaceUIMgr peaceInterfaceUIMgr;
+    public PeacePlantUIMgr peacePlantUIMgr;
+
     public Text txPhase;
     public Text txDayInfo;
 
@@ -16,9 +18,10 @@ public class InterfaceUIMgr : MonoBehaviour
 
     public void Init()
     {
-        peaceInterfaceUIMgr.Init();
         battleOptionUIMgr.Init();
         battleInterfaceUIMgr.Init();
+        peaceInterfaceUIMgr.Init();
+
 
         if (InputMgr.Instance.interactState == InteractState.PeaceNormal)
         {
@@ -41,7 +44,7 @@ public class InterfaceUIMgr : MonoBehaviour
         EventCenter.Instance.AddEventListener("CharacterPhaseStart", CharacterPhaseStartEvent);
         EventCenter.Instance.AddEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
         //Peace
-        EventCenter.Instance.AddEventListener("PlantMode", PlantModeEvent);
+        EventCenter.Instance.AddEventListener("PeacePlantStart", PeacePlantStartEvent);
 
     }
 
@@ -57,7 +60,8 @@ public class InterfaceUIMgr : MonoBehaviour
         EventCenter.Instance.RemoveEventListener("CharacterActionEnd", CharacterActionEndEvent);
         EventCenter.Instance.RemoveEventListener("CharacterPhaseStart", CharacterPhaseStartEvent);
         EventCenter.Instance.RemoveEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
-        EventCenter.Instance.RemoveEventListener("PlantMode", PlantModeEvent);
+
+        EventCenter.Instance.RemoveEventListener("PeacePlantStart", PeacePlantStartEvent);
     }
 
     private void RefreshCharacterInfoEvent(object arg0)
@@ -123,11 +127,15 @@ public class InterfaceUIMgr : MonoBehaviour
     }
     #endregion
 
-    private void PlantModeEvent(object arg0)
-    {
-        throw new NotImplementedException();
-    }
 
+    #region Peace
+    private void PeacePlantStart(object arg0)
+    {
+        peaceInterfaceUIMgr.ScrollHide();
+
+        
+    }
+    #endregion
 
     private void RefreshPhaseUI()
     {

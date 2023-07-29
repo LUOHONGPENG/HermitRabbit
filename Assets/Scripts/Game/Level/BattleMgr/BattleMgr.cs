@@ -11,7 +11,6 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     public int numTurn;
     public BattlePhase battleTurnPhase;
 
-
     private MapViewMgr mapViewMgr;
     private UnitViewMgr unitViewMgr;
     private GameData gameData;

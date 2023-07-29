@@ -7,29 +7,39 @@ public partial class LevelMgr
 {
     private void OnEnable()
     {
-        //About Input
+        //Input
         EventCenter.Instance.AddEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.AddEventListener("InputMoveAction", InputMoveActionEvent);
         EventCenter.Instance.AddEventListener("InputSkillAction", InputSkillActionEvent);
         EventCenter.Instance.AddEventListener("InputSetHoverTile", InputSetHoverTileEvent);
 
+        //Battle
         EventCenter.Instance.AddEventListener("BattleStart", BattleStartEvent);
         EventCenter.Instance.AddEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
+
+        //Peace
+        EventCenter.Instance.AddEventListener("PeacePlantStart", PeacePlantStartEvent);
 
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
     }
 
+
+
     private void OnDisable()
     {        
-        //About Input
+        //Input
         EventCenter.Instance.RemoveEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.RemoveEventListener("InputMoveAction", InputMoveActionEvent);
         EventCenter.Instance.RemoveEventListener("InputSkillAction", InputSkillActionEvent);
         EventCenter.Instance.RemoveEventListener("InputSetHoverTile", InputSetHoverTileEvent);
 
+        //Battle
         EventCenter.Instance.RemoveEventListener("BattleStart", BattleStartEvent);
         EventCenter.Instance.RemoveEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
+
+        //Peace
+        EventCenter.Instance.RemoveEventListener("PeacePlantStart", PeacePlantStartEvent);
 
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
@@ -62,6 +72,14 @@ public partial class LevelMgr
     {
         Vector2Int targetPos = (Vector2Int)arg0;
         battleMgr.SkillActionRequest(targetPos);
+    }
+
+    private void InputSetHoverTileEvent(object arg0)
+    {
+        if (gameData != null)
+        {
+            gameData.hoverTileID = (Vector2Int)arg0;
+        }
     }
     #endregion
 
@@ -98,14 +116,11 @@ public partial class LevelMgr
     }
     #endregion
 
-    #region EventDeal_Map
-
-    private void InputSetHoverTileEvent(object arg0)
+    #region EventDeal_Peace
+    private void PeacePlantStartEvent(object arg0)
     {
-        if (gameData != null)
-        {
-            gameData.hoverTileID = (Vector2Int)arg0;
-        }
+        PublicTool.EventChangeInteract(InteractState.PeacePlant);
+        peaceMgr.StartPlant();
     }
     #endregion
 }
