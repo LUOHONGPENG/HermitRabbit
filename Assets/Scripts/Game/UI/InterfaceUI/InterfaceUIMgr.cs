@@ -129,7 +129,7 @@ public class InterfaceUIMgr : MonoBehaviour
 
 
     #region Peace
-    private void PeacePlantStart(object arg0)
+    private void PeacePlantStartEvent(object arg0)
     {
         peaceInterfaceUIMgr.ScrollHide();
 
