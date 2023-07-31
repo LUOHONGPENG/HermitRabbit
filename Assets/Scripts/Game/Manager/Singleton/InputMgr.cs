@@ -57,7 +57,10 @@ public partial class InputMgr : MonoSingleton<InputMgr>
         camMoveAction.performed -= CamMove_performed;
         camRotateAction.performed -= CamRotate_performed;
         touchAction.performed -= Touch_performed;
-        playerInput.Disable();
+        if (playerInput != null)
+        {
+            playerInput.Disable();
+        }
     }
 
     private void OnEnable()

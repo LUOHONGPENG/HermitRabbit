@@ -33,6 +33,11 @@ public partial class BattleMgr
         }
     }
 
+    /// <summary>
+    /// Check whether the range cover the possible target
+    /// </summary>
+    /// <param name="plantTriggerType"></param>
+    /// <param name="unitInfo"></param>
     private void CheckPlantSkillRequest(PlantTriggerType plantTriggerType,UnitInfo unitInfo)
     {
         if (!dicPlantTrigger.ContainsKey(plantTriggerType))
@@ -55,21 +60,33 @@ public partial class BattleMgr
 
     private IEnumerator IE_CheckPlantBeforeSkill()
     {
-        if(skillSubject.battleUnitType != BattleUnitType.Character)
+        if (skillSubject.battleUnitType == BattleUnitType.Plant)
         {
             yield break;
         }
 
-        if (skillBattleInfo.isNormalAttack && gameData.dicTempMapUnit.ContainsKey(skillTargetPos))
+        yield return StartCoroutine(IE_ExecutePlantSkill());
+    }
+
+    private IEnumerator IE_CheckPlantAfterSkill()
+    {
+        if(skillSubject.battleUnitType == BattleUnitType.Plant)
+        {
+            yield break;
+        }
+
+        //Character Normal Attack
+        if (skillBattleInfo.isNormalAttack && skillSubject.battleUnitType == BattleUnitType.Character && gameData.dicTempMapUnit.ContainsKey(skillTargetPos))
         {
             CheckPlantSkillRequest(PlantTriggerType.CharacterNormalAttack, gameData.dicTempMapUnit[skillTargetPos]);
         }
-        yield break;
+
+        yield return StartCoroutine(IE_ExecutePlantSkill());
     }
 
     private IEnumerator IE_ExecutePlantSkill()
     {
-        if (queueSkillRequest.Count > 0 && battleTurnPhase == BattlePhase.CharacterPhase)
+        if (battleTurnPhase == BattlePhase.CharacterPhase && queueSkillRequest.Count > 0)
         {
             plantRecordCharacter = (BattleCharacterData)gameData.GetCurUnitData();
             beforeSkillID = gameData.GetCurSkillBattleInfo().ID;
@@ -77,7 +94,6 @@ public partial class BattleMgr
 
         while (queueSkillRequest.Count > 0)
         {
-            //yield return new WaitForSeconds(0.3f);
             PlantSkillRequestInfo plantSkill = queueSkillRequest.Dequeue();
 
             gameData.SetCurUnitInfo(new UnitInfo(BattleUnitType.Plant, plantSkill.keyID));
@@ -85,6 +101,7 @@ public partial class BattleMgr
             gameData.SetCurBattleSkill(plantData.GetSkillID());
             PublicTool.RecalculateSkillCover();
             PublicTool.EventCameraGoPosID(plantData.posID);
+            yield return new WaitForSeconds(0.5f);
 
             BattleUnitData tarUnitData = gameData.GetDataFromUnitInfo(plantSkill.tarUnit);
             if (tarUnitData != null && !tarUnitData.isDead)//Except for revive

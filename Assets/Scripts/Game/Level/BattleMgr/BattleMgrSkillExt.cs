@@ -40,18 +40,19 @@ public partial class BattleMgr
         yield return StartCoroutine(IE_ExecuteSkillCost());
         yield return StartCoroutine(IE_FindSkillTarget());
         yield return StartCoroutine(IE_InvokeSkillData());
-        yield return new WaitForSeconds(0.5f);
         yield return StartCoroutine(InvokeSkillText());
+        yield return new WaitForSeconds(0.6f);
         yield return StartCoroutine(IE_AfterSkill());
-        if (skillSubject.battleUnitType != BattleUnitType.Plant)
+        yield return StartCoroutine(IE_CheckPlantAfterSkill());
+
+        if (battleTurnPhase == BattlePhase.CharacterPhase && gameData.GetCurUnitInfo().type == BattleUnitType.Character)
         {
-            yield return StartCoroutine(IE_ExecutePlantSkill());
-            if (battleTurnPhase == BattlePhase.CharacterPhase)
-            {
-                PublicTool.EventChangeInteract(InteractState.CharacterSkill);
-                EventCenter.Instance.EventTrigger("CharacterActionEnd", null);
-            }
+            PublicTool.EventChangeInteract(InteractState.CharacterSkill);
+            EventCenter.Instance.EventTrigger("CharacterActionEnd", null);
         }
+
+        //UI should be the last
+        PublicTool.EventRefreshCharacterUI();
     }
 
     private IEnumerator IE_ExecuteSkillCost()
@@ -110,8 +111,6 @@ public partial class BattleMgr
                 }
             }
         }
-
-        
 
         yield break;
     }
@@ -191,13 +190,10 @@ public partial class BattleMgr
 
         PublicTool.RecalculateOccupancy();
         PublicTool.RecalculateSkillCover();
-        PublicTool.EventRefreshCharacterUI();
         isInFoeSkill = false;
         isInPlantSkill = false;
 
         yield break;
-
-
     }
 
     private bool CheckSkillCondition()

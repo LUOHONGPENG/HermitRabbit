@@ -19,6 +19,10 @@ public partial class BattleMgr
         }
     }
 
+    /// <summary>
+    /// Execute the foe turn
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator IE_ExecuteFoeTurn()
     {
         while (stackFoe.Count>0)
@@ -27,9 +31,11 @@ public partial class BattleMgr
             int foeKeyID = stackFoe.Pop();            
             BattleFoeData foeData = gameData.GetBattleFoeData(foeKeyID);
             gameData.SetCurUnitInfo(new UnitInfo(BattleUnitType.Foe, foeKeyID));
+
             //Move Camera to the cur unit
             PublicTool.EventCameraGoPosID(foeData.posID);
             yield return new WaitForSeconds(0.5f);
+
             //Scan and get the target Pos
             IEnumerator itorReturn = null;
             itorReturn = IE_ExecuteFoeScan(foeData);
@@ -43,6 +49,7 @@ public partial class BattleMgr
             {
                 continue;
             }
+
             //Spell skill and aim at the target first
             if (CheckPossibleSkill(foeData))
             {
@@ -59,6 +66,11 @@ public partial class BattleMgr
         EndTurnPhase();
     }
 
+    /// <summary>
+    /// Check whether the skill 
+    /// </summary>
+    /// <param name="foeData"></param>
+    /// <returns></returns>
     private bool CheckPossibleSkill(BattleFoeData foeData)
     {
         gameData.SetCurBattleSkill(foeData.GetSkillID());
