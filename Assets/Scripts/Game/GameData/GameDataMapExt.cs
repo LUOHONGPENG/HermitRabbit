@@ -42,6 +42,8 @@ public partial class GameData
     public List<Vector2Int> listTempFoePos = new List<Vector2Int>();
     public List<Vector2Int> listTempPlantPos = new List<Vector2Int>();
     public List<Vector2Int> listTempFriendPos = new List<Vector2Int>();
+    public List<Vector2Int> listTempObstablePos = new List<Vector2Int>();
+
     public List<Vector2Int> listTempAllPos = new List<Vector2Int>();
     public List<Vector2Int> listTempEmptyPos = new List<Vector2Int>();
     public Dictionary<Vector2Int, UnitInfo> dicTempMapUnit = new Dictionary<Vector2Int, UnitInfo>();
@@ -87,9 +89,11 @@ public partial class GameData
             if (character.isDead)
             {
                 listTempDeadCharacterPos.Add(character.posID);
-                continue;
             }
-            listTempCharacterPos.Add(character.posID);
+            else
+            {
+                listTempCharacterPos.Add(character.posID);
+            }
             listTempFriendPos.Add(character.posID);
             listTempAllPos.Add(character.posID);
         }
@@ -126,7 +130,37 @@ public partial class GameData
 
     #endregion
 
+    #region Application
 
+    public List<Vector2Int> GetFoeBlockPos()
+    {
+        List<Vector2Int> listTemp = new List<Vector2Int>();
+        AddPosForList(listTemp, listTempCharacterPos);
+        AddPosForList(listTemp, listTempPlantPos);
+        AddPosForList(listTemp, listTempObstablePos);
+        return listTemp;
+    }
+
+    public List<Vector2Int> GetFoeTargetPos()
+    {
+        List<Vector2Int> listTemp = new List<Vector2Int>();
+        AddPosForList(listTemp, listTempCharacterPos);
+        AddPosForList(listTemp, listTempPlantPos);
+        return listTemp;
+    }
+
+    public void AddPosForList(List<Vector2Int> listContainer, List<Vector2Int> listTarget)
+    {
+        for (int i = 0; i < listTarget.Count; i++)
+        {
+            Vector2Int tempPos = listTarget[i];
+            if (!listContainer.Contains(tempPos))
+            {
+                listContainer.Add(tempPos);
+            }
+        }
+    }
+    #endregion
 
 
 }

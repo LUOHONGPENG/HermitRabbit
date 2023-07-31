@@ -23,29 +23,37 @@ public partial class BattleMgr
     {
         while (stackFoe.Count>0)
         {
+            //SetCurUnit
             int foeKeyID = stackFoe.Pop();            
             BattleFoeData foeData = gameData.GetBattleFoeData(foeKeyID);
-            //SetCurUnit
             gameData.SetCurUnitInfo(new UnitInfo(BattleUnitType.Foe, foeKeyID));
+            //Move Camera to the cur unit
             PublicTool.EventCameraGoPosID(foeData.posID);
             yield return new WaitForSeconds(0.5f);
-
+            //Scan and get the target Pos
             IEnumerator itorReturn = null;
             itorReturn = IE_ExecuteFoeScan(foeData);
             yield return itorReturn;
-            if (((Vector2Int)itorReturn.Current).x >= 0)
+            Vector2Int targetPos = ((Vector2Int)itorReturn.Current);
+            if (targetPos.x >= 0)
             {
-                Debug.Log(foeData.keyID + "target " + ((Vector2Int)itorReturn.Current));
-                yield return StartCoroutine(IE_ExecuteFoeMove(foeData, ((Vector2Int)itorReturn.Current)));
+                yield return StartCoroutine(IE_ExecuteFoeMove(foeData, targetPos));
             }
             else
             {
-
+                continue;
             }
-
+            //Spell skill and aim at the target first
             if (CheckPossibleSkill(foeData))
             {
-                yield return StartCoroutine(IE_ExecuteFoeSkill(foeData));
+                if (foeData.listValidSkill.Contains(targetPos))
+                {
+                    yield return StartCoroutine(IE_ExecuteFoeSkill(foeData,targetPos));
+                }
+                else
+                {
+                    yield return StartCoroutine(IE_ExecuteFoeSkill(foeData, foeData.listValidSkill[0]));
+                }
             }
         }
         EndTurnPhase();
@@ -70,22 +78,22 @@ public partial class BattleMgr
         //Scan
         PublicTool.RecalculateOccupancy();
         foeData.RefreshFoeMoveAllBFSNode();
-        //Get Friend
-        List<FindPathNode> listFriendNode = new List<FindPathNode>();
-        List<Vector2Int> listFriendPos = PublicTool.GetGameData().listTempFriendPos;
-
-        foreach(Vector2Int pos in listFriendPos)
+        //Get Target for Foe
+        List<FindPathNode> listFoeTargetNode = new List<FindPathNode>();
+        List<Vector2Int> listFoeTargetPos = PublicTool.GetGameData().GetFoeTargetPos();
+        //Create the node according to the data
+        foreach(Vector2Int pos in listFoeTargetPos)
         {
             if (foeData.dicBFSAllNode.ContainsKey(pos))
             {
-                listFriendNode.Add(foeData.dicBFSAllNode[pos]);
+                listFoeTargetNode.Add(foeData.dicBFSAllNode[pos]);
             }
         }
-        PublicTool.FindPathNodeSortLowestGCost(listFriendNode);
-
-        if (listFriendNode.Count > 0)
+        //Find Who is the cloest to this Foe (In following version will become a part of the hate value)
+        PublicTool.FindPathNodeSortLowestGCost(listFoeTargetNode);
+        if (listFoeTargetNode.Count > 0)
         {
-            yield return listFriendNode[0].pos;
+            yield return listFoeTargetNode[0].pos;
         }
         else
         {
@@ -112,7 +120,6 @@ public partial class BattleMgr
         if (listValidNode.Count > 0)
         {
             FindPathNode tarNode = listValidNode[0];
-
             FindPathNode curNode = foeData.dicBFSAllNode[foeData.posID];
 
             if(tarNode.hCostReal <= curNode.hCostReal && curNode.hCostReal > 0)
@@ -136,11 +143,11 @@ public partial class BattleMgr
         yield break;
     }
 
-    private IEnumerator IE_ExecuteFoeSkill(BattleFoeData foeData)
+    private IEnumerator IE_ExecuteFoeSkill(BattleFoeData foeData,Vector2Int targetPos)
     {
-        SkillActionRequest(foeData.listValidSkill[0]);
+        //        SkillActionRequest(foeData.listValidSkill[0]);
+        SkillActionRequest(targetPos);
         isInFoeSkill = true;
-        //This condition need to be changed
         yield return new WaitUntil(() => !isInFoeSkill);
     }
 
