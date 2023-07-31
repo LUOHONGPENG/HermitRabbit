@@ -4,6 +4,38 @@ using UnityEngine;
 
 public partial class GameData
 {
+    #region Basic-Map
+
+    //MapTileData
+    public List<MapTileData> listMapTile = new List<MapTileData>();
+    public Dictionary<Vector2Int, MapTileData> dicMapTile = new Dictionary<Vector2Int, MapTileData>();
+
+    public void NewGameMapTileData()
+    {
+        listMapTile.Clear();
+        dicMapTile.Clear();
+
+        for (int i = 0; i < GameGlobal.mapSize; i++)
+        {
+            for (int j = 0; j < GameGlobal.mapSize; j++)
+            {
+                Vector2Int posID = new Vector2Int(i, j);
+
+                MapTileData mapTileData = new MapTileData(posID, 1);
+                listMapTile.Add(mapTileData);
+                dicMapTile.Add(posID, mapTileData);
+            }
+        }
+    }
+
+    #endregion
+
+
+    #region HoverPos
+    public Vector2Int hoverTileID = new Vector2Int(-99, -99);
+    #endregion
+
+
     #region CalculateRegion
     public List<Vector2Int> listTempDeadCharacterPos = new List<Vector2Int>();
     public List<Vector2Int> listTempCharacterPos = new List<Vector2Int>();
@@ -94,60 +126,8 @@ public partial class GameData
 
     #endregion
 
-    #region ScanUnitPos
-    private List<Vector2Int> GetCharacterPosList()
-    {
-        List<Vector2Int> temp = new List<Vector2Int>();
-        foreach (var character in listCharacter)
-        {
-            temp.Add(character.posID);
-        }
-        return temp;
-    }
-
-    private List<Vector2Int> GetFoePosList()
-    {
-        List<Vector2Int> temp = new List<Vector2Int>();
-        foreach (var foe in listFoe)
-        {
-            temp.Add(foe.posID);
-        }
-        return temp;
-    }
-
-    private List<Vector2Int> GetPlantPosList()
-    {
-        List<Vector2Int> temp = new List<Vector2Int>();
-        foreach (var plant in listPlant)
-        {
-            temp.Add(plant.posID);
-        }
-        return temp;
-    }
 
 
-    private List<Vector2Int> GetAllPosList()
-    {
-        List<Vector2Int> temp = new List<Vector2Int>();
-        foreach (var character in listCharacter)
-        {
-            temp.Add(character.posID);
-        }
-        foreach (var plant in listPlant)
-        {
-            temp.Add(plant.posID);
-        }
-        foreach (var foe in listFoe)
-        {
-            temp.Add(foe.posID);
-        }
-        return temp;
-    }
 
-    #endregion
-
-    #region HoverPos
-    public Vector2Int hoverTileID = new Vector2Int(-99, -99);
-    #endregion
 }
 
