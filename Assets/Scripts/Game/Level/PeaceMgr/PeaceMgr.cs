@@ -19,4 +19,9 @@ public partial class PeaceMgr : MonoSingleton<PeaceMgr>
     {
 
     }
+
+    public void EndPlant()
+    {
+
+    }
 }

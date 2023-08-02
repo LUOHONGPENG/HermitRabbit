@@ -21,6 +21,7 @@ public partial class LevelMgr
 
         //Peace
         EventCenter.Instance.AddEventListener("PeacePlantStart", PeacePlantStartEvent);
+        EventCenter.Instance.AddEventListener("PeacePlantEnd", PeacePlantEndEvent);
 
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
@@ -44,6 +45,8 @@ public partial class LevelMgr
 
         //Peace
         EventCenter.Instance.RemoveEventListener("PeacePlantStart", PeacePlantStartEvent);
+        EventCenter.Instance.RemoveEventListener("PeacePlantEnd", PeacePlantEndEvent);
+
 
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
@@ -132,8 +135,12 @@ public partial class LevelMgr
     #region EventDeal_Peace
     private void PeacePlantStartEvent(object arg0)
     {
-        PublicTool.EventChangeInteract(InteractState.PeacePlant);
         peaceMgr.StartPlant();
+    }
+
+    private void PeacePlantEndEvent(object arg0)
+    {
+        peaceMgr.EndPlant();
     }
     #endregion
 }

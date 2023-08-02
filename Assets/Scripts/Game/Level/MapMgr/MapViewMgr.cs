@@ -71,6 +71,9 @@ public partial class MapViewMgr : MonoBehaviour
             case InteractState.PeaceNormal:
                 ResetAllTile();
                 break;
+            case InteractState.BattleNormal:
+                ResetAllTile();
+                break;
             case InteractState.CharacterMove:
                 SetMapUI_CharacterMove();
                 break;

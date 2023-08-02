@@ -37,6 +37,7 @@ public class InterfaceUIMgr : MonoBehaviour
     {
         EventCenter.Instance.AddEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.AddEventListener("RefreshCharacterInfo", RefreshCharacterInfoEvent);
+        EventCenter.Instance.AddEventListener("InputCancelCharacter", InputCancelCharacterEvent);
         //Battle
         EventCenter.Instance.AddEventListener("BattleStart", BattleStartEvent);
         EventCenter.Instance.AddEventListener("BattleEnd", BattleEndEvent);
@@ -83,7 +84,11 @@ public class InterfaceUIMgr : MonoBehaviour
     {
         BattleCharacterData characterData = (BattleCharacterData)PublicTool.GetGameData().GetDataFromUnitInfo(new UnitInfo(BattleUnitType.Character, (int)arg0));
         battleOptionUIMgr.ShowBattleOptionPage(characterData);
+    }
 
+    private void InputCancelCharacterEvent(object arg0)
+    {
+        battleOptionUIMgr.HideBattleOptionPage();
     }
 
     /// <summary>

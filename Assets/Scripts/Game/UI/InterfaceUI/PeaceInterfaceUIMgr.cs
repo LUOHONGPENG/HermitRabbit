@@ -24,6 +24,7 @@ public class PeaceInterfaceUIMgr : MonoBehaviour
         btnStartPlant.onClick.RemoveAllListeners();
         btnStartPlant.onClick.AddListener(delegate ()
         {
+            PublicTool.EventChangeInteract(InteractState.PeacePlant);
             EventCenter.Instance.EventTrigger("PeacePlantStart", null);
         });
 
