@@ -51,8 +51,6 @@ public partial class BattleMgr
             EventCenter.Instance.EventTrigger("CharacterActionEnd", null);
         }
 
-        //UI should be the last
-        PublicTool.EventRefreshCharacterUI();
     }
 
     private IEnumerator IE_ExecuteSkillCost()
@@ -190,6 +188,7 @@ public partial class BattleMgr
 
         PublicTool.RecalculateOccupancy();
         PublicTool.RecalculateSkillCover();
+        PublicTool.EventRefreshCharacterUI();
         isInFoeSkill = false;
         isInPlantSkill = false;
 
