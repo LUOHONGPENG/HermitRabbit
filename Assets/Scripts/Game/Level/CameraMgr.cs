@@ -25,9 +25,23 @@ public class CameraMgr : MonoBehaviour
 
     private void FixedUpdate()
     {
-        FixedGoMoveCamera();
+        InteractState state = InputMgr.Instance.GetInteractState();
+
+        switch (state)
+        {
+            case InteractState.BattleNormal:
+            case InteractState.CharacterMove:
+            case InteractState.CharacterSkill:
+            case InteractState.PeaceNormal:
+            case InteractState.PeacePlant:
+                FixedGoMoveCamera();
+                FixedGoRotateCamera();
+                break;
+        }
+
+
         FixedGoStrictCamera();
-        FixedGoRotateCamera();
+
     }
 
     private void FixedGoMoveCamera()

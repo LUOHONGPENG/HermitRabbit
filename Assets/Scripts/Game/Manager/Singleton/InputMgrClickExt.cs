@@ -12,6 +12,11 @@ public partial class InputMgr
         interactState = state;
     }
 
+    public InteractState GetInteractState()
+    {
+        return interactState;
+    }
+
     private void CheckClickAction()
     {
         //ClickUI

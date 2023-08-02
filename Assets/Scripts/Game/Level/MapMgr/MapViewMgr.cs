@@ -63,7 +63,7 @@ public partial class MapViewMgr : MonoBehaviour
 
     private void UpdateMapUI()
     {
-        InteractState state = InputMgr.Instance.interactState;
+        InteractState state = InputMgr.Instance.GetInteractState();
 
         //I think this need a optimisation
         switch (state)

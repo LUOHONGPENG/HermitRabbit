@@ -118,7 +118,7 @@ public class BattleOptionUIMgr : MonoBehaviour
     {
 
 
-        switch (InputMgr.Instance.interactState)
+        switch (InputMgr.Instance.GetInteractState())
         {
             case InteractState.CharacterMove:
                 btnMove.RefreshOnSelect();

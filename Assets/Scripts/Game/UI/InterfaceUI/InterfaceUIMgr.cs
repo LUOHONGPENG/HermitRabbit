@@ -23,7 +23,7 @@ public class InterfaceUIMgr : MonoBehaviour
         peaceInterfaceUIMgr.Init();
 
 
-        if (InputMgr.Instance.interactState == InteractState.PeaceNormal)
+        if (InputMgr.Instance.GetInteractState() == InteractState.PeaceNormal)
         {
             peaceInterfaceUIMgr.ShowPopup();
             battleOptionUIMgr.HideBattleOptionPage();

@@ -33,6 +33,7 @@ public partial class InputMgr : MonoSingleton<InputMgr>
             camMoveAction = playerInput.Gameplay.MoveCamera;
             camRotateAction = playerInput.Gameplay.RotateCamera;
             touchAction = playerInput.Gameplay.Touch;
+            cancelAction = playerInput.Gameplay.Cancel;
             touchPositionAction = playerInput.Gameplay.TouchPosition;
             isInitInput = true;
         }
@@ -49,15 +50,15 @@ public partial class InputMgr : MonoSingleton<InputMgr>
         camMoveAction.performed += CamMove_performed;
         camRotateAction.performed += CamRotate_performed;
         touchAction.performed += Touch_performed;
+        cancelAction.performed += Cancel_performed;
     }
-
-
 
     private void DisableInput()
     {
         camMoveAction.performed -= CamMove_performed;
         camRotateAction.performed -= CamRotate_performed;
         touchAction.performed -= Touch_performed;
+        cancelAction.performed -= Cancel_performed;
         if (playerInput != null)
         {
             playerInput.Disable();
@@ -92,6 +93,12 @@ public partial class InputMgr : MonoSingleton<InputMgr>
     {
         CheckClickAction();
     }
+
+    private void Cancel_performed(InputAction.CallbackContext obj)
+    {
+        CheckCancelAction();
+    }
+
 
     #endregion
 }
