@@ -39,6 +39,8 @@ public class InterfaceUIMgr : MonoBehaviour
         EventCenter.Instance.AddEventListener("RefreshCharacterInfo", RefreshCharacterInfoEvent);
         //Battle
         EventCenter.Instance.AddEventListener("BattleStart", BattleStartEvent);
+        EventCenter.Instance.AddEventListener("BattleEnd", BattleEndEvent);
+
         EventCenter.Instance.AddEventListener("CharacterActionStart", CharacterActionStartEvent);
         EventCenter.Instance.AddEventListener("CharacterActionEnd", CharacterActionEndEvent);
         EventCenter.Instance.AddEventListener("CharacterPhaseStart", CharacterPhaseStartEvent);
@@ -56,6 +58,8 @@ public class InterfaceUIMgr : MonoBehaviour
         EventCenter.Instance.RemoveEventListener("RefreshCharacterInfo", RefreshCharacterInfoEvent);
         //Battle
         EventCenter.Instance.RemoveEventListener("BattleStart", BattleStartEvent);
+        EventCenter.Instance.RemoveEventListener("BattleEnd", BattleEndEvent);
+
         EventCenter.Instance.RemoveEventListener("CharacterActionStart", CharacterActionStartEvent);
         EventCenter.Instance.RemoveEventListener("CharacterActionEnd", CharacterActionEndEvent);
         EventCenter.Instance.RemoveEventListener("CharacterPhaseStart", CharacterPhaseStartEvent);
@@ -122,6 +126,7 @@ public class InterfaceUIMgr : MonoBehaviour
         peaceInterfaceUIMgr.ShowPopup();
 
         battleInterfaceUIMgr.HidePopup();
+        battleOptionUIMgr.HideBattleOptionPage();
 
         RefreshPhaseUI();
     }

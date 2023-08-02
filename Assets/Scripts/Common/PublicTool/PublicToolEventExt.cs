@@ -12,6 +12,7 @@ public partial class PublicTool
 
     public static void EventChangeInteract(InteractState state, int data_0=-1)
     {
+        Debug.Log("ChangeState " + state);
         InputMgr.Instance.SetInteractState(state);
         switch (state)
         {

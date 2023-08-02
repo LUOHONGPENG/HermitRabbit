@@ -45,12 +45,16 @@ public partial class BattleMgr
         yield return StartCoroutine(IE_AfterSkill());
         yield return StartCoroutine(IE_CheckPlantAfterSkill());
 
-        if (battleTurnPhase == BattlePhase.CharacterPhase && gameData.GetCurUnitInfo().type == BattleUnitType.Character)
-        {
-            PublicTool.EventChangeInteract(InteractState.CharacterSkill);
-            EventCenter.Instance.EventTrigger("CharacterActionEnd", null);
-        }
+        yield return StartCoroutine(IE_CheckBattleOver());
 
+        if (!isBattleEnd)
+        {
+            if (battleTurnPhase == BattlePhase.CharacterPhase && gameData.GetCurUnitInfo().type == BattleUnitType.Character)
+            {
+                PublicTool.EventChangeInteract(InteractState.CharacterSkill);
+                EventCenter.Instance.EventTrigger("CharacterActionEnd", null);
+            }
+        }
     }
 
     private IEnumerator IE_ExecuteSkillCost()
@@ -194,6 +198,41 @@ public partial class BattleMgr
 
         yield break;
     }
+
+    private IEnumerator IE_CheckBattleOver()
+    {
+        bool allFoeDead = true;
+        bool allCharacterDead = true;
+        foreach (var foe in gameData.listFoe)
+        {
+            if (!foe.isDead)
+            {
+                allFoeDead = false;
+                break;
+            }
+        }
+
+        foreach (var character in gameData.listCharacter)
+        {
+            if (!character.isDead)
+            {
+                allCharacterDead = false;
+                break;
+            }
+        }
+
+        if (allFoeDead)
+        {
+            BattleOverWin();
+        }
+        else if (allCharacterDead)
+        {
+            BattleOverLose();
+        }
+        yield break;
+    }
+
+
 
     private bool CheckSkillCondition()
     {

@@ -15,6 +15,7 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     private UnitViewMgr unitViewMgr;
     private GameData gameData;
 
+    private bool isBattleEnd = true;
 
     #region Basic Function
 
@@ -31,6 +32,7 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
         ResetNewTurn();
         battleTurnPhase = BattlePhase.CharacterPhase;
         StartTurnPhase();
+        isBattleEnd = false;
     }
 
     public void StartTurnPhase()
@@ -103,6 +105,23 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
         ScanFoeStack();
         StartCoroutine(IE_ExecuteFoeTurn());
     }
+
+    private void BattleOverWin()
+    {
+        isBattleEnd = true;
+        PublicTool.GetGameData().gamePhase = GamePhase.Peace;
+        PublicTool.EventChangeInteract(InteractState.PeaceNormal);
+        EventCenter.Instance.EventTrigger("BattleEnd", null);
+    }
+
+    private void BattleOverLose()
+    {
+        isBattleEnd = true;
+        PublicTool.EventChangeInteract(InteractState.PeaceNormal);
+        EventCenter.Instance.EventTrigger("BattleLose", null);
+
+    }
+
     #endregion
 
 

@@ -15,6 +15,7 @@ public partial class LevelMgr
 
         //Battle
         EventCenter.Instance.AddEventListener("BattleStart", BattleStartEvent);
+        EventCenter.Instance.AddEventListener("BattleEnd", BattleEndEvent);
         EventCenter.Instance.AddEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
 
         //Peace
@@ -36,6 +37,7 @@ public partial class LevelMgr
 
         //Battle
         EventCenter.Instance.RemoveEventListener("BattleStart", BattleStartEvent);
+        EventCenter.Instance.RemoveEventListener("BattleEnd", BattleEndEvent);
         EventCenter.Instance.RemoveEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
 
         //Peace
@@ -44,6 +46,8 @@ public partial class LevelMgr
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
     }
+
+
 
 
 
@@ -91,6 +95,7 @@ public partial class LevelMgr
         switch (info)
         {
             case "StartBattle":
+                PublicTool.GetGameData().gamePhase = GamePhase.Battle;
                 EventCenter.Instance.EventTrigger("BattleStart", null);
                 break;
             case "GenerateFoe":
@@ -106,8 +111,12 @@ public partial class LevelMgr
 
     private void BattleStartEvent(object arg0)
     {
-        PublicTool.GetGameData().gamePhase = GamePhase.Battle;
         battleMgr.StartNewBattle(this);
+    }
+
+    private void BattleEndEvent(object arg0)
+    {
+
     }
 
     private void CharacterPhaseEndEvent(object arg0)

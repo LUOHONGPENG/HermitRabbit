@@ -17,6 +17,7 @@ public class PeaceInterfaceUIMgr : MonoBehaviour
         btnStartBattle.onClick.RemoveAllListeners();
         btnStartBattle.onClick.AddListener(delegate ()
         {
+            PublicTool.GetGameData().gamePhase = GamePhase.Battle;
             EventCenter.Instance.EventTrigger("BattleStart", null);
         });
 
