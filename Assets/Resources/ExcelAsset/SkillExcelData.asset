@@ -33,6 +33,7 @@ MonoBehaviour:
     skillSubjectType: 0
     isNormalAttack: 1
     characterID: 1001
+    iconUrl: 
   - id: 1101
     name: Fire Ball
     desc: Use fire ball to attack multiple foes.
@@ -53,6 +54,7 @@ MonoBehaviour:
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 1001
+    iconUrl: imgIconSkill_1101
   - id: 1102
     name: Inferno
     desc: Summon fire vortex to burn multiple foes.
@@ -73,6 +75,7 @@ MonoBehaviour:
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 1001
+    iconUrl: imgIconSkill_1102
   - id: 1302
     name: Teleport
     desc: 
@@ -93,6 +96,7 @@ MonoBehaviour:
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 1001
+    iconUrl: imgIconSkill_1302
   - id: 2001
     name: Strike
     desc: Use weapon to strike a foe.
@@ -113,6 +117,7 @@ MonoBehaviour:
     skillSubjectType: 0
     isNormalAttack: 1
     characterID: 2001
+    iconUrl: 
   - id: 2101
     name: Wind Chop
     desc: Cut the foes around you.
@@ -133,6 +138,7 @@ MonoBehaviour:
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 2001
+    iconUrl: imgIconSkill_2101
   - id: 2201
     name: Self Heal
     desc: Self Heal for 20% HP.
@@ -153,6 +159,7 @@ MonoBehaviour:
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 2001
+    iconUrl: imgIconSkill_2201
   - id: 2301
     name: Inspire
     desc: Regain AP by 1.
@@ -173,6 +180,7 @@ MonoBehaviour:
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 2001
+    iconUrl: imgIconSkill_2301
   - id: 3001
     name: Tadpole Strike
     desc: Attack a enemy.
@@ -193,6 +201,7 @@ MonoBehaviour:
     skillSubjectType: 1
     isNormalAttack: 0
     characterID: 0
+    iconUrl: 
   - id: 9001
     name: Bite
     desc: 
@@ -213,3 +222,4 @@ MonoBehaviour:
     skillSubjectType: 2
     isNormalAttack: 0
     characterID: 0
+    iconUrl: 

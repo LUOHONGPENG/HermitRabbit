@@ -13,6 +13,10 @@ public class BattleSkillBtnItem : BattleBtnBase
     public void Init(SkillExcelItem skill)
     {
         this.skillItem = skill;
+
+        imgIcon.sprite  = Resources.Load("Sprite/Skill/" + skill.iconUrl, typeof(Sprite)) as Sprite;
+
+
         InitButton(delegate ()
         {
             EventCenter.Instance.EventTrigger("InputChangeSkill", null);

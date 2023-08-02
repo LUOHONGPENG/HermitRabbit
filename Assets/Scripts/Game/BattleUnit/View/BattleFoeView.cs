@@ -12,7 +12,7 @@ public class BattleFoeView : BattleUnitView
         this.foeData = foeData;
         this.unitData = foeData;
 
-        srUnit.sprite = Resources.Load(foeData.GetItem().pixelUrl, typeof(Sprite)) as Sprite;
+        srUnit.sprite = Resources.Load("Sprite/Foe/"+foeData.GetItem().pixelUrl, typeof(Sprite)) as Sprite;
 
         //Need to modify it
         List<Vector2Int> listPos = PublicTool.GetGameData().listTempEmptyPos;

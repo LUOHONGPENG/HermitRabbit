@@ -21,4 +21,4 @@ MonoBehaviour:
     RES: 5
     MOV: 3
     skillID: 9001
-    pixelUrl: Sprite/Foe/PixelEvilGod
+    pixelUrl: PixelEvilGod

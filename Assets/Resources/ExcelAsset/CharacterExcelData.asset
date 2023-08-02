@@ -24,7 +24,7 @@ MonoBehaviour:
     AP: 3
     AttackID: 1001
     startPos: 0100000001000000
-    pixelUrl: Sprite/Character/pc_Leo_Idle
+    pixelUrl: pc_Leo_Idle
     portraitUrl: Sprite/Portrait/imgPortrait1001
   - id: 2001
     name: Kizuna
@@ -37,5 +37,5 @@ MonoBehaviour:
     AP: 3
     AttackID: 2001
     startPos: 0200000003000000
-    pixelUrl: Sprite/Character/PixelAlfven
+    pixelUrl: PixelAlfven
     portraitUrl: Sprite/Portrait/imgPortrait2001

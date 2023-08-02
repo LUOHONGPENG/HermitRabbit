@@ -27,6 +27,7 @@ public partial class SkillExcelItem : ExcelItemBase
 	public BattleUnitType skillSubjectType;
 	public bool isNormalAttack;
 	public int characterID;
+	public string iconUrl;
 }
 
 [CreateAssetMenu(fileName = "SkillExcelData", menuName = "Excel To ScriptableObject/Create SkillExcelData", order = 1)]
@@ -66,6 +67,7 @@ public class SkillAssetAssignment
 			items[i].skillSubjectType = (BattleUnitType) Enum.Parse(typeof(BattleUnitType), allItemValueRowList[i]["skillSubjectType"], true);
 			items[i].isNormalAttack = Convert.ToBoolean(allItemValueRowList[i]["isNormalAttack"]);
 			items[i].characterID = Convert.ToInt32(allItemValueRowList[i]["characterID"]);
+			items[i].iconUrl = allItemValueRowList[i]["iconUrl"];
 		}
 		SkillExcelData excelDataAsset = ScriptableObject.CreateInstance<SkillExcelData>();
 		excelDataAsset.items = items;
