@@ -27,6 +27,12 @@ public partial class BattleMgr
     {
         while (stackFoe.Count>0)
         {
+            //BattleOver
+            if (isBattleEnd)
+            {
+                break;
+            }
+
             //SetCurUnit
             int foeKeyID = stackFoe.Pop();            
             BattleFoeData foeData = gameData.GetBattleFoeData(foeKeyID);
@@ -63,7 +69,11 @@ public partial class BattleMgr
                 }
             }
         }
-        EndTurnPhase();
+
+        if (!isBattleEnd)
+        {
+            EndTurnPhase();
+        }
     }
 
     /// <summary>

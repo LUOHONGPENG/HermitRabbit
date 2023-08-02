@@ -49,6 +49,9 @@ public partial class BattleMgr
 
         if (!isBattleEnd)
         {
+            isInFoeSkill = false;
+            isInPlantSkill = false;
+
             if (battleTurnPhase == BattlePhase.CharacterPhase && gameData.GetCurUnitInfo().type == BattleUnitType.Character)
             {
                 PublicTool.EventChangeInteract(InteractState.CharacterSkill);
@@ -193,8 +196,7 @@ public partial class BattleMgr
         PublicTool.RecalculateOccupancy();
         PublicTool.RecalculateSkillCover();
         PublicTool.EventRefreshCharacterUI();
-        isInFoeSkill = false;
-        isInPlantSkill = false;
+
 
         yield break;
     }
