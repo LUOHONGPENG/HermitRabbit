@@ -17,6 +17,6 @@ public class BattlePlantView : BattleUnitView
         List<Vector2Int> listPos = PublicTool.GetGameData().listTempEmptyPos;
         int ran = Random.Range(0, listPos.Count);
         plantData.posID = listPos[ran];
-        MoveToPos(plantData.posID);
+        MoveToPos();
     }
 }

@@ -55,6 +55,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""d18fa373-2a34-46c2-af87-b9f116dfbcbb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""TouchPosition"",
                     ""type"": ""Value"",
                     ""id"": ""280f61b6-cec6-4fac-9df5-49c6ec1fbbfe"",
@@ -174,6 +183,17 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""RotateCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d270cb11-7fb4-4546-b275-3a16461a0a91"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -185,6 +205,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Gameplay_MoveCamera = m_Gameplay.FindAction("MoveCamera", throwIfNotFound: true);
         m_Gameplay_RotateCamera = m_Gameplay.FindAction("RotateCamera", throwIfNotFound: true);
         m_Gameplay_Touch = m_Gameplay.FindAction("Touch", throwIfNotFound: true);
+        m_Gameplay_Cancel = m_Gameplay.FindAction("Cancel", throwIfNotFound: true);
         m_Gameplay_TouchPosition = m_Gameplay.FindAction("TouchPosition", throwIfNotFound: true);
     }
 
@@ -248,6 +269,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_MoveCamera;
     private readonly InputAction m_Gameplay_RotateCamera;
     private readonly InputAction m_Gameplay_Touch;
+    private readonly InputAction m_Gameplay_Cancel;
     private readonly InputAction m_Gameplay_TouchPosition;
     public struct GameplayActions
     {
@@ -256,6 +278,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @MoveCamera => m_Wrapper.m_Gameplay_MoveCamera;
         public InputAction @RotateCamera => m_Wrapper.m_Gameplay_RotateCamera;
         public InputAction @Touch => m_Wrapper.m_Gameplay_Touch;
+        public InputAction @Cancel => m_Wrapper.m_Gameplay_Cancel;
         public InputAction @TouchPosition => m_Wrapper.m_Gameplay_TouchPosition;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
@@ -275,6 +298,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Touch.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouch;
                 @Touch.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouch;
                 @Touch.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouch;
+                @Cancel.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnCancel;
+                @Cancel.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnCancel;
+                @Cancel.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnCancel;
                 @TouchPosition.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouchPosition;
                 @TouchPosition.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouchPosition;
                 @TouchPosition.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouchPosition;
@@ -291,6 +317,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Touch.started += instance.OnTouch;
                 @Touch.performed += instance.OnTouch;
                 @Touch.canceled += instance.OnTouch;
+                @Cancel.started += instance.OnCancel;
+                @Cancel.performed += instance.OnCancel;
+                @Cancel.canceled += instance.OnCancel;
                 @TouchPosition.started += instance.OnTouchPosition;
                 @TouchPosition.performed += instance.OnTouchPosition;
                 @TouchPosition.canceled += instance.OnTouchPosition;
@@ -303,6 +332,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnMoveCamera(InputAction.CallbackContext context);
         void OnRotateCamera(InputAction.CallbackContext context);
         void OnTouch(InputAction.CallbackContext context);
+        void OnCancel(InputAction.CallbackContext context);
         void OnTouchPosition(InputAction.CallbackContext context);
     }
 }

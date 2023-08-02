@@ -11,6 +11,7 @@ public partial class LevelMgr
         EventCenter.Instance.AddEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.AddEventListener("InputMoveAction", InputMoveActionEvent);
         EventCenter.Instance.AddEventListener("InputSkillAction", InputSkillActionEvent);
+        EventCenter.Instance.AddEventListener("InputChangeSkill", InputChangeSkillEvent);
         EventCenter.Instance.AddEventListener("InputSetHoverTile", InputSetHoverTileEvent);
 
         //Battle
@@ -33,6 +34,7 @@ public partial class LevelMgr
         EventCenter.Instance.RemoveEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.RemoveEventListener("InputMoveAction", InputMoveActionEvent);
         EventCenter.Instance.RemoveEventListener("InputSkillAction", InputSkillActionEvent);
+        EventCenter.Instance.RemoveEventListener("InputChangeSkill", InputChangeSkillEvent);
         EventCenter.Instance.RemoveEventListener("InputSetHoverTile", InputSetHoverTileEvent);
 
         //Battle
@@ -47,8 +49,10 @@ public partial class LevelMgr
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
     }
 
-
-
+    private void InputChangeSkillEvent(object arg0)
+    {
+        battleMgr.BattleSkillReset();
+    }
 
 
     #region EventDeal_Input

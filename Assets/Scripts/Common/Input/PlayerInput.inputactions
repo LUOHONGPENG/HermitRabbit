@@ -33,6 +33,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "d18fa373-2a34-46c2-af87-b9f116dfbcbb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "TouchPosition",
                     "type": "Value",
                     "id": "280f61b6-cec6-4fac-9df5-49c6ec1fbbfe",
@@ -152,6 +161,17 @@
                     "action": "RotateCamera",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "d270cb11-7fb4-4546-b275-3a16461a0a91",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

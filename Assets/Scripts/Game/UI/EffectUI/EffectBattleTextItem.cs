@@ -18,6 +18,15 @@ public class EffectBattleTextItem : EffectPosTextItem
             case BattleTextType.Heal:
                 txContent.color = listColor[1];
                 break;
+            case BattleTextType.Debuff:
+                txContent.color = listColor[2];
+                break;
+            case BattleTextType.Buff:
+                txContent.color = listColor[3];
+                break;
+            case BattleTextType.Special:
+                txContent.color = listColor[4];
+                break;
         }
 
         Vector3 pos3D = PublicTool.ConvertPosFromID(info.posID);

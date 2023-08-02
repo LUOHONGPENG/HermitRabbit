@@ -16,3 +16,6 @@ MonoBehaviour:
   - id: 1001
     name: Recover AP
     effectType: 2
+  - id: 3001
+    name: Teleport
+    effectType: 2

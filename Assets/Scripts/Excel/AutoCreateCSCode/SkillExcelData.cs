@@ -14,6 +14,7 @@ public partial class SkillExcelItem : ExcelItemBase
 	public SkillElementType element;
 	public int range;
 	public bool isRangeSelf;
+	public bool needExtraTarget;
 	public int radius;
 	public SkillRegionType regionType;
 	public SkillEffectType foeEffect;
@@ -52,6 +53,7 @@ public class SkillAssetAssignment
 			items[i].element = (SkillElementType) Enum.Parse(typeof(SkillElementType), allItemValueRowList[i]["element"], true);
 			items[i].range = Convert.ToInt32(allItemValueRowList[i]["range"]);
 			items[i].isRangeSelf = Convert.ToBoolean(allItemValueRowList[i]["isRangeSelf"]);
+			items[i].needExtraTarget = Convert.ToBoolean(allItemValueRowList[i]["needExtraTarget"]);
 			items[i].radius = Convert.ToInt32(allItemValueRowList[i]["radius"]);
 			items[i].regionType = (SkillRegionType) Enum.Parse(typeof(SkillRegionType), allItemValueRowList[i]["regionType"], true);
 			items[i].foeEffect = (SkillEffectType) Enum.Parse(typeof(SkillEffectType), allItemValueRowList[i]["foeEffect"], true);

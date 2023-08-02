@@ -122,6 +122,7 @@ public enum BattleTextType
     Damage,
     Heal,
     Debuff,
-    Buff
+    Buff,
+    Special
 }
 

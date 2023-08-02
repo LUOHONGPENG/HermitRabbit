@@ -13,6 +13,7 @@ public partial class InputMgr : MonoSingleton<InputMgr>
     private InputAction camMoveAction;
     private InputAction camRotateAction;
     private InputAction touchAction;
+    private InputAction cancelAction;
     private InputAction touchPositionAction;
 
     private bool isInitInput = false;

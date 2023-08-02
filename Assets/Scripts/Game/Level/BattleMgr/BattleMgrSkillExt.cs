@@ -8,28 +8,61 @@ public partial class BattleMgr
     /// Character Skill
     /// </summary>
 
-    private Vector2Int skillTargetPos;
+    public Vector2Int skillTargetPos;
     private SkillBattleInfo skillBattleInfo;
     private BattleUnitData skillSubject;
     private Dictionary<int, BattleFoeData> dicFoeSkillTarget = new Dictionary<int, BattleFoeData>();
     private Dictionary<int, BattleCharacterData> dicCharacterSkillTarget = new Dictionary<int, BattleCharacterData>();
     private Dictionary<int, BattlePlantData> dicPlantSkillTarget = new Dictionary<int, BattlePlantData>();
 
+
+    #region BattleExtraTarget
+    public bool isInExtraTargetMode = false;
+    public Vector2Int skillTargetPosExtra;
+    public void BattleSkillReset()
+    {
+        isInExtraTargetMode = false;
+    }
+    #endregion
+
     public void SkillActionRequest(Vector2Int targetPos)
     {
-        //Set initial Data
-        skillTargetPos = targetPos;
+        //SetCheckCondition
         skillBattleInfo = gameData.GetCurSkillBattleInfo();
         skillSubject = gameData.GetCurUnitData();
 
         //Check Skill Condition
-        if (!CheckSkillCondition())
+        if (!CheckSkillCondition(targetPos))
         {
             return;
         }
 
-        //StartTheSkill IEnumerator
-        StartCoroutine(IE_InvokeSkillAction());
+        //Set Skill Target
+        if (skillBattleInfo.needExtraTarget)
+        {
+            if (isInExtraTargetMode)
+            {
+                skillTargetPosExtra = targetPos;
+                isInExtraTargetMode = false;
+            }
+            else
+            {
+                skillTargetPos = targetPos;
+                isInExtraTargetMode = true;
+                RefreshSkillRange();
+            }
+        }
+        else
+        {
+            skillTargetPos = targetPos;
+            isInExtraTargetMode = false;
+        }
+
+        if (!isInExtraTargetMode)
+        {
+            //StartTheSkill IEnumerator
+            StartCoroutine(IE_InvokeSkillAction());
+        }
     }
 
     private IEnumerator IE_InvokeSkillAction()
@@ -193,12 +226,16 @@ public partial class BattleMgr
         }
         gameData.CheckClearPlant();
 
+        RefreshSkillRange();
+
+        yield break;
+    }
+
+    private void RefreshSkillRange()
+    {
         PublicTool.RecalculateOccupancy();
         PublicTool.RecalculateSkillCover();
         PublicTool.EventRefreshCharacterUI();
-
-
-        yield break;
     }
 
     private IEnumerator IE_CheckBattleOver()
@@ -236,16 +273,16 @@ public partial class BattleMgr
 
 
 
-    private bool CheckSkillCondition()
+    private bool CheckSkillCondition(Vector2Int targetPos)
     {
-        if (!skillSubject.listValidSkill.Contains(skillTargetPos))
+        if (!skillSubject.listValidSkill.Contains(targetPos))
         {
-            EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("No Target", skillTargetPos));
+            EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("No Target", targetPos));
             return false;
         }
         else if (skillSubject.curAP < skillBattleInfo.costAP)
         {
-            EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("AP not enough", skillTargetPos));
+            EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("AP not enough", targetPos));
             return false;
         }
         else

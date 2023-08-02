@@ -10,6 +10,19 @@ public partial class BattleMgr
         {
             SkillDamageLikeRequest(source, target, effectType);
         }
+
+        if (skillBattleInfo.listSpecialEffect.Count > 0)
+        {
+            for(int i = 0; i < skillBattleInfo.listSpecialEffect.Count; i++)
+            {
+                SkillSpecialExcelItem skillSpecial = skillBattleInfo.listSpecialEffect[i];
+
+                if(skillSpecial.effectType == effectType)
+                {
+                    SkillSpecialEffectDeal(source, target, skillSpecial.id);
+                }
+            }
+        }
     }
 
     private void SkillDamageLikeRequest(BattleUnitData source, BattleUnitData target, SkillEffectType effectType)
@@ -58,5 +71,21 @@ public partial class BattleMgr
         }
     }
 
+    private void SkillSpecialEffectDeal(BattleUnitData source, BattleUnitData target,int specialEffectID)
+    {
+        switch (specialEffectID)
+        {
+            case 1001:
+                target.curAP = target.curAP + 1;
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Special, "AP+1", target.posID));
+                break;
+            case 3001:
+                target.posID = skillTargetPosExtra;
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Special, "Teleport!", target.posID));
+                BattleUnitView moveView = unitViewMgr.GetViewFromUnitInfo(new UnitInfo(target.battleUnitType, target.keyID));
+                moveView.MoveToPos();
+                break;
+        }
 
+    }
 }

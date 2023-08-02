@@ -311,47 +311,58 @@ public partial class BattleUnitData
     #endregion
 
 
-
-
-
-
-
     public void RefreshValidSkill()
     {
         SkillBattleInfo skillInfo = PublicTool.GetGameData().GetCurSkillBattleInfo();
 
-        //Range Type
-        listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, skillInfo.range));
-
-        //If not range self
-        if (!skillInfo.isRangeSelf)
+        if (skillInfo.ID == 1302 && BattleMgr.Instance.isInExtraTargetMode)
         {
+            //Range Type
+            listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, maxMOV));
+
             listViewSkill.Remove(posID);
+            listViewSkill.Remove(BattleMgr.Instance.skillTargetPos);
+
+            List<Vector2Int> listTemp = new List<Vector2Int>();
+            List<Vector2Int> listEmptyPos = PublicTool.GetGameData().listTempEmptyPos;
+            CheckWhetherSkillContainTarget(listTemp, listEmptyPos, listViewSkill, skillInfo);
+
+            listValidSkill = listTemp;
         }
-
-        //According to the SkillType to decide the skill radius
-        List<Vector2Int> listTemp = new List<Vector2Int>();
-
-        if (skillInfo.isTargetFoe)
+        else
         {
-            //Get the position of All Foes
-            List<Vector2Int> listFoePos = PublicTool.GetGameData().listTempFoePos;
-            CheckWhetherSkillContainTarget(listTemp, listFoePos, listViewSkill, skillInfo);
-        }
+            //Range Type
+            listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, skillInfo.range));
 
-        if (skillInfo.isTargetCharacter)
-        {
-            List<Vector2Int> listCharacterPos = PublicTool.GetGameData().listTempCharacterPos;
-            CheckWhetherSkillContainTarget(listTemp, listCharacterPos, listViewSkill, skillInfo);
-        }
+            //If not range self
+            if (!skillInfo.isRangeSelf)
+            {
+                listViewSkill.Remove(posID);
+            }
 
-        if (skillInfo.isTargetPlant)
-        {
-            List<Vector2Int> listPlantPos = PublicTool.GetGameData().listTempPlantPos;
-            CheckWhetherSkillContainTarget(listTemp, listPlantPos, listViewSkill, skillInfo);
-        }
+            //According to the SkillType to decide the skill radius
+            List<Vector2Int> listTemp = new List<Vector2Int>();
 
-        listValidSkill = listTemp;
+            if (skillInfo.isTargetFoe)
+            {
+                //Get the position of All Foes
+                List<Vector2Int> listFoePos = PublicTool.GetGameData().listTempFoePos;
+                CheckWhetherSkillContainTarget(listTemp, listFoePos, listViewSkill, skillInfo);
+            }
+
+            if (skillInfo.isTargetCharacter)
+            {
+                List<Vector2Int> listCharacterPos = PublicTool.GetGameData().listTempCharacterPos;
+                CheckWhetherSkillContainTarget(listTemp, listCharacterPos, listViewSkill, skillInfo);
+            }
+
+            if (skillInfo.isTargetPlant)
+            {
+                List<Vector2Int> listPlantPos = PublicTool.GetGameData().listTempPlantPos;
+                CheckWhetherSkillContainTarget(listTemp, listPlantPos, listViewSkill, skillInfo);
+            }
+            listValidSkill = listTemp;
+        }
     }
 
     private void CheckWhetherSkillContainTarget(List<Vector2Int> listStore, List<Vector2Int> listTarget, List<Vector2Int> listToCheck, SkillBattleInfo skillInfo)

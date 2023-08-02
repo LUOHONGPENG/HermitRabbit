@@ -91,4 +91,24 @@ public partial class SkillExcelItem
             return 0.01f * damageDelta;
         }
     }
+
+    public List<SkillSpecialExcelItem> listSpecialEffectUse
+    {
+        get
+        {
+            List<SkillSpecialExcelItem> listTemp = new List<SkillSpecialExcelItem>();
+
+            for(int i = 0; i < listSpecialEffect.Count; i++)
+            {
+                int tempID = listSpecialEffect[i];
+                if (tempID > 0)
+                {
+                    listTemp.Add(ExcelDataMgr.Instance.skillSpecialExcelData.GetExcelItem(listSpecialEffect[i]));
+                }
+            }
+
+            return listTemp;
+        }
+    }
 }
+

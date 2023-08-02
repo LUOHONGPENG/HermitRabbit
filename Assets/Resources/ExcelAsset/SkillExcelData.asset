@@ -20,6 +20,7 @@ MonoBehaviour:
     element: 0
     range: 4
     isRangeSelf: 0
+    needExtraTarget: 0
     radius: 0
     regionType: 0
     foeEffect: 1
@@ -39,6 +40,7 @@ MonoBehaviour:
     element: 1
     range: 3
     isRangeSelf: 0
+    needExtraTarget: 0
     radius: 1
     regionType: 0
     foeEffect: 1
@@ -58,6 +60,7 @@ MonoBehaviour:
     element: 1
     range: 3
     isRangeSelf: 0
+    needExtraTarget: 0
     radius: 2
     regionType: 0
     foeEffect: 1
@@ -70,6 +73,26 @@ MonoBehaviour:
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 1001
+  - id: 1302
+    name: Teleport
+    desc: 
+    costAP: 1
+    element: 3
+    range: 2
+    isRangeSelf: 1
+    needExtraTarget: 1
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 2
+    plantEffect: 2
+    damageType: 0
+    damageDelta: 0
+    damageDeltaStd: 0
+    listSpecialEffect: b90b0000
+    skillSubjectType: 0
+    isNormalAttack: 0
+    characterID: 1001
   - id: 2001
     name: Strike
     desc: Use weapon to strike a foe.
@@ -77,6 +100,7 @@ MonoBehaviour:
     element: 0
     range: 1
     isRangeSelf: 0
+    needExtraTarget: 0
     radius: 0
     regionType: 0
     foeEffect: 1
@@ -96,6 +120,7 @@ MonoBehaviour:
     element: 1
     range: 0
     isRangeSelf: 1
+    needExtraTarget: 0
     radius: 1
     regionType: 1
     foeEffect: 1
@@ -115,6 +140,7 @@ MonoBehaviour:
     element: 2
     range: 0
     isRangeSelf: 1
+    needExtraTarget: 0
     radius: 0
     regionType: 0
     foeEffect: 0
@@ -134,6 +160,7 @@ MonoBehaviour:
     element: 3
     range: 4
     isRangeSelf: 0
+    needExtraTarget: 0
     radius: 0
     regionType: 0
     foeEffect: 0
@@ -153,6 +180,7 @@ MonoBehaviour:
     element: 0
     range: 3
     isRangeSelf: 0
+    needExtraTarget: 0
     radius: 0
     regionType: 0
     foeEffect: 1
@@ -172,6 +200,7 @@ MonoBehaviour:
     element: 0
     range: 1
     isRangeSelf: 0
+    needExtraTarget: 0
     radius: 0
     regionType: 0
     foeEffect: 0

@@ -8,7 +8,6 @@ public partial class PublicTool
     {
         Vector3 targetPos = ConvertPosFromID(posID);
         EventCenter.Instance.EventTrigger("CameraGoTo", targetPos);
-        Debug.Log("Move " + posID);
     }
 
     public static void EventChangeInteract(InteractState state, int data_0=-1)

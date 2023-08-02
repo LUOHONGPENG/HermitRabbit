@@ -73,6 +73,8 @@ public class UnitViewMgr : MonoBehaviour
                 return GetCharacterView(unitInfo.keyID);
             case BattleUnitType.Foe:
                 return GetFoeView(unitInfo.keyID);
+            case BattleUnitType.Plant:
+                return GetPlantView(unitInfo.keyID);
         }
         return null;
     }

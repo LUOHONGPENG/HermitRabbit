@@ -28,6 +28,7 @@ public struct SkillBattleInfo
     public int range;
     public int radius;
     //Target
+    public bool needExtraTarget;
     public bool isTargetFoe;
     public bool isTargetCharacter;
     public bool isTargetPlant;
@@ -40,6 +41,8 @@ public struct SkillBattleInfo
     public float damageDeltaFloat;
     public SkillDamageDeltaStd damageDeltaStd;
     public bool isNormalAttack;
+    //Special
+    public List<SkillSpecialExcelItem> listSpecialEffect;
 
     public SkillBattleInfo(SkillExcelItem item)
     {
@@ -52,6 +55,7 @@ public struct SkillBattleInfo
         this.range = item.range;
         this.radius = item.radius;
         //Target
+        this.needExtraTarget = item.needExtraTarget;
         this.isTargetFoe = item.isTargetFoe;
         this.isTargetCharacter = item.isTargetCharacter;
         this.isTargetPlant = item.isTargetPlant;
@@ -63,8 +67,10 @@ public struct SkillBattleInfo
         this.damageType = item.damageType;
         this.damageDeltaFloat = item.damageDeltaFloat;
         this.damageDeltaStd = item.damageDeltaStd;
-
         this.isNormalAttack = item.isNormalAttack;
+        //
+        this.listSpecialEffect = item.listSpecialEffectUse;
+
     }
 }
 
