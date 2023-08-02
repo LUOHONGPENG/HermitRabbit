@@ -178,6 +178,8 @@ public partial class BattleMgr
 
     private IEnumerator InvokeSkillText()
     {
+        EventCenter.Instance.EventTrigger("EffectSkillName", skillBattleInfo.name);
+
         //ShowDamage
         foreach (var item in dicFoeSkillTarget)
         {

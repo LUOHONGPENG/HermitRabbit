@@ -20,6 +20,7 @@ public struct SkillBattleInfo
 {
     //Basic
     public int ID;
+    public string name;
     public BattleUnitType skillSubjectType;
     public int costAP;
     //Range
@@ -47,6 +48,7 @@ public struct SkillBattleInfo
     public SkillBattleInfo(SkillExcelItem item)
     {
         this.ID = item.id;
+        this.name = item.name;
         this.skillSubjectType = item.skillSubjectType;
         this.costAP = item.costAP;
         //Range
