@@ -292,9 +292,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae13567d5d80484f9e266c747fa2951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peaceInterfaceUIMgr: {fileID: 6231837913878262029}
-  battleOptionUIMgr: {fileID: 2836473685131505334}
   battleInterfaceUIMgr: {fileID: 6045996678127200820}
+  battleOptionUIMgr: {fileID: 2836473685131505334}
+  peaceInterfaceUIMgr: {fileID: 6231837913878262029}
+  peacePlantUIMgr: {fileID: 8284132500135821158}
   txPhase: {fileID: 2133466019142414500}
   txDayInfo: {fileID: 7181184521203094057}
 --- !u!1001 &1709510013094576348
@@ -696,6 +697,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3670539653057031862}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8284132500135821158 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4613734150433542608, guid: b2b09021f81979645b89d13049fd19ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 3670539653057031862}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3f9812ead9d584099fd784bd363e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9116317456020086013
 PrefabInstance:
   m_ObjectHideFlags: 0

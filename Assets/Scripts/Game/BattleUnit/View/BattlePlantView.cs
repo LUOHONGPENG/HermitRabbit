@@ -11,12 +11,6 @@ public class BattlePlantView : BattleUnitView
         this.plantData = plantData;
         this.unitData = plantData;
 
-        //srUnit.sprite = Resources.Load(plantData.GetItem().pixelUrl, typeof(Sprite)) as Sprite;
-
-        //Need to modify it
-        List<Vector2Int> listPos = PublicTool.GetGameData().listTempEmptyPos;
-        int ran = Random.Range(0, listPos.Count);
-        plantData.posID = listPos[ran];
         MoveToPos();
     }
 }

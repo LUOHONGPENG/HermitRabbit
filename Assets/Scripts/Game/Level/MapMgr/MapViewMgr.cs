@@ -71,6 +71,9 @@ public partial class MapViewMgr : MonoBehaviour
             case InteractState.PeaceNormal:
                 ResetAllTile();
                 break;
+            case InteractState.PeacePlant:
+                SetMapUI_Plant();
+                break;
             case InteractState.BattleNormal:
                 ResetAllTile();
                 break;
@@ -167,6 +170,29 @@ public partial class MapViewMgr : MonoBehaviour
                         mapTile.SetIndicator(MapIndicatorType.AttackRadius);
                     }
                 }
+            }
+        }
+    }
+
+    private void SetMapUI_Plant()
+    {
+        //Go through
+        foreach (MapTileBase mapTile in listMapTile)
+        {
+            if (PeaceMgr.Instance.listValidPlant.Contains(mapTile.posID))
+            {
+                if (PublicTool.GetTargetCircleRange(PublicTool.GetGameData().hoverTileID, 0).Contains(mapTile.posID))
+                {
+                    mapTile.SetIndicator(MapIndicatorType.Blue);
+                }
+                else
+                {
+                    mapTile.SetIndicator(MapIndicatorType.Normal);
+                }
+            }
+            else
+            {
+                mapTile.SetIndicator(MapIndicatorType.Hide);
             }
         }
     }

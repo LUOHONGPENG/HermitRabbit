@@ -22,6 +22,8 @@ public partial class LevelMgr
         //Peace
         EventCenter.Instance.AddEventListener("PeacePlantStart", PeacePlantStartEvent);
         EventCenter.Instance.AddEventListener("PeacePlantEnd", PeacePlantEndEvent);
+        EventCenter.Instance.AddEventListener("InputAddPlant", InputAddPlantEvent);
+
 
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
@@ -46,11 +48,14 @@ public partial class LevelMgr
         //Peace
         EventCenter.Instance.RemoveEventListener("PeacePlantStart", PeacePlantStartEvent);
         EventCenter.Instance.RemoveEventListener("PeacePlantEnd", PeacePlantEndEvent);
+        EventCenter.Instance.RemoveEventListener("InputAddPlant", InputAddPlantEvent);
 
 
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
     }
+
+
 
     private void InputChangeSkillEvent(object arg0)
     {
@@ -101,18 +106,18 @@ public partial class LevelMgr
         string info = (string)arg0;
         switch (info)
         {
-            case "StartBattle":
+/*            case "StartBattle":
                 PublicTool.GetGameData().gamePhase = GamePhase.Battle;
                 EventCenter.Instance.EventTrigger("BattleStart", null);
-                break;
+                break;*/
             case "GenerateFoe":
                 BattleFoeData newFoeData = gameData.GenerateFoeData(1001);
                 unitViewMgr.GenerateFoeView(newFoeData);
                 break;
-            case "GeneratePlant":
+/*            case "GeneratePlant":
                 BattlePlantData newPlantData = gameData.GeneratePlantData(1001);
                 unitViewMgr.GeneratePlantView(newPlantData);
-                break;
+                break;*/
         }
     }
 
@@ -141,6 +146,12 @@ public partial class LevelMgr
     private void PeacePlantEndEvent(object arg0)
     {
         peaceMgr.EndPlant();
+    }
+
+    private void InputAddPlantEvent(object arg0)
+    {
+        Vector2Int posPlant = (Vector2Int)arg0;
+        peaceMgr.AddPlant(posPlant);
     }
     #endregion
 }

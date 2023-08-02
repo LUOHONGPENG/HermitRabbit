@@ -48,6 +48,7 @@ public class InterfaceUIMgr : MonoBehaviour
         EventCenter.Instance.AddEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
         //Peace
         EventCenter.Instance.AddEventListener("PeacePlantStart", PeacePlantStartEvent);
+        EventCenter.Instance.AddEventListener("PeacePlantEnd", PeacePlantEndEvent);
 
     }
 
@@ -57,6 +58,7 @@ public class InterfaceUIMgr : MonoBehaviour
     {
         EventCenter.Instance.RemoveEventListener("InputChooseCharacter", InputChooseCharacterEvent);
         EventCenter.Instance.RemoveEventListener("RefreshCharacterInfo", RefreshCharacterInfoEvent);
+        EventCenter.Instance.RemoveEventListener("InputCancelCharacter", InputCancelCharacterEvent);
         //Battle
         EventCenter.Instance.RemoveEventListener("BattleStart", BattleStartEvent);
         EventCenter.Instance.RemoveEventListener("BattleEnd", BattleEndEvent);
@@ -67,7 +69,11 @@ public class InterfaceUIMgr : MonoBehaviour
         EventCenter.Instance.RemoveEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
 
         EventCenter.Instance.RemoveEventListener("PeacePlantStart", PeacePlantStartEvent);
+        EventCenter.Instance.RemoveEventListener("PeacePlantEnd", PeacePlantEndEvent);
+
     }
+
+
 
     private void RefreshCharacterInfoEvent(object arg0)
     {
@@ -142,8 +148,13 @@ public class InterfaceUIMgr : MonoBehaviour
     private void PeacePlantStartEvent(object arg0)
     {
         peaceInterfaceUIMgr.ScrollHide();
+        peacePlantUIMgr.ShowPopup();
+    }
 
-        
+    private void PeacePlantEndEvent(object arg0)
+    {
+        peaceInterfaceUIMgr.ScrollShow();
+        peacePlantUIMgr.HidePopup();
     }
     #endregion
 

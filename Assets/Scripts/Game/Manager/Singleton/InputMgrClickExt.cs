@@ -87,6 +87,9 @@ public partial class InputMgr
             case InteractState.PeaceNormal:
                 PublicTool.EventCameraGoPosID(mapTile.posID);
                 return true;
+            case InteractState.PeacePlant:
+                EventCenter.Instance.EventTrigger("InputAddPlant", mapTile.posID);
+                return true;
             case InteractState.BattleNormal:
                 PublicTool.EventCameraGoPosID(mapTile.posID);
                 return true;
