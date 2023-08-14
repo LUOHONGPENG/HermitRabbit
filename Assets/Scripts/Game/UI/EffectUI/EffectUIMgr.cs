@@ -76,9 +76,9 @@ public class EffectUIMgr : MonoBehaviour
             seq.Kill();
         }
         seq = DOTween.Sequence();
-        seq.Append(groupSkillName.DOFade(1, 0.5F));
+        seq.Append(groupSkillName.DOFade(1, 0.2F));
         seq.AppendInterval(1f);
-        seq.Append(groupSkillName.DOFade(0, 0.5F));
+        seq.Append(groupSkillName.DOFade(0, 0.4F));
         seq.Play();
     }
 
