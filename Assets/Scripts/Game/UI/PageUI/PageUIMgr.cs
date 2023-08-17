@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class PageUIMgr : MonoBehaviour
 {
-    
+    public GameOverUIMgr gameOverUIMgr;
+    public StatusUIMgr statusUIMgr;
+
 }

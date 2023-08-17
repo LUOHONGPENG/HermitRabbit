@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class GameOverMgr : MonoBehaviour
+public class GameOverUIMgr : MonoBehaviour
 {
     public GameObject objPopup;
+    public Button btnRetry;
 
     public void OnEnable()
     {
