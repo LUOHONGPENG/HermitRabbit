@@ -509,7 +509,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Plant
+  m_Text: Status
 --- !u!1 &7751003847663907261
 GameObject:
   m_ObjectHideFlags: 0
