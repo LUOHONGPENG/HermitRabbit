@@ -15,7 +15,6 @@ public partial class LevelMgr : MonoBehaviour
 
     private GameData gameData;
 
-
     #region Basic & Bind
     public void Init()
     {

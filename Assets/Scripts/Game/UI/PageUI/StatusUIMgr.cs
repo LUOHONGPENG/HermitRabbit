@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StatusUIMgr : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject objPopup;
+
+    public Text codeATK;
+    public Text codeDEF;
+    public Text codeRES;
+
+    public Button btnChoose1001;
+    public Button btnChoose1002;
+
+    public BattleCharacterData characterData;
+
+    public void Init() 
     {
-        
+        characterData = null;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RefreshCharacterInfo()
     {
-        
+
     }
 }
