@@ -105,7 +105,6 @@ public partial class BattleMgr
 
     private IEnumerator IE_FindSkillTarget()
     {
-
         //Calculate the position that will be affected
         List<Vector2Int> listPos = new List<Vector2Int>();
         switch (skillBattleInfo.regionType)
@@ -127,6 +126,7 @@ public partial class BattleMgr
         {
             if (gameData.dicTempMapUnit.ContainsKey(pos))
             {
+                //Check whether this skill aim at Foe and
                 if (skillBattleInfo.isTargetFoe && gameData.dicTempMapUnit[pos].type == BattleUnitType.Foe)
                 {
                     BattleFoeData foeData = (BattleFoeData)gameData.GetDataFromUnitInfo(gameData.dicTempMapUnit[pos]);
