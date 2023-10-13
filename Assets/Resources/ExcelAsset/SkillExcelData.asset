@@ -15,7 +15,6 @@ MonoBehaviour:
   items:
   - id: 1001
     name: Elemental Ball
-    desc: Use elemental ball to attack single foe.
     costAP: 1
     element: 0
     range: 4
@@ -27,16 +26,18 @@ MonoBehaviour:
     characterEffect: 0
     plantEffect: 0
     damageType: 2
-    damageDelta: 100
     damageDeltaStd: 1
+    damageDelta: 100
+    damageModifier: 0
     listSpecialEffect: 00000000
     skillSubjectType: 0
     isNormalAttack: 1
     characterID: 1001
     iconUrl: 
+    unlockNodeID: 1001
+    desc: Use elemental ball to attack single foe.
   - id: 1101
     name: Fire Ball
-    desc: Use fire ball to attack multiple foes.
     costAP: 2
     element: 1
     range: 3
@@ -48,16 +49,18 @@ MonoBehaviour:
     characterEffect: 1
     plantEffect: 1
     damageType: 2
-    damageDelta: 200
     damageDeltaStd: 1
+    damageDelta: 200
+    damageModifier: 0
     listSpecialEffect: 00000000
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 1001
     iconUrl: imgIconSkill_1101
+    unlockNodeID: 1101
+    desc: Use fire ball to attack multiple foes.
   - id: 1302
     name: Teleport
-    desc: 
     costAP: 1
     element: 3
     range: 2
@@ -69,16 +72,18 @@ MonoBehaviour:
     characterEffect: 2
     plantEffect: 2
     damageType: 0
-    damageDelta: 0
     damageDeltaStd: 0
+    damageDelta: 0
+    damageModifier: 0
     listSpecialEffect: b90b0000
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 1001
     iconUrl: imgIconSkill_1302
+    unlockNodeID: 1302
+    desc: 
   - id: 2001
     name: Strike
-    desc: Use weapon to strike a foe.
     costAP: 1
     element: 0
     range: 1
@@ -90,16 +95,18 @@ MonoBehaviour:
     characterEffect: 1
     plantEffect: 0
     damageType: 1
-    damageDelta: 100
     damageDeltaStd: 1
+    damageDelta: 100
+    damageModifier: 0
     listSpecialEffect: 00000000
     skillSubjectType: 0
     isNormalAttack: 1
     characterID: 2001
     iconUrl: 
+    unlockNodeID: 2001
+    desc: Use weapon to strike a foe.
   - id: 2101
     name: Wind Chop
-    desc: Cut the foes around you.
     costAP: 1
     element: 1
     range: 0
@@ -111,16 +118,18 @@ MonoBehaviour:
     characterEffect: 0
     plantEffect: 0
     damageType: 1
-    damageDelta: 100
     damageDeltaStd: 1
+    damageDelta: 100
+    damageModifier: -1
     listSpecialEffect: 00000000
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 2001
-    iconUrl: imgIconSkill_2101
+    iconUrl: imgIconSkill_BFCut
+    unlockNodeID: 2101
+    desc: Cut the foes around you.
   - id: 2201
     name: Self Heal
-    desc: Self Heal for 20% HP.
     costAP: 1
     element: 2
     range: 0
@@ -132,16 +141,18 @@ MonoBehaviour:
     characterEffect: 2
     plantEffect: 0
     damageType: 3
-    damageDelta: 50
     damageDeltaStd: 2
+    damageDelta: 50
+    damageModifier: -1
     listSpecialEffect: 00000000
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 2001
     iconUrl: imgIconSkill_2201
+    unlockNodeID: 2201
+    desc: Self Heal for 20% HP.
   - id: 2301
     name: Inspire
-    desc: Regain AP by 1.
     costAP: 1
     element: 3
     range: 4
@@ -153,16 +164,18 @@ MonoBehaviour:
     characterEffect: 2
     plantEffect: 0
     damageType: 0
-    damageDelta: 0
     damageDeltaStd: 0
+    damageDelta: 0
+    damageModifier: 0
     listSpecialEffect: e9030000
     skillSubjectType: 0
     isNormalAttack: 0
     characterID: 2001
     iconUrl: imgIconSkill_2301
+    unlockNodeID: 2301
+    desc: Regain AP by 1.
   - id: 3001
     name: Tadpole Strike
-    desc: Attack a enemy.
     costAP: 0
     element: 0
     range: 3
@@ -174,16 +187,18 @@ MonoBehaviour:
     characterEffect: 0
     plantEffect: 0
     damageType: 3
-    damageDelta: 100
     damageDeltaStd: 1
+    damageDelta: 100
+    damageModifier: 0
     listSpecialEffect: 00000000
     skillSubjectType: 1
     isNormalAttack: 0
     characterID: 0
     iconUrl: 
+    unlockNodeID: 0
+    desc: Attack a enemy.
   - id: 9001
     name: Bite
-    desc: 
     costAP: 1
     element: 0
     range: 1
@@ -195,10 +210,13 @@ MonoBehaviour:
     characterEffect: 1
     plantEffect: 1
     damageType: 1
-    damageDelta: 100
     damageDeltaStd: 1
+    damageDelta: 100
+    damageModifier: 0
     listSpecialEffect: 00000000
     skillSubjectType: 2
     isNormalAttack: 0
     characterID: 0
     iconUrl: 
+    unlockNodeID: 0
+    desc: 
