@@ -180,22 +180,23 @@ public partial class BattleMgr
     {
         EventCenter.Instance.EventTrigger("EffectSkillName", skillBattleInfo.name);
 
-        //ShowDamage
-        foreach (var item in dicFoeSkillTarget)
+        //Change dicFoeSkillTarget to gameData.dicFoe
+        //Because maybe not only the targets are affected by skill
+        foreach (var item in gameData.dicFoe)
         {
             BattleFoeData foeData = item.Value;
             BattleFoeView foeView = unitViewMgr.GetFoeView(foeData.keyID);
             foeView.RequestBattleText();
         }
 
-        foreach (var item in dicCharacterSkillTarget)
+        foreach (var item in gameData.dicCharacter)
         {
             BattleCharacterData characterData = item.Value;
             BattleCharacterView characterView = unitViewMgr.GetCharacterView(characterData.keyID);
             characterView.RequestBattleText();
         }
 
-        foreach (var item in dicPlantSkillTarget)
+        foreach (var item in gameData.dicPlant)
         {
             BattlePlantData plantData = item.Value;
             BattlePlantView plantView = unitViewMgr.GetPlantView(plantData.keyID);

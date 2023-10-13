@@ -9,7 +9,6 @@ using System.IO;
 public partial class SkillExcelItem : ExcelItemBase
 {
 	public string name;
-	public string desc;
 	public int costAP;
 	public SkillElementType element;
 	public int range;
@@ -21,13 +20,16 @@ public partial class SkillExcelItem : ExcelItemBase
 	public SkillEffectType characterEffect;
 	public SkillEffectType plantEffect;
 	public SkillDamageType damageType;
-	public int damageDelta;
 	public SkillDamageDeltaStd damageDeltaStd;
+	public int damageDelta;
+	public int damageModifier;
 	public List<int> listSpecialEffect;
 	public BattleUnitType skillSubjectType;
 	public bool isNormalAttack;
 	public int characterID;
 	public string iconUrl;
+	public int unlockNodeID;
+	public string desc;
 }
 
 [CreateAssetMenu(fileName = "SkillExcelData", menuName = "Excel To ScriptableObject/Create SkillExcelData", order = 1)]
@@ -49,7 +51,6 @@ public class SkillAssetAssignment
 			items[i] = new SkillExcelItem();
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].name = allItemValueRowList[i]["name"];
-			items[i].desc = allItemValueRowList[i]["desc"];
 			items[i].costAP = Convert.ToInt32(allItemValueRowList[i]["costAP"]);
 			items[i].element = (SkillElementType) Enum.Parse(typeof(SkillElementType), allItemValueRowList[i]["element"], true);
 			items[i].range = Convert.ToInt32(allItemValueRowList[i]["range"]);
@@ -61,13 +62,16 @@ public class SkillAssetAssignment
 			items[i].characterEffect = (SkillEffectType) Enum.Parse(typeof(SkillEffectType), allItemValueRowList[i]["characterEffect"], true);
 			items[i].plantEffect = (SkillEffectType) Enum.Parse(typeof(SkillEffectType), allItemValueRowList[i]["plantEffect"], true);
 			items[i].damageType = (SkillDamageType) Enum.Parse(typeof(SkillDamageType), allItemValueRowList[i]["damageType"], true);
-			items[i].damageDelta = Convert.ToInt32(allItemValueRowList[i]["damageDelta"]);
 			items[i].damageDeltaStd = (SkillDamageDeltaStd) Enum.Parse(typeof(SkillDamageDeltaStd), allItemValueRowList[i]["damageDeltaStd"], true);
+			items[i].damageDelta = Convert.ToInt32(allItemValueRowList[i]["damageDelta"]);
+			items[i].damageModifier = Convert.ToInt32(allItemValueRowList[i]["damageModifier"]);
 			items[i].listSpecialEffect = new List<int>(Array.ConvertAll((allItemValueRowList[i]["listSpecialEffect"]).Split(';'), int.Parse));
 			items[i].skillSubjectType = (BattleUnitType) Enum.Parse(typeof(BattleUnitType), allItemValueRowList[i]["skillSubjectType"], true);
 			items[i].isNormalAttack = Convert.ToBoolean(allItemValueRowList[i]["isNormalAttack"]);
 			items[i].characterID = Convert.ToInt32(allItemValueRowList[i]["characterID"]);
 			items[i].iconUrl = allItemValueRowList[i]["iconUrl"];
+			items[i].unlockNodeID = Convert.ToInt32(allItemValueRowList[i]["unlockNodeID"]);
+			items[i].desc = allItemValueRowList[i]["desc"];
 		}
 		SkillExcelData excelDataAsset = ScriptableObject.CreateInstance<SkillExcelData>();
 		excelDataAsset.items = items;

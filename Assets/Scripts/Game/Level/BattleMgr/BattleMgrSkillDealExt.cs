@@ -58,11 +58,12 @@ public partial class BattleMgr
         }
         realDamage = Mathf.RoundToInt(realDamage);
 
-
         if(effectType == SkillEffectType.Harm)
         {
             target.GetHurt(realDamage);
             target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-realDamage).ToString(),target.posID));
+
+
         }
         else if(effectType == SkillEffectType.Help)
         {

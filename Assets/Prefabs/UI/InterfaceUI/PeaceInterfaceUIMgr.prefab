@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1091006971088569367}
   - component: {fileID: 3308245084816605106}
   m_Layer: 5
-  m_Name: btnStartStatus
+  m_Name: btnShowStatus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,6 +175,7 @@ MonoBehaviour:
   objPopup: {fileID: 7751003847663907261}
   groupBottom: {fileID: 6645952014626067485}
   btnStartBattle: {fileID: 3973975387057541543}
+  btnShowStatus: {fileID: 3308245084816605106}
   btnStartPlant: {fileID: 4745882615933768658}
 --- !u!1 &4532384416630913690
 GameObject:

@@ -55,27 +55,6 @@ MonoBehaviour:
     isNormalAttack: 0
     characterID: 1001
     iconUrl: imgIconSkill_1101
-  - id: 1102
-    name: Inferno
-    desc: Summon fire vortex to burn multiple foes.
-    costAP: 3
-    element: 1
-    range: 3
-    isRangeSelf: 0
-    needExtraTarget: 0
-    radius: 2
-    regionType: 0
-    foeEffect: 1
-    characterEffect: 1
-    plantEffect: 1
-    damageType: 2
-    damageDelta: 300
-    damageDeltaStd: 1
-    listSpecialEffect: 00000000
-    skillSubjectType: 0
-    isNormalAttack: 0
-    characterID: 1001
-    iconUrl: imgIconSkill_1102
   - id: 1302
     name: Teleport
     desc: 
@@ -111,7 +90,7 @@ MonoBehaviour:
     characterEffect: 1
     plantEffect: 0
     damageType: 1
-    damageDelta: 120
+    damageDelta: 100
     damageDeltaStd: 1
     listSpecialEffect: 00000000
     skillSubjectType: 0
@@ -153,7 +132,7 @@ MonoBehaviour:
     characterEffect: 2
     plantEffect: 0
     damageType: 3
-    damageDelta: 20
+    damageDelta: 50
     damageDeltaStd: 2
     listSpecialEffect: 00000000
     skillSubjectType: 0

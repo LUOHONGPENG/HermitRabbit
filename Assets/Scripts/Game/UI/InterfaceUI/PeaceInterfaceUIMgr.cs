@@ -10,6 +10,7 @@ public class PeaceInterfaceUIMgr : MonoBehaviour
     public CanvasGroup groupBottom;
 
     public Button btnStartBattle;
+    public Button btnShowStatus;
     public Button btnStartPlant;
 
     public void Init()
@@ -19,6 +20,12 @@ public class PeaceInterfaceUIMgr : MonoBehaviour
         {
             PublicTool.GetGameData().gamePhase = GamePhase.Battle;
             EventCenter.Instance.EventTrigger("BattleStart", null);
+        });
+
+        btnShowStatus.onClick.RemoveAllListeners();
+        btnShowStatus.onClick.AddListener(delegate ()
+        {
+            EventCenter.Instance.EventTrigger("ShowStatusPage", null);
         });
 
         btnStartPlant.onClick.RemoveAllListeners();

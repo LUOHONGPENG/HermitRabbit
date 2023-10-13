@@ -9,13 +9,20 @@ public class GameOverUIMgr : MonoBehaviour
     public GameObject objPopup;
     public Button btnRetry;
 
+    public void Init()
+    {
+        btnRetry.onClick.RemoveAllListeners();
+        btnRetry.onClick.AddListener(delegate ()
+        {
+
+        });
+    }
+
     public void OnEnable()
     {
         EventCenter.Instance.AddEventListener("BattleLose", BattleLoseEvent);
 
     }
-
-
 
     public void OnDisable()
     {
