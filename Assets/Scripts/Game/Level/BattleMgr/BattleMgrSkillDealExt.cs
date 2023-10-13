@@ -62,8 +62,6 @@ public partial class BattleMgr
         {
             target.GetHurt(realDamage);
             target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-realDamage).ToString(),target.posID));
-
-
         }
         else if(effectType == SkillEffectType.Help)
         {

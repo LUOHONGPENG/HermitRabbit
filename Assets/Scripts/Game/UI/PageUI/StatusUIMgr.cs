@@ -18,7 +18,7 @@ public class StatusUIMgr : MonoBehaviour
     public Text codeRES;
 
     [Header("SkillNode")]
-    public List<Transform> tfNode;
+    public List<Transform> listTfNode;
     public GameObject pfNode;
 
     public BattleCharacterData characterData;
@@ -64,6 +64,31 @@ public class StatusUIMgr : MonoBehaviour
 
     public void RefreshCharacterInfo()
     {
+        //Debug
+        InitSkillTree(2001);
+    }
+
+    #region Skill Tree
+
+    public void InitSkillTree(int characterID)
+    {
+        //Clear
+        foreach(Transform tf in listTfNode)
+        {
+            PublicTool.ClearChildItem(tf);
+        }
+
+        List<SkillNodeExcelItem> listSkillNode = ExcelDataMgr.Instance.skillNodeExcelData.dicAllCharacterSkillNode[characterID];
+
+        for(int i = 0; i < listSkillNode.Count; i++)
+        {
+            SkillNodeExcelItem nodeItem = listSkillNode[i];
+            GameObject objNode = GameObject.Instantiate(pfNode, listTfNode[nodeItem.rowID]);
+            SkillNodeUIItem itemNode = objNode.GetComponent<SkillNodeUIItem>();
+            itemNode.Init(nodeItem);
+
+        }
 
     }
+    #endregion
 }
