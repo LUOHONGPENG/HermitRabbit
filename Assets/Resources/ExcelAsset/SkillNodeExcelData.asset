@@ -13,27 +13,73 @@ MonoBehaviour:
   m_Name: SkillNodeExcelData
   m_EditorClassIdentifier: 
   items:
+  - id: 1001
+    name: Elemental Ball
+    nodeType: 0
+    isInitUnlock: 1
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 0
+  - id: 1101
+    name: Inferno
+    nodeType: 0
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 1
+  - id: 1301
+    name: Holy Thunder
+    nodeType: 0
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 1
+  - id: 1302
+    name: Teleport
+    nodeType: 0
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 2
   - id: 2001
     name: Strike
     nodeType: 0
-    characterID: 2001
+    isInitUnlock: 1
+    characterID: 1002
     iconUrl: imgIconSkill_BFStrike
     rowID: 0
   - id: 2101
     name: Worker Wind
     nodeType: 0
-    characterID: 2001
+    isInitUnlock: 0
+    characterID: 1002
     iconUrl: imgIconSkill_BFCut
     rowID: 1
   - id: 2102
     name: Overtime Work
     nodeType: 0
-    characterID: 2001
+    isInitUnlock: 0
+    characterID: 1002
     iconUrl: imgIconSkill_Overtime
     rowID: 3
   - id: 2111
     name: Injury Benefit
     nodeType: 1
-    characterID: 2001
+    isInitUnlock: 0
+    characterID: 1002
     iconUrl: imgIconSkill_InjuryB
     rowID: 2
+  - id: 2201
+    name: Self Heal
+    nodeType: 0
+    isInitUnlock: 0
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    rowID: 1
+  - id: 2301
+    name: Inspire
+    nodeType: 0
+    isInitUnlock: 0
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    rowID: 1

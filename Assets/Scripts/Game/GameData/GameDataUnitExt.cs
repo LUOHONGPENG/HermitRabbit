@@ -27,7 +27,7 @@ public partial class GameData
         //Leo
         GenerateCharacterData(1001);
         //Kizuna
-        GenerateCharacterData(2001);
+        GenerateCharacterData(1002);
     }
 
     public void GenerateCharacterData(int typeID)

@@ -50,7 +50,7 @@ MonoBehaviour:
     plantEffect: 1
     damageType: 2
     damageDeltaStd: 1
-    damageDelta: 200
+    damageDelta: 150
     damageModifier: 0
     listSpecialEffect: 00000000
     skillSubjectType: 0
@@ -59,6 +59,29 @@ MonoBehaviour:
     iconUrl: imgIconSkill_1101
     unlockNodeID: 1101
     desc: Use fire ball to attack multiple foes.
+  - id: 1301
+    name: Holy Thunder
+    costAP: 1
+    element: 3
+    range: 4
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 1
+    characterEffect: 0
+    plantEffect: 0
+    damageType: 2
+    damageDeltaStd: 1
+    damageDelta: 100
+    damageModifier: 0
+    listSpecialEffect: 00000000
+    skillSubjectType: 0
+    isNormalAttack: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    unlockNodeID: 1301
+    desc: 
   - id: 1302
     name: Teleport
     costAP: 1
@@ -101,7 +124,7 @@ MonoBehaviour:
     listSpecialEffect: 00000000
     skillSubjectType: 0
     isNormalAttack: 1
-    characterID: 2001
+    characterID: 1002
     iconUrl: 
     unlockNodeID: 2001
     desc: Use weapon to strike a foe.
@@ -124,7 +147,7 @@ MonoBehaviour:
     listSpecialEffect: 00000000
     skillSubjectType: 0
     isNormalAttack: 0
-    characterID: 2001
+    characterID: 1002
     iconUrl: imgIconSkill_BFCut
     unlockNodeID: 2101
     desc: Cut the foes around you.
@@ -147,7 +170,7 @@ MonoBehaviour:
     listSpecialEffect: 00000000
     skillSubjectType: 0
     isNormalAttack: 0
-    characterID: 2001
+    characterID: 1002
     iconUrl: imgIconSkill_2201
     unlockNodeID: 2201
     desc: Self Heal for 20% HP.
@@ -170,7 +193,7 @@ MonoBehaviour:
     listSpecialEffect: e9030000
     skillSubjectType: 0
     isNormalAttack: 0
-    characterID: 2001
+    characterID: 1002
     iconUrl: imgIconSkill_2301
     unlockNodeID: 2301
     desc: Regain AP by 1.

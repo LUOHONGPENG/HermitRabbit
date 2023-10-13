@@ -21,7 +21,7 @@ public class StatusUIMgr : MonoBehaviour
     public List<Transform> listTfNode;
     public GameObject pfNode;
 
-    public BattleCharacterData characterData;
+    private BattleCharacterData characterData;
 
     public void Init() 
     {
@@ -31,6 +31,20 @@ public class StatusUIMgr : MonoBehaviour
         btnClose.onClick.AddListener(delegate ()
         {
             HidePopup();
+        });
+
+        btnChoose1001.onClick.RemoveAllListeners();
+        btnChoose1001.onClick.AddListener(delegate ()
+        {
+            characterData = PublicTool.GetGameData().GetBattleCharacterData(1001);
+            RefreshCharacterInfo();
+        });
+
+        btnChoose1002.onClick.RemoveAllListeners();
+        btnChoose1002.onClick.AddListener(delegate ()
+        {
+            characterData = PublicTool.GetGameData().GetBattleCharacterData(1002);
+            RefreshCharacterInfo();
         });
     }
 
@@ -53,6 +67,7 @@ public class StatusUIMgr : MonoBehaviour
     public void ShowPopup()
     {
         objPopup.SetActive(true);
+        characterData = PublicTool.GetGameData().GetBattleCharacterData(1001);
         RefreshCharacterInfo();
     }
 
@@ -64,8 +79,10 @@ public class StatusUIMgr : MonoBehaviour
 
     public void RefreshCharacterInfo()
     {
-        //Debug
-        InitSkillTree(2001);
+        if (characterData != null)
+        {
+            InitSkillTree(characterData.typeID);
+        }
     }
 
     #region Skill Tree
