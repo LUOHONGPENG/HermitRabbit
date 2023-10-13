@@ -19,6 +19,7 @@ public class UIMgr : MonoBehaviour
         //Debug
         interfaceUIMgr.Init();
         pageUIMgr.Init();
+
         testButtonMgr.Init();
     }
 }

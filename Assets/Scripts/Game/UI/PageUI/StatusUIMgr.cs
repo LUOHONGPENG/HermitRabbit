@@ -6,16 +6,20 @@ using UnityEngine.UI;
 
 public class StatusUIMgr : MonoBehaviour
 {
+    [Header("Basic")]
     public GameObject objPopup;
+    public Button btnChoose1001;
+    public Button btnChoose1002;
+    public Button btnClose;
 
+    [Header("Status")]
     public Text codeATK;
     public Text codeDEF;
     public Text codeRES;
 
-    public Button btnChoose1001;
-    public Button btnChoose1002;
-
-    public Button btnClose;
+    [Header("SkillNode")]
+    public List<Transform> tfNode;
+    public GameObject pfNode;
 
     public BattleCharacterData characterData;
 

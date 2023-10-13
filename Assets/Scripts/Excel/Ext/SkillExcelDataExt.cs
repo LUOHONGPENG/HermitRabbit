@@ -28,8 +28,7 @@ public partial class SkillExcelData
             }
             else
             {
-                List<SkillExcelItem> listSkill = new List<SkillExcelItem>();
-                listSkill.Add(skillItem);
+                List<SkillExcelItem> listSkill = new List<SkillExcelItem> { skillItem };
                 dicAllCharacterSkill.Add(skillItem.characterID, listSkill);
             }
 

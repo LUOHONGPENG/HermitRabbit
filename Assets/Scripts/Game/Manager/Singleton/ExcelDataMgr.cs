@@ -6,6 +6,7 @@ public class ExcelDataMgr : MonoSingleton<ExcelDataMgr>
 {
     public SkillExcelData skillExcelData;
     public SkillSpecialExcelData skillSpecialExcelData;
+    public SkillNodeExcelData skillNodeExcelData;
     public CharacterExcelData characterExcelData;
     public FoeExcelData foeExcelData;
     public PlantExcelData plantExcelData;
@@ -14,10 +15,15 @@ public class ExcelDataMgr : MonoSingleton<ExcelDataMgr>
     {
         skillExcelData = ExcelManager.Instance.GetExcelData<SkillExcelData, SkillExcelItem>();
         skillSpecialExcelData = ExcelManager.Instance.GetExcelData<SkillSpecialExcelData, SkillSpecialExcelItem>();
+        skillNodeExcelData = ExcelManager.Instance.GetExcelData<SkillNodeExcelData, SkillNodeExcelItem>();
+
         characterExcelData = ExcelManager.Instance.GetExcelData<CharacterExcelData, CharacterExcelItem>();
         foeExcelData = ExcelManager.Instance.GetExcelData<FoeExcelData, FoeExcelItem>();
         plantExcelData = ExcelManager.Instance.GetExcelData<PlantExcelData, PlantExcelItem>();
+
+        //Init Data Table
         skillExcelData.Init();
+        skillNodeExcelData.Init();
         yield break;
     }
     

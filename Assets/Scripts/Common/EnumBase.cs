@@ -109,6 +109,12 @@ public enum PlantTriggerType
     CharacterNormalAttack
 }
 
+public enum SkillNodeType
+{
+    Active,
+    Passive
+}
+
 #endregion
 
 public enum EffectUITextType
