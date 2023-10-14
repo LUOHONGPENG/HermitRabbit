@@ -12,37 +12,28 @@ public partial class InputMgr
         {
             return;
         }
-        CheckRayHoverAction();
+        CheckRayHoverAll();
     }
 
 
 
     #region Hover
 
-    //For RayCastUI
-/*    private List<RaycastResult> raycastResults = new List<RaycastResult>();
-    private void UpdateMouseRayUI()
-    {
-        //Mouse
-        if (EventSystem.current == null)
-        {
-            return;
-        }
-        PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
-        pointerEventData.position = GetMousePos();
-        EventSystem.current.RaycastAll(pointerEventData, raycastResults);
-    }*/
+
 
     /// <summary>
     /// The main function of 
     /// </summary>
-    private void CheckRayHoverAction()
+    private void CheckRayHoverAll()
     {
         //UI
         if (CheckWhetherHoverUI())
         {
             //Not hovering any map tile
             CancelHoverMapTile();
+            //GetRayUI
+            UpdateMouseRayUI();
+            CheckMouseRayUI();
             return;
         }
 
@@ -96,5 +87,36 @@ public partial class InputMgr
         return false;
     }
 
+    //For RayCastUI
+    private List<RaycastResult> raycastResults = new List<RaycastResult>();
+    private void UpdateMouseRayUI()
+    {
+        //Mouse
+        if (EventSystem.current == null)
+        {
+            return;
+        }
+        PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+        pointerEventData.position = GetMousePos();
+        EventSystem.current.RaycastAll(pointerEventData, raycastResults);
+    }
+
+    private void CheckMouseRayUI()
+    {
+        foreach (RaycastResult item in raycastResults)
+        {
+            if (item.gameObject.tag == "SkillNodeUI")
+            {
+                if (item.gameObject.transform.parent.GetComponent<SkillNodeUIItem>() != null)
+                {
+                    SkillNodeUIItem nodeUI = item.gameObject.transform.parent.GetComponent<SkillNodeUIItem>();
+                    UITipInfo uiTipInfo = new UITipInfo(UITipType.SkillNode, nodeUI.GetNodeID(), -1, GetMousePosUI());
+                    EventCenter.Instance.EventTrigger("ShowUITip", uiTipInfo);
+                    return;
+                }
+            }
+        }
+        EventCenter.Instance.EventTrigger("HideUITip", null);
+    }
     #endregion
 }

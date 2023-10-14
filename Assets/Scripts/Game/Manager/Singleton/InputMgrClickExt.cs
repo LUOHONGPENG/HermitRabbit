@@ -106,10 +106,22 @@ public partial class InputMgr
     #endregion
 
     #region Touch Position
+    public Vector2 GetMousePos()
+    {
+        Vector2 screenPosition = touchPositionAction.ReadValue<Vector2>();
+
+        return screenPosition;
+    }
+
+    public Vector2 GetMousePosUI()
+    {
+        return GameMgr.Instance.curUICamera.ScreenToWorldPoint(GetMousePos());
+
+    }
 
     private Ray GetMouseRay()
     {
-        Vector2 screenPosition = touchPositionAction.ReadValue<Vector2>();
+        Vector2 screenPosition = GetMousePos();
         Ray ray = new Ray();
         if (GameMgr.Instance.curMapCamera != null)
         {
@@ -117,5 +129,7 @@ public partial class InputMgr
         }
         return ray;
     }
+
+
     #endregion
 }

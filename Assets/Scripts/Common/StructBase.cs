@@ -137,3 +137,19 @@ public struct EffectWarningTextInfo
     }
 }
 
+public struct UITipInfo
+{
+    public UITipType uiTipType;
+    public int ID;
+    public int characterID;
+    public Vector2 mousePos;
+
+    public UITipInfo(UITipType uiTipType, int ID,int characterID,Vector2 mousePos)
+    {
+        this.uiTipType = uiTipType;
+        this.ID = ID;
+        this.characterID = characterID;
+        this.mousePos = mousePos;
+    }
+}
+

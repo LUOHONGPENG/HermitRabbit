@@ -14,5 +14,8 @@ public partial class PublicTool
         return ExcelDataMgr.Instance.skillExcelData.GetExcelItem(SkillID);
     }
 
-    
+    public static SkillNodeExcelItem GetSkillNodeItem(int NodeID)
+    {
+        return ExcelDataMgr.Instance.skillNodeExcelData.GetExcelItem(NodeID);
+    }
 }

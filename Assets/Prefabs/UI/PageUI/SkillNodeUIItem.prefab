@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 5205627349282408028}
   m_Layer: 5
   m_Name: btnNode
-  m_TagString: Untagged
+  m_TagString: SkillNodeUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,6 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2024791323529987683}
   - component: {fileID: 2920471253778060845}
+  - component: {fileID: 1936163876139018976}
   m_Layer: 5
   m_Name: SkillNodeUIItem
   m_TagString: Untagged
@@ -325,6 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c31985411c1794d86e00eb188bb808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeState: 3
   imgFrame: {fileID: 2842663076956948155}
   imgIcon: {fileID: 7664563513552496061}
   imgButton: {fileID: 2685620968524812076}
@@ -333,3 +335,18 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.8352941, g: 0.9882353, b: 1, a: 1}
   btnNode: {fileID: 5205627349282408028}
+  hoverUI: {fileID: 1936163876139018976}
+--- !u!114 &1936163876139018976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9221953708619402531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2326c3141f5891e47a1cc8e49e440d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnabled: 1
+  isHavor: 0

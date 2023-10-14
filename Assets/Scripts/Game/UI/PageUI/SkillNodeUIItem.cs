@@ -25,6 +25,7 @@ public class SkillNodeUIItem : MonoBehaviour
     public List<Color> listColor = new List<Color>();
 
     public Button btnNode;
+    public CommonHoverUI hoverUI;
 
     private SkillNodeExcelItem nodeItem;
 
@@ -63,10 +64,13 @@ public class SkillNodeUIItem : MonoBehaviour
                 case NodeState.NotEnoughSP:
                     break;
             }
-
-
             //Check Whether the node is unlocked
         });
+    }
+
+    public int GetNodeID()
+    {
+        return nodeItem.id;
     }
 
     public void RefreshNodeState()
@@ -115,4 +119,17 @@ public class SkillNodeUIItem : MonoBehaviour
         }
     }
 
+
+
+    private void Update()
+    {
+        if (hoverUI.isHavor && nodeState == NodeState.CanUnlock)
+        {
+            this.transform.localScale = new Vector2(1.1f, 1.1f);
+        }
+        else
+        {
+            this.transform.localScale = Vector2.one;
+        }
+    }
 }

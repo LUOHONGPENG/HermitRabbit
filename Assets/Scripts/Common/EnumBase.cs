@@ -132,3 +132,7 @@ public enum BattleTextType
     Special
 }
 
+public enum UITipType
+{
+    SkillNode
+}

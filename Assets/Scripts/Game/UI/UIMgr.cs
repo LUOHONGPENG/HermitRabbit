@@ -10,8 +10,8 @@ public class UIMgr : MonoBehaviour
     public EffectUIMgr effectUIMgr;
     public InterfaceUIMgr interfaceUIMgr;
     public PageUIMgr pageUIMgr;
+    public TipUIMgr tipUIMgr;
     public TestButtonMgr testButtonMgr;
-
     public void Init(Camera camera)
     {
         thisCanvas.worldCamera = camera;
