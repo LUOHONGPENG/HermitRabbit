@@ -48,6 +48,14 @@ public partial class GameData
             return null;
         }
     }
+
+    public void AddCharacterExp(int characterID,int EXP)
+    {
+        if (dicCharacter.ContainsKey(characterID))
+        {
+            dicCharacter[characterID].EXP += EXP;
+        }
+    }
     #endregion
 
     #region Basic-Plant

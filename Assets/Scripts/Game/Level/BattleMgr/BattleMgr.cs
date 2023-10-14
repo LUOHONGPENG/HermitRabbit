@@ -108,6 +108,10 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
 
     private void BattleOverWin()
     {
+        //Reward
+        gameData.AddCharacterExp(1001, 50);
+        gameData.AddCharacterExp(1002, 50);
+        //End Battle Flow
         isBattleEnd = true;
         PublicTool.GetGameData().gamePhase = GamePhase.Peace;
         PublicTool.EventChangeInteract(InteractState.PeaceNormal);
