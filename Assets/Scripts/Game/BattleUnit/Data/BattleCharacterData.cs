@@ -89,13 +89,13 @@ public partial class BattleCharacterData
 
     public void AcquireSkillNode(int nodeID)
     {
-        if (!CheckSkillNode(nodeID))
+        if (!CheckUnlockSkillNode(nodeID))
         {
             listUnlockSkillNode.Add(nodeID);
         }
     }
 
-    public bool CheckSkillNode(int nodeID)
+    public bool CheckUnlockSkillNode(int nodeID)
     {
         if (listUnlockSkillNode.Contains(nodeID))
         {

@@ -21,37 +21,37 @@ MonoBehaviour:
     HP2: 0
   - id: 2
     Level: 2
-    EXP: 50
+    EXP: 10
     SP: 2
     HP1: 2
     HP2: 3
   - id: 3
     Level: 3
-    EXP: 100
+    EXP: 60
     SP: 4
     HP1: 4
     HP2: 6
   - id: 4
     Level: 4
-    EXP: 150
+    EXP: 130
     SP: 6
     HP1: 6
     HP2: 9
   - id: 5
     Level: 5
-    EXP: 200
+    EXP: 210
     SP: 8
     HP1: 8
     HP2: 12
   - id: 6
     Level: 6
-    EXP: 250
+    EXP: 300
     SP: 10
     HP1: 10
     HP2: 15
   - id: 7
     Level: 7
-    EXP: 300
+    EXP: 400
     SP: 12
     HP1: 12
     HP2: 18

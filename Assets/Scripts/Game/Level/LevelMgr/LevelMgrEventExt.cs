@@ -24,12 +24,9 @@ public partial class LevelMgr
         EventCenter.Instance.AddEventListener("PeacePlantEnd", PeacePlantEndEvent);
         EventCenter.Instance.AddEventListener("InputAddPlant", InputAddPlantEvent);
 
-
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
     }
-
-
 
     private void OnDisable()
     {        
@@ -54,8 +51,6 @@ public partial class LevelMgr
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
     }
-
-
 
     private void InputChangeSkillEvent(object arg0)
     {
@@ -106,18 +101,14 @@ public partial class LevelMgr
         string info = (string)arg0;
         switch (info)
         {
-/*            case "StartBattle":
-                PublicTool.GetGameData().gamePhase = GamePhase.Battle;
-                EventCenter.Instance.EventTrigger("BattleStart", null);
-                break;*/
+            case "AddExp":
+                gameData.AddCharacterExp(1001, 50);
+                gameData.AddCharacterExp(1002, 50);
+                break;
             case "GenerateFoe":
                 BattleFoeData newFoeData = gameData.GenerateFoeData(1001);
                 unitViewMgr.GenerateFoeView(newFoeData);
                 break;
-/*            case "GeneratePlant":
-                BattlePlantData newPlantData = gameData.GeneratePlantData(1001);
-                unitViewMgr.GeneratePlantView(newPlantData);
-                break;*/
         }
     }
 

@@ -70,10 +70,14 @@ public class BattleOptionUIMgr : MonoBehaviour
         List<SkillExcelItem> listSkill = ExcelDataMgr.Instance.skillExcelData.dicAllCharacterSkill[curCharacterData.typeID];
         for (int i = 0; i < listSkill.Count; i++)
         {
-            GameObject objSkill = GameObject.Instantiate(pfSkillButton, tfSkillButton);
-            BattleSkillBtnItem itemSkill = objSkill.GetComponent<BattleSkillBtnItem>();
-            itemSkill.Init(listSkill[i]);
-            listSkillBtn.Add(itemSkill);
+            SkillExcelItem skill = listSkill[i];
+            if (PublicTool.CheckWhetherCharacterUnlockSkill(skill.characterID, skill.unlockNodeID))
+            {
+                GameObject objSkill = GameObject.Instantiate(pfSkillButton, tfSkillButton);
+                BattleSkillBtnItem itemSkill = objSkill.GetComponent<BattleSkillBtnItem>();
+                itemSkill.Init(listSkill[i]);
+                listSkillBtn.Add(itemSkill);
+            }
         }
         ShowAction();
         objPopup.SetActive(true);
@@ -116,8 +120,6 @@ public class BattleOptionUIMgr : MonoBehaviour
 
     public void RefreshButton()
     {
-
-
         switch (InputMgr.Instance.GetInteractState())
         {
             case InteractState.CharacterMove:

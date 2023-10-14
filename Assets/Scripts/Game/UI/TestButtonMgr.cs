@@ -7,18 +7,16 @@ public class TestButtonMgr : MonoBehaviour
 {
     public GameObject objPopup;
 
-    public Button btnStartBattle;
+    public Button btnAddExp;
     public Button btnGenerateFoe;
-    public Button btnGeneratePlant;
 
     public void Init()
     {
-        btnStartBattle.onClick.RemoveAllListeners();
-        btnStartBattle.onClick.AddListener(delegate ()
+        btnAddExp.onClick.RemoveAllListeners();
+        btnAddExp.onClick.AddListener(delegate ()
         {
-            EventCenter.Instance.EventTrigger("TestButton", "StartBattle");
+            EventCenter.Instance.EventTrigger("TestButton", "AddExp");
         });
-
 
         btnGenerateFoe.onClick.RemoveAllListeners();
         btnGenerateFoe.onClick.AddListener(delegate ()
@@ -26,10 +24,5 @@ public class TestButtonMgr : MonoBehaviour
             EventCenter.Instance.EventTrigger("TestButton", "GenerateFoe");
         });
 
-        btnGeneratePlant.onClick.RemoveAllListeners();
-        btnGeneratePlant.onClick.AddListener(delegate ()
-        {
-            EventCenter.Instance.EventTrigger("TestButton", "GeneratePlant");
-        });
     }
 }
