@@ -26,4 +26,15 @@ public partial class SkillNodeExcelData
         }
     }
 
+    public List<SkillNodeExcelItem> GetSkillNodeList(int characterID)
+    {
+        if (dicAllCharacterSkillNode.ContainsKey(characterID))
+        {
+            return dicAllCharacterSkillNode[characterID];
+        }
+        else
+        {
+            return null;
+        }
+    }
 }

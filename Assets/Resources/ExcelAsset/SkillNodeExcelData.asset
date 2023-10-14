@@ -16,6 +16,8 @@ MonoBehaviour:
   - id: 1001
     name: Elemental Ball
     nodeType: 0
+    costSP: 0
+    conditionSPSpent: 0
     isInitUnlock: 1
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -23,6 +25,8 @@ MonoBehaviour:
   - id: 1101
     name: Inferno
     nodeType: 0
+    costSP: 1
+    conditionSPSpent: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -30,6 +34,8 @@ MonoBehaviour:
   - id: 1301
     name: Holy Thunder
     nodeType: 0
+    costSP: 1
+    conditionSPSpent: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -37,6 +43,8 @@ MonoBehaviour:
   - id: 1302
     name: Teleport
     nodeType: 0
+    costSP: 2
+    conditionSPSpent: 2
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -44,6 +52,8 @@ MonoBehaviour:
   - id: 2001
     name: Strike
     nodeType: 0
+    costSP: 0
+    conditionSPSpent: 0
     isInitUnlock: 1
     characterID: 1002
     iconUrl: imgIconSkill_BFStrike
@@ -51,6 +61,8 @@ MonoBehaviour:
   - id: 2101
     name: Worker Wind
     nodeType: 0
+    costSP: 1
+    conditionSPSpent: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_BFCut
@@ -58,6 +70,8 @@ MonoBehaviour:
   - id: 2102
     name: Overtime Work
     nodeType: 0
+    costSP: 2
+    conditionSPSpent: 4
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Overtime
@@ -65,6 +79,8 @@ MonoBehaviour:
   - id: 2111
     name: Injury Benefit
     nodeType: 1
+    costSP: 2
+    conditionSPSpent: 2
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_InjuryB
@@ -72,6 +88,8 @@ MonoBehaviour:
   - id: 2201
     name: Self Heal
     nodeType: 0
+    costSP: 1
+    conditionSPSpent: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -79,6 +97,8 @@ MonoBehaviour:
   - id: 2301
     name: Inspire
     nodeType: 0
+    costSP: 1
+    conditionSPSpent: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Default

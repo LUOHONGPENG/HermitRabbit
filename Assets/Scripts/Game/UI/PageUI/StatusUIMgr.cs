@@ -26,6 +26,7 @@ public class StatusUIMgr : MonoBehaviour
     [Header("SkillNode")]
     public List<Transform> listTfNode;
     public GameObject pfNode;
+    public List<SkillNodeUIItem> listNodeUI = new List<SkillNodeUIItem>();
 
     private BattleCharacterData characterData;
 
@@ -58,11 +59,14 @@ public class StatusUIMgr : MonoBehaviour
     public void OnEnable()
     {
         EventCenter.Instance.AddEventListener("ShowStatusPage", ShowStatusEvent);
+        EventCenter.Instance.AddEventListener("RefreshSkillTreeUI", UpdateSkillTreeEvent);
     }
 
     public void OnDisable()
     {
         EventCenter.Instance.RemoveEventListener("ShowStatusPage", ShowStatusEvent);
+        EventCenter.Instance.RemoveEventListener("RefreshSkillTreeUI", UpdateSkillTreeEvent);
+
     }
 
     private void ShowStatusEvent(object arg0)
@@ -114,12 +118,13 @@ public class StatusUIMgr : MonoBehaviour
     public void InitSkillTree(int characterID)
     {
         //Clear
-        foreach(Transform tf in listTfNode)
+        foreach (Transform tf in listTfNode)
         {
             PublicTool.ClearChildItem(tf);
         }
 
-        List<SkillNodeExcelItem> listSkillNode = ExcelDataMgr.Instance.skillNodeExcelData.dicAllCharacterSkillNode[characterID];
+        listNodeUI.Clear();
+        List<SkillNodeExcelItem> listSkillNode = ExcelDataMgr.Instance.skillNodeExcelData.GetSkillNodeList(characterID);
 
         for(int i = 0; i < listSkillNode.Count; i++)
         {
@@ -127,9 +132,18 @@ public class StatusUIMgr : MonoBehaviour
             GameObject objNode = GameObject.Instantiate(pfNode, listTfNode[nodeItem.rowID]);
             SkillNodeUIItem itemNode = objNode.GetComponent<SkillNodeUIItem>();
             itemNode.Init(nodeItem);
-
+            listNodeUI.Add(itemNode);
+            itemNode.UpdateNodeUI();
         }
+    }
 
+    private void UpdateSkillTreeEvent(object arg0)
+    {
+        codeSPLeft.text = characterData.SPLeft.ToString();
+        for (int i = 0; i < listNodeUI.Count; i++)
+        {
+            listNodeUI[i].UpdateNodeUI();
+        }
     }
     #endregion
 }

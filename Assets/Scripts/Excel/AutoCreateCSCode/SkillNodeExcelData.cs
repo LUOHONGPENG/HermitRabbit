@@ -10,6 +10,8 @@ public partial class SkillNodeExcelItem : ExcelItemBase
 {
 	public string name;
 	public SkillNodeType nodeType;
+	public int costSP;
+	public int conditionSPSpent;
 	public bool isInitUnlock;
 	public int characterID;
 	public string iconUrl;
@@ -36,6 +38,8 @@ public class SkillNodeAssetAssignment
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].name = allItemValueRowList[i]["name"];
 			items[i].nodeType = (SkillNodeType) Enum.Parse(typeof(SkillNodeType), allItemValueRowList[i]["nodeType"], true);
+			items[i].costSP = Convert.ToInt32(allItemValueRowList[i]["costSP"]);
+			items[i].conditionSPSpent = Convert.ToInt32(allItemValueRowList[i]["conditionSPSpent"]);
 			items[i].isInitUnlock = Convert.ToBoolean(allItemValueRowList[i]["isInitUnlock"]);
 			items[i].characterID = Convert.ToInt32(allItemValueRowList[i]["characterID"]);
 			items[i].iconUrl = allItemValueRowList[i]["iconUrl"];

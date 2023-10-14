@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public partial class BattleCharacterData : BattleUnitData
 {
@@ -84,7 +85,14 @@ public partial class BattleCharacterData
     public void InitSkillNode()
     {
         listUnlockSkillNode.Clear();
-
+        List<SkillNodeExcelItem> listNode = ExcelDataMgr.Instance.skillNodeExcelData.GetSkillNodeList(typeID);
+        for(int i = 0; i < listNode.Count; i++)
+        {
+            if (listNode[i].isInitUnlock)
+            {
+                AcquireSkillNode(listNode[i].id);
+            }
+        }
     }
 
     public void AcquireSkillNode(int nodeID)
