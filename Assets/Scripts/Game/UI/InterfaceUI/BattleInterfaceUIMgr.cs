@@ -8,7 +8,7 @@ public class BattleInterfaceUIMgr : MonoBehaviour
     public GameObject objPopup;
 
     public BattleMiniCharacterUIItem miniCharacterUI1001;
-    public BattleMiniCharacterUIItem miniCharacterUI2001;
+    public BattleMiniCharacterUIItem miniCharacterUI1002;
 
     public Button btnEndTurn;
 
@@ -50,14 +50,14 @@ public class BattleInterfaceUIMgr : MonoBehaviour
         GameData gameData = PublicTool.GetGameData();
 
         miniCharacterUI1001.Init(gameData.GetBattleCharacterData(1001));
-        miniCharacterUI2001.Init(gameData.GetBattleCharacterData(2001));
+        miniCharacterUI1002.Init(gameData.GetBattleCharacterData(1002));
 
     }
 
     public void RefreshCharacterInfo()
     {
         miniCharacterUI1001.RefreshUI();
-        miniCharacterUI2001.RefreshUI();
+        miniCharacterUI1002.RefreshUI();
     }
     #endregion
 }

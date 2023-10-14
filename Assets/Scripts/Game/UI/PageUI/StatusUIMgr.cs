@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,11 @@ public class StatusUIMgr : MonoBehaviour
     public Button btnClose;
 
     [Header("Status")]
+    public Text codeLevel;
+    public Text codeSPLeft;
+    public Text codeEXP;
+    public Image imgFillEXP;
+    public Text codeHP;
     public Text codeATK;
     public Text codeDEF;
     public Text codeRES;
@@ -81,6 +87,24 @@ public class StatusUIMgr : MonoBehaviour
     {
         if (characterData != null)
         {
+            codeLevel.text = characterData.Level.ToString();
+            codeSPLeft.text = characterData.SPLeft.ToString();
+            if (characterData.CheckWhetherMaxLevel())
+            {
+                codeEXP.text = "MAX";
+                imgFillEXP.fillAmount = 1;
+            }
+            else
+            {
+                codeEXP.text = string.Format("{0}/{1}", characterData.curEXP, characterData.requiredEXP);
+                imgFillEXP.fillAmount = 1f* characterData.curEXP / characterData.requiredEXP;
+
+            }
+            codeHP.text = characterData.maxHP.ToString();
+            codeATK.text = characterData.ATK.ToString();
+            codeDEF.text = characterData.DEF.ToString();
+            codeRES.text = characterData.RES.ToString();
+
             InitSkillTree(characterData.typeID);
         }
     }

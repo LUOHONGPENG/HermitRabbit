@@ -15,11 +15,10 @@ MonoBehaviour:
   items:
   - id: 1001
     name: Leo
-    HP: 35
-    STR: 2
-    CON: 3
-    INT: 10
-    WIS: 8
+    HP: 8
+    ATK: 4
+    DEF: 0
+    RES: 2
     MOV: 4
     AP: 3
     AttackID: 1001
@@ -28,11 +27,10 @@ MonoBehaviour:
     portraitUrl: Sprite/Portrait/imgPortrait1001
   - id: 1002
     name: Kizuna
-    HP: 55
-    STR: 9
-    CON: 5
-    INT: 4
-    WIS: 4
+    HP: 12
+    ATK: 6
+    DEF: 2
+    RES: 0
     MOV: 6
     AP: 3
     AttackID: 2001

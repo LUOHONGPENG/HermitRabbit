@@ -15,10 +15,10 @@ MonoBehaviour:
   items:
   - id: 1001
     name: LinkedList
-    HP: 30
-    ATK: 9
-    DEF: 3
-    RES: 5
+    HP: 5
+    ATK: 4
+    DEF: 1
+    RES: 0
     MOV: 3
     skillID: 9001
     pixelUrl: PixelEvilGod

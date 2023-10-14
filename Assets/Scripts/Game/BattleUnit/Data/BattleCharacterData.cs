@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BattleCharacterData : BattleUnitData
+public partial class BattleCharacterData : BattleUnitData
 {
-    //Data
-    public int STR;
-    public int CON;
-    public int INT;
-    public int WIS;
+    //BattleData
+    public int ATK;
+    public int DEF;
+    public int RES;
 
     private CharacterExcelItem item;
 
@@ -22,18 +21,20 @@ public class BattleCharacterData : BattleUnitData
         //Pos Setting
         posID = new Vector2Int(item.startPos[0], item.startPos[1]);
         //Attribute Setting
+        ATK = item.ATK;
+        DEF = item.DEF;
+        RES = item.RES;
+        //3 Attribute Setting
         curHP = item.HP;
         maxHP = item.HP;
         curAP = item.AP;
         maxAP = item.AP;
         curMOV = item.MOV;
         maxMOV = item.MOV;
-
-        STR = item.STR;
-        CON = item.CON;
-        INT = item.INT;
-        WIS = item.WIS;
-
+        //Grow Setting
+        EXP = 0;
+        SPSpent = 0;
+        InitSkillNode();
     }
 
     public CharacterExcelItem GetItem()
@@ -45,14 +46,7 @@ public class BattleCharacterData : BattleUnitData
     {
         get
         {
-            if(typeID == 1001)
-            {
-                return INT;
-            }
-            else
-            {
-                return STR;
-            }
+            return ATK;
         }
     }
 
@@ -60,7 +54,7 @@ public class BattleCharacterData : BattleUnitData
     {
         get
         {
-            return CON;
+            return DEF;
         }
     }
 
@@ -68,7 +62,7 @@ public class BattleCharacterData : BattleUnitData
     {
         get
         {
-            return WIS;
+            return RES;
         }
     }
 
@@ -76,5 +70,85 @@ public class BattleCharacterData : BattleUnitData
     {
         curAP = maxAP;
         curMOV = maxMOV;
+    }
+}
+
+
+public partial class BattleCharacterData
+{
+    //LevelData
+    public int EXP = 0;
+    public int SPSpent = 0;
+    public List<int> listUnlockSkillNode = new List<int>();
+
+    public void InitSkillNode()
+    {
+        listUnlockSkillNode.Clear();
+
+    }
+
+    public void AcquireSkillNode(int nodeID)
+    {
+        if (!CheckSkillNode(nodeID))
+        {
+            listUnlockSkillNode.Add(nodeID);
+        }
+    }
+
+    public bool CheckSkillNode(int nodeID)
+    {
+        if (listUnlockSkillNode.Contains(nodeID))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public int Level
+    {
+        get
+        {
+            return ExcelDataMgr.Instance.characterExpExcelData.GetLevelFromExp(EXP);
+        }
+    }
+
+    public int SPLeft
+    {
+        get
+        {
+            int TotalSp = ExcelDataMgr.Instance.characterExpExcelData.GetExpItem(Level).SP;
+            return TotalSp - SPSpent;
+        }
+    }
+
+    public int curEXP
+    {
+        get
+        {
+            return EXP - ExcelDataMgr.Instance.characterExpExcelData.GetExpItem(Level).EXP;
+        }
+    }
+
+    public int requiredEXP
+    {
+        get
+        {
+            return ExcelDataMgr.Instance.characterExpExcelData.GetExpItem(Level+1).EXP - ExcelDataMgr.Instance.characterExpExcelData.GetExpItem(Level).EXP;
+        }
+    }
+
+    public bool CheckWhetherMaxLevel()
+    {
+        if(ExcelDataMgr.Instance.characterExpExcelData.GetExpItem(Level+1) == null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

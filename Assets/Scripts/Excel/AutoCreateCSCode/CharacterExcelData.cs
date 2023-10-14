@@ -10,10 +10,9 @@ public partial class CharacterExcelItem : ExcelItemBase
 {
 	public string name;
 	public int HP;
-	public int STR;
-	public int CON;
-	public int INT;
-	public int WIS;
+	public int ATK;
+	public int DEF;
+	public int RES;
 	public int MOV;
 	public int AP;
 	public int AttackID;
@@ -42,10 +41,9 @@ public class CharacterAssetAssignment
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].name = allItemValueRowList[i]["name"];
 			items[i].HP = Convert.ToInt32(allItemValueRowList[i]["HP"]);
-			items[i].STR = Convert.ToInt32(allItemValueRowList[i]["STR"]);
-			items[i].CON = Convert.ToInt32(allItemValueRowList[i]["CON"]);
-			items[i].INT = Convert.ToInt32(allItemValueRowList[i]["INT"]);
-			items[i].WIS = Convert.ToInt32(allItemValueRowList[i]["WIS"]);
+			items[i].ATK = Convert.ToInt32(allItemValueRowList[i]["ATK"]);
+			items[i].DEF = Convert.ToInt32(allItemValueRowList[i]["DEF"]);
+			items[i].RES = Convert.ToInt32(allItemValueRowList[i]["RES"]);
 			items[i].MOV = Convert.ToInt32(allItemValueRowList[i]["MOV"]);
 			items[i].AP = Convert.ToInt32(allItemValueRowList[i]["AP"]);
 			items[i].AttackID = Convert.ToInt32(allItemValueRowList[i]["AttackID"]);

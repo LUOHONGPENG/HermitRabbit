@@ -52,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objPopup: {fileID: 7149500556529310225}
   miniCharacterUI1001: {fileID: 4187140449024939457}
-  miniCharacterUI2001: {fileID: 5683632021019097169}
+  miniCharacterUI1002: {fileID: 5683632021019097169}
   btnEndTurn: {fileID: 1908735029351937132}
 --- !u!1 &5186067533583554004
 GameObject:

@@ -12,8 +12,6 @@ public partial class GameData
     public GamePhase gamePhase = GamePhase.Peace;
     public int numDay = 1;
 
-
-
     public void NewGame()
     {
         numDay = 1;
