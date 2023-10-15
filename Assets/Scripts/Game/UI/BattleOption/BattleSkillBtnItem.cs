@@ -29,5 +29,12 @@ public class BattleSkillBtnItem : BattleBtnBase
         return skillItem;
     }
 
-    
+    public int GetSkillBtnID()
+    {
+        return skillItem.id;
+    }
+    public int GetSkillBtnCharacterID()
+    {
+        return skillItem.characterID;
+    }
 }

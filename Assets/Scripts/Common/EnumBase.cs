@@ -112,7 +112,8 @@ public enum PlantTriggerType
 public enum SkillNodeType
 {
     Active,
-    Passive
+    Passive,
+    Numerical
 }
 
 #endregion
@@ -134,5 +135,7 @@ public enum BattleTextType
 
 public enum UITipType
 {
-    SkillNode
+    SkillNode,
+    SkillButton
+
 }

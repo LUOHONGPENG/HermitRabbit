@@ -44,6 +44,12 @@ public class SkillNodeUIItem : MonoBehaviour
             imgFrame.sprite = Resources.Load("Sprite/Skill/imgIconSkill_Passive", typeof(Sprite)) as Sprite;
             imgButton.sprite = Resources.Load("Sprite/Skill/imgIconSkill_PassiveFill", typeof(Sprite)) as Sprite;
         }
+        else if(nodeItem.nodeType == SkillNodeType.Numerical)
+        {
+            imgFrame.sprite = Resources.Load("Sprite/Skill/imgIconSkill_Numerical", typeof(Sprite)) as Sprite;
+            imgButton.sprite = Resources.Load("Sprite/Skill/imgIconSkill_NumericalFill", typeof(Sprite)) as Sprite;
+        }
+
         imgIcon.sprite = Resources.Load("Sprite/Skill/" + nodeItem.iconUrl, typeof(Sprite)) as Sprite;
 
         btnNode.onClick.RemoveAllListeners();

@@ -10,15 +10,15 @@ public class SkillNodeTipUIMgr : MonoBehaviour
     public Text codeName;
     public Text codeDesc;
 
-    private int curID;
+    private int curNodeID;
 
     public void ShowTip(int nodeID,Vector2 mousePos)
     {
-        if (nodeID != curID)
+        if (nodeID != curNodeID)
         {
             SkillNodeExcelItem nodeExcelItem = PublicTool.GetSkillNodeItem(nodeID);
             codeName.text = nodeExcelItem.name;
-            codeDesc.text = nodeExcelItem.id.ToString();
+            codeDesc.text = nodeExcelItem.desc;
         }
         tfMouse.position = new Vector3(mousePos.x,mousePos.y,tfMouse.transform.position.z);
         objPopup.SetActive(true);

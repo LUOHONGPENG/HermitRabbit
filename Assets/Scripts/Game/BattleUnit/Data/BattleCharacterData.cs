@@ -47,7 +47,15 @@ public partial class BattleCharacterData : BattleUnitData
     {
         get
         {
-            return ATK;
+            int tempATK = 0;
+            //Basic ATK
+            tempATK += ATK;
+            //
+            if (CheckUnlockSkillNode(1071))
+            {
+                tempATK += 1;
+            }
+            return tempATK;
         }
     }
 
@@ -160,3 +168,4 @@ public partial class BattleCharacterData
         }
     }
 }
+

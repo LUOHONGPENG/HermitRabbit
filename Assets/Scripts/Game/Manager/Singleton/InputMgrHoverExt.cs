@@ -36,6 +36,11 @@ public partial class InputMgr
             CheckMouseRayUI();
             return;
         }
+        else
+        {
+            //May Need Modify Later
+            EventCenter.Instance.EventTrigger("HideUITip", null);
+        }
 
         Ray ray = GetMouseRay();
         //Cast Map Tile
@@ -111,6 +116,16 @@ public partial class InputMgr
                 {
                     SkillNodeUIItem nodeUI = item.gameObject.transform.parent.GetComponent<SkillNodeUIItem>();
                     UITipInfo uiTipInfo = new UITipInfo(UITipType.SkillNode, nodeUI.GetNodeID(), -1, GetMousePosUI());
+                    EventCenter.Instance.EventTrigger("ShowUITip", uiTipInfo);
+                    return;
+                }
+            }
+            else if (item.gameObject.tag == "SkillButtonUI")
+            {
+                if (item.gameObject.GetComponent<BattleSkillBtnItem>() != null)
+                {
+                    BattleSkillBtnItem buttonUI = item.gameObject.transform.GetComponent<BattleSkillBtnItem>();
+                    UITipInfo uiTipInfo = new UITipInfo(UITipType.SkillButton, buttonUI.GetSkillBtnID(), buttonUI.GetSkillBtnCharacterID(), GetMousePosUI());
                     EventCenter.Instance.EventTrigger("ShowUITip", uiTipInfo);
                     return;
                 }
