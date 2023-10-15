@@ -63,7 +63,7 @@ MonoBehaviour:
     name: Holy Thunder
     costAP: 1
     element: 3
-    range: 4
+    range: 5
     isRangeSelf: 0
     needExtraTarget: 0
     radius: 0

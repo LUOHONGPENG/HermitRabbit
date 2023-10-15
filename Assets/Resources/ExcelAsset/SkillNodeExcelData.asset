@@ -25,78 +25,179 @@ MonoBehaviour:
     iconUrl: imgIconSkill_Default
     rowID: 0
     columnID: 0
-  - id: 1071
+    remark: 
+  - id: 1021
     name: Magic Apprentice
     desc: Increase ATK by 1 point.
     nodeType: 2
     costSP: 1
     conditionSPSpent: 0
-    conditionPreNode: 00000000
+    conditionPreNode: e9030000
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 0
-    columnID: 2
+    columnID: 3
+    remark: 1011HP,1021ATK,1031DEF,1041RES,1051MOVE
   - id: 1101
     name: Inferno
     desc: 
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
-    conditionPreNode: 00000000
+    conditionPreNode: e9030000
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 1
-    columnID: -2
+    columnID: -3
+    remark: 
   - id: 1191
     name: Quick Fire
     desc: AP Cost of Inferno - 1, but damage - 2.
     nodeType: 1
     costSP: 2
-    conditionSPSpent: 1
-    conditionPreNode: e9030000
+    conditionSPSpent: 0
+    conditionPreNode: 4d040000
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 2
-    columnID: -3
+    columnID: -4
+    remark: 
   - id: 1192
     name: Fire Area
     desc: Skill Radius of Inferno + 1,but damage - 2.
     nodeType: 1
     costSP: 2
-    conditionSPSpent: 1
-    conditionPreNode: e9030000
+    conditionSPSpent: 0
+    conditionPreNode: 4d040000
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 2
+    columnID: -2
+    remark: 
+  - id: 1102
+    name: Boom!
+    desc: Deal damage according to burning.
+    nodeType: 0
+    costSP: 2
+    conditionSPSpent: 0
+    conditionPreNode: 4d040000
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 3
+    columnID: -3
+    remark: 
+  - id: 1201
+    name: Stream
+    desc: 
+    nodeType: 0
+    costSP: 1
+    conditionSPSpent: 0
+    conditionPreNode: e9030000
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 1
     columnID: -1
+    remark: 
+  - id: 1202
+    name: Water Shield
+    desc: 
+    nodeType: 0
+    costSP: 1
+    conditionSPSpent: 0
+    conditionPreNode: e9030000
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 1
+    columnID: 1
+    remark: 
+  - id: 1203
+    name: Clear
+    desc: Remove 1 debuff.
+    nodeType: 0
+    costSP: 1
+    conditionSPSpent: 0
+    conditionPreNode: b1040000b2040000
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 2
+    columnID: 0
+    remark: 
+  - id: 1204
+    name: 'Gravity '
+    desc: 
+    nodeType: 0
+    costSP: 2
+    conditionSPSpent: 0
+    conditionPreNode: b3040000
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 3
+    columnID: 0
+    remark: 
   - id: 1301
     name: Holy Thunder
     desc: 
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
-    conditionPreNode: 00000000
+    conditionPreNode: e9030000
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 1
-    columnID: 2
+    columnID: 3
+    remark: 
+  - id: 1391
+    name: Dizzy Light
+    desc: 
+    nodeType: 1
+    costSP: 2
+    conditionSPSpent: 0
+    conditionPreNode: 15050000
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 2
+    columnID: 4
+    remark: 
   - id: 1302
     name: Teleport
     desc: 
     nodeType: 0
     costSP: 2
-    conditionSPSpent: 2
-    conditionPreNode: 00000000
+    conditionSPSpent: 0
+    conditionPreNode: 15050000
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
-    rowID: 2
-    columnID: 2
+    rowID: 3
+    columnID: 3
+    remark: 
+  - id: 1901
+    name: Infinite
+    desc: 'Give character a Buff named Infinite with 3 layers.
+
+      Infinite can
+      enlarge next 3 skills'' radius by 1 unit.'
+    nodeType: 0
+    costSP: 3
+    conditionSPSpent: 0
+    conditionPreNode: 4e040000b404000016050000
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 4
+    columnID: 0
+    remark: 
   - id: 2001
     name: Strike
     desc: Normal Attack,deal ATK damage.
@@ -109,63 +210,69 @@ MonoBehaviour:
     iconUrl: imgIconSkill_BFStrike
     rowID: 0
     columnID: 0
+    remark: 
   - id: 2101
     name: Worker Wind
     desc: 
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
-    conditionPreNode: 00000000
+    conditionPreNode: d1070000
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_BFCut
     rowID: 1
-    columnID: -2
-  - id: 2102
-    name: Overtime Work
-    desc: 
-    nodeType: 0
-    costSP: 2
-    conditionSPSpent: 4
-    conditionPreNode: 00000000
-    isInitUnlock: 0
-    characterID: 1002
-    iconUrl: imgIconSkill_Overtime
-    rowID: 3
-    columnID: -2
+    columnID: -3
+    remark: 
   - id: 2191
     name: Injury Benefit
     desc: 
     nodeType: 1
     costSP: 2
-    conditionSPSpent: 2
-    conditionPreNode: 00000000
+    conditionSPSpent: 0
+    conditionPreNode: 35080000
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_InjuryB
     rowID: 2
-    columnID: -2
+    columnID: -3
+    remark: 
+  - id: 2102
+    name: Overtime Work
+    desc: 
+    nodeType: 0
+    costSP: 2
+    conditionSPSpent: 0
+    conditionPreNode: 8f080000
+    isInitUnlock: 0
+    characterID: 1002
+    iconUrl: imgIconSkill_Overtime
+    rowID: 3
+    columnID: -3
+    remark: 
   - id: 2201
     name: Self Heal
     desc: 
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
-    conditionPreNode: 00000000
+    conditionPreNode: d1070000
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Default
     rowID: 1
     columnID: 0
+    remark: 
   - id: 2301
     name: Inspire
     desc: 
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
-    conditionPreNode: 00000000
+    conditionPreNode: d1070000
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Default
     rowID: 1
-    columnID: 2
+    columnID: 3
+    remark: 

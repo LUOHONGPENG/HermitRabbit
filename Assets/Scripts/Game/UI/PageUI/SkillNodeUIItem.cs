@@ -88,7 +88,27 @@ public class SkillNodeUIItem : MonoBehaviour
         }
         else
         {
+            bool isMeetUnlockNode = false;
+            for(int i =0;i< nodeItem.conditionPreNode.Count; i++)
+            {
+                int unlockKey = nodeItem.conditionPreNode[i];
+                if(unlockKey == 0)
+                {
+                    isMeetUnlockNode = true;
+                    break;
+                }
+
+                if (characterData.CheckUnlockSkillNode(unlockKey))
+                {
+                    isMeetUnlockNode = true;
+                    break;
+                }
+            }
             if(characterData.SPSpent < nodeItem.conditionSPSpent)
+            {
+                nodeState = NodeState.LockCondition;
+            }
+            else if (!isMeetUnlockNode)
             {
                 nodeState = NodeState.LockCondition;
             }

@@ -51,7 +51,7 @@ public partial class BattleCharacterData : BattleUnitData
             //Basic ATK
             tempATK += ATK;
             //
-            if (CheckUnlockSkillNode(1071))
+            if (CheckUnlockSkillNode(1021))
             {
                 tempATK += 1;
             }

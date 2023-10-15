@@ -87,7 +87,15 @@ public class StatusUIMgr : MonoBehaviour
     }
     #endregion
 
+    #region Refresh
     public void RefreshCharacterInfo()
+    {
+        RefreshCharacterStatus();
+        InitSkillTree();
+
+    }
+
+    public void RefreshCharacterStatus()
     {
         if (characterData != null)
         {
@@ -101,22 +109,34 @@ public class StatusUIMgr : MonoBehaviour
             else
             {
                 codeEXP.text = string.Format("{0}/{1}", characterData.curEXP, characterData.requiredEXP);
-                imgFillEXP.fillAmount = 1f* characterData.curEXP / characterData.requiredEXP;
+                imgFillEXP.fillAmount = 1f * characterData.curEXP / characterData.requiredEXP;
 
             }
             codeHP.text = characterData.maxHP.ToString();
-            codeATK.text = characterData.ATK.ToString();
-            codeDEF.text = characterData.DEF.ToString();
-            codeRES.text = characterData.RES.ToString();
+            codeATK.text = characterData.curATK.ToString();
+            codeDEF.text = characterData.curDEF.ToString();
+            codeRES.text = characterData.curRES.ToString();
 
-            InitSkillTree(characterData.typeID);
         }
     }
 
+
+
+    #endregion
+
     #region Skill Tree
 
-    public void InitSkillTree(int characterID)
+    public void InitSkillTree()
     {
+        int characterID = -1;
+        if (characterData == null)
+        {
+            return;
+        }
+        characterID = characterData.typeID;
+
+
+
         //Clear
         foreach (Transform tf in listTfNode)
         {
@@ -140,7 +160,7 @@ public class StatusUIMgr : MonoBehaviour
 
     private void UpdateSkillTreeEvent(object arg0)
     {
-        codeSPLeft.text = characterData.SPLeft.ToString();
+        RefreshCharacterStatus();
         for (int i = 0; i < listNodeUI.Count; i++)
         {
             listNodeUI[i].UpdateNodeUI();
