@@ -130,6 +130,7 @@ public class StatusUIMgr : MonoBehaviour
         {
             SkillNodeExcelItem nodeItem = listSkillNode[i];
             GameObject objNode = GameObject.Instantiate(pfNode, listTfNode[nodeItem.rowID]);
+            objNode.transform.localPosition = new Vector2(nodeItem.columnID * GameGlobal.skillNodeSpacing, objNode.transform.localPosition.y);
             SkillNodeUIItem itemNode = objNode.GetComponent<SkillNodeUIItem>();
             itemNode.Init(nodeItem);
             listNodeUI.Add(itemNode);

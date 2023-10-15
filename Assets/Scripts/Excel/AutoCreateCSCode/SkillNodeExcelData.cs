@@ -18,6 +18,7 @@ public partial class SkillNodeExcelItem : ExcelItemBase
 	public int characterID;
 	public string iconUrl;
 	public int rowID;
+	public int columnID;
 }
 
 [CreateAssetMenu(fileName = "SkillNodeExcelData", menuName = "Excel To ScriptableObject/Create SkillNodeExcelData", order = 1)]
@@ -48,6 +49,7 @@ public class SkillNodeAssetAssignment
 			items[i].characterID = Convert.ToInt32(allItemValueRowList[i]["characterID"]);
 			items[i].iconUrl = allItemValueRowList[i]["iconUrl"];
 			items[i].rowID = Convert.ToInt32(allItemValueRowList[i]["rowID"]);
+			items[i].columnID = Convert.ToInt32(allItemValueRowList[i]["columnID"]);
 		}
 		SkillNodeExcelData excelDataAsset = ScriptableObject.CreateInstance<SkillNodeExcelData>();
 		excelDataAsset.items = items;

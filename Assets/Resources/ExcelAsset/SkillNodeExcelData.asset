@@ -24,6 +24,7 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 0
+    columnID: 0
   - id: 1071
     name: Magic Apprentice
     desc: Increase ATK by 1 point.
@@ -35,6 +36,7 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 0
+    columnID: 2
   - id: 1101
     name: Inferno
     desc: 
@@ -46,6 +48,7 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 1
+    columnID: -2
   - id: 1191
     name: Quick Fire
     desc: AP Cost of Inferno - 1, but damage - 2.
@@ -57,6 +60,7 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 2
+    columnID: -3
   - id: 1192
     name: Fire Area
     desc: Skill Radius of Inferno + 1,but damage - 2.
@@ -68,6 +72,7 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 2
+    columnID: -1
   - id: 1301
     name: Holy Thunder
     desc: 
@@ -79,6 +84,7 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 1
+    columnID: 2
   - id: 1302
     name: Teleport
     desc: 
@@ -90,6 +96,7 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 2
+    columnID: 2
   - id: 2001
     name: Strike
     desc: Normal Attack,deal ATK damage.
@@ -101,6 +108,7 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_BFStrike
     rowID: 0
+    columnID: 0
   - id: 2101
     name: Worker Wind
     desc: 
@@ -112,6 +120,7 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_BFCut
     rowID: 1
+    columnID: -2
   - id: 2102
     name: Overtime Work
     desc: 
@@ -123,6 +132,7 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_Overtime
     rowID: 3
+    columnID: -2
   - id: 2191
     name: Injury Benefit
     desc: 
@@ -134,6 +144,7 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_InjuryB
     rowID: 2
+    columnID: -2
   - id: 2201
     name: Self Heal
     desc: 
@@ -145,6 +156,7 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_Default
     rowID: 1
+    columnID: 0
   - id: 2301
     name: Inspire
     desc: 
@@ -156,3 +168,4 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_Default
     rowID: 1
+    columnID: 2
