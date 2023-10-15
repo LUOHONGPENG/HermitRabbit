@@ -8,7 +8,9 @@ public static class GameGlobal
 
     public static int mapSize = 9;
 
-    public static float skillNodeSpacing = 120f;
+    public static float skillNodeSpacingX = 120f;
+    public static float skillNodeSpacingY = 200f;
+
 
     #region Shared Data
 

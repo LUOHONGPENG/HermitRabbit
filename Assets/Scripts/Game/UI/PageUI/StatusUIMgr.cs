@@ -24,9 +24,14 @@ public class StatusUIMgr : MonoBehaviour
     public Text codeRES;
 
     [Header("SkillNode")]
-    public List<Transform> listTfNode;
+    public Transform tfNode;
     public GameObject pfNode;
     public List<SkillNodeUIItem> listNodeUI = new List<SkillNodeUIItem>();
+    public Dictionary<int, SkillNodeUIItem> dicNodeUI = new Dictionary<int, SkillNodeUIItem>();
+
+    [Header("SkillLine")]
+    public Transform tfLine;
+    public GameObject pfLine;
 
     private BattleCharacterData characterData;
 
@@ -128,6 +133,7 @@ public class StatusUIMgr : MonoBehaviour
 
     public void InitSkillTree()
     {
+        //Check Character ID
         int characterID = -1;
         if (characterData == null)
         {
@@ -135,26 +141,41 @@ public class StatusUIMgr : MonoBehaviour
         }
         characterID = characterData.typeID;
 
-
-
-        //Clear
-        foreach (Transform tf in listTfNode)
-        {
-            PublicTool.ClearChildItem(tf);
-        }
-
+        //ClearSkillNode
+        PublicTool.ClearChildItem(tfNode);
+        PublicTool.ClearChildItem(tfLine);
         listNodeUI.Clear();
+        dicNodeUI.Clear();
+        //Start Generating Skill Nodes
         List<SkillNodeExcelItem> listSkillNode = ExcelDataMgr.Instance.skillNodeExcelData.GetSkillNodeList(characterID);
-
         for(int i = 0; i < listSkillNode.Count; i++)
         {
             SkillNodeExcelItem nodeItem = listSkillNode[i];
-            GameObject objNode = GameObject.Instantiate(pfNode, listTfNode[nodeItem.rowID]);
-            objNode.transform.localPosition = new Vector2(nodeItem.columnID * GameGlobal.skillNodeSpacing, objNode.transform.localPosition.y);
+            //Generate Skill Node and Set the position
+            GameObject objNode = GameObject.Instantiate(pfNode, tfNode);
+            objNode.transform.localPosition = new Vector2(nodeItem.columnID * GameGlobal.skillNodeSpacingX, 400f - nodeItem.rowID * GameGlobal.skillNodeSpacingY);
             SkillNodeUIItem itemNode = objNode.GetComponent<SkillNodeUIItem>();
             itemNode.Init(nodeItem);
-            listNodeUI.Add(itemNode);
             itemNode.UpdateNodeUI();
+            //Store the information
+            listNodeUI.Add(itemNode);
+            dicNodeUI.Add(nodeItem.id, itemNode);
+
+            //Generate Skill Line if there is a node condition
+            if(nodeItem.conditionPreNode.Count>=0 && nodeItem.conditionPreNode[0] != 0)
+            {
+                for(int j = 0;j < nodeItem.conditionPreNode.Count; j++)
+                {
+                    int endID = nodeItem.conditionPreNode[j];
+                    if (!dicNodeUI.ContainsKey(endID))
+                    {
+                        continue;
+                    }
+                    GameObject objLine = GameObject.Instantiate(pfLine, tfLine);
+                    SkillLineUIItem itemLine = objLine.GetComponent<SkillLineUIItem>();
+                    itemLine.Init(itemNode.transform.localPosition, dicNodeUI[endID].transform.localPosition);
+                }
+            }
         }
     }
 
