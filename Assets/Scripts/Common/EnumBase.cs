@@ -110,6 +110,7 @@ public enum SkillDamageDeltaStd
     None,
     Const,
     ATK,
+    ATKMOV,
     MAXHP,
     DEF,
     RES

@@ -29,6 +29,7 @@ MonoBehaviour:
     damageDelta: 100
     damageModifier: 0
     listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
     activeSkillType: 0
     characterID: 1001
     iconUrl: 
@@ -50,11 +51,34 @@ MonoBehaviour:
     damageDelta: 150
     damageModifier: 0
     listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
     activeSkillType: 1
     characterID: 1001
     iconUrl: imgIconSkill_1101
     unlockNodeID: 1101
     desc: Use fire ball to attack multiple foes.
+  - id: 1202
+    name: 'Gravity '
+    costAP: 2
+    range: 3
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 1
+    regionType: 1
+    foeEffect: 1
+    characterEffect: 0
+    plantEffect: 0
+    damageType: 2
+    damageDeltaStd: 3
+    damageDelta: 100
+    damageModifier: -3
+    listSpecialEffect: d1070000
+    listSpecialDelta: 02000000
+    activeSkillType: 1
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    unlockNodeID: 1202
+    desc: 
   - id: 1301
     name: Stream
     costAP: 1
@@ -67,10 +91,11 @@ MonoBehaviour:
     characterEffect: 0
     plantEffect: 2
     damageType: 2
-    damageDeltaStd: 5
+    damageDeltaStd: 6
     damageDelta: 200
     damageModifier: 0
     listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
     activeSkillType: 1
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -92,6 +117,7 @@ MonoBehaviour:
     damageDelta: 100
     damageModifier: 0
     listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
     activeSkillType: 1
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -113,6 +139,7 @@ MonoBehaviour:
     damageDelta: 0
     damageModifier: 0
     listSpecialEffect: b90b0000
+    listSpecialDelta: 00000000
     activeSkillType: 2
     characterID: 1001
     iconUrl: imgIconSkill_1302
@@ -134,6 +161,7 @@ MonoBehaviour:
     damageDelta: 100
     damageModifier: 0
     listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
     activeSkillType: 0
     characterID: 1002
     iconUrl: 
@@ -155,12 +183,13 @@ MonoBehaviour:
     damageDelta: 100
     damageModifier: -1
     listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
     activeSkillType: 1
     characterID: 1002
     iconUrl: imgIconSkill_BFCut
     unlockNodeID: 2101
     desc: Cut the foes around you.
-  - id: 2201
+  - id: 2301
     name: Self Heal
     costAP: 1
     range: 0
@@ -172,16 +201,17 @@ MonoBehaviour:
     characterEffect: 2
     plantEffect: 0
     damageType: 3
-    damageDeltaStd: 3
+    damageDeltaStd: 4
     damageDelta: 50
     damageModifier: -1
     listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
     activeSkillType: 2
     characterID: 1002
     iconUrl: imgIconSkill_2201
-    unlockNodeID: 2201
+    unlockNodeID: 2301
     desc: Self Heal for 20% HP.
-  - id: 2301
+  - id: 2401
     name: Inspire
     costAP: 1
     range: 4
@@ -197,10 +227,11 @@ MonoBehaviour:
     damageDelta: 0
     damageModifier: 0
     listSpecialEffect: e9030000
+    listSpecialDelta: 01000000
     activeSkillType: 2
     characterID: 1002
     iconUrl: imgIconSkill_2301
-    unlockNodeID: 2301
+    unlockNodeID: 2401
     desc: Regain AP by 1.
   - id: 3001
     name: Tadpole Strike
@@ -218,6 +249,7 @@ MonoBehaviour:
     damageDelta: 100
     damageModifier: 0
     listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
     activeSkillType: 4
     characterID: 0
     iconUrl: 
@@ -239,6 +271,7 @@ MonoBehaviour:
     damageDelta: 100
     damageModifier: 0
     listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
     activeSkillType: 5
     characterID: 0
     iconUrl: 

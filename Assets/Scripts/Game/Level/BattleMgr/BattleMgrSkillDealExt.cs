@@ -6,22 +6,22 @@ public partial class BattleMgr
 {
     private void SkillEffectRequest(BattleUnitData source, BattleUnitData target, SkillEffectType effectType)
     {
-        if (skillBattleInfo.damageDeltaFloat > 0)
-        {
-            SkillDamageLikeRequest(source, target, effectType);
-        }
-
         if (skillBattleInfo.listSpecialEffect.Count > 0)
         {
-            for(int i = 0; i < skillBattleInfo.listSpecialEffect.Count; i++)
+            for (int i = 0; i < skillBattleInfo.listSpecialEffect.Count; i++)
             {
                 SkillSpecialExcelItem skillSpecial = skillBattleInfo.listSpecialEffect[i];
 
-                if(skillSpecial.effectType == effectType)
+                if (skillSpecial.effectType == effectType)
                 {
-                    SkillSpecialEffectDeal(source, target, skillSpecial.id);
+                    SkillSpecialEffectDeal(source, target, skillSpecial.id, skillBattleInfo.listSpecialDelta[i]);
                 }
             }
+        }
+
+        if (skillBattleInfo.damageDeltaFloat > 0)
+        {
+            SkillDamageLikeRequest(source, target, effectType);
         }
     }
 
@@ -37,6 +37,13 @@ public partial class BattleMgr
                 break;
             case SkillDamageDeltaStd.ATK:
                 damageSource = source.curATK * skillBattleInfo.damageDeltaFloat;
+                break;
+            case SkillDamageDeltaStd.ATKMOV:
+                damageSource = source.curATK * skillBattleInfo.damageDeltaFloat;
+                if (source.curMOV >= target.curMOV)
+                {
+                    damageSource += (source.curMOV - target.curMOV);
+                }
                 break;
             case SkillDamageDeltaStd.MAXHP:
                 damageSource = source.maxHP * skillBattleInfo.damageDeltaFloat;
@@ -84,13 +91,21 @@ public partial class BattleMgr
         return NormalizedDamage;
     }
 
-    private void SkillSpecialEffectDeal(BattleUnitData source, BattleUnitData target,int specialEffectID)
+    private void SkillSpecialEffectDeal(BattleUnitData source, BattleUnitData target,int specialEffectID,int delta)
     {
         switch (specialEffectID)
         {
             case 1001:
-                target.curAP = target.curAP + 1;
-                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Special, "AP+1", target.posID));
+                target.curAP = target.curAP + delta;
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Special, string.Format("AP+{0}", delta), target.posID));
+                break;
+            case 2001:
+                target.curMOV -= delta;
+                if (target.curMOV < 0)
+                {
+                    target.curMOV = 0;
+                }
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, string.Format("MOV-{0}", delta), target.posID));
                 break;
             case 3001:
                 target.posID = skillTargetPosExtra;

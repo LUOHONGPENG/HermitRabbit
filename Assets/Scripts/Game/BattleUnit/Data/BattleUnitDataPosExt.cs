@@ -270,9 +270,6 @@ public partial class BattleUnitData
                 }
             }
 
-
-
-
             if (haveValidNode)
             {
                 validNode.hCostReal = tarNode.hCostReal;

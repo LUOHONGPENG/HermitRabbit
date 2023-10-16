@@ -23,6 +23,7 @@ public partial class SkillExcelItem : ExcelItemBase
 	public int damageDelta;
 	public int damageModifier;
 	public List<int> listSpecialEffect;
+	public List<int> listSpecialDelta;
 	public ActiveSkillType activeSkillType;
 	public int characterID;
 	public string iconUrl;
@@ -63,6 +64,7 @@ public class SkillAssetAssignment
 			items[i].damageDelta = Convert.ToInt32(allItemValueRowList[i]["damageDelta"]);
 			items[i].damageModifier = Convert.ToInt32(allItemValueRowList[i]["damageModifier"]);
 			items[i].listSpecialEffect = new List<int>(Array.ConvertAll((allItemValueRowList[i]["listSpecialEffect"]).Split(';'), int.Parse));
+			items[i].listSpecialDelta = new List<int>(Array.ConvertAll((allItemValueRowList[i]["listSpecialDelta"]).Split(';'), int.Parse));
 			items[i].activeSkillType = (ActiveSkillType) Enum.Parse(typeof(ActiveSkillType), allItemValueRowList[i]["activeSkillType"], true);
 			items[i].characterID = Convert.ToInt32(allItemValueRowList[i]["characterID"]);
 			items[i].iconUrl = allItemValueRowList[i]["iconUrl"];
