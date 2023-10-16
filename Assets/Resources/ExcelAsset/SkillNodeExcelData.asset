@@ -32,13 +32,26 @@ MonoBehaviour:
     nodeType: 2
     costSP: 1
     conditionSPSpent: 0
-    conditionPreNode: e9030000
+    conditionPreNode: 00000000
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 0
     columnID: 2
-    remark: 1011HP,1021ATK,1031DEF,1041RES,1051MOVE
+    remark: 1011HP,1021ATK,1031DEF,1041RES,1051MOVE,1061AP
+  - id: 1041
+    name: Mage Armor
+    desc: Increase RES by 1 point.
+    nodeType: 2
+    costSP: 1
+    conditionSPSpent: 0
+    conditionPreNode: 00000000
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 0
+    columnID: -2
+    remark: 
   - id: 1101
     name: Inferno
     desc: 'Target all units and deal 1.5ATK+2 damage,
@@ -225,6 +238,32 @@ MonoBehaviour:
     iconUrl: imgIconSkill_BFStrike
     rowID: 0
     columnID: 0
+    remark: 
+  - id: 2021
+    name: Worker Strength
+    desc: Increase ATK by 1 point.
+    nodeType: 2
+    costSP: 1
+    conditionSPSpent: 0
+    conditionPreNode: 00000000
+    isInitUnlock: 0
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    rowID: 0
+    columnID: 2
+    remark: 
+  - id: 2031
+    name: Pressure Resist
+    desc: Increase DEF by 1 point.
+    nodeType: 2
+    costSP: 1
+    conditionSPSpent: 0
+    conditionPreNode: 00000000
+    isInitUnlock: 0
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    rowID: 0
+    columnID: -2
     remark: 
   - id: 2101
     name: Worker Wind

@@ -59,7 +59,7 @@ public struct SkillBattleInfo
         //Range
         this.regionType = item.regionType;
         this.isRangeSelf = item.isRangeSelf;
-        this.range = item.range;
+        this.range = item.RealRange;
         this.radius = item.radius;
         //Target
         this.needExtraTarget = item.needExtraTarget;

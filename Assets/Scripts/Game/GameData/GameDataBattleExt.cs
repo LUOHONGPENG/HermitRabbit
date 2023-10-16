@@ -39,7 +39,6 @@ public partial class GameData
     {
         SkillExcelItem skillItem = PublicTool.GetSkillItem(skillID);
         curSkillBattleInfo = new SkillBattleInfo(skillItem);
-        SkillBattleInfo_PerkFilter();
     }
 
     public SkillBattleInfo GetCurSkillBattleInfo()
@@ -47,19 +46,6 @@ public partial class GameData
         return curSkillBattleInfo;
     }
 
-    /// <summary>
-    /// Maybe I need to rewrite it
-    /// </summary>
-    public void SkillBattleInfo_PerkFilter()
-    {
-        if(GetCurUnitType() == BattleUnitType.Character)
-        {
-            BattleCharacterData character =(BattleCharacterData)GetCurUnitData();
-            if (curSkillBattleInfo.activeSkillType == ActiveSkillType.SupportSkill && character.CheckUnlockSkillNode(2491))
-            {
-                curSkillBattleInfo.range = curSkillBattleInfo.range + 1;
-            }
-        }
-    }
+
     #endregion
 }

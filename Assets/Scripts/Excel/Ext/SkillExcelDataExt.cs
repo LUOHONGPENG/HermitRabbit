@@ -151,5 +151,18 @@ public partial class SkillExcelItem
         }
     }
 
+    public int RealRange
+    {
+        get
+        {
+            int temp = range;
+            if(activeSkillType == ActiveSkillType.SupportSkill && PublicTool.CheckWhetherCharacterUnlockSkill(1002, 2491))
+            {
+                temp++;
+            }
+            return temp;
+        }
+    }
+
 }
 

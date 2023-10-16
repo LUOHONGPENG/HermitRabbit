@@ -41,6 +41,10 @@ public class BattlePlantData : BattleUnitData
             int tempATK = 0;
             tempATK += item.ATK;
             tempATK += buffATK;
+            if (tempATK < 0)
+            {
+                tempATK = 0;
+            }
             return tempATK;
         }
     }
@@ -52,6 +56,10 @@ public class BattlePlantData : BattleUnitData
             int tempDEF = 0;
             tempDEF += item.DEF;
             tempDEF += buffDEF;
+            if (tempDEF < 0)
+            {
+                tempDEF = 0;
+            }
             return tempDEF;
         }
     }
@@ -63,6 +71,10 @@ public class BattlePlantData : BattleUnitData
             int tempRES = 0;
             tempRES += item.RES;
             tempRES += buffRES;
+            if (tempRES < 0)
+            {
+                tempRES = 0;
+            }
             return tempRES;
         }
     }

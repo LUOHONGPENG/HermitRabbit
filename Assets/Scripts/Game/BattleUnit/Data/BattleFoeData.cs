@@ -35,7 +35,7 @@ public class BattleFoeData : BattleUnitData
         SkillExcelItem skillItem = PublicTool.GetSkillItem(GetSkillID());
         if (skillItem != null)
         {
-            return skillItem.range + skillItem.radius;
+            return skillItem.RealRange + skillItem.radius;
         }
         else
         {
@@ -58,6 +58,10 @@ public class BattleFoeData : BattleUnitData
             int tempATK = 0;
             tempATK += item.ATK;
             tempATK += buffATK;
+            if (tempATK < 0)
+            {
+                tempATK = 0;
+            }
             return tempATK;
         }
     }
@@ -69,6 +73,10 @@ public class BattleFoeData : BattleUnitData
             int tempDEF = 0;
             tempDEF += item.DEF;
             tempDEF += buffDEF;
+            if (tempDEF < 0)
+            {
+                tempDEF = 0;
+            }
             return tempDEF;
         }
     }
@@ -80,6 +88,10 @@ public class BattleFoeData : BattleUnitData
             int tempRES = 0;
             tempRES += item.RES;
             tempRES += buffRES;
+            if (tempRES < 0)
+            {
+                tempRES = 0;
+            }
             return tempRES;
         }
     }
@@ -91,6 +103,10 @@ public class BattleFoeData : BattleUnitData
             int tempMOV = 0;
             tempMOV += maxMOV;
             tempMOV += buffMOV;
+            if (tempMOV < 0)
+            {
+                tempMOV = 0;
+            }
             return tempMOV;
         }
     }

@@ -51,9 +51,17 @@ public partial class BattleCharacterData : BattleUnitData
             //Basic ATK
             tempATK += ATK;
             tempATK += buffATK;
-            if (CheckUnlockSkillNode(1021))
+            if (PublicTool.CheckWhetherCharacterUnlockSkill(1001,1021))
             {
                 tempATK += 1;
+            }
+            if (PublicTool.CheckWhetherCharacterUnlockSkill(1002,2021))
+            {
+                tempATK += 1;
+            }
+            if (tempATK < 0)
+            {
+                tempATK = 0;
             }
             return tempATK;
         }
@@ -66,6 +74,14 @@ public partial class BattleCharacterData : BattleUnitData
             int tempDEF = 0;
             tempDEF += DEF;
             tempDEF += buffDEF;
+            if (PublicTool.CheckWhetherCharacterUnlockSkill(1002, 2031))
+            {
+                tempDEF += 1;
+            }
+            if (tempDEF < 0)
+            {
+                tempDEF = 0;
+            }
             return tempDEF;
         }
     }
@@ -77,6 +93,14 @@ public partial class BattleCharacterData : BattleUnitData
             int tempRES = 0;
             tempRES += RES;
             tempRES += buffRES;
+            if (PublicTool.CheckWhetherCharacterUnlockSkill(1001, 2041))
+            {
+                tempRES += 1;
+            }
+            if (tempRES < 0)
+            {
+                tempRES = 0;
+            }
             return tempRES;
         }
     }
@@ -88,6 +112,10 @@ public partial class BattleCharacterData : BattleUnitData
             int tempMOV = 0;
             tempMOV += maxMOV;
             tempMOV += buffMOV;
+            if (tempMOV < 0)
+            {
+                tempMOV = 0;
+            }
             return tempMOV;
         }
     }

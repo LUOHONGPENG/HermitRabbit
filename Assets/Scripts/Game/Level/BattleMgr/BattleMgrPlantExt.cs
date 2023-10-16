@@ -51,7 +51,7 @@ public partial class BattleMgr
             BattleUnitData tarUnit = gameData.GetDataFromUnitInfo(unitInfo);
             BattlePlantData curPlant = (BattlePlantData)gameData.GetDataFromUnitInfo(new UnitInfo(BattleUnitType.Plant,listCheck[i]));
             SkillExcelItem skillItem = PublicTool.GetSkillItem(curPlant.GetSkillID());
-            if(PublicTool.CalculateGlobalDis(tarUnit.posID,curPlant.posID) <= skillItem.range)
+            if(PublicTool.CalculateGlobalDis(tarUnit.posID,curPlant.posID) <= skillItem.RealRange)
             {
                 queueSkillRequest.Enqueue(new PlantSkillRequestInfo(curPlant.keyID, skillItem.id, unitInfo));
             }
