@@ -71,7 +71,7 @@ MonoBehaviour:
     damageType: 2
     damageDeltaStd: 3
     damageDelta: 100
-    damageModifier: -3
+    damageModifier: -2
     listSpecialEffect: d1070000
     listSpecialDelta: 02000000
     activeSkillType: 1
