@@ -292,8 +292,8 @@ MonoBehaviour:
     columnID: 1
     remark: 
   - id: 2401
-    name: Inspire
-    desc: Gain 1 AP.
+    name: Rush Hour
+    desc: Gain 3 Movement.
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
@@ -304,9 +304,22 @@ MonoBehaviour:
     rowID: 1
     columnID: 3
     remark: 
+  - id: 2491
+    name: Helper Hand
+    desc: Enlarge the range of the support skill
+    nodeType: 1
+    costSP: 2
+    conditionSPSpent: 0
+    conditionPreNode: 61090000
+    isInitUnlock: 0
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    rowID: 2
+    columnID: 2
+    remark: 
   - id: 2402
-    name: Rush Hour
-    desc: Gain 3 Movement.
+    name: Inspire
+    desc: Gain 1 AP.
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0

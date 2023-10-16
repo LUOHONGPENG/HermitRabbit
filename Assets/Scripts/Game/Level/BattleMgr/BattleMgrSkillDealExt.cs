@@ -27,7 +27,7 @@ public partial class BattleMgr
                 BuffExcelItem buffItem = skillBattleInfo.listBuffEffect[i];
                 if (buffItem.effectType == effectType)
                 {
-                    SkillBuffEffectDeal(target, buffItem.id, skillBattleInfo.listBuffDelta[i]);
+                    SkillBuffEffectDeal(target, buffItem.id, skillBattleInfo.listBuffDelta[i], buffItem.name, effectType);
                 }
             }
         }
@@ -105,9 +105,17 @@ public partial class BattleMgr
         return NormalizedDamage;
     }
 
-    private void SkillBuffEffectDeal(BattleUnitData target, int buffID, int delta)
+    private void SkillBuffEffectDeal(BattleUnitData target, int buffID, int delta, string buffName, SkillEffectType effect)
     {
         target.AddBuff(buffID, delta);
+        if(effect == SkillEffectType.Help)
+        {
+            target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, buffName, target.posID));
+        }
+        else if(effect == SkillEffectType.Harm)
+        {
+            target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, buffName, target.posID));
+        }
     }
 
     private void SkillSpecialEffectDeal(BattleUnitData source, BattleUnitData target,int specialEffectID,int delta)
@@ -116,7 +124,7 @@ public partial class BattleMgr
         {
             case 1001:
                 target.curAP = target.curAP + delta;
-                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Special, string.Format("AP+{0}", delta), target.posID));
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, string.Format("AP+{0}", delta), target.posID));
                 break;
             case 1002:
                 target.curMOV = target.curMOV + delta;
@@ -124,7 +132,7 @@ public partial class BattleMgr
                 {
                     target.curMOV = target.curMaxMOV;
                 }
-                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Special, string.Format("MOV+{0}", delta), target.posID));
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, string.Format("MOV+{0}", delta), target.posID));
                 break;
             case 1003:
                 target.curMOV = target.curMOV + delta;

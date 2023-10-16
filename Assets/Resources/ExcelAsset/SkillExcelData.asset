@@ -230,6 +230,30 @@ MonoBehaviour:
     unlockNodeID: 2301
     desc: Self Heal for 20% HP.
   - id: 2401
+    name: Rush Hour
+    costAP: 1
+    range: 4
+    isRangeSelf: 1
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 2
+    plantEffect: 0
+    damageType: 0
+    damageDeltaStd: 0
+    damageDelta: 0
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: ea030000
+    listSpecialDelta: 03000000
+    activeSkillType: 2
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    unlockNodeID: 2401
+    desc: 
+  - id: 2402
     name: Inspire
     costAP: 1
     range: 4
@@ -251,32 +275,8 @@ MonoBehaviour:
     activeSkillType: 2
     characterID: 1002
     iconUrl: imgIconSkill_2301
-    unlockNodeID: 2401
-    desc: Regain AP by 1.
-  - id: 2402
-    name: Rush Hour
-    costAP: 1
-    range: 4
-    isRangeSelf: 0
-    needExtraTarget: 0
-    radius: 0
-    regionType: 0
-    foeEffect: 0
-    characterEffect: 2
-    plantEffect: 0
-    damageType: 0
-    damageDeltaStd: 0
-    damageDelta: 0
-    damageModifier: 0
-    listBuffEffect: 00000000
-    listBuffDelta: 00000000
-    listSpecialEffect: ea030000
-    listSpecialDelta: 03000000
-    activeSkillType: 2
-    characterID: 1002
-    iconUrl: imgIconSkill_Default
     unlockNodeID: 2402
-    desc: 
+    desc: Regain AP by 1.
   - id: 2902
     name: Super Worker
     costAP: 3
