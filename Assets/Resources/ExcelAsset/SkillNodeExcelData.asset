@@ -37,11 +37,13 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 0
-    columnID: 3
+    columnID: 2
     remark: 1011HP,1021ATK,1031DEF,1041RES,1051MOVE
   - id: 1101
     name: Inferno
-    desc: 
+    desc: 'Target all units and deal 1.5ATK+2 damage,
+
+      with one level burning.'
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
@@ -92,8 +94,8 @@ MonoBehaviour:
     columnID: -3
     remark: 
   - id: 1201
-    name: Stream
-    desc: 
+    name: Time Transfer
+    desc: Dodge next attack.
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
@@ -105,8 +107,21 @@ MonoBehaviour:
     columnID: -1
     remark: 
   - id: 1202
-    name: Water Shield
-    desc: 
+    name: 'Gravity '
+    desc: Gravity magic attack that reduce movement.
+    nodeType: 0
+    costSP: 2
+    conditionSPSpent: 0
+    conditionPreNode: b1040000
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 3
+    columnID: -1
+    remark: 
+  - id: 1301
+    name: Stream
+    desc: Water magic attack that can heal plant.
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
@@ -117,35 +132,22 @@ MonoBehaviour:
     rowID: 1
     columnID: 1
     remark: 
-  - id: 1203
+  - id: 1302
     name: Clear
     desc: Remove 1 debuff.
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
-    conditionPreNode: b1040000b2040000
-    isInitUnlock: 0
-    characterID: 1001
-    iconUrl: imgIconSkill_Default
-    rowID: 2
-    columnID: 0
-    remark: 
-  - id: 1204
-    name: 'Gravity '
-    desc: 
-    nodeType: 0
-    costSP: 2
-    conditionSPSpent: 0
-    conditionPreNode: b3040000
+    conditionPreNode: 15050000
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 3
-    columnID: 0
+    columnID: 1
     remark: 
-  - id: 1301
+  - id: 1401
     name: Holy Thunder
-    desc: 
+    desc: Electricity Attack. Water tile can transmit damage.
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
@@ -156,26 +158,26 @@ MonoBehaviour:
     rowID: 1
     columnID: 3
     remark: 
-  - id: 1391
+  - id: 1491
     name: Dizzy Light
-    desc: 
+    desc: Holy Thunder will give target debuff named Dizzy.
     nodeType: 1
     costSP: 2
     conditionSPSpent: 0
-    conditionPreNode: 15050000
+    conditionPreNode: 79050000
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 2
     columnID: 4
     remark: 
-  - id: 1302
+  - id: 1402
     name: Teleport
-    desc: 
+    desc: Change one unit position.
     nodeType: 0
     costSP: 2
     conditionSPSpent: 0
-    conditionPreNode: 15050000
+    conditionPreNode: 79050000
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -183,20 +185,33 @@ MonoBehaviour:
     columnID: 3
     remark: 
   - id: 1901
-    name: Infinite
-    desc: 'Give character a Buff named Infinite with 3 layers.
-
-      Infinite can
-      enlarge next 3 skills'' radius by 1 unit.'
+    name: Time Expand
+    desc: Double all debuff counter.
     nodeType: 0
     costSP: 3
     conditionSPSpent: 0
-    conditionPreNode: 4e040000b404000016050000
+    conditionPreNode: 4e040000b2040000
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 4
-    columnID: 0
+    columnID: -1
+    remark: 
+  - id: 1902
+    name: Infinity
+    desc: 'Gain 3 Infinity.
+
+      Infinity can enlarge next X skills'' radius by
+      1 unit.'
+    nodeType: 0
+    costSP: 3
+    conditionSPSpent: 0
+    conditionPreNode: 160500007a050000
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 4
+    columnID: 1
     remark: 
   - id: 2001
     name: Strike
@@ -213,7 +228,7 @@ MonoBehaviour:
     remark: 
   - id: 2101
     name: Worker Wind
-    desc: 
+    desc: Deal damage to enemy around.
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
@@ -226,7 +241,7 @@ MonoBehaviour:
     remark: 
   - id: 2191
     name: Injury Benefit
-    desc: 
+    desc: Deal extra damage when
     nodeType: 1
     costSP: 2
     conditionSPSpent: 0
@@ -239,7 +254,7 @@ MonoBehaviour:
     remark: 
   - id: 2102
     name: Overtime Work
-    desc: 
+    desc: Gain extra AP every turn but gain burning as well.
     nodeType: 0
     costSP: 2
     conditionSPSpent: 0
@@ -251,8 +266,8 @@ MonoBehaviour:
     columnID: -3
     remark: 
   - id: 2201
-    name: Self Heal
-    desc: 
+    name: Provoke
+    desc: Attract enemies' attack.
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
@@ -261,11 +276,24 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_Default
     rowID: 1
-    columnID: 0
+    columnID: -1
     remark: 
   - id: 2301
+    name: Self Heal
+    desc: Heal one character according to HP.
+    nodeType: 0
+    costSP: 1
+    conditionSPSpent: 0
+    conditionPreNode: d1070000
+    isInitUnlock: 0
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    rowID: 1
+    columnID: 1
+    remark: 
+  - id: 2401
     name: Inspire
-    desc: 
+    desc: Gain 1 AP.
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
@@ -275,4 +303,43 @@ MonoBehaviour:
     iconUrl: imgIconSkill_Default
     rowID: 1
     columnID: 3
+    remark: 
+  - id: 2402
+    name: Rush Hour
+    desc: Gain 3 Movement.
+    nodeType: 0
+    costSP: 1
+    conditionSPSpent: 0
+    conditionPreNode: 61090000
+    isInitUnlock: 0
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    rowID: 3
+    columnID: 3
+    remark: 
+  - id: 2901
+    name: Final Guard
+    desc: HP won't become 0.
+    nodeType: 0
+    costSP: 3
+    conditionSPSpent: 0
+    conditionPreNode: 3608000099080000
+    isInitUnlock: 0
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    rowID: 4
+    columnID: -1
+    remark: 
+  - id: 2902
+    name: Super Worker
+    desc: Increase ATK,DEF,RES,max Movement by 1.
+    nodeType: 0
+    costSP: 3
+    conditionSPSpent: 0
+    conditionPreNode: fd08000062090000
+    isInitUnlock: 0
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    rowID: 4
+    columnID: 1
     remark: 

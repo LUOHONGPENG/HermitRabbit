@@ -59,7 +59,7 @@ MonoBehaviour:
     iconUrl: imgIconSkill_1101
     unlockNodeID: 1101
     desc: Use fire ball to attack multiple foes.
-  - id: 1301
+  - id: 1401
     name: Holy Thunder
     costAP: 1
     element: 3
@@ -80,9 +80,9 @@ MonoBehaviour:
     isNormalAttack: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
-    unlockNodeID: 1301
+    unlockNodeID: 1401
     desc: 
-  - id: 1302
+  - id: 1402
     name: Teleport
     costAP: 1
     element: 3
@@ -103,7 +103,7 @@ MonoBehaviour:
     isNormalAttack: 0
     characterID: 1001
     iconUrl: imgIconSkill_1302
-    unlockNodeID: 1302
+    unlockNodeID: 1402
     desc: 
   - id: 2001
     name: Strike

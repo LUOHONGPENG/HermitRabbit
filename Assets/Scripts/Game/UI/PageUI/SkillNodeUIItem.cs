@@ -22,7 +22,7 @@ public class SkillNodeUIItem : MonoBehaviour
     public Image imgIcon;
     public Image imgButton;
     public SpriteMask spMask;
-
+    public float scaleRate = 1f;
 
     public List<Color> listColor = new List<Color>();
 
@@ -41,18 +41,23 @@ public class SkillNodeUIItem : MonoBehaviour
             imgFrame.sprite = Resources.Load("Sprite/Skill/imgIconSkill_Active", typeof(Sprite)) as Sprite;
             imgButton.sprite = Resources.Load("Sprite/Skill/imgIconSkill_ActiveFill", typeof(Sprite)) as Sprite;
             spMask.sprite = Resources.Load("Sprite/Skill/imgIconSkill_ActiveFill", typeof(Sprite)) as Sprite;
+            scaleRate = 1f;
         }
         else if(nodeItem.nodeType == SkillNodeType.Passive)
         {
             imgFrame.sprite = Resources.Load("Sprite/Skill/imgIconSkill_Passive", typeof(Sprite)) as Sprite;
             imgButton.sprite = Resources.Load("Sprite/Skill/imgIconSkill_PassiveFill", typeof(Sprite)) as Sprite;
             spMask.sprite = Resources.Load("Sprite/Skill/imgIconSkill_PassiveFill", typeof(Sprite)) as Sprite;
+            scaleRate = 0.8f;
+
         }
         else if(nodeItem.nodeType == SkillNodeType.Numerical)
         {
             imgFrame.sprite = Resources.Load("Sprite/Skill/imgIconSkill_Numerical", typeof(Sprite)) as Sprite;
             imgButton.sprite = Resources.Load("Sprite/Skill/imgIconSkill_NumericalFill", typeof(Sprite)) as Sprite;
             spMask.sprite = Resources.Load("Sprite/Skill/imgIconSkill_NumericalFill", typeof(Sprite)) as Sprite;
+            scaleRate = 0.6f;
+
         }
 
         imgIcon.sprite = Resources.Load("Sprite/Skill/" + nodeItem.iconUrl, typeof(Sprite)) as Sprite;
@@ -156,11 +161,11 @@ public class SkillNodeUIItem : MonoBehaviour
     {
         if (hoverUI.isHavor && nodeState == NodeState.CanUnlock)
         {
-            this.transform.localScale = new Vector2(1.1f, 1.1f);
+            this.transform.localScale = new Vector2(1.1f, 1.1f) * scaleRate;
         }
         else
         {
-            this.transform.localScale = Vector2.one;
+            this.transform.localScale = Vector2.one * scaleRate;
         }
     }
 }
