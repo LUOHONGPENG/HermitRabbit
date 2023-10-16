@@ -38,7 +38,10 @@ public class BattlePlantData : BattleUnitData
     {
         get
         {
-            return item.ATK;
+            int tempATK = 0;
+            tempATK += item.ATK;
+            tempATK += buffATK;
+            return tempATK;
         }
     }
 
@@ -46,7 +49,10 @@ public class BattlePlantData : BattleUnitData
     {
         get
         {
-            return item.DEF;
+            int tempDEF = 0;
+            tempDEF += item.DEF;
+            tempDEF += buffDEF;
+            return tempDEF;
         }
     }
 
@@ -54,7 +60,10 @@ public class BattlePlantData : BattleUnitData
     {
         get
         {
-            return item.RES;
+            int tempRES = 0;
+            tempRES += item.RES;
+            tempRES += buffRES;
+            return tempRES;
         }
     }
     #endregion

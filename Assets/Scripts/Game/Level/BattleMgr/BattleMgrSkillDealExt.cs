@@ -118,6 +118,17 @@ public partial class BattleMgr
                 target.curAP = target.curAP + delta;
                 target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Special, string.Format("AP+{0}", delta), target.posID));
                 break;
+            case 1002:
+                target.curMOV = target.curMOV + delta;
+                if (target.curMOV > target.curMaxMOV)
+                {
+                    target.curMOV = target.curMaxMOV;
+                }
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Special, string.Format("MOV+{0}", delta), target.posID));
+                break;
+            case 1003:
+                target.curMOV = target.curMOV + delta;
+                break;
             case 2001:
                 target.curMOV -= delta;
                 if (target.curMOV < 0)

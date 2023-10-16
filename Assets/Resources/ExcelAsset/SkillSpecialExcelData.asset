@@ -16,6 +16,12 @@ MonoBehaviour:
   - id: 1001
     name: Recover AP
     effectType: 2
+  - id: 1002
+    name: Recover MOV
+    effectType: 2
+  - id: 1003
+    name: Recover MOV Hidden
+    effectType: 2
   - id: 2001
     name: Reduce Move
     effectType: 1

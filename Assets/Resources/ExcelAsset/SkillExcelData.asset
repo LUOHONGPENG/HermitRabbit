@@ -253,6 +253,30 @@ MonoBehaviour:
     iconUrl: imgIconSkill_2301
     unlockNodeID: 2401
     desc: Regain AP by 1.
+  - id: 2402
+    name: Rush Hour
+    costAP: 1
+    range: 4
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 2
+    plantEffect: 0
+    damageType: 0
+    damageDeltaStd: 0
+    damageDelta: 0
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: ea030000
+    listSpecialDelta: 03000000
+    activeSkillType: 2
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    unlockNodeID: 2402
+    desc: 
   - id: 2902
     name: Super Worker
     costAP: 3
@@ -270,8 +294,8 @@ MonoBehaviour:
     damageModifier: 0
     listBuffEffect: ec030000
     listBuffDelta: 02000000
-    listSpecialEffect: 00000000
-    listSpecialDelta: 00000000
+    listSpecialEffect: eb030000
+    listSpecialDelta: 01000000
     activeSkillType: 3
     characterID: 1002
     iconUrl: imgIconSkill_Default

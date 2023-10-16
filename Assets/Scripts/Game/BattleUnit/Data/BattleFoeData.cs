@@ -56,7 +56,6 @@ public class BattleFoeData : BattleUnitData
         get
         {
             int tempATK = 0;
-            //Basic ATK
             tempATK += item.ATK;
             tempATK += buffATK;
             return tempATK;
