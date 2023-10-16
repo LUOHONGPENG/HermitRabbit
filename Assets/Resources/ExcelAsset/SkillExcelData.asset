@@ -16,7 +16,6 @@ MonoBehaviour:
   - id: 1001
     name: Elemental Ball
     costAP: 1
-    element: 0
     range: 4
     isRangeSelf: 0
     needExtraTarget: 0
@@ -26,12 +25,11 @@ MonoBehaviour:
     characterEffect: 0
     plantEffect: 0
     damageType: 2
-    damageDeltaStd: 1
+    damageDeltaStd: 2
     damageDelta: 100
     damageModifier: 0
     listSpecialEffect: 00000000
-    skillSubjectType: 0
-    isNormalAttack: 1
+    activeSkillType: 0
     characterID: 1001
     iconUrl: 
     unlockNodeID: 1001
@@ -39,7 +37,6 @@ MonoBehaviour:
   - id: 1101
     name: Fire Ball
     costAP: 2
-    element: 1
     range: 3
     isRangeSelf: 0
     needExtraTarget: 0
@@ -49,20 +46,39 @@ MonoBehaviour:
     characterEffect: 1
     plantEffect: 1
     damageType: 2
-    damageDeltaStd: 1
+    damageDeltaStd: 2
     damageDelta: 150
     damageModifier: 0
     listSpecialEffect: 00000000
-    skillSubjectType: 0
-    isNormalAttack: 0
+    activeSkillType: 1
     characterID: 1001
     iconUrl: imgIconSkill_1101
     unlockNodeID: 1101
     desc: Use fire ball to attack multiple foes.
+  - id: 1301
+    name: Stream
+    costAP: 1
+    range: 1
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 3
+    regionType: 2
+    foeEffect: 1
+    characterEffect: 0
+    plantEffect: 2
+    damageType: 2
+    damageDeltaStd: 5
+    damageDelta: 200
+    damageModifier: 0
+    listSpecialEffect: 00000000
+    activeSkillType: 1
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    unlockNodeID: 1301
+    desc: 
   - id: 1401
     name: Holy Thunder
     costAP: 1
-    element: 3
     range: 5
     isRangeSelf: 0
     needExtraTarget: 0
@@ -72,12 +88,11 @@ MonoBehaviour:
     characterEffect: 0
     plantEffect: 0
     damageType: 2
-    damageDeltaStd: 1
+    damageDeltaStd: 2
     damageDelta: 100
     damageModifier: 0
     listSpecialEffect: 00000000
-    skillSubjectType: 0
-    isNormalAttack: 0
+    activeSkillType: 1
     characterID: 1001
     iconUrl: imgIconSkill_Default
     unlockNodeID: 1401
@@ -85,7 +100,6 @@ MonoBehaviour:
   - id: 1402
     name: Teleport
     costAP: 1
-    element: 3
     range: 2
     isRangeSelf: 1
     needExtraTarget: 1
@@ -99,8 +113,7 @@ MonoBehaviour:
     damageDelta: 0
     damageModifier: 0
     listSpecialEffect: b90b0000
-    skillSubjectType: 0
-    isNormalAttack: 0
+    activeSkillType: 2
     characterID: 1001
     iconUrl: imgIconSkill_1302
     unlockNodeID: 1402
@@ -108,7 +121,6 @@ MonoBehaviour:
   - id: 2001
     name: Strike
     costAP: 1
-    element: 0
     range: 1
     isRangeSelf: 0
     needExtraTarget: 0
@@ -118,20 +130,18 @@ MonoBehaviour:
     characterEffect: 1
     plantEffect: 0
     damageType: 1
-    damageDeltaStd: 1
+    damageDeltaStd: 2
     damageDelta: 100
     damageModifier: 0
     listSpecialEffect: 00000000
-    skillSubjectType: 0
-    isNormalAttack: 1
+    activeSkillType: 0
     characterID: 1002
     iconUrl: 
     unlockNodeID: 2001
     desc: Use weapon to strike a foe.
   - id: 2101
     name: Wind Chop
-    costAP: 1
-    element: 1
+    costAP: 2
     range: 0
     isRangeSelf: 1
     needExtraTarget: 0
@@ -141,12 +151,11 @@ MonoBehaviour:
     characterEffect: 0
     plantEffect: 0
     damageType: 1
-    damageDeltaStd: 1
+    damageDeltaStd: 2
     damageDelta: 100
     damageModifier: -1
     listSpecialEffect: 00000000
-    skillSubjectType: 0
-    isNormalAttack: 0
+    activeSkillType: 1
     characterID: 1002
     iconUrl: imgIconSkill_BFCut
     unlockNodeID: 2101
@@ -154,7 +163,6 @@ MonoBehaviour:
   - id: 2201
     name: Self Heal
     costAP: 1
-    element: 2
     range: 0
     isRangeSelf: 1
     needExtraTarget: 0
@@ -164,12 +172,11 @@ MonoBehaviour:
     characterEffect: 2
     plantEffect: 0
     damageType: 3
-    damageDeltaStd: 2
+    damageDeltaStd: 3
     damageDelta: 50
     damageModifier: -1
     listSpecialEffect: 00000000
-    skillSubjectType: 0
-    isNormalAttack: 0
+    activeSkillType: 2
     characterID: 1002
     iconUrl: imgIconSkill_2201
     unlockNodeID: 2201
@@ -177,7 +184,6 @@ MonoBehaviour:
   - id: 2301
     name: Inspire
     costAP: 1
-    element: 3
     range: 4
     isRangeSelf: 0
     needExtraTarget: 0
@@ -191,8 +197,7 @@ MonoBehaviour:
     damageDelta: 0
     damageModifier: 0
     listSpecialEffect: e9030000
-    skillSubjectType: 0
-    isNormalAttack: 0
+    activeSkillType: 2
     characterID: 1002
     iconUrl: imgIconSkill_2301
     unlockNodeID: 2301
@@ -200,7 +205,6 @@ MonoBehaviour:
   - id: 3001
     name: Tadpole Strike
     costAP: 0
-    element: 0
     range: 3
     isRangeSelf: 0
     needExtraTarget: 0
@@ -210,12 +214,11 @@ MonoBehaviour:
     characterEffect: 0
     plantEffect: 0
     damageType: 3
-    damageDeltaStd: 1
+    damageDeltaStd: 2
     damageDelta: 100
     damageModifier: 0
     listSpecialEffect: 00000000
-    skillSubjectType: 1
-    isNormalAttack: 0
+    activeSkillType: 4
     characterID: 0
     iconUrl: 
     unlockNodeID: 0
@@ -223,7 +226,6 @@ MonoBehaviour:
   - id: 9001
     name: Bite
     costAP: 1
-    element: 0
     range: 1
     isRangeSelf: 0
     needExtraTarget: 0
@@ -233,12 +235,11 @@ MonoBehaviour:
     characterEffect: 1
     plantEffect: 1
     damageType: 1
-    damageDeltaStd: 1
+    damageDeltaStd: 2
     damageDelta: 100
     damageModifier: 0
     listSpecialEffect: 00000000
-    skillSubjectType: 2
-    isNormalAttack: 0
+    activeSkillType: 5
     characterID: 0
     iconUrl: 
     unlockNodeID: 0

@@ -132,6 +132,9 @@ public partial class MapViewMgr : MonoBehaviour
                 case SkillRegionType.Square:
                     listHoverPos = PublicTool.GetTargetSquareRange(hoverTileID, skillMapInfo.radius);
                     break;
+                case SkillRegionType.Line:
+                    listHoverPos = PublicTool.GetTargetLineRange(hoverTileID, curUnitData.posID, skillMapInfo.radius) ;
+                    break;
             }
         }
 

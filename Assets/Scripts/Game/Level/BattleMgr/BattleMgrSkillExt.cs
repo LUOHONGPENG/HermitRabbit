@@ -115,6 +115,9 @@ public partial class BattleMgr
             case SkillRegionType.Square:
                 listPos = PublicTool.GetTargetSquareRange(skillTargetPos, skillBattleInfo.radius);
                 break;
+            case SkillRegionType.Line:
+                listPos = PublicTool.GetTargetLineRange(skillTargetPos, skillSubject.posID, skillBattleInfo.radius);
+                break;
         }
 
         dicFoeSkillTarget.Clear();

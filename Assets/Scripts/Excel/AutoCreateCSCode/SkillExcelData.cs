@@ -10,7 +10,6 @@ public partial class SkillExcelItem : ExcelItemBase
 {
 	public string name;
 	public int costAP;
-	public SkillElementType element;
 	public int range;
 	public bool isRangeSelf;
 	public bool needExtraTarget;
@@ -24,8 +23,7 @@ public partial class SkillExcelItem : ExcelItemBase
 	public int damageDelta;
 	public int damageModifier;
 	public List<int> listSpecialEffect;
-	public BattleUnitType skillSubjectType;
-	public bool isNormalAttack;
+	public ActiveSkillType activeSkillType;
 	public int characterID;
 	public string iconUrl;
 	public int unlockNodeID;
@@ -52,7 +50,6 @@ public class SkillAssetAssignment
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].name = allItemValueRowList[i]["name"];
 			items[i].costAP = Convert.ToInt32(allItemValueRowList[i]["costAP"]);
-			items[i].element = (SkillElementType) Enum.Parse(typeof(SkillElementType), allItemValueRowList[i]["element"], true);
 			items[i].range = Convert.ToInt32(allItemValueRowList[i]["range"]);
 			items[i].isRangeSelf = Convert.ToBoolean(allItemValueRowList[i]["isRangeSelf"]);
 			items[i].needExtraTarget = Convert.ToBoolean(allItemValueRowList[i]["needExtraTarget"]);
@@ -66,8 +63,7 @@ public class SkillAssetAssignment
 			items[i].damageDelta = Convert.ToInt32(allItemValueRowList[i]["damageDelta"]);
 			items[i].damageModifier = Convert.ToInt32(allItemValueRowList[i]["damageModifier"]);
 			items[i].listSpecialEffect = new List<int>(Array.ConvertAll((allItemValueRowList[i]["listSpecialEffect"]).Split(';'), int.Parse));
-			items[i].skillSubjectType = (BattleUnitType) Enum.Parse(typeof(BattleUnitType), allItemValueRowList[i]["skillSubjectType"], true);
-			items[i].isNormalAttack = Convert.ToBoolean(allItemValueRowList[i]["isNormalAttack"]);
+			items[i].activeSkillType = (ActiveSkillType) Enum.Parse(typeof(ActiveSkillType), allItemValueRowList[i]["activeSkillType"], true);
 			items[i].characterID = Convert.ToInt32(allItemValueRowList[i]["characterID"]);
 			items[i].iconUrl = allItemValueRowList[i]["iconUrl"];
 			items[i].unlockNodeID = Convert.ToInt32(allItemValueRowList[i]["unlockNodeID"]);

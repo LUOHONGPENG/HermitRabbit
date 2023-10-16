@@ -9,7 +9,7 @@ public enum SceneName
 }
 
 
-#region Basic Status
+#region System Basic Status
 public enum GamePhase
 {
     Peace,
@@ -34,6 +34,18 @@ public enum InteractTargetType
     Character
 }
 
+#endregion
+
+#region Map
+
+/*public enum MapTileType
+{
+    Normal,
+    Water,
+    Grass,
+    Stone
+}
+*/
 public enum MapIndicatorType
 {
     Hide,
@@ -43,6 +55,9 @@ public enum MapIndicatorType
     Blue
 }
 
+#endregion
+
+#region Battle Basic
 public enum BattleUnitType
 {
     Character,
@@ -63,6 +78,7 @@ public enum BarResourceType
     Skill,
     Move
 }
+
 #endregion
 
 #region SkillEnum
@@ -71,15 +87,7 @@ public enum SkillRegionType
 {
     Circle,
     Square,
-    Cross
-}
-
-public enum SkillElementType
-{
-    None,
-    Sun,
-    Moon,
-    Star
+    Line
 }
 
 public enum SkillDamageType
@@ -100,8 +108,11 @@ public enum SkillEffectType
 public enum SkillDamageDeltaStd
 {
     None,
+    Const,
     ATK,
-    MAXHP
+    MAXHP,
+    DEF,
+    RES
 }
 
 public enum PlantTriggerType
@@ -114,6 +125,16 @@ public enum SkillNodeType
     Active,
     Passive,
     Numerical
+}
+
+public enum ActiveSkillType
+{
+    NormalAttack,
+    DamageSkill,
+    SupportSkill,
+    UltimateSkill,
+    PlantSkill,
+    MonsterSkill
 }
 
 #endregion
@@ -137,5 +158,4 @@ public enum UITipType
 {
     SkillNode,
     SkillButton
-
 }

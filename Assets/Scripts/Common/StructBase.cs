@@ -39,9 +39,10 @@ public struct SkillBattleInfo
     public SkillEffectType plantEffect;
     //Damage
     public SkillDamageType damageType;
-    public float damageDeltaFloat;
     public SkillDamageDeltaStd damageDeltaStd;
-    public bool isNormalAttack;
+    public float damageDeltaFloat;
+    public int damageModifier;
+    public ActiveSkillType activeSkillType;
     //Special
     public List<SkillSpecialExcelItem> listSpecialEffect;
 
@@ -67,9 +68,10 @@ public struct SkillBattleInfo
         this.plantEffect = item.plantEffect;
         //Damage
         this.damageType = item.damageType;
-        this.damageDeltaFloat = item.damageDeltaFloat;
         this.damageDeltaStd = item.damageDeltaStd;
-        this.isNormalAttack = item.isNormalAttack;
+        this.damageDeltaFloat = item.damageDeltaFloat;
+        this.damageModifier = item.damageModifier;
+        this.activeSkillType = item.activeSkillType;
         //
         this.listSpecialEffect = item.listSpecialEffectUse;
 

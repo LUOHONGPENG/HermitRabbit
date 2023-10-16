@@ -76,7 +76,7 @@ public partial class BattleMgr
         }
 
         //Character Normal Attack
-        if (skillBattleInfo.isNormalAttack && skillSubject.battleUnitType == BattleUnitType.Character && gameData.dicTempMapUnit.ContainsKey(skillTargetPos))
+        if (skillBattleInfo.activeSkillType == ActiveSkillType.NormalAttack && skillSubject.battleUnitType == BattleUnitType.Character && gameData.dicTempMapUnit.ContainsKey(skillTargetPos))
         {
             CheckPlantSkillRequest(PlantTriggerType.CharacterNormalAttack, gameData.dicTempMapUnit[skillTargetPos]);
         }

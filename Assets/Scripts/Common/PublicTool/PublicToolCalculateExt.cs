@@ -78,6 +78,21 @@ public partial class PublicTool
         return listRange;
     }
 
+    public static List<Vector2Int> GetTargetLineRange(Vector2Int targetPos, Vector2Int sourcePos, int Range)
+    {
+        List<Vector2Int> listRange = new List<Vector2Int>();
+        Vector2Int direction = targetPos - sourcePos;
+        if (Range > 0)
+        {
+            for (int i = 1; i <= Range; i++)
+            {
+                Vector2Int thisPos = sourcePos + direction * i;
+                listRange.Add(thisPos);
+            }
+        }
+        return listRange;
+    }
+
     #endregion
 
     #region FindPathSupporter

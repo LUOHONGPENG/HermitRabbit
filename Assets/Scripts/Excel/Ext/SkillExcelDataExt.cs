@@ -13,7 +13,7 @@ public partial class SkillExcelData
         for (int i = 0; i < items.Length; i++)
         {
             SkillExcelItem skillItem = items[i];
-            if (skillItem.isNormalAttack)
+            if (skillItem.activeSkillType == ActiveSkillType.NormalAttack)
             {
                 continue;
             }
@@ -79,6 +79,30 @@ public partial class SkillExcelItem
             else
             {
                 return false;
+            }
+        }
+    }
+
+    /// <summary>
+    /// The source type of the skill
+    /// </summary>
+    public BattleUnitType skillSubjectType
+    {
+        get
+        {
+            switch (activeSkillType)
+            {
+                case ActiveSkillType.NormalAttack:
+                case ActiveSkillType.DamageSkill:
+                case ActiveSkillType.SupportSkill:
+                case ActiveSkillType.UltimateSkill:
+                    return BattleUnitType.Character;
+                case ActiveSkillType.PlantSkill:
+                    return BattleUnitType.Plant;
+                case ActiveSkillType.MonsterSkill:
+                    return BattleUnitType.Foe;
+                default:
+                    return BattleUnitType.Character;
             }
         }
     }

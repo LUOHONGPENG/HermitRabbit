@@ -132,7 +132,7 @@ public class BattleOptionUIMgr : MonoBehaviour
                 break;
             case InteractState.CharacterSkill:
                 btnMove.RefreshOffSelect();
-                if (PublicTool.GetGameData().GetCurSkillBattleInfo().isNormalAttack)
+                if (PublicTool.GetGameData().GetCurSkillBattleInfo().activeSkillType == ActiveSkillType.NormalAttack)
                 {
                     btnAttack.RefreshOnSelect();
                     foreach (BattleSkillBtnItem item in listSkillBtn)

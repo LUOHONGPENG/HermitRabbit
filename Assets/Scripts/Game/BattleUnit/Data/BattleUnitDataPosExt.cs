@@ -379,6 +379,9 @@ public partial class BattleUnitData
                 case SkillRegionType.Square:
                     listRadius = PublicTool.GetTargetSquareRange(viewPos, skillInfo.radius);
                     break;
+                case SkillRegionType.Line:
+                    listRadius = PublicTool.GetTargetLineRange(viewPos,posID, skillInfo.radius);
+                    break;
             }
             for (int i = 0; i < listRadius.Count; i++)
             {

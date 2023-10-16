@@ -29,45 +29,59 @@ public partial class BattleMgr
     {
         float realDamage = 0;
         float damageSource = 0;
+        //Calculate the source damage
         switch (skillBattleInfo.damageDeltaStd)
         {
+            case SkillDamageDeltaStd.Const:
+                damageSource = skillBattleInfo.damageDeltaFloat;
+                break;
             case SkillDamageDeltaStd.ATK:
                 damageSource = source.curATK * skillBattleInfo.damageDeltaFloat;
                 break;
             case SkillDamageDeltaStd.MAXHP:
                 damageSource = source.maxHP * skillBattleInfo.damageDeltaFloat;
                 break;
-        }
-
-        switch (skillBattleInfo.damageType)
-        {
-            case SkillDamageType.Physical:
-                realDamage = damageSource - target.curDEF;
-                break;
-            case SkillDamageType.Magic:
-                realDamage = damageSource - target.curRES;
-                break;
-            case SkillDamageType.Real:
-                realDamage = damageSource;
+            case SkillDamageDeltaStd.RES:
+                damageSource = source.curRES * skillBattleInfo.damageDeltaFloat;
                 break;
         }
+        damageSource += skillBattleInfo.damageModifier;
 
-        if (realDamage < 0)
+        if (effectType == SkillEffectType.Harm)
         {
-            realDamage = 0;
-        }
-        realDamage = Mathf.RoundToInt(realDamage);
-
-        if(effectType == SkillEffectType.Harm)
-        {
+            switch (skillBattleInfo.damageType)
+            {
+                case SkillDamageType.Physical:
+                    realDamage = damageSource - target.curDEF;
+                    break;
+                case SkillDamageType.Magic:
+                    realDamage = damageSource - target.curRES;
+                    break;
+                case SkillDamageType.Real:
+                    realDamage = damageSource;
+                    break;
+            }
+            int NormalizedDamage = NormalizeRealDamage(realDamage);
             target.GetHurt(realDamage);
-            target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-realDamage).ToString(),target.posID));
+            target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-realDamage).ToString(), target.posID));
         }
-        else if(effectType == SkillEffectType.Help)
+        else if (effectType == SkillEffectType.Help)
         {
+            realDamage = damageSource;
+            int NormalizedDamage = NormalizeRealDamage(realDamage);
             target.GetHeal(realDamage);
             target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Heal, (realDamage).ToString(), target.posID));
         }
+    }
+
+    public int NormalizeRealDamage(float damage)
+    {
+        if (damage < 0)
+        {
+            damage = 0;
+        }
+        int NormalizedDamage = Mathf.RoundToInt(damage);
+        return NormalizedDamage;
     }
 
     private void SkillSpecialEffectDeal(BattleUnitData source, BattleUnitData target,int specialEffectID)
