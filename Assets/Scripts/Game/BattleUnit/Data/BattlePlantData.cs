@@ -28,6 +28,11 @@ public class BattlePlantData : BattleUnitData
         return item.skillID;
     }
 
+    public override void ResetNewTurn()
+    {
+        TurnBuffDecrease();
+    }
+
     #region Basic Attribute
     public override int curATK
     {

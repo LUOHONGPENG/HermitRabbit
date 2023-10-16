@@ -22,6 +22,8 @@ public partial class SkillExcelItem : ExcelItemBase
 	public SkillDamageDeltaStd damageDeltaStd;
 	public int damageDelta;
 	public int damageModifier;
+	public List<int> listBuffEffect;
+	public List<int> listBuffDelta;
 	public List<int> listSpecialEffect;
 	public List<int> listSpecialDelta;
 	public ActiveSkillType activeSkillType;
@@ -63,6 +65,8 @@ public class SkillAssetAssignment
 			items[i].damageDeltaStd = (SkillDamageDeltaStd) Enum.Parse(typeof(SkillDamageDeltaStd), allItemValueRowList[i]["damageDeltaStd"], true);
 			items[i].damageDelta = Convert.ToInt32(allItemValueRowList[i]["damageDelta"]);
 			items[i].damageModifier = Convert.ToInt32(allItemValueRowList[i]["damageModifier"]);
+			items[i].listBuffEffect = new List<int>(Array.ConvertAll((allItemValueRowList[i]["listBuffEffect"]).Split(';'), int.Parse));
+			items[i].listBuffDelta = new List<int>(Array.ConvertAll((allItemValueRowList[i]["listBuffDelta"]).Split(';'), int.Parse));
 			items[i].listSpecialEffect = new List<int>(Array.ConvertAll((allItemValueRowList[i]["listSpecialEffect"]).Split(';'), int.Parse));
 			items[i].listSpecialDelta = new List<int>(Array.ConvertAll((allItemValueRowList[i]["listSpecialDelta"]).Split(';'), int.Parse));
 			items[i].activeSkillType = (ActiveSkillType) Enum.Parse(typeof(ActiveSkillType), allItemValueRowList[i]["activeSkillType"], true);

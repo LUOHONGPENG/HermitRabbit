@@ -44,6 +44,9 @@ public struct SkillBattleInfo
     public int damageModifier;
     public ActiveSkillType activeSkillType;
     //Special
+    public List<BuffExcelItem> listBuffEffect;
+    public List<int> listBuffDelta;
+    //Special
     public List<SkillSpecialExcelItem> listSpecialEffect;
     public List<int> listSpecialDelta;
 
@@ -73,7 +76,10 @@ public struct SkillBattleInfo
         this.damageDeltaFloat = item.damageDeltaFloat;
         this.damageModifier = item.damageModifier;
         this.activeSkillType = item.activeSkillType;
-        //
+        //Buff
+        this.listBuffEffect = item.listBuffUse;
+        this.listBuffDelta = new List<int>(item.listBuffDelta);
+        //SpecialEffect
         this.listSpecialEffect = item.listSpecialEffectUse;
         this.listSpecialDelta = new List<int>(item.listSpecialDelta);
     }

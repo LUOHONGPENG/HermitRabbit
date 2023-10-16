@@ -315,7 +315,7 @@ public partial class BattleUnitData
         if (skillInfo.ID == 1402 && BattleMgr.Instance.isInExtraTargetMode)
         {
             //Range Type
-            listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, maxMOV));
+            listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, curMaxMOV));
 
             listViewSkill.Remove(posID);
             listViewSkill.Remove(BattleMgr.Instance.skillTargetPos);

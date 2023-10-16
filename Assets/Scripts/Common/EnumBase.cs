@@ -138,6 +138,13 @@ public enum ActiveSkillType
     MonsterSkill
 }
 
+public enum BuffCounterType
+{
+    Fixed,
+    TurnDecrease,
+    TurnRemove
+}
+
 #endregion
 
 public enum EffectUITextType

@@ -9,13 +9,23 @@ public partial class PublicTool
         return GameMgr.Instance.curGameData;
     }
 
-    public static SkillExcelItem GetSkillItem(int SkillID)
+    public static SkillExcelItem GetSkillItem(int skillID)
     {
-        return ExcelDataMgr.Instance.skillExcelData.GetExcelItem(SkillID);
+        return ExcelDataMgr.Instance.skillExcelData.GetExcelItem(skillID);
     }
 
-    public static SkillNodeExcelItem GetSkillNodeItem(int NodeID)
+    public static SkillNodeExcelItem GetSkillNodeItem(int nodeID)
     {
-        return ExcelDataMgr.Instance.skillNodeExcelData.GetExcelItem(NodeID);
+        return ExcelDataMgr.Instance.skillNodeExcelData.GetExcelItem(nodeID);
+    }
+
+    public static SkillSpecialExcelItem GetSkillSpecialItem(int specialID)
+    {
+        return ExcelDataMgr.Instance.skillSpecialExcelData.GetExcelItem(specialID);
+    }
+
+    public static BuffExcelItem GetBuffExcelItem(int buffID)
+    {
+        return ExcelDataMgr.Instance.buffExcelData.GetExcelItem(buffID);
     }
 }

@@ -9,6 +9,8 @@ using System.IO;
 public partial class BuffExcelItem : ExcelItemBase
 {
 	public string name;
+	public SkillEffectType effectType;
+	public BuffCounterType counterType;
 	public string desc;
 }
 
@@ -31,6 +33,8 @@ public class BuffAssetAssignment
 			items[i] = new BuffExcelItem();
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].name = allItemValueRowList[i]["name"];
+			items[i].effectType = (SkillEffectType) Enum.Parse(typeof(SkillEffectType), allItemValueRowList[i]["effectType"], true);
+			items[i].counterType = (BuffCounterType) Enum.Parse(typeof(BuffCounterType), allItemValueRowList[i]["counterType"], true);
 			items[i].desc = allItemValueRowList[i]["desc"];
 		}
 		BuffExcelData excelDataAsset = ScriptableObject.CreateInstance<BuffExcelData>();

@@ -6,12 +6,12 @@ public partial class BattleMgr
 {
     private void SkillEffectRequest(BattleUnitData source, BattleUnitData target, SkillEffectType effectType)
     {
+        //Special Effect
         if (skillBattleInfo.listSpecialEffect.Count > 0)
         {
             for (int i = 0; i < skillBattleInfo.listSpecialEffect.Count; i++)
             {
                 SkillSpecialExcelItem skillSpecial = skillBattleInfo.listSpecialEffect[i];
-
                 if (skillSpecial.effectType == effectType)
                 {
                     SkillSpecialEffectDeal(source, target, skillSpecial.id, skillBattleInfo.listSpecialDelta[i]);
@@ -19,6 +19,20 @@ public partial class BattleMgr
             }
         }
 
+        //Buff Effect
+        if (skillBattleInfo.listBuffEffect.Count > 0)
+        {
+            for (int i = 0; i < skillBattleInfo.listBuffEffect.Count; i++)
+            {
+                BuffExcelItem buffItem = skillBattleInfo.listBuffEffect[i];
+                if (buffItem.effectType == effectType)
+                {
+                    SkillBuffEffectDeal(target, buffItem.id, skillBattleInfo.listBuffDelta[i]);
+                }
+            }
+        }
+
+        //Damage Effect
         if (skillBattleInfo.damageDeltaFloat > 0)
         {
             SkillDamageLikeRequest(source, target, effectType);
@@ -89,6 +103,11 @@ public partial class BattleMgr
         }
         int NormalizedDamage = Mathf.RoundToInt(damage);
         return NormalizedDamage;
+    }
+
+    private void SkillBuffEffectDeal(BattleUnitData target, int buffID, int delta)
+    {
+        target.AddBuff(buffID, delta);
     }
 
     private void SkillSpecialEffectDeal(BattleUnitData source, BattleUnitData target,int specialEffectID,int delta)

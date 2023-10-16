@@ -50,7 +50,7 @@ public partial class BattleCharacterData : BattleUnitData
             int tempATK = 0;
             //Basic ATK
             tempATK += ATK;
-            //
+            tempATK += buffATK;
             if (CheckUnlockSkillNode(1021))
             {
                 tempATK += 1;
@@ -63,7 +63,10 @@ public partial class BattleCharacterData : BattleUnitData
     {
         get
         {
-            return DEF;
+            int tempDEF = 0;
+            tempDEF += DEF;
+            tempDEF += buffDEF;
+            return tempDEF;
         }
     }
 
@@ -71,14 +74,30 @@ public partial class BattleCharacterData : BattleUnitData
     {
         get
         {
-            return RES;
+            int tempRES = 0;
+            tempRES += RES;
+            tempRES += buffRES;
+            return tempRES;
         }
     }
+
+    public override int curMaxMOV
+    {
+        get
+        {
+            int tempMOV = 0;
+            tempMOV += maxMOV;
+            tempMOV += buffMOV;
+            return tempMOV;
+        }
+    }
+
 
     public override void ResetNewTurn()
     {
         curAP = maxAP;
-        curMOV = maxMOV;
+        curMOV = curMaxMOV;
+        TurnBuffDecrease();
     }
 }
 

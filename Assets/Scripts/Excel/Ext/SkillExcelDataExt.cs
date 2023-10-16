@@ -115,6 +115,23 @@ public partial class SkillExcelItem
         }
     }
 
+    public List<BuffExcelItem> listBuffUse
+    {
+        get
+        {
+            List<BuffExcelItem> listTemp = new List<BuffExcelItem>();
+            for (int i = 0; i < listBuffEffect.Count; i++)
+            {
+                int tempID = listBuffEffect[i];
+                if (tempID > 0)
+                {
+                    listTemp.Add(PublicTool.GetBuffExcelItem(tempID));
+                }
+            }
+            return listTemp;
+        }
+    }
+
     public List<SkillSpecialExcelItem> listSpecialEffectUse
     {
         get
@@ -126,7 +143,7 @@ public partial class SkillExcelItem
                 int tempID = listSpecialEffect[i];
                 if (tempID > 0)
                 {
-                    listTemp.Add(ExcelDataMgr.Instance.skillSpecialExcelData.GetExcelItem(listSpecialEffect[i]));
+                    listTemp.Add(PublicTool.GetSkillSpecialItem(tempID));
                 }
             }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class BattleFoeData : BattleUnitData
@@ -45,16 +46,20 @@ public class BattleFoeData : BattleUnitData
 
     public override void ResetNewTurn()
     {
-        curMOV = maxMOV;
+        curMOV = curMaxMOV;
+        TurnBuffDecrease();
     }
 
     #region Basic Attribute
-
-    public override int curATK 
+    public override int curATK
     {
         get
         {
-            return item.ATK;
+            int tempATK = 0;
+            //Basic ATK
+            tempATK += item.ATK;
+            tempATK += buffATK;
+            return tempATK;
         }
     }
 
@@ -62,7 +67,10 @@ public class BattleFoeData : BattleUnitData
     {
         get
         {
-            return item.DEF;
+            int tempDEF = 0;
+            tempDEF += item.DEF;
+            tempDEF += buffDEF;
+            return tempDEF;
         }
     }
 
@@ -70,7 +78,21 @@ public class BattleFoeData : BattleUnitData
     {
         get
         {
-            return item.RES;
+            int tempRES = 0;
+            tempRES += item.RES;
+            tempRES += buffRES;
+            return tempRES;
+        }
+    }
+
+    public override int curMaxMOV
+    {
+        get
+        {
+            int tempMOV = 0;
+            tempMOV += maxMOV;
+            tempMOV += buffMOV;
+            return tempMOV;
         }
     }
     #endregion

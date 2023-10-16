@@ -75,6 +75,12 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
             listCharacter[i].ResetNewTurn();
         }
 
+        List<BattlePlantData> listPlant = gameData.listPlant;
+        for (int i = 0; i < listPlant.Count; i++)
+        {
+            listPlant[i].ResetNewTurn();
+        }
+
         List<BattleFoeData> listFoe = gameData.listFoe;
         for (int i = 0; i < listFoe.Count; i++)
         {

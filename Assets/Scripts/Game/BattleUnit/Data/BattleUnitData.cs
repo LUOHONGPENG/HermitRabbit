@@ -28,6 +28,59 @@ public partial class BattleUnitData
     public virtual int curATK { get; }
     public virtual int curDEF { get; }
     public virtual int curRES { get; }
+    public virtual int curMaxMOV { get; }
+
+    public virtual int buffATK 
+    {
+        get
+        {
+            int temp = 0;
+            if (CheckBuffExist(1004))
+            {
+                temp++;
+            }
+            return temp;
+        }
+    }
+
+    public virtual int buffDEF
+    {
+        get
+        {
+            int temp = 0;
+            if (CheckBuffExist(1004))
+            {
+                temp++;
+            }
+            return temp;
+        }
+    }
+
+    public virtual int buffRES
+    {
+        get
+        {
+            int temp = 0;
+            if (CheckBuffExist(1004))
+            {
+                temp++;
+            }
+            return temp;
+        }
+    }
+
+    public virtual int buffMOV
+    {
+        get
+        {
+            int temp = 0;
+            if (CheckBuffExist(1004))
+            {
+                temp++;
+            }
+            return temp;
+        }
+    }
 
     public int GetTypeID()
     {

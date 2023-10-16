@@ -15,13 +15,26 @@ MonoBehaviour:
   items:
   - id: 1001
     name: Guard
+    effectType: 2
+    counterType: 2
     desc: Reduce damage.
   - id: 1002
     name: Overtime Work
+    effectType: 2
+    counterType: 1
     desc: Get extra AP when turn starts.
   - id: 1003
-    name: Infinite
+    name: Infinity
+    effectType: 2
+    counterType: 0
     desc: Next X skills can enlarge the radius.
+  - id: 1004
+    name: Super Worker
+    effectType: 2
+    counterType: 1
+    desc: Increase ability in X turns.
   - id: 2001
     name: Burning
+    effectType: 1
+    counterType: 1
     desc: Receive X damage when turn starts.

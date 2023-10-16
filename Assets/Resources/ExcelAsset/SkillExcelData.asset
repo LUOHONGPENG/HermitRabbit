@@ -28,6 +28,8 @@ MonoBehaviour:
     damageDeltaStd: 2
     damageDelta: 100
     damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
     activeSkillType: 0
@@ -50,6 +52,8 @@ MonoBehaviour:
     damageDeltaStd: 2
     damageDelta: 150
     damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
     activeSkillType: 1
@@ -72,6 +76,8 @@ MonoBehaviour:
     damageDeltaStd: 3
     damageDelta: 100
     damageModifier: -2
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
     listSpecialEffect: d1070000
     listSpecialDelta: 02000000
     activeSkillType: 1
@@ -94,6 +100,8 @@ MonoBehaviour:
     damageDeltaStd: 6
     damageDelta: 200
     damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
     activeSkillType: 1
@@ -116,6 +124,8 @@ MonoBehaviour:
     damageDeltaStd: 2
     damageDelta: 100
     damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
     activeSkillType: 1
@@ -138,6 +148,8 @@ MonoBehaviour:
     damageDeltaStd: 0
     damageDelta: 0
     damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
     listSpecialEffect: b90b0000
     listSpecialDelta: 00000000
     activeSkillType: 2
@@ -160,6 +172,8 @@ MonoBehaviour:
     damageDeltaStd: 2
     damageDelta: 100
     damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
     activeSkillType: 0
@@ -182,6 +196,8 @@ MonoBehaviour:
     damageDeltaStd: 2
     damageDelta: 100
     damageModifier: -1
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
     activeSkillType: 1
@@ -204,6 +220,8 @@ MonoBehaviour:
     damageDeltaStd: 4
     damageDelta: 50
     damageModifier: -1
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
     activeSkillType: 2
@@ -226,6 +244,8 @@ MonoBehaviour:
     damageDeltaStd: 0
     damageDelta: 0
     damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
     listSpecialEffect: e9030000
     listSpecialDelta: 01000000
     activeSkillType: 2
@@ -233,6 +253,30 @@ MonoBehaviour:
     iconUrl: imgIconSkill_2301
     unlockNodeID: 2401
     desc: Regain AP by 1.
+  - id: 2902
+    name: Super Worker
+    costAP: 3
+    range: 2
+    isRangeSelf: 1
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 2
+    plantEffect: 2
+    damageType: 0
+    damageDeltaStd: 0
+    damageDelta: 0
+    damageModifier: 0
+    listBuffEffect: ec030000
+    listBuffDelta: 02000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
+    activeSkillType: 3
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    unlockNodeID: 2902
+    desc: 
   - id: 3001
     name: Tadpole Strike
     costAP: 0
@@ -248,6 +292,8 @@ MonoBehaviour:
     damageDeltaStd: 2
     damageDelta: 100
     damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
     activeSkillType: 4
@@ -270,6 +316,8 @@ MonoBehaviour:
     damageDeltaStd: 2
     damageDelta: 100
     damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
     activeSkillType: 5

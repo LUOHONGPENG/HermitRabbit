@@ -33,6 +33,6 @@ public class BattleMiniCharacterUIItem : MonoBehaviour
     {
         imgFillHP.fillAmount = characterData.curHP / characterData.maxHP;
         imgFillAP.fillAmount = characterData.curAP * 1f / characterData.maxAP;
-        imgFillMove.fillAmount = characterData.curMOV * 1f / characterData.maxMOV;
+        imgFillMove.fillAmount = characterData.curMOV * 1f / characterData.curMaxMOV;
     }
 }
