@@ -151,12 +151,26 @@ public partial class SkillExcelItem
         }
     }
 
+    public int RealCostAP
+    {
+        get
+        {
+            int temp = costAP;
+            if (id == 1101 && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1191))
+            {
+                temp--;
+            }
+            return temp;
+        }
+    }
+
+
     public int RealRange
     {
         get
         {
             int temp = range;
-            if(activeSkillType == ActiveSkillType.SupportSkill && PublicTool.CheckWhetherCharacterUnlockSkill(1002, 2491))
+            if(characterID == 1002 && activeSkillType == ActiveSkillType.SupportSkill && PublicTool.CheckWhetherCharacterUnlockSkill(1002, 2491))
             {
                 temp++;
             }
@@ -164,5 +178,53 @@ public partial class SkillExcelItem
         }
     }
 
+    public int RealRadius
+    {
+        get
+        {
+            int temp = radius;
+            if(id == 1101 && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1192))
+            {
+                temp++;
+            }
+            if (skillSubjectType == BattleUnitType.Character && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1902)&& 
+                id != 1402 && activeSkillType!=ActiveSkillType.NormalAttack)
+            {
+                BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
+                if (characterData.CheckBuffExist(1003))
+                {
+                    temp++;
+                }
+            }
+            return temp;
+        }
+    }
+
+
+    public int RealDamageModifier
+    {
+        get
+        {
+            int temp = damageModifier;
+            if (id == 1101 && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1191))
+            {
+                temp -= 2;
+            }
+            if (id == 1101 && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1192))
+            {
+                temp -= 2;
+            }
+            if(characterID == 1002 && PublicTool.CheckWhetherCharacterUnlockSkill(1002, 2191))
+            {
+                if(activeSkillType == ActiveSkillType.NormalAttack || activeSkillType == ActiveSkillType.DamageSkill)
+                {
+                    BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
+                    int lostHP = Mathf.RoundToInt((characterData.maxHP - characterData.curHP) / 2);
+                    temp += lostHP;
+                }
+            }
+            return temp;
+        }
+    }
 }
 

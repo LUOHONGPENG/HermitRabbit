@@ -83,15 +83,15 @@ public partial class BattleMgr
                     break;
             }
             int NormalizedDamage = NormalizeRealDamage(realDamage);
-            target.GetHurt(realDamage);
-            target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-realDamage).ToString(), target.posID));
+            target.GetHurt(NormalizedDamage);
+            target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-NormalizedDamage).ToString(), target.posID));
         }
         else if (effectType == SkillEffectType.Help)
         {
             realDamage = damageSource;
             int NormalizedDamage = NormalizeRealDamage(realDamage);
-            target.GetHeal(realDamage);
-            target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Heal, (realDamage).ToString(), target.posID));
+            target.GetHeal(NormalizedDamage);
+            target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Heal, (NormalizedDamage).ToString(), target.posID));
         }
     }
 

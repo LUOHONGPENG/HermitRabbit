@@ -81,7 +81,7 @@ MonoBehaviour:
     columnID: -4
     remark: 
   - id: 1192
-    name: Fire Area
+    name: Field of Scorch
     desc: Skill Radius of Inferno + 1,but damage - 2.
     nodeType: 1
     costSP: 2
@@ -280,7 +280,7 @@ MonoBehaviour:
     remark: 
   - id: 2191
     name: Injury Benefit
-    desc: Deal extra damage when
+    desc: Deal more damage when lost more HP.
     nodeType: 1
     costSP: 2
     conditionSPSpent: 0

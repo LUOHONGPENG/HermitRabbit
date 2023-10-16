@@ -55,12 +55,12 @@ public struct SkillBattleInfo
         this.ID = item.id;
         this.name = item.name;
         this.skillSubjectType = item.skillSubjectType;
-        this.costAP = item.costAP;
+        this.costAP = item.RealCostAP;
         //Range
         this.regionType = item.regionType;
         this.isRangeSelf = item.isRangeSelf;
         this.range = item.RealRange;
-        this.radius = item.radius;
+        this.radius = item.RealRadius;
         //Target
         this.needExtraTarget = item.needExtraTarget;
         this.isTargetFoe = item.isTargetFoe;
@@ -74,7 +74,7 @@ public struct SkillBattleInfo
         this.damageType = item.damageType;
         this.damageDeltaStd = item.damageDeltaStd;
         this.damageDeltaFloat = item.damageDeltaFloat;
-        this.damageModifier = item.damageModifier;
+        this.damageModifier = item.RealDamageModifier;
         this.activeSkillType = item.activeSkillType;
         //Buff
         this.listBuffEffect = item.listBuffUse;

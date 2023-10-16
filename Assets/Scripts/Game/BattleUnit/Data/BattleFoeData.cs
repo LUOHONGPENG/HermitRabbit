@@ -33,9 +33,9 @@ public class BattleFoeData : BattleUnitData
     public int GetSkillTouchRange()
     {
         SkillExcelItem skillItem = PublicTool.GetSkillItem(GetSkillID());
-        if (skillItem != null)
+        if (skillItem != null && skillItem.regionType == SkillRegionType.Circle)
         {
-            return skillItem.RealRange + skillItem.radius;
+            return skillItem.RealRange + skillItem.RealRadius;
         }
         else
         {

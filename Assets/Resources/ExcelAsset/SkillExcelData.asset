@@ -50,8 +50,8 @@ MonoBehaviour:
     plantEffect: 1
     damageType: 2
     damageDeltaStd: 2
-    damageDelta: 150
-    damageModifier: 0
+    damageDelta: 135
+    damageModifier: 1
     listBuffEffect: 00000000
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
@@ -157,6 +157,30 @@ MonoBehaviour:
     iconUrl: imgIconSkill_1302
     unlockNodeID: 1402
     desc: 
+  - id: 1902
+    name: Infinity
+    costAP: 3
+    range: 3
+    isRangeSelf: 1
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 2
+    plantEffect: 0
+    damageType: 0
+    damageDeltaStd: 0
+    damageDelta: 0
+    damageModifier: 0
+    listBuffEffect: eb030000
+    listBuffDelta: 03000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
+    activeSkillType: 2
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    unlockNodeID: 1902
+    desc: 
   - id: 2001
     name: Strike
     costAP: 1
@@ -215,7 +239,7 @@ MonoBehaviour:
     regionType: 0
     foeEffect: 0
     characterEffect: 2
-    plantEffect: 0
+    plantEffect: 2
     damageType: 3
     damageDeltaStd: 4
     damageDelta: 50
@@ -293,7 +317,7 @@ MonoBehaviour:
     damageDelta: 0
     damageModifier: 0
     listBuffEffect: ec030000
-    listBuffDelta: 02000000
+    listBuffDelta: 03000000
     listSpecialEffect: eb030000
     listSpecialDelta: 01000000
     activeSkillType: 3
