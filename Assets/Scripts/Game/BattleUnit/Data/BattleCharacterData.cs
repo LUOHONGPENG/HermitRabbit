@@ -139,15 +139,21 @@ public partial class BattleCharacterData
 
     public void InitSkillNode()
     {
+        ResetSkillNode();
+    }
+
+    public void ResetSkillNode()
+    {
         listUnlockSkillNode.Clear();
         List<SkillNodeExcelItem> listNode = ExcelDataMgr.Instance.skillNodeExcelData.GetSkillNodeList(typeID);
-        for(int i = 0; i < listNode.Count; i++)
+        for (int i = 0; i < listNode.Count; i++)
         {
             if (listNode[i].isInitUnlock)
             {
                 AcquireSkillNode(listNode[i].id);
             }
         }
+        SPSpent = 0;
     }
 
     public void AcquireSkillNode(int nodeID)

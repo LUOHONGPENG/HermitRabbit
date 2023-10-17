@@ -61,6 +61,7 @@ public class SkillNodeUIItem : MonoBehaviour
         }
 
         imgIcon.sprite = Resources.Load("Sprite/Skill/" + nodeItem.iconUrl, typeof(Sprite)) as Sprite;
+        ResetNodeSize();
 
         btnNode.onClick.RemoveAllListeners();
         btnNode.onClick.AddListener(delegate ()
@@ -175,7 +176,13 @@ public class SkillNodeUIItem : MonoBehaviour
         }
         else
         {
-            this.transform.localScale = Vector2.one * scaleRate;
+            ResetNodeSize();
         }
+    }
+
+    public void ResetNodeSize()
+    {
+        this.transform.localScale = Vector2.one * scaleRate;
+
     }
 }

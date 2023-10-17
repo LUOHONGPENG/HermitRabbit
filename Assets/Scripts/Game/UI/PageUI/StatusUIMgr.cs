@@ -12,6 +12,7 @@ public class StatusUIMgr : MonoBehaviour
     public Button btnChoose1001;
     public Button btnChoose1002;
     public Button btnClose;
+    public Button btnReset;
 
     [Header("Status")]
     public Text codeLevel;
@@ -57,6 +58,13 @@ public class StatusUIMgr : MonoBehaviour
         btnChoose1002.onClick.AddListener(delegate ()
         {
             characterData = PublicTool.GetGameData().GetBattleCharacterData(1002);
+            RefreshCharacterInfo();
+        });
+
+        btnReset.onClick.RemoveAllListeners();
+        btnReset.onClick.AddListener(delegate ()
+        {
+            characterData.ResetSkillNode();
             RefreshCharacterInfo();
         });
     }
