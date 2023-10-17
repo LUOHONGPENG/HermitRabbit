@@ -55,6 +55,14 @@ public enum MapIndicatorType
     Blue
 }
 
+public enum Rarity
+{
+    Common,
+    UnCommon,
+    Rare,
+    Epic
+}
+
 #endregion
 
 #region Battle Basic
