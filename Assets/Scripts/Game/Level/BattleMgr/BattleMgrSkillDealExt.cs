@@ -56,7 +56,7 @@ public partial class BattleMgr
                 damageSource = source.curATK * skillBattleInfo.damageDeltaFloat;
                 if (source.curMOV >= target.curMOV)
                 {
-                    damageSource += (source.curMOV - target.curMOV);
+                    damageSource += 2 * (source.curMOV - target.curMOV);
                 }
                 break;
             case SkillDamageDeltaStd.MAXHP:

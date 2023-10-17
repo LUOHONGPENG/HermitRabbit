@@ -16,7 +16,7 @@ MonoBehaviour:
   - id: 1001
     name: Leo
     HP: 8
-    ATK: 4
+    ATK: 5
     DEF: 0
     RES: 2
     MOV: 4
@@ -34,6 +34,6 @@ MonoBehaviour:
     MOV: 6
     AP: 3
     AttackID: 2001
-    startPos: 0200000003000000
+    startPos: 0100000002000000
     pixelUrl: PixelAlfven
     portraitUrl: Sprite/Portrait/imgPortrait2001
