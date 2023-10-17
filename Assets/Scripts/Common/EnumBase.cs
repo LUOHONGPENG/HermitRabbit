@@ -38,14 +38,14 @@ public enum InteractTargetType
 
 #region Map
 
-/*public enum MapTileType
+public enum MapTileType
 {
     Normal,
     Water,
     Grass,
     Stone
 }
-*/
+
 public enum MapIndicatorType
 {
     Hide,

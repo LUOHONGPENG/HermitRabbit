@@ -9,6 +9,7 @@ public class TestButtonMgr : MonoBehaviour
 
     public Button btnAddExp;
     public Button btnGenerateFoe;
+    public Button btnRandomMap;
 
     public void Init()
     {
@@ -24,5 +25,10 @@ public class TestButtonMgr : MonoBehaviour
             EventCenter.Instance.EventTrigger("TestButton", "GenerateFoe");
         });
 
+        btnRandomMap.onClick.RemoveAllListeners();
+        btnRandomMap.onClick.AddListener(delegate ()
+        {
+            EventCenter.Instance.EventTrigger("TestButton", "RandomMap");
+        });
     }
 }

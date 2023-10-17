@@ -10,11 +10,35 @@ public class MapTileBase : MonoBehaviour
     public MapTileData mapTileData;
     public Vector2Int posID;
 
+    public List<GameObject> listModel = new List<GameObject>();
+
+    public MapTileType tileType = MapTileType.Normal;
+
     public void Init(MapTileData mapTileData)
     {
         this.mapTileData = mapTileData;
         this.posID = mapTileData.posID;
+
+        tileType = MapTileType.Normal;
+        RefreshMapTile();
     }
+
+    public void RandomSetTileType()
+    {
+        tileType =(MapTileType)Random.Range(0, 4);
+        RefreshMapTile();
+    }
+
+    public void RefreshMapTile()
+    {
+        foreach(var model in listModel)
+        {
+            model.SetActive(false);
+        }
+
+        listModel[(int)tileType].SetActive(true);
+    }
+
 
     #region Indicator
     

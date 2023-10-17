@@ -49,7 +49,7 @@ public partial class LevelMgr
 
 
         //About Test
-        EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
+        EventCenter.Instance.RemoveEventListener("TestButton", TestButtonEvent);
     }
 
     private void InputChangeSkillEvent(object arg0)
@@ -108,6 +108,12 @@ public partial class LevelMgr
             case "GenerateFoe":
                 BattleFoeData newFoeData = gameData.GenerateFoeData(1001);
                 unitViewMgr.GenerateFoeView(newFoeData);
+                break;
+            case "RandomMap":
+                for(int i = 0; i < mapViewMgr.listMapTile.Count; i++)
+                {
+                    mapViewMgr.listMapTile[i].RandomSetTileType();
+                }
                 break;
         }
     }
