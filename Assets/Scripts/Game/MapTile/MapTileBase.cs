@@ -8,24 +8,43 @@ public class MapTileBase : MonoBehaviour
     public List<Color> listColorIndicator;
 
     public MapTileData mapTileData;
-    public Vector2Int posID;
+    public Vector2Int posID
+    {
+        get
+        {
+            if(mapTileData != null)
+            {
+                return mapTileData.posID;
+            }
+            return Vector2Int.zero;
+        }
+    }
+
+    public MapTileType tileType
+    {
+        get
+        {
+            if (mapTileData != null)
+            {
+                return mapTileData.tileType;
+            }
+            return MapTileType.Normal;
+        }
+    }
 
     public List<GameObject> listModel = new List<GameObject>();
 
-    public MapTileType tileType = MapTileType.Normal;
 
     public void Init(MapTileData mapTileData)
     {
         this.mapTileData = mapTileData;
-        this.posID = mapTileData.posID;
 
-        tileType = MapTileType.Normal;
         RefreshMapTile();
     }
 
-    public void RandomSetTileType()
+    public void TestRandomSetTileType()
     {
-        tileType =(MapTileType)Random.Range(0, 4);
+        mapTileData.RandomMapType();
         RefreshMapTile();
     }
 

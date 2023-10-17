@@ -42,11 +42,12 @@ public partial class BattleMgr
             PublicTool.EventCameraGoPosID(foeData.posID);
             yield return new WaitForSeconds(0.5f);
 
-            //Scan and get the target Pos
+            //2.Scan and get the target Pos
             IEnumerator itorReturn = null;
             itorReturn = IE_ExecuteFoeScan(foeData);
             yield return itorReturn;
             Vector2Int targetPos = ((Vector2Int)itorReturn.Current);
+            //3.Move
             if (targetPos.x >= 0)
             {
                 yield return StartCoroutine(IE_ExecuteFoeMove(foeData, targetPos));
@@ -56,7 +57,7 @@ public partial class BattleMgr
                 continue;
             }
 
-            //Spell skill and aim at the target first
+            //4.Spell skill and aim at the target first
             if (CheckPossibleSkill(foeData))
             {
                 if (foeData.listValidSkill.Contains(targetPos))
@@ -97,10 +98,10 @@ public partial class BattleMgr
 
     private IEnumerator IE_ExecuteFoeScan(BattleFoeData foeData)
     {
-        //Scan
+        //1.Scan using BFS
         PublicTool.RecalculateOccupancy();
         foeData.RefreshFoeMoveAllBFSNode();
-        //Get Target for Foe
+        //2.Get Target for Foe
         List<FindPathNode> listFoeTargetNode = new List<FindPathNode>();
         List<Vector2Int> listFoeTargetPos = PublicTool.GetGameData().GetFoeTargetPos();
         //Create the node according to the data

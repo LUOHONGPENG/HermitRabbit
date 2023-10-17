@@ -36,7 +36,17 @@ public partial class BattleUnitData
         dicValidMoveNode.Clear();
 
         //Get Block Pos
-        List<Vector2Int> listBlock = PublicTool.GetGameData().listTempFoePos;
+        List<Vector2Int> listBlock = new List<Vector2Int>();
+        for(int i = 0;i< PublicTool.GetGameData().listMapStonePos.Count; i++)
+        {
+            listBlock.Add(PublicTool.GetGameData().listMapStonePos[i]);
+        }
+        for (int i = 0; i < PublicTool.GetGameData().listTempFoePos.Count; i++)
+        {
+            listBlock.Add(PublicTool.GetGameData().listTempFoePos[i]);
+        }
+
+
 
         //Prepare the container for search
         Queue<FindPathNode> ququeOpen = new Queue<FindPathNode>();
@@ -108,6 +118,7 @@ public partial class BattleUnitData
         //Init the virtual Grid
         Dictionary<Vector2Int, FindPathNode> dicPathNode = new Dictionary<Vector2Int, FindPathNode>();
         List<MapTileData> listMap = PublicTool.GetGameData().listMapTile;
+        //In this step, I initialise all the FindPathNodes of all map tiles
         for (int i = 0; i < listMap.Count; i++)
         {
             dicPathNode.Add(listMap[i].posID, new FindPathNode(listMap[i].posID));
@@ -118,23 +129,32 @@ public partial class BattleUnitData
         dicValidMoveNode.Clear();
 
         //GetBlockPos
-        List<Vector2Int> listBlockTarget = new List<Vector2Int>();
+        List<Vector2Int> listBlock = new List<Vector2Int>();
         foreach(Vector2Int blockPos in PublicTool.GetGameData().listTempCharacterPos)
         {
-            if (!listBlockTarget.Contains(blockPos))
+            if (!listBlock.Contains(blockPos))
             {
-                listBlockTarget.Add(blockPos);
+                listBlock.Add(blockPos);
             }
         }
         foreach (Vector2Int blockPos in PublicTool.GetGameData().listTempPlantPos)
         {
-            if (!listBlockTarget.Contains(blockPos))
+            if (!listBlock.Contains(blockPos))
             {
-                listBlockTarget.Add(blockPos);
+                listBlock.Add(blockPos);
+            }
+        }
+        foreach (Vector2Int blockPos in PublicTool.GetGameData().listMapStonePos)
+        {
+            if (!listBlock.Contains(blockPos))
+            {
+                listBlock.Add(blockPos);
             }
         }
 
         //Prepare the container for search
+
+        //This queue is used to store the node that need to calculate the GCost
         Queue<FindPathNode> ququeOpen = new Queue<FindPathNode>();
         Dictionary<Vector2Int, FindPathNode> dicClose = new Dictionary<Vector2Int, FindPathNode>();
         dicClose.Clear();
@@ -150,7 +170,7 @@ public partial class BattleUnitData
             {
                 FindPathNode parentNode = tarNode.parentNode;
                 tarNode.path = new List<Vector2Int>(parentNode.path);
-                tarNode.gCost = parentNode.gCost + 1;
+                tarNode.gCost = parentNode.gCost + 1;//1 represent the cost of the map tile
             }
             else
             {
@@ -158,9 +178,10 @@ public partial class BattleUnitData
                 tarNode.gCost = 0;
             }
 
+            //Add the tarNode into the dictionary Close means that I have checked this node, so we won't read it again
             dicClose.Add(tarNode.pos, tarNode);
             dicBFSAllNode.Add(tarNode.pos, tarNode);
-            if (listBlockTarget.Contains(tarNode.pos))
+            if (listBlock.Contains(tarNode.pos))
             {
                 continue;
             }
@@ -197,6 +218,14 @@ public partial class BattleUnitData
                 dicValidMoveNode.Remove(tarPos);
             }
         }
+
+        foreach (Vector2Int tarPos in PublicTool.GetGameData().listMapStonePos)
+        {
+            if (dicValidMoveNode.ContainsKey(tarPos))
+            {
+                dicValidMoveNode.Remove(tarPos);
+            }
+        }
     }
 
     public void RefreshDistanceFromAimNode(Vector2Int aimPos,int touchRange)
@@ -211,6 +240,13 @@ public partial class BattleUnitData
             }
         }
         foreach (Vector2Int blockPos in PublicTool.GetGameData().listTempPlantPos)
+        {
+            if (!listBlock.Contains(blockPos))
+            {
+                listBlock.Add(blockPos);
+            }
+        }
+        foreach (Vector2Int blockPos in PublicTool.GetGameData().listMapStonePos)
         {
             if (!listBlock.Contains(blockPos))
             {

@@ -21,7 +21,7 @@ public partial class GameData
             {
                 Vector2Int posID = new Vector2Int(i, j);
 
-                MapTileData mapTileData = new MapTileData(posID, 1);
+                MapTileData mapTileData = new MapTileData(posID);
                 listMapTile.Add(mapTileData);
                 dicMapTile.Add(posID, mapTileData);
             }
@@ -48,9 +48,14 @@ public partial class GameData
     public List<Vector2Int> listTempEmptyPos = new List<Vector2Int>();
     public Dictionary<Vector2Int, UnitInfo> dicTempMapUnit = new Dictionary<Vector2Int, UnitInfo>();
 
+    public List<Vector2Int> listMapStonePos = new List<Vector2Int>();
+
     //Refresh Valid Range for display map
     public void RecalculateOccupancy()
     {
+        //Scan Stone Pos
+        ScanMapStonePos();
+        //Scan Unit Pos
         ScanMapUnitInfo();
 
         foreach (var foe in listFoe)
@@ -61,6 +66,7 @@ public partial class GameData
         //Need Optimise
         if(BattleMgr.Instance.battleTurnPhase == BattlePhase.CharacterPhase)
         {
+            //Scan the possible position of the character
             foreach (var character in listCharacter)
             {
                 character.RefreshValidCharacterMoveBFSNode();
@@ -73,6 +79,9 @@ public partial class GameData
         GetCurUnitData().RefreshValidSkill();
     }
 
+    /// <summary>
+    /// Scan Map Unit Pos
+    /// </summary>
     private void ScanMapUnitInfo()
     {
         dicTempMapUnit.Clear();
@@ -82,7 +91,7 @@ public partial class GameData
         listTempFriendPos.Clear();
         listTempAllPos.Clear();
         listTempEmptyPos.Clear();
-
+        //Scan character to get position
         foreach (var character in listCharacter)
         {
             dicTempMapUnit.Add(character.posID, new UnitInfo(BattleUnitType.Character, character.keyID));
@@ -128,6 +137,22 @@ public partial class GameData
         }
     }
 
+    //Scan the position of the stone
+    public void ScanMapStonePos()
+    {
+        //listMapStonePos
+        listMapStonePos.Clear();
+
+        foreach (var map in listMapTile)
+        {
+            if(map.tileType == MapTileType.Stone)
+            {
+                listMapStonePos.Add(map.posID);
+                Debug.Log(map.posID);
+            }
+        }
+    }
+
     #endregion
 
     #region Application
@@ -141,6 +166,7 @@ public partial class GameData
         return listTemp;
     }
 
+    //Help the foe to find the position of the character or plants
     public List<Vector2Int> GetFoeTargetPos()
     {
         List<Vector2Int> listTemp = new List<Vector2Int>();

@@ -6,15 +6,29 @@ using UnityEngine;
 public class MapTileData
 {
     public Vector2Int posID;
-    public int typeID;
+    public MapTileType tileType = MapTileType.Normal;
 
-    public MapTileData(Vector2Int posID, int typeID)
+    public MapTileData(Vector2Int posID)
     {
         this.posID = posID;
-        this.typeID = typeID;
+        tileType = MapTileType.Normal;
+    }
+
+    public void SetMapType(MapTileType tileType)
+    {
+        this.tileType = tileType;
+    }
+
+    public void RandomMapType()
+    {
+        tileType = (MapTileType)Random.Range(0, 4);
     }
 
 }
+
+/// <summary>
+/// 
+/// </summary>
 public class FindPathNode
 {
     public Vector2Int pos;

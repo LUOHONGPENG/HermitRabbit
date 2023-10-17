@@ -112,7 +112,7 @@ public partial class LevelMgr
             case "RandomMap":
                 for(int i = 0; i < mapViewMgr.listMapTile.Count; i++)
                 {
-                    mapViewMgr.listMapTile[i].RandomSetTileType();
+                    mapViewMgr.listMapTile[i].TestRandomSetTileType();
                 }
                 break;
         }
