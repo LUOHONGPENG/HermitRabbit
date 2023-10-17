@@ -20,6 +20,7 @@ MonoBehaviour:
     costSP: 0
     conditionSPSpent: 0
     conditionPreNode: 00000000
+    conflictNode: 0
     isInitUnlock: 1
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -33,6 +34,7 @@ MonoBehaviour:
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 00000000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -46,6 +48,7 @@ MonoBehaviour:
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 00000000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -54,13 +57,14 @@ MonoBehaviour:
     remark: 
   - id: 1101
     name: Inferno
-    desc: 'Target all units and deal 1.5ATK+2 damage,
+    desc: 'Target all units and deal 1.35ATK+1 damage,
 
       with one level burning.'
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: e9030000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -74,6 +78,7 @@ MonoBehaviour:
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 4d040000
+    conflictNode: 1193
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -87,11 +92,26 @@ MonoBehaviour:
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 4d040000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 2
     columnID: -2
+    remark: 
+  - id: 1193
+    name: Confocal
+    desc: Inferno will cost all AP, each extra AP deal more damage.
+    nodeType: 1
+    costSP: 2
+    conditionSPSpent: 0
+    conditionPreNode: 4d040000
+    conflictNode: 1191
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 1
+    columnID: -5
     remark: 
   - id: 1102
     name: Boom!
@@ -100,6 +120,7 @@ MonoBehaviour:
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 4d040000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -113,6 +134,7 @@ MonoBehaviour:
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: e9030000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -126,6 +148,7 @@ MonoBehaviour:
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: b1040000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -139,6 +162,7 @@ MonoBehaviour:
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: e9030000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -152,6 +176,7 @@ MonoBehaviour:
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 15050000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -165,6 +190,7 @@ MonoBehaviour:
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: e9030000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -178,6 +204,7 @@ MonoBehaviour:
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 79050000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -191,6 +218,7 @@ MonoBehaviour:
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 79050000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -201,9 +229,10 @@ MonoBehaviour:
     name: Time Expand
     desc: Double all debuff counter.
     nodeType: 0
-    costSP: 3
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 4e040000b2040000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -217,9 +246,10 @@ MonoBehaviour:
       Infinity can enlarge next X skills'' radius by
       1 unit.'
     nodeType: 0
-    costSP: 3
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 160500007a050000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Default
@@ -233,6 +263,7 @@ MonoBehaviour:
     costSP: 0
     conditionSPSpent: 0
     conditionPreNode: 00000000
+    conflictNode: 0
     isInitUnlock: 1
     characterID: 1002
     iconUrl: imgIconSkill_BFStrike
@@ -246,6 +277,7 @@ MonoBehaviour:
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 00000000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -259,6 +291,7 @@ MonoBehaviour:
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 00000000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -272,6 +305,7 @@ MonoBehaviour:
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: d1070000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_BFCut
@@ -285,6 +319,7 @@ MonoBehaviour:
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 35080000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_InjuryB
@@ -298,6 +333,7 @@ MonoBehaviour:
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 8f080000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Overtime
@@ -311,6 +347,7 @@ MonoBehaviour:
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: d1070000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -324,6 +361,7 @@ MonoBehaviour:
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: d1070000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -337,6 +375,7 @@ MonoBehaviour:
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: d1070000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -350,6 +389,7 @@ MonoBehaviour:
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 61090000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -363,6 +403,7 @@ MonoBehaviour:
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 61090000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -373,9 +414,10 @@ MonoBehaviour:
     name: Final Guard
     desc: HP won't become 0.
     nodeType: 0
-    costSP: 3
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 3608000099080000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -386,9 +428,10 @@ MonoBehaviour:
     name: Super Worker
     desc: Increase ATK,DEF,RES,max Movement by 1.
     nodeType: 0
-    costSP: 3
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: fd08000062090000
+    conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Default

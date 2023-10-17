@@ -111,7 +111,7 @@ public partial class SkillExcelItem
     {
         get
         {
-            return 0.01f * damageDelta;
+            return 0.01f * RealDamageDelta;
         }
     }
 
@@ -156,9 +156,20 @@ public partial class SkillExcelItem
         get
         {
             int temp = costAP;
-            if (id == 1101 && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1191))
+            if (id == 1101)
             {
-                temp--;
+                if(PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1191))
+                {
+                    temp--;
+                }
+                else if (PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1193) && characterID == 1001)
+                {
+                    BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
+                    if(characterData.curAP > costAP)
+                    {
+                        temp = characterData.curAP;
+                    }
+                }
             }
             return temp;
         }
@@ -196,6 +207,27 @@ public partial class SkillExcelItem
                     temp++;
                 }
             }
+            return temp;
+        }
+    }
+
+    public float RealDamageDelta
+    {
+        get
+        {
+            float temp = damageDelta;
+            if (id == 1101)
+            {
+                if (PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1193) && characterID == 1001)
+                {
+                    BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
+                    if (characterData.curAP > costAP)
+                    {
+                        temp += (characterData.curAP - costAP) * 115;
+                    }
+                }
+            }
+
             return temp;
         }
     }

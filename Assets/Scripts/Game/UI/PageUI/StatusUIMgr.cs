@@ -32,6 +32,7 @@ public class StatusUIMgr : MonoBehaviour
     [Header("SkillLine")]
     public Transform tfLine;
     public GameObject pfLine;
+    public GameObject pfConflict;
 
     private BattleCharacterData characterData;
 
@@ -174,6 +175,18 @@ public class StatusUIMgr : MonoBehaviour
                     GameObject objLine = GameObject.Instantiate(pfLine, tfLine);
                     SkillLineUIItem itemLine = objLine.GetComponent<SkillLineUIItem>();
                     itemLine.Init(itemNode.transform.localPosition, dicNodeUI[endID].transform.localPosition);
+                }
+            }
+
+            //Generate Red Line if there is a conflict
+            if (nodeItem.conflictNode != 0)
+            {
+                int conflictID = nodeItem.conflictNode;
+                if (dicNodeUI.ContainsKey(conflictID))
+                {
+                    GameObject objConflict = GameObject.Instantiate(pfConflict, tfLine);
+                    SkillLineUIItem itemConflict = objConflict.GetComponent<SkillLineUIItem>();
+                    itemConflict.Init(itemNode.transform.localPosition, dicNodeUI[conflictID].transform.localPosition);
                 }
             }
         }

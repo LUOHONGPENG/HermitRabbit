@@ -80,6 +80,7 @@ public class SkillNodeUIItem : MonoBehaviour
                 case NodeState.NotEnoughSP:
                     break;
             }
+            RefreshNodeState();
             //Check Whether the node is unlocked
         });
     }
@@ -114,7 +115,16 @@ public class SkillNodeUIItem : MonoBehaviour
                     break;
                 }
             }
-            if(characterData.SPSpent < nodeItem.conditionSPSpent)
+            //Conflict
+            if (nodeItem.conflictNode != 0)
+            {
+                if (characterData.CheckUnlockSkillNode(nodeItem.conflictNode))
+                {
+                    isMeetUnlockNode = false;
+                }
+            }
+
+            if (characterData.SPSpent < nodeItem.conditionSPSpent)
             {
                 nodeState = NodeState.LockCondition;
             }

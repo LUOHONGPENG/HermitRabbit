@@ -14,6 +14,7 @@ public partial class SkillNodeExcelItem : ExcelItemBase
 	public int costSP;
 	public int conditionSPSpent;
 	public List<int> conditionPreNode;
+	public int conflictNode;
 	public bool isInitUnlock;
 	public int characterID;
 	public string iconUrl;
@@ -46,6 +47,7 @@ public class SkillNodeAssetAssignment
 			items[i].costSP = Convert.ToInt32(allItemValueRowList[i]["costSP"]);
 			items[i].conditionSPSpent = Convert.ToInt32(allItemValueRowList[i]["conditionSPSpent"]);
 			items[i].conditionPreNode = new List<int>(Array.ConvertAll((allItemValueRowList[i]["conditionPreNode"]).Split(';'), int.Parse));
+			items[i].conflictNode = Convert.ToInt32(allItemValueRowList[i]["conflictNode"]);
 			items[i].isInitUnlock = Convert.ToBoolean(allItemValueRowList[i]["isInitUnlock"]);
 			items[i].characterID = Convert.ToInt32(allItemValueRowList[i]["characterID"]);
 			items[i].iconUrl = allItemValueRowList[i]["iconUrl"];
