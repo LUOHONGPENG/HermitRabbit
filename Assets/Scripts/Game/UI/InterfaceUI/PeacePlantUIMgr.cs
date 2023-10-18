@@ -23,6 +23,7 @@ public class PeacePlantUIMgr : MonoBehaviour
 
     public void ShowPopup()
     {
+
         PublicTool.ClearChildItem(tfPlantBtn);
 
 
