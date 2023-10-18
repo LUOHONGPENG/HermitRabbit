@@ -10,6 +10,7 @@ public class InterfaceUIMgr : MonoBehaviour
     public BattleOptionUIMgr battleOptionUIMgr;
     public PeaceInterfaceUIMgr peaceInterfaceUIMgr;
     public PeacePlantUIMgr peacePlantUIMgr;
+    public PeaceMapClipUIMgr peaceMapClipUIMgr;
 
     public Text txPhase;
     public Text txDayInfo;
