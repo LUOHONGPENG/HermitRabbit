@@ -46,7 +46,8 @@ public partial class GameData
         }
 
         listMapClipHeld.Clear();
-
+        listMapClipHeld.Add(1001);
+        listMapClipHeld.Add(2001);
 
         //
         ReadClipToTile();
@@ -196,7 +197,7 @@ public partial class GameData
 
         foreach (var map in listMapTile)
         {
-            if (!listTempAllPos.Contains(map.posID))
+            if (!listTempAllPos.Contains(map.posID)&& !listMapStonePos.Contains(map.posID))
             {
                 listTempEmptyPos.Add(map.posID);
             }

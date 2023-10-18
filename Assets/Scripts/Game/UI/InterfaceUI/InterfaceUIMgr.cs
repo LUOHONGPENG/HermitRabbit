@@ -51,6 +51,10 @@ public class InterfaceUIMgr : MonoBehaviour
         EventCenter.Instance.AddEventListener("PeacePlantStart", PeacePlantStartEvent);
         EventCenter.Instance.AddEventListener("PeacePlantEnd", PeacePlantEndEvent);
 
+
+        EventCenter.Instance.AddEventListener("PeaceMapStart", PeaceMapStartEvent);
+        EventCenter.Instance.AddEventListener("PeaceMapEnd", PeaceMapEndEvent);
+
     }
 
 
@@ -72,8 +76,10 @@ public class InterfaceUIMgr : MonoBehaviour
         EventCenter.Instance.RemoveEventListener("PeacePlantStart", PeacePlantStartEvent);
         EventCenter.Instance.RemoveEventListener("PeacePlantEnd", PeacePlantEndEvent);
 
+        EventCenter.Instance.RemoveEventListener("PeaceMapStart", PeaceMapStartEvent);
+        EventCenter.Instance.RemoveEventListener("PeaceMapEnd", PeaceMapEndEvent);
     }
-
+    
 
 
     private void RefreshCharacterInfoEvent(object arg0)
@@ -156,6 +162,17 @@ public class InterfaceUIMgr : MonoBehaviour
     {
         peaceInterfaceUIMgr.ScrollShow();
         peacePlantUIMgr.HidePopup();
+    }
+
+    private void PeaceMapStartEvent(object arg0)
+    {
+        peaceInterfaceUIMgr.ScrollHide();
+        peaceMapClipUIMgr.ShowPopup();
+    }
+    private void PeaceMapEndEvent(object arg0)
+    {
+        peaceInterfaceUIMgr.ScrollShow();
+        peaceMapClipUIMgr.HidePopup();
     }
     #endregion
 

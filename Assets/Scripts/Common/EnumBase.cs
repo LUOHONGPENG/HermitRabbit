@@ -21,6 +21,7 @@ public enum InteractState
 {
     PeaceNormal,
     PeacePlant,
+    PeaceMap,
     BattleNormal,
     CharacterMove,
     CharacterSkill,

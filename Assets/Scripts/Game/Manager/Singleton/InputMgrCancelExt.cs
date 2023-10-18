@@ -22,6 +22,10 @@ public partial class InputMgr
                 SetInteractState(InteractState.PeaceNormal);
                 EventCenter.Instance.EventTrigger("PeacePlantEnd", null);
                 break;
+            case InteractState.PeaceMap:
+                SetInteractState(InteractState.PeaceMap);
+                EventCenter.Instance.EventTrigger("PeaceMapEnd", null);
+                break;
             case InteractState.CharacterMove:
                 SetInteractState(InteractState.BattleNormal);
                 EventCenter.Instance.EventTrigger("InputCancelCharacter", null);

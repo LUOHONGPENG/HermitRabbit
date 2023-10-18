@@ -23,8 +23,13 @@ public class PeaceMapClipUIMgr : MonoBehaviour
 
     public void ShowPopup()
     {
-
         PublicTool.ClearChildItem(tfMapClip);
+        for(int i = 0; i < PublicTool.GetGameData().listMapClipHeld.Count; i++)
+        {
+            GameObject objClip = GameObject.Instantiate(pfMapClip, tfMapClip);
+            PeaceMapClipUIItem itemClip = objClip.GetComponent<PeaceMapClipUIItem>();
+            
+        }
         objPopup.SetActive(true);
     }
 

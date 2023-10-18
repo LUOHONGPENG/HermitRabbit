@@ -12,6 +12,7 @@ public class PeaceInterfaceUIMgr : MonoBehaviour
     public Button btnStartBattle;
     public Button btnShowStatus;
     public Button btnStartPlant;
+    public Button btnStartMap;
 
     public void Init()
     {
@@ -35,6 +36,12 @@ public class PeaceInterfaceUIMgr : MonoBehaviour
             EventCenter.Instance.EventTrigger("PeacePlantStart", null);
         });
 
+        btnStartMap.onClick.RemoveAllListeners();
+        btnStartMap.onClick.AddListener(delegate ()
+        {
+            PublicTool.EventChangeInteract(InteractState.PeaceMap);
+            EventCenter.Instance.EventTrigger("PeaceMapStart", null);
+        });
     }
 
     public void ShowPopup()
