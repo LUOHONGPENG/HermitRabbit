@@ -11,8 +11,8 @@ public partial class PublicTool
     /// <returns></returns>
     public static Vector3 ConvertPosFromID(Vector2Int posID)
     {
-        int centerX = (GameGlobal.mapSize - 1) / 2;
-        int centerZ = (GameGlobal.mapSize - 1) / 2;
+        int centerX = (GameGlobal.mapClipSize * GameGlobal.mapClipNumX - 1) / 2;
+        int centerZ = (GameGlobal.mapClipSize * GameGlobal.mapClipNumY + GameGlobal.mapRowFoe + GameGlobal.mapRowFriend - 1) / 2;
         /*        int centerX = 0;
                 int centerZ = 0;*/
 

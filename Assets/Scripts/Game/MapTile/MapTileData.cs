@@ -21,7 +21,10 @@ public class MapTileData
 
     public void RandomMapType()
     {
-        tileType = (MapTileType)Random.Range(0, 4);
+        if(posID.y>=1 && posID.y <= 9)
+        {
+            tileType = (MapTileType)Random.Range(0, 4);
+        }
     }
 
 }

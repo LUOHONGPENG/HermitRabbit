@@ -5,19 +5,23 @@ using UnityEngine;
 public partial class GameData
 {
     #region Basic-Map
-
     //MapTileData
     public List<MapTileData> listMapTile = new List<MapTileData>();
     public Dictionary<Vector2Int, MapTileData> dicMapTile = new Dictionary<Vector2Int, MapTileData>();
+    //MapClipUsedData
+    public List<MapClipUsedData> listMapClipUsed = new List<MapClipUsedData>();
+    public Dictionary<Vector2Int, MapClipUsedData> dicMapClipUsed = new Dictionary<Vector2Int, MapClipUsedData>();
+    //MapClipHeld
+    public List<int> listMapClipHeld = new List<int>();
 
-    public void NewGameMapTileData()
+    public void NewGameMapData()
     {
         listMapTile.Clear();
         dicMapTile.Clear();
 
-        for (int i = 0; i < GameGlobal.mapSize; i++)
+        for (int i = 0; i < GameGlobal.mapClipSize * GameGlobal.mapClipNumX; i++)
         {
-            for (int j = 0; j < GameGlobal.mapSize; j++)
+            for (int j = 0; j < GameGlobal.mapClipSize * GameGlobal.mapClipNumY + GameGlobal.mapRowFriend + GameGlobal.mapRowFoe; j++)
             {
                 Vector2Int posID = new Vector2Int(i, j);
 
@@ -26,6 +30,68 @@ public partial class GameData
                 dicMapTile.Add(posID, mapTileData);
             }
         }
+
+        listMapClipUsed.Clear();
+        dicMapClipUsed.Clear();
+        for (int i = 0; i < GameGlobal.mapClipNumX; i++)
+        {
+            for (int j = 0; j < GameGlobal.mapClipNumY; j++)
+            {
+                Vector2Int clipPosID = new Vector2Int(i, j);
+
+                MapClipUsedData mapClipUsedData = new MapClipUsedData(clipPosID);
+                listMapClipUsed.Add(mapClipUsedData);
+                dicMapClipUsed.Add(clipPosID, mapClipUsedData);
+            }
+        }
+
+        listMapClipHeld.Clear();
+
+
+        //
+        ReadClipToTile();
+    }
+
+
+    public void ReadClipToTile()
+    {
+        //(0,0)->()
+        foreach(var clip in listMapClipUsed)
+        {
+            Vector2Int startPos = clip.clipPosID * GameGlobal.mapClipSize + new Vector2Int(0,GameGlobal.mapRowFriend);
+            //Calculate the center of the clip
+            if (clip.clipID < 0)
+            {
+                for (int i = 0; i < GameGlobal.mapClipSize; i++)
+                {
+                    for (int j = 0; j < GameGlobal.mapClipSize; j++)
+                    {
+                        Vector2Int tarPos = startPos + new Vector2Int(j, i);
+                        if (dicMapTile.ContainsKey(tarPos))
+                        {
+                            dicMapTile[tarPos].tileType = MapTileType.Normal;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MapClipExcelItem clipItem = PublicTool.GetMapClipItem(clip.clipID);
+                for(int i = 0;i< GameGlobal.mapClipSize; i++)
+                {
+                    for (int j = 0; j < GameGlobal.mapClipSize; j++)
+                    {
+                        Vector2Int tarPos = startPos + new Vector2Int(j, i);
+                        if (dicMapTile.ContainsKey(tarPos))
+                        {
+                            dicMapTile[tarPos].tileType = clipItem.listMapTile[i * GameGlobal.mapClipSize + j];
+                        }
+                    }
+                }
+            }
+        }
+
+
     }
 
     #endregion

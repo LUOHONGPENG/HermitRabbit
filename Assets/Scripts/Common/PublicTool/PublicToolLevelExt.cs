@@ -28,4 +28,9 @@ public partial class PublicTool
     {
         return ExcelDataMgr.Instance.buffExcelData.GetExcelItem(buffID);
     }
+
+    public static MapClipExcelItem GetMapClipItem(int mapClipID)
+    {
+        return ExcelDataMgr.Instance.mapClipExcelData.GetExcelItem(mapClipID);
+    }
 }
