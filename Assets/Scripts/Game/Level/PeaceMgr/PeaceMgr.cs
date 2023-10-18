@@ -15,19 +15,21 @@ public partial class PeaceMgr : MonoSingleton<PeaceMgr>
         this.gameData = PublicTool.GetGameData();
     }
 
+    #region Plant
+    //Plant Controller
     public int plantID = -1;
-    public List<Vector2Int> listValidPlant = new List<Vector2Int>();
+    public List<Vector2Int> listValidForPlant = new List<Vector2Int>();
 
-
-    public void StartPlant()
+    public void StartPlantMode()
     {
+        //Test
         plantID = 1001;
         RefreshValidPlant();
     }
 
-    public void EndPlant()
+    public void EndPlantMode()
     {
-
+        plantID = -1;
     }
 
     public void AddPlant(Vector2Int pos)
@@ -45,7 +47,7 @@ public partial class PeaceMgr : MonoSingleton<PeaceMgr>
 
     private bool CheckWhetherCanAddPlant(Vector2Int pos)
     {
-        if (!listValidPlant.Contains(pos))
+        if (!listValidForPlant.Contains(pos))
         {
             EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("InvalidTile", pos));
             return false;
@@ -56,6 +58,32 @@ public partial class PeaceMgr : MonoSingleton<PeaceMgr>
 
     private void RefreshValidPlant()
     {
-        listValidPlant = gameData.listTempEmptyPos;
+        listValidForPlant = gameData.listTempEmptyPos;
     }
+
+    #endregion
+
+    #region MapClip
+    //MapClip Type Controller
+    public int mapClipTypeID = -1;
+
+
+    public void StartMapClipMode()
+    {
+        mapClipTypeID = 2002;
+    }
+
+    public void EndMapClipMode()
+    {
+
+    }
+
+    public void SetMapClip(Vector2Int posID)
+    {
+        gameData.SetMapClip(posID, mapClipTypeID);
+        gameData.ReadClipToTile();
+        mapViewMgr.RefreshTileView();
+    }
+
+    #endregion
 }

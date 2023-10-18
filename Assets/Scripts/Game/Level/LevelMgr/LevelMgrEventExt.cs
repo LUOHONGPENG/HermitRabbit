@@ -19,10 +19,15 @@ public partial class LevelMgr
         EventCenter.Instance.AddEventListener("BattleEnd", BattleEndEvent);
         EventCenter.Instance.AddEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
 
-        //Peace
+        //PeacePlant
         EventCenter.Instance.AddEventListener("PeacePlantStart", PeacePlantStartEvent);
         EventCenter.Instance.AddEventListener("PeacePlantEnd", PeacePlantEndEvent);
         EventCenter.Instance.AddEventListener("InputAddPlant", InputAddPlantEvent);
+
+        //PeaceMap
+        EventCenter.Instance.AddEventListener("PeaceMapStart", PeaceMapClipStartEvent);
+        EventCenter.Instance.AddEventListener("PeaceMapEnd", PeaceMapClipEndEvent);
+        EventCenter.Instance.AddEventListener("InputSetMapClip", InputSetMapClipEvent);
 
         //About Test
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
@@ -42,10 +47,15 @@ public partial class LevelMgr
         EventCenter.Instance.RemoveEventListener("BattleEnd", BattleEndEvent);
         EventCenter.Instance.RemoveEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
 
-        //Peace
+        //PeacePlant
         EventCenter.Instance.RemoveEventListener("PeacePlantStart", PeacePlantStartEvent);
         EventCenter.Instance.RemoveEventListener("PeacePlantEnd", PeacePlantEndEvent);
         EventCenter.Instance.RemoveEventListener("InputAddPlant", InputAddPlantEvent);
+
+        //PeaceMap
+        EventCenter.Instance.RemoveEventListener("PeaceMapStart", PeaceMapClipStartEvent);
+        EventCenter.Instance.RemoveEventListener("PeaceMapEnd", PeaceMapClipEndEvent);
+        EventCenter.Instance.RemoveEventListener("InputSetMapClip", InputSetMapClipEvent);
 
 
         //About Test
@@ -134,15 +144,15 @@ public partial class LevelMgr
     }
     #endregion
 
-    #region EventDeal_Peace
+    #region EventDeal_PeacePlant
     private void PeacePlantStartEvent(object arg0)
     {
-        peaceMgr.StartPlant();
+        peaceMgr.StartPlantMode();
     }
 
     private void PeacePlantEndEvent(object arg0)
     {
-        peaceMgr.EndPlant();
+        peaceMgr.EndPlantMode();
     }
 
     private void InputAddPlantEvent(object arg0)
@@ -150,5 +160,24 @@ public partial class LevelMgr
         Vector2Int posPlant = (Vector2Int)arg0;
         peaceMgr.AddPlant(posPlant);
     }
+    #endregion
+
+    #region EventDeal_PeaceMap
+
+    private void PeaceMapClipStartEvent(object arg0)
+    {
+        peaceMgr.StartMapClipMode();
+    }
+    private void PeaceMapClipEndEvent(object arg0)
+    {
+        peaceMgr.EndMapClipMode();
+    }
+
+    private void InputSetMapClipEvent(object arg0)
+    {
+        Vector2Int posMapClip = (Vector2Int)arg0;
+        peaceMgr.SetMapClip(posMapClip);
+    }
+
     #endregion
 }

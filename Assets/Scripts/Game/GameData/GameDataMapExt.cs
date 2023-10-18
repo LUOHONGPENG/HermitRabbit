@@ -53,6 +53,13 @@ public partial class GameData
         ReadClipToTile();
     }
 
+    public void SetMapClip(Vector2Int clipPosID, int clipTypeID)
+    {
+        if (dicMapClipUsed.ContainsKey(clipPosID))
+        {
+            dicMapClipUsed[clipPosID].SetClipID(clipTypeID);
+        }
+    }
 
     public void ReadClipToTile()
     {

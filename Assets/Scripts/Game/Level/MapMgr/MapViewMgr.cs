@@ -43,6 +43,15 @@ public partial class MapViewMgr : MonoBehaviour
         dicMapTile.Add(posID, objMapTile.GetComponent<MapTileBase>());
         objMapTile.name = string.Format("MapTile{0}_{1}", posID.x, posID.y);
     }
+
+    public void RefreshTileView()
+    {
+        for (int i = 0; i < listMapTile.Count; i++)
+        {
+            listMapTile[i].RefreshMapTile();
+        }
+    }
+
     #endregion
 
     #region Display the MapTile state
@@ -182,7 +191,7 @@ public partial class MapViewMgr : MonoBehaviour
         //Go through
         foreach (MapTileBase mapTile in listMapTile)
         {
-            if (PeaceMgr.Instance.listValidPlant.Contains(mapTile.posID))
+            if (PeaceMgr.Instance.listValidForPlant.Contains(mapTile.posID))
             {
                 if (PublicTool.GetTargetCircleRange(PublicTool.GetGameData().hoverTileID, 0).Contains(mapTile.posID))
                 {
