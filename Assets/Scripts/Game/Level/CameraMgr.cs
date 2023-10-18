@@ -34,6 +34,7 @@ public class CameraMgr : MonoBehaviour
             case InteractState.CharacterSkill:
             case InteractState.PeaceNormal:
             case InteractState.PeacePlant:
+            case InteractState.PeaceMap:
                 FixedGoMoveCamera();
                 FixedGoRotateCamera();
                 break;

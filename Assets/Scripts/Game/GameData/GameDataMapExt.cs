@@ -60,7 +60,7 @@ public partial class GameData
         foreach(var clip in listMapClipUsed)
         {
             Vector2Int startPos = clip.clipPosID * GameGlobal.mapClipSize + new Vector2Int(0,GameGlobal.mapRowFriend);
-            //Calculate the center of the clip
+            //Calculate the leftbottom of the clip
             if (clip.clipID < 0)
             {
                 for (int i = 0; i < GameGlobal.mapClipSize; i++)

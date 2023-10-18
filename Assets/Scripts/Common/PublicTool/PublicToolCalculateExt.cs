@@ -148,4 +148,26 @@ public partial class PublicTool
     }
 
     #endregion
+
+    #region MapClip
+
+    public static Vector2Int ConvertMapTileIDToClip(Vector2Int posIDTile)
+    {
+        int upLimitNum = GameGlobal.mapRowFriend + GameGlobal.mapClipSize * GameGlobal.mapClipNumY;
+        if (posIDTile.y < GameGlobal.mapRowFriend)
+        {
+            return new Vector2Int(-1, -1);
+        }
+        else if(posIDTile.y >= GameGlobal.mapRowFriend && posIDTile.y < upLimitNum)
+        {
+            int tempX = posIDTile.x / GameGlobal.mapClipSize;
+            int tempY = (posIDTile.y - GameGlobal.mapRowFriend) / GameGlobal.mapClipSize;
+            return new Vector2Int(tempX, tempY);
+        }
+        else
+        {
+            return new Vector2Int(-1, -1);
+        }
+    }
+    #endregion
 }

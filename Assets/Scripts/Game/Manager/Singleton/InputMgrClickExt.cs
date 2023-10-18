@@ -90,6 +90,14 @@ public partial class InputMgr
             case InteractState.PeacePlant:
                 EventCenter.Instance.EventTrigger("InputAddPlant", mapTile.posID);
                 return true;
+            case InteractState.PeaceMap:
+                Vector2Int mapClipClickID = PublicTool.ConvertMapTileIDToClip(mapTile.posID);
+                if (mapClipClickID.x >= 0)
+                {
+                    EventCenter.Instance.EventTrigger("InputSetMapClip", mapClipClickID);
+                    return true;
+                }
+                break;
             case InteractState.BattleNormal:
                 PublicTool.EventCameraGoPosID(mapTile.posID);
                 return true;
