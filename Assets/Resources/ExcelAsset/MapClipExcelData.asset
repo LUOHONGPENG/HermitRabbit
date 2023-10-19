@@ -46,6 +46,50 @@ MonoBehaviour:
     tile6: 0
     tile7: 0
     tile8: 0
+  - id: 3001
+    rarity: 2
+    tile0: 3
+    tile1: 1
+    tile2: 3
+    tile3: 1
+    tile4: 1
+    tile5: 1
+    tile6: 3
+    tile7: 1
+    tile8: 3
+  - id: 3002
+    rarity: 2
+    tile0: 3
+    tile1: 2
+    tile2: 3
+    tile3: 2
+    tile4: 2
+    tile5: 2
+    tile6: 3
+    tile7: 2
+    tile8: 3
+  - id: 3003
+    rarity: 2
+    tile0: 2
+    tile1: 2
+    tile2: 3
+    tile3: 2
+    tile4: 2
+    tile5: 3
+    tile6: 2
+    tile7: 2
+    tile8: 3
+  - id: 3004
+    rarity: 2
+    tile0: 3
+    tile1: 1
+    tile2: 1
+    tile3: 3
+    tile4: 1
+    tile5: 1
+    tile6: 3
+    tile7: 1
+    tile8: 1
   - id: 4001
     rarity: 3
     tile0: 1
@@ -55,7 +99,7 @@ MonoBehaviour:
     tile4: 0
     tile5: 3
     tile6: 2
-    tile7: 0
+    tile7: 2
     tile8: 2
   - id: 4002
     rarity: 3
@@ -78,4 +122,15 @@ MonoBehaviour:
     tile5: 2
     tile6: 3
     tile7: 2
+    tile8: 3
+  - id: 4004
+    rarity: 3
+    tile0: 3
+    tile1: 3
+    tile2: 1
+    tile3: 2
+    tile4: 3
+    tile5: 1
+    tile6: 2
+    tile7: 3
     tile8: 3

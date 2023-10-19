@@ -50,9 +50,16 @@ public partial class GameData
         listMapClipHeld.Add(1001);
         listMapClipHeld.Add(2001);
         listMapClipHeld.Add(2002);
+
+        listMapClipHeld.Add(3001);
+        listMapClipHeld.Add(3002);
+        listMapClipHeld.Add(3003);
+        listMapClipHeld.Add(3004);
+
         listMapClipHeld.Add(4001);
         listMapClipHeld.Add(4002);
         listMapClipHeld.Add(4003);
+        listMapClipHeld.Add(4004);
 
 
         //
