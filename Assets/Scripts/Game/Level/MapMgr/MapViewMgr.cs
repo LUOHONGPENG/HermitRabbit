@@ -83,6 +83,9 @@ public partial class MapViewMgr : MonoBehaviour
             case InteractState.PeacePlant:
                 SetMapUI_Plant();
                 break;
+            case InteractState.PeaceMap:
+                SetMapUI_MapClip();
+                break;
             case InteractState.BattleNormal:
                 ResetAllTile();
                 break;
@@ -208,6 +211,32 @@ public partial class MapViewMgr : MonoBehaviour
             }
         }
     }
+
+    private void SetMapUI_MapClip()
+    {
+        foreach (MapTileBase mapTile in listMapTile)
+        {
+            Vector2Int clipPosID = PublicTool.ConvertMapTileIDToClip(mapTile.posID);
+
+            if (clipPosID.x < 0)
+            {
+                mapTile.SetIndicator(MapIndicatorType.Hide);
+            }
+            else
+            {
+                Vector2 hoverClipPosID = PublicTool.ConvertMapTileIDToClip(PublicTool.GetGameData().hoverTileID);
+                if(clipPosID == hoverClipPosID)
+                {
+                    mapTile.SetIndicator(MapIndicatorType.Blue);
+                }
+                else
+                {
+                    mapTile.SetIndicator(MapIndicatorType.Normal);
+                }
+            }
+        }
+    }
+
 
     private void ResetAllTile()
     {

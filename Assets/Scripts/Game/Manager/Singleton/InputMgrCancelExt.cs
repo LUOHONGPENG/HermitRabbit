@@ -23,7 +23,7 @@ public partial class InputMgr
                 EventCenter.Instance.EventTrigger("PeacePlantEnd", null);
                 break;
             case InteractState.PeaceMap:
-                SetInteractState(InteractState.PeaceMap);
+                SetInteractState(InteractState.PeaceNormal);
                 EventCenter.Instance.EventTrigger("PeaceMapEnd", null);
                 break;
             case InteractState.CharacterMove:
