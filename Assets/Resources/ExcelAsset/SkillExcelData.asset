@@ -116,7 +116,7 @@ MonoBehaviour:
     isRangeSelf: 0
     needExtraTarget: 0
     radius: 0
-    regionType: 0
+    regionType: 3
     foeEffect: 1
     characterEffect: 0
     plantEffect: 0

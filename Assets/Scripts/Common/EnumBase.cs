@@ -96,7 +96,8 @@ public enum SkillRegionType
 {
     Circle,
     Square,
-    Line
+    Line,
+    Water
 }
 
 public enum SkillDamageType

@@ -118,6 +118,10 @@ public partial class BattleMgr
             case SkillRegionType.Line:
                 listPos = PublicTool.GetTargetLineRange(skillTargetPos, skillSubject.posID, skillBattleInfo.radius);
                 break;
+            case SkillRegionType.Water:
+                listPos = PublicTool.GetTargetCircleRange(skillTargetPos, skillBattleInfo.radius);
+                listPos = PublicTool.GetTargetWaterRange(listPos);
+                break;
         }
 
         dicFoeSkillTarget.Clear();

@@ -262,7 +262,6 @@ public partial class GameData
             if(map.tileType == MapTileType.Stone)
             {
                 listMapStonePos.Add(map.posID);
-                Debug.Log(map.posID);
             }
         }
     }

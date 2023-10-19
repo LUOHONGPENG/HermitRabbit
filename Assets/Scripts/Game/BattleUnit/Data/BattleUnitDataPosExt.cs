@@ -415,6 +415,10 @@ public partial class BattleUnitData
                 case SkillRegionType.Line:
                     listRadius = PublicTool.GetTargetLineRange(viewPos,posID, skillInfo.radius);
                     break;
+                case SkillRegionType.Water:
+                    listRadius = PublicTool.GetTargetCircleRange(viewPos, skillInfo.radius);
+                    listRadius = PublicTool.GetTargetWaterRange(listRadius);
+                    break;
             }
             for (int i = 0; i < listRadius.Count; i++)
             {

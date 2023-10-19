@@ -147,6 +147,10 @@ public partial class MapViewMgr : MonoBehaviour
                 case SkillRegionType.Line:
                     listHoverPos = PublicTool.GetTargetLineRange(hoverTileID, curUnitData.posID, skillMapInfo.radius) ;
                     break;
+                case SkillRegionType.Water:
+                    listHoverPos = PublicTool.GetTargetCircleRange(hoverTileID, skillMapInfo.radius);
+                    listHoverPos = PublicTool.GetTargetWaterRange(listHoverPos);
+                    break;
             }
         }
 

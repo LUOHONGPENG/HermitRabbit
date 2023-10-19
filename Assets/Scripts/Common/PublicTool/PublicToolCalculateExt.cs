@@ -93,6 +93,49 @@ public partial class PublicTool
         return listRange;
     }
 
+    public static List<Vector2Int> GetTargetWaterRange(List<Vector2Int> listTargetPos)
+    {
+        List<Vector2Int> listRange = new List<Vector2Int>();
+        Queue<Vector2Int> listOpen = new Queue<Vector2Int>();
+        List<Vector2Int> listClose = new List<Vector2Int>();
+
+        for (int i = 0; i < listTargetPos.Count; i++)
+        {
+            listOpen.Enqueue(listTargetPos[i]);
+            listRange.Add(listTargetPos[i]);
+        }
+
+        GameData gameData = GetGameData();
+
+        while (listOpen.Count > 0)
+        {
+            Vector2Int tarPos = listOpen.Dequeue();
+            Debug.Log(tarPos);
+            if (gameData.dicMapTile.ContainsKey(tarPos) && !listClose.Contains(tarPos))
+            {
+                listClose.Add(tarPos);
+
+                MapTileData mapTileData = gameData.dicMapTile[tarPos];
+
+                if(mapTileData.tileType == MapTileType.Water)
+                {
+                    if (!listRange.Contains(tarPos))
+                    {
+                        listRange.Add(tarPos);
+                    }
+                    listOpen.Enqueue(tarPos + new Vector2Int(0, 1));
+                    listOpen.Enqueue(tarPos + new Vector2Int(0, -1));
+                    listOpen.Enqueue(tarPos + new Vector2Int(1, 0));
+                    listOpen.Enqueue(tarPos + new Vector2Int(-1, 0));
+
+                }
+
+            }
+        }
+
+        return listRange;
+    }
+
     #endregion
 
     #region FindPathSupporter
