@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public partial class GameData
 {
@@ -58,13 +59,40 @@ public partial class GameData
         ReadClipToTile();
     }
 
-    public void SetMapClip(Vector2Int clipPosID, int clipTypeID)
+    public void SetMapClipTypeID(Vector2Int clipPosID, int clipTypeID)
     {
         if (dicMapClipUsed.ContainsKey(clipPosID))
         {
             dicMapClipUsed[clipPosID].SetClipID(clipTypeID);
         }
     }
+
+    public int GetMapClipTypeID(Vector2Int clipPosID)
+    {
+        if (dicMapClipUsed.ContainsKey(clipPosID))
+        {
+            return dicMapClipUsed[clipPosID].clipID;
+        }
+        return 0;
+    }
+
+    public bool CheckWhetherClipUsed(int typeID)
+    {
+        if(typeID == -1)
+        {
+            return false;
+        }
+
+        for(int i = 0;i< listMapClipUsed.Count; i++)
+        {
+            if (listMapClipUsed[i].clipID == typeID)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     public void ReadClipToTile()
     {

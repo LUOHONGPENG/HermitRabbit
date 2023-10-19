@@ -20,7 +20,7 @@ public class BattleMiniCharacterUIItem : MonoBehaviour
         btnBg.onClick.RemoveAllListeners();
         btnBg.onClick.AddListener(delegate ()
         {
-            if (PublicTool.GetGameData().gamePhase == GamePhase.Battle && BattleMgr.Instance.battleTurnPhase == BattlePhase.CharacterPhase)
+            if (PublicTool.GetGameData().gamePhase == GamePhase.Battle && BattleMgr.Instance.battleTurnPhase == BattlePhase.CharacterPhase && InputMgr.Instance.GetInteractState() != InteractState.WaitAction)
             {
                 EventCenter.Instance.EventTrigger("InputChooseCharacter", characterData.typeID);
             }

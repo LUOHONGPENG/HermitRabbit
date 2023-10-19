@@ -127,7 +127,6 @@ public class UnitViewMgr : MonoBehaviour
         {
             dicPlantView.Add(plantData.keyID, plantView);
         }
-        PublicTool.RecalculateOccupancy();
     }
 
     public BattlePlantView GetPlantView(int keyID)

@@ -169,5 +169,15 @@ public partial class PublicTool
             return new Vector2Int(-1, -1);
         }
     }
+
+    public static Vector2Int ConvertMapClipToTile(Vector2Int posIDClip)
+    {
+        int tempX = posIDClip.x * GameGlobal.mapClipSize;
+        int tempY = posIDClip.y * GameGlobal.mapClipSize + GameGlobal.mapRowFriend;
+
+        return new Vector2Int(tempX, tempY);
+    }
+
+
     #endregion
 }

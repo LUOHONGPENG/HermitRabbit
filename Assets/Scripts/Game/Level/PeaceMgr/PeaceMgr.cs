@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public partial class PeaceMgr : MonoSingleton<PeaceMgr>
 {
@@ -30,6 +31,8 @@ public partial class PeaceMgr : MonoSingleton<PeaceMgr>
     public void EndPlantMode()
     {
         plantID = -1;
+        PublicTool.RecalculateOccupancy();
+
     }
 
     public void AddPlant(Vector2Int pos)
@@ -42,14 +45,15 @@ public partial class PeaceMgr : MonoSingleton<PeaceMgr>
         BattlePlantData newPlantData = gameData.GeneratePlantData(plantID);
         newPlantData.posID = pos;
         unitViewMgr.GeneratePlantView(newPlantData);
+        PublicTool.RecalculateOccupancy();
         RefreshValidPlant();
     }
 
-    private bool CheckWhetherCanAddPlant(Vector2Int pos)
+    private bool CheckWhetherCanAddPlant(Vector2Int posID)
     {
-        if (!listValidForPlant.Contains(pos))
+        if (!listValidForPlant.Contains(posID))
         {
-            EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("InvalidTile", pos));
+            EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("InvalidTile", posID));
             return false;
         }
 
@@ -75,14 +79,30 @@ public partial class PeaceMgr : MonoSingleton<PeaceMgr>
 
     public void EndMapClipMode()
     {
-
+        PublicTool.RecalculateOccupancy();
     }
 
-    public void SetMapClip(Vector2Int posID)
+    public void SetMapClip(Vector2Int clipPosID)
     {
-        gameData.SetMapClip(posID, mapClipTypeID);
+        if(gameData.GetMapClipTypeID(clipPosID) == mapClipTypeID)
+        {
+            gameData.SetMapClipTypeID(clipPosID, -1);
+        }
+        else
+        {
+            if (gameData.CheckWhetherClipUsed(mapClipTypeID))
+            {
+                EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("UsedClip", PublicTool.ConvertMapClipToTile(clipPosID) + Vector2Int.one));
+            }
+            else
+            {
+                gameData.SetMapClipTypeID(clipPosID, mapClipTypeID);
+            }
+        }
+
         gameData.ReadClipToTile();
         mapViewMgr.RefreshTileView();
+        EventCenter.Instance.EventTrigger("RefreshMapClipUI", null);
     }
 
     #endregion

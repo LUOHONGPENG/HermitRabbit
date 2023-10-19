@@ -370,6 +370,8 @@ MonoBehaviour:
   - {r: 0.56289303, g: 0.99099183, b: 1, a: 1}
   - {r: 0.32704395, g: 1, b: 0.6953941, a: 1}
   - {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+  outlineClip: {fileID: 102219443231729759}
+  canvasGroupClip: {fileID: 2379963244951172105}
 --- !u!1 &4716065514509842486
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +537,8 @@ GameObject:
   - component: {fileID: 1064312442365571336}
   - component: {fileID: 6538132748026246427}
   - component: {fileID: 5117944814362412747}
+  - component: {fileID: 102219443231729759}
+  - component: {fileID: 2379963244951172105}
   m_Layer: 5
   m_Name: btnClip
   m_TagString: Untagged
@@ -677,6 +681,33 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &102219443231729759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6211417806204498394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
+--- !u!225 &2379963244951172105
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6211417806204498394}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7446497906792887821
 GameObject:
   m_ObjectHideFlags: 0
