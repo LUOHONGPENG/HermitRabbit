@@ -70,7 +70,7 @@ public partial class PeaceMgr : MonoSingleton<PeaceMgr>
 
     public void StartMapClipMode()
     {
-        mapClipTypeID = 2002;
+        mapClipTypeID = -1;
     }
 
     public void EndMapClipMode()
