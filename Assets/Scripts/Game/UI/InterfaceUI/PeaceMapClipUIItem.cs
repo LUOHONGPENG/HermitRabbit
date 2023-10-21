@@ -64,7 +64,7 @@ public class PeaceMapClipUIItem : MonoBehaviour
     {
         if (isUsed)
         {
-            canvasGroupClip.alpha = 0.5f;
+            canvasGroupClip.alpha = 0.2f;
         }
         else
         {

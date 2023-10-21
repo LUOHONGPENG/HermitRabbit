@@ -117,6 +117,9 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
         //Reward
         gameData.AddCharacterExp(1001, 50);
         gameData.AddCharacterExp(1002, 50);
+        //Invoke Victory Page
+        EventCenter.Instance.EventTrigger("NormalVictoryStart", null);
+
         //End Battle Flow
         isBattleEnd = true;
         PublicTool.GetGameData().gamePhase = GamePhase.Peace;
