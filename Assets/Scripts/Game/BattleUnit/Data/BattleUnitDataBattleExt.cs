@@ -8,12 +8,16 @@ public partial class BattleUnitData
 
     public virtual void ResetNewTurn() { }
 
+    public virtual void InvokeDead() { }
+
+
     public void GetHurt(float damage)
     {
         curHP -= damage;
         if (curHP <= 0)
         {
             isDead = true;
+            InvokeDead();
         }
     }
 

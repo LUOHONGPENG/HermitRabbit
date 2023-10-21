@@ -18,6 +18,9 @@ public partial class LevelMgr
         EventCenter.Instance.AddEventListener("BattleStart", BattleStartEvent);
         EventCenter.Instance.AddEventListener("BattleEnd", BattleEndEvent);
         EventCenter.Instance.AddEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
+        EventCenter.Instance.AddEventListener("BattleFoeDead", BattleFoeDeadEvent);
+
+        
 
         //PeacePlant
         EventCenter.Instance.AddEventListener("PeacePlantStart", PeacePlantStartEvent);
@@ -33,6 +36,8 @@ public partial class LevelMgr
         EventCenter.Instance.AddEventListener("TestButton", TestButtonEvent);
     }
 
+
+
     private void OnDisable()
     {        
         //Input
@@ -46,6 +51,7 @@ public partial class LevelMgr
         EventCenter.Instance.RemoveEventListener("BattleStart", BattleStartEvent);
         EventCenter.Instance.RemoveEventListener("BattleEnd", BattleEndEvent);
         EventCenter.Instance.RemoveEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
+        EventCenter.Instance.RemoveEventListener("BattleFoeDead", BattleFoeDeadEvent);
 
         //PeacePlant
         EventCenter.Instance.RemoveEventListener("PeacePlantStart", PeacePlantStartEvent);
@@ -62,10 +68,7 @@ public partial class LevelMgr
         EventCenter.Instance.RemoveEventListener("TestButton", TestButtonEvent);
     }
 
-    private void InputChangeSkillEvent(object arg0)
-    {
-        battleMgr.BattleSkillReset();
-    }
+
 
 
     #region EventDeal_Input
@@ -95,6 +98,10 @@ public partial class LevelMgr
         battleMgr.SkillActionRequest(targetPos);
     }
 
+    private void InputChangeSkillEvent(object arg0)
+    {
+        battleMgr.BattleSkillReset();
+    }
     private void InputSetHoverTileEvent(object arg0)
     {
         if (gameData != null)
@@ -133,17 +140,19 @@ public partial class LevelMgr
         //Generate Foe
         if (ExcelDataMgr.Instance.dayExcelData.dicDayFoe.ContainsKey(gameData.numDay))
         {
-            List<Vector2Int> listFoeInfo = ExcelDataMgr.Instance.dayExcelData.dicDayFoe[gameData.numDay];
+            List<Vector3Int> listFoeInfo = ExcelDataMgr.Instance.dayExcelData.dicDayFoe[gameData.numDay];
 
             int rowMax = GameGlobal.mapRowFriend + GameGlobal.mapClipNumY * GameGlobal.mapClipSize + GameGlobal.mapRowFoe - 1;
 
             for (int i = 0; i < listFoeInfo.Count; i++)
             {
-                Vector2Int foeInfo = listFoeInfo[i];
+                //X=typeID Y=num Z=exp
+                Vector3Int foeInfo = listFoeInfo[i];
                 FoeExcelItem foeItem = PublicTool.GetFoeExcelItem(foeInfo.x);
                 for (int j = 0; j < foeInfo.y; j++)
                 {
                     BattleFoeData newFoeData = gameData.GenerateFoeData(foeItem.id);
+                    //Set Position
                     switch (foeItem.generateType)
                     {
                         case FoeGenerateType.FixedPos:
@@ -158,6 +167,8 @@ public partial class LevelMgr
                             }
                             break;
                     }
+                    //Set eXP
+                    newFoeData.exp = foeInfo.z;
 
                     unitViewMgr.GenerateFoeView(newFoeData);
                 }
@@ -168,12 +179,16 @@ public partial class LevelMgr
 
     private void BattleEndEvent(object arg0)
     {
-        gameData.numDay++;
     }
 
     private void CharacterPhaseEndEvent(object arg0)
     {
         battleMgr.EndTurnPhase();
+    }
+
+    private void BattleFoeDeadEvent(object arg0)
+    {
+        battleMgr.AddCharacterExp((int)arg0);
     }
     #endregion
 

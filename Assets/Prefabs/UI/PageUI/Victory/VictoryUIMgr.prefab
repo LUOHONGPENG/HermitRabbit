@@ -433,8 +433,9 @@ MonoBehaviour:
   objMapClip: {fileID: 0}
   objPlant: {fileID: 0}
   btnContinue: {fileID: 7384825117473790895}
-  tfEXP: {fileID: 2290617974250977241}
-  objEXP: {fileID: 4822688081083860025, guid: 254ddc5601cb9204086b4b57db721262, type: 3}
+  tfExpFrame: {fileID: 2290617974250977241}
+  pfExpFrame: {fileID: 4822688081083860025, guid: 254ddc5601cb9204086b4b57db721262,
+    type: 3}
 --- !u!1 &8205932347048705408
 GameObject:
   m_ObjectHideFlags: 0

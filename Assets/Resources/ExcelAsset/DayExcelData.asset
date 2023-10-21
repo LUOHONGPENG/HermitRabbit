@@ -18,13 +18,19 @@ MonoBehaviour:
     foeID: 1001
     foeNum: 4
     dayExp: 50
+    foeExp: 4
+    totalFoeExp: 16
   - id: 2
     dayCount: 2
     foeID: 1002
     foeNum: 3
     dayExp: 100
+    foeExp: 6
+    totalFoeExp: 18
   - id: 3
     dayCount: 2
     foeID: 1011
     foeNum: 4
     dayExp: 0
+    foeExp: 8
+    totalFoeExp: 32

@@ -30,6 +30,7 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     {
         numTurn = 1;
         ResetNewTurn();
+        ResetCharacterExp();
         battleTurnPhase = BattlePhase.CharacterPhase;
         StartTurnPhase();
         isBattleEnd = false;
@@ -115,14 +116,16 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     private void BattleOverWin()
     {
         //Reward
-        gameData.AddCharacterExp(1001, 50);
-        gameData.AddCharacterExp(1002, 50);
+        List<Vector2Int> listVictoryExp = new List<Vector2Int>();
+        listVictoryExp.Add(new Vector2Int(1001, GetCharacterExp(1001)));
+        listVictoryExp.Add(new Vector2Int(1002, GetCharacterExp(1002)));
         //Invoke Victory Page
-        EventCenter.Instance.EventTrigger("NormalVictoryStart", null);
+        EventCenter.Instance.EventTrigger("NormalVictoryStart", listVictoryExp);
 
         //End Battle Flow
         isBattleEnd = true;
-        PublicTool.GetGameData().gamePhase = GamePhase.Peace;
+        gameData.numDay++;
+        gameData.gamePhase = GamePhase.Peace;
         PublicTool.EventChangeInteract(InteractState.PeaceNormal);
         EventCenter.Instance.EventTrigger("BattleEnd", null);
     }

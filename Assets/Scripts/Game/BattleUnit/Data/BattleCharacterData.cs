@@ -205,7 +205,8 @@ public partial class BattleCharacterData
     {
         get
         {
-            return ExcelDataMgr.Instance.characterExpExcelData.GetExpItem(Level+1).EXP - ExcelDataMgr.Instance.characterExpExcelData.GetExpItem(Level).EXP;
+            return ExcelDataMgr.Instance.characterExpExcelData.GetRequiredExp(Level);
+            //return ExcelDataMgr.Instance.characterExpExcelData.GetExpItem(Level+1).EXP - ExcelDataMgr.Instance.characterExpExcelData.GetExpItem(Level).EXP;
         }
     }
 

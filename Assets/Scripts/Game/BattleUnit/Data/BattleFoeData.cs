@@ -7,6 +7,8 @@ public class BattleFoeData : BattleUnitData
 {
     private FoeExcelItem item;
 
+    public int exp;
+
     public BattleFoeData(int typeID,int keyID)
     {
         //Basic Setting
@@ -44,11 +46,20 @@ public class BattleFoeData : BattleUnitData
 
     }
 
+    #region Override
+
     public override void ResetNewTurn()
     {
         curMOV = curMaxMOV;
         TurnBuffDecrease();
     }
+
+    public override void InvokeDead()
+    {
+        EventCenter.Instance.EventTrigger("BattleFoeDead", exp);
+    }
+
+    #endregion
 
     #region Basic Attribute
     public override int curATK

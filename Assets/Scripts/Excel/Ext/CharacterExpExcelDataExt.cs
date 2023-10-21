@@ -45,4 +45,18 @@ public partial class CharacterExpExcelData
         }
         return tempLevel;
     }
+
+    public int GetRequiredExp(int level)
+    {
+        //ExcelDataMgr.Instance.characterExpExcelData.GetExpItem(Level+1).EXP - ExcelDataMgr.Instance.characterExpExcelData.GetExpItem(Level).EXP;
+        if (GetExpItem(level + 1) != null && GetExpItem(level)!=null)
+        {
+            return (GetExpItem(level + 1).EXP - GetExpItem(level).EXP);
+        }
+        else
+        {
+            return -1;
+        }
+
+    }
 }
