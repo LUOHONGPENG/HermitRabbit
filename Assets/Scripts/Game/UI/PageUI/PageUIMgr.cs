@@ -12,6 +12,6 @@ public class PageUIMgr : MonoBehaviour
     {
         gameOverUIMgr.Init();
         statusUIMgr.Init();
-
+        victoryUIMgr.Init();
     }
 }

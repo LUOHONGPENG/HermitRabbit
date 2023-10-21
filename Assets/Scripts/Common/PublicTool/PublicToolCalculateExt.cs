@@ -222,5 +222,18 @@ public partial class PublicTool
     }
 
 
+    public static List<Vector2Int> GetEmptyPosFromRowRange(int rowLow,int rowHigh)
+    {
+        List<Vector2Int> listTemp = new List<Vector2Int>();
+        List<Vector2Int> listEmpty = GetGameData().listTempEmptyPos;
+        for (int i = 0; i < listEmpty.Count; i++)
+        {
+            if (listEmpty[i].y <= rowHigh && listEmpty[i].y >= rowLow)
+            {
+                listTemp.Add(listEmpty[i]);
+            }
+        }
+        return listTemp;
+    }
     #endregion
 }

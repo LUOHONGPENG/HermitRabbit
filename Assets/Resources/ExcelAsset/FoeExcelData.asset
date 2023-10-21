@@ -21,4 +21,31 @@ MonoBehaviour:
     RES: 0
     MOV: 3
     skillID: 9001
+    generateType: 0
+    pos0: 2
+    pos1: 0
+    pixelUrl: PixelEvilGod
+  - id: 1002
+    name: LinkedList
+    HP: 15
+    ATK: 4
+    DEF: 1
+    RES: 0
+    MOV: 5
+    skillID: 9001
+    generateType: 0
+    pos0: 2
+    pos1: 0
+    pixelUrl: PixelEvilGod
+  - id: 1011
+    name: Resume
+    HP: 10
+    ATK: 3
+    DEF: 0
+    RES: 1
+    MOV: 3
+    skillID: 9002
+    generateType: 0
+    pos0: 2
+    pos1: 0
     pixelUrl: PixelEvilGod

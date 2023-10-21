@@ -130,12 +130,45 @@ public partial class LevelMgr
 
     private void BattleStartEvent(object arg0)
     {
-        battleMgr.StartNewBattle(this);
+        //Generate Foe
+        if (ExcelDataMgr.Instance.dayExcelData.dicDayFoe.ContainsKey(gameData.numDay))
+        {
+            List<Vector2Int> listFoeInfo = ExcelDataMgr.Instance.dayExcelData.dicDayFoe[gameData.numDay];
+
+            int rowMax = GameGlobal.mapRowFriend + GameGlobal.mapClipNumY * GameGlobal.mapClipSize + GameGlobal.mapRowFoe - 1;
+
+            for (int i = 0; i < listFoeInfo.Count; i++)
+            {
+                Vector2Int foeInfo = listFoeInfo[i];
+                FoeExcelItem foeItem = PublicTool.GetFoeExcelItem(foeInfo.x);
+                for (int j = 0; j < foeInfo.y; j++)
+                {
+                    BattleFoeData newFoeData = gameData.GenerateFoeData(foeItem.id);
+                    switch (foeItem.generateType)
+                    {
+                        case FoeGenerateType.FixedPos:
+                            newFoeData.posID = new Vector2Int(foeItem.pos0, foeItem.pos1);
+                            break;
+                        case FoeGenerateType.RowRange:
+                            List<Vector2Int> listPos = PublicTool.GetEmptyPosFromRowRange(rowMax-foeItem.pos0 ,rowMax);
+                            if (listPos.Count > 0)
+                            {
+                                int ran = UnityEngine.Random.Range(0, listPos.Count);
+                                newFoeData.posID = listPos[ran];
+                            }
+                            break;
+                    }
+
+                    unitViewMgr.GenerateFoeView(newFoeData);
+                }
+            }
+            battleMgr.StartNewBattle(this);
+        }
     }
 
     private void BattleEndEvent(object arg0)
     {
-
+        gameData.numDay++;
     }
 
     private void CharacterPhaseEndEvent(object arg0)

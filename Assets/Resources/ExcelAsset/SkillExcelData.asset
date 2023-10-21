@@ -350,7 +350,7 @@ MonoBehaviour:
     unlockNodeID: 0
     desc: Attack a enemy.
   - id: 9001
-    name: Bite
+    name: Slap
     costAP: 1
     range: 1
     isRangeSelf: 0
@@ -361,6 +361,30 @@ MonoBehaviour:
     characterEffect: 1
     plantEffect: 1
     damageType: 1
+    damageDeltaStd: 2
+    damageDelta: 100
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
+    activeSkillType: 5
+    characterID: 0
+    iconUrl: 
+    unlockNodeID: 0
+    desc: 
+  - id: 9002
+    name: Anxiety
+    costAP: 1
+    range: 4
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 1
+    plantEffect: 1
+    damageType: 2
     damageDeltaStd: 2
     damageDelta: 100
     damageModifier: 0

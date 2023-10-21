@@ -15,6 +15,9 @@ public partial class FoeExcelItem : ExcelItemBase
 	public int RES;
 	public int MOV;
 	public int skillID;
+	public FoeGenerateType generateType;
+	public int pos0;
+	public int pos1;
 	public string pixelUrl;
 }
 
@@ -43,6 +46,9 @@ public class FoeAssetAssignment
 			items[i].RES = Convert.ToInt32(allItemValueRowList[i]["RES"]);
 			items[i].MOV = Convert.ToInt32(allItemValueRowList[i]["MOV"]);
 			items[i].skillID = Convert.ToInt32(allItemValueRowList[i]["skillID"]);
+			items[i].generateType = (FoeGenerateType) Enum.Parse(typeof(FoeGenerateType), allItemValueRowList[i]["generateType"], true);
+			items[i].pos0 = Convert.ToInt32(allItemValueRowList[i]["pos0"]);
+			items[i].pos1 = Convert.ToInt32(allItemValueRowList[i]["pos1"]);
 			items[i].pixelUrl = allItemValueRowList[i]["pixelUrl"];
 		}
 		FoeExcelData excelDataAsset = ScriptableObject.CreateInstance<FoeExcelData>();

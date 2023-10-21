@@ -157,6 +157,19 @@ public enum BuffCounterType
 
 #endregion
 
+
+#region Foe
+
+public enum FoeGenerateType
+{
+    RowRange,
+    FixedPos
+}
+
+#endregion 
+
+
+
 public enum EffectUITextType
 {
     Damage,

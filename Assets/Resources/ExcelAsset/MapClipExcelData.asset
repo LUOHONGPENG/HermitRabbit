@@ -90,6 +90,17 @@ MonoBehaviour:
     tile6: 3
     tile7: 1
     tile8: 1
+  - id: 3005
+    rarity: 2
+    tile0: 1
+    tile1: 1
+    tile2: 1
+    tile3: 1
+    tile4: 3
+    tile5: 1
+    tile6: 1
+    tile7: 3
+    tile8: 1
   - id: 4001
     rarity: 3
     tile0: 1

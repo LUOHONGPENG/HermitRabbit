@@ -62,13 +62,10 @@ public class VictoryUIMgr : MonoBehaviour
     #endregion
 
     #region EXP
-
     public void ShowExp()
     {
 
     }
-
-
     #endregion
 
     #region

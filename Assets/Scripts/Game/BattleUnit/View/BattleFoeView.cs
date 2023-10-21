@@ -14,10 +14,7 @@ public class BattleFoeView : BattleUnitView
 
         srUnit.sprite = Resources.Load("Sprite/Foe/"+foeData.GetItem().pixelUrl, typeof(Sprite)) as Sprite;
 
-        //Need to modify it
-        List<Vector2Int> listPos = PublicTool.GetGameData().listTempEmptyPos;
-        int ran = Random.Range(0, listPos.Count);
-        foeData.posID = listPos[ran];
+
         MoveToPos();
     }
 

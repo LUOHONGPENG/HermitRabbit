@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking.Types;
 
 public partial class PublicTool
 {
@@ -8,6 +9,8 @@ public partial class PublicTool
     {
         return GameMgr.Instance.curGameData;
     }
+
+    #region Excel
 
     public static SkillExcelItem GetSkillItem(int skillID)
     {
@@ -17,6 +20,11 @@ public partial class PublicTool
     public static SkillNodeExcelItem GetSkillNodeItem(int nodeID)
     {
         return ExcelDataMgr.Instance.skillNodeExcelData.GetExcelItem(nodeID);
+    }
+
+    public static FoeExcelItem GetFoeExcelItem(int foeID)
+    {
+        return ExcelDataMgr.Instance.foeExcelData.GetExcelItem(foeID);
     }
 
     public static SkillSpecialExcelItem GetSkillSpecialItem(int specialID)
@@ -33,4 +41,5 @@ public partial class PublicTool
     {
         return ExcelDataMgr.Instance.mapClipExcelData.GetExcelItem(mapClipID);
     }
+    #endregion
 }
