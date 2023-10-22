@@ -15,16 +15,24 @@ public class VictoryUIMgr : MonoBehaviour
     [Header("EXP")]
     public Transform tfExpFrame;
     public GameObject pfExpFrame;
+    private List<Vector2Int> listGrowExp;
     private List<VictoryExpUIItem> listExpFrame = new List<VictoryExpUIItem>();
-
-    private VictoryPhase victoryPhase;
     private Dictionary<int, int> dicBeforeExp = new Dictionary<int, int>();
     private Dictionary<int, int> dicGrowExp = new Dictionary<int, int>();
 
+    [Header("MapClip")]
+    public Transform tfMapClip;
+    public GameObject pfMapClip;
+
+    private VictoryPhase victoryPhase;
+    private GameData gameData;
+
     public enum VictoryPhase
     {
+        Start,
         EXP,
-        MapClip,
+        MapClip1,
+        MapClip2,
         Plant,
         End
     }
@@ -36,29 +44,74 @@ public class VictoryUIMgr : MonoBehaviour
         btnContinue.onClick.AddListener(delegate ()
         {
             //Need to modify
-            HidePopup();
+            if(victoryPhase == VictoryPhase.End)
+            {
+                HidePopup();
+            }
         });
+
+        gameData = PublicTool.GetGameData();
     }
 
     private void OnEnable()
     {
         EventCenter.Instance.AddEventListener("NormalVictoryStart", ShowVictoryEvent);
+        EventCenter.Instance.AddEventListener("VictoryAddMapClip", AddMapClipEvent);
     }
 
     private void OnDisable()
     {
         EventCenter.Instance.RemoveEventListener("NormalVictoryStart", ShowVictoryEvent);
+        EventCenter.Instance.RemoveEventListener("VictoryAddMapClip", AddMapClipEvent);
+
     }
 
     private void ShowVictoryEvent(object arg0)
     {
-        victoryPhase = VictoryPhase.EXP;
+        victoryPhase = VictoryPhase.Start;
+        listGrowExp = (List<Vector2Int>)arg0;
+        NextPhase();
+    }
 
+    public void HidePopup()
+    {
+        objPopup.SetActive(false);
+    }
+
+    public void NextPhase()
+    {
+        victoryPhase++;
+        switch (victoryPhase)
+        {
+            case VictoryPhase.EXP:
+                StartExpPhase();
+                objMapClip.SetActive(false);
+                break;
+            case VictoryPhase.MapClip1:
+                StartMapClipPhase();
+                break;
+            case VictoryPhase.MapClip2:
+                StartMapClipPhase();
+                break;
+            case VictoryPhase.Plant:
+                objMapClip.SetActive(false);
+                NextPhase();
+                break;
+            case VictoryPhase.End:
+
+                break;
+        }
+    }
+    #endregion
+
+    #region EXP
+
+    public void StartExpPhase()
+    {
         //Load Exp Info
         dicBeforeExp.Clear();
         dicGrowExp.Clear();
-        List<Vector2Int> listGrowExp = (List<Vector2Int>)arg0;
-        foreach(Vector2Int expInfo in listGrowExp)
+        foreach (Vector2Int expInfo in listGrowExp)
         {
             if (!dicGrowExp.ContainsKey(expInfo.x))
             {
@@ -66,9 +119,11 @@ public class VictoryUIMgr : MonoBehaviour
             }
             if (!dicBeforeExp.ContainsKey(expInfo.x))
             {
-                int BeforeExp = PublicTool.GetGameData().GetBattleCharacterData(expInfo.x).EXP;
+                int BeforeExp = gameData.GetBattleCharacterData(expInfo.x).EXP;
                 dicBeforeExp.Add(expInfo.x, BeforeExp);
             }
+            //Give Reward
+            gameData.AddCharacterExp(expInfo.x, expInfo.y);
         }
         //ShowExp
         ShowExp();
@@ -76,16 +131,10 @@ public class VictoryUIMgr : MonoBehaviour
         StartCoroutine(IE_ExpGrow());
     }
 
-    public void HidePopup()
-    {
-        objPopup.SetActive(false);
-    }
-    #endregion
-
-    #region EXP
     public void ShowExp()
     {
         listExpFrame.Clear();
+        PublicTool.ClearChildItem(tfExpFrame);
 
         foreach (var info in dicBeforeExp)
         {
@@ -105,11 +154,10 @@ public class VictoryUIMgr : MonoBehaviour
         }
 
         yield return new WaitUntil(()=> CheckAllExpDone());
-
-        victoryPhase = VictoryPhase.MapClip;
+        NextPhase();
     }
 
-    public bool CheckAllExpDone()
+    private bool CheckAllExpDone()
     {
         bool isDone = true;
         for (int i = 0; i < listExpFrame.Count; i++)
@@ -123,7 +171,53 @@ public class VictoryUIMgr : MonoBehaviour
     }
     #endregion
 
-    #region
+    #region MapClip
+
+    public void StartMapClipPhase()
+    {
+        DrawMapClip();
+
+        objMapClip.SetActive(true);
+    }
+
+    public void DrawMapClip()
+    {
+        //Draw
+        List<int> listPool = ExcelDataMgr.Instance.mapClipExcelData.GetAllMapClipID();
+        List<int> listDelete = new List<int>(gameData.listMapClipHeld);
+        List<int> listDraw = PublicTool.DrawNum(3, listPool, listDelete);
+
+        PublicTool.ClearChildItem(tfMapClip);
+        for (int i = 0; i < listDraw.Count; i++)
+        {
+            GameObject objMapClip = GameObject.Instantiate(pfMapClip, tfMapClip);
+            VictoryMapClipUIItem itemMapClip = objMapClip.GetComponent<VictoryMapClipUIItem>();
+            itemMapClip.Init(listDraw[i]);
+        }
+    }
+
+    private void AddMapClipEvent(object arg0)
+    {
+        gameData.AddMapClipHeld((int)arg0);
+
+        NextPhase();
+    }
+
+    private void SkipMapClip()
+    {
+        NextPhase();
+    }
+
+
+    #endregion
+
+    #region ShowPlant
+
+    public void ShowPlant()
+    {
+        
+    }
+
 
     #endregion
 }

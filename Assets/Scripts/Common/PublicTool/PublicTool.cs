@@ -73,4 +73,22 @@ public partial class PublicTool
         }
         return -1;
     }
+
+    public static List<int> DrawNum(int num, List<int> listPool, List<int> listDelete)
+    {
+        List<int> listTemp = new List<int>();
+        List<int> listDraw = new List<int>(listPool);
+        for (int i = 0; i < listDelete.Count; i++)
+        {
+            listDraw.Remove(listDelete[i]);
+        }
+
+        for (int i = 0; i < num; i++)
+        {
+            int index = Random.Range(0, listDraw.Count);
+            listTemp.Add(listDraw[index]);
+            listDraw.RemoveAt(index);
+        }
+        return listTemp;
+    }
 }

@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class PeaceMapClipUIItem : MonoBehaviour
 {
     public Button btnClip;
-    public List<Image> listTile = new List<Image>();
-    public List<Color> listColor = new List<Color>();
 
     public Outline outlineClip;
     public CanvasGroup canvasGroupClip;
+
+    public MapClipDisplayUI mapClipDisplay;
 
     private int typeID = -1;
 
@@ -29,22 +29,7 @@ public class PeaceMapClipUIItem : MonoBehaviour
             PeaceMgr.Instance.mapClipTypeID = typeID;
         });
 
-        if (typeID < 0)
-        {
-            for (int i = 0; i < listTile.Count; i++)
-            {
-                listTile[i].color = listColor[0];
-            }
-        }
-        else
-        {
-            MapClipExcelItem mapItem = PublicTool.GetMapClipItem(typeID);
-            for (int i = 0; i < mapItem.listMapTile.Count; i++)
-            {
-                MapTileType type = mapItem.listMapTile[i];
-                listTile[i].color = listColor[(int)type];
-            }
-        }
+        mapClipDisplay.Init(typeID);
 
     }
 

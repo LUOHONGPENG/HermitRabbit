@@ -119,6 +119,7 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
         List<Vector2Int> listVictoryExp = new List<Vector2Int>();
         listVictoryExp.Add(new Vector2Int(1001, GetCharacterExp(1001)));
         listVictoryExp.Add(new Vector2Int(1002, GetCharacterExp(1002)));
+
         //Invoke Victory Page
         EventCenter.Instance.EventTrigger("NormalVictoryStart", listVictoryExp);
 

@@ -2,6 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public partial class MapClipExcelData
+{
+    public List<int> GetAllMapClipID()
+    {
+        List<int> listTemp = new List<int>();
+        for(int i = 0; i < items.Length; i++)
+        {
+            listTemp.Add(items[i].id);
+        }
+        return listTemp;
+    }
+}
+
+
 public partial class MapClipExcelItem
 {
     public List<MapTileType> listMapTile

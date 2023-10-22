@@ -127,6 +127,16 @@ public partial class BattleCharacterData : BattleUnitData
         curMOV = curMaxMOV;
         TurnBuffDecrease();
     }
+
+    public override void ResetBattleEnd()
+    {
+        curHP = maxHP;
+        curAP = maxAP;
+        curMOV = curMaxMOV;
+
+        this.posID = new Vector2Int(item.startPos[0], item.startPos[1]);
+    }
+
 }
 
 

@@ -179,6 +179,16 @@ public partial class LevelMgr
 
     private void BattleEndEvent(object arg0)
     {
+        //CharacterReset
+        for(int i = 0; i < gameData.listCharacter.Count; i++)
+        {
+            BattleCharacterData characterData = gameData.listCharacter[i];
+            characterData.ResetBattleEnd();
+            if (unitViewMgr.GetCharacterView(characterData.keyID) != null)
+            {
+                unitViewMgr.GetCharacterView(characterData.keyID).MoveToPos();
+            }
+        }
     }
 
     private void CharacterPhaseEndEvent(object arg0)
