@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,22 @@ public class ResourceInterfaceUIMgr : MonoBehaviour
     public void Init()
     {
         gameData = PublicTool.GetGameData();
+        RefreshResourceUI();
+    }
+
+    private void OnEnable()
+    {
+        EventCenter.Instance.AddEventListener("RefreshResourceUI", RefreshResourceUIEvent);
+    }
+
+    private void OnDisable()
+    {
+        EventCenter.Instance.RemoveEventListener("RefreshResourceUI", RefreshResourceUIEvent);
+    }
+
+    private void RefreshResourceUIEvent(object arg0)
+    {
+        RefreshResourceUI();
     }
 
     public void RefreshResourceUI()
