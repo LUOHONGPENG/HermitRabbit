@@ -11,6 +11,7 @@ public class InterfaceUIMgr : MonoBehaviour
     public PeaceInterfaceUIMgr peaceInterfaceUIMgr;
     public PeacePlantUIMgr peacePlantUIMgr;
     public PeaceMapClipUIMgr peaceMapClipUIMgr;
+    public ResourceInterfaceUIMgr resourceInterfaceUIMgr;
 
     public Text txPhase;
     public Text txDayInfo;
@@ -22,7 +23,7 @@ public class InterfaceUIMgr : MonoBehaviour
         battleOptionUIMgr.Init();
         battleInterfaceUIMgr.Init();
         peaceInterfaceUIMgr.Init();
-
+        resourceInterfaceUIMgr.Init();
 
         if (InputMgr.Instance.GetInteractState() == InteractState.PeaceNormal)
         {

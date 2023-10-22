@@ -24,6 +24,7 @@ public partial class GameData
     public void AddEssenceLimit(int essenceCount)
     {
         essence += essenceCount;
+
     }
 
     public void AddMemory(int memoryCount)
