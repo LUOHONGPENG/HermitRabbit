@@ -15,6 +15,7 @@ public partial class GameData
     public void NewGame()
     {
         numDay = 1;
+        NewGameResourceData();
         NewGameMapData();
         NewGameCharacterData();
         NewGamePlantData();
