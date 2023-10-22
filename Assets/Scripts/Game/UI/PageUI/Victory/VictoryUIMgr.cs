@@ -99,6 +99,7 @@ public class VictoryUIMgr : MonoBehaviour
         switch (victoryPhase)
         {
             case VictoryPhase.EXP:
+                CommonReward();
                 StartExpPhase();
                 objMapClip.SetActive(false);
                 break;
@@ -117,11 +118,19 @@ public class VictoryUIMgr : MonoBehaviour
                 break;
         }
     }
+
+    private void CommonReward()
+    {
+        gameData.AddMemory(50);
+        gameData.AddEssenceLimit(1);
+
+    }
+
     #endregion
 
     #region EXP
 
-    public void StartExpPhase()
+    private void StartExpPhase()
     {
         //Load Exp Info
         dicBeforeExp.Clear();
@@ -220,6 +229,7 @@ public class VictoryUIMgr : MonoBehaviour
 
     private void SkipMapClip()
     {
+        gameData.AddMemory(50);
         NextPhase();
     }
 

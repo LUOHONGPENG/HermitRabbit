@@ -24,11 +24,13 @@ public partial class GameData
     public void AddEssenceLimit(int essenceCount)
     {
         essence += essenceCount;
-
+        EventCenter.Instance.EventTrigger("RefreshResourceUI",null);
     }
 
     public void AddMemory(int memoryCount)
     {
         memory += memoryCount;
+        EventCenter.Instance.EventTrigger("RefreshResourceUI", null);
+
     }
 }
