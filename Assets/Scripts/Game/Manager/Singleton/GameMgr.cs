@@ -39,16 +39,16 @@ public partial class GameMgr : MonoSingleton<GameMgr>
         switch (GameGlobal.targetScene)
         {
             case SceneName.Test:
-                NewLevelData();
+                NewGameInitData();
                 break;
             case SceneName.Game:
                 if (isNewGame)
                 {
-                    NewLevelData();
+                    NewGameInitData();
                 }
                 else
                 {
-
+                    LoadGameData(saveSlotName);
                 }
                 break;
         }

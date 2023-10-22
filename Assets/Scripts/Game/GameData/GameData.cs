@@ -22,8 +22,17 @@ public partial class GameData
         NewGameFoeData();
     }
 
-    public void LoadGameData()
+    #region LoadSaveData
+    public void LoadGameData(GameSaveData saveData)
     {
+        //NeedToModify
+        numDay = 1;
+        LoadResourceData(saveData);
+        NewGameMapData();
+        NewGameCharacterData();
+        NewGamePlantData();
+        NewGameFoeData();
+
         //LoadCharacter
 
         //LoadPlant
@@ -31,6 +40,9 @@ public partial class GameData
         //LoadFoe(Maybe)
     }
 
-
-
+    public void SaveGameData(GameSaveData saveData)
+    {
+        SaveResourceData(saveData);
+    }
+    #endregion
 }

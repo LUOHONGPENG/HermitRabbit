@@ -132,6 +132,18 @@ public partial class LevelMgr
                     mapViewMgr.listMapTile[i].TestRandomSetTileType();
                 }
                 break;
+            case "Save1":
+                if(gameData.gamePhase == GamePhase.Peace)
+                {
+                    GameMgr.Instance.SaveGameData(SaveSlotName.Slot1);
+                }
+                break;
+            case "Save2":
+                if (gameData.gamePhase == GamePhase.Peace)
+                {
+                    GameMgr.Instance.SaveGameData(SaveSlotName.Slot2);
+                }
+                break;
         }
     }
 

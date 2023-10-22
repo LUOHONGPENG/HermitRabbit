@@ -13,7 +13,8 @@ public enum SaveSlotName
 {
     Auto,
     Slot1,
-    Slot2
+    Slot2,
+    End
 }
 
 #region System Basic Status

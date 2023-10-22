@@ -25,6 +25,13 @@ public class MenuLoadGameUIMgr : MonoBehaviour
     {
         PublicTool.ClearChildItem(tfSaveSlot);
 
+        for(int i = (int)SaveSlotName.Auto;i < (int)SaveSlotName.End; i++)
+        {
+            SaveSlotName slotName = (SaveSlotName)i;
+            GameObject objSlot = GameObject.Instantiate(pfSaveSlot, tfSaveSlot);
+            MenuSaveSlotUIItem itemSlot = objSlot.GetComponent<MenuSaveSlotUIItem>();
+            itemSlot.Init(slotName);
+        }
 
         objPopup.SetActive(true);
 

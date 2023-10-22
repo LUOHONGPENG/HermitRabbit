@@ -21,6 +21,18 @@ public partial class GameData
         memory = 0;
     }
 
+    public void LoadResourceData(GameSaveData savedata)
+    {
+        essence = savedata.essence;
+        memory = savedata.memory;
+    }
+
+    public void SaveResourceData(GameSaveData savedata)
+    {
+        savedata.essence = essence;
+        savedata.memory = memory;
+    }
+
     public void AddEssenceLimit(int essenceCount)
     {
         essence += essenceCount;

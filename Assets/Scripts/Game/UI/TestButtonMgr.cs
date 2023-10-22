@@ -11,6 +11,9 @@ public class TestButtonMgr : MonoBehaviour
     public Button btnGenerateFoe;
     public Button btnRandomMap;
 
+    public Button btnSave1;
+    public Button btnSave2;
+
     public void Init()
     {
         btnAddExp.onClick.RemoveAllListeners();
@@ -29,6 +32,18 @@ public class TestButtonMgr : MonoBehaviour
         btnRandomMap.onClick.AddListener(delegate ()
         {
             EventCenter.Instance.EventTrigger("TestButton", "RandomMap");
+        });
+
+        btnSave1.onClick.RemoveAllListeners();
+        btnSave1.onClick.AddListener(delegate ()
+        {
+            EventCenter.Instance.EventTrigger("TestButton", "Save1");
+        });
+
+        btnSave2.onClick.RemoveAllListeners();
+        btnSave2.onClick.AddListener(delegate ()
+        {
+            EventCenter.Instance.EventTrigger("TestButton", "Save2");
         });
     }
 }
