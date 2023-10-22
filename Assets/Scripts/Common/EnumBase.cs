@@ -5,9 +5,16 @@ using UnityEngine;
 public enum SceneName
 {
     Menu,
-    Test
+    Test,
+    Game
 }
 
+public enum SaveSlotName
+{
+    Auto,
+    Slot1,
+    Slot2
+}
 
 #region System Basic Status
 public enum GamePhase

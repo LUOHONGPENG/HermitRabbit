@@ -33,13 +33,23 @@ public partial class GameMgr : MonoSingleton<GameMgr>
 
     #region LoadScene
 
-    public void LoadScene(SceneName sceneName)
+    public void LoadScene(SceneName sceneName,bool isNewGame=true,SaveSlotName saveSlotName= SaveSlotName.Auto)
     {
         GameGlobal.targetScene = sceneName;
         switch (GameGlobal.targetScene)
         {
             case SceneName.Test:
                 NewLevelData();
+                break;
+            case SceneName.Game:
+                if (isNewGame)
+                {
+                    NewLevelData();
+                }
+                else
+                {
+
+                }
                 break;
         }
         SceneManager.LoadScene(GameGlobal.targetScene.ToString());
