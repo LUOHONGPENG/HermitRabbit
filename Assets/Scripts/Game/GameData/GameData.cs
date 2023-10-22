@@ -26,9 +26,9 @@ public partial class GameData
     public void LoadGameData(GameSaveData saveData)
     {
         //NeedToModify
-        numDay = 1;
+        numDay = saveData.numDay;
         LoadResourceData(saveData);
-        NewGameMapData();
+        LoadMapData(saveData);
         NewGameCharacterData();
         NewGamePlantData();
         NewGameFoeData();
@@ -42,7 +42,9 @@ public partial class GameData
 
     public void SaveGameData(GameSaveData saveData)
     {
+        saveData.numDay = numDay;
         SaveResourceData(saveData);
+        SaveMapData(saveData);
     }
     #endregion
 }

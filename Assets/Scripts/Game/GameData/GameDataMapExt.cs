@@ -15,7 +15,31 @@ public partial class GameData
     //MapClipHeld
     public List<int> listMapClipHeld = new List<int>();
 
-    public void NewGameMapData()
+    private void NewGameMapData()
+    {
+        //Init Map Tile
+        CommonInitMapTile();
+        //Init Map Clip Held
+        listMapClipHeld.Clear();
+        //Init Map Clip Used
+        listMapClipUsed.Clear();
+        dicMapClipUsed.Clear();
+        for (int i = 0; i < GameGlobal.mapClipNumX; i++)
+        {
+            for (int j = 0; j < GameGlobal.mapClipNumY; j++)
+            {
+                Vector2Int clipPosID = new Vector2Int(i, j);
+
+                MapClipUsedData mapClipUsedData = new MapClipUsedData(clipPosID);
+                listMapClipUsed.Add(mapClipUsedData);
+                dicMapClipUsed.Add(clipPosID, mapClipUsedData);
+            }
+        }
+        //ModifyTheTileData
+        ReadClipToTile();
+    }
+
+    private void CommonInitMapTile()
     {
         listMapTile.Clear();
         dicMapTile.Clear();
@@ -31,25 +55,57 @@ public partial class GameData
                 dicMapTile.Add(posID, mapTileData);
             }
         }
+    }
 
+    private void LoadMapData(GameSaveData saveData)
+    {
+        //Init Map Tile
+        CommonInitMapTile();
+        //Init Map Clip Held
+        listMapClipHeld.Clear();
+        for(int i = 0; i < saveData.listMapClipHeld.Count; i++)
+        {
+            listMapClipHeld.Add(saveData.listMapClipHeld[i]);
+        }
+        //Init Map Clip Used
         listMapClipUsed.Clear();
         dicMapClipUsed.Clear();
-        for (int i = 0; i < GameGlobal.mapClipNumX; i++)
+        for (int i = 0; i < saveData.listMapClipUsed.Count; i++)
         {
-            for (int j = 0; j < GameGlobal.mapClipNumY; j++)
-            {
-                Vector2Int clipPosID = new Vector2Int(i, j);
+            Vector3Int saveMapInfo = saveData.listMapClipUsed[i];
+            Vector2Int savePosID = new Vector2Int(saveMapInfo.x, saveMapInfo.y);
 
-                MapClipUsedData mapClipUsedData = new MapClipUsedData(clipPosID);
-                listMapClipUsed.Add(mapClipUsedData);
-                dicMapClipUsed.Add(clipPosID, mapClipUsedData);
-            }
+            MapClipUsedData mapClipUsedData = new MapClipUsedData(savePosID);
+            mapClipUsedData.SetClipID(saveMapInfo.z);
+            listMapClipUsed.Add(mapClipUsedData);
+            dicMapClipUsed.Add(savePosID, mapClipUsedData);
         }
-
-        listMapClipHeld.Clear();
-        //
+        //ModifyTheTileData
         ReadClipToTile();
     }
+
+    private void SaveMapData(GameSaveData saveData)
+    {
+        //Held Map Clip
+        saveData.listMapClipHeld.Clear();
+        for(int i = 0;i < listMapClipHeld.Count; i++)
+        {
+            saveData.listMapClipHeld.Add(listMapClipHeld[i]);
+        }
+        //Used Map Clip
+        saveData.listMapClipUsed.Clear();
+        for(int i = 0;i< listMapClipUsed.Count; i++)
+        {
+            MapClipUsedData usedData = listMapClipUsed[i];
+            Vector3Int saveMapInfo = new Vector3Int(usedData.clipPosID.x, usedData.clipPosID.y,usedData.clipID);
+            saveData.listMapClipUsed.Add(saveMapInfo);
+        }
+
+    }
+
+    #endregion
+
+    #region Use-Map
 
     public void AddMapClipHeld(int typeID)
     {
@@ -136,7 +192,6 @@ public partial class GameData
     }
 
     #endregion
-
 
     #region HoverPos
     public Vector2Int hoverTileID = new Vector2Int(-99, -99);

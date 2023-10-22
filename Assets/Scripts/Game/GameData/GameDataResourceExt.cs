@@ -15,19 +15,19 @@ public partial class GameData
         }
     }
 
-    public void NewGameResourceData()
+    private void NewGameResourceData()
     {
         essence = 1;
         memory = 0;
     }
 
-    public void LoadResourceData(GameSaveData savedata)
+    private void LoadResourceData(GameSaveData savedata)
     {
         essence = savedata.essence;
         memory = savedata.memory;
     }
 
-    public void SaveResourceData(GameSaveData savedata)
+    private void SaveResourceData(GameSaveData savedata)
     {
         savedata.essence = essence;
         savedata.memory = memory;
