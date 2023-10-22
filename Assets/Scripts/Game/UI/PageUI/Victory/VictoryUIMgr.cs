@@ -23,6 +23,8 @@ public class VictoryUIMgr : MonoBehaviour
     [Header("MapClip")]
     public Transform tfMapClip;
     public GameObject pfMapClip;
+    public Button btnRefreshMap;
+    public Button btnSkipMap;
 
     private VictoryPhase victoryPhase;
     private GameData gameData;
@@ -49,6 +51,19 @@ public class VictoryUIMgr : MonoBehaviour
                 HidePopup();
             }
         });
+
+        btnSkipMap.onClick.RemoveAllListeners();
+        btnSkipMap.onClick.AddListener(delegate ()
+        {
+            SkipMapClip();
+        });
+
+        btnRefreshMap.onClick.RemoveAllListeners();
+        btnRefreshMap.onClick.AddListener(delegate ()
+        {
+            DrawMapClip();
+        });
+
 
         gameData = PublicTool.GetGameData();
     }
