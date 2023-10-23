@@ -12,5 +12,11 @@ public partial class GameSaveData
     public int memory = 0;
     //MapClip
     public List<int> listMapClipHeld = new List<int>();
-    public List<Vector3Int> listMapClipUsed = new List<Vector3Int>();
+    public List<Vector3Int> listMapClipUsed = new List<Vector3Int>();//posx/posy/typeID
+    //Character
+
+    //Plant
+    public List<int> listPlantHeld = new List<int>();
+    public List<Vector3Int> listPlantUsed = new List<Vector3Int>();//posx/posy/typeID
+
 }

@@ -20,12 +20,19 @@ public class UnitViewMgr : MonoBehaviour
     public GameObject pfFoe;
     public Dictionary<int, BattleFoeView> dicFoeView = new Dictionary<int, BattleFoeView>();
 
+
+    private GameData gameData;
     private bool isInit = false;
 
     #region Bind
     public void Init()
     {
+        gameData = PublicTool.GetGameData();
+
         InitCharacterView();
+        InitPlantView();
+        PublicTool.ClearChildItem(tfFoe);
+        PublicTool.RecalculateOccupancy();
         this.isInit = true;
     }
 
@@ -36,11 +43,10 @@ public class UnitViewMgr : MonoBehaviour
     {
         dicCharacterView.Clear();
         PublicTool.ClearChildItem(tfCharacter);
-        foreach(var character in PublicTool.GetGameData().listCharacter)
+        foreach(var character in gameData.listCharacter)
         {
             GenerateCharacterView(character);
         }
-        PublicTool.RecalculateOccupancy();
     }
 
     public void GenerateCharacterView(BattleCharacterData characterData)
@@ -118,6 +124,18 @@ public class UnitViewMgr : MonoBehaviour
     #endregion
 
     #region Plant
+
+    public void InitPlantView()
+    {
+        PublicTool.ClearChildItem(tfPlant);
+        dicPlantView.Clear();
+        for(int i = 0;i < gameData.listPlant.Count; i++)
+        {
+            BattlePlantData plantData = gameData.listPlant[i];
+            GeneratePlantView(plantData);
+        }
+    }
+
     public void GeneratePlantView(BattlePlantData plantData)
     {
         GameObject objPlant = GameObject.Instantiate(pfPlant, tfPlant);
@@ -154,4 +172,5 @@ public class UnitViewMgr : MonoBehaviour
 
     #endregion
 
+    
 }
