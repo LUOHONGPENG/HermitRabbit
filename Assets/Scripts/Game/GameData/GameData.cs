@@ -29,7 +29,7 @@ public partial class GameData
         numDay = saveData.numDay;
         LoadResourceData(saveData);
         LoadMapData(saveData);
-        NewGameCharacterData();
+        LoadCharacterData (saveData);
         LoadPlantData(saveData);
         NewGameFoeData();
 
@@ -46,6 +46,7 @@ public partial class GameData
         saveData.numDay = numDay;
         SaveResourceData(saveData);
         SaveMapData(saveData);
+        SaveCharacterData(saveData);
         SavePlantData(saveData);
     }
     #endregion

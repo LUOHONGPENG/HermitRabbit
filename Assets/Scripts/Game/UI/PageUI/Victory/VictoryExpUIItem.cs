@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using DG.Tweening;
 public class VictoryExpUIItem : MonoBehaviour
 {
     public Image imgIcon;
@@ -31,7 +31,7 @@ public class VictoryExpUIItem : MonoBehaviour
         curTotalExp = beforeExp;
         this.addExp = addExp;
         addedExp = 0;
-        addExpPart = addExp / 10;
+        addExpPart = addExp / 20;
         //Refresh
         RefreshExpView();
 
@@ -44,12 +44,12 @@ public class VictoryExpUIItem : MonoBehaviour
 
     private IEnumerator IE_GrowExp()
     {
-        for(int i = 0; i < 9; i++)
+        for(int i = 0; i < 19; i++)
         {
             curTotalExp += addExpPart;
             addedExp += addedExp;
             RefreshExpView();
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.1f);
         }
         //Final
         curTotalExp = beforeExp + addExp;

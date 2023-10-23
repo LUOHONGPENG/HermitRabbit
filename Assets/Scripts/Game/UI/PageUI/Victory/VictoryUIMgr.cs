@@ -102,6 +102,7 @@ public class VictoryUIMgr : MonoBehaviour
                 CommonReward();
                 StartExpPhase();
                 objMapClip.SetActive(false);
+                btnContinue.gameObject.SetActive(false);
                 break;
             case VictoryPhase.MapClip1:
                 StartMapClipPhase();
@@ -114,7 +115,7 @@ public class VictoryUIMgr : MonoBehaviour
                 NextPhase();
                 break;
             case VictoryPhase.End:
-
+                btnContinue.gameObject.SetActive(true);
                 break;
         }
     }
