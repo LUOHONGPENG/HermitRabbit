@@ -20,6 +20,9 @@ MonoBehaviour:
     name: Recover MOV
     effectType: 2
   - id: 1003
+    name: Recover AP Hidden
+    effectType: 2
+  - id: 1004
     name: Recover MOV Hidden
     effectType: 2
   - id: 2001
@@ -27,4 +30,7 @@ MonoBehaviour:
     effectType: 1
   - id: 3001
     name: Teleport
+    effectType: 2
+  - id: 3002
+    name: Self Burn
     effectType: 2

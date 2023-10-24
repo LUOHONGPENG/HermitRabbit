@@ -50,8 +50,9 @@ public class BattleFoeData : BattleUnitData
 
     public override void ResetNewTurn()
     {
-        curMOV = curMaxMOV;
+        //Buff Go first
         TurnBuffDecrease();
+        curMOV = regenMOV;
     }
 
     public override void InvokeDead()
@@ -66,14 +67,12 @@ public class BattleFoeData : BattleUnitData
     {
         get
         {
-            int tempATK = 0;
-            tempATK += item.ATK;
-            tempATK += buffATK;
-            if (tempATK < 0)
+            int temp = item.ATK + buffATK;
+            if (temp < 0)
             {
-                tempATK = 0;
+                temp = 0;
             }
-            return tempATK;
+            return temp;
         }
     }
 
@@ -81,14 +80,12 @@ public class BattleFoeData : BattleUnitData
     {
         get
         {
-            int tempDEF = 0;
-            tempDEF += item.DEF;
-            tempDEF += buffDEF;
-            if (tempDEF < 0)
+            int temp = item.DEF + buffDEF;
+            if (temp < 0)
             {
-                tempDEF = 0;
+                temp = 0;
             }
-            return tempDEF;
+            return temp;
         }
     }
 
@@ -96,31 +93,16 @@ public class BattleFoeData : BattleUnitData
     {
         get
         {
-            int tempRES = 0;
-            tempRES += item.RES;
-            tempRES += buffRES;
-            if (tempRES < 0)
+            int temp = item.RES + buffRES;
+            if (temp < 0)
             {
-                tempRES = 0;
+                temp = 0;
             }
-            return tempRES;
+            return temp;
         }
     }
 
-    public override int curMaxMOV
-    {
-        get
-        {
-            int tempMOV = 0;
-            tempMOV += maxMOV;
-            tempMOV += buffMOV;
-            if (tempMOV < 0)
-            {
-                tempMOV = 0;
-            }
-            return tempMOV;
-        }
-    }
+
     #endregion
 
 }

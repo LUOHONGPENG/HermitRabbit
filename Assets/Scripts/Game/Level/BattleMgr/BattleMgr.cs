@@ -29,7 +29,8 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     public void StartNewBattle(LevelMgr parent)
     {
         numTurn = 1;
-        ResetNewTurn();
+        ResetNewTurn(); 
+        PublicTool.RecalculateOccupancy();
         ResetCharacterExp();
         battleTurnPhase = BattlePhase.CharacterPhase;
         StartTurnPhase();
@@ -39,7 +40,6 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     public void StartTurnPhase()
     {
         GeneratePlantTriggerDic();
-        PublicTool.RecalculateOccupancy();
         switch (battleTurnPhase)
         {
             case BattlePhase.CharacterPhase:

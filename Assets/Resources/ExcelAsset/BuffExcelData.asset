@@ -19,27 +19,37 @@ MonoBehaviour:
     maxLevel: 10
     counterType: 2
     desc: Reduce damage.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
   - id: 1002
     name: Overtime Work
     effectType: 2
     maxLevel: 10
     counterType: 1
     desc: Get extra AP when turn starts.
+    firstSpecialEffect: 1003
+    firstSpecialDelta: 1
   - id: 1003
     name: Infinity
     effectType: 2
     maxLevel: 3
     counterType: 0
     desc: Next X skills can enlarge the radius.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
   - id: 1004
     name: Super Worker
     effectType: 2
     maxLevel: 10
     counterType: 1
     desc: Increase ability in X turns.
+    firstSpecialEffect: 1004
+    firstSpecialDelta: 1
   - id: 2001
     name: Burning
     effectType: 1
     maxLevel: 10
     counterType: 1
     desc: Receive X damage when turn starts.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0

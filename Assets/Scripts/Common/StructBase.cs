@@ -23,6 +23,7 @@ public struct SkillBattleInfo
     public string name;
     public BattleUnitType skillSubjectType;
     public int costAP;
+    public int costMOV;
     //Range
     public SkillRegionType regionType;
     public bool isRangeSelf;
@@ -56,6 +57,7 @@ public struct SkillBattleInfo
         this.name = item.name;
         this.skillSubjectType = item.skillSubjectType;
         this.costAP = item.RealCostAP;
+        this.costMOV = item.costMOV;
         //Range
         this.regionType = item.regionType;
         this.isRangeSelf = item.isRangeSelf;

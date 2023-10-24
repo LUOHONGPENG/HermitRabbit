@@ -11,5 +11,13 @@ public class BuffTinyUIItem : MonoBehaviour
     public void Init(Buff buffInfo)
     {
         codeBuffLevel.text = buffInfo.GetLevel().ToString();
+        if(buffInfo.effectType == SkillEffectType.Harm)
+        {
+            imgIcon.color = Color.red;
+        }
+        else if(buffInfo.effectType == SkillEffectType.Help)
+        {
+            imgIcon.color = Color.blue;
+        }
     }
 }

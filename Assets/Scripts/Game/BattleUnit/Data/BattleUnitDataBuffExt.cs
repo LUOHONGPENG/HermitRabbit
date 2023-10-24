@@ -20,7 +20,7 @@ public partial class BattleUnitData
         }
     }
 
-    public void AddBuff(int id,int level)
+    public bool AddBuff(int id,int level)
     {
         if (!CheckBuffExist(id))
         {
@@ -28,12 +28,14 @@ public partial class BattleUnitData
             listBuff.Add(buff);
             dicBuff.Add(id, buff);
             EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
+            return true;
         }
         else
         {
             Buff buff = dicBuff[id];
             buff.AddLevel(level);
             EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
+            return false;
         }
     }
 

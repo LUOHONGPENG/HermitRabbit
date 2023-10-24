@@ -16,6 +16,7 @@ MonoBehaviour:
   - id: 1001
     name: Elemental Ball
     costAP: 1
+    costMOV: 0
     range: 4
     isRangeSelf: 0
     needExtraTarget: 0
@@ -40,6 +41,7 @@ MonoBehaviour:
   - id: 1101
     name: Fire Ball
     costAP: 2
+    costMOV: 0
     range: 3
     isRangeSelf: 0
     needExtraTarget: 0
@@ -64,6 +66,7 @@ MonoBehaviour:
   - id: 1202
     name: 'Gravity '
     costAP: 2
+    costMOV: 0
     range: 3
     isRangeSelf: 0
     needExtraTarget: 0
@@ -88,6 +91,7 @@ MonoBehaviour:
   - id: 1301
     name: Stream
     costAP: 1
+    costMOV: 0
     range: 1
     isRangeSelf: 0
     needExtraTarget: 0
@@ -112,6 +116,7 @@ MonoBehaviour:
   - id: 1401
     name: Holy Thunder
     costAP: 1
+    costMOV: 0
     range: 5
     isRangeSelf: 0
     needExtraTarget: 0
@@ -136,6 +141,7 @@ MonoBehaviour:
   - id: 1402
     name: Teleport
     costAP: 1
+    costMOV: 0
     range: 2
     isRangeSelf: 1
     needExtraTarget: 1
@@ -160,6 +166,7 @@ MonoBehaviour:
   - id: 1902
     name: Infinity
     costAP: 3
+    costMOV: 0
     range: 3
     isRangeSelf: 1
     needExtraTarget: 0
@@ -184,6 +191,7 @@ MonoBehaviour:
   - id: 2001
     name: Strike
     costAP: 1
+    costMOV: 0
     range: 1
     isRangeSelf: 0
     needExtraTarget: 0
@@ -208,6 +216,7 @@ MonoBehaviour:
   - id: 2101
     name: Wind Chop
     costAP: 2
+    costMOV: 0
     range: 0
     isRangeSelf: 1
     needExtraTarget: 0
@@ -229,9 +238,35 @@ MonoBehaviour:
     iconUrl: imgIconSkill_BFCut
     unlockNodeID: 2101
     desc: Cut the foes around you.
+  - id: 2102
+    name: Overtime Work
+    costAP: 0
+    costMOV: 4
+    range: 0
+    isRangeSelf: 1
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 2
+    plantEffect: 0
+    damageType: 0
+    damageDeltaStd: 0
+    damageDelta: 0
+    damageModifier: 0
+    listBuffEffect: ea030000
+    listBuffDelta: 03000000
+    listSpecialEffect: ba0b0000
+    listSpecialDelta: 03000000
+    activeSkillType: 2
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    unlockNodeID: 2102
+    desc: 
   - id: 2301
     name: Self Heal
     costAP: 1
+    costMOV: 0
     range: 0
     isRangeSelf: 1
     needExtraTarget: 0
@@ -256,6 +291,7 @@ MonoBehaviour:
   - id: 2401
     name: Rush Hour
     costAP: 1
+    costMOV: 0
     range: 4
     isRangeSelf: 1
     needExtraTarget: 0
@@ -280,6 +316,7 @@ MonoBehaviour:
   - id: 2402
     name: Inspire
     costAP: 1
+    costMOV: 0
     range: 4
     isRangeSelf: 0
     needExtraTarget: 0
@@ -304,6 +341,7 @@ MonoBehaviour:
   - id: 2902
     name: Super Worker
     costAP: 3
+    costMOV: 0
     range: 2
     isRangeSelf: 1
     needExtraTarget: 0
@@ -318,8 +356,8 @@ MonoBehaviour:
     damageModifier: 0
     listBuffEffect: ec030000
     listBuffDelta: 03000000
-    listSpecialEffect: eb030000
-    listSpecialDelta: 01000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
     activeSkillType: 3
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -328,6 +366,7 @@ MonoBehaviour:
   - id: 3001
     name: Tadpole Strike
     costAP: 0
+    costMOV: 0
     range: 3
     isRangeSelf: 0
     needExtraTarget: 0
@@ -352,6 +391,7 @@ MonoBehaviour:
   - id: 9001
     name: Slap
     costAP: 1
+    costMOV: 0
     range: 1
     isRangeSelf: 0
     needExtraTarget: 0
@@ -376,6 +416,7 @@ MonoBehaviour:
   - id: 9002
     name: Anxiety
     costAP: 1
+    costMOV: 0
     range: 4
     isRangeSelf: 0
     needExtraTarget: 0

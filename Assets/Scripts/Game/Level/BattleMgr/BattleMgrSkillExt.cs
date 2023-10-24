@@ -102,6 +102,7 @@ public partial class BattleMgr
         if(skillBattleInfo.skillSubjectType == BattleUnitType.Character && skillSubject is BattleCharacterData)
         {
             skillSubject.curAP -= skillBattleInfo.costAP;
+            skillSubject.curMOV -= skillBattleInfo.costMOV;
         }
         yield break;
     }
@@ -304,6 +305,11 @@ public partial class BattleMgr
         else if (skillSubject.curAP < skillBattleInfo.costAP)
         {
             EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("AP not enough", targetPos));
+            return false;
+        }
+        else if (skillSubject.curMOV < skillBattleInfo.costMOV)
+        {
+            EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("MOV not enough", targetPos));
             return false;
         }
         else

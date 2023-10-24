@@ -13,6 +13,8 @@ public partial class BuffExcelItem : ExcelItemBase
 	public int maxLevel;
 	public BuffCounterType counterType;
 	public string desc;
+	public int firstSpecialEffect;
+	public int firstSpecialDelta;
 }
 
 [CreateAssetMenu(fileName = "BuffExcelData", menuName = "Excel To ScriptableObject/Create BuffExcelData", order = 1)]
@@ -38,6 +40,8 @@ public class BuffAssetAssignment
 			items[i].maxLevel = Convert.ToInt32(allItemValueRowList[i]["maxLevel"]);
 			items[i].counterType = (BuffCounterType) Enum.Parse(typeof(BuffCounterType), allItemValueRowList[i]["counterType"], true);
 			items[i].desc = allItemValueRowList[i]["desc"];
+			items[i].firstSpecialEffect = Convert.ToInt32(allItemValueRowList[i]["firstSpecialEffect"]);
+			items[i].firstSpecialDelta = Convert.ToInt32(allItemValueRowList[i]["firstSpecialDelta"]);
 		}
 		BuffExcelData excelDataAsset = ScriptableObject.CreateInstance<BuffExcelData>();
 		excelDataAsset.items = items;

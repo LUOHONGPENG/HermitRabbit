@@ -109,32 +109,45 @@ public partial class BattleCharacterData : BattleUnitData
     {
         get
         {
-            int tempMOV = 0;
-            tempMOV += maxMOV;
-            tempMOV += buffMOV;
-            if (tempMOV < 0)
+            int temp = maxMOV + buffMaxMOV;
+            if (temp < 0)
             {
-                tempMOV = 0;
+                temp = 0;
             }
-            return tempMOV;
+            return temp;
+        }
+    }
+
+    public override int curMaxAP
+    {
+        get
+        {
+            int temp = maxAP + buffMaxAP;
+            if (temp < 0)
+            {
+                temp = 0;
+            }
+            return temp;
         }
     }
 
 
     public override void ResetNewTurn()
     {
-        curAP = maxAP;
-        curMOV = curMaxMOV;
+        //Buff will affect AP and MOV
         TurnBuffDecrease();
+
+        curAP = regenAP;
+        curMOV = regenMOV;
     }
 
     public override void ResetBattleEnd()
     {
-        curHP = maxHP;
-        curAP = maxAP;
-        curMOV = curMaxMOV;
-
         ClearAllBuff();
+
+        curHP = maxHP;
+        curAP = regenAP;
+        curMOV = regenMOV;
 
         this.posID = new Vector2Int(item.startPos[0], item.startPos[1]);
     }

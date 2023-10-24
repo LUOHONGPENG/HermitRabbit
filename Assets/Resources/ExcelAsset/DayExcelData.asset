@@ -23,17 +23,17 @@ MonoBehaviour:
   - id: 2
     dayCount: 2
     foeID: 1002
-    foeNum: 3
+    foeNum: 2
     dayExp: 100
-    foeExp: 6
-    totalFoeExp: 18
+    foeExp: 4
+    totalFoeExp: 8
   - id: 3
     dayCount: 2
     foeID: 1011
-    foeNum: 4
+    foeNum: 3
     dayExp: 0
-    foeExp: 8
-    totalFoeExp: 32
+    foeExp: 5
+    totalFoeExp: 15
   - id: 4
     dayCount: 3
     foeID: 1002

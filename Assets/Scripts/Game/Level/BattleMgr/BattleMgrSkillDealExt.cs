@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -107,7 +108,7 @@ public partial class BattleMgr
 
     private void SkillBuffEffectDeal(BattleUnitData target, int buffID, int delta, string buffName, SkillEffectType effect)
     {
-        target.AddBuff(buffID, delta);
+        bool firstTimeBuff = target.AddBuff(buffID, delta);
         if(effect == SkillEffectType.Help)
         {
             target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, buffName, target.posID));
@@ -115,6 +116,16 @@ public partial class BattleMgr
         else if(effect == SkillEffectType.Harm)
         {
             target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, buffName, target.posID));
+        }
+
+        //FirstTimeBuffSpecialEffect
+        if (firstTimeBuff)
+        {
+            BuffExcelItem buff = PublicTool.GetBuffExcelItem(buffID);
+            if (buff.firstSpecialEffect > 0)
+            {
+                SkillSpecialEffectDeal(null, target, buff.firstSpecialEffect, buff.firstSpecialDelta);
+            }
         }
     }
 
@@ -135,6 +146,9 @@ public partial class BattleMgr
                 target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, string.Format("MOV+{0}", delta), target.posID));
                 break;
             case 1003:
+                target.curAP = target.curAP + delta;
+                break;
+            case 1004:
                 target.curMOV = target.curMOV + delta;
                 break;
             case 2001:
@@ -150,6 +164,11 @@ public partial class BattleMgr
                 target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Special, "Teleport!", target.posID));
                 BattleUnitView moveView = unitViewMgr.GetViewFromUnitInfo(new UnitInfo(target.battleUnitType, target.keyID));
                 moveView.MoveToPos();
+                break;
+            case 3002:
+                target.AddBuff(2001, delta);
+                BuffExcelItem burnBuffItem = PublicTool.GetBuffExcelItem(2001);
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, burnBuffItem.name, target.posID));
                 break;
         }
 

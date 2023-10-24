@@ -32,7 +32,7 @@ public class BattleMiniCharacterUIItem : MonoBehaviour
     public void RefreshUI()
     {
         imgFillHP.fillAmount = characterData.HPrate;
-        imgFillAP.fillAmount = characterData.curAP * 1f / characterData.maxAP;
+        imgFillAP.fillAmount = characterData.curAP * 1f / characterData.curMaxAP;
         imgFillMove.fillAmount = characterData.curMOV * 1f / characterData.curMaxMOV;
     }
 }

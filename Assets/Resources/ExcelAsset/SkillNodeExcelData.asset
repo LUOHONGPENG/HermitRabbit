@@ -75,7 +75,7 @@ MonoBehaviour:
     name: Quick Fire
     desc: AP Cost of Inferno - 1, but damage - 3.
     nodeType: 1
-    costSP: 2
+    costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 4d040000
     conflictNode: 1193
@@ -89,7 +89,7 @@ MonoBehaviour:
     name: Field of Scorch
     desc: Skill Radius of Inferno + 1,but damage - 2.
     nodeType: 1
-    costSP: 2
+    costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 4d040000
     conflictNode: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
     name: Confocal
     desc: Inferno will cost all AP, each extra AP deal more damage.
     nodeType: 1
-    costSP: 2
+    costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 4d040000
     conflictNode: 1191
@@ -117,7 +117,7 @@ MonoBehaviour:
     name: Boom!
     desc: Deal damage according to burning.
     nodeType: 0
-    costSP: 2
+    costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 4d040000
     conflictNode: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
     name: 'Gravity '
     desc: Gravity magic attack that reduce movement.
     nodeType: 0
-    costSP: 2
+    costSP: 1
     conditionSPSpent: 0
     conditionPreNode: b1040000
     conflictNode: 0
@@ -201,7 +201,7 @@ MonoBehaviour:
     name: Dizzy Light
     desc: Holy Thunder will give target debuff named Dizzy.
     nodeType: 1
-    costSP: 2
+    costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 79050000
     conflictNode: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
     name: Teleport
     desc: Change one unit position.
     nodeType: 0
-    costSP: 2
+    costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 79050000
     conflictNode: 0
@@ -316,7 +316,7 @@ MonoBehaviour:
     name: Injury Benefit
     desc: Deal more damage when lost more HP.
     nodeType: 1
-    costSP: 2
+    costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 35080000
     conflictNode: 0
@@ -330,9 +330,9 @@ MonoBehaviour:
     name: Overtime Work
     desc: Gain extra AP every turn but gain burning as well.
     nodeType: 0
-    costSP: 2
+    costSP: 1
     conditionSPSpent: 0
-    conditionPreNode: d1070000
+    conditionPreNode: 35080000
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
@@ -386,7 +386,7 @@ MonoBehaviour:
     name: Helper Hand
     desc: Enlarge the range of the support skill
     nodeType: 1
-    costSP: 2
+    costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 61090000
     conflictNode: 0

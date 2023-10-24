@@ -10,6 +10,7 @@ public partial class SkillExcelItem : ExcelItemBase
 {
 	public string name;
 	public int costAP;
+	public int costMOV;
 	public int range;
 	public bool isRangeSelf;
 	public bool needExtraTarget;
@@ -53,6 +54,7 @@ public class SkillAssetAssignment
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].name = allItemValueRowList[i]["name"];
 			items[i].costAP = Convert.ToInt32(allItemValueRowList[i]["costAP"]);
+			items[i].costMOV = Convert.ToInt32(allItemValueRowList[i]["costMOV"]);
 			items[i].range = Convert.ToInt32(allItemValueRowList[i]["range"]);
 			items[i].isRangeSelf = Convert.ToBoolean(allItemValueRowList[i]["isRangeSelf"]);
 			items[i].needExtraTarget = Convert.ToBoolean(allItemValueRowList[i]["needExtraTarget"]);

@@ -13,6 +13,8 @@ public partial class BattleMgr
             yield break;
         }
         ResetNewTurn();
+        PublicTool.RecalculateOccupancy();
+        yield return new WaitForEndOfFrame();
         yield return StartCoroutine(IE_StartCharacterTurnControl());
         yield break;
     }

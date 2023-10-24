@@ -36,7 +36,58 @@ public partial class BattleUnitData
     public virtual int curATK { get; }
     public virtual int curDEF { get; }
     public virtual int curRES { get; }
-    public virtual int curMaxMOV { get; }
+    public virtual int curMaxMOV
+    {
+        get
+        {
+            int temp = maxMOV + buffMaxMOV;
+            if (temp < 0)
+            {
+                temp = 0;
+            }
+            return temp;
+        }
+    }
+
+    public virtual int regenMOV
+    {
+        get
+        {
+            int temp = curMaxMOV + buffRegenMOV;
+            if(temp > curMaxMOV)
+            {
+                temp = curMaxMOV;
+            }
+            return temp;
+        }
+    }
+
+    public virtual int curMaxAP 
+    {
+        get
+        {
+            int temp = maxAP + buffMaxAP;
+            if (temp < 0)
+            {
+                temp = 0;
+            }
+            return temp;
+        }
+    }
+
+    public virtual int regenAP
+    {
+        get
+        {
+            int temp = curMaxAP + buffRegenAP;
+            if(temp > curMaxAP)
+            {
+                temp = curMaxAP;
+            }
+            return temp; 
+        }
+    }
+
 
     public virtual int buffATK 
     {
@@ -77,7 +128,7 @@ public partial class BattleUnitData
         }
     }
 
-    public virtual int buffMOV
+    public virtual int buffMaxMOV
     {
         get
         {
@@ -86,6 +137,38 @@ public partial class BattleUnitData
             {
                 temp++;
             }
+            return temp;
+        }
+    }
+
+    public virtual int buffRegenMOV
+    {
+        get
+        {
+            int temp = 0;
+            return temp;
+        }
+    }
+
+
+    public virtual int buffMaxAP
+    {
+        get
+        {
+            int temp = 0;
+            if (CheckBuffExist(1002))
+            {
+                temp++;
+            }
+            return temp;
+        }
+    }
+
+    public virtual int buffRegenAP
+    {
+        get
+        {
+            int temp = 0;
             return temp;
         }
     }
