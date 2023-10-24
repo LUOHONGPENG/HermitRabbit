@@ -15,8 +15,13 @@ public class BattleCharacterView : BattleUnitView
     {
         this.characterData = characterData;
         this.unitData = characterData;
+
+        CommonInit();
+
         srUnit.sprite = Resources.Load("Sprite/Character/"+characterData.GetItem().pixelUrl, typeof(Sprite)) as Sprite;
         MoveToPos();
+        isInit = true;
+
     }
 
 }

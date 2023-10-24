@@ -18,9 +18,8 @@ public partial class LevelMgr
         EventCenter.Instance.AddEventListener("BattleStart", BattleStartEvent);
         EventCenter.Instance.AddEventListener("BattleEnd", BattleEndEvent);
         EventCenter.Instance.AddEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
+        EventCenter.Instance.AddEventListener("UnitUIRefresh", UnitUIRefreshEvent);
         EventCenter.Instance.AddEventListener("BattleFoeDead", BattleFoeDeadEvent);
-
-        
 
         //PeacePlant
         EventCenter.Instance.AddEventListener("PeacePlantStart", PeacePlantStartEvent);
@@ -51,7 +50,9 @@ public partial class LevelMgr
         EventCenter.Instance.RemoveEventListener("BattleStart", BattleStartEvent);
         EventCenter.Instance.RemoveEventListener("BattleEnd", BattleEndEvent);
         EventCenter.Instance.RemoveEventListener("CharacterPhaseEnd", CharacterPhaseEndEvent);
+        EventCenter.Instance.RemoveEventListener("UnitUIRefresh", UnitUIRefreshEvent);
         EventCenter.Instance.RemoveEventListener("BattleFoeDead", BattleFoeDeadEvent);
+
 
         //PeacePlant
         EventCenter.Instance.RemoveEventListener("PeacePlantStart", PeacePlantStartEvent);
@@ -67,6 +68,8 @@ public partial class LevelMgr
         //About Test
         EventCenter.Instance.RemoveEventListener("TestButton", TestButtonEvent);
     }
+
+
 
 
 
@@ -201,11 +204,17 @@ public partial class LevelMgr
                 unitViewMgr.GetCharacterView(characterData.keyID).MoveToPos();
             }
         }
+        PublicTool.RecalculateOccupancy();
     }
 
     private void CharacterPhaseEndEvent(object arg0)
     {
         battleMgr.EndTurnPhase();
+    }
+
+    private void UnitUIRefreshEvent(object arg0)
+    {
+        unitViewMgr.RefreshUnitUI();
     }
 
     private void BattleFoeDeadEvent(object arg0)

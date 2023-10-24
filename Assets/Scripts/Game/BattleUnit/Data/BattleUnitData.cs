@@ -19,6 +19,14 @@ public partial class BattleUnitData
     //The maximum HP of this unit
     public float maxHP;
 
+    public float HPrate
+    {
+        get
+        {
+            return 1.0f * curHP / maxHP;
+        }
+    }
+
     public int curMOV = 0;
     public int maxMOV = 0;
 

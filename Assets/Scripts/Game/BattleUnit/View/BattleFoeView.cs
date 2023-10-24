@@ -12,10 +12,12 @@ public class BattleFoeView : BattleUnitView
         this.foeData = foeData;
         this.unitData = foeData;
 
+        CommonInit();
+
         srUnit.sprite = Resources.Load("Sprite/Foe/"+foeData.GetItem().pixelUrl, typeof(Sprite)) as Sprite;
-
-
         MoveToPos();
+
+        isInit = true;
     }
 
 

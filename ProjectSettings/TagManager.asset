@@ -49,6 +49,9 @@ TagManager:
   - name: Unit
     uniqueID: 1336317085
     locked: 0
+  - name: UnitUI
+    uniqueID: 477819397
+    locked: 0
   - name: PageUI
     uniqueID: 3949915237
     locked: 0

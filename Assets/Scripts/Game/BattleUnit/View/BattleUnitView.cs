@@ -6,27 +6,22 @@ using DG.Tweening;
 public class BattleUnitView : MonoBehaviour
 {
     public SpriteRenderer srUnit;
-
     public Collider colUnit;
 
     public BattleUnitData unitData;
+    public BattleUnitUIView uiView;
 
+    protected bool isInit = false;
 
-
-
-    private void LateUpdate()
+    public void CommonInit()
     {
-        Vector2 cameraPos = new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.z);
-        Vector2 thisPos = new Vector2(this.transform.position.x, this.transform.position.z);
-        Vector2 direction = cameraPos - thisPos;
-        direction.Normalize();
-
-        srUnit.transform.localPosition = new Vector3(direction.x * 0.2f, 0, direction.y * 0.2f);
-
-        //srUnit.transform.localPosition = new Vector3(direction.x * 0.35f, 0, direction.y * 0.35f);
-        srUnit.transform.LookAt(Camera.main.transform.forward + srUnit.transform.position);
+        if (uiView != null)
+        {
+            uiView.Init(this);
+        }
     }
 
+    #region Basic Function
     public void MoveToPos()
     {
         Vector2Int targetPosID = unitData.posID;
@@ -36,7 +31,7 @@ public class BattleUnitView : MonoBehaviour
 
     public IEnumerator IE_MovePath(List<Vector2Int> path)
     {
-        for(int i = 1; i < path.Count; i++)
+        for (int i = 1; i < path.Count; i++)
         {
             Vector3 tilePos = PublicTool.ConvertPosFromID(path[i]);
             this.transform.DOLocalMove(new Vector3(tilePos.x, 0.35f, tilePos.z), 0.2f);
@@ -45,13 +40,53 @@ public class BattleUnitView : MonoBehaviour
         }
     }
 
-
     public void SelfDestroy()
     {
         Destroy(this.gameObject);
     }
+    #endregion
+
+    #region Update Component Pos
+    private void LateUpdate()
+    {
+        RefreshUnitSpriteDirection();
+        RefreshUnitUIPos();
+    }
+
+    private void RefreshUnitSpriteDirection()
+    {
+        //Calculate the position between camera and unit to adjust the relative position of the character
+        Vector2 cameraPos = new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.z);
+        Vector2 thisPos = new Vector2(this.transform.position.x, this.transform.position.z);
+        Vector2 direction = cameraPos - thisPos;
+        direction.Normalize();
+        srUnit.transform.localPosition = new Vector3(direction.x * 0.2f, 0, direction.y * 0.2f);
+
+        //Adjust the Face of the unit
+        srUnit.transform.LookAt(Camera.main.transform.forward + srUnit.transform.position);
+    }
+
+    private void RefreshUnitUIPos()
+    {
+        if (uiView != null)
+        {
+            uiView.RefreshUIPos();
+        }
+    }
+    #endregion
+
+    public void RefreshUnitUIInfo()
+    {
+        if (uiView != null)
+        {
+            uiView.RefreshHPBar(unitData.HPrate);
+            Debug.Log(unitData.HPrate);
+        }
+        //RefreshHPBar
+    }
 
 
+    #region Effect
     public bool isExecutingBattleText = false;
 
     public void RequestBattleText()
@@ -77,4 +112,6 @@ public class BattleUnitView : MonoBehaviour
         }
         isExecutingBattleText = false;
     }
+    #endregion
+
 }

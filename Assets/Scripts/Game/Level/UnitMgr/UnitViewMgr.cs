@@ -2,22 +2,26 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class UnitViewMgr : MonoBehaviour
 {
     [Header("Character")]
     public Transform tfCharacter;
     public GameObject pfCharacter;
+    public List<BattleCharacterView> listCharacterView = new List<BattleCharacterView>();
     public Dictionary<int, BattleCharacterView> dicCharacterView = new Dictionary<int, BattleCharacterView>();
 
     [Header("Plant")]
     public Transform tfPlant;
     public GameObject pfPlant;
+    public List<BattlePlantView> listPlantView = new List<BattlePlantView>();
     public Dictionary<int, BattlePlantView> dicPlantView = new Dictionary<int, BattlePlantView>();
 
     [Header("Foe")]
     public Transform tfFoe;
     public GameObject pfFoe;
+    public List<BattleFoeView> listFoeView = new List<BattleFoeView>();
     public Dictionary<int, BattleFoeView> dicFoeView = new Dictionary<int, BattleFoeView>();
 
 
@@ -31,7 +35,8 @@ public class UnitViewMgr : MonoBehaviour
 
         InitCharacterView();
         InitPlantView();
-        PublicTool.ClearChildItem(tfFoe);
+        InitFoeView();
+
         PublicTool.RecalculateOccupancy();
         this.isInit = true;
     }
@@ -41,6 +46,7 @@ public class UnitViewMgr : MonoBehaviour
     #region Character
     public void InitCharacterView()
     {
+        listCharacterView.Clear();
         dicCharacterView.Clear();
         PublicTool.ClearChildItem(tfCharacter);
         foreach(var character in gameData.listCharacter)
@@ -57,6 +63,7 @@ public class UnitViewMgr : MonoBehaviour
         if (!dicCharacterView.ContainsKey(characterData.keyID))
         {
             dicCharacterView.Add(characterData.keyID,characterView);
+            listCharacterView.Add(characterView);
         }
     }
 
@@ -71,6 +78,18 @@ public class UnitViewMgr : MonoBehaviour
             return null;
         }
     }
+
+    public void RemoveCharacterView(int keyID)
+    {
+        if (dicCharacterView.ContainsKey(keyID))
+        {
+            BattleCharacterView view = dicCharacterView[keyID];
+            dicCharacterView.Remove(keyID);
+            listCharacterView.Remove(view);
+            view.SelfDestroy();
+        }
+    }
+
     public BattleUnitView GetViewFromUnitInfo(UnitInfo unitInfo)
     {
         switch (unitInfo.type)
@@ -84,10 +103,16 @@ public class UnitViewMgr : MonoBehaviour
         }
         return null;
     }
-
     #endregion
 
     #region Foe
+    public void InitFoeView()
+    {
+        listFoeView.Clear();
+        dicFoeView.Clear();
+        PublicTool.ClearChildItem(tfFoe);
+    }
+
     public void GenerateFoeView(BattleFoeData foeData)
     {
         GameObject objFoe = GameObject.Instantiate(pfFoe, tfFoe);
@@ -96,6 +121,7 @@ public class UnitViewMgr : MonoBehaviour
         if (!dicFoeView.ContainsKey(foeData.keyID))
         {
             dicFoeView.Add(foeData.keyID, foeView);
+            listFoeView.Add(foeView);
         }
         PublicTool.RecalculateOccupancy();
     }
@@ -118,15 +144,16 @@ public class UnitViewMgr : MonoBehaviour
         {
             BattleFoeView view = dicFoeView[keyID];
             dicFoeView.Remove(keyID);
+            listFoeView.Remove(view);
             view.SelfDestroy();
         }
     }
     #endregion
 
     #region Plant
-
     public void InitPlantView()
     {
+        listPlantView.Clear();
         PublicTool.ClearChildItem(tfPlant);
         dicPlantView.Clear();
         for(int i = 0;i < gameData.listPlant.Count; i++)
@@ -144,6 +171,7 @@ public class UnitViewMgr : MonoBehaviour
         if (!dicPlantView.ContainsKey(plantData.keyID))
         {
             dicPlantView.Add(plantData.keyID, plantView);
+            listPlantView.Add(plantView);
         }
     }
 
@@ -165,12 +193,29 @@ public class UnitViewMgr : MonoBehaviour
         {
             BattlePlantView view = dicPlantView[keyID];
             dicPlantView.Remove(keyID);
+            listPlantView.Remove(view);
             view.SelfDestroy();
         }
     }
-
-
     #endregion
 
-    
+    #region Unit
+    public void RefreshUnitUI()
+    {
+        foreach(var item in listCharacterView)
+        {
+            item.RefreshUnitUIInfo();
+        }
+
+        foreach (var item in listFoeView)
+        {
+            item.RefreshUnitUIInfo();
+        }
+
+        foreach (var item in listPlantView)
+        {
+            item.RefreshUnitUIInfo();
+        }
+    }
+    #endregion
 }

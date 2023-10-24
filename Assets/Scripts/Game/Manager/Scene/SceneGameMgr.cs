@@ -18,12 +18,13 @@ public class SceneGameMgr : MonoBehaviour
     {
         yield return new WaitUntil(() => GameMgr.Instance.isInit);
         GameMgr.Instance.curSceneGameMgr = this;
-        levelMgr.Init();
-        uiMgr.Init(uiCamera);
-        GameMgr.Instance.curMapCamera = mapCamera;
         GameMgr.Instance.curUICamera = uiCamera;
         virtualCamera.Follow = cameraMgr.transform;
         virtualCamera.LookAt = cameraMgr.transform;
+        levelMgr.Init();
+        uiMgr.Init(uiCamera);
+        GameMgr.Instance.curMapCamera = mapCamera;
+
         //Set Current SceneMgr
     }
 }

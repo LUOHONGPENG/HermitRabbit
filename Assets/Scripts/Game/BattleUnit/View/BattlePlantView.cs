@@ -11,6 +11,10 @@ public class BattlePlantView : BattleUnitView
         this.plantData = plantData;
         this.unitData = plantData;
 
+        CommonInit();
+
         MoveToPos();
+        isInit = true;
+
     }
 }
