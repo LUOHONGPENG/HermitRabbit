@@ -240,7 +240,7 @@ public partial class SkillExcelItem
             int temp = damageModifier;
             if (id == 1101 && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1191))
             {
-                temp -= 2;
+                temp -= 3;
             }
             if (id == 1101 && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1192))
             {

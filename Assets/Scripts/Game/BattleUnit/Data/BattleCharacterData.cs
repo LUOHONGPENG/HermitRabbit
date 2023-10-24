@@ -134,12 +134,16 @@ public partial class BattleCharacterData : BattleUnitData
         curAP = maxAP;
         curMOV = curMaxMOV;
 
+        ClearAllBuff();
+
         this.posID = new Vector2Int(item.startPos[0], item.startPos[1]);
     }
 
 }
 
-
+/// <summary>
+/// About the data that need to be saved
+/// </summary>
 public partial class BattleCharacterData
 {
     //LevelData

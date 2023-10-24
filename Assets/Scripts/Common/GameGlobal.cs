@@ -17,6 +17,7 @@ public static class GameGlobal
     public static float skillNodeSpacingX = 120f;
     public static float skillNodeSpacingY = 200f;
 
+    public static float waitTimeText = 0.6f;
 
     #region Shared Data
 

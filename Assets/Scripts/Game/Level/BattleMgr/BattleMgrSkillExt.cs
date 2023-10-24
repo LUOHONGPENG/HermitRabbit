@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public partial class BattleMgr
 {
@@ -76,7 +77,8 @@ public partial class BattleMgr
         yield return StartCoroutine(IE_FindSkillTarget());
         yield return StartCoroutine(IE_InvokeSkillData());
         yield return StartCoroutine(InvokeSkillText());
-        yield return new WaitForSeconds(0.6f);
+        //The 0.6 second is hard code and need to be mofidied
+        yield return new WaitForSeconds(GameGlobal.waitTimeText);
         yield return StartCoroutine(IE_AfterSkill());
         yield return StartCoroutine(IE_CheckPlantAfterSkill());
 
@@ -187,6 +189,7 @@ public partial class BattleMgr
 
     private IEnumerator InvokeSkillText()
     {
+        //Show the Skill information on the top
         EventCenter.Instance.EventTrigger("EffectSkillName", skillBattleInfo.name);
 
         //Change dicFoeSkillTarget to gameData.dicFoe
@@ -217,31 +220,37 @@ public partial class BattleMgr
     private IEnumerator IE_AfterSkill()
     {
         //If there is no a foe that is not in the dic are hurt
-
-        //Clear Foe
-        foreach (var item in dicFoeSkillTarget)
-        {
-            if (item.Value.isDead)
-            {
-                unitViewMgr.RemoveFoeView(item.Value.keyID);
-            }
-        }
-        gameData.CheckClearFoe();
-
-        //Clear Plant
-        foreach (var item in dicPlantSkillTarget)
-        {
-            if (item.Value.isDead)
-            {
-                unitViewMgr.RemovePlantView(item.Value.keyID);
-            }
-        }
-        gameData.CheckClearPlant();
-
+        CheckClearDeadUnitView();
         RefreshSkillRange();
-
         yield break;
     }
+
+    private void CheckClearDeadUnitView()
+    {
+        //Clear Foe
+        for(int i = gameData.listFoe.Count-1; i >= 0; i--)
+        {
+            BattleFoeData foeData = gameData.listFoe[i];
+
+            if (foeData.isDead)
+            {
+                unitViewMgr.RemoveFoeView(foeData.keyID);
+                gameData.RemoveFoeData(foeData.keyID);
+            }
+        }
+
+        //Clear Plant
+        for (int i = gameData.listPlant.Count - 1; i >= 0; i--)
+        {
+            BattlePlantData plantData = gameData.listPlant[i];
+            if (plantData.isDead)
+            {
+                unitViewMgr.RemovePlantView(plantData.keyID);
+                gameData.RemovePlantData(plantData.keyID);
+            }
+        }
+    }
+
 
     private void RefreshSkillRange()
     {

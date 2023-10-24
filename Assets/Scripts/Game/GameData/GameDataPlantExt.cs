@@ -86,17 +86,6 @@ public partial class GameData
         }
     }
 
-    public void CheckClearPlant()
-    {
-        for (int i = listPlant.Count - 1; i >= 0; i--)
-        {
-            if (listPlant[i].isDead)
-            {
-                RemovePlantData(listPlant[i].keyID);
-            }
-        }
-    }
-
     public void RemovePlantData(int keyID)
     {
         if (dicPlant.ContainsKey(keyID))

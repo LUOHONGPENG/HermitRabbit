@@ -10,6 +10,7 @@ public partial class BuffExcelItem : ExcelItemBase
 {
 	public string name;
 	public SkillEffectType effectType;
+	public int maxLevel;
 	public BuffCounterType counterType;
 	public string desc;
 }
@@ -34,6 +35,7 @@ public class BuffAssetAssignment
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].name = allItemValueRowList[i]["name"];
 			items[i].effectType = (SkillEffectType) Enum.Parse(typeof(SkillEffectType), allItemValueRowList[i]["effectType"], true);
+			items[i].maxLevel = Convert.ToInt32(allItemValueRowList[i]["maxLevel"]);
 			items[i].counterType = (BuffCounterType) Enum.Parse(typeof(BuffCounterType), allItemValueRowList[i]["counterType"], true);
 			items[i].desc = allItemValueRowList[i]["desc"];
 		}

@@ -73,7 +73,7 @@ MonoBehaviour:
     remark: 
   - id: 1191
     name: Quick Fire
-    desc: AP Cost of Inferno - 1, but damage - 2.
+    desc: AP Cost of Inferno - 1, but damage - 3.
     nodeType: 1
     costSP: 2
     conditionSPSpent: 0

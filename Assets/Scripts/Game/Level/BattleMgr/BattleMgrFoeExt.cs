@@ -10,6 +10,10 @@ public partial class BattleMgr
     private IEnumerator IE_WholeFoeTurn()
     {
         yield return StartCoroutine(IE_FoeBuffCheck());
+        if (isBattleEnd)
+        {
+            yield break;
+        }
         ScanFoeStack();
         yield return StartCoroutine(IE_ExecuteFoeTurn());
         yield break;
@@ -17,9 +21,25 @@ public partial class BattleMgr
 
     private IEnumerator IE_FoeBuffCheck()
     {
+        //If the buff such as burning is triggered 
+        bool hasBuffInvoked = false;
         for (int i = gameData.listFoe.Count-1;i >= 0;i--)
         {
-            //InvokeBuff
+            BattleFoeData foeData = gameData.listFoe[i];
+            bool isTriggered = foeData.CheckBuffTrigger();
+            //Mark that buff is triggered
+            if (isTriggered)
+            {
+                hasBuffInvoked = true;
+                BattleFoeView foeView = unitViewMgr.GetFoeView(foeData.keyID);
+                foeView.RequestBattleText();
+            }
+        }
+        if (hasBuffInvoked)
+        {
+            yield return new WaitForSeconds(GameGlobal.waitTimeText);
+            yield return StartCoroutine(IE_AfterSkill());
+            yield return StartCoroutine(IE_CheckBattleOver());
         }
         yield break;
     }

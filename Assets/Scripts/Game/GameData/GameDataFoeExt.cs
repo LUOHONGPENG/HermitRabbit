@@ -38,16 +38,6 @@ public partial class GameData
         }
     }
 
-    public void CheckClearFoe()
-    {
-        for (int i = listFoe.Count - 1; i >= 0; i--)
-        {
-            if (listFoe[i].isDead)
-            {
-                RemoveFoeData(listFoe[i].keyID);
-            }
-        }
-    }
 
     public void RemoveFoeData(int keyID)
     {

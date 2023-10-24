@@ -28,10 +28,6 @@ public class BattlePlantData : BattleUnitData
         return item.skillID;
     }
 
-    public override void ResetNewTurn()
-    {
-        TurnBuffDecrease();
-    }
 
     #region Basic Attribute
     public override int curATK
@@ -79,4 +75,19 @@ public class BattlePlantData : BattleUnitData
         }
     }
     #endregion
+
+    public override void ResetNewTurn()
+    {
+        curAP = maxAP;
+        TurnBuffDecrease();
+    }
+
+    public override void ResetBattleEnd()
+    {
+        curHP = maxHP;
+        curAP = maxAP;
+
+        ClearAllBuff();
+    }
+
 }
