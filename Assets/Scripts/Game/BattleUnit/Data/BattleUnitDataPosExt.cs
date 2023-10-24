@@ -348,7 +348,7 @@ public partial class BattleUnitData
     {
         SkillBattleInfo skillInfo = PublicTool.GetGameData().GetCurSkillBattleInfo();
 
-        if (skillInfo.ID == 1402 && BattleMgr.Instance.isInExtraTargetMode)
+        if (skillInfo.ID == 1402 && BattleMgr.Instance.isFirstTargetSelected)
         {
             //Range Type
             listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, curMaxMOV));

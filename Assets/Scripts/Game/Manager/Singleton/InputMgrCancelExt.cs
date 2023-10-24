@@ -31,7 +31,7 @@ public partial class InputMgr
                 EventCenter.Instance.EventTrigger("InputCancelCharacter", null);
                 break;
             case InteractState.CharacterSkill:
-                if (BattleMgr.Instance.isInExtraTargetMode)
+                if (BattleMgr.Instance.isFirstTargetSelected)
                 {
                     BattleMgr.Instance.BattleSkillReset();
                 }

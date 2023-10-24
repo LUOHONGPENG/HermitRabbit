@@ -7,6 +7,23 @@ public partial class BattleMgr
     public Stack<int> stackFoe = new Stack<int>();
     private bool isInFoeSkill = false;
 
+    private IEnumerator IE_WholeFoeTurn()
+    {
+        yield return StartCoroutine(IE_FoeBuffCheck());
+        ScanFoeStack();
+        yield return StartCoroutine(IE_ExecuteFoeTurn());
+        yield break;
+    }
+
+    private IEnumerator IE_FoeBuffCheck()
+    {
+        for (int i = gameData.listFoe.Count-1;i >= 0;i--)
+        {
+            //InvokeBuff
+        }
+        yield break;
+    }
+
     private void ScanFoeStack()
     {
         stackFoe.Clear();

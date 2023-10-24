@@ -109,9 +109,12 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     private void StartFoePhase()
     {
         PublicTool.EventChangeInteract(InteractState.WaitAction);
-        ScanFoeStack();
-        StartCoroutine(IE_ExecuteFoeTurn());
+
+        StartCoroutine(IE_WholeFoeTurn());
     }
+
+
+
 
     private void BattleOverWin()
     {

@@ -34,3 +34,17 @@ MonoBehaviour:
     dayExp: 0
     foeExp: 8
     totalFoeExp: 32
+  - id: 4
+    dayCount: 3
+    foeID: 1002
+    foeNum: 3
+    dayExp: 100
+    foeExp: 6
+    totalFoeExp: 18
+  - id: 5
+    dayCount: 3
+    foeID: 1011
+    foeNum: 4
+    dayExp: 0
+    foeExp: 8
+    totalFoeExp: 32

@@ -17,11 +17,13 @@ public partial class BattleMgr
 
 
     #region BattleExtraTarget
-    public bool isInExtraTargetMode = false;
+    //true means have selected first target
+    public bool isFirstTargetSelected = false;
     public Vector2Int skillTargetPosExtra;
     public void BattleSkillReset()
     {
-        isInExtraTargetMode = false;
+        isFirstTargetSelected = false;
+        RefreshSkillRange();
     }
     #endregion
 
@@ -40,25 +42,25 @@ public partial class BattleMgr
         //Set Skill Target
         if (skillBattleInfo.needExtraTarget)
         {
-            if (isInExtraTargetMode)
+            if (isFirstTargetSelected)
             {
                 skillTargetPosExtra = targetPos;
-                isInExtraTargetMode = false;
+                isFirstTargetSelected = false;
             }
             else
             {
                 skillTargetPos = targetPos;
-                isInExtraTargetMode = true;
+                isFirstTargetSelected = true;
                 RefreshSkillRange();
             }
         }
         else
         {
             skillTargetPos = targetPos;
-            isInExtraTargetMode = false;
+            isFirstTargetSelected = false;
         }
 
-        if (!isInExtraTargetMode)
+        if (!isFirstTargetSelected)
         {
             //StartTheSkill IEnumerator
             StartCoroutine(IE_InvokeSkillAction());
