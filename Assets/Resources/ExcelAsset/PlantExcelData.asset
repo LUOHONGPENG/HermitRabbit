@@ -15,8 +15,8 @@ MonoBehaviour:
   items:
   - id: 1001
     name: Frogi
-    HP: 10
-    ATK: 1
+    HP: 8
+    ATK: 2
     DEF: 0
     RES: 1
     triggerCondition: 0

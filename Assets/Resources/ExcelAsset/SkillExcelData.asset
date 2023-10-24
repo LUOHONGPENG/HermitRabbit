@@ -52,8 +52,8 @@ MonoBehaviour:
     damageDeltaStd: 2
     damageDelta: 135
     damageModifier: 1
-    listBuffEffect: 00000000
-    listBuffDelta: 00000000
+    listBuffEffect: d1070000
+    listBuffDelta: 01000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
     activeSkillType: 1

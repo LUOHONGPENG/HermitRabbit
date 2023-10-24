@@ -6,12 +6,15 @@ using UnityEngine.UI;
 
 public class BattleUnitUIView : MonoBehaviour
 {
-
+    [Header("Basic")]
     public Canvas canvasUIView;
     public Transform tfUIView;
-
+    [Header("HP")]
     public Image imgHPBar;
     public Image imgHPFill;
+    [Header("Buff")]
+    public Transform tfBuff;
+    public GameObject pfBuff;
 
     private Camera mapCamera;
     private BattleUnitView parent;
@@ -35,5 +38,16 @@ public class BattleUnitUIView : MonoBehaviour
     public void RefreshHPBar(float HPrate)
     {
         imgHPFill.fillAmount = HPrate;
+    }
+
+    public void RefreshBuffInfo(List<Buff> listBuff)
+    {
+        PublicTool.ClearChildItem(tfBuff);
+        for(int i = 0; i < listBuff.Count; i++)
+        {
+            GameObject objBuff = GameObject.Instantiate(pfBuff, tfBuff);
+            BuffTinyUIItem itemBuff = objBuff.GetComponent<BuffTinyUIItem>();
+            itemBuff.Init(listBuff[i]);
+        }
     }
 }

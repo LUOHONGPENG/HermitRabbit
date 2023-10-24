@@ -80,7 +80,7 @@ public class BattleUnitView : MonoBehaviour
         if (uiView != null)
         {
             uiView.RefreshHPBar(unitData.HPrate);
-            Debug.Log(unitData.HPrate);
+            uiView.RefreshBuffInfo(unitData.listBuff);
         }
         //RefreshHPBar
     }

@@ -26,6 +26,7 @@ public partial class BattleUnitData
             Buff buff = new Buff(id, level);
             listBuff.Add(buff);
             dicBuff.Add(id, buff);
+            EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
         }
     }
 
@@ -49,6 +50,7 @@ public partial class BattleUnitData
             Buff buff = dicBuff[id];
             listBuff.Remove(buff);
             dicBuff.Remove(id);
+            EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
         }
     }
 
@@ -67,6 +69,8 @@ public partial class BattleUnitData
                     break;
             }
         }
+        EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
+
     }
 
     public void ClearAllBuff()
