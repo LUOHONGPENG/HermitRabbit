@@ -105,7 +105,8 @@ public enum SkillRegionType
     Circle,
     Square,
     Line,
-    Water
+    Water,
+    BurnUnit
 }
 
 public enum SkillDamageType
@@ -126,12 +127,13 @@ public enum SkillEffectType
 public enum SkillDamageDeltaStd
 {
     None,
-    Const,
+    CONST,
     ATK,
     ATKMOV,
     MAXHP,
     DEF,
-    RES
+    RES,
+    BURN
 }
 
 public enum PlantTriggerType
@@ -161,6 +163,12 @@ public enum BuffCounterType
     Fixed,
     TurnDecrease,
     TurnRemove
+}
+
+public enum BuffCountDownType
+{
+    BeforeReset,
+    AfterReset
 }
 
 #endregion

@@ -44,7 +44,14 @@ MonoBehaviour:
   - id: 5
     dayCount: 3
     foeID: 1011
-    foeNum: 4
+    foeNum: 3
     dayExp: 0
     foeExp: 8
-    totalFoeExp: 32
+    totalFoeExp: 24
+  - id: 6
+    dayCount: 3
+    foeID: 1021
+    foeNum: 1
+    dayExp: 0
+    foeExp: 20
+    totalFoeExp: 20

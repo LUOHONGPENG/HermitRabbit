@@ -227,7 +227,7 @@ MonoBehaviour:
     remark: 
   - id: 1901
     name: Time Expand
-    desc: Double all debuff counter.
+    desc: Double the level of all debuff for foe or buff for allies
     nodeType: 0
     costSP: 2
     conditionSPSpent: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 4
-    columnID: -1
+    columnID: -2
     remark: 
   - id: 1902
     name: Infinity
@@ -254,7 +254,7 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     rowID: 4
-    columnID: 1
+    columnID: 2
     remark: 
   - id: 2001
     name: Strike

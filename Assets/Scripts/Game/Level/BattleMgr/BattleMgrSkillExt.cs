@@ -127,6 +127,10 @@ public partial class BattleMgr
                 listPos = PublicTool.GetTargetCircleRange(skillTargetPos, skillBattleInfo.radius);
                 listPos = PublicTool.GetTargetWaterRange(listPos);
                 break;
+            case SkillRegionType.BurnUnit:
+                listPos = PublicTool.GetTargetCircleRange(skillTargetPos, skillBattleInfo.radius);
+                listPos = PublicTool.GetTargetBurningRange(listPos);
+                break;
         }
 
         dicFoeSkillTarget.Clear();

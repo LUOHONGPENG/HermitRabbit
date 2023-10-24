@@ -34,3 +34,15 @@ MonoBehaviour:
   - id: 3002
     name: Self Burn
     effectType: 2
+  - id: 5001
+    name: Double Buff
+    effectType: 2
+  - id: 5002
+    name: Clear Debuff
+    effectType: 2
+  - id: 6001
+    name: Double Debuff
+    effectType: 1
+  - id: 6002
+    name: Clear Buff
+    effectType: 1

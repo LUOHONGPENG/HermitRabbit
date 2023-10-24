@@ -47,7 +47,7 @@ public partial class BattleMgr
         //Calculate the source damage
         switch (skillBattleInfo.damageDeltaStd)
         {
-            case SkillDamageDeltaStd.Const:
+            case SkillDamageDeltaStd.CONST:
                 damageSource = skillBattleInfo.damageDeltaFloat;
                 break;
             case SkillDamageDeltaStd.ATK:
@@ -65,6 +65,10 @@ public partial class BattleMgr
                 break;
             case SkillDamageDeltaStd.RES:
                 damageSource = source.curRES * skillBattleInfo.damageDeltaFloat;
+                break;
+            case SkillDamageDeltaStd.BURN:
+                int burnLevel = target.GetBuffLevel(4001);
+                damageSource = burnLevel * skillBattleInfo.damageDeltaFloat;
                 break;
         }
         damageSource += skillBattleInfo.damageModifier;
@@ -166,9 +170,25 @@ public partial class BattleMgr
                 moveView.MoveToPos();
                 break;
             case 3002:
-                target.AddBuff(2001, delta);
-                BuffExcelItem burnBuffItem = PublicTool.GetBuffExcelItem(2001);
+                target.AddBuff(4001, delta);
+                BuffExcelItem burnBuffItem = PublicTool.GetBuffExcelItem(4001);
                 target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, burnBuffItem.name, target.posID));
+                break;
+            case 5001:
+                target.DoubleAllBuff();
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, string.Format("Buff Extend", delta), target.posID));
+                break;
+            case 5002:
+                target.ClearFirstDebuff();
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, string.Format("Clear Debuff", delta), target.posID));
+                break;
+            case 6001:
+                target.DoubleAllDebuff();
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, string.Format("Debuff Extend", delta), target.posID));
+                break;
+            case 6002:
+                target.ClearFirstBuff();
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, string.Format("Clear Buff", delta), target.posID));
                 break;
         }
 

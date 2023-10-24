@@ -54,7 +54,7 @@ MonoBehaviour:
     damageDeltaStd: 2
     damageDelta: 135
     damageModifier: 1
-    listBuffEffect: d1070000
+    listBuffEffect: a10f0000
     listBuffDelta: 01000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
@@ -63,6 +63,31 @@ MonoBehaviour:
     iconUrl: imgIconSkill_1101
     unlockNodeID: 1101
     desc: Use fire ball to attack multiple foes.
+  - id: 1102
+    name: Boom!
+    costAP: 2
+    costMOV: 0
+    range: 0
+    isRangeSelf: 1
+    needExtraTarget: 0
+    radius: 20
+    regionType: 4
+    foeEffect: 1
+    characterEffect: 1
+    plantEffect: 1
+    damageType: 3
+    damageDeltaStd: 7
+    damageDelta: 200
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
+    activeSkillType: 1
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    unlockNodeID: 1102
+    desc: Deal damage according to burning level.
   - id: 1202
     name: 'Gravity '
     costAP: 2
@@ -112,6 +137,31 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     unlockNodeID: 1301
+    desc: 
+  - id: 1302
+    name: Clear
+    costAP: 1
+    costMOV: 0
+    range: 4
+    isRangeSelf: 1
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 1
+    characterEffect: 2
+    plantEffect: 2
+    damageType: 0
+    damageDeltaStd: 0
+    damageDelta: 0
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: 8a13000072170000
+    listSpecialDelta: 00000000
+    activeSkillType: 2
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    unlockNodeID: 1302
     desc: 
   - id: 1401
     name: Holy Thunder
@@ -163,6 +213,31 @@ MonoBehaviour:
     iconUrl: imgIconSkill_1302
     unlockNodeID: 1402
     desc: 
+  - id: 1901
+    name: Time Expand
+    costAP: 2
+    costMOV: 0
+    range: 4
+    isRangeSelf: 1
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 1
+    characterEffect: 2
+    plantEffect: 2
+    damageType: 0
+    damageDeltaStd: 0
+    damageDelta: 0
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: 8913000071170000
+    listSpecialDelta: 0000000000000000
+    activeSkillType: 3
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    unlockNodeID: 1901
+    desc: Double the level of debuff for foe or buff for allies
   - id: 1902
     name: Infinity
     costAP: 3
@@ -183,7 +258,7 @@ MonoBehaviour:
     listBuffDelta: 03000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
-    activeSkillType: 2
+    activeSkillType: 3
     characterID: 1001
     iconUrl: imgIconSkill_Default
     unlockNodeID: 1902

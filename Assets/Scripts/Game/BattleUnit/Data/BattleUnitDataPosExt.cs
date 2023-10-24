@@ -419,6 +419,10 @@ public partial class BattleUnitData
                     listRadius = PublicTool.GetTargetCircleRange(viewPos, skillInfo.radius);
                     listRadius = PublicTool.GetTargetWaterRange(listRadius);
                     break;
+                case SkillRegionType.BurnUnit:
+                    listRadius = PublicTool.GetTargetCircleRange(viewPos, skillInfo.radius);
+                    listRadius = PublicTool.GetTargetBurningRange(listRadius);
+                    break;
             }
             for (int i = 0; i < listRadius.Count; i++)
             {

@@ -1,3 +1,4 @@
+using ICSharpCode.SharpZipLib.Tar;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,18 @@ public partial class BattleUnitData
         else
         {
             return false;
+        }
+    }
+
+    public int GetBuffLevel(int id)
+    {
+        if (dicBuff.ContainsKey(id))
+        {
+            return dicBuff[id].level;
+        }
+        else
+        {
+            return 0;
         }
     }
 
@@ -92,7 +105,7 @@ public partial class BattleUnitData
     #endregion
 
 
-    #region BuffTrigger
+    #region BuffExtend
 
     public bool CheckBuffTrigger()
     {
@@ -104,7 +117,7 @@ public partial class BattleUnitData
             {
                 switch (listBuff[i].id)
                 {
-                    case 2001:
+                    case 4001:
                         GetHurt(buffInfo.level);
                         EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-buffInfo.level).ToString(), posID));
                         isTriggered = true;
@@ -115,8 +128,55 @@ public partial class BattleUnitData
         return isTriggered;
     }
 
+    public void DoubleAllBuff()
+    {
+        for(int i = 0; i < listBuff.Count; i++)
+        {
+            if (listBuff[i].effectType == SkillEffectType.Help)
+            {
+                listBuff[i].DoubleLevel();
+            }
+        }
+        EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
 
+    }
 
+    public void DoubleAllDebuff()
+    {
+        for (int i = 0; i < listBuff.Count; i++)
+        {
+            if (listBuff[i].effectType == SkillEffectType.Harm)
+            {
+                listBuff[i].DoubleLevel();
+            }
+        }
+        EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
+    }
+
+    public void ClearFirstBuff()
+    {
+        for (int i = 0; i < listBuff.Count; i++)
+        {
+            if (listBuff[i].effectType == SkillEffectType.Help)
+            {
+                RemoveBuff(listBuff[i].id);
+                break;
+            }
+        }
+        EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
+    }
+    public void ClearFirstDebuff()
+    {
+        for (int i = 0; i < listBuff.Count; i++)
+        {
+            if (listBuff[i].effectType == SkillEffectType.Harm)
+            {
+                RemoveBuff(listBuff[i].id);
+                break;
+            }
+        }
+        EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
+    }
     #endregion
 
 

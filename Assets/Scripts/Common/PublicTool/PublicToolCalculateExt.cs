@@ -136,6 +136,37 @@ public partial class PublicTool
         return listRange;
     }
 
+    public static List<Vector2Int> GetTargetBurningRange(List<Vector2Int> listTargetPos)
+    {
+        List<Vector2Int> listRange = new List<Vector2Int>();
+        GameData gameData = GetGameData();
+        foreach(var foe in gameData.listFoe)
+        {
+            if (foe.CheckBuffExist(4001) && listTargetPos.Contains(foe.posID))
+            {
+                listRange.Add(foe.posID);
+            }
+        }
+
+        foreach (var plant in gameData.listPlant)
+        {
+            if (plant.CheckBuffExist(4001) && listTargetPos.Contains(plant.posID))
+            {
+                listRange.Add(plant.posID);
+            }
+        }
+
+        foreach (var character in gameData.listCharacter)
+        {
+            if (character.CheckBuffExist(4001) && listTargetPos.Contains(character.posID))
+            {
+                listRange.Add(character.posID);
+            }
+        }
+        return listRange;
+    }
+
+
     #endregion
 
     #region FindPathSupporter

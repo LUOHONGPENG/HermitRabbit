@@ -22,7 +22,7 @@ MonoBehaviour:
     MOV: 3
     skillID: 9001
     generateType: 0
-    pos0: 2
+    pos0: 3
     pos1: 0
     pixelUrl: PixelEvilGod
   - id: 1002
@@ -34,7 +34,7 @@ MonoBehaviour:
     MOV: 5
     skillID: 9001
     generateType: 0
-    pos0: 2
+    pos0: 3
     pos1: 0
     pixelUrl: PixelEvilGod
   - id: 1011
@@ -46,6 +46,18 @@ MonoBehaviour:
     MOV: 3
     skillID: 9002
     generateType: 0
-    pos0: 2
+    pos0: 3
     pos1: 0
     pixelUrl: PixelEvilGod
+  - id: 1021
+    name: HR
+    HP: 30
+    ATK: 4
+    DEF: 1
+    RES: 1
+    MOV: 4
+    skillID: 9001
+    generateType: 0
+    pos0: 3
+    pos1: 0
+    pixelUrl: PixelEvilBoss

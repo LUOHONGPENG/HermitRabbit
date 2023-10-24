@@ -12,6 +12,7 @@ public partial class BuffExcelItem : ExcelItemBase
 	public SkillEffectType effectType;
 	public int maxLevel;
 	public BuffCounterType counterType;
+	public BuffCountDownType countDownType;
 	public string desc;
 	public int firstSpecialEffect;
 	public int firstSpecialDelta;
@@ -39,6 +40,7 @@ public class BuffAssetAssignment
 			items[i].effectType = (SkillEffectType) Enum.Parse(typeof(SkillEffectType), allItemValueRowList[i]["effectType"], true);
 			items[i].maxLevel = Convert.ToInt32(allItemValueRowList[i]["maxLevel"]);
 			items[i].counterType = (BuffCounterType) Enum.Parse(typeof(BuffCounterType), allItemValueRowList[i]["counterType"], true);
+			items[i].countDownType = (BuffCountDownType) Enum.Parse(typeof(BuffCountDownType), allItemValueRowList[i]["countDownType"], true);
 			items[i].desc = allItemValueRowList[i]["desc"];
 			items[i].firstSpecialEffect = Convert.ToInt32(allItemValueRowList[i]["firstSpecialEffect"]);
 			items[i].firstSpecialDelta = Convert.ToInt32(allItemValueRowList[i]["firstSpecialDelta"]);
