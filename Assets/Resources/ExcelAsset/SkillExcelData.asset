@@ -52,8 +52,8 @@ MonoBehaviour:
     plantEffect: 1
     damageType: 2
     damageDeltaStd: 2
-    damageDelta: 135
-    damageModifier: 1
+    damageDelta: 100
+    damageModifier: 2
     listBuffEffect: a10f0000
     listBuffDelta: 01000000
     listSpecialEffect: 00000000
@@ -77,7 +77,7 @@ MonoBehaviour:
     plantEffect: 1
     damageType: 3
     damageDeltaStd: 7
-    damageDelta: 200
+    damageDelta: 250
     damageModifier: 0
     listBuffEffect: 00000000
     listBuffDelta: 00000000
@@ -262,6 +262,31 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     unlockNodeID: 1902
+    desc: 
+  - id: 1903
+    name: Final Chant
+    costAP: 0
+    costMOV: 4
+    range: 0
+    isRangeSelf: 1
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 2
+    plantEffect: 0
+    damageType: 0
+    damageDeltaStd: 0
+    damageDelta: 0
+    damageModifier: 0
+    listBuffEffect: ed030000
+    listBuffDelta: 03000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
+    activeSkillType: 3
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    unlockNodeID: 1903
     desc: 
   - id: 2001
     name: Strike

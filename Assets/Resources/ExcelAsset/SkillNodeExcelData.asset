@@ -57,7 +57,7 @@ MonoBehaviour:
     remark: 
   - id: 1101
     name: Inferno
-    desc: 'Target all units and deal 1.35ATK+1 damage,
+    desc: 'Target all units and deal ATK+2 damage,
 
       with one level burning.'
     nodeType: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
     remark: 
   - id: 1191
     name: Quick Fire
-    desc: AP Cost of Inferno - 1, but damage - 3.
+    desc: AP Cost of Inferno - 1, but damage - 4.
     nodeType: 1
     costSP: 1
     conditionSPSpent: 0
@@ -87,7 +87,7 @@ MonoBehaviour:
     remark: 
   - id: 1192
     name: Field of Scorch
-    desc: Skill Radius of Inferno + 1,but damage - 2.
+    desc: Skill Radius of Inferno + 1,but damage reduce 25%.
     nodeType: 1
     costSP: 1
     conditionSPSpent: 0
@@ -255,6 +255,20 @@ MonoBehaviour:
     iconUrl: imgIconSkill_Default
     rowID: 4
     columnID: 2
+    remark: 
+  - id: 1903
+    name: Final Chant
+    desc: Increase skill range and AP but can't get Movement when turn starts.
+    nodeType: 0
+    costSP: 2
+    conditionSPSpent: 0
+    conditionPreNode: b204000016050000
+    conflictNode: 0
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 4
+    columnID: 0
     remark: 
   - id: 2001
     name: Strike

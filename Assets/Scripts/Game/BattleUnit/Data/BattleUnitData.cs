@@ -54,7 +54,11 @@ public partial class BattleUnitData
         get
         {
             int temp = curMaxMOV + buffRegenMOV;
-            if(temp > curMaxMOV)
+            if (CheckBuffExist(1005))
+            {
+                temp = 0;
+            }
+            if (temp > curMaxMOV)
             {
                 temp = curMaxMOV;
             }
@@ -80,7 +84,7 @@ public partial class BattleUnitData
         get
         {
             int temp = curMaxAP + buffRegenAP;
-            if(temp > curMaxAP)
+            if (temp > curMaxAP)
             {
                 temp = curMaxAP;
             }
@@ -157,6 +161,10 @@ public partial class BattleUnitData
         {
             int temp = 0;
             if (CheckBuffExist(1002))
+            {
+                temp++;
+            }
+            if (CheckBuffExist(1005))
             {
                 temp++;
             }

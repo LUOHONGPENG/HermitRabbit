@@ -79,9 +79,10 @@ public partial class BattleMgr
         yield return StartCoroutine(InvokeSkillText());
         //The 0.6 second is hard code and need to be mofidied
         yield return new WaitForSeconds(GameGlobal.waitTimeText);
-        yield return StartCoroutine(IE_AfterSkill());
+        yield return StartCoroutine(IE_CheckBuffConsume());
+        //Plant Skill Go first so that Alfven skill work
         yield return StartCoroutine(IE_CheckPlantAfterSkill());
-
+        yield return StartCoroutine(IE_AfterSkill());
         yield return StartCoroutine(IE_CheckBattleOver());
 
         if (!isBattleEnd)
@@ -125,7 +126,7 @@ public partial class BattleMgr
                 break;
             case SkillRegionType.Water:
                 listPos = PublicTool.GetTargetCircleRange(skillTargetPos, skillBattleInfo.radius);
-                listPos = PublicTool.GetTargetWaterRange(listPos);
+                listPos = BattleMgr.Instance.GetTargetWaterRange(listPos);
                 break;
             case SkillRegionType.BurnUnit:
                 listPos = PublicTool.GetTargetCircleRange(skillTargetPos, skillBattleInfo.radius);
@@ -227,6 +228,7 @@ public partial class BattleMgr
         //If there is no a foe that is not in the dic are hurt
         CheckClearDeadUnitView();
         RefreshSkillRange();
+        RefreshWaterRange();
         yield break;
     }
 

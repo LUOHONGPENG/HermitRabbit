@@ -24,7 +24,6 @@ public class BattleUnitUIView : MonoBehaviour
     {
         this.parent = parent;
         canvasUIView.worldCamera = GameMgr.Instance.curUICamera;
-        Debug.Log("InitCamera");
         mapCamera = GameMgr.Instance.curMapCamera;
         //transform.localPosition = PublicTool.CalculateScreenUIPos(posSource, GameMgr.Instance.curMapCamera);
 

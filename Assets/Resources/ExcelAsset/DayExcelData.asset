@@ -55,3 +55,10 @@ MonoBehaviour:
     dayExp: 0
     foeExp: 20
     totalFoeExp: 20
+  - id: 7
+    dayCount: 4
+    foeID: 1021
+    foeNum: 5
+    dayExp: 100
+    foeExp: 20
+    totalFoeExp: 100

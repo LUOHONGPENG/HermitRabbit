@@ -13,6 +13,8 @@ public partial class BuffExcelItem : ExcelItemBase
 	public int maxLevel;
 	public BuffCounterType counterType;
 	public BuffCountDownType countDownType;
+	public bool canBeRemoved;
+	public bool canBeDouble;
 	public string desc;
 	public int firstSpecialEffect;
 	public int firstSpecialDelta;
@@ -41,6 +43,8 @@ public class BuffAssetAssignment
 			items[i].maxLevel = Convert.ToInt32(allItemValueRowList[i]["maxLevel"]);
 			items[i].counterType = (BuffCounterType) Enum.Parse(typeof(BuffCounterType), allItemValueRowList[i]["counterType"], true);
 			items[i].countDownType = (BuffCountDownType) Enum.Parse(typeof(BuffCountDownType), allItemValueRowList[i]["countDownType"], true);
+			items[i].canBeRemoved = Convert.ToBoolean(allItemValueRowList[i]["canBeRemoved"]);
+			items[i].canBeDouble = Convert.ToBoolean(allItemValueRowList[i]["canBeDouble"]);
 			items[i].desc = allItemValueRowList[i]["desc"];
 			items[i].firstSpecialEffect = Convert.ToInt32(allItemValueRowList[i]["firstSpecialEffect"]);
 			items[i].firstSpecialDelta = Convert.ToInt32(allItemValueRowList[i]["firstSpecialDelta"]);

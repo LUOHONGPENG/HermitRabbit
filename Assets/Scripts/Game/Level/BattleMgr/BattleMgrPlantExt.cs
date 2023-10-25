@@ -4,6 +4,7 @@ using UnityEngine;
 
 public partial class BattleMgr
 {
+    //A dictionary that sort the plant according to their trigger type
     private Dictionary<PlantTriggerType, List<int>> dicPlantTrigger = new Dictionary<PlantTriggerType, List<int>>();
     private Queue<PlantSkillRequestInfo> queueSkillRequest = new Queue<PlantSkillRequestInfo>();
     private bool isInPlantSkill = false;
@@ -38,7 +39,7 @@ public partial class BattleMgr
     /// </summary>
     /// <param name="plantTriggerType"></param>
     /// <param name="unitInfo"></param>
-    private void CheckPlantSkillRequest(PlantTriggerType plantTriggerType,UnitInfo unitInfo)
+    private void CheckAddPlantSkillRequest(PlantTriggerType plantTriggerType,UnitInfo unitInfo)
     {
         if (!dicPlantTrigger.ContainsKey(plantTriggerType))
         {
@@ -49,11 +50,14 @@ public partial class BattleMgr
         for (int i = 0; i < listCheck.Count; i++)
         {
             BattleUnitData tarUnit = gameData.GetDataFromUnitInfo(unitInfo);
-            BattlePlantData curPlant = (BattlePlantData)gameData.GetDataFromUnitInfo(new UnitInfo(BattleUnitType.Plant,listCheck[i]));
-            SkillExcelItem skillItem = PublicTool.GetSkillItem(curPlant.GetSkillID());
-            if(PublicTool.CalculateGlobalDis(tarUnit.posID,curPlant.posID) <= skillItem.RealRange)
+            if (!tarUnit.isDead)
             {
-                queueSkillRequest.Enqueue(new PlantSkillRequestInfo(curPlant.keyID, skillItem.id, unitInfo));
+                BattlePlantData curPlant = (BattlePlantData)gameData.GetDataFromUnitInfo(new UnitInfo(BattleUnitType.Plant, listCheck[i]));
+                SkillExcelItem skillItem = PublicTool.GetSkillItem(curPlant.GetSkillID());
+                if (PublicTool.CalculateGlobalDis(tarUnit.posID, curPlant.posID) <= skillItem.RealRange)
+                {
+                    queueSkillRequest.Enqueue(new PlantSkillRequestInfo(curPlant.keyID, skillItem.id, unitInfo));
+                }
             }
         }
     }
@@ -78,7 +82,7 @@ public partial class BattleMgr
         //Character Normal Attack
         if (skillBattleInfo.activeSkillType == ActiveSkillType.NormalAttack && skillSubject.battleUnitType == BattleUnitType.Character && gameData.dicTempMapUnit.ContainsKey(skillTargetPos))
         {
-            CheckPlantSkillRequest(PlantTriggerType.CharacterNormalAttack, gameData.dicTempMapUnit[skillTargetPos]);
+            CheckAddPlantSkillRequest(PlantTriggerType.CharacterNormalAttack, gameData.dicTempMapUnit[skillTargetPos]);
         }
 
         yield return StartCoroutine(IE_ExecutePlantSkill());
@@ -100,12 +104,13 @@ public partial class BattleMgr
             BattlePlantData plantData = (BattlePlantData)gameData.GetCurUnitData();
             gameData.SetCurBattleSkill(plantData.GetSkillID());
             PublicTool.RecalculateSkillCover();
-            PublicTool.EventCameraGoPosID(plantData.posID);
-            yield return new WaitForSeconds(0.5f);
 
             BattleUnitData tarUnitData = gameData.GetDataFromUnitInfo(plantSkill.tarUnit);
             if (tarUnitData != null && !tarUnitData.isDead)//Except for revive
             {
+                //When the plant will execute the skill, camera can be moved.
+                PublicTool.EventCameraGoPosID(plantData.posID);
+                yield return new WaitForSeconds(0.5f);
                 isInPlantSkill = true;
                 SkillActionRequest(tarUnitData.posID);
             }

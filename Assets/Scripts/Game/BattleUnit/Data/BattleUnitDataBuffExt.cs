@@ -62,6 +62,7 @@ public partial class BattleUnitData
             {
                 RemoveBuff(id);
             }
+            EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
         }
     }
 
@@ -91,7 +92,7 @@ public partial class BattleUnitData
                     break;
             }
         }
-        EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
+        //EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
     }
 
     public void ClearAllBuff()

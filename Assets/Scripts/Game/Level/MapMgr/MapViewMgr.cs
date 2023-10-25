@@ -149,7 +149,7 @@ public partial class MapViewMgr : MonoBehaviour
                     break;
                 case SkillRegionType.Water:
                     listHoverPos = PublicTool.GetTargetCircleRange(hoverTileID, skillMapInfo.radius);
-                    listHoverPos = PublicTool.GetTargetWaterRange(listHoverPos);
+                    listHoverPos = BattleMgr.Instance.GetTargetWaterRange(listHoverPos);
                     break;
                 case SkillRegionType.BurnUnit:
                     listHoverPos = PublicTool.GetTargetCircleRange(hoverTileID, skillMapInfo.radius);

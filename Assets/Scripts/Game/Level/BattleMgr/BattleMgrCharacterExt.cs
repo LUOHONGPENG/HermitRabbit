@@ -4,7 +4,7 @@ using UnityEngine;
 
 public partial class BattleMgr
 {
-
+    #region StartCharacterTurn
     private IEnumerator IE_WholeStartCharacterTurn()
     {
         yield return StartCoroutine(IE_FriendBuffCheck());
@@ -77,4 +77,22 @@ public partial class BattleMgr
         yield break;
 
     }
+    #endregion
+
+    public IEnumerator IE_CheckBuffConsume()
+    {
+        //Infinity Buff Check
+        if(skillBattleInfo.activeSkillType == ActiveSkillType.SupportSkill || skillBattleInfo.activeSkillType == ActiveSkillType.DamageSkill)
+        {
+            if (skillSubject.CheckBuffExist(1003))
+            {
+                skillSubject.DecreaseBuff(1003);
+            }
+        }
+
+
+
+        yield break;
+    }
+
 }

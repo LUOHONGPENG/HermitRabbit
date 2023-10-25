@@ -93,24 +93,20 @@ public partial class PublicTool
         return listRange;
     }
 
-    public static List<Vector2Int> GetTargetWaterRange(List<Vector2Int> listTargetPos)
+    public static List<Vector2Int> GetTargetWaterRange(Vector2Int targetPos)
     {
         List<Vector2Int> listRange = new List<Vector2Int>();
         Queue<Vector2Int> listOpen = new Queue<Vector2Int>();
         List<Vector2Int> listClose = new List<Vector2Int>();
 
-        for (int i = 0; i < listTargetPos.Count; i++)
-        {
-            listOpen.Enqueue(listTargetPos[i]);
-            listRange.Add(listTargetPos[i]);
-        }
+        listOpen.Enqueue(targetPos);
+        listRange.Add(targetPos);
 
         GameData gameData = GetGameData();
 
         while (listOpen.Count > 0)
         {
             Vector2Int tarPos = listOpen.Dequeue();
-            Debug.Log(tarPos);
             if (gameData.dicMapTile.ContainsKey(tarPos) && !listClose.Contains(tarPos))
             {
                 listClose.Add(tarPos);

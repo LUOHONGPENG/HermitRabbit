@@ -32,6 +32,7 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
         ResetNewTurn(); 
         PublicTool.RecalculateOccupancy();
         ResetCharacterExp();
+        RefreshWaterRange();
         battleTurnPhase = BattlePhase.CharacterPhase;
         StartTurnPhase();
         isBattleEnd = false;

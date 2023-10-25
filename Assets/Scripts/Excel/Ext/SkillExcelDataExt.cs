@@ -185,6 +185,14 @@ public partial class SkillExcelItem
             {
                 temp++;
             }
+            if (characterID == 1001)
+            {
+                BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
+                if (characterData.CheckBuffExist(1005))
+                {
+                    temp+=2;
+                }
+            }
             return temp;
         }
     }
@@ -199,7 +207,7 @@ public partial class SkillExcelItem
                 temp++;
             }
             if (skillSubjectType == BattleUnitType.Character && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1902)&& 
-                id != 1402 && activeSkillType!=ActiveSkillType.NormalAttack)
+                id != 1402 && (activeSkillType == ActiveSkillType.SupportSkill || activeSkillType == ActiveSkillType.DamageSkill))
             {
                 BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
                 if (characterData.CheckBuffExist(1003))
@@ -226,8 +234,13 @@ public partial class SkillExcelItem
                         temp += (characterData.curAP - costAP) * 115;
                     }
                 }
-            }
 
+                //Radius Up
+                if (PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1192) && id == 1101)
+                {
+                    temp *= 0.75f;
+                }
+            }
             return temp;
         }
     }
@@ -238,14 +251,12 @@ public partial class SkillExcelItem
         get
         {
             int temp = damageModifier;
+            //Inferno AP - 1
             if (id == 1101 && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1191))
             {
                 temp -= 4;
             }
-            if (id == 1101 && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1192))
-            {
-                temp -= 2;
-            }
+            //Lost HP add damage
             if(characterID == 1002 && PublicTool.CheckWhetherCharacterUnlockSkill(1002, 2191))
             {
                 if(activeSkillType == ActiveSkillType.NormalAttack || activeSkillType == ActiveSkillType.DamageSkill)
