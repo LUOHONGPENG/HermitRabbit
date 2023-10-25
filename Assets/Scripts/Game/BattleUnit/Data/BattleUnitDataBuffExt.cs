@@ -65,6 +65,22 @@ public partial class BattleUnitData
             EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
         }
     }
+    public void HalfBuff(int id)
+    {
+        if (CheckBuffExist(id))
+        {
+            Buff buff = dicBuff[id];
+            if(buff.level <= 1)
+            {
+                RemoveBuff(id);
+            }
+            else
+            {
+                buff.level = buff.level/2;
+            }
+            EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
+        }
+    }
 
     public void RemoveBuff(int id)
     {
@@ -86,6 +102,9 @@ public partial class BattleUnitData
             {
                 case BuffCounterType.TurnDecrease:
                     DecreaseBuff(tarBuff.id);
+                    break;
+                case BuffCounterType.TurnHalf:
+                    HalfBuff(tarBuff.id);
                     break;
                 case BuffCounterType.TurnRemove:
                     RemoveBuff(tarBuff.id);

@@ -379,7 +379,7 @@ MonoBehaviour:
     desc: 
   - id: 2201
     name: Curse
-    costAP: 2
+    costAP: 1
     costMOV: 0
     costHP: 0
     range: 4
