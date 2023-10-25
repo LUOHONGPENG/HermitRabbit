@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public partial class PublicTool
@@ -78,19 +79,24 @@ public partial class PublicTool
         return listRange;
     }
 
-    public static List<Vector2Int> GetTargetLineRange(Vector2Int targetPos, Vector2Int sourcePos, int Range)
+    public static List<Vector2Int> GetTargetLineRange(Vector2Int targetPos, Vector2Int sourcePos, int Range,int Radius)
     {
-        List<Vector2Int> listRange = new List<Vector2Int>();
+        List<Vector2Int> listTarget = new List<Vector2Int>();
         Vector2Int direction = targetPos - sourcePos;
+        Vector2Int verticalDir = new Vector2Int(direction.y, direction.x);
         if (Range > 0)
         {
             for (int i = 1; i <= Range; i++)
             {
                 Vector2Int thisPos = sourcePos + direction * i;
-                listRange.Add(thisPos);
+                //listRange.Add(thisPos);
+                for(int j = -Radius; j <= Radius; j++)
+                {
+                    listTarget.Add(thisPos + verticalDir * j);
+                }
             }
         }
-        return listRange;
+        return listTarget;
     }
 
     public static List<Vector2Int> GetTargetWaterRange(Vector2Int targetPos)
@@ -132,13 +138,13 @@ public partial class PublicTool
         return listRange;
     }
 
-    public static List<Vector2Int> GetTargetBurningRange(List<Vector2Int> listTargetPos)
+    public static List<Vector2Int> GetTargetBurningRange()
     {
         List<Vector2Int> listRange = new List<Vector2Int>();
         GameData gameData = GetGameData();
         foreach(var foe in gameData.listFoe)
         {
-            if (foe.CheckBuffExist(4001) && listTargetPos.Contains(foe.posID))
+            if (foe.CheckBuffExist(4001))
             {
                 listRange.Add(foe.posID);
             }
@@ -146,7 +152,7 @@ public partial class PublicTool
 
         foreach (var plant in gameData.listPlant)
         {
-            if (plant.CheckBuffExist(4001) && listTargetPos.Contains(plant.posID))
+            if (plant.CheckBuffExist(4001))
             {
                 listRange.Add(plant.posID);
             }
@@ -154,12 +160,32 @@ public partial class PublicTool
 
         foreach (var character in gameData.listCharacter)
         {
-            if (character.CheckBuffExist(4001) && listTargetPos.Contains(character.posID))
+            if (character.CheckBuffExist(4001))
             {
                 listRange.Add(character.posID);
             }
         }
         return listRange;
+    }
+
+    public static List<Vector2Int> GetTargetBurningRadius(List<Vector2Int> listTargetPos,int radius)
+    {
+        List<Vector2Int> listRange = new List<Vector2Int>();
+        GameData gameData = GetGameData();
+
+        foreach(Vector2Int pos in listTargetPos)
+        {
+            List<Vector2Int> listPos = GetTargetCircleRange(pos, radius);
+            for(int i = 0; i < listPos.Count; i++)
+            {
+                if (!listRange.Contains(listPos[i]))
+                {
+                    listRange.Add(listPos[i]);
+                }
+            }
+        }
+        return listRange;
+
     }
 
 

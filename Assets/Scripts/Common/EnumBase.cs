@@ -162,6 +162,7 @@ public enum BuffCounterType
 {
     Fixed,
     TurnDecrease,
+    TurnHalf,
     TurnRemove
 }
 

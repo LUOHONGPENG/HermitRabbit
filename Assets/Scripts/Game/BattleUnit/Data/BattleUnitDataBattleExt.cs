@@ -12,8 +12,20 @@ public partial class BattleUnitData
     public virtual void InvokeDead() { }
 
 
-    public void GetHurt(float damage)
+    public float GetHurt(float damage)
     {
+        if (damage > 0)
+        {
+            if (CheckBuffExist(1001) && damage > curHP)
+            {
+                damage = curHP - 1;
+                Debug.Log("ReduceDamage");
+            }
+            if (CheckBuffExist(2001))
+            {
+                AddBuff(4002,1);
+            }
+        }
         curHP -= damage;
         EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
         if (curHP <= 0)
@@ -22,6 +34,7 @@ public partial class BattleUnitData
             isDead = true;
             InvokeDead();
         }
+        return damage;
     }
 
     public void GetHeal(float healPoint)

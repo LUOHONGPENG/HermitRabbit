@@ -365,7 +365,18 @@ public partial class BattleUnitData
         else
         {
             //Range Type
-            listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, skillInfo.range));
+            switch (skillInfo.regionType)
+            {
+                case SkillRegionType.BurnUnit:
+                    listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, 0));
+                    break;
+                case SkillRegionType.Line:
+                    listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, 1));
+                    break;
+                default:
+                    listViewSkill = new List<Vector2Int>(PublicTool.GetTargetCircleRange(posID, skillInfo.range));
+                    break;
+            }
 
             //If not range self
             if (!skillInfo.isRangeSelf)
@@ -413,15 +424,15 @@ public partial class BattleUnitData
                     listRadius = PublicTool.GetTargetSquareRange(viewPos, skillInfo.radius);
                     break;
                 case SkillRegionType.Line:
-                    listRadius = PublicTool.GetTargetLineRange(viewPos,posID, skillInfo.radius);
+                    listRadius = PublicTool.GetTargetLineRange(viewPos,posID, skillInfo.range,skillInfo.radius);
                     break;
                 case SkillRegionType.Water:
                     listRadius = PublicTool.GetTargetCircleRange(viewPos, skillInfo.radius);
                     listRadius = BattleMgr.Instance.GetTargetWaterRange(listRadius);
                     break;
                 case SkillRegionType.BurnUnit:
-                    listRadius = PublicTool.GetTargetCircleRange(viewPos, skillInfo.radius);
-                    listRadius = PublicTool.GetTargetBurningRange(listRadius);
+                    listRadius = PublicTool.GetTargetBurningRange();
+                    listRadius = PublicTool.GetTargetBurningRadius(listRadius, skillInfo.radius);
                     break;
             }
             for (int i = 0; i < listRadius.Count; i++)

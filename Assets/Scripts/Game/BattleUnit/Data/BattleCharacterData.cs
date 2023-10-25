@@ -131,6 +131,18 @@ public partial class BattleCharacterData : BattleUnitData
         }
     }
 
+    public override int curCounter
+    {
+        get
+        {
+            int temp = buffCounter;
+            if (PublicTool.CheckWhetherCharacterUnlockSkill(1002, 2291))
+            {
+                temp += 1;
+            }
+            return temp;
+        }
+    }
 
     public override void ResetNewTurn()
     {

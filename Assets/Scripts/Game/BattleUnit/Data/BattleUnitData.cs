@@ -181,6 +181,37 @@ public partial class BattleUnitData
         }
     }
 
+    public virtual int buffAddHurt
+    {
+        get
+        {
+            int temp = 0;
+            if (CheckBuffExist(4002))
+            {
+                temp+=GetBuffLevel(4002);
+            }
+            return temp;
+        }
+    }
+
+    public virtual int curCounter
+    {
+        get
+        {
+            int temp = buffCounter;
+            return temp;
+        }
+    }
+
+    public virtual int buffCounter
+    {
+        get
+        {
+            int temp = 0;
+            return temp;
+        }
+    }
+
     public int GetTypeID()
     {
         return typeID;

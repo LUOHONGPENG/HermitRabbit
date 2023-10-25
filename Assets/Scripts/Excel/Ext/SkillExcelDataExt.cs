@@ -175,6 +175,15 @@ public partial class SkillExcelItem
         }
     }
 
+    public int RealCostHP
+    {
+        get
+        {
+            int temp = costHP;
+
+            return temp;
+        }
+    }
 
     public int RealRange
     {
@@ -206,8 +215,9 @@ public partial class SkillExcelItem
             {
                 temp++;
             }
-            if (skillSubjectType == BattleUnitType.Character && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1902)&& 
-                id != 1402 && (activeSkillType == ActiveSkillType.SupportSkill || activeSkillType == ActiveSkillType.DamageSkill))
+            if (skillSubjectType == BattleUnitType.Character && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1902)&&
+                 //id != 1402 &&
+                 (activeSkillType == ActiveSkillType.SupportSkill || activeSkillType == ActiveSkillType.DamageSkill))
             {
                 BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
                 if (characterData.CheckBuffExist(1003))

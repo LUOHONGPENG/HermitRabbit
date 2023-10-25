@@ -355,8 +355,8 @@ MonoBehaviour:
     columnID: -3
     remark: 
   - id: 2201
-    name: Provoke
-    desc: Attract enemies' attack.
+    name: Curse
+    desc: The target will receive Fragile every time lost HP.
     nodeType: 0
     costSP: 1
     conditionSPSpent: 0
@@ -366,6 +366,34 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_Default
     rowID: 1
+    columnID: -1
+    remark: 
+  - id: 2291
+    name: Counter
+    desc: 
+    nodeType: 1
+    costSP: 1
+    conditionSPSpent: 0
+    conditionPreNode: 99080000
+    conflictNode: 0
+    isInitUnlock: 0
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    rowID: 2
+    columnID: -2
+    remark: 
+  - id: 2202
+    name: Provoke
+    desc: Attract enemies' attack.
+    nodeType: 0
+    costSP: 1
+    conditionSPSpent: 0
+    conditionPreNode: 99080000
+    conflictNode: 0
+    isInitUnlock: 0
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    rowID: 3
     columnID: -1
     remark: 
   - id: 2301

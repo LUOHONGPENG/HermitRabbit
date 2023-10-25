@@ -89,10 +89,8 @@ public partial class BattleMgr
                 skillSubject.DecreaseBuff(1003);
             }
         }
-
-
-
         yield break;
     }
+
 
 }

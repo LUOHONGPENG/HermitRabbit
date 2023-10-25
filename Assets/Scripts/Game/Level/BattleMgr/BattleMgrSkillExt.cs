@@ -15,7 +15,7 @@ public partial class BattleMgr
     private Dictionary<int, BattleFoeData> dicFoeSkillTarget = new Dictionary<int, BattleFoeData>();
     private Dictionary<int, BattleCharacterData> dicCharacterSkillTarget = new Dictionary<int, BattleCharacterData>();
     private Dictionary<int, BattlePlantData> dicPlantSkillTarget = new Dictionary<int, BattlePlantData>();
-
+    private Dictionary<Vector2Int, BattleUnitData> dicPosEffectTarget = new Dictionary<Vector2Int, BattleUnitData>();
 
     #region BattleExtraTarget
     //true means have selected first target
@@ -104,6 +104,7 @@ public partial class BattleMgr
         {
             skillSubject.curAP -= skillBattleInfo.costAP;
             skillSubject.curMOV -= skillBattleInfo.costMOV;
+            skillSubject.GetHurt(skillBattleInfo.costHP);
         }
         yield break;
     }
@@ -122,21 +123,22 @@ public partial class BattleMgr
                 listPos = PublicTool.GetTargetSquareRange(skillTargetPos, skillBattleInfo.radius);
                 break;
             case SkillRegionType.Line:
-                listPos = PublicTool.GetTargetLineRange(skillTargetPos, skillSubject.posID, skillBattleInfo.radius);
+                listPos = PublicTool.GetTargetLineRange(skillTargetPos, skillSubject.posID, skillBattleInfo.range, skillBattleInfo.radius);
                 break;
             case SkillRegionType.Water:
                 listPos = PublicTool.GetTargetCircleRange(skillTargetPos, skillBattleInfo.radius);
                 listPos = BattleMgr.Instance.GetTargetWaterRange(listPos);
                 break;
             case SkillRegionType.BurnUnit:
-                listPos = PublicTool.GetTargetCircleRange(skillTargetPos, skillBattleInfo.radius);
-                listPos = PublicTool.GetTargetBurningRange(listPos);
+                listPos = PublicTool.GetTargetBurningRange();
+                listPos = PublicTool.GetTargetBurningRadius(listPos,skillBattleInfo.radius);
                 break;
         }
 
         dicFoeSkillTarget.Clear();
         dicCharacterSkillTarget.Clear();
         dicPlantSkillTarget.Clear();
+        dicPosEffectTarget.Clear();
 
         //Find Foe
         foreach (var pos in listPos)
@@ -149,6 +151,7 @@ public partial class BattleMgr
                     BattleFoeData foeData = (BattleFoeData)gameData.GetDataFromUnitInfo(gameData.dicTempMapUnit[pos]);
                     foeData.ClearBattleTextQueue();
                     dicFoeSkillTarget.Add(foeData.keyID, foeData);
+                    dicPosEffectTarget.Add(pos,foeData);
                 }
 
                 if (skillBattleInfo.isTargetCharacter && gameData.dicTempMapUnit[pos].type == BattleUnitType.Character)
@@ -156,6 +159,7 @@ public partial class BattleMgr
                     BattleCharacterData characterData = (BattleCharacterData)gameData.GetDataFromUnitInfo(gameData.dicTempMapUnit[pos]);
                     characterData.ClearBattleTextQueue();
                     dicCharacterSkillTarget.Add(characterData.keyID, characterData);
+                    dicPosEffectTarget.Add(pos, characterData);
                 }
 
                 if (skillBattleInfo.isTargetPlant && gameData.dicTempMapUnit[pos].type == BattleUnitType.Plant)
@@ -163,6 +167,7 @@ public partial class BattleMgr
                     BattlePlantData plantData = (BattlePlantData)gameData.GetDataFromUnitInfo(gameData.dicTempMapUnit[pos]);
                     plantData.ClearBattleTextQueue();
                     dicPlantSkillTarget.Add(plantData.keyID, plantData);
+                    dicPosEffectTarget.Add(pos, plantData);
                 }
             }
         }
@@ -172,6 +177,7 @@ public partial class BattleMgr
 
     private IEnumerator IE_InvokeSkillData()
     {
+
         //Deal Effect
         foreach (var item in dicFoeSkillTarget)
         {
@@ -316,6 +322,11 @@ public partial class BattleMgr
         else if (skillSubject.curMOV < skillBattleInfo.costMOV)
         {
             EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("MOV not enough", targetPos));
+            return false;
+        }
+        else if(skillSubject.curHP < skillBattleInfo.costHP + 1)
+        {
+            EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("HP not enough", targetPos));
             return false;
         }
         else

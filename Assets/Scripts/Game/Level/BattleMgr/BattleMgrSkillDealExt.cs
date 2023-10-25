@@ -68,9 +68,25 @@ public partial class BattleMgr
                 break;
             case SkillDamageDeltaStd.BURN:
                 int burnLevel = target.GetBuffLevel(4001);
+                if (skillBattleInfo.radius > 0)
+                {
+                    List<Vector2Int> listPos = PublicTool.GetTargetCircleRange(target.posID, skillBattleInfo.radius);
+                    foreach(Vector2Int pos in listPos)
+                    {
+                        if (dicPosEffectTarget.ContainsKey(pos))
+                        {
+                            BattleUnitData unitData = dicPosEffectTarget[pos];
+                            if (unitData.GetBuffLevel(4001) > burnLevel)
+                            {
+                                burnLevel = unitData.GetBuffLevel(4001);
+                            }
+                        }
+                    }
+                }
                 damageSource = burnLevel * skillBattleInfo.damageDeltaFloat;
                 break;
         }
+
         damageSource += skillBattleInfo.damageModifier;
 
         if (effectType == SkillEffectType.Harm)
@@ -87,9 +103,17 @@ public partial class BattleMgr
                     realDamage = damageSource;
                     break;
             }
+            realDamage += target.buffAddHurt;
             int NormalizedDamage = NormalizeRealDamage(realDamage);
-            target.GetHurt(NormalizedDamage);
-            target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-NormalizedDamage).ToString(), target.posID));
+            int FinalDamage = NormalizeRealDamage(target.GetHurt(NormalizedDamage));
+            target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-FinalDamage).ToString(), target.posID));
+            //Counter
+            if (target.curCounter > 0)
+            {
+                int counterHurt = target.curCounter + source.buffAddHurt;
+                source.GetHurt(counterHurt);
+                source.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-counterHurt).ToString(), source.posID));
+            }
         }
         else if (effectType == SkillEffectType.Help)
         {
@@ -164,10 +188,15 @@ public partial class BattleMgr
                 target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, string.Format("MOV-{0}", delta), target.posID));
                 break;
             case 3001:
-                target.posID = skillTargetPosExtra;
-                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Special, "Teleport!", target.posID));
-                BattleUnitView moveView = unitViewMgr.GetViewFromUnitInfo(new UnitInfo(target.battleUnitType, target.keyID));
-                moveView.MoveToPos();
+                Vector2Int posDelta = target.posID - skillTargetPos;
+                Vector2Int realTelePos = skillTargetPosExtra + posDelta;
+                if (gameData.listTempEmptyPos.Contains(realTelePos))
+                {
+                    target.posID = realTelePos;
+                    target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Special, "Teleport!", target.posID));
+                    BattleUnitView moveView = unitViewMgr.GetViewFromUnitInfo(new UnitInfo(target.battleUnitType, target.keyID));
+                    moveView.MoveToPos();
+                }
                 break;
             case 3002:
                 target.AddBuff(4001, delta);
