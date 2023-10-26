@@ -13,7 +13,7 @@ public partial class BattleMgr
             for (int i = 0; i < skillBattleInfo.listSpecialEffect.Count; i++)
             {
                 SkillSpecialExcelItem skillSpecial = skillBattleInfo.listSpecialEffect[i];
-                if (skillSpecial.effectType == effectType)
+                if (skillSpecial.timeType == SpecialEffectTimeType.BeforeDamage && skillSpecial.effectType == effectType)
                 {
                     SkillSpecialEffectDeal(source, target, skillSpecial.id, skillBattleInfo.listSpecialDelta[i]);
                 }
@@ -37,6 +37,19 @@ public partial class BattleMgr
         if (skillBattleInfo.damageDeltaFloat > 0)
         {
             SkillDamageLikeRequest(source, target, effectType);
+        }
+
+        //Special Effect
+        if (skillBattleInfo.listSpecialEffect.Count > 0)
+        {
+            for (int i = 0; i < skillBattleInfo.listSpecialEffect.Count; i++)
+            {
+                SkillSpecialExcelItem skillSpecial = skillBattleInfo.listSpecialEffect[i];
+                if (skillSpecial.timeType == SpecialEffectTimeType.AfterDamage && skillSpecial.effectType == effectType)
+                {
+                    SkillSpecialEffectDeal(source, target, skillSpecial.id, skillBattleInfo.listSpecialDelta[i]);
+                }
+            }
         }
     }
 
@@ -62,6 +75,13 @@ public partial class BattleMgr
                 break;
             case SkillDamageDeltaStd.MAXHP:
                 damageSource = source.maxHP * skillBattleInfo.damageDeltaFloat;
+                break;
+            case SkillDamageDeltaStd.COSTHP:
+                damageSource = skillBattleInfo.costHP * skillBattleInfo.damageDeltaFloat;
+                skillBattleInfo.damageModifier = gameData.RefreshBattleSkillForCostHP();
+                break;
+            case SkillDamageDeltaStd.DEF:
+                damageSource = source.curDEF * skillBattleInfo.damageDeltaFloat;
                 break;
             case SkillDamageDeltaStd.RES:
                 damageSource = source.curRES * skillBattleInfo.damageDeltaFloat;
@@ -103,10 +123,29 @@ public partial class BattleMgr
                     realDamage = damageSource;
                     break;
             }
-            realDamage += target.buffAddHurt;
-            int NormalizedDamage = NormalizeRealDamage(realDamage);
-            int FinalDamage = NormalizeRealDamage(target.GetHurt(NormalizedDamage));
-            target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-FinalDamage).ToString(), target.posID));
+
+            if (target.GetBuffLevel(1006)>0)
+            {
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Special, "Dodge", target.posID));
+                target.DecreaseBuff(1006);
+            }
+            else
+            {
+                realDamage += target.buffAddHurt;
+                int NormalizedDamage = NormalizeRealDamage(realDamage);
+                int FinalDamage = NormalizeRealDamage(target.GetHurt(NormalizedDamage));
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-FinalDamage).ToString(), target.posID));
+
+                //Absorb
+                if (source.GetBuffLevel(1007) > 0)
+                {
+                    int absorbHP = (FinalDamage + 1) / 2;
+                    source.GetHeal(absorbHP);
+                    source.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Heal, (absorbHP).ToString(), source.posID));
+                    source.DecreaseBuff(1007);
+                }
+            }
+
             //Counter
             if (target.curCounter > 0)
             {
@@ -200,8 +239,13 @@ public partial class BattleMgr
                 break;
             case 3002:
                 target.AddBuff(4001, delta);
-                BuffExcelItem burnBuffItem = PublicTool.GetBuffExcelItem(4001);
-                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, burnBuffItem.name, target.posID));
+                BuffExcelItem burnBuffItem4001 = PublicTool.GetBuffExcelItem(4001);
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, burnBuffItem4001.name, target.posID));
+                break;
+            case 3003:
+                source.AddBuff(1007,delta);
+                BuffExcelItem burnBuffItem1007 = PublicTool.GetBuffExcelItem(1007);
+                source.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, burnBuffItem1007.name, source.posID));
                 break;
             case 5001:
                 target.DoubleAllBuff();

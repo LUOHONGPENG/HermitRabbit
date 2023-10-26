@@ -17,11 +17,11 @@ public class PeaceMapClipUIMgr : MonoBehaviour
 
     public void Init()
     {
-        btnClose.onClick.RemoveAllListeners();
+/*        btnClose.onClick.RemoveAllListeners();
         btnClose.onClick.AddListener(delegate ()
         {
 
-        });
+        });*/
     }
 
     private void OnEnable()

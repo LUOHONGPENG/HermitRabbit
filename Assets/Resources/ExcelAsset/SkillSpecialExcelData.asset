@@ -16,33 +16,48 @@ MonoBehaviour:
   - id: 1001
     name: Recover AP
     effectType: 2
+    timeType: 0
   - id: 1002
     name: Recover MOV
     effectType: 2
+    timeType: 0
   - id: 1003
     name: Recover AP Hidden
     effectType: 2
+    timeType: 0
   - id: 1004
     name: Recover MOV Hidden
     effectType: 2
+    timeType: 0
   - id: 2001
     name: Reduce Move
     effectType: 1
+    timeType: 0
   - id: 3001
     name: Teleport
     effectType: 2
+    timeType: 0
   - id: 3002
     name: Self Burn
     effectType: 2
+    timeType: 0
+  - id: 3003
+    name: Self Absorb
+    effectType: 1
+    timeType: 1
   - id: 5001
     name: Double Buff
     effectType: 2
+    timeType: 0
   - id: 5002
     name: Clear Debuff
     effectType: 2
+    timeType: 0
   - id: 6001
     name: Double Debuff
     effectType: 1
+    timeType: 0
   - id: 6002
     name: Clear Buff
     effectType: 1
+    timeType: 0

@@ -10,6 +10,7 @@ public partial class SkillSpecialExcelItem : ExcelItemBase
 {
 	public string name;
 	public SkillEffectType effectType;
+	public SpecialEffectTimeType timeType;
 }
 
 [CreateAssetMenu(fileName = "SkillSpecialExcelData", menuName = "Excel To ScriptableObject/Create SkillSpecialExcelData", order = 1)]
@@ -32,6 +33,7 @@ public class SkillSpecialAssetAssignment
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].name = allItemValueRowList[i]["name"];
 			items[i].effectType = (SkillEffectType) Enum.Parse(typeof(SkillEffectType), allItemValueRowList[i]["effectType"], true);
+			items[i].timeType = (SpecialEffectTimeType) Enum.Parse(typeof(SpecialEffectTimeType), allItemValueRowList[i]["timeType"], true);
 		}
 		SkillSpecialExcelData excelDataAsset = ScriptableObject.CreateInstance<SkillSpecialExcelData>();
 		excelDataAsset.items = items;

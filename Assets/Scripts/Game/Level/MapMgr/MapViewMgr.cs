@@ -200,22 +200,46 @@ public partial class MapViewMgr : MonoBehaviour
     private void SetMapUI_Plant()
     {
         //Go through
-        foreach (MapTileBase mapTile in listMapTile)
+        if (PeaceMgr.Instance.plantTypeID > 0)
         {
-            if (PeaceMgr.Instance.listValidForPlant.Contains(mapTile.posID))
+            foreach (MapTileBase mapTile in listMapTile)
             {
-                if (PublicTool.GetTargetCircleRange(PublicTool.GetGameData().hoverTileID, 0).Contains(mapTile.posID))
+                if (PeaceMgr.Instance.listValidForPlant.Contains(mapTile.posID))
                 {
-                    mapTile.SetIndicator(MapIndicatorType.Blue);
+                    if (PublicTool.GetTargetCircleRange(PublicTool.GetGameData().hoverTileID, 0).Contains(mapTile.posID))
+                    {
+                        mapTile.SetIndicator(MapIndicatorType.Blue);
+                    }
+                    else
+                    {
+                        mapTile.SetIndicator(MapIndicatorType.Normal);
+                    }
                 }
                 else
                 {
-                    mapTile.SetIndicator(MapIndicatorType.Normal);
+                    mapTile.SetIndicator(MapIndicatorType.Hide);
                 }
             }
-            else
+        }
+        else
+        {
+            foreach (MapTileBase mapTile in listMapTile)
             {
-                mapTile.SetIndicator(MapIndicatorType.Hide);
+                if (PeaceMgr.Instance.listHavePlant.Contains(mapTile.posID))
+                {
+                    if (PublicTool.GetTargetCircleRange(PublicTool.GetGameData().hoverTileID, 0).Contains(mapTile.posID))
+                    {
+                        mapTile.SetIndicator(MapIndicatorType.Blue);
+                    }
+                    else
+                    {
+                        mapTile.SetIndicator(MapIndicatorType.Normal);
+                    }
+                }
+                else
+                {
+                    mapTile.SetIndicator(MapIndicatorType.Hide);
+                }
             }
         }
     }

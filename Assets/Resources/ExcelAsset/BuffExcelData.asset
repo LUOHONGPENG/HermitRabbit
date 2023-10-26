@@ -69,9 +69,9 @@ MonoBehaviour:
     firstSpecialEffect: 1003
     firstSpecialDelta: 1
   - id: 1006
-    name: Time Shift
+    name: Chronal Shift
     effectType: 2
-    maxLevel: 1
+    maxLevel: 10
     counterType: 3
     countDownType: 0
     canBeRemoved: 1
@@ -79,10 +79,21 @@ MonoBehaviour:
     desc: Dodge Next X attack from enemy.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
+  - id: 1007
+    name: Absorb
+    effectType: 2
+    maxLevel: 10
+    counterType: 0
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: 
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
   - id: 2001
     name: Curse
     effectType: 1
-    maxLevel: 1
+    maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1

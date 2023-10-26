@@ -24,7 +24,7 @@ public partial class LevelMgr
         //PeacePlant
         EventCenter.Instance.AddEventListener("PeacePlantStart", PeacePlantStartEvent);
         EventCenter.Instance.AddEventListener("PeacePlantEnd", PeacePlantEndEvent);
-        EventCenter.Instance.AddEventListener("InputAddPlant", InputAddPlantEvent);
+        EventCenter.Instance.AddEventListener("InputModifyPlant", InputModifyPlantEvent);
 
         //PeaceMap
         EventCenter.Instance.AddEventListener("PeaceMapStart", PeaceMapClipStartEvent);
@@ -57,7 +57,7 @@ public partial class LevelMgr
         //PeacePlant
         EventCenter.Instance.RemoveEventListener("PeacePlantStart", PeacePlantStartEvent);
         EventCenter.Instance.RemoveEventListener("PeacePlantEnd", PeacePlantEndEvent);
-        EventCenter.Instance.RemoveEventListener("InputAddPlant", InputAddPlantEvent);
+        EventCenter.Instance.RemoveEventListener("InputModifyPlant", InputModifyPlantEvent);
 
         //PeaceMap
         EventCenter.Instance.RemoveEventListener("PeaceMapStart", PeaceMapClipStartEvent);
@@ -234,10 +234,10 @@ public partial class LevelMgr
         peaceMgr.EndPlantMode();
     }
 
-    private void InputAddPlantEvent(object arg0)
+    private void InputModifyPlantEvent(object arg0)
     {
         Vector2Int posPlant = (Vector2Int)arg0;
-        peaceMgr.AddPlant(posPlant);
+        peaceMgr.ModifyPlant(posPlant);
     }
     #endregion
 

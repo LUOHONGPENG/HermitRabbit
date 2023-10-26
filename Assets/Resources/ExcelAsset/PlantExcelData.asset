@@ -21,3 +21,13 @@ MonoBehaviour:
     RES: 1
     triggerCondition: 0
     skillID: 3001
+    pixelUrl: pp_Plant_Idle
+  - id: 1002
+    name: Cookee
+    HP: 10
+    ATK: 0
+    DEF: 1
+    RES: 0
+    triggerCondition: 1
+    skillID: 3002
+    pixelUrl: pp_Plant_Idle2

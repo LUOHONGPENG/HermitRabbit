@@ -18,35 +18,56 @@ public partial class PeaceMgr : MonoSingleton<PeaceMgr>
 
     #region Plant
     //Plant Controller
-    public int plantID = -1;
+    public int plantTypeID = -1;
     public List<Vector2Int> listValidForPlant = new List<Vector2Int>();
+    public List<Vector2Int> listHavePlant = new List<Vector2Int>();
 
     public void StartPlantMode()
     {
         //Test
-        plantID = 1001;
-        RefreshValidPlant();
+        plantTypeID = -1;
+        RefreshPlantPosInfo();
     }
 
     public void EndPlantMode()
     {
-        plantID = -1;
+        plantTypeID = -1;
         PublicTool.RecalculateOccupancy();
 
     }
 
-    public void AddPlant(Vector2Int pos)
+    public void ModifyPlant(Vector2Int pos)
     {
-        if (!CheckWhetherCanAddPlant(pos))
+        if (plantTypeID > 0)
         {
-            return;
+            if (!CheckWhetherCanAddPlant(pos))
+            {
+                return;
+            }
+
+            BattlePlantData newPlantData = gameData.GeneratePlantData(plantTypeID);
+            newPlantData.posID = pos;
+            unitViewMgr.GeneratePlantView(newPlantData);
+            PublicTool.RecalculateOccupancy();
+            RefreshPlantPosInfo();
+        }
+        else
+        {
+            //RemovePlant
+            if (!CheckWhetherCanRemovePlant(pos))
+            {
+                return;
+            }
+            BattlePlantData removePlantData = PublicTool.GetPlantFromPosID(pos);
+            if (removePlantData != null)
+            {
+                unitViewMgr.RemovePlantView(removePlantData.keyID);
+                gameData.RemovePlantData(removePlantData.keyID);
+                PublicTool.RecalculateOccupancy();
+                RefreshPlantPosInfo();
+            }
         }
 
-        BattlePlantData newPlantData = gameData.GeneratePlantData(plantID);
-        newPlantData.posID = pos;
-        unitViewMgr.GeneratePlantView(newPlantData);
-        PublicTool.RecalculateOccupancy();
-        RefreshValidPlant();
     }
 
     private bool CheckWhetherCanAddPlant(Vector2Int posID)
@@ -56,12 +77,23 @@ public partial class PeaceMgr : MonoSingleton<PeaceMgr>
             EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("InvalidTile", posID));
             return false;
         }
-
         return true;
     }
 
-    private void RefreshValidPlant()
+    private bool CheckWhetherCanRemovePlant(Vector2Int posID)
     {
+        if (!listHavePlant.Contains(posID))
+        {
+            EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("InvalidTile", posID));
+            return false;
+        }
+        return true;
+    }
+
+
+    private void RefreshPlantPosInfo()
+    {
+        listHavePlant = gameData.listTempPlantPos;
         listValidForPlant = gameData.listTempEmptyPos;
     }
 

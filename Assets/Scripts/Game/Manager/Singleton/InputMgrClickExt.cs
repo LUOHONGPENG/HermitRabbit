@@ -88,7 +88,7 @@ public partial class InputMgr
                 PublicTool.EventCameraGoPosID(mapTile.posID);
                 return true;
             case InteractState.PeacePlant:
-                EventCenter.Instance.EventTrigger("InputAddPlant", mapTile.posID);
+                EventCenter.Instance.EventTrigger("InputModifyPlant", mapTile.posID);
                 return true;
             case InteractState.PeaceMap:
                 Vector2Int mapClipClickID = PublicTool.ConvertMapTileIDToClip(mapTile.posID);

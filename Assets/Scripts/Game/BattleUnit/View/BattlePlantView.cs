@@ -13,6 +13,7 @@ public class BattlePlantView : BattleUnitView
 
         CommonInit();
 
+        srUnit.sprite = Resources.Load("Sprite/Plant/" + plantData.GetItem().pixelUrl, typeof(Sprite)) as Sprite;
         MoveToPos();
         isInit = true;
 

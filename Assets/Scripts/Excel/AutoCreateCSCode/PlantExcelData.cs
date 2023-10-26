@@ -15,6 +15,7 @@ public partial class PlantExcelItem : ExcelItemBase
 	public int RES;
 	public PlantTriggerType triggerCondition;
 	public int skillID;
+	public string pixelUrl;
 }
 
 [CreateAssetMenu(fileName = "PlantExcelData", menuName = "Excel To ScriptableObject/Create PlantExcelData", order = 1)]
@@ -42,6 +43,7 @@ public class PlantAssetAssignment
 			items[i].RES = Convert.ToInt32(allItemValueRowList[i]["RES"]);
 			items[i].triggerCondition = (PlantTriggerType) Enum.Parse(typeof(PlantTriggerType), allItemValueRowList[i]["triggerCondition"], true);
 			items[i].skillID = Convert.ToInt32(allItemValueRowList[i]["skillID"]);
+			items[i].pixelUrl = allItemValueRowList[i]["pixelUrl"];
 		}
 		PlantExcelData excelDataAsset = ScriptableObject.CreateInstance<PlantExcelData>();
 		excelDataAsset.items = items;

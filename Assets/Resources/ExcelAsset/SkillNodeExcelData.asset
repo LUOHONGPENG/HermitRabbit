@@ -128,7 +128,7 @@ MonoBehaviour:
     columnID: -3
     remark: 
   - id: 1201
-    name: Time Transfer
+    name: Chronal Shift
     desc: Dodge next attack.
     nodeType: 0
     costSP: 1
@@ -410,6 +410,21 @@ MonoBehaviour:
     rowID: 1
     columnID: 1
     remark: 
+  - id: 2302
+    name: Fish Strike
+    desc: Deal damage according to DEF, next strike will recover HP according to
+      damage.
+    nodeType: 0
+    costSP: 1
+    conditionSPSpent: 0
+    conditionPreNode: fd080000
+    conflictNode: 0
+    isInitUnlock: 0
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    rowID: 3
+    columnID: 1
+    remark: 
   - id: 2401
     name: Rush Hour
     desc: Gain 3 Movement.
@@ -458,13 +473,13 @@ MonoBehaviour:
     nodeType: 0
     costSP: 2
     conditionSPSpent: 0
-    conditionPreNode: 3608000099080000
+    conditionPreNode: 360800009a080000
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Default
     rowID: 4
-    columnID: -1
+    columnID: -2
     remark: 
   - id: 2902
     name: Super Worker
@@ -472,11 +487,25 @@ MonoBehaviour:
     nodeType: 0
     costSP: 2
     conditionSPSpent: 0
-    conditionPreNode: fd08000062090000
+    conditionPreNode: fe08000062090000
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
     iconUrl: imgIconSkill_Default
     rowID: 4
-    columnID: 1
+    columnID: 2
+    remark: 
+  - id: 2903
+    name: Self Hurt Strike
+    desc: Cost HP to deal damage, the damage will be equal to lost HP.
+    nodeType: 0
+    costSP: 2
+    conditionSPSpent: 0
+    conditionPreNode: 9a080000fe080000
+    conflictNode: 0
+    isInitUnlock: 0
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    rowID: 4
+    columnID: 0
     remark: 

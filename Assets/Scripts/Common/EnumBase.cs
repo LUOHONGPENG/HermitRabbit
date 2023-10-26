@@ -131,6 +131,7 @@ public enum SkillDamageDeltaStd
     ATK,
     ATKMOV,
     MAXHP,
+    COSTHP,
     DEF,
     RES,
     BURN
@@ -138,7 +139,8 @@ public enum SkillDamageDeltaStd
 
 public enum PlantTriggerType
 {
-    CharacterNormalAttack
+    CharacterNormalAttack,
+    TurnStart
 }
 
 public enum SkillNodeType
@@ -170,6 +172,12 @@ public enum BuffCountDownType
 {
     BeforeReset,
     AfterReset
+}
+
+public enum SpecialEffectTimeType
+{
+    BeforeDamage,
+    AfterDamage
 }
 
 #endregion

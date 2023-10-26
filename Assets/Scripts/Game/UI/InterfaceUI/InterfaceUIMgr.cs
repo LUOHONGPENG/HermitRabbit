@@ -23,6 +23,8 @@ public class InterfaceUIMgr : MonoBehaviour
         battleOptionUIMgr.Init();
         battleInterfaceUIMgr.Init();
         peaceInterfaceUIMgr.Init();
+        peacePlantUIMgr.Init();
+        peaceMapClipUIMgr.Init();
         resourceInterfaceUIMgr.Init();
 
         if (InputMgr.Instance.GetInteractState() == InteractState.PeaceNormal)
@@ -51,7 +53,6 @@ public class InterfaceUIMgr : MonoBehaviour
         //Peace
         EventCenter.Instance.AddEventListener("PeacePlantStart", PeacePlantStartEvent);
         EventCenter.Instance.AddEventListener("PeacePlantEnd", PeacePlantEndEvent);
-
 
         EventCenter.Instance.AddEventListener("PeaceMapStart", PeaceMapStartEvent);
         EventCenter.Instance.AddEventListener("PeaceMapEnd", PeaceMapEndEvent);

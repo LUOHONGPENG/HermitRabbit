@@ -41,8 +41,24 @@ public partial class GameData
         curSkillBattleInfo = new SkillBattleInfo(skillItem);
     }
 
+    public int RefreshBattleSkillForCostHP()
+    {
+        SkillExcelItem skillItem = PublicTool.GetSkillItem(curSkillBattleInfo.ID);
+        return new SkillBattleInfo(skillItem).damageModifier;
+    }
+
+    public void RefreshBattleSkill()
+    {
+        SkillExcelItem skillItem = PublicTool.GetSkillItem(curSkillBattleInfo.ID);
+        if (skillItem != null)
+        {
+            curSkillBattleInfo = new SkillBattleInfo(skillItem);
+        }
+    }
+
     public SkillBattleInfo GetCurSkillBattleInfo()
     {
+        RefreshBattleSkill();
         return curSkillBattleInfo;
     }
 

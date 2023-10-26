@@ -180,7 +180,17 @@ public partial class SkillExcelItem
         get
         {
             int temp = costHP;
-
+            if(id == 2903)
+            {
+                if (characterID == 1002)
+                {
+                    BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
+                    if (costHP+1 >= characterData.curHP)
+                    {
+                        temp = Mathf.RoundToInt(characterData.curHP-1);
+                    }
+                }
+            }
             return temp;
         }
     }
@@ -269,7 +279,7 @@ public partial class SkillExcelItem
             //Lost HP add damage
             if(characterID == 1002 && PublicTool.CheckWhetherCharacterUnlockSkill(1002, 2191))
             {
-                if(activeSkillType == ActiveSkillType.NormalAttack || activeSkillType == ActiveSkillType.DamageSkill)
+                if(activeSkillType == ActiveSkillType.NormalAttack || activeSkillType == ActiveSkillType.DamageSkill || activeSkillType == ActiveSkillType.UltimateSkill)
                 {
                     BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
                     int lostHP = Mathf.RoundToInt((characterData.maxHP - characterData.curHP) / 2);

@@ -17,6 +17,8 @@ public partial class GameData
         listPlantHeld.Clear();
         //Test
         listPlantHeld.Add(1001);
+        listPlantHeld.Add(1002);
+
         //Cur Plant
         listPlant.Clear();
         dicPlant.Clear();
@@ -85,6 +87,7 @@ public partial class GameData
             return null;
         }
     }
+
 
     public void RemovePlantData(int keyID)
     {

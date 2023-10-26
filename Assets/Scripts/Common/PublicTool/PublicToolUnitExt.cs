@@ -34,4 +34,18 @@ public partial class PublicTool
         }
         return false;
     }
+
+    public static BattlePlantData GetPlantFromPosID(Vector2Int posID)
+    {
+        GameData gameData = GetGameData();
+        for(int i = 0; i < gameData.listPlant.Count; i++)
+        {
+            BattlePlantData plant = gameData.listPlant[i];
+            if (plant.posID == posID)
+            {
+                return plant;
+            }
+        }
+        return null;
+    }
 }
