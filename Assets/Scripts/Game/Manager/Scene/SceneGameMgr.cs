@@ -13,6 +13,7 @@ public class SceneGameMgr : MonoBehaviour
     public LevelMgr levelMgr;
     public UIMgr uiMgr;
     public CameraMgr cameraMgr;
+    public LightMgr lightMgr;
 
     public IEnumerator IE_Init()
     {
