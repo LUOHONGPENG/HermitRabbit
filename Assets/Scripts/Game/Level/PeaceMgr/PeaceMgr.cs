@@ -50,6 +50,8 @@ public partial class PeaceMgr : MonoSingleton<PeaceMgr>
             unitViewMgr.GeneratePlantView(newPlantData);
             PublicTool.RecalculateOccupancy();
             RefreshPlantPosInfo();
+            EventCenter.Instance.EventTrigger("RefreshResourceUI", null);
+
         }
         else
         {
@@ -65,6 +67,7 @@ public partial class PeaceMgr : MonoSingleton<PeaceMgr>
                 gameData.RemovePlantData(removePlantData.keyID);
                 PublicTool.RecalculateOccupancy();
                 RefreshPlantPosInfo();
+                EventCenter.Instance.EventTrigger("RefreshResourceUI", null);
             }
         }
 
@@ -76,6 +79,15 @@ public partial class PeaceMgr : MonoSingleton<PeaceMgr>
         {
             EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("InvalidTile", posID));
             return false;
+        }
+        else
+        {
+            PlantExcelItem plantExcelItem = PublicTool.GetPlantItem(plantTypeID);
+            if(plantExcelItem != null && (gameData.curEssence + plantExcelItem.essence > gameData.essence))
+            {
+                EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("No Enough Essence", posID));
+                return false;
+            }
         }
         return true;
     }

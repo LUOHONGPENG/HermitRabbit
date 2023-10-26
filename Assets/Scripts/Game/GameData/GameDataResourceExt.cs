@@ -11,13 +11,18 @@ public partial class GameData
     {
         get
         {
-            return 0;
+            int temp = 0;
+            for(int i = 0; i < listPlant.Count; i++)
+            {
+                temp += listPlant[i].GetEssence();
+            }
+            return temp;
         }
     }
 
     private void NewGameResourceData()
     {
-        essence = 1;
+        essence = 2;
         memory = 0;
     }
 

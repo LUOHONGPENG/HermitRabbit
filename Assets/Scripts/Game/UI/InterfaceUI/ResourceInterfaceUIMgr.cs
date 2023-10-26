@@ -34,7 +34,7 @@ public class ResourceInterfaceUIMgr : MonoBehaviour
 
     public void RefreshResourceUI()
     {
-        codeEssence.text = string.Format("{0}/{1}", 0, gameData.essence);
+        codeEssence.text = string.Format("{0}/{1}", gameData.curEssence, gameData.essence);
         codeMemory.text = gameData.memory.ToString();
     }
 }

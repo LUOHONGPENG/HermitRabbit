@@ -28,6 +28,11 @@ public class BattlePlantData : BattleUnitData
         return item.skillID;
     }
 
+    public int GetEssence()
+    {
+        return (int)item.essence;
+    }
+
 
     #region Basic Attribute
     public override int curATK
