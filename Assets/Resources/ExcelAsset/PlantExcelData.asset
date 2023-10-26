@@ -21,6 +21,7 @@ MonoBehaviour:
     RES: 1
     triggerCondition: 0
     skillID: 3001
+    essence: 1
     pixelUrl: pp_Plant_Idle
   - id: 1002
     name: Cookee
@@ -30,4 +31,5 @@ MonoBehaviour:
     RES: 0
     triggerCondition: 1
     skillID: 3002
+    essence: 2
     pixelUrl: pp_Plant_Idle2
