@@ -78,9 +78,12 @@ public partial class PublicTool
     {
         List<int> listTemp = new List<int>();
         List<int> listDraw = new List<int>(listPool);
-        for (int i = 0; i < listDelete.Count; i++)
+        if (listDelete != null)
         {
-            listDraw.Remove(listDelete[i]);
+            for (int i = 0; i < listDelete.Count; i++)
+            {
+                listDraw.Remove(listDelete[i]);
+            }
         }
 
         for (int i = 0; i < num; i++)
