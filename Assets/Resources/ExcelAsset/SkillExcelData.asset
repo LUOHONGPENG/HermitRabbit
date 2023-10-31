@@ -444,7 +444,7 @@ MonoBehaviour:
     plantEffect: 2
     damageType: 3
     damageDeltaStd: 4
-    damageDelta: 50
+    damageDelta: 30
     damageModifier: -1
     listBuffEffect: 00000000
     listBuffDelta: 00000000
@@ -694,7 +694,7 @@ MonoBehaviour:
     costAP: 1
     costMOV: 0
     costHP: 0
-    range: 4
+    range: 2
     isRangeSelf: 0
     needExtraTarget: 0
     radius: 0
@@ -705,6 +705,214 @@ MonoBehaviour:
     damageType: 2
     damageDeltaStd: 2
     damageDelta: 100
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
+    activeSkillType: 5
+    characterID: 0
+    iconUrl: 
+    unlockNodeID: 0
+    desc: 
+  - id: 9101
+    name: Anxious Nodule
+    costAP: 1
+    costMOV: 0
+    costHP: 0
+    range: 4
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 1
+    plantEffect: 1
+    damageType: 1
+    damageDeltaStd: 2
+    damageDelta: 100
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
+    activeSkillType: 5
+    characterID: 0
+    iconUrl: 
+    unlockNodeID: 0
+    desc: 
+  - id: 9102
+    name: Anxious Fire
+    costAP: 1
+    costMOV: 0
+    costHP: 0
+    range: 2
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 1
+    regionType: 0
+    foeEffect: 1
+    characterEffect: 1
+    plantEffect: 1
+    damageType: 2
+    damageDeltaStd: 2
+    damageDelta: 100
+    damageModifier: 0
+    listBuffEffect: a10f0000
+    listBuffDelta: 01000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
+    activeSkillType: 5
+    characterID: 0
+    iconUrl: 
+    unlockNodeID: 0
+    desc: 
+  - id: 9103
+    name: Anxious Water
+    costAP: 1
+    costMOV: 0
+    costHP: 0
+    range: 3
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 1
+    plantEffect: 1
+    damageType: 2
+    damageDeltaStd: 2
+    damageDelta: 100
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: bb0b0000
+    listSpecialDelta: 01000000
+    activeSkillType: 5
+    characterID: 0
+    iconUrl: 
+    unlockNodeID: 0
+    desc: 
+  - id: 9104
+    name: Anxious Gravity
+    costAP: 1
+    costMOV: 0
+    costHP: 0
+    range: 2
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 1
+    plantEffect: 1
+    damageType: 2
+    damageDeltaStd: 3
+    damageDelta: 100
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: d1070000
+    listSpecialDelta: 01000000
+    activeSkillType: 5
+    characterID: 0
+    iconUrl: 
+    unlockNodeID: 0
+    desc: 
+  - id: 9201
+    name: Vision
+    costAP: 1
+    costMOV: 0
+    costHP: 0
+    range: 18
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 1
+    plantEffect: 1
+    damageType: 2
+    damageDeltaStd: 2
+    damageDelta: 100
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
+    activeSkillType: 5
+    characterID: 0
+    iconUrl: 
+    unlockNodeID: 0
+    desc: 
+  - id: 9202
+    name: Cruelty
+    costAP: 1
+    costMOV: 0
+    costHP: 0
+    range: 1
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 1
+    plantEffect: 1
+    damageType: 1
+    damageDeltaStd: 2
+    damageDelta: 100
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
+    activeSkillType: 5
+    characterID: 0
+    iconUrl: 
+    unlockNodeID: 0
+    desc: 
+  - id: 9301
+    name: Emotional Damage
+    costAP: 1
+    costMOV: 0
+    costHP: 0
+    range: 1
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 1
+    plantEffect: 1
+    damageType: 3
+    damageDeltaStd: 2
+    damageDelta: 100
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
+    activeSkillType: 5
+    characterID: 0
+    iconUrl: 
+    unlockNodeID: 0
+    desc: 
+  - id: 9901
+    name: Summon Darkness
+    costAP: 1
+    costMOV: 0
+    costHP: 0
+    range: 0
+    isRangeSelf: 1
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 2
+    characterEffect: 0
+    plantEffect: 0
+    damageType: 0
+    damageDeltaStd: 0
+    damageDelta: 0
     damageModifier: 0
     listBuffEffect: 00000000
     listBuffDelta: 00000000

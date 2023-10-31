@@ -20,6 +20,7 @@ MonoBehaviour:
     dayExp: 50
     foeExp: 4
     totalFoeExp: 16
+    Remark: Tutorial
   - id: 2
     dayCount: 2
     foeID: 1002
@@ -27,6 +28,7 @@ MonoBehaviour:
     dayExp: 100
     foeExp: 4
     totalFoeExp: 8
+    Remark: Resume
   - id: 3
     dayCount: 2
     foeID: 1011
@@ -34,6 +36,7 @@ MonoBehaviour:
     dayExp: 0
     foeExp: 5
     totalFoeExp: 15
+    Remark: 
   - id: 4
     dayCount: 3
     foeID: 1002
@@ -41,6 +44,7 @@ MonoBehaviour:
     dayExp: 100
     foeExp: 6
     totalFoeExp: 18
+    Remark: HR With Resume
   - id: 5
     dayCount: 3
     foeID: 1011
@@ -48,6 +52,7 @@ MonoBehaviour:
     dayExp: 0
     foeExp: 8
     totalFoeExp: 24
+    Remark: 
   - id: 6
     dayCount: 3
     foeID: 1021
@@ -55,10 +60,76 @@ MonoBehaviour:
     dayExp: 0
     foeExp: 20
     totalFoeExp: 20
+    Remark: 
   - id: 7
     dayCount: 4
-    foeID: 1021
-    foeNum: 5
+    foeID: 1022
+    foeNum: 2
     dayExp: 100
-    foeExp: 20
+    foeExp: 15
+    totalFoeExp: 30
+    Remark: Group HR
+  - id: 8
+    dayCount: 4
+    foeID: 1023
+    foeNum: 2
+    dayExp: 0
+    foeExp: 15
+    totalFoeExp: 30
+    Remark: 
+  - id: 9
+    dayCount: 4
+    foeID: 1024
+    foeNum: 2
+    dayExp: 0
+    foeExp: 15
+    totalFoeExp: 30
+    Remark: 
+  - id: 10
+    dayCount: 5
+    foeID: 1031
+    foeNum: 1
+    dayExp: 100
+    foeExp: 50
+    totalFoeExp: 50
+    Remark: Interviewer
+  - id: 11
+    dayCount: 5
+    foeID: 1032
+    foeNum: 1
+    dayExp: 0
+    foeExp: 50
+    totalFoeExp: 50
+    Remark: 
+  - id: 12
+    dayCount: 6
+    foeID: 1041
+    foeNum: 1
+    dayExp: 100
+    foeExp: 100
     totalFoeExp: 100
+    Remark: CEO
+  - id: 13
+    dayCount: 6
+    foeID: 1042
+    foeNum: 1
+    dayExp: 0
+    foeExp: 30
+    totalFoeExp: 30
+    Remark: 
+  - id: 14
+    dayCount: 6
+    foeID: 1043
+    foeNum: 1
+    dayExp: 0
+    foeExp: 30
+    totalFoeExp: 30
+    Remark: 
+  - id: 15
+    dayCount: 7
+    foeID: 1099
+    foeNum: 1
+    dayExp: 200
+    foeExp: 200
+    totalFoeExp: 200
+    Remark: FinalBoss

@@ -112,7 +112,7 @@ public class BattleOptionUIMgr : MonoBehaviour
     {
         if (curCharacterData != null)
         {
-            infoBarHealth.UpdateData(curCharacterData.curHP, curCharacterData.maxHP);
+            infoBarHealth.UpdateData(curCharacterData.curHP, curCharacterData.curMaxHP);
             infoBarSkill.UpdateData(curCharacterData.curAP, curCharacterData.curMaxAP);
             infoBarMove.UpdateData(curCharacterData.curMOV, curCharacterData.curMaxMOV);
         }

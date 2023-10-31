@@ -27,7 +27,6 @@ public partial class BattleCharacterData : BattleUnitData
         RES = item.RES;
         //3 Attribute Setting
         curHP = item.HP;
-        maxHP = item.HP;
         curAP = item.AP;
         maxAP = item.AP;
         curMOV = item.MOV;
@@ -105,6 +104,25 @@ public partial class BattleCharacterData : BattleUnitData
         }
     }
 
+    public override float curMaxHP
+    {
+        get
+        {
+            float temp = item.HP;
+            if(typeID == 1001)
+            {
+                temp += ExcelDataMgr.Instance.characterExpExcelData.GetExpItem(Level).HP1; 
+            }
+            else if(typeID == 1002)
+            {
+                temp += ExcelDataMgr.Instance.characterExpExcelData.GetExpItem(Level).HP2;
+            }
+            return temp;
+        }
+    }
+
+
+
     public override int curMaxMOV
     {
         get
@@ -157,7 +175,7 @@ public partial class BattleCharacterData : BattleUnitData
     {
         ClearAllBuff();
 
-        curHP = maxHP;
+        curHP = curMaxHP;
         curAP = regenAP;
         curMOV = regenMOV;
 

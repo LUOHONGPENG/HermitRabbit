@@ -41,9 +41,9 @@ public partial class BattleUnitData
     {
         curHP += healPoint;
         EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
-        if (curHP >= maxHP)
+        if (curHP >= curMaxHP)
         {
-            curHP = maxHP;
+            curHP = curMaxHP;
         }
     }
 }

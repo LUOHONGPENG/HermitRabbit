@@ -10,6 +10,7 @@ public partial class SoundExcelItem : ExcelItemBase
 {
 	public SoundType name;
 	public string soundUrl;
+	public float soundStartTime;
 }
 
 [CreateAssetMenu(fileName = "SoundExcelData", menuName = "Excel To ScriptableObject/Create SoundExcelData", order = 1)]
@@ -32,6 +33,7 @@ public class SoundAssetAssignment
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].name = (SoundType) Enum.Parse(typeof(SoundType), allItemValueRowList[i]["name"], true);
 			items[i].soundUrl = allItemValueRowList[i]["soundUrl"];
+			items[i].soundStartTime = Convert.ToSingle(allItemValueRowList[i]["soundStartTime"]);
 		}
 		SoundExcelData excelDataAsset = ScriptableObject.CreateInstance<SoundExcelData>();
 		excelDataAsset.items = items;

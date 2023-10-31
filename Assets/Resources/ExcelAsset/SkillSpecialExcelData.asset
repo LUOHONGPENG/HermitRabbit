@@ -61,3 +61,7 @@ MonoBehaviour:
     name: Clear Buff
     effectType: 1
     timeType: 0
+  - id: 9001
+    name: Summon Foe
+    effectType: 2
+    timeType: 0

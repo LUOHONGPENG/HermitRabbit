@@ -16,3 +16,4 @@ MonoBehaviour:
   - id: 1
     name: 0
     soundUrl: UnlockSkillNode
+    soundStartTime: 0.6

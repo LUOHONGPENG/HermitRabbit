@@ -126,7 +126,7 @@ public class StatusUIMgr : MonoBehaviour
                 imgFillEXP.fillAmount = 1f * characterData.curEXP / characterData.requiredEXP;
 
             }
-            codeHP.text = characterData.maxHP.ToString();
+            codeHP.text = characterData.curMaxHP.ToString();
             codeATK.text = characterData.curATK.ToString();
             codeDEF.text = characterData.curDEF.ToString();
             codeRES.text = characterData.curRES.ToString();

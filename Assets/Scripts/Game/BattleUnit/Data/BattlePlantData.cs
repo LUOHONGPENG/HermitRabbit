@@ -89,7 +89,7 @@ public class BattlePlantData : BattleUnitData
 
     public override void ResetBattleEnd()
     {
-        curHP = maxHP;
+        curHP = curMaxHP;
         curAP = curMaxAP;
 
         ClearAllBuff();

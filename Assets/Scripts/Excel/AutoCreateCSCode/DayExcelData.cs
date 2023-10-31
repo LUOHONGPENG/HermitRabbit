@@ -14,6 +14,7 @@ public partial class DayExcelItem : ExcelItemBase
 	public int dayExp;
 	public int foeExp;
 	public int totalFoeExp;
+	public string Remark;
 }
 
 [CreateAssetMenu(fileName = "DayExcelData", menuName = "Excel To ScriptableObject/Create DayExcelData", order = 1)]
@@ -40,6 +41,7 @@ public class DayAssetAssignment
 			items[i].dayExp = Convert.ToInt32(allItemValueRowList[i]["dayExp"]);
 			items[i].foeExp = Convert.ToInt32(allItemValueRowList[i]["foeExp"]);
 			items[i].totalFoeExp = Convert.ToInt32(allItemValueRowList[i]["totalFoeExp"]);
+			items[i].Remark = allItemValueRowList[i]["Remark"];
 		}
 		DayExcelData excelDataAsset = ScriptableObject.CreateInstance<DayExcelData>();
 		excelDataAsset.items = items;

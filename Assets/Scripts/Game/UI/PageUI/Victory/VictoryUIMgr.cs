@@ -90,6 +90,10 @@ public class VictoryUIMgr : MonoBehaviour
 
     public void HidePopup()
     {
+        if (gameData.gamePhase == GamePhase.Peace)
+        {
+            GameMgr.Instance.SaveGameData(SaveSlotName.Auto);
+        }
         objPopup.SetActive(false);
     }
 

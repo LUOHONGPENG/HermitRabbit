@@ -74,7 +74,7 @@ public partial class BattleMgr
                 }
                 break;
             case SkillDamageDeltaStd.MAXHP:
-                damageSource = source.maxHP * skillBattleInfo.damageDeltaFloat;
+                damageSource = source.curMaxHP * skillBattleInfo.damageDeltaFloat;
                 break;
             case SkillDamageDeltaStd.COSTHP:
                 damageSource = skillBattleInfo.costHP * skillBattleInfo.damageDeltaFloat;
@@ -262,6 +262,17 @@ public partial class BattleMgr
             case 6002:
                 target.ClearFirstBuff();
                 target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, string.Format("Clear Buff", delta), target.posID));
+                break;
+            case 9001:
+                BattleFoeData newFoeData = gameData.GenerateFoeData(delta);
+                FoeExcelItem foeItemData = PublicTool.GetFoeExcelItem(delta);
+                List<Vector2Int> listPos = PublicTool.GetEmptyPosFromRowRange(3 - foeItemData.pos0, 3);
+                if (listPos.Count > 0)
+                {
+                    int ran = UnityEngine.Random.Range(0, listPos.Count);
+                    newFoeData.posID = listPos[ran];
+                }
+                unitViewMgr.GenerateFoeView(newFoeData);
                 break;
         }
 
