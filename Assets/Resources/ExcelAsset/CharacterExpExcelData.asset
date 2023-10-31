@@ -55,3 +55,15 @@ MonoBehaviour:
     SP: 12
     HP1: 6
     HP2: 9
+  - id: 8
+    Level: 8
+    EXP: 520
+    SP: 14
+    HP1: 7
+    HP2: 11
+  - id: 9
+    Level: 9
+    EXP: 650
+    SP: 16
+    HP1: 8
+    HP2: 12

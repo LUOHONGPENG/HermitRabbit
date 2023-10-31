@@ -205,8 +205,6 @@ public enum FoeFocusType
 }
 #endregion 
 
-
-
 public enum EffectUITextType
 {
     Damage,

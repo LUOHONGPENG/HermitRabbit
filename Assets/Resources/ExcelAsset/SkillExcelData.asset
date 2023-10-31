@@ -429,6 +429,32 @@ MonoBehaviour:
     iconUrl: imgIconSkill_Default
     unlockNodeID: 2201
     desc: 
+  - id: 2202
+    name: Provoke
+    costAP: 2
+    costMOV: 0
+    costHP: 0
+    range: 0
+    isRangeSelf: 1
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 2
+    plantEffect: 2
+    damageType: 0
+    damageDeltaStd: 0
+    damageDelta: 0
+    damageModifier: 0
+    listBuffEffect: f0030000
+    listBuffDelta: 02000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
+    activeSkillType: 2
+    characterID: 1002
+    iconUrl: imgIconSkill_Default
+    unlockNodeID: 2202
+    desc: 
   - id: 2301
     name: Self Heal
     costAP: 1

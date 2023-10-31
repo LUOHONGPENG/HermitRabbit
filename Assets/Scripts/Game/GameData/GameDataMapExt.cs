@@ -204,7 +204,6 @@ public partial class GameData
     public List<Vector2Int> listTempFoePos = new List<Vector2Int>();
     public List<Vector2Int> listTempPlantPos = new List<Vector2Int>();
     public List<Vector2Int> listTempFriendPos = new List<Vector2Int>();
-    public List<Vector2Int> listTempObstablePos = new List<Vector2Int>();
 
     public List<Vector2Int> listTempAllPos = new List<Vector2Int>();
     public List<Vector2Int> listTempEmptyPos = new List<Vector2Int>();
@@ -238,7 +237,10 @@ public partial class GameData
 
     public void RecalculateSkillCover()
     {
-        GetCurUnitData().RefreshValidSkill();
+        if (GetCurUnitData() != null)
+        {
+            GetCurUnitData().RefreshValidSkill();
+        }
     }
 
     /// <summary>
@@ -323,7 +325,7 @@ public partial class GameData
         List<Vector2Int> listTemp = new List<Vector2Int>();
         AddPosForList(listTemp, listTempCharacterPos);
         AddPosForList(listTemp, listTempPlantPos);
-        AddPosForList(listTemp, listTempObstablePos);
+        AddPosForList(listTemp, listMapStonePos);
         return listTemp;
     }
 

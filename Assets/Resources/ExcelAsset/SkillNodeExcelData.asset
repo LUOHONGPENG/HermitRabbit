@@ -61,7 +61,7 @@ MonoBehaviour:
 
       with one level burning.'
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: e9030000
     conflictNode: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
     name: Boom!
     desc: Deal damage according to burning.
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 4d040000
     conflictNode: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
     name: Chronal Shift
     desc: Dodge next attack.
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: e9030000
     conflictNode: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
     name: 'Gravity '
     desc: Gravity magic attack that reduce movement.
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: b1040000
     conflictNode: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
     name: Stream
     desc: Water magic attack that can heal plant.
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: e9030000
     conflictNode: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
     name: Clear
     desc: Remove 1 debuff.
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 15050000
     conflictNode: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
     name: Holy Thunder
     desc: Electricity Attack. Water tile can transmit damage.
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: e9030000
     conflictNode: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
     name: Teleport
     desc: Change one unit position.
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 79050000
     conflictNode: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
     name: Time Expand
     desc: Double the level of all debuff for foe or buff for allies
     nodeType: 0
-    costSP: 2
+    costSP: 3
     conditionSPSpent: 0
     conditionPreNode: 4e040000b2040000
     conflictNode: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
       Infinity can enlarge next X skills'' radius by
       1 unit.'
     nodeType: 0
-    costSP: 2
+    costSP: 3
     conditionSPSpent: 0
     conditionPreNode: 160500007a050000
     conflictNode: 0
@@ -260,7 +260,7 @@ MonoBehaviour:
     name: Final Chant
     desc: Increase skill range and AP but can't get Movement when turn starts.
     nodeType: 0
-    costSP: 2
+    costSP: 3
     conditionSPSpent: 0
     conditionPreNode: b204000016050000
     conflictNode: 0
@@ -316,7 +316,7 @@ MonoBehaviour:
     name: Worker Wind
     desc: Deal damage to enemy around.
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: d1070000
     conflictNode: 0
@@ -344,7 +344,7 @@ MonoBehaviour:
     name: Overtime Work
     desc: Gain extra AP every turn but gain burning as well.
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 35080000
     conflictNode: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
     name: Curse
     desc: The target will receive Fragile every time lost HP.
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: d1070000
     conflictNode: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
     name: Provoke
     desc: Attract enemies' attack.
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 99080000
     conflictNode: 0
@@ -400,7 +400,7 @@ MonoBehaviour:
     name: Self Heal
     desc: Heal one character according to HP.
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: d1070000
     conflictNode: 0
@@ -415,7 +415,7 @@ MonoBehaviour:
     desc: Deal damage according to DEF, next strike will recover HP according to
       damage.
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: fd080000
     conflictNode: 0
@@ -429,7 +429,7 @@ MonoBehaviour:
     name: Rush Hour
     desc: Gain 3 Movement.
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: d1070000
     conflictNode: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
     name: Inspire
     desc: Gain 1 AP.
     nodeType: 0
-    costSP: 1
+    costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 61090000
     conflictNode: 0
@@ -471,7 +471,7 @@ MonoBehaviour:
     name: Final Guard
     desc: HP won't become 0.
     nodeType: 0
-    costSP: 2
+    costSP: 3
     conditionSPSpent: 0
     conditionPreNode: 360800009a080000
     conflictNode: 0
@@ -485,7 +485,7 @@ MonoBehaviour:
     name: Super Worker
     desc: Increase ATK,DEF,RES,max Movement by 1.
     nodeType: 0
-    costSP: 2
+    costSP: 3
     conditionSPSpent: 0
     conditionPreNode: fe08000062090000
     conflictNode: 0
@@ -499,7 +499,7 @@ MonoBehaviour:
     name: Self Hurt Strike
     desc: Cost HP to deal damage, the damage will be equal to lost HP.
     nodeType: 0
-    costSP: 2
+    costSP: 3
     conditionSPSpent: 0
     conditionPreNode: 9a080000fe080000
     conflictNode: 0

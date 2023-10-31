@@ -9,6 +9,10 @@ public class BattleFoeData : BattleUnitData
 
     public int exp;
 
+    public FoeFindTargetType findTargetType;
+
+    public FoeFocusType focusType;
+
     public BattleFoeData(int typeID,int keyID)
     {
         //Basic Setting
@@ -20,6 +24,9 @@ public class BattleFoeData : BattleUnitData
         maxHP = item.HP;
         curMOV = item.MOV;
         maxMOV = item.MOV;
+
+        findTargetType = item.findTargetType;
+        focusType = item.focusType;
     }
 
     public FoeExcelItem GetItem()

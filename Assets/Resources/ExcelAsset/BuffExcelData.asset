@@ -90,6 +90,17 @@ MonoBehaviour:
     desc: 
     firstSpecialEffect: 0
     firstSpecialDelta: 0
+  - id: 1008
+    name: Hated
+    effectType: 2
+    maxLevel: 10
+    counterType: 1
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: Attract enemies' attack
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
   - id: 2001
     name: Curse
     effectType: 1

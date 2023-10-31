@@ -35,6 +35,7 @@ public class MapTileData
 public class FindPathNode
 {
     public Vector2Int pos;
+    //F = G + H
     public int gCost = int.MaxValue;
     public int hCostReal = int.MaxValue;
 

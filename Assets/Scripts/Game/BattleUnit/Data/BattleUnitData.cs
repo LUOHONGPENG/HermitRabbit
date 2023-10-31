@@ -189,6 +189,9 @@ public partial class BattleUnitData
         }
     }
 
+    #region Special Buff Affect
+
+    //Yi Shang
     public virtual int buffAddHurt
     {
         get
@@ -219,6 +222,32 @@ public partial class BattleUnitData
             return temp;
         }
     }
+
+
+    public virtual int curHate
+    {
+        get
+        {
+            int temp = buffHate;
+            return temp;
+        }
+    }
+
+    public virtual int buffHate
+    {
+        get
+        {
+            int temp = 0;
+            if (CheckBuffExist(1008))
+            {
+                temp += 1000;
+            }
+            return temp;
+        }
+    }
+
+
+    #endregion
 
     public int GetTypeID()
     {

@@ -89,6 +89,86 @@ public struct SkillBattleInfo
     }
 }
 
+public class FoeFindTargetInfo
+{
+    public FoeFindTargetType findTargetType;
+
+    public int keyID = -1;
+    public BattleUnitType unitType;
+    public Vector2Int posID;
+
+    public int GCost = 99;
+    private float HPRate = 1f;
+    private int sourceHate = 0; 
+
+    public FoeFindTargetInfo(FoeFindTargetType findTargetType, BattleUnitData unit)
+    {
+        this.findTargetType = findTargetType;
+        this.keyID = unit.keyID;
+        this.unitType = unit.battleUnitType;
+        this.posID = unit.posID;
+        this.sourceHate = unit.curHate;
+        this.HPRate = unit.HPrate;
+    }
+
+    public int TotalHate
+    {
+        get
+        {
+            int temp = sourceHate;
+            switch (findTargetType)
+            {
+                case FoeFindTargetType.Normal:
+                    temp += Mathf.RoundToInt(1f * CalculateHateHP());
+                    temp += Mathf.RoundToInt(1f * CalculateHateGCostNear());
+                    break;
+                case FoeFindTargetType.Farthest:
+                    temp += Mathf.RoundToInt(0 * CalculateHateHP());
+                    temp += Mathf.RoundToInt(0 * CalculateHateGCostFar());
+                    break;
+            }
+            return temp;
+        }
+    }
+
+    public int CalculateHateHP()
+    {
+        //HPrate = 0 -> 1000
+        //HPrate = 1 -> 0
+        return (int)(1 - HPRate) * 1000;
+    }
+
+    public int CalculateHateGCostNear()
+    {
+        //GCost = 0 -> 1000
+        //GCost = 20 -> 0
+        if(GCost > 20)
+        {
+            return 0;
+        }
+        else
+        {
+            return Mathf.RoundToInt((20f - GCost)/20f * 1000f);
+        }
+    }
+
+    public int CalculateHateGCostFar()
+    {
+        //GCost = 0 -> 0
+        //GCost = 20 -> 1000
+        if (GCost > 20)
+        {
+            return 1000;
+        }
+        else
+        {
+            return Mathf.RoundToInt((GCost - 20f) / 20f * 1000f);
+        }
+    }
+
+}
+
+
 public struct PlantSkillRequestInfo
 {
     public int keyID;

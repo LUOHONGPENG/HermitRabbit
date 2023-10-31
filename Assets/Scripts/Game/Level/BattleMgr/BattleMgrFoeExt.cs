@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+
+
+
 public partial class BattleMgr
 {
     public Stack<int> stackFoe = new Stack<int>();
@@ -9,11 +14,13 @@ public partial class BattleMgr
 
     private IEnumerator IE_WholeFoeTurn()
     {
+        //Check Buff for Foes
         yield return StartCoroutine(IE_FoeBuffCheck());
         if (isBattleEnd)
         {
             yield break;
         }
+        //Scan all the foes to generate the stack
         ScanFoeStack();
         yield return StartCoroutine(IE_ExecuteFoeTurn());
         yield break;
@@ -79,12 +86,15 @@ public partial class BattleMgr
             PublicTool.EventCameraGoPosID(foeData.posID);
             yield return new WaitForSeconds(0.5f);
 
-            //2.Scan and get the target Pos
+            List<FoeFindTargetInfo> listFoeTargetInfo = new List<FoeFindTargetInfo>();
+
+            //3.Scan and get the distance of all target Pos
             IEnumerator itorReturn = null;
-            itorReturn = IE_ExecuteFoeScan(foeData);
+            itorReturn = IE_ExecuteFoeCalculateHate(foeData, listFoeTargetInfo);
             yield return itorReturn;
             Vector2Int targetPos = ((Vector2Int)itorReturn.Current);
-            //3.Move
+
+            //4.Move
             if (targetPos.x >= 0)
             {
                 yield return StartCoroutine(IE_ExecuteFoeMove(foeData, targetPos));
@@ -94,7 +104,7 @@ public partial class BattleMgr
                 continue;
             }
 
-            //4.Spell skill and aim at the target first
+            //5.Spell skill and aim at the target first
             if (CheckPossibleSkill(foeData))
             {
                 if (foeData.listValidSkill.Contains(targetPos))
@@ -133,34 +143,73 @@ public partial class BattleMgr
         }
     }
 
-    private IEnumerator IE_ExecuteFoeScan(BattleFoeData foeData)
+    private IEnumerator IE_ExecuteFoeCalculateHate(BattleFoeData foeData, List<FoeFindTargetInfo> listInfo)
     {
-        //1.Scan using BFS
+        //1.Scan using BFS and calculate the Gcost
         PublicTool.RecalculateOccupancy();
         foeData.RefreshFoeMoveAllBFSNode();
         //2.Get Target for Foe
-        List<FindPathNode> listFoeTargetNode = new List<FindPathNode>();
-        List<Vector2Int> listFoeTargetPos = PublicTool.GetGameData().GetFoeTargetPos();
-        //Create the node according to the data
-        foreach(Vector2Int pos in listFoeTargetPos)
+        //List<FindPathNode> listFoeTargetNode = new List<FindPathNode>();
+        if(foeData.focusType == FoeFocusType.Foe)
         {
-            if (foeData.dicBFSAllNode.ContainsKey(pos))
+            foreach(var unit in gameData.listFoe)
             {
-                listFoeTargetNode.Add(foeData.dicBFSAllNode[pos]);
+                listInfo.Add(new FoeFindTargetInfo(foeData.findTargetType,unit));
             }
         }
-        //Find Who is the cloest to this Foe (In following version will become a part of the hate value)
-        PublicTool.FindPathNodeSortLowestGCost(listFoeTargetNode);
-        if (listFoeTargetNode.Count > 0)
+        else if(foeData.focusType == FoeFocusType.Friend)
         {
-            yield return listFoeTargetNode[0].pos;
+            foreach (var unit in gameData.listCharacter)
+            {
+                listInfo.Add(new FoeFindTargetInfo(foeData.findTargetType, unit));
+            }
+            foreach (var unit in gameData.listPlant)
+            {
+                listInfo.Add(new FoeFindTargetInfo(foeData.findTargetType, unit));
+            }
+        }
+
+        //Create the node according to the data
+        foreach(FoeFindTargetInfo info in listInfo)
+        {
+            if (foeData.dicBFSAllNode.ContainsKey(info.posID))
+            {
+                //listFoeTargetNode.Add(foeData.dicBFSAllNode[info.posID]);
+                info.GCost = foeData.dicBFSAllNode[info.posID].gCost;
+            }
+        }
+
+        PublicTool.FoeFindTargetInfoSortHighestHate(listInfo);
+        if(listInfo.Count > 0)
+        {
+            yield return listInfo[0].posID;
         }
         else
         {
-            Debug.Log(foeData.keyID + "Cant Find Friend");
-            yield return new Vector2Int(-1,-1);
+            Debug.Log(foeData.keyID + "Cant Find Target");
+            yield return new Vector2Int(-1, -1);
         }
+
+        /*        //Find Who is the cloest to this Foe (In following version will become a part of the hate value)
+                PublicTool.FindPathNodeSortLowestGCost(listFoeTargetNode);
+                if (listFoeTargetNode.Count > 0)
+                {
+                    yield return listFoeTargetNode[0].pos;
+                }
+                else
+                {
+                    Debug.Log(foeData.keyID + "Cant Find Friend");
+                    yield return new Vector2Int(-1,-1);
+                }*/
     }
+
+
+
+
+
+
+
+
 
     private IEnumerator IE_ExecuteFoeMove(BattleFoeData foeData,Vector2Int aimPos)
     {

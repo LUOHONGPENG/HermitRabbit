@@ -8,8 +8,9 @@ public partial class BattleUnitData
     /// Pos Data
     /// </summary>
     public Vector2Int posID = new Vector2Int(0, 0);
-
+    //Store the node that it can move into (according to MOV)
     public Dictionary<Vector2Int, FindPathNode> dicValidMoveNode = new Dictionary<Vector2Int, FindPathNode>();
+    //Store the node (may be except Stone)
     public Dictionary<Vector2Int, FindPathNode> dicBFSAllNode = new Dictionary<Vector2Int, FindPathNode>();
 
     //Store the skill range display to the character
@@ -180,7 +181,11 @@ public partial class BattleUnitData
 
             //Add the tarNode into the dictionary Close means that I have checked this node, so we won't read it again
             dicClose.Add(tarNode.pos, tarNode);
+
+            //Add the FindPathNode information to the dictionary BFS of the unit data
             dicBFSAllNode.Add(tarNode.pos, tarNode);
+
+            //Why continue? Because it can not move in? What about dont add it 
             if (listBlock.Contains(tarNode.pos))
             {
                 continue;
@@ -193,6 +198,7 @@ public partial class BattleUnitData
                 dicValidMoveNode.Add(tarNode.pos, tarNode);
             }
 
+            //Add nearby nodes into dicOpen
             List<FindPathNode> listNearNode = PublicTool.GetNearFindPathNode(dicPathNode, tarNode.pos);
             for (int i = 0; i < listNearNode.Count; i++)
             {

@@ -243,6 +243,11 @@ public partial class PublicTool
         list.Sort((x, y) => { return x.hCostReal.CompareTo(y.hCostReal); });
     }
 
+    public static void FoeFindTargetInfoSortHighestHate(List<FoeFindTargetInfo> list)
+    {
+        list.Sort((y, x) => { return x.TotalHate.CompareTo(y.TotalHate); });
+    }
+
     #endregion
 
     #region MapClip
