@@ -192,6 +192,17 @@ public enum FoeGenerateType
     FixedPos
 }
 
+public enum FoeFindTargetType
+{
+    Normal,
+    Farthest
+}
+
+public enum FoeFocusType
+{
+    Foe,
+    Friend
+}
 #endregion 
 
 

@@ -48,7 +48,7 @@ MonoBehaviour:
     generateType: 0
     pos0: 3
     pos1: 0
-    pixelUrl: PixelEvilGod
+    pixelUrl: PixelEvilBoss
   - id: 1021
     name: HR_Normal
     HP: 30
@@ -56,11 +56,11 @@ MonoBehaviour:
     DEF: 1
     RES: 1
     MOV: 4
-    skillID: 9001
+    skillID: 9101
     generateType: 0
     pos0: 3
     pos1: 0
-    pixelUrl: PixelEvilBoss
+    pixelUrl: pixelHR_Black
   - id: 1022
     name: HR_Red
     HP: 25
@@ -72,7 +72,7 @@ MonoBehaviour:
     generateType: 0
     pos0: 3
     pos1: 0
-    pixelUrl: PixelEvilBoss
+    pixelUrl: pixelHR_Red
   - id: 1023
     name: HR_Blue
     HP: 25
@@ -84,7 +84,7 @@ MonoBehaviour:
     generateType: 0
     pos0: 3
     pos1: 0
-    pixelUrl: PixelEvilBoss
+    pixelUrl: pixelHR_Blue
   - id: 1024
     name: HR_Dark
     HP: 25
@@ -96,7 +96,7 @@ MonoBehaviour:
     generateType: 0
     pos0: 3
     pos1: 0
-    pixelUrl: PixelEvilBoss
+    pixelUrl: pixelHR_Purple
   - id: 1031
     name: Interviewer_F
     HP: 20

@@ -180,6 +180,7 @@ public partial class BattleCharacterData : BattleUnitData
         curMOV = regenMOV;
 
         this.posID = new Vector2Int(item.startPos[0], item.startPos[1]);
+
     }
 
 }

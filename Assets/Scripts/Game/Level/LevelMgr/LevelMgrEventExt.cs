@@ -208,6 +208,8 @@ public partial class LevelMgr
             }
         }
         PublicTool.RecalculateOccupancy();
+        EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
+
     }
 
     private void CharacterPhaseEndEvent(object arg0)
