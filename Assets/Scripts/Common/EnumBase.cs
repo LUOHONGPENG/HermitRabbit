@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum SceneName
 {
+    Init,
     Menu,
     Test,
     Game

@@ -9,7 +9,7 @@ public partial class GameMgr : MonoSingleton<GameMgr>
     public Camera curMapCamera;
     public Camera curUICamera;
     public SceneGameMgr curSceneGameMgr = null;
-
+    public SceneName curSceneName = SceneName.Init;
     public bool isInit = false;
 
     #region Init
@@ -55,6 +55,7 @@ public partial class GameMgr : MonoSingleton<GameMgr>
 
                 break;
         }
+        curSceneName = sceneName;
         SceneManager.LoadScene(GameGlobal.targetScene.ToString());
     }
     #endregion

@@ -12,7 +12,10 @@ public partial class InputMgr
         {
             return;
         }
-        CheckRayHoverAll();
+        if(GameMgr.Instance.curSceneName == SceneName.Game || GameMgr.Instance.curSceneName == SceneName.Test)
+        {
+            CheckRayHoverAll();
+        }
     }
 
 
