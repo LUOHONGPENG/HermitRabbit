@@ -331,7 +331,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objPopup: {fileID: 3003075997847150669}
-  btnRetry: {fileID: 5971408730859881648}
+  codeGameOver: {fileID: 8143216489830055634}
+  btnAction: {fileID: 5971408730859881648}
+  codeBtnAction: {fileID: 2765413312422778308}
 --- !u!1 &6160463154590074233
 GameObject:
   m_ObjectHideFlags: 0

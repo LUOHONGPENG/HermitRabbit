@@ -183,7 +183,7 @@ MonoBehaviour:
     pixelUrl: PixelEvilBoss
   - id: 1099
     name: Interview
-    HP: 200
+    HP: 180
     ATK: 0
     DEF: 0
     RES: 0
@@ -197,8 +197,8 @@ MonoBehaviour:
     pixelUrl: PixelEvilBoss
   - id: 1098
     name: Pressure
-    HP: 10
-    ATK: 12
+    HP: 8
+    ATK: 10
     DEF: 0
     RES: 0
     MOV: 5

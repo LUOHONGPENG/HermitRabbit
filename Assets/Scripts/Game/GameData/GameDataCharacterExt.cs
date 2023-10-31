@@ -59,6 +59,7 @@ public partial class GameData
             GenerateCharacterData(characterID);
             BattleCharacterData characterData = dicCharacter[characterID];
             characterData.EXP = saveExpInfo.y;
+            characterData.ResetBattleEnd();
             if (dicSaveSkillNode.ContainsKey(characterID))
             {
                 List<int> listSkillNodeID = dicSaveSkillNode[characterID];

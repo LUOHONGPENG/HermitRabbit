@@ -7,31 +7,47 @@ using UnityEngine.UI;
 public class GameOverUIMgr : MonoBehaviour
 {
     public GameObject objPopup;
-    public Button btnRetry;
+    public Text codeGameOver;
+    public Button btnAction;
+    public Text codeBtnAction;
 
     public void Init()
     {
-        btnRetry.onClick.RemoveAllListeners();
-        btnRetry.onClick.AddListener(delegate ()
-        {
 
-        });
     }
 
     public void OnEnable()
     {
         EventCenter.Instance.AddEventListener("BattleLose", BattleLoseEvent);
-
+        EventCenter.Instance.AddEventListener("GoodEndStart", GoodEndStartEvent);
     }
 
     public void OnDisable()
     {
         EventCenter.Instance.RemoveEventListener("BattleLose", BattleLoseEvent);
-
+        EventCenter.Instance.RemoveEventListener("GoodEndStart", GoodEndStartEvent);
     }
 
     private void BattleLoseEvent(object arg0)
     {
+        codeGameOver.text = "Game Over";
+        codeBtnAction.text = "Retry";
+        btnAction.onClick.RemoveAllListeners();
+        btnAction.onClick.AddListener(delegate ()
+        {
+
+        });
+        ShowPopup();
+    }
+    private void GoodEndStartEvent(object arg0)
+    {
+        codeGameOver.text = "Good End";
+        codeBtnAction.text = "Back To Menu";
+        btnAction.onClick.RemoveAllListeners();
+        btnAction.onClick.AddListener(delegate ()
+        {
+            GameMgr.Instance.LoadScene(SceneName.Menu);
+        });
         ShowPopup();
     }
 

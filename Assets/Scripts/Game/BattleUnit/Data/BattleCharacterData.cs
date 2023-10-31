@@ -26,7 +26,7 @@ public partial class BattleCharacterData : BattleUnitData
         DEF = item.DEF;
         RES = item.RES;
         //3 Attribute Setting
-        curHP = item.HP;
+        curHP = curMaxHP;
         curAP = item.AP;
         maxAP = item.AP;
         curMOV = item.MOV;
