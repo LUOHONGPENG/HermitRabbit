@@ -161,7 +161,7 @@ MonoBehaviour:
     RES: 4
     MOV: 2
     skillID: 9201
-    findTargetType: 0
+    findTargetType: 1
     focusType: 1
     generateType: 0
     pos0: 1
@@ -190,8 +190,22 @@ MonoBehaviour:
     MOV: 0
     skillID: 9901
     findTargetType: 0
-    focusType: 1
+    focusType: 0
     generateType: 0
     pos0: 1
     pos1: 0
     pixelUrl: PixelEvilBoss
+  - id: 1098
+    name: Pressure
+    HP: 10
+    ATK: 12
+    DEF: 0
+    RES: 0
+    MOV: 5
+    skillID: 9201
+    findTargetType: 1
+    focusType: 1
+    generateType: 0
+    pos0: 1
+    pos1: 0
+    pixelUrl: PixelEvilGod

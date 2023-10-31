@@ -942,8 +942,8 @@ MonoBehaviour:
     damageModifier: 0
     listBuffEffect: 00000000
     listBuffDelta: 00000000
-    listSpecialEffect: 00000000
-    listSpecialDelta: 00000000
+    listSpecialEffect: 29230000
+    listSpecialDelta: 4a040000
     activeSkillType: 5
     characterID: 0
     iconUrl: 
