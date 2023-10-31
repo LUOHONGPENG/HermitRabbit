@@ -395,9 +395,26 @@ public partial class BattleUnitData
 
             if (skillInfo.isTargetFoe)
             {
-                //Get the position of All Foes
-                List<Vector2Int> listFoePos = PublicTool.GetGameData().listTempFoePos;
-                CheckWhetherSkillContainTarget(listTemp, listFoePos, listViewSkill, skillInfo);
+                if(battleUnitType == BattleUnitType.Foe)
+                {
+                    BattleFoeData foeData = (BattleFoeData)this;
+                    if(foeData.focusType == FoeFocusType.Friend)
+                    {
+                        //
+                    }
+                    else
+                    {
+                        //Get the position of All Foes
+                        List<Vector2Int> listFoePos = PublicTool.GetGameData().listTempFoePos;
+                        CheckWhetherSkillContainTarget(listTemp, listFoePos, listViewSkill, skillInfo);
+                    }
+                }
+                else
+                {
+                    //Get the position of All Foes
+                    List<Vector2Int> listFoePos = PublicTool.GetGameData().listTempFoePos;
+                    CheckWhetherSkillContainTarget(listTemp, listFoePos, listViewSkill, skillInfo);
+                }
             }
 
             if (skillInfo.isTargetCharacter)

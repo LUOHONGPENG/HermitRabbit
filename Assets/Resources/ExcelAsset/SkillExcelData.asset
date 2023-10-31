@@ -850,7 +850,7 @@ MonoBehaviour:
     costAP: 1
     costMOV: 0
     costHP: 0
-    range: 18
+    range: 30
     isRangeSelf: 0
     needExtraTarget: 0
     radius: 0

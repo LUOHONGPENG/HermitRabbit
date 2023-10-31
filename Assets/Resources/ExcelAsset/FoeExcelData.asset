@@ -113,18 +113,18 @@ MonoBehaviour:
     pixelUrl: pixelHR_Purple
   - id: 1031
     name: Interviewer_F
-    HP: 20
+    HP: 30
     ATK: 5
     DEF: 0
     RES: 1
     MOV: 0
     skillID: 9201
-    findTargetType: 0
+    findTargetType: 1
     focusType: 1
     generateType: 0
     pos0: 1
     pos1: 0
-    pixelUrl: PixelEvilBoss
+    pixelUrl: pixelHR_Black
   - id: 1032
     name: Interviewer_M
     HP: 100

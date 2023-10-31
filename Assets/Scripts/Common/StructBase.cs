@@ -124,9 +124,16 @@ public class FoeFindTargetInfo
                     break;
                 case FoeFindTargetType.Farthest:
                     temp += Mathf.RoundToInt(0 * CalculateHateHP());
-                    temp += Mathf.RoundToInt(0 * CalculateHateGCostFar());
+                    temp += Mathf.RoundToInt(2f * CalculateHateGCostFar());
+                    Debug.Log(keyID + "HateFar:" + Mathf.RoundToInt(2f * CalculateHateGCostFar()));
                     break;
             }
+
+            if(HPRate <= 0)
+            {
+                temp = -1;
+            }
+
             return temp;
         }
     }
@@ -162,7 +169,7 @@ public class FoeFindTargetInfo
         }
         else
         {
-            return Mathf.RoundToInt((GCost - 20f) / 20f * 1000f);
+            return Mathf.RoundToInt(GCost * 1000f / 20f);
         }
     }
 

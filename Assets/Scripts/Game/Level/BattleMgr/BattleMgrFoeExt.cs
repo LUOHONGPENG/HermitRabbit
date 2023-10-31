@@ -233,7 +233,7 @@ public partial class BattleMgr
 
             if(tarNode.hCostReal <= curNode.hCostReal && curNode.hCostReal > 0)
             {
-                Debug.Log(foeData.keyID +" Move cur"+ curNode.hCostReal);
+                //Debug.Log(foeData.keyID +" Move cur"+ curNode.hCostReal);
 
                 moveTargetPos = tarNode.pos;
                 moveSubjectData = gameData.GetCurUnitData();
@@ -245,7 +245,7 @@ public partial class BattleMgr
             }
             else
             {
-                Debug.Log(foeData.keyID + "DontMove cur" + curNode.hCostReal);
+                //Debug.Log(foeData.keyID + "DontMove cur" + curNode.hCostReal);
                 yield break;
             }
         }
