@@ -26,22 +26,6 @@ public partial class PublicTool
         }
     }
 
-    public static void RecalculateOccupancy()
-    {
-        if (GetGameData() != null)
-        {
-            GetGameData().RecalculateOccupancy();
-        }
-    }
-
-    public static void RecalculateSkillCover()
-    {
-        if (GetGameData() != null)
-        {
-            GetGameData().RecalculateSkillCover();
-        }
-    }
-
 
     #region RefreshUI
     public static void EventRefreshCharacterUI()
@@ -49,4 +33,10 @@ public partial class PublicTool
         EventCenter.Instance.EventTrigger("RefreshCharacterInfo", null);
     }
     #endregion
+
+    public static void PlaySound(SoundType soundType)
+    {
+        EventCenter.Instance.EventTrigger("PlaySound", soundType);
+
+    }
 }

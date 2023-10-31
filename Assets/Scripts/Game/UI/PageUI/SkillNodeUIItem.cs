@@ -76,6 +76,7 @@ public class SkillNodeUIItem : MonoBehaviour
                     characterData.SPSpent += nodeItem.costSP;
                     characterData.AcquireSkillNode(nodeItem.id);
                     EventCenter.Instance.EventTrigger("RefreshSkillTreeUI", null);
+                    PublicTool.PlaySound(SoundType.UnlockSkillNode);
                     break;
                 case NodeState.LockCondition:
                 case NodeState.NotEnoughSP:

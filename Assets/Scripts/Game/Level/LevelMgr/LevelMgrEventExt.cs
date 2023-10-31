@@ -147,6 +147,9 @@ public partial class LevelMgr
                     GameMgr.Instance.SaveGameData(SaveSlotName.Slot2);
                 }
                 break;
+            case "BackToMenu":
+                GameMgr.Instance.LoadScene(SceneName.Menu);
+                break;
         }
     }
 

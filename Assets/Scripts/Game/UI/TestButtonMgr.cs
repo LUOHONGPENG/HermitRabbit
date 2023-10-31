@@ -14,6 +14,8 @@ public class TestButtonMgr : MonoBehaviour
     public Button btnSave1;
     public Button btnSave2;
 
+    public Button btnBack;
+
     public void Init()
     {
         btnAddExp.onClick.RemoveAllListeners();
@@ -44,6 +46,12 @@ public class TestButtonMgr : MonoBehaviour
         btnSave2.onClick.AddListener(delegate ()
         {
             EventCenter.Instance.EventTrigger("TestButton", "Save2");
+        });
+
+        btnBack.onClick.RemoveAllListeners();
+        btnBack.onClick.AddListener(delegate ()
+        {
+            EventCenter.Instance.EventTrigger("TestButton", "BackToMenu");
         });
     }
 }

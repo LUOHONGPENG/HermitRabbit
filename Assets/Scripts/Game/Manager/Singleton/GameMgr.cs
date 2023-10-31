@@ -51,6 +51,9 @@ public partial class GameMgr : MonoSingleton<GameMgr>
                     LoadGameData(saveSlotName);
                 }
                 break;
+            case SceneName.Menu:
+
+                break;
         }
         SceneManager.LoadScene(GameGlobal.targetScene.ToString());
     }
