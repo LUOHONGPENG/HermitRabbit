@@ -38,7 +38,7 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: 
     unlockNodeID: 1001
-    desc: Use elemental ball to attack single foe.
+    desc: Normal attack,deal damage to single foe.
   - id: 1101
     name: Fire Ball
     costAP: 2
@@ -116,7 +116,7 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     unlockNodeID: 1201
-    desc: 
+    desc: Dodge next attack.
   - id: 1202
     name: 'Gravity '
     costAP: 2
@@ -142,7 +142,10 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     unlockNodeID: 1202
-    desc: 
+    desc: 'Magic attack that reduce movement.
+
+      Deal damage according to difference
+      of movement between source and target.'
   - id: 1301
     name: Stream
     costAP: 1
@@ -168,9 +171,9 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     unlockNodeID: 1301
-    desc: 
+    desc: Magic attack that can heal plants in the range.
   - id: 1302
-    name: Clear
+    name: Time Mending
     costAP: 1
     costMOV: 0
     costHP: 0
@@ -194,9 +197,9 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     unlockNodeID: 1302
-    desc: 
+    desc: Remove 1 debuff for an ally or remove 1 buff for foe.
   - id: 1401
-    name: Holy Thunder
+    name: Lightning Bolt
     costAP: 1
     costMOV: 0
     costHP: 0
@@ -220,7 +223,7 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     unlockNodeID: 1401
-    desc: 
+    desc: Magic attack that can be transmitted damage by water tile.
   - id: 1402
     name: Teleport
     costAP: 1
@@ -246,7 +249,7 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_1302
     unlockNodeID: 1402
-    desc: 
+    desc: Change one character or plant position.
   - id: 1901
     name: Time Expand
     costAP: 2
@@ -298,7 +301,10 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     unlockNodeID: 1902
-    desc: 
+    desc: 'Gain 3 Infinity.
+
+      Infinity can enlarge next X skills'' radius by
+      1 unit.'
   - id: 1903
     name: Final Chant
     costAP: 0
@@ -324,7 +330,7 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Default
     unlockNodeID: 1903
-    desc: 
+    desc: Increase skill range and AP but can't get Movement when turn starts.
   - id: 2001
     name: Strike
     costAP: 1
@@ -350,7 +356,7 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: 
     unlockNodeID: 2001
-    desc: Use weapon to strike a foe.
+    desc: Normal attack,deal damage to single foe.
   - id: 2101
     name: Wind Chop
     costAP: 2
@@ -402,7 +408,7 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_Default
     unlockNodeID: 2102
-    desc: 
+    desc: Gain extra AP every turn but gain burning as well.
   - id: 2201
     name: Curse
     costAP: 1
@@ -428,7 +434,7 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_Default
     unlockNodeID: 2201
-    desc: 
+    desc: The target will receive Fragile every time lost HP.
   - id: 2202
     name: Provoke
     costAP: 2
@@ -454,7 +460,7 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_Default
     unlockNodeID: 2202
-    desc: 
+    desc: Attract enemies' attack in 2 turns.
   - id: 2301
     name: Self Heal
     costAP: 1
@@ -480,7 +486,7 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_2201
     unlockNodeID: 2301
-    desc: Self Heal for 20% HP.
+    desc: Heal one character according to HP.
   - id: 2302
     name: Fish Strike
     costAP: 1
@@ -506,7 +512,8 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_Default
     unlockNodeID: 2302
-    desc: 
+    desc: Deal damage according to DEF, next strike will recover HP according to
+      damage.
   - id: 2401
     name: Rush Hour
     costAP: 1
@@ -532,7 +539,7 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_Default
     unlockNodeID: 2401
-    desc: 
+    desc: Gain 3 Movement.
   - id: 2402
     name: Inspire
     costAP: 1
@@ -584,7 +591,7 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_Default
     unlockNodeID: 2901
-    desc: 
+    desc: HP won't become 0.
   - id: 2902
     name: Super Worker
     costAP: 3
@@ -610,9 +617,9 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_Default
     unlockNodeID: 2902
-    desc: 
+    desc: Increase ATK,DEF,RES,max Movement by 1.
   - id: 2903
-    name: Self Hurt Strike
+    name: Finish Work
     costAP: 0
     costMOV: 0
     costHP: 99
@@ -636,7 +643,7 @@ MonoBehaviour:
     characterID: 1002
     iconUrl: imgIconSkill_Default
     unlockNodeID: 2903
-    desc: 
+    desc: Cost HP to deal damage, the damage will be equal to lost HP.
   - id: 3001
     name: Tadpole Strike
     costAP: 0

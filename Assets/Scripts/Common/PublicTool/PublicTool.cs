@@ -39,8 +39,9 @@ public partial class PublicTool
     public static Vector3 CalculateScreenUIPos(Vector3 objPos, Camera tarCamera)
     {
         Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(tarCamera, objPos);
-        screenPos = new Vector2(screenPos.x * 1920f / Screen.width, screenPos.y * 1080f / Screen.height);
-        Vector2 targetPos = new Vector2(screenPos.x - 1920f / 2, screenPos.y - 1080f / 2);
+        /*        screenPos = new Vector2(screenPos.x * 1920f / Screen.width, screenPos.y * 1080f / Screen.height);
+                Vector2 targetPos = new Vector2(screenPos.x - 1920f / 2, screenPos.y - 1080f / 2);*/
+        Vector2 targetPos = new Vector2(screenPos.x - Screen.width / 2, screenPos.y - Screen.height / 2);
         return new Vector3(targetPos.x, targetPos.y, 0);
     }
 

@@ -15,7 +15,7 @@ MonoBehaviour:
   items:
   - id: 1001
     name: Elemental Ball
-    desc: Normal Attack,deal ATK damage.
+    desc: Normal Attack,deal ATK damage to single foe.
     nodeType: 0
     costSP: 0
     conditionSPSpent: 0
@@ -143,7 +143,10 @@ MonoBehaviour:
     remark: 
   - id: 1202
     name: 'Gravity '
-    desc: Gravity magic attack that reduce movement.
+    desc: 'Magic attack that reduce movement.
+
+      Deal damage according to difference
+      of movement between source and target.'
     nodeType: 0
     costSP: 2
     conditionSPSpent: 0
@@ -157,7 +160,7 @@ MonoBehaviour:
     remark: 
   - id: 1301
     name: Stream
-    desc: Water magic attack that can heal plant.
+    desc: Magic attack that can heal plants in the range.
     nodeType: 0
     costSP: 2
     conditionSPSpent: 0
@@ -170,8 +173,8 @@ MonoBehaviour:
     columnID: 1
     remark: 
   - id: 1302
-    name: Clear
-    desc: Remove 1 debuff.
+    name: Time Mending
+    desc: Remove 1 debuff for an ally or remove 1 buff for foe.
     nodeType: 0
     costSP: 2
     conditionSPSpent: 0
@@ -184,8 +187,8 @@ MonoBehaviour:
     columnID: 1
     remark: 
   - id: 1401
-    name: Holy Thunder
-    desc: Electricity Attack. Water tile can transmit damage.
+    name: Lightning Bolt
+    desc: Magic attack that can be transmitted damage by water tile.
     nodeType: 0
     costSP: 2
     conditionSPSpent: 0
@@ -197,23 +200,9 @@ MonoBehaviour:
     rowID: 1
     columnID: 3
     remark: 
-  - id: 1491
-    name: Dizzy Light
-    desc: Holy Thunder will give target debuff named Dizzy.
-    nodeType: 1
-    costSP: 1
-    conditionSPSpent: 0
-    conditionPreNode: 79050000
-    conflictNode: 0
-    isInitUnlock: 0
-    characterID: 1001
-    iconUrl: imgIconSkill_Default
-    rowID: 2
-    columnID: 4
-    remark: 
   - id: 1402
     name: Teleport
-    desc: Change one unit position.
+    desc: Change one character or plant position.
     nodeType: 0
     costSP: 2
     conditionSPSpent: 0
@@ -370,7 +359,7 @@ MonoBehaviour:
     remark: 
   - id: 2291
     name: Counter
-    desc: 
+    desc: Deal damage to the unit that attack Bond.
     nodeType: 1
     costSP: 1
     conditionSPSpent: 0
@@ -496,7 +485,7 @@ MonoBehaviour:
     columnID: 2
     remark: 
   - id: 2903
-    name: Self Hurt Strike
+    name: Finish Work
     desc: Cost HP to deal damage, the damage will be equal to lost HP.
     nodeType: 0
     costSP: 3

@@ -63,6 +63,7 @@ public class BattleOptionUIMgr : MonoBehaviour
         curCharacterData = characterData;
         //Portrait Part
         imgPortrait.sprite = Resources.Load(curCharacterData.GetItem().portraitUrl, typeof(Sprite)) as Sprite;
+        imgPortrait.SetNativeSize();
         RefreshBarInfo();
         //Skill Part
         PublicTool.ClearChildItem(tfSkillButton);
