@@ -6,6 +6,8 @@ public static class GameGlobal
 {
     public static SceneName targetScene = SceneName.Menu;
 
+    public static float cameraLimit = 3.2f;
+
     //The size of a clip
     public static int mapClipSize = 3;
     //How many clip in a map

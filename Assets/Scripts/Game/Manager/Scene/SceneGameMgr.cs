@@ -22,8 +22,14 @@ public class SceneGameMgr : MonoBehaviour
         GameMgr.Instance.curUICamera = uiCamera;
         virtualCamera.Follow = cameraMgr.transform;
         virtualCamera.LookAt = cameraMgr.transform;
+
+        //Reset Phase
+        InputMgr.Instance.SetInteractState(InteractState.PeaceNormal);
         levelMgr.Init();
         uiMgr.Init(uiCamera);
+
+
+
         GameMgr.Instance.curMapCamera = mapCamera;
 
         //Set Current SceneMgr

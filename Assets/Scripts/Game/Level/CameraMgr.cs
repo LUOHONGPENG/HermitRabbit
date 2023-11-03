@@ -20,6 +20,16 @@ public class CameraMgr : MonoBehaviour
     private void CameraGoToEvent(object arg0)
     {
         Vector3 pos = (Vector3)arg0;
+        if (Mathf.Abs(pos.x) > GameGlobal.cameraLimit)
+        {
+            pos.x = GameGlobal.cameraLimit * pos.x / Mathf.Abs(pos.x);
+        }
+
+        if (Mathf.Abs(pos.z) > GameGlobal.cameraLimit)
+        {
+            pos.z = GameGlobal.cameraLimit * pos.z / Mathf.Abs(pos.z);
+        }
+
         transform.DOMove(new Vector3(pos.x, transform.position.y, pos.z),0.5f);
     }
 
@@ -55,7 +65,7 @@ public class CameraMgr : MonoBehaviour
 
     private void FixedGoStrictCamera()
     {
-        float limit = 6f;
+        float limit = GameGlobal.cameraLimit;
 
         if (transform.position.x < -limit)
         {

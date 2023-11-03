@@ -169,7 +169,7 @@ MonoBehaviour:
     listSpecialDelta: 00000000
     activeSkillType: 1
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Stream
     unlockNodeID: 1301
     desc: Magic attack that can heal plants in the range.
   - id: 1302
@@ -221,7 +221,7 @@ MonoBehaviour:
     listSpecialDelta: 00000000
     activeSkillType: 1
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Lightning
     unlockNodeID: 1401
     desc: Magic attack that can be transmitted damage by water tile.
   - id: 1402

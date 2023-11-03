@@ -133,7 +133,7 @@ public partial class MapViewMgr : MonoBehaviour
         Vector2Int hoverTileID = PublicTool.GetGameData().hoverTileID;
         bool isHover = false;
         List<Vector2Int> listHoverPos = new List<Vector2Int>();
-        if (curUnitData.listViewSkill.Contains(hoverTileID))
+        if (curUnitData != null && curUnitData.listViewSkill.Contains(hoverTileID))
         {
             isHover = true;
             switch (skillMapInfo.regionType)

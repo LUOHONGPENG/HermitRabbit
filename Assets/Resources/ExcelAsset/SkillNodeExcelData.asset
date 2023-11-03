@@ -168,7 +168,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Stream
     rowID: 1
     columnID: 1
     remark: 
@@ -196,7 +196,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Lightning
     rowID: 1
     columnID: 3
     remark: 

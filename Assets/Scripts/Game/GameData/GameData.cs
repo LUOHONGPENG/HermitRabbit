@@ -15,6 +15,7 @@ public partial class GameData
     public void NewGame()
     {
         numDay = 1;
+        gamePhase = GamePhase.Peace;
         NewGameResourceData();
         NewGameMapData();
         NewGameCharacterData();
@@ -27,6 +28,7 @@ public partial class GameData
     {
         //NeedToModify
         numDay = saveData.numDay;
+        gamePhase = GamePhase.Peace;
         LoadResourceData(saveData);
         LoadMapData(saveData);
         LoadCharacterData (saveData);
