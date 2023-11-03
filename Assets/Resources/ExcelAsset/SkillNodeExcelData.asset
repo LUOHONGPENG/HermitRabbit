@@ -137,7 +137,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_ChronalShift
     rowID: 1
     columnID: -1
     remark: 
@@ -154,7 +154,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Gravity
     rowID: 3
     columnID: -1
     remark: 
@@ -386,7 +386,7 @@ MonoBehaviour:
     columnID: -1
     remark: 
   - id: 2301
-    name: Self Heal
+    name: Take a Nap
     desc: Heal one character according to HP.
     nodeType: 0
     costSP: 2
@@ -395,12 +395,12 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Rest
     rowID: 1
     columnID: 1
     remark: 
   - id: 2302
-    name: Fish Strike
+    name: Fish Drat
     desc: Deal damage according to DEF, next strike will recover HP according to
       damage.
     nodeType: 0
@@ -410,7 +410,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_FishDrat
     rowID: 3
     columnID: 1
     remark: 

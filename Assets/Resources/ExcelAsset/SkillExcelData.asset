@@ -114,7 +114,7 @@ MonoBehaviour:
     listSpecialDelta: 00000000
     activeSkillType: 2
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_ChronalShift
     unlockNodeID: 1201
     desc: Dodge next attack.
   - id: 1202
@@ -140,7 +140,7 @@ MonoBehaviour:
     listSpecialDelta: 01000000
     activeSkillType: 1
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Gravity
     unlockNodeID: 1202
     desc: 'Magic attack that reduce movement.
 
@@ -462,7 +462,7 @@ MonoBehaviour:
     unlockNodeID: 2202
     desc: Attract enemies' attack in 2 turns.
   - id: 2301
-    name: Self Heal
+    name: Take a Nap
     costAP: 1
     costMOV: 0
     costHP: 0
@@ -484,11 +484,11 @@ MonoBehaviour:
     listSpecialDelta: 00000000
     activeSkillType: 2
     characterID: 1002
-    iconUrl: imgIconSkill_2201
+    iconUrl: imgIconSkill_Rest
     unlockNodeID: 2301
     desc: Heal one character according to HP.
   - id: 2302
-    name: Fish Strike
+    name: Fish Drat
     costAP: 1
     costMOV: 0
     costHP: 0
@@ -510,7 +510,7 @@ MonoBehaviour:
     listSpecialDelta: 01000000
     activeSkillType: 1
     characterID: 1002
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_FishDrat
     unlockNodeID: 2302
     desc: Deal damage according to DEF, next strike will recover HP according to
       damage.
