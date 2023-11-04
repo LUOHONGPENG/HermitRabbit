@@ -27,8 +27,7 @@ public class SceneGameMgr : MonoBehaviour
         InputMgr.Instance.SetInteractState(InteractState.PeaceNormal);
         levelMgr.Init();
         uiMgr.Init(uiCamera);
-
-
+        lightMgr.Init();
 
         GameMgr.Instance.curMapCamera = mapCamera;
 

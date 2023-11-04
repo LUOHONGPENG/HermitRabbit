@@ -10,6 +10,17 @@ public partial class PublicTool
         EventCenter.Instance.EventTrigger("CameraGoTo", targetPos);
     }
 
+    public static void EventSpotCharacterShow(Vector2Int posID)
+    {
+        Vector3 targetPos = ConvertPosFromID(posID);
+        EventCenter.Instance.EventTrigger("SpotLightShowEvent", targetPos);
+    }
+
+    public static void EventSpotCharacterHide()
+    {
+        EventCenter.Instance.EventTrigger("SpotLightHideEvent", null);
+    }
+
     public static void EventChangeInteract(InteractState state, int data_0=-1)
     {
         Debug.Log("ChangeState " + state);
@@ -20,12 +31,18 @@ public partial class PublicTool
                 if (data_0 > 0)
                 {
                     GetGameData().SetCurBattleSkill(data_0);
-                    EventReadyAni(GetGameData().GetCurUnitInfo().keyID);
                 }
+                EventReadyAni(GetGameData().GetCurUnitInfo().keyID);
+                EventSpotCharacterShow(GetGameData().GetCurUnitData().posID);
                 RecalculateSkillCover();
                 break;
             case InteractState.CharacterMove:
                 EventReadyAni(-1);
+                EventSpotCharacterShow(GetGameData().GetCurUnitData().posID);
+                break;
+            case InteractState.PeaceNormal:
+            case InteractState.WaitAction:
+                EventSpotCharacterHide();
                 break;
         }
     }
@@ -34,6 +51,8 @@ public partial class PublicTool
     {
         EventCenter.Instance.EventTrigger("CharacterReadyAni", ID);
     }
+
+
 
     #region RefreshUI
     public static void EventRefreshCharacterUI()
