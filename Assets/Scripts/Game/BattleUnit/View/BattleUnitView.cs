@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class BattleUnitView : MonoBehaviour
+
+
+public partial class BattleUnitView : MonoBehaviour
 {
     public SpriteRenderer srUnit;
     public Collider colUnit;

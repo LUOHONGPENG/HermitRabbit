@@ -20,12 +20,20 @@ public partial class PublicTool
                 if (data_0 > 0)
                 {
                     GetGameData().SetCurBattleSkill(data_0);
+                    EventReadyAni(GetGameData().GetCurUnitInfo().keyID);
                 }
                 RecalculateSkillCover();
+                break;
+            case InteractState.CharacterMove:
+                EventReadyAni(-1);
                 break;
         }
     }
 
+    public static void EventReadyAni(int ID)
+    {
+        EventCenter.Instance.EventTrigger("CharacterReadyAni", ID);
+    }
 
     #region RefreshUI
     public static void EventRefreshCharacterUI()

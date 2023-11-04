@@ -24,6 +24,7 @@ MonoBehaviour:
     AttackID: 1001
     startPos: 0100000000000000
     pixelUrl: pc_Leo_Idle
+    aniUrl: ani_pc_Leo
     portraitUrl: Sprite/Portrait/imgPortrait1001
   - id: 1002
     name: Kizuna
@@ -36,4 +37,5 @@ MonoBehaviour:
     AttackID: 2001
     startPos: 0200000000000000
     pixelUrl: PixelAlfven
+    aniUrl: 
     portraitUrl: Sprite/Portrait/imgAlfvenFullUI

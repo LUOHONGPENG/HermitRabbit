@@ -18,6 +18,7 @@ public class BattleInterfaceUIMgr : MonoBehaviour
         btnEndTurn.onClick.AddListener(delegate() {
             EventCenter.Instance.EventTrigger("CharacterPhaseEnd", null);
             HideEndTurnBtn();
+            PublicTool.EventReadyAni(-1);
         });
     }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BattleCharacterView : BattleUnitView
@@ -15,13 +16,27 @@ public class BattleCharacterView : BattleUnitView
     {
         this.characterData = characterData;
         this.unitData = characterData;
+        CharacterExcelItem excelItem = characterData.GetItem();
 
         CommonInit();
 
-        srUnit.sprite = Resources.Load("Sprite/Character/"+characterData.GetItem().pixelUrl, typeof(Sprite)) as Sprite;
+
+        if (excelItem.aniUrl.Length > 1)
+        {
+            aniUnit.runtimeAnimatorController = Resources.Load("Ani/Character/" + excelItem.aniUrl) as RuntimeAnimatorController;
+            ChangeAniState(UnitAniState.Idle);
+
+        }
+        else
+        {
+            srUnit.sprite = Resources.Load("Sprite/Character/" + excelItem.pixelUrl, typeof(Sprite)) as Sprite;
+        }
+
         MoveToPos();
         isInit = true;
 
     }
+
+    
 
 }

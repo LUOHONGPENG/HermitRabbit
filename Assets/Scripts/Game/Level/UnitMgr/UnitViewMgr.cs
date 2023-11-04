@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class UnitViewMgr : MonoBehaviour
+public partial class UnitViewMgr : MonoBehaviour
 {
     [Header("Character")]
     public Transform tfCharacter;
