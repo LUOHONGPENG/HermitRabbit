@@ -14,6 +14,7 @@ public partial class BattleMgr
     private Dictionary<int, BattleFoeData> dicFoeSkillTarget = new Dictionary<int, BattleFoeData>();
     private Dictionary<int, BattleCharacterData> dicCharacterSkillTarget = new Dictionary<int, BattleCharacterData>();
     private Dictionary<int, BattlePlantData> dicPlantSkillTarget = new Dictionary<int, BattlePlantData>();
+    //Contain all position of all kind of target
     private Dictionary<Vector2Int, BattleUnitData> dicPosEffectTarget = new Dictionary<Vector2Int, BattleUnitData>();
 
     #region BattleExtraTarget
@@ -75,6 +76,7 @@ public partial class BattleMgr
         yield return StartCoroutine(IE_ExecuteSkillCost());
         yield return StartCoroutine(IE_FindSkillTarget());
         yield return StartCoroutine(IE_InvokeSkillData());
+        yield return StartCoroutine(IE_InvokeSkillPerform());
         yield return StartCoroutine(InvokeSkillText());
         //The 0.6 second is hard code and need to be mofidied
         yield return new WaitForSeconds(GameGlobal.waitTimeText);
@@ -176,7 +178,6 @@ public partial class BattleMgr
 
     private IEnumerator IE_InvokeSkillData()
     {
-
         //Deal Effect
         foreach (var item in dicFoeSkillTarget)
         {

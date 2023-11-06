@@ -5,7 +5,9 @@ using UnityEngine;
 public enum UnitAniState
 {
     Idle,
-    Ready
+    Ready,
+    Focus,
+    Attack
 }
 
 
