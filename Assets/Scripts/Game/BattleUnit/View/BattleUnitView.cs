@@ -89,7 +89,7 @@ public partial class BattleUnitView : MonoBehaviour
     }
 
 
-    #region Effect
+    #region TextEffect
     public bool isExecutingBattleText = false;
 
     public void RequestBattleText()
@@ -108,13 +108,34 @@ public partial class BattleUnitView : MonoBehaviour
         {
             EffectBattleTextInfo info = queueInfo.Dequeue();
             EventCenter.Instance.EventTrigger("EffectBattleText", info);
+            if(info.type == BattleTextType.Damage)
+            {
+                StartCoroutine(IE_DamageSpriteEffect());
+            }
             if (queueInfo.Count > 0)
             {
+                
                 yield return new WaitForSeconds(0.2f);
             }
         }
         isExecutingBattleText = false;
     }
     #endregion
+
+    #region DamageEffect
+
+    public IEnumerator IE_DamageSpriteEffect()
+    {
+        srUnit.transform.DOLocalMoveX(-0.1f, 0.2f);
+        srUnit.DOColor(new Color(1f, 0, 0), 0.2f);
+        yield return new WaitForSeconds(0.2f);
+        srUnit.transform.DOLocalMoveX(0f, 0.2f);
+        srUnit.DOColor(new Color(1F, 1F, 1F), 0.2f);
+    }
+
+
+
+    #endregion
+
 
 }
