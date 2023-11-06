@@ -37,5 +37,5 @@ MonoBehaviour:
     AttackID: 2001
     startPos: 0200000000000000
     pixelUrl: pc_Ward_Idle
-    aniUrl: 
+    aniUrl: ani_pc_Ward
     portraitUrl: imgPortrait1002
