@@ -224,6 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 478286759642687625}
   - component: {fileID: 3376917952341799938}
+  - component: {fileID: 8656208927719190563}
   m_Layer: 7
   m_Name: BattleFoeView
   m_TagString: Untagged
@@ -265,8 +266,23 @@ MonoBehaviour:
   srUnit: {fileID: 4836553884627609968}
   colUnit: {fileID: 3796949843556953485}
   uiView: {fileID: 8055682795552149834}
+  cameraAdjustMgr: {fileID: 8656208927719190563}
   isExecutingBattleText: 0
   aniUnit: {fileID: 0}
+--- !u!114 &8656208927719190563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8408593359070805061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5cfbb8ea5a8aa42bb889d21b3d0905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tfGroup: {fileID: 3326377913381699684}
+  isInit: 0
 --- !u!1001 &9114872818436997082
 PrefabInstance:
   m_ObjectHideFlags: 0

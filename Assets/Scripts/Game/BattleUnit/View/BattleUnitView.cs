@@ -14,6 +14,8 @@ public partial class BattleUnitView : MonoBehaviour
     public BattleUnitData unitData;
     public BattleUnitUIView uiView;
 
+    public CameraGridAdjustMgr cameraAdjustMgr;
+
     protected bool isInit = false;
 
     public void CommonInit()
@@ -22,6 +24,8 @@ public partial class BattleUnitView : MonoBehaviour
         {
             uiView.Init(this);
         }
+
+        cameraAdjustMgr.Init();
     }
 
     #region Basic Function
@@ -52,21 +56,7 @@ public partial class BattleUnitView : MonoBehaviour
     #region Update Component Pos
     private void LateUpdate()
     {
-        RefreshUnitSpriteDirection();
         RefreshUnitUIPos();
-    }
-
-    private void RefreshUnitSpriteDirection()
-    {
-        //Calculate the position between camera and unit to adjust the relative position of the character
-        Vector2 cameraPos = new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.z);
-        Vector2 thisPos = new Vector2(this.transform.position.x, this.transform.position.z);
-        Vector2 direction = cameraPos - thisPos;
-        direction.Normalize();
-        tfSr.localPosition = new Vector3(direction.x * 0.2f, 0, direction.y * 0.2f);
-
-        //Adjust the Face of the unit
-        tfSr.LookAt(Camera.main.transform.forward + tfSr.position);
     }
 
     private void RefreshUnitUIPos()

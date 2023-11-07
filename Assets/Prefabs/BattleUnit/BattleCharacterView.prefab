@@ -108,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6158713310601416999}
   - component: {fileID: 5466562571981041883}
+  - component: {fileID: 4846201502706155057}
   m_Layer: 7
   m_Name: BattleCharacterView
   m_TagString: Untagged
@@ -150,9 +151,24 @@ MonoBehaviour:
   srUnit: {fileID: 1208642847756767454}
   colUnit: {fileID: 7451886893235934243}
   uiView: {fileID: 201154721754946207}
+  cameraAdjustMgr: {fileID: 4846201502706155057}
   isExecutingBattleText: 0
   aniUnit: {fileID: 7238994900280822063}
   effectSpinBallMgr: {fileID: 9056244243340858594}
+--- !u!114 &4846201502706155057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840154508100093419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5cfbb8ea5a8aa42bb889d21b3d0905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tfGroup: {fileID: 5302396394035285266}
+  isInit: 0
 --- !u!1 &6506263540170410504
 GameObject:
   m_ObjectHideFlags: 0

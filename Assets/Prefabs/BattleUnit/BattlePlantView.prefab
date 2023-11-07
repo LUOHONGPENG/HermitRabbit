@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3876200555076582322}
   - component: {fileID: 374848731423849592}
+  - component: {fileID: 3793628610380390414}
   m_Layer: 7
   m_Name: BattlePlantView
   m_TagString: Untagged
@@ -135,8 +136,23 @@ MonoBehaviour:
   srUnit: {fileID: 8103898475710069323}
   colUnit: {fileID: 565563886857322166}
   uiView: {fileID: 7763994225927461417}
+  cameraAdjustMgr: {fileID: 3793628610380390414}
   isExecutingBattleText: 0
   aniUnit: {fileID: 0}
+--- !u!114 &3793628610380390414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5177278666146262910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5cfbb8ea5a8aa42bb889d21b3d0905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tfGroup: {fileID: 8745229334910788036}
+  isInit: 0
 --- !u!1 &6231447573592484435
 GameObject:
   m_ObjectHideFlags: 0
