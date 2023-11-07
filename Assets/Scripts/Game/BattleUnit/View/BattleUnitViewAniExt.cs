@@ -15,7 +15,7 @@ public partial class BattleUnitView
 {
     public Animator aniUnit;
 
-    public void ChangeAniState(UnitAniState state)
+    public virtual void ChangeAniState(UnitAniState state)
     {
         if(aniUnit != null)
         {

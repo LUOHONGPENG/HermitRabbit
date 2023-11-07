@@ -6,6 +6,8 @@ using UnityEngine;
 public class BattleCharacterView : BattleUnitView
 {
     public BattleCharacterData characterData;
+    public EffectSpinBallMgr effectSpinBallMgr;
+
 
     public int GetTypeID()
     {
@@ -25,7 +27,6 @@ public class BattleCharacterView : BattleUnitView
         {
             aniUnit.runtimeAnimatorController = Resources.Load("Ani/Character/" + excelItem.aniUrl) as RuntimeAnimatorController;
             ChangeAniState(UnitAniState.Idle);
-
         }
         else
         {
@@ -33,10 +34,32 @@ public class BattleCharacterView : BattleUnitView
         }
 
         MoveToPos();
+
+        //Effect
+        effectSpinBallMgr.Init();
+
         isInit = true;
 
     }
 
-    
+    public override void ChangeAniState(UnitAniState state)
+    {
+        base.ChangeAniState(state);
+
+        //Ball
+        if (state == UnitAniState.Ready)
+        {
+            if(GetTypeID() == 1001)
+            {
+                effectSpinBallMgr.ShowBall();
+            }
+        }
+        else
+        {
+            effectSpinBallMgr.HideBall();
+        }
+
+    }
+
 
 }

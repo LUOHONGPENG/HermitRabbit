@@ -151,6 +151,7 @@ MonoBehaviour:
   uiView: {fileID: 201154721754946207}
   isExecutingBattleText: 0
   aniUnit: {fileID: 7238994900280822063}
+  effectSpinBallMgr: {fileID: 5967865528363990776}
 --- !u!1 &6506263540170410504
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +286,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4804114641269801611}
+  - {fileID: 8683601451818173799}
   m_Father: {fileID: 6158713310601416999}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -374,4 +376,91 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3909679645753981302, guid: dad56963f2bf9ba408f37b0aebb8122c,
     type: 3}
   m_PrefabInstance: {fileID: 1405023561441670159}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8047694314549845034
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5302396394035285266}
+    m_Modifications:
+    - target: {fileID: 1370134261789238778, guid: deb769d3a6f2c1347a7abed6340b5eda,
+        type: 3}
+      propertyPath: m_Name
+      value: EffectSpinBallMgr
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670130487653095757, guid: deb769d3a6f2c1347a7abed6340b5eda,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670130487653095757, guid: deb769d3a6f2c1347a7abed6340b5eda,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670130487653095757, guid: deb769d3a6f2c1347a7abed6340b5eda,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670130487653095757, guid: deb769d3a6f2c1347a7abed6340b5eda,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670130487653095757, guid: deb769d3a6f2c1347a7abed6340b5eda,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670130487653095757, guid: deb769d3a6f2c1347a7abed6340b5eda,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670130487653095757, guid: deb769d3a6f2c1347a7abed6340b5eda,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670130487653095757, guid: deb769d3a6f2c1347a7abed6340b5eda,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670130487653095757, guid: deb769d3a6f2c1347a7abed6340b5eda,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670130487653095757, guid: deb769d3a6f2c1347a7abed6340b5eda,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670130487653095757, guid: deb769d3a6f2c1347a7abed6340b5eda,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: deb769d3a6f2c1347a7abed6340b5eda, type: 3}
+--- !u!114 &5967865528363990776 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4430760568777056978, guid: deb769d3a6f2c1347a7abed6340b5eda,
+    type: 3}
+  m_PrefabInstance: {fileID: 8047694314549845034}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f675d9aaf37e6a42a1803eb4d368c3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &8683601451818173799 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1670130487653095757, guid: deb769d3a6f2c1347a7abed6340b5eda,
+    type: 3}
+  m_PrefabInstance: {fileID: 8047694314549845034}
   m_PrefabAsset: {fileID: 0}
