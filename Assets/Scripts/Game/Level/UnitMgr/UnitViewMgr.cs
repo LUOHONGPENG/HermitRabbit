@@ -24,9 +24,8 @@ public partial class UnitViewMgr : MonoBehaviour
     public List<BattleFoeView> listFoeView = new List<BattleFoeView>();
     public Dictionary<int, BattleFoeView> dicFoeView = new Dictionary<int, BattleFoeView>();
 
-
     private GameData gameData;
-    private bool isInit = false;
+    private bool isInit = false; 
 
     #region Bind
     public void Init()

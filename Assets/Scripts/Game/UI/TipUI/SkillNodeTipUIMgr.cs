@@ -8,6 +8,7 @@ public class SkillNodeTipUIMgr : MonoBehaviour
     public GameObject objPopup;
     public Transform tfMouse;
     public Text codeName;
+    public Text codeType;
     public Text codeDesc;
 
     private int curNodeID;
@@ -18,6 +19,15 @@ public class SkillNodeTipUIMgr : MonoBehaviour
         {
             SkillNodeExcelItem nodeExcelItem = PublicTool.GetSkillNodeItem(nodeID);
             codeName.text = nodeExcelItem.name;
+            if(nodeExcelItem.nodeType == SkillNodeType.Active)
+            {
+                SkillExcelItem skillItem = PublicTool.GetSkillItem(nodeExcelItem.id);
+                codeType.text = skillItem.activeSkillType.ToString();
+            }
+            else
+            {
+                codeType.text = nodeExcelItem.nodeType.ToString();
+            }
             codeDesc.text = nodeExcelItem.desc;
         }
         tfMouse.position = new Vector3(mousePos.x,mousePos.y,tfMouse.transform.position.z);
