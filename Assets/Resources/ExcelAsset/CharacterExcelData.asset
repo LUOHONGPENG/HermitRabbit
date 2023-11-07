@@ -26,8 +26,9 @@ MonoBehaviour:
     pixelUrl: pc_Leo_Idle
     aniUrl: ani_pc_Leo
     portraitUrl: imgPortrait1001
+    iconUrl: pc_Leo_Icon
   - id: 1002
-    name: Kizuna
+    name: Ward
     HP: 12
     ATK: 6
     DEF: 2
@@ -39,3 +40,4 @@ MonoBehaviour:
     pixelUrl: pc_Ward_Idle
     aniUrl: ani_pc_Ward
     portraitUrl: imgPortrait1002
+    iconUrl: pc_Ward_Icon

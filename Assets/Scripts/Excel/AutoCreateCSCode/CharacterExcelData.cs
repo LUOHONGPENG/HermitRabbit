@@ -20,6 +20,7 @@ public partial class CharacterExcelItem : ExcelItemBase
 	public string pixelUrl;
 	public string aniUrl;
 	public string portraitUrl;
+	public string iconUrl;
 }
 
 [CreateAssetMenu(fileName = "CharacterExcelData", menuName = "Excel To ScriptableObject/Create CharacterExcelData", order = 1)]
@@ -52,6 +53,7 @@ public class CharacterAssetAssignment
 			items[i].pixelUrl = allItemValueRowList[i]["pixelUrl"];
 			items[i].aniUrl = allItemValueRowList[i]["aniUrl"];
 			items[i].portraitUrl = allItemValueRowList[i]["portraitUrl"];
+			items[i].iconUrl = allItemValueRowList[i]["iconUrl"];
 		}
 		CharacterExcelData excelDataAsset = ScriptableObject.CreateInstance<CharacterExcelData>();
 		excelDataAsset.items = items;

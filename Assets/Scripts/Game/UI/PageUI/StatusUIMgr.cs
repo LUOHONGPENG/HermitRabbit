@@ -9,6 +9,9 @@ public class StatusUIMgr : MonoBehaviour
 {
     [Header("Basic")]
     public GameObject objPopup;
+    public Image imgBtn1001;
+    public Image imgBtn1002;
+
     public Button btnChoose1001;
     public Button btnChoose1002;
     public Button btnClose;
@@ -47,12 +50,16 @@ public class StatusUIMgr : MonoBehaviour
             HidePopup();
         });
 
+        imgBtn1001.sprite = Resources.Load("Sprite/CharacterIcon/" + PublicTool.GetCharacterExcelItem(1001).iconUrl, typeof(Sprite)) as Sprite;
+        imgBtn1002.sprite = Resources.Load("Sprite/CharacterIcon/" + PublicTool.GetCharacterExcelItem(1002).iconUrl, typeof(Sprite)) as Sprite;
+
         btnChoose1001.onClick.RemoveAllListeners();
         btnChoose1001.onClick.AddListener(delegate ()
         {
             characterData = PublicTool.GetGameData().GetBattleCharacterData(1001);
             RefreshCharacterInfo();
         });
+
 
         btnChoose1002.onClick.RemoveAllListeners();
         btnChoose1002.onClick.AddListener(delegate ()
@@ -67,6 +74,8 @@ public class StatusUIMgr : MonoBehaviour
             characterData.ResetSkillNode();
             RefreshCharacterInfo();
         });
+
+
     }
 
     #region BasicShowHide

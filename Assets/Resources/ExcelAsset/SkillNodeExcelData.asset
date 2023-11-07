@@ -56,7 +56,7 @@ MonoBehaviour:
     columnID: -2
     remark: 
   - id: 1101
-    name: Inferno
+    name: Fire Ball
     desc: 'Target all units and deal ATK+2 damage,
 
       with one level burning.'
@@ -73,7 +73,7 @@ MonoBehaviour:
     remark: 
   - id: 1191
     name: Quick Fire
-    desc: AP Cost of Inferno - 1, but damage - 4.
+    desc: AP Cost of Fire Ball - 1, but damage - 4.
     nodeType: 1
     costSP: 1
     conditionSPSpent: 0
@@ -87,7 +87,7 @@ MonoBehaviour:
     remark: 
   - id: 1192
     name: Field of Scorch
-    desc: Skill Radius of Inferno + 1,but damage reduce 25%.
+    desc: Skill Radius of Fire Ball + 1,but damage reduce 25%.
     nodeType: 1
     costSP: 1
     conditionSPSpent: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
     remark: 
   - id: 1193
     name: Confocal
-    desc: Inferno will cost all AP, each extra AP deal more damage.
+    desc: Fire Ball will cost all AP, each extra AP deal more damage.
     nodeType: 1
     costSP: 1
     conditionSPSpent: 0

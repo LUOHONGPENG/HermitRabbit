@@ -53,7 +53,7 @@ MonoBehaviour:
   objPopup: {fileID: 3627028995897750336}
   tfMouse: {fileID: 237420550550570610}
   codeName: {fileID: 541347690530416409}
-  codeType: {fileID: 0}
+  codeType: {fileID: 2781592763426859809}
   codeDesc: {fileID: 2582996679430170254}
 --- !u!1 &3627028995897750336
 GameObject:

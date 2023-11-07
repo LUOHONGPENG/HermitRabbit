@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BattleMiniCharacterUIItem : MonoBehaviour
 {
     public Button btnBg;
+
+    public Text codeName;
+    public Image imgIcon;
 
     public Image imgFillHP;
     public Image imgFillAP;
@@ -25,6 +29,11 @@ public class BattleMiniCharacterUIItem : MonoBehaviour
                 EventCenter.Instance.EventTrigger("InputChooseCharacter", characterData.typeID);
             }
         });
+
+        CharacterExcelItem item = PublicTool.GetCharacterExcelItem(characterData.typeID);
+
+        codeName.text = item.name;
+        imgIcon.sprite = Resources.Load("Sprite/CharacterIcon/" + item.iconUrl, typeof(Sprite)) as Sprite;
 
         RefreshUI();
     }

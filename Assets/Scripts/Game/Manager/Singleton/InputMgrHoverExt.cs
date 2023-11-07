@@ -88,6 +88,7 @@ public partial class InputMgr
     /// <returns></returns>
     private bool CheckWhetherHoverUI()
     {
+        //Check Whether Click UI
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
         {
             return true;

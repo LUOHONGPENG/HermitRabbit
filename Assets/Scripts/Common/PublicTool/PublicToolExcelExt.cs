@@ -22,6 +22,12 @@ public partial class PublicTool
         return ExcelDataMgr.Instance.skillNodeExcelData.GetExcelItem(nodeID);
     }
 
+    public static CharacterExcelItem GetCharacterExcelItem(int characterID)
+    {
+        return ExcelDataMgr.Instance.characterExcelData.GetExcelItem(characterID);
+    }
+
+
     public static FoeExcelItem GetFoeExcelItem(int foeID)
     {
         return ExcelDataMgr.Instance.foeExcelData.GetExcelItem(foeID);
