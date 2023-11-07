@@ -51,7 +51,7 @@ public class BattleCharacterView : BattleUnitView
         {
             if(GetTypeID() == 1001)
             {
-                effectSpinBallMgr.ShowBall();
+                effectSpinBallMgr.ShowBall(PublicTool.GetGameData().GetCurSkillBattleInfo().ID);
             }
         }
         else

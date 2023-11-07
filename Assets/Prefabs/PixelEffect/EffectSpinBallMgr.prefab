@@ -151,6 +151,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EffectSpinBallItem (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3394358018800462270, guid: bcdca7a424e998e4185877f7095944f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6258017731800542517, guid: bcdca7a424e998e4185877f7095944f3,
         type: 3}
       propertyPath: m_RootOrder
@@ -238,6 +243,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EffectSpinBallItem (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3394358018800462270, guid: bcdca7a424e998e4185877f7095944f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6258017731800542517, guid: bcdca7a424e998e4185877f7095944f3,
         type: 3}
       propertyPath: m_RootOrder
@@ -324,6 +334,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EffectSpinBallItem (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394358018800462270, guid: bcdca7a424e998e4185877f7095944f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6258017731800542517, guid: bcdca7a424e998e4185877f7095944f3,
         type: 3}

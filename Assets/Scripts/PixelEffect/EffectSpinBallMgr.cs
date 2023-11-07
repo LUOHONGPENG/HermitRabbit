@@ -8,6 +8,8 @@ public class EffectSpinBallMgr : MonoBehaviour
 
     public List<EffectSpinBallItem> listSpinBall = new List<EffectSpinBallItem>();
 
+    
+
     public void Init()
     {
         foreach(var item in listSpinBall)
@@ -16,8 +18,13 @@ public class EffectSpinBallMgr : MonoBehaviour
         }
     }
 
-    public void ShowBall()
+    public void ShowBall(int skillID)
     {
+        foreach (var item in listSpinBall)
+        {
+            item.SetBall(skillID);
+        }
+
         tfBall.gameObject.SetActive(true);
     }
 
