@@ -8,7 +8,8 @@ public class EffectSpinBallMgr : MonoBehaviour
 
     public List<EffectSpinBallItem> listSpinBall = new List<EffectSpinBallItem>();
 
-    
+    public CameraGridAdjustMgr cameraAdjustMgr;
+
 
     public void Init()
     {
@@ -16,6 +17,8 @@ public class EffectSpinBallMgr : MonoBehaviour
         {
             item.Init();
         }
+
+        cameraAdjustMgr.Init();
     }
 
     public void ShowBall(int skillID)

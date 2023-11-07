@@ -29,7 +29,7 @@ public partial class BattleUnitView : MonoBehaviour
     {
         Vector2Int targetPosID = unitData.posID;
         Vector3 tilePos = PublicTool.ConvertPosFromID(targetPosID);
-        this.transform.localPosition = new Vector3(tilePos.x, 0.35f, tilePos.z);
+        this.transform.localPosition = new Vector3(tilePos.x, GameGlobal.commonUnitPosY, tilePos.z);
     }
 
     public IEnumerator IE_MovePath(List<Vector2Int> path)
@@ -37,7 +37,7 @@ public partial class BattleUnitView : MonoBehaviour
         for (int i = 1; i < path.Count; i++)
         {
             Vector3 tilePos = PublicTool.ConvertPosFromID(path[i]);
-            this.transform.DOLocalMove(new Vector3(tilePos.x, 0.35f, tilePos.z), 0.2f);
+            this.transform.DOLocalMove(new Vector3(tilePos.x, GameGlobal.commonUnitPosY, tilePos.z), 0.2f);
             PublicTool.EventCameraGoPosID(path[i]);
             yield return new WaitForSeconds(0.2f);
         }

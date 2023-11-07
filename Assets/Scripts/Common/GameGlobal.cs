@@ -10,6 +10,7 @@ public static class GameGlobal
 
     //The size of a clip
     public static int mapClipSize = 3;
+    public static float commonUnitPosY = 0.35f;
     //How many clip in a map
     public static int mapClipNumX = 3;
     public static int mapClipNumY = 3;

@@ -8,7 +8,6 @@ public class BattleCharacterView : BattleUnitView
     public BattleCharacterData characterData;
     public EffectSpinBallMgr effectSpinBallMgr;
 
-
     public int GetTypeID()
     {
         return characterData.GetTypeID();
