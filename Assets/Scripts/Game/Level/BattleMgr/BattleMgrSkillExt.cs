@@ -75,8 +75,9 @@ public partial class BattleMgr
         yield return StartCoroutine(IE_CheckPlantBeforeSkill());
         yield return StartCoroutine(IE_ExecuteSkillCost());
         yield return StartCoroutine(IE_FindSkillTarget());
-        yield return StartCoroutine(IE_InvokeSkillData());
+        EventCenter.Instance.EventTrigger("EffectSkillName", skillBattleInfo.name);
         yield return StartCoroutine(IE_InvokeSkillPerform());
+        yield return StartCoroutine(IE_InvokeSkillData());
         yield return StartCoroutine(InvokeSkillText());
         //The 0.6 second is hard code and need to be mofidied
         yield return new WaitForSeconds(GameGlobal.waitTimeText);
@@ -202,7 +203,6 @@ public partial class BattleMgr
     private IEnumerator InvokeSkillText()
     {
         //Show the Skill information on the top
-        EventCenter.Instance.EventTrigger("EffectSkillName", skillBattleInfo.name);
 
         //Change dicFoeSkillTarget to gameData.dicFoe
         //Because maybe not only the targets are affected by skill

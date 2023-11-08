@@ -6,24 +6,43 @@ public partial class BattleMgr
 {
     private IEnumerator IE_InvokeSkillPerform()
     {
-        InvokeSkillEffect();
+        List<SkillPerformInfo> listPerform = PublicTool.GetSkillPerformInfo(skillBattleInfo.ID);
+        if (listPerform != null)
+        {
+            for(int i = 0; i < listPerform.Count; i++)
+            {
+                SkillPerformInfo performInfo = listPerform[i];
+                switch (performInfo.infoType)
+                {
+                    case SkillPerformInfoType.SubjectAni:
+                        StartCoroutine(IE_SubjectAniPerform(performInfo.unitAniState, performInfo.startTime));
+                        break;
+                    case SkillPerformInfoType.EffectView:
+                        StartCoroutine(IE_SkillEffectView(performInfo.effectViewType, performInfo.startTime));
+                        break;
+                }
+
+            }
+        }
+        float waitTime = PublicTool.GetSkillPerformTotalTime(skillBattleInfo.ID);
+        yield return new WaitForSeconds(waitTime);
+    }
+
+    private IEnumerator IE_SubjectAniPerform(UnitAniState state,float startTime)
+    {
         if (skillSubject.battleUnitType == BattleUnitType.Character)
         {
-            yield return StartCoroutine(IE_CharacterSkillPerform());
+            Debug.Log(state + " " + startTime);
+            yield return new WaitForSeconds(startTime);
+            BattleCharacterView characterView = unitViewMgr.GetCharacterView(skillSubject.keyID);
+            characterView.ChangeAniState(state);
         }
         yield break;
     }
 
-    private IEnumerator IE_CharacterSkillPerform()
+    private IEnumerator IE_SkillEffectView(EffectViewType viewType,float startTime)
     {
-        BattleCharacterView characterView = unitViewMgr.GetCharacterView(skillSubject.keyID);
-        characterView.ChangeAniState(UnitAniState.Focus);
-        yield return new WaitForSeconds(0.5f);
-        characterView.ChangeAniState(UnitAniState.Attack);
-    }
-
-    private void InvokeSkillEffect()
-    {
-        EventCenter.Instance.EventTrigger("EffectViewGenerate", new EffectViewInfo(EffectViewType.FireBall, skillTargetPos));
+        yield return new WaitForSeconds(startTime);
+        EventCenter.Instance.EventTrigger("EffectViewGenerate", new EffectViewInfo(viewType, skillTargetPos));
     }
 }

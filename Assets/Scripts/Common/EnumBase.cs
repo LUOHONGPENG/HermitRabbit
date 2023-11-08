@@ -228,6 +228,11 @@ public enum EffectViewType
     FireBall
 }
 
+public enum SkillPerformInfoType
+{
+    SubjectAni,
+    EffectView
+}
 
 #endregion
 

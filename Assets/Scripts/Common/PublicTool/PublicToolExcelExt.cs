@@ -22,6 +22,31 @@ public partial class PublicTool
         return ExcelDataMgr.Instance.skillNodeExcelData.GetExcelItem(nodeID);
     }
 
+    public static List<SkillPerformInfo> GetSkillPerformInfo(int skillID)
+    {
+        if (ExcelDataMgr.Instance.skillPerformExcelData.dicSkillPerformInfo.ContainsKey(skillID))
+        {
+            return ExcelDataMgr.Instance.skillPerformExcelData.dicSkillPerformInfo[skillID];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public static float GetSkillPerformTotalTime(int skillID)
+    {
+        if (ExcelDataMgr.Instance.skillPerformExcelData.dicSkillPerformTotalTime.ContainsKey(skillID))
+        {
+            return ExcelDataMgr.Instance.skillPerformExcelData.dicSkillPerformTotalTime[skillID];
+        }
+        else
+        {
+            return 0.5F;
+        }
+    }
+
+
     public static CharacterExcelItem GetCharacterExcelItem(int characterID)
     {
         return ExcelDataMgr.Instance.characterExcelData.GetExcelItem(characterID);

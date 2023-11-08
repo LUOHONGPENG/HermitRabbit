@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2300c0029406ebe469a8587ec19d456b, type: 3}
+  m_Name: SkillPerformExcelData
+  m_EditorClassIdentifier: 
+  items:
+  - id: 1001
+    name: Elemental Ball
+    totalTime: 0.6
+    listUnitAniState:
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000005000000
+    listEffectViewType:
+    - 0
+    listEffectViewTime: 00000000
+  - id: 1101
+    name: Fire Ball
+    totalTime: 0.6
+    listUnitAniState:
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000005000000
+    listEffectViewType:
+    - FireBall
+    listEffectViewTime: 05000000
+  - id: 1102
+    name: Boom!
+    totalTime: 0.6
+    listUnitAniState:
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000005000000
+    listEffectViewType:
+    - 0
+    listEffectViewTime: 00000000
+  - id: 2001
+    name: Strike
+    totalTime: 0.6
+    listUnitAniState:
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000005000000
+    listEffectViewType:
+    - 0
+    listEffectViewTime: 00000000
+  - id: 2101
+    name: Wind Chop
+    totalTime: 0.6
+    listUnitAniState:
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000005000000
+    listEffectViewType:
+    - 0
+    listEffectViewTime: 00000000
