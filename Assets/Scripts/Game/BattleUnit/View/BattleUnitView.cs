@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-
-
 public partial class BattleUnitView : MonoBehaviour
 {
     public Transform tfSr;

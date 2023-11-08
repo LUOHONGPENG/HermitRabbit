@@ -222,6 +222,19 @@ public struct EffectBattleTextInfo
     }
 }
 
+public struct EffectViewInfo
+{
+    public EffectViewType type;
+    public Vector2Int tarPos;
+
+    public EffectViewInfo(EffectViewType type, Vector2Int tarPos)
+    {
+        this.type = type;
+        this.tarPos = tarPos;
+    }
+}
+
+
 /// <summary>
 /// The struct for storing the info of Warning Text
 /// </summary>

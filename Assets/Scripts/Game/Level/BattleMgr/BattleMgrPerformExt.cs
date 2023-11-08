@@ -6,7 +6,8 @@ public partial class BattleMgr
 {
     private IEnumerator IE_InvokeSkillPerform()
     {
-        if(skillSubject.battleUnitType == BattleUnitType.Character)
+        InvokeSkillEffect();
+        if (skillSubject.battleUnitType == BattleUnitType.Character)
         {
             yield return StartCoroutine(IE_CharacterSkillPerform());
         }
@@ -21,4 +22,8 @@ public partial class BattleMgr
         characterView.ChangeAniState(UnitAniState.Attack);
     }
 
+    private void InvokeSkillEffect()
+    {
+        EventCenter.Instance.EventTrigger("EffectViewGenerate", new EffectViewInfo(EffectViewType.FireBall, skillTargetPos));
+    }
 }

@@ -206,6 +206,7 @@ public enum FoeFocusType
 }
 #endregion 
 
+#region Skill Perform
 public enum EffectUITextType
 {
     Damage,
@@ -220,6 +221,15 @@ public enum BattleTextType
     Buff,
     Special
 }
+
+
+public enum EffectViewType
+{
+    FireBall
+}
+
+
+#endregion
 
 public enum UITipType
 {

@@ -8,6 +8,7 @@ public partial class LevelMgr : MonoBehaviour
     [Header("Manager")]
     public MapViewMgr mapViewMgr;
     public UnitViewMgr unitViewMgr;
+    public EffectViewMgr effectViewMgr;
     public BattleMgr battleMgr;
     public PeaceMgr peaceMgr;
 
@@ -22,6 +23,8 @@ public partial class LevelMgr : MonoBehaviour
 
         mapViewMgr.Init();
         unitViewMgr.Init();
+        effectViewMgr.Init();
+
         battleMgr = BattleMgr.Instance;
         battleMgr.Init(this);
         peaceMgr = PeaceMgr.Instance;
