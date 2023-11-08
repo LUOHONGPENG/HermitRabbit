@@ -10,6 +10,8 @@ public partial class SkillEffectViewExcelItem : ExcelItemBase
 {
 	public EffectViewType effectViewType;
 	public EffectViewPosType effectViewPosType;
+	public string prefabUrl;
+	public float destroyTime;
 }
 
 [CreateAssetMenu(fileName = "SkillEffectViewExcelData", menuName = "Excel To ScriptableObject/Create SkillEffectViewExcelData", order = 1)]
@@ -32,6 +34,8 @@ public class SkillEffectViewAssetAssignment
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].effectViewType = (EffectViewType) Enum.Parse(typeof(EffectViewType), allItemValueRowList[i]["effectViewType"], true);
 			items[i].effectViewPosType = (EffectViewPosType) Enum.Parse(typeof(EffectViewPosType), allItemValueRowList[i]["effectViewPosType"], true);
+			items[i].prefabUrl = allItemValueRowList[i]["prefabUrl"];
+			items[i].destroyTime = Convert.ToSingle(allItemValueRowList[i]["destroyTime"]);
 		}
 		SkillEffectViewExcelData excelDataAsset = ScriptableObject.CreateInstance<SkillEffectViewExcelData>();
 		excelDataAsset.items = items;

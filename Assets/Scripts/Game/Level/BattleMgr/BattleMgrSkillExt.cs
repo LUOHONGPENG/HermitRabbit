@@ -11,6 +11,7 @@ public partial class BattleMgr
     public Vector2Int skillTargetPos;
     private SkillBattleInfo skillBattleInfo;
     private BattleUnitData skillSubject;
+    private List<Vector2Int> listSkillRadiusPos = new List<Vector2Int>();
     private Dictionary<int, BattleFoeData> dicFoeSkillTarget = new Dictionary<int, BattleFoeData>();
     private Dictionary<int, BattleCharacterData> dicCharacterSkillTarget = new Dictionary<int, BattleCharacterData>();
     private Dictionary<int, BattlePlantData> dicPlantSkillTarget = new Dictionary<int, BattlePlantData>();
@@ -136,6 +137,7 @@ public partial class BattleMgr
                 listPos = PublicTool.GetTargetBurningRadius(listPos,skillBattleInfo.radius);
                 break;
         }
+        listSkillRadiusPos = listPos;
 
         dicFoeSkillTarget.Clear();
         dicCharacterSkillTarget.Clear();

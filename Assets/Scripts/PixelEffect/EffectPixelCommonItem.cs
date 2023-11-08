@@ -6,10 +6,8 @@ public class EffectPixelCommonItem : MonoBehaviour
 {
     public CameraGridAdjustMgr cameraAdjustMgr;
 
-    private float destoryTime = 1f;
 
-
-    public void Init()
+    public void Init(float destoryTime)
     {
         cameraAdjustMgr.Init();
 

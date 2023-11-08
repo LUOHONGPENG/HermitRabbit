@@ -51,6 +51,13 @@ public partial class BattleMgr
             {
                 EventCenter.Instance.EventTrigger("EffectViewGenerate", new EffectViewInfo(viewType, skillTargetPos));
             }
+            else if(effectViewExcelItem.effectViewPosType == EffectViewPosType.AllTile)
+            {
+                foreach(Vector2Int pos in listSkillRadiusPos)
+                {
+                    EventCenter.Instance.EventTrigger("EffectViewGenerate", new EffectViewInfo(viewType, pos));
+                }
+            }
         }
     }
 }

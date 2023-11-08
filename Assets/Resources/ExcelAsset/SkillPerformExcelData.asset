@@ -25,14 +25,15 @@ MonoBehaviour:
     listEffectViewTime: 00000000
   - id: 1101
     name: Fire Ball
-    totalTime: 0.6
+    totalTime: 1
     listUnitAniState:
     - Focus
     - Attack
-    listUnitAniTime: 0000000005000000
+    listUnitAniTime: 000000000a000000
     listEffectViewType:
     - FireBall
-    listEffectViewTime: 05000000
+    - FireBallBoom
+    listEffectViewTime: 000000000a000000
   - id: 1102
     name: Boom!
     totalTime: 0.6

@@ -225,7 +225,8 @@ public enum BattleTextType
 
 public enum EffectViewType
 {
-    FireBall
+    FireBall,
+    FireBallBoom
 }
 
 public enum EffectViewPosType
