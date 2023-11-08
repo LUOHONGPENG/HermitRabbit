@@ -61,6 +61,21 @@ MonoBehaviour:
     listSoundType:
     - Boom
     listSoundTime: 06000000
+  - id: 1401
+    name: Lightning Bolt
+    totalTime: 0.6
+    listUnitAniState:
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000006000000
+    listEffectViewType:
+    - Thunder
+    listEffectPosType:
+    - TargetPos
+    listEffectViewTime: 06000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
   - id: 2001
     name: Strike
     totalTime: 0.6
