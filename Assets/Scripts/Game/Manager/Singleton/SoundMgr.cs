@@ -53,6 +53,13 @@ public class SoundMgr : MonoSingleton<SoundMgr>
             dicSoundAudio.Add(info.Key, auSound);
         }
 
+        dicSoundTime.Clear();
+        foreach (var info in ExcelDataMgr.Instance.soundExcelData.dicSoundStartTime)
+        {
+            dicSoundTime.Add(info.Key, info.Value);
+        }
+
+
         Debug.Log("Init Sound Manager");
         yield break;
     }
