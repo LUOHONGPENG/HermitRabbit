@@ -55,7 +55,7 @@ MonoBehaviour:
     damageType: 2
     damageDeltaStd: 2
     damageDelta: 100
-    damageModifier: 2
+    damageModifier: 3
     listBuffEffect: a10f0000
     listBuffDelta: 01000000
     listSpecialEffect: 00000000
@@ -133,7 +133,7 @@ MonoBehaviour:
     damageType: 2
     damageDeltaStd: 3
     damageDelta: 100
-    damageModifier: -3
+    damageModifier: -2
     listBuffEffect: 00000000
     listBuffDelta: 00000000
     listSpecialEffect: d1070000
@@ -414,7 +414,7 @@ MonoBehaviour:
     costAP: 1
     costMOV: 0
     costHP: 0
-    range: 4
+    range: 3
     isRangeSelf: 0
     needExtraTarget: 0
     radius: 0

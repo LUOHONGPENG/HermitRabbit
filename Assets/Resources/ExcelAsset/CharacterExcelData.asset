@@ -16,7 +16,7 @@ MonoBehaviour:
   - id: 1001
     name: Leo
     HP: 8
-    ATK: 5
+    ATK: 4
     DEF: 0
     RES: 2
     MOV: 4

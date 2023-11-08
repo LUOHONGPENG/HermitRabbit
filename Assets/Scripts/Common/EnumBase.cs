@@ -228,6 +228,13 @@ public enum EffectViewType
     FireBall
 }
 
+public enum EffectViewPosType
+{
+    TargetPos,
+    AllTarget,
+    AllTile
+}
+
 public enum SkillPerformInfoType
 {
     SubjectAni,

@@ -43,6 +43,14 @@ public partial class BattleMgr
     private IEnumerator IE_SkillEffectView(EffectViewType viewType,float startTime)
     {
         yield return new WaitForSeconds(startTime);
-        EventCenter.Instance.EventTrigger("EffectViewGenerate", new EffectViewInfo(viewType, skillTargetPos));
+
+        SkillEffectViewExcelItem effectViewExcelItem = PublicTool.GetSkillEffectViewExcelItem(viewType);
+        if (effectViewExcelItem != null)
+        {
+            if(effectViewExcelItem.effectViewPosType == EffectViewPosType.TargetPos)
+            {
+                EventCenter.Instance.EventTrigger("EffectViewGenerate", new EffectViewInfo(viewType, skillTargetPos));
+            }
+        }
     }
 }

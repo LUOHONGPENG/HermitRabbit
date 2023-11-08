@@ -46,6 +46,18 @@ public partial class PublicTool
         }
     }
 
+    public static SkillEffectViewExcelItem GetSkillEffectViewExcelItem(EffectViewType viewType)
+    {
+        if (ExcelDataMgr.Instance.skillEffectViewExcelData.dicSkillEffectView.ContainsKey(viewType))
+        {
+            return ExcelDataMgr.Instance.skillEffectViewExcelData.dicSkillEffectView[viewType];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
 
     public static CharacterExcelItem GetCharacterExcelItem(int characterID)
     {

@@ -8,6 +8,7 @@ public class ExcelDataMgr : MonoSingleton<ExcelDataMgr>
     public SkillSpecialExcelData skillSpecialExcelData;
     public SkillNodeExcelData skillNodeExcelData;
     public SkillPerformExcelData skillPerformExcelData;
+    public SkillEffectViewExcelData skillEffectViewExcelData;
     public BuffExcelData buffExcelData;
 
     public MapClipExcelData mapClipExcelData;
@@ -26,6 +27,7 @@ public class ExcelDataMgr : MonoSingleton<ExcelDataMgr>
         skillSpecialExcelData = ExcelManager.Instance.GetExcelData<SkillSpecialExcelData, SkillSpecialExcelItem>();
         skillNodeExcelData = ExcelManager.Instance.GetExcelData<SkillNodeExcelData, SkillNodeExcelItem>();
         skillPerformExcelData = ExcelManager.Instance.GetExcelData<SkillPerformExcelData, SkillPerformExcelItem>();
+        skillEffectViewExcelData = ExcelManager.Instance.GetExcelData<SkillEffectViewExcelData, SkillEffectViewExcelItem>();
         buffExcelData = ExcelManager.Instance.GetExcelData<BuffExcelData, BuffExcelItem>();
 
         mapClipExcelData = ExcelManager.Instance.GetExcelData<MapClipExcelData, MapClipExcelItem>();
@@ -42,6 +44,8 @@ public class ExcelDataMgr : MonoSingleton<ExcelDataMgr>
         skillExcelData.Init();
         skillNodeExcelData.Init();
         skillPerformExcelData.Init();
+        skillEffectViewExcelData.Init();
+
         characterExpExcelData.Init();
         dayExcelData.Init();
         soundExcelData.Init();
