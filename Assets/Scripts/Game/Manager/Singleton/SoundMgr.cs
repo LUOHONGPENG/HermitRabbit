@@ -7,7 +7,9 @@ public enum SoundType
     UnlockSkillNode,
     //Skill
     FireBall,
-    Boom
+    Boom,
+    LightingDestroy,
+    FinalWork
 }
 
 

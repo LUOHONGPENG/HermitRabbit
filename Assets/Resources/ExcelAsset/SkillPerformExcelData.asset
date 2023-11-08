@@ -61,18 +61,132 @@ MonoBehaviour:
     listSoundType:
     - Boom
     listSoundTime: 06000000
+  - id: 1201
+    name: Chronal Shift
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+  - id: 1202
+    name: 'Gravity '
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+  - id: 1301
+    name: Stream
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+  - id: 1302
+    name: Time Mending
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
   - id: 1401
     name: Lightning Bolt
-    totalTime: 0.6
+    totalTime: 2.1
     listUnitAniState:
     - Focus
     - Attack
-    listUnitAniTime: 0000000006000000
+    listUnitAniTime: 0000000013000000
     listEffectViewType:
     - Thunder
+    - ThunderHit
     listEffectPosType:
     - TargetPos
-    listEffectViewTime: 06000000
+    - AllTile
+    listEffectViewTime: 1300000015000000
+    listSoundType:
+    - LightingDestroy
+    listSoundTime: 00000000
+  - id: 1402
+    name: Teleport
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+  - id: 1901
+    name: Time Expand
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+  - id: 1902
+    name: Infinity
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+  - id: 1903
+    name: Final Chant
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
     listSoundType:
     - 0
     listSoundTime: 00000000
@@ -105,4 +219,146 @@ MonoBehaviour:
     listEffectViewTime: 00000000
     listSoundType:
     - 0
+    listSoundTime: 00000000
+  - id: 2102
+    name: Overtime Work
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+  - id: 2201
+    name: Curse
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+  - id: 2202
+    name: Provoke
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+  - id: 2301
+    name: Take a Nap
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+  - id: 2302
+    name: Fish Drat
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+  - id: 2401
+    name: Rush Hour
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+  - id: 2402
+    name: Inspire
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+  - id: 2901
+    name: Final Guard
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+  - id: 2902
+    name: Super Worker
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+  - id: 2903
+    name: Finish Work
+    totalTime: 3.8
+    listUnitAniState:
+    - Ready
+    - Focus
+    - Attack
+    listUnitAniTime: 000000001200000026000000
+    listEffectViewType:
+    - FireBallBoom
+    listEffectPosType:
+    - TargetPos
+    listEffectViewTime: 26000000
+    listSoundType:
+    - FinalWork
     listSoundTime: 00000000

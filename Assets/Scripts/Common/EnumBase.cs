@@ -227,7 +227,8 @@ public enum EffectViewType
 {
     FireBall,
     FireBallBoom,
-    Thunder
+    Thunder,
+    ThunderHit
 }
 
 public enum EffectViewPosType

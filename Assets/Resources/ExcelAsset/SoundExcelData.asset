@@ -25,3 +25,11 @@ MonoBehaviour:
     name: 2
     soundUrl: Boom
     soundStartTime: 0.6
+  - id: 4
+    name: 3
+    soundUrl: LightingDestroy
+    soundStartTime: 0.3
+  - id: 5
+    name: 4
+    soundUrl: FinalWork
+    soundStartTime: 0.6
