@@ -13,6 +13,7 @@ public partial class SkillPerformExcelItem : ExcelItemBase
 	public List<string> listUnitAniState;
 	public List<int> listUnitAniTime;
 	public List<string> listEffectViewType;
+	public List<string> listEffectPosType;
 	public List<int> listEffectViewTime;
 	public List<string> listSoundType;
 	public List<int> listSoundTime;
@@ -41,6 +42,7 @@ public class SkillPerformAssetAssignment
 			items[i].listUnitAniState = new List<string>(allItemValueRowList[i]["listUnitAniState"].Split(';'));
 			items[i].listUnitAniTime = new List<int>(Array.ConvertAll((allItemValueRowList[i]["listUnitAniTime"]).Split(';'), int.Parse));
 			items[i].listEffectViewType = new List<string>(allItemValueRowList[i]["listEffectViewType"].Split(';'));
+			items[i].listEffectPosType = new List<string>(allItemValueRowList[i]["listEffectPosType"].Split(';'));
 			items[i].listEffectViewTime = new List<int>(Array.ConvertAll((allItemValueRowList[i]["listEffectViewTime"]).Split(';'), int.Parse));
 			items[i].listSoundType = new List<string>(allItemValueRowList[i]["listSoundType"].Split(';'));
 			items[i].listSoundTime = new List<int>(Array.ConvertAll((allItemValueRowList[i]["listSoundTime"]).Split(';'), int.Parse));

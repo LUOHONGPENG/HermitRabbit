@@ -22,6 +22,8 @@ MonoBehaviour:
     listUnitAniTime: 0000000005000000
     listEffectViewType:
     - 0
+    listEffectPosType:
+    - 0
     listEffectViewTime: 00000000
     listSoundType:
     - 0
@@ -36,6 +38,9 @@ MonoBehaviour:
     listEffectViewType:
     - FireBall
     - FireBallBoom
+    listEffectPosType:
+    - TargetPos
+    - AllTile
     listEffectViewTime: 020000000d000000
     listSoundType:
     - FireBall
@@ -47,13 +52,15 @@ MonoBehaviour:
     listUnitAniState:
     - Focus
     - Attack
-    listUnitAniTime: 0000000005000000
+    listUnitAniTime: 0000000006000000
     listEffectViewType:
-    - 0
-    listEffectViewTime: 00000000
+    - FireBallBoom
+    listEffectPosType:
+    - AllBurn
+    listEffectViewTime: 06000000
     listSoundType:
-    - 0
-    listSoundTime: 00000000
+    - Boom
+    listSoundTime: 06000000
   - id: 2001
     name: Strike
     totalTime: 0.6
@@ -62,6 +69,8 @@ MonoBehaviour:
     - Attack
     listUnitAniTime: 0000000005000000
     listEffectViewType:
+    - 0
+    listEffectPosType:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
@@ -75,6 +84,8 @@ MonoBehaviour:
     - Attack
     listUnitAniTime: 0000000005000000
     listEffectViewType:
+    - 0
+    listEffectPosType:
     - 0
     listEffectViewTime: 00000000
     listSoundType:

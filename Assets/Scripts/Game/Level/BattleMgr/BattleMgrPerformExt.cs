@@ -4,6 +4,9 @@ using UnityEngine;
 
 public partial class BattleMgr
 {
+    private List<Vector2Int> listSkillRadiusEffectPos = new List<Vector2Int>();
+    private List<Vector2Int> listSkillBurnEffectPos = new List<Vector2Int>();
+
     private IEnumerator IE_InvokeSkillPerform()
     {
         List<SkillPerformInfo> listPerform = PublicTool.GetSkillPerformInfo(skillBattleInfo.ID);
@@ -18,7 +21,7 @@ public partial class BattleMgr
                         StartCoroutine(IE_SubjectAniPerform(performInfo.unitAniState, performInfo.startTime));
                         break;
                     case SkillPerformInfoType.EffectView:
-                        StartCoroutine(IE_SkillEffectView(performInfo.effectViewType, performInfo.startTime));
+                        StartCoroutine(IE_SkillEffectView(performInfo.effectViewType, performInfo.effectPosType, performInfo.startTime));
                         break;
                     case SkillPerformInfoType.PlaySound:
                         StartCoroutine(IE_SkillEffectPlaySound(performInfo.soundType, performInfo.startTime));
@@ -42,23 +45,26 @@ public partial class BattleMgr
         yield break;
     }
 
-    private IEnumerator IE_SkillEffectView(EffectViewType viewType,float startTime)
+    private IEnumerator IE_SkillEffectView(EffectViewType viewType,EffectViewPosType posType, float startTime)
     {
         yield return new WaitForSeconds(startTime);
 
-        SkillEffectViewExcelItem effectViewExcelItem = PublicTool.GetSkillEffectViewExcelItem(viewType);
-        if (effectViewExcelItem != null)
+        if (posType == EffectViewPosType.TargetPos)
         {
-            if(effectViewExcelItem.effectViewPosType == EffectViewPosType.TargetPos)
+            EventCenter.Instance.EventTrigger("EffectViewGenerate", new EffectViewInfo(viewType, skillTargetPos));
+        }
+        else if (posType == EffectViewPosType.AllTile)
+        {
+            foreach (Vector2Int pos in listSkillRadiusEffectPos)
             {
-                EventCenter.Instance.EventTrigger("EffectViewGenerate", new EffectViewInfo(viewType, skillTargetPos));
+                EventCenter.Instance.EventTrigger("EffectViewGenerate", new EffectViewInfo(viewType, pos));
             }
-            else if(effectViewExcelItem.effectViewPosType == EffectViewPosType.AllTile)
+        }
+        else if(posType == EffectViewPosType.AllBurn)
+        {
+            foreach (Vector2Int pos in listSkillBurnEffectPos)
             {
-                foreach(Vector2Int pos in listSkillRadiusPos)
-                {
-                    EventCenter.Instance.EventTrigger("EffectViewGenerate", new EffectViewInfo(viewType, pos));
-                }
+                EventCenter.Instance.EventTrigger("EffectViewGenerate", new EffectViewInfo(viewType, pos));
             }
         }
     }

@@ -233,7 +233,8 @@ public enum EffectViewPosType
 {
     TargetPos,
     AllTarget,
-    AllTile
+    AllTile,
+    AllBurn
 }
 
 public enum SkillPerformInfoType

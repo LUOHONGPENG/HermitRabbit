@@ -9,7 +9,6 @@ using System.IO;
 public partial class SkillEffectViewExcelItem : ExcelItemBase
 {
 	public EffectViewType effectViewType;
-	public EffectViewPosType effectViewPosType;
 	public string prefabUrl;
 	public float destroyTime;
 }
@@ -33,7 +32,6 @@ public class SkillEffectViewAssetAssignment
 			items[i] = new SkillEffectViewExcelItem();
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].effectViewType = (EffectViewType) Enum.Parse(typeof(EffectViewType), allItemValueRowList[i]["effectViewType"], true);
-			items[i].effectViewPosType = (EffectViewPosType) Enum.Parse(typeof(EffectViewPosType), allItemValueRowList[i]["effectViewPosType"], true);
 			items[i].prefabUrl = allItemValueRowList[i]["prefabUrl"];
 			items[i].destroyTime = Convert.ToSingle(allItemValueRowList[i]["destroyTime"]);
 		}

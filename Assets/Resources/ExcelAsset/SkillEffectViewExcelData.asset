@@ -15,11 +15,9 @@ MonoBehaviour:
   items:
   - id: 1
     effectViewType: 0
-    effectViewPosType: 0
     prefabUrl: peFireBall
     destroyTime: 1
   - id: 2
     effectViewType: 1
-    effectViewPosType: 2
     prefabUrl: peFireBallBoom
     destroyTime: 0.4

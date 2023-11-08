@@ -53,11 +53,14 @@ public partial class SkillPerformExcelData
                     }
                     EffectViewType viewType = (EffectViewType)System.Enum.Parse(typeof(EffectViewType), viewStr);
                     
-                    if (k < performItem.listEffectViewTime.Count)
+                    if (k < performItem.listEffectViewTime.Count && k < performItem.listEffectPosType.Count)
                     {
+                        EffectViewPosType posType = (EffectViewPosType)System.Enum.Parse(typeof(EffectViewPosType), performItem.listEffectPosType[k]);
+
                         float startTime = performItem.listEffectViewTime[k] * 0.1f;
                         SkillPerformInfo newInfo = new SkillPerformInfo(SkillPerformInfoType.EffectView, startTime);
                         newInfo.effectViewType = viewType;
+                        newInfo.effectPosType = posType;
                         listInfo.Add(newInfo);
                     }
                 }
@@ -97,6 +100,7 @@ public class SkillPerformInfo
     public float startTime;
     public UnitAniState unitAniState;
     public EffectViewType effectViewType;
+    public EffectViewPosType effectPosType;
     public SoundType soundType;
 
 
