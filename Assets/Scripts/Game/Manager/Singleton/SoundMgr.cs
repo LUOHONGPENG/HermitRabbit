@@ -4,7 +4,10 @@ using UnityEngine;
 
 public enum SoundType
 {
-    UnlockSkillNode
+    UnlockSkillNode,
+    //Skill
+    FireBall,
+    Boom
 }
 
 

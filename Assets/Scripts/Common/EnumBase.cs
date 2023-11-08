@@ -239,7 +239,8 @@ public enum EffectViewPosType
 public enum SkillPerformInfoType
 {
     SubjectAni,
-    EffectView
+    EffectView,
+    PlaySound
 }
 
 #endregion

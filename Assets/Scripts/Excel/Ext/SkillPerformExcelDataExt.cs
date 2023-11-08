@@ -62,6 +62,24 @@ public partial class SkillPerformExcelData
                     }
                 }
 
+                for(int l = 0; l < performItem.listSoundType.Count; l++)
+                {
+                    string soundStr = performItem.listSoundType[l];
+                    if (soundStr == "0")
+                    {
+                        continue;
+                    }
+                    SoundType soundType = (SoundType)System.Enum.Parse(typeof(SoundType), soundStr);
+
+                    if (l < performItem.listSoundTime.Count)
+                    {
+                        float startTime = performItem.listSoundTime[l] * 0.1f;
+                        SkillPerformInfo newInfo = new SkillPerformInfo(SkillPerformInfoType.PlaySound, startTime);
+                        newInfo.soundType = soundType;
+                        listInfo.Add(newInfo);
+                    }
+                }
+
                 dicSkillPerformInfo.Add(keyID, listInfo);
             }
         }
@@ -79,6 +97,8 @@ public class SkillPerformInfo
     public float startTime;
     public UnitAniState unitAniState;
     public EffectViewType effectViewType;
+    public SoundType soundType;
+
 
     public SkillPerformInfo(SkillPerformInfoType infoType,float startTime)
     {

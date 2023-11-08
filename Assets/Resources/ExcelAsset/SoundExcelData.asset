@@ -16,4 +16,12 @@ MonoBehaviour:
   - id: 1
     name: 0
     soundUrl: UnlockSkillNode
+    soundStartTime: 0.4
+  - id: 2
+    name: 1
+    soundUrl: FireBall
+    soundStartTime: 0.6
+  - id: 3
+    name: 2
+    soundUrl: Boom
     soundStartTime: 0.6

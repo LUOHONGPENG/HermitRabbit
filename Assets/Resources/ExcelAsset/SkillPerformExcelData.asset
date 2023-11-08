@@ -23,9 +23,12 @@ MonoBehaviour:
     listEffectViewType:
     - 0
     listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
   - id: 1101
     name: Fire Ball
-    totalTime: 1
+    totalTime: 1.3
     listUnitAniState:
     - Focus
     - Attack
@@ -33,7 +36,11 @@ MonoBehaviour:
     listEffectViewType:
     - FireBall
     - FireBallBoom
-    listEffectViewTime: 000000000a000000
+    listEffectViewTime: 020000000d000000
+    listSoundType:
+    - FireBall
+    - Boom
+    listSoundTime: 000000000d000000
   - id: 1102
     name: Boom!
     totalTime: 0.6
@@ -44,6 +51,9 @@ MonoBehaviour:
     listEffectViewType:
     - 0
     listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
   - id: 2001
     name: Strike
     totalTime: 0.6
@@ -54,6 +64,9 @@ MonoBehaviour:
     listEffectViewType:
     - 0
     listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
   - id: 2101
     name: Wind Chop
     totalTime: 0.6
@@ -64,3 +77,6 @@ MonoBehaviour:
     listEffectViewType:
     - 0
     listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000

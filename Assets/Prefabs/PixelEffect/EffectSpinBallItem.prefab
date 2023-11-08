@@ -50,6 +50,7 @@ MonoBehaviour:
   listSpBall:
   - {fileID: 21300000, guid: 0f2d9f8e5893b8b4592bc25e5474b4fe, type: 3}
   - {fileID: 21300000, guid: eb43e5359b4e9ef4fb9d620c500bc31e, type: 3}
+  - {fileID: 21300000, guid: dede9a0a329475a41bece17e67a02cff, type: 3}
 --- !u!212 &409649687169996675
 SpriteRenderer:
   m_ObjectHideFlags: 0

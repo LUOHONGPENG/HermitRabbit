@@ -20,6 +20,9 @@ public partial class BattleMgr
                     case SkillPerformInfoType.EffectView:
                         StartCoroutine(IE_SkillEffectView(performInfo.effectViewType, performInfo.startTime));
                         break;
+                    case SkillPerformInfoType.PlaySound:
+                        StartCoroutine(IE_SkillEffectPlaySound(performInfo.soundType, performInfo.startTime));
+                        break;
                 }
 
             }
@@ -32,7 +35,6 @@ public partial class BattleMgr
     {
         if (skillSubject.battleUnitType == BattleUnitType.Character)
         {
-            Debug.Log(state + " " + startTime);
             yield return new WaitForSeconds(startTime);
             BattleCharacterView characterView = unitViewMgr.GetCharacterView(skillSubject.keyID);
             characterView.ChangeAniState(state);
@@ -59,5 +61,11 @@ public partial class BattleMgr
                 }
             }
         }
+    }
+
+    private IEnumerator IE_SkillEffectPlaySound(SoundType soundType, float startTime)
+    {
+        yield return new WaitForSeconds(startTime);
+        PublicTool.PlaySound(soundType);
     }
 }

@@ -19,6 +19,10 @@ public class EffectSpinBallItem : MonoBehaviour
     {
         switch (skillID)
         {
+            case 1101:
+            case 1102:
+                srBall.sprite = listSpBall[2];
+                break;
             case 1201:
                 srBall.sprite = listSpBall[1];
                 break;

@@ -126,6 +126,14 @@ MonoBehaviour:
     totalFoeExp: 30
     Remark: 
   - id: 15
+    dayCount: 6
+    foeID: 1011
+    foeNum: 6
+    dayExp: 0
+    foeExp: 6
+    totalFoeExp: 36
+    Remark: 
+  - id: 16
     dayCount: 7
     foeID: 1099
     foeNum: 1
