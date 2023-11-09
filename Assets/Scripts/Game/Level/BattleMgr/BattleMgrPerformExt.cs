@@ -9,6 +9,7 @@ public partial class BattleMgr
 
     private IEnumerator IE_InvokeSkillPerform()
     {
+        EventCenter.Instance.EventTrigger("HideUnitUI", null);
         List<SkillPerformInfo> listPerform = PublicTool.GetSkillPerformInfo(skillBattleInfo.ID);
         if (listPerform != null)
         {
@@ -32,6 +33,7 @@ public partial class BattleMgr
         }
         float waitTime = PublicTool.GetSkillPerformTotalTime(skillBattleInfo.ID);
         yield return new WaitForSeconds(waitTime);
+        EventCenter.Instance.EventTrigger("ShowUnitUI", null);
     }
 
     private IEnumerator IE_SubjectAniPerform(UnitAniState state,float startTime)
@@ -49,7 +51,11 @@ public partial class BattleMgr
     {
         yield return new WaitForSeconds(startTime);
 
-        if (posType == EffectViewPosType.TargetPos)
+        if (posType == EffectViewPosType.Subject)
+        {
+            EventCenter.Instance.EventTrigger("EffectViewGenerate", new EffectViewInfo(viewType, skillSubject.posID));
+        }
+        else if (posType == EffectViewPosType.TargetPos)
         {
             EventCenter.Instance.EventTrigger("EffectViewGenerate", new EffectViewInfo(viewType, skillTargetPos));
         }

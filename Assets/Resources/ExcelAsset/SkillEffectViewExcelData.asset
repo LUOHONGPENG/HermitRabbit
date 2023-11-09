@@ -29,3 +29,7 @@ MonoBehaviour:
     effectViewType: 3
     prefabUrl: peThunderHit
     destroyTime: 0.6
+  - id: 5
+    effectViewType: 4
+    prefabUrl: peEnergyFire
+    destroyTime: 1

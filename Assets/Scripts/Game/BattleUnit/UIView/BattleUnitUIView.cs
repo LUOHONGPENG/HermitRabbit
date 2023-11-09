@@ -1,3 +1,5 @@
+using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +10,7 @@ public class BattleUnitUIView : MonoBehaviour
     [Header("Basic")]
     public Canvas canvasUIView;
     public Transform tfUIView;
+    public CanvasGroup canvasGroup;
     [Header("HP")]
     public Image imgHPBar;
     public Image imgHPFill;
@@ -26,6 +29,18 @@ public class BattleUnitUIView : MonoBehaviour
         mapCamera = GameMgr.Instance.curMapCamera;
         //transform.localPosition = PublicTool.CalculateScreenUIPos(posSource, GameMgr.Instance.curMapCamera);
 
+    }
+
+    private void OnEnable()
+    {
+        EventCenter.Instance.AddEventListener("ShowUnitUI", ShowUnitUIEvent);
+        EventCenter.Instance.AddEventListener("HideUnitUI", HideUnitUIEvent);
+    }
+
+    private void OnDisable()
+    {
+        EventCenter.Instance.RemoveEventListener("ShowUnitUI", ShowUnitUIEvent);
+        EventCenter.Instance.RemoveEventListener("HideUnitUI", HideUnitUIEvent);
     }
 
     public void RefreshUIPos()
@@ -47,5 +62,15 @@ public class BattleUnitUIView : MonoBehaviour
             BuffTinyUIItem itemBuff = objBuff.GetComponent<BuffTinyUIItem>();
             itemBuff.Init(listBuff[i]);
         }
+    }
+
+    private void HideUnitUIEvent(object arg0)
+    {
+        canvasGroup.DOFade(0, 0.2f);
+    }
+
+    private void ShowUnitUIEvent(object arg0)
+    {
+        canvasGroup.DOFade(1, 0.2f);
     }
 }

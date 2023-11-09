@@ -355,10 +355,12 @@ MonoBehaviour:
     - Attack
     listUnitAniTime: 000000001200000026000000
     listEffectViewType:
+    - EnergyFire
     - FireBallBoom
     listEffectPosType:
+    - Subject
     - TargetPos
-    listEffectViewTime: 26000000
+    listEffectViewTime: 1200000026000000
     listSoundType:
     - FinalWork
     listSoundTime: 00000000
