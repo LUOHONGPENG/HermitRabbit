@@ -254,14 +254,14 @@ public struct UITipInfo
 {
     public UITipType uiTipType;
     public int ID;
-    public int characterID;
+    public int unitID;
     public Vector2 mousePos;
 
-    public UITipInfo(UITipType uiTipType, int ID,int characterID,Vector2 mousePos)
+    public UITipInfo(UITipType uiTipType, int ID,int unitID, Vector2 mousePos)
     {
         this.uiTipType = uiTipType;
         this.ID = ID;
-        this.characterID = characterID;
+        this.unitID = unitID;
         this.mousePos = mousePos;
     }
 }

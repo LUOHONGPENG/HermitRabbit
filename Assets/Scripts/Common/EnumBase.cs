@@ -79,6 +79,7 @@ public enum Rarity
 #region Battle Basic
 public enum BattleUnitType
 {
+    None,
     Character,
     Plant,
     Foe

@@ -195,6 +195,28 @@ public partial class GameData
 
     #region HoverPos
     public Vector2Int hoverTileID = new Vector2Int(-99, -99);
+
+    public UnitInfo GetUnitInfoFromHoverTileID()
+    {
+        if(hoverTileID.x >=0 && hoverTileID.y >= 0)
+        {
+            if (dicTempMapUnit.ContainsKey(hoverTileID))
+            {
+                return dicTempMapUnit[hoverTileID];
+            }
+            else
+            {
+                return new UnitInfo(BattleUnitType.None, -1);
+            }
+        }
+        else
+        {
+            return new UnitInfo(BattleUnitType.None,-1);
+        }
+    }
+
+
+
     #endregion
 
 

@@ -2,11 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class TipUIMgr : MonoBehaviour
 {
     public SkillNodeTipUIMgr skillNodeTipUIMgr;
     public SkillButtonTipUIMgr skillButtonTipUIMgr;
+    public FoeInfoTipUIMgr foeInfoTipUIMgr;
+
+    private bool isInit = false;
+    private GameData gameData;
+
+    public void Init()
+    {
+        gameData = PublicTool.GetGameData();
+        isInit = true;
+    }
+
 
     private void OnEnable()
     {
@@ -19,6 +31,9 @@ public class TipUIMgr : MonoBehaviour
         EventCenter.Instance.RemoveEventListener("ShowUITip", ShowUITipEvent);
         EventCenter.Instance.RemoveEventListener("HideUITip", HideUITipEvent);
     }
+
+
+
     private void ShowUITipEvent(object arg0)
     {
         UITipInfo uiTipInfo = (UITipInfo)arg0;
@@ -30,7 +45,7 @@ public class TipUIMgr : MonoBehaviour
                 break;
             case UITipType.SkillButton:
                 skillNodeTipUIMgr.HideTip();
-                skillButtonTipUIMgr.ShowTip(uiTipInfo.ID, uiTipInfo.characterID, uiTipInfo.mousePos);
+                skillButtonTipUIMgr.ShowTip(uiTipInfo.ID, uiTipInfo.unitID, uiTipInfo.mousePos);
                 break;
         }
     }
@@ -40,4 +55,23 @@ public class TipUIMgr : MonoBehaviour
         skillNodeTipUIMgr.HideTip();
         skillButtonTipUIMgr.HideTip();
     }
+
+
+    private void Update()
+    {
+        if (isInit)
+        {
+            //DisplayFoeTip
+            if(gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Foe)
+            {
+                foeInfoTipUIMgr.ShowTip(gameData.GetUnitInfoFromHoverTileID().keyID);
+            }
+            else
+            {
+                foeInfoTipUIMgr.HideTip();
+            }
+        }
+    }
+
+
 }
