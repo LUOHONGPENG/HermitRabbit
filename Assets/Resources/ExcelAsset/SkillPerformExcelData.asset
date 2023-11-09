@@ -77,15 +77,16 @@ MonoBehaviour:
     listSoundTime: 00000000
   - id: 1202
     name: 'Gravity '
-    totalTime: 0.6
+    totalTime: 1.4
     listUnitAniState:
-    - 0
-    listUnitAniTime: 00000000
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000004000000
     listEffectViewType:
-    - 0
+    - Gravity
     listEffectPosType:
-    - 0
-    listEffectViewTime: 00000000
+    - TargetPos
+    listEffectViewTime: 04000000
     listSoundType:
     - 0
     listSoundTime: 00000000
