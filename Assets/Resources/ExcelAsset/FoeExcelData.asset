@@ -15,6 +15,7 @@ MonoBehaviour:
   items:
   - id: 1001
     name: LinkedList
+    desc: Attack near and dying unit with melee attack.
     HP: 8
     ATK: 4
     DEF: 1
@@ -29,6 +30,7 @@ MonoBehaviour:
     pixelUrl: PixelEvilGod
   - id: 1002
     name: LinkedList
+    desc: Attack near and dying unit with melee attack.
     HP: 15
     ATK: 4
     DEF: 1
@@ -43,6 +45,7 @@ MonoBehaviour:
     pixelUrl: PixelEvilGod
   - id: 1011
     name: Resume
+    desc: Can do ranged magic attack.
     HP: 10
     ATK: 3
     DEF: 0
@@ -57,6 +60,7 @@ MonoBehaviour:
     pixelUrl: PixelEvilBoss
   - id: 1021
     name: HR_Normal
+    desc: Can do ranged physical attack.
     HP: 30
     ATK: 3
     DEF: 1
@@ -71,6 +75,7 @@ MonoBehaviour:
     pixelUrl: pixelHR_Black
   - id: 1022
     name: HR_Red
+    desc: Can spell fire magic and apply .
     HP: 25
     ATK: 2
     DEF: 0
@@ -85,6 +90,7 @@ MonoBehaviour:
     pixelUrl: pixelHR_Red
   - id: 1023
     name: HR_Blue
+    desc: Can spell water magic and recover HP.
     HP: 25
     ATK: 3
     DEF: 0
@@ -99,6 +105,7 @@ MonoBehaviour:
     pixelUrl: pixelHR_Blue
   - id: 1024
     name: HR_Dark
+    desc: Can spell gravity magic to reduce movement.
     HP: 25
     ATK: 2
     DEF: 0
@@ -113,6 +120,7 @@ MonoBehaviour:
     pixelUrl: pixelHR_Purple
   - id: 1031
     name: Interviewer_F
+    desc: Attack range is super long and will hit farthest unit first.
     HP: 30
     ATK: 5
     DEF: 0
@@ -127,6 +135,7 @@ MonoBehaviour:
     pixelUrl: pixelHR_Black
   - id: 1032
     name: Interviewer_M
+    desc: Can move fast.
     HP: 100
     ATK: 5
     DEF: 3
@@ -141,6 +150,7 @@ MonoBehaviour:
     pixelUrl: PixelEvilBoss
   - id: 1041
     name: CEO
+    desc: Can deal high damage but move slow.
     HP: 150
     ATK: 10
     DEF: 4
@@ -155,6 +165,7 @@ MonoBehaviour:
     pixelUrl: PixelEvilBoss
   - id: 1042
     name: Secretary_F
+    desc: 
     HP: 50
     ATK: 3
     DEF: 0
@@ -169,6 +180,7 @@ MonoBehaviour:
     pixelUrl: PixelEvilBoss
   - id: 1043
     name: Secretary_M
+    desc: 
     HP: 50
     ATK: 4
     DEF: 0
@@ -183,6 +195,7 @@ MonoBehaviour:
     pixelUrl: PixelEvilBoss
   - id: 1099
     name: Interview
+    desc: Can summon pressure.
     HP: 180
     ATK: 0
     DEF: 0
@@ -197,6 +210,7 @@ MonoBehaviour:
     pixelUrl: PixelEvilBoss
   - id: 1098
     name: Pressure
+    desc: 
     HP: 8
     ATK: 10
     DEF: 0

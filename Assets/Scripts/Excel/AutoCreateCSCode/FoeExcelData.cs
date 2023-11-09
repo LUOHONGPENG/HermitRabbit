@@ -9,6 +9,7 @@ using System.IO;
 public partial class FoeExcelItem : ExcelItemBase
 {
 	public string name;
+	public string desc;
 	public int HP;
 	public int ATK;
 	public int DEF;
@@ -42,6 +43,7 @@ public class FoeAssetAssignment
 			items[i] = new FoeExcelItem();
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].name = allItemValueRowList[i]["name"];
+			items[i].desc = allItemValueRowList[i]["desc"];
 			items[i].HP = Convert.ToInt32(allItemValueRowList[i]["HP"]);
 			items[i].ATK = Convert.ToInt32(allItemValueRowList[i]["ATK"]);
 			items[i].DEF = Convert.ToInt32(allItemValueRowList[i]["DEF"]);
