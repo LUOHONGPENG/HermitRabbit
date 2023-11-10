@@ -1,4 +1,5 @@
 using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +11,25 @@ public class SceneVirtualCameraMgr : MonoBehaviour
 
     public void Init()
     {
-
+        ChangeCamera(CameraType.NormalCamera);
     }
 
+
+    private void OnEnable()
+    {
+        EventCenter.Instance.AddEventListener("ChangeCamera", ChangeCameraEvent);
+    }
+
+    private void OnDisable()
+    {
+        EventCenter.Instance.RemoveEventListener("ChangeCamera", ChangeCameraEvent);
+    }
+
+    private void ChangeCameraEvent(object arg0)
+    {
+        ChangeCameraInfo info = (ChangeCameraInfo)arg0;
+        ChangeCamera(info.cameraType);
+    }
 
     public void ChangeCamera(CameraType cameraType)
     {

@@ -248,7 +248,8 @@ public enum SkillPerformInfoType
 {
     SubjectAni,
     EffectView,
-    PlaySound
+    PlaySound,
+    ChangeCamera
 }
 
 #endregion
@@ -286,6 +287,7 @@ public enum CameraType
 
 public enum CameraPosType
 {
+    None,
     CharacterLeft
 }
 #endregion

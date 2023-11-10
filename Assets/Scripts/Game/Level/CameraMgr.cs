@@ -15,28 +15,14 @@ public class CameraMgr : MonoBehaviour
 
     public void OnEnable()
     {
-        EventCenter.Instance.AddEventListener("NormalCameraGoTo", CameraGoToEvent);
+        EventCenter.Instance.AddEventListener("NormalCameraGoTo", NormalCameraGoToEvent);
+        EventCenter.Instance.AddEventListener("ChangeCamera", ChangeCameraEvent);
     }
 
     public void OnDisable()
     {
-        EventCenter.Instance.RemoveEventListener("NormalCameraGoTo", CameraGoToEvent);
-    }
-
-    private void CameraGoToEvent(object arg0)
-    {
-        Vector3 pos = (Vector3)arg0;
-        if (Mathf.Abs(pos.x) > GameGlobal.cameraLimit)
-        {
-            pos.x = GameGlobal.cameraLimit * pos.x / Mathf.Abs(pos.x);
-        }
-
-        if (Mathf.Abs(pos.z) > GameGlobal.cameraLimit)
-        {
-            pos.z = GameGlobal.cameraLimit * pos.z / Mathf.Abs(pos.z);
-        }
-
-        tfNormalCamera.DOMove(new Vector3(pos.x, tfNormalCamera.position.y, pos.z),0.5f);
+        EventCenter.Instance.RemoveEventListener("NormalCameraGoTo", NormalCameraGoToEvent);
+        EventCenter.Instance.RemoveEventListener("ChangeCamera", ChangeCameraEvent);
     }
 
     private void FixedUpdate()
@@ -59,6 +45,24 @@ public class CameraMgr : MonoBehaviour
                 break;
         }
         FixedGoStrictCamera();
+    }
+
+    #region NormalCamera
+
+    private void NormalCameraGoToEvent(object arg0)
+    {
+        Vector3 pos = (Vector3)arg0;
+        if (Mathf.Abs(pos.x) > GameGlobal.cameraLimit)
+        {
+            pos.x = GameGlobal.cameraLimit * pos.x / Mathf.Abs(pos.x);
+        }
+
+        if (Mathf.Abs(pos.z) > GameGlobal.cameraLimit)
+        {
+            pos.z = GameGlobal.cameraLimit * pos.z / Mathf.Abs(pos.z);
+        }
+
+        tfNormalCamera.DOMove(new Vector3(pos.x, tfNormalCamera.position.y, pos.z),0.5f);
     }
 
     private void FixedGoMoveCamera()
@@ -99,4 +103,24 @@ public class CameraMgr : MonoBehaviour
         float rotateSpeed = 5f;
         tfNormalCamera.eulerAngles += new Vector3(0, rotateInput * rotateSpeed, 0);
     }
+
+    #endregion
+
+    #region SkillPerformCamera
+    private void ChangeCameraEvent(object arg0)
+    {
+        ChangeCameraInfo info = (ChangeCameraInfo)arg0;
+        Vector3 tempPos;
+
+        switch (info.cameraType)
+        {
+            case CameraType.SkillPerformCamera:
+                tempPos = PublicTool.ConvertPosFromID(info.posFollow);
+                tfSkillPerformFollow.position = new Vector3(tempPos.x, GameGlobal.commonUnitPosY, tempPos.z);
+                tempPos = PublicTool.ConvertPosFromID(info.posLookAt);
+                tfSkillPerformLookAt.position = new Vector3(tempPos.x,GameGlobal.commonUnitPosY,tempPos.z);
+                break;
+        }
+    }
+    #endregion
 }

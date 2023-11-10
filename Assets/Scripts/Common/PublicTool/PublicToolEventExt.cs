@@ -4,11 +4,7 @@ using UnityEngine;
 
 public partial class PublicTool
 {
-    public static void EventNormalCameraGoPosID(Vector2Int posID)
-    {
-        Vector3 targetPos = ConvertPosFromID(posID);
-        EventCenter.Instance.EventTrigger("NormalCameraGoTo", targetPos);
-    }
+
 
     public static void EventSpotCharacterShow(Vector2Int posID)
     {
