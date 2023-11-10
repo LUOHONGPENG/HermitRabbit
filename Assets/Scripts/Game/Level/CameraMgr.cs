@@ -112,19 +112,31 @@ public class CameraMgr : MonoBehaviour
         ChangeCameraInfo info = (ChangeCameraInfo)arg0;
         Vector3 tempPosSubject;
         Vector3 tempPosTarget;
-
+        Vector3 direction;
         switch (info.cameraType)
         {
             case CameraType.SkillPerformCamera:
-                switch (CameraPosType.CharacterLeft)
+                switch (info.posType)
                 {
-                    case CameraPosType.CharacterLeft:
+                    case CameraPosType.CharacterLeftLow:
                         tempPosSubject = PublicTool.ConvertPosFromID(info.posSubject);
-                        tfSkillPerformFollow.position = new Vector3(tempPosSubject.x, GameGlobal.commonUnitPosY, tempPosSubject.z);
+                        tfSkillPerformFollow.position = tempPosSubject;
                         tempPosTarget = PublicTool.ConvertPosFromID(info.posTarget);
-                        tfSkillPerformLookAt.position = new Vector3(tempPosTarget.x, GameGlobal.commonUnitPosY, tempPosTarget.z);
-
-                        tfSkillPerformDelta.localPosition = new Vector3(-1, 0, 0) + (tempPosTarget - tempPosSubject)*0.5f;
+                        tfSkillPerformLookAt.position = tempPosTarget;
+                        //Delta
+                        direction = tempPosTarget - tempPosSubject;
+                        tfSkillPerformFollow.LookAt(tempPosTarget);
+                        tfSkillPerformDelta.localPosition = new Vector3(-2f, -1f, -1f);
+                        break;
+                    case CameraPosType.CharacterLeftHigh:
+                        tempPosSubject = PublicTool.ConvertPosFromID(info.posSubject);
+                        tfSkillPerformFollow.position = tempPosSubject;
+                        tempPosTarget = PublicTool.ConvertPosFromID(info.posTarget);
+                        tfSkillPerformLookAt.position = tempPosTarget;
+                        //Delta
+                        direction = tempPosTarget - tempPosSubject;
+                        tfSkillPerformFollow.LookAt(tempPosTarget);
+                        tfSkillPerformDelta.localPosition = new Vector3(-2f, 1f, -1f);
                         break;
                 }
                 break;

@@ -33,7 +33,7 @@ MonoBehaviour:
     listCameraTime: 00000000
   - id: 1101
     name: Fire Ball
-    totalTime: 1.3
+    totalTime: 1.7
     listUnitAniState:
     - Focus
     - Attack
@@ -50,7 +50,7 @@ MonoBehaviour:
     - Boom
     listSoundTime: 000000000d000000
     listCameraPosType:
-    - CharacterLeft
+    - CharacterLeftHigh
     listCameraTime: 00000000
   - id: 1102
     name: Boom!
@@ -103,7 +103,7 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
+    - CharacterLeftLow
     listCameraTime: 00000000
   - id: 1301
     name: Stream
@@ -141,7 +141,7 @@ MonoBehaviour:
     listCameraTime: 00000000
   - id: 1401
     name: Lightning Bolt
-    totalTime: 2.1
+    totalTime: 2.5
     listUnitAniState:
     - Focus
     - Attack
@@ -157,7 +157,7 @@ MonoBehaviour:
     - LightingDestroy
     listSoundTime: 00000000
     listCameraPosType:
-    - CharacterLeft
+    - CharacterLeftLow
     listCameraTime: 00000000
   - id: 1402
     name: Teleport
