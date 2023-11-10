@@ -6,8 +6,12 @@ using DG.Tweening;
 
 public class CameraMgr : MonoBehaviour
 {
+    [Header("NormalCamera")]
     public Transform tfNormalCamera;
-    public Transform tfSkillPerformCamera;
+    [Header("SkillPerformCamera")]
+    public Transform tfSkillPerformLookAt;
+    public Transform tfSkillPerformFollow;
+    public Transform tfSkillPerformDelta;
 
     public void OnEnable()
     {

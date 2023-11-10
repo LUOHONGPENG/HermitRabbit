@@ -8,7 +8,7 @@ public class SceneGameMgr : MonoBehaviour
 {
     public Camera mapCamera;
     public Camera uiCamera;
-    public CinemachineVirtualCamera virtualCamera;
+    public SceneVirtualCameraMgr sceneVirtualCameraMgr;
 
     public LevelMgr levelMgr;
     public UIMgr uiMgr;
@@ -22,7 +22,7 @@ public class SceneGameMgr : MonoBehaviour
         yield return new WaitUntil(() => GameMgr.Instance.isInit);
         GameMgr.Instance.curSceneGameMgr = this;
         GameMgr.Instance.curUICamera = uiCamera;
-        SetVirtualCameraTarget(cameraMgr.tfNormalCamera);
+        InitSceneVirtualCamera();
 
         //Reset Phase
         InputMgr.Instance.SetInteractState(InteractState.PeaceNormal);
@@ -41,12 +41,16 @@ public class SceneGameMgr : MonoBehaviour
             uiMgr.pageUIMgr.talkUIMgr.StartTalk(TalkGroup.Day1);
         }
 
-        //Set Current SceneMgr
     }
 
-    public void SetVirtualCameraTarget(Transform tf)
+    private void InitSceneVirtualCamera()
     {
-        virtualCamera.Follow = tf;
-        virtualCamera.LookAt = tf;
+        sceneVirtualCameraMgr.virtualCamera_Normal.Follow = cameraMgr.tfNormalCamera;
+        sceneVirtualCameraMgr.virtualCamera_Normal.LookAt = cameraMgr.tfNormalCamera;
+
+        sceneVirtualCameraMgr.virtualCamera_SkillPerform.Follow = cameraMgr.tfSkillPerformFollow;
+        sceneVirtualCameraMgr.virtualCamera_SkillPerform.LookAt = cameraMgr.tfSkillPerformLookAt;
+
+        sceneVirtualCameraMgr.Init();
     }
 }
