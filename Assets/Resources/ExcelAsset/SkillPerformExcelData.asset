@@ -28,6 +28,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 1101
     name: Fire Ball
     totalTime: 1.3
@@ -46,6 +49,9 @@ MonoBehaviour:
     - FireBall
     - Boom
     listSoundTime: 000000000d000000
+    listCameraPosType:
+    - CharacterLeft
+    listCameraTime: 00000000
   - id: 1102
     name: Boom!
     totalTime: 0.6
@@ -61,6 +67,9 @@ MonoBehaviour:
     listSoundType:
     - Boom
     listSoundTime: 06000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 1201
     name: Chronal Shift
     totalTime: 0.6
@@ -75,6 +84,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 1202
     name: 'Gravity '
     totalTime: 1.4
@@ -90,6 +102,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 1301
     name: Stream
     totalTime: 0.6
@@ -104,6 +119,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 1302
     name: Time Mending
     totalTime: 0.6
@@ -118,6 +136,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 1401
     name: Lightning Bolt
     totalTime: 2.1
@@ -135,6 +156,9 @@ MonoBehaviour:
     listSoundType:
     - LightingDestroy
     listSoundTime: 00000000
+    listCameraPosType:
+    - CharacterLeft
+    listCameraTime: 00000000
   - id: 1402
     name: Teleport
     totalTime: 0.6
@@ -149,6 +173,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 1901
     name: Time Expand
     totalTime: 0.6
@@ -163,6 +190,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 1902
     name: Infinity
     totalTime: 0.6
@@ -177,6 +207,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 1903
     name: Final Chant
     totalTime: 0.6
@@ -191,6 +224,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 2001
     name: Strike
     totalTime: 0.6
@@ -206,6 +242,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 2101
     name: Wind Chop
     totalTime: 0.6
@@ -221,6 +260,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 2102
     name: Overtime Work
     totalTime: 0.6
@@ -235,6 +277,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 2201
     name: Curse
     totalTime: 0.6
@@ -249,6 +294,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 2202
     name: Provoke
     totalTime: 0.6
@@ -263,6 +311,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 2301
     name: Take a Nap
     totalTime: 0.6
@@ -277,6 +328,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 2302
     name: Fish Drat
     totalTime: 0.6
@@ -291,6 +345,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 2401
     name: Rush Hour
     totalTime: 0.6
@@ -305,6 +362,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 2402
     name: Inspire
     totalTime: 0.6
@@ -319,6 +379,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 2901
     name: Final Guard
     totalTime: 0.6
@@ -333,6 +396,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 2902
     name: Super Worker
     totalTime: 0.6
@@ -347,6 +413,9 @@ MonoBehaviour:
     listSoundType:
     - 0
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000
   - id: 2903
     name: Finish Work
     totalTime: 3.8
@@ -365,3 +434,6 @@ MonoBehaviour:
     listSoundType:
     - FinalWork
     listSoundTime: 00000000
+    listCameraPosType:
+    - 0
+    listCameraTime: 00000000

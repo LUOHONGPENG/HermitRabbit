@@ -22,6 +22,7 @@ public partial class SkillPerformExcelData
                 dicSkillPerformTotalTime.Add(keyID, performItem.totalTime);
             }
 
+            //SubjectAni
             if (!dicSkillPerformInfo.ContainsKey(keyID))
             {
                 List<SkillPerformInfo> listInfo = new List<SkillPerformInfo>();
@@ -44,7 +45,8 @@ public partial class SkillPerformExcelData
                     }
                 }
 
-                for(int k = 0; k < performItem.listEffectViewType.Count; k++)
+                //EffectView
+                for (int k = 0; k < performItem.listEffectViewType.Count; k++)
                 {
                     string viewStr = performItem.listEffectViewType[k];
                     if (viewStr == "0")
@@ -65,7 +67,8 @@ public partial class SkillPerformExcelData
                     }
                 }
 
-                for(int l = 0; l < performItem.listSoundType.Count; l++)
+                //PlaySound
+                for (int l = 0; l < performItem.listSoundType.Count; l++)
                 {
                     string soundStr = performItem.listSoundType[l];
                     if (soundStr == "0")
@@ -79,6 +82,25 @@ public partial class SkillPerformExcelData
                         float startTime = performItem.listSoundTime[l] * 0.1f;
                         SkillPerformInfo newInfo = new SkillPerformInfo(SkillPerformInfoType.PlaySound, startTime);
                         newInfo.soundType = soundType;
+                        listInfo.Add(newInfo);
+                    }
+                }
+
+                //ChangeCamera
+                for(int m = 0; m < performItem.listCameraPosType.Count; m++)
+                {
+                    string cameraStr = performItem.listCameraPosType[m];
+                    if(cameraStr == "0")
+                    {
+                        continue;
+                    }
+                    CameraPosType cameraPosType = (CameraPosType)System.Enum.Parse(typeof(CameraPosType), cameraStr);
+
+                    if(m < performItem.listCameraTime.Count)
+                    {
+                        float startTime = performItem.listCameraTime[m] * 0.1f;
+                        SkillPerformInfo newInfo = new SkillPerformInfo(SkillPerformInfoType.ChangeCamera, startTime);
+                        newInfo.cameraPosType = cameraPosType;
                         listInfo.Add(newInfo);
                     }
                 }
@@ -102,7 +124,7 @@ public class SkillPerformInfo
     public EffectViewType effectViewType;
     public EffectViewPosType effectPosType;
     public SoundType soundType;
-
+    public CameraPosType cameraPosType;
 
     public SkillPerformInfo(SkillPerformInfoType infoType,float startTime)
     {

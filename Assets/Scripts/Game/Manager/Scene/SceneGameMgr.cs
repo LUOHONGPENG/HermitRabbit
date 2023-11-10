@@ -48,7 +48,7 @@ public class SceneGameMgr : MonoBehaviour
         sceneVirtualCameraMgr.virtualCamera_Normal.Follow = cameraMgr.tfNormalCamera;
         sceneVirtualCameraMgr.virtualCamera_Normal.LookAt = cameraMgr.tfNormalCamera;
 
-        sceneVirtualCameraMgr.virtualCamera_SkillPerform.Follow = cameraMgr.tfSkillPerformFollow;
+        sceneVirtualCameraMgr.virtualCamera_SkillPerform.Follow = cameraMgr.tfSkillPerformDelta;
         sceneVirtualCameraMgr.virtualCamera_SkillPerform.LookAt = cameraMgr.tfSkillPerformLookAt;
 
         sceneVirtualCameraMgr.Init();

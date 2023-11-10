@@ -110,17 +110,26 @@ public class CameraMgr : MonoBehaviour
     private void ChangeCameraEvent(object arg0)
     {
         ChangeCameraInfo info = (ChangeCameraInfo)arg0;
-        Vector3 tempPos;
+        Vector3 tempPosSubject;
+        Vector3 tempPosTarget;
 
         switch (info.cameraType)
         {
             case CameraType.SkillPerformCamera:
-                tempPos = PublicTool.ConvertPosFromID(info.posFollow);
-                tfSkillPerformFollow.position = new Vector3(tempPos.x, GameGlobal.commonUnitPosY, tempPos.z);
-                tempPos = PublicTool.ConvertPosFromID(info.posLookAt);
-                tfSkillPerformLookAt.position = new Vector3(tempPos.x,GameGlobal.commonUnitPosY,tempPos.z);
+                switch (CameraPosType.CharacterLeft)
+                {
+                    case CameraPosType.CharacterLeft:
+                        tempPosSubject = PublicTool.ConvertPosFromID(info.posSubject);
+                        tfSkillPerformFollow.position = new Vector3(tempPosSubject.x, GameGlobal.commonUnitPosY, tempPosSubject.z);
+                        tempPosTarget = PublicTool.ConvertPosFromID(info.posTarget);
+                        tfSkillPerformLookAt.position = new Vector3(tempPosTarget.x, GameGlobal.commonUnitPosY, tempPosTarget.z);
+
+                        tfSkillPerformDelta.localPosition = new Vector3(-1, 0, 0) + (tempPosTarget - tempPosSubject)*0.5f;
+                        break;
+                }
                 break;
         }
+
     }
     #endregion
 }

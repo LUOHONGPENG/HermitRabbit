@@ -28,16 +28,14 @@ public partial class BattleMgr
                         StartCoroutine(IE_SkillEffectPlaySound(performInfo.soundType, performInfo.startTime));
                         break;
                     case SkillPerformInfoType.ChangeCamera:
-
+                        StartCoroutine(IE_SkillEffectChangeCamera(performInfo.cameraPosType, performInfo.startTime));
                         break;
                 }
-
             }
         }
-        PublicTool.EventChangeCamera(new ChangeCameraInfo(CameraType.SkillPerformCamera, CameraPosType.CharacterLeft, skillSubject.posID, skillTargetPos));
         float waitTime = PublicTool.GetSkillPerformTotalTime(skillBattleInfo.ID);
         yield return new WaitForSeconds(waitTime);
-        PublicTool.EventChangeCamera(new ChangeCameraInfo(CameraType.NormalCamera, CameraPosType.None, Vector2Int.zero, Vector2Int.zero));
+        PublicTool.EventChangeCamera(new ChangeCameraInfo(CameraType.NormalCamera, CameraPosType.None, Vector2Int.zero, Vector2Int.zero, Vector2Int.zero));
         EventCenter.Instance.EventTrigger("ShowUnitUI", null);
     }
 
@@ -84,5 +82,11 @@ public partial class BattleMgr
     {
         yield return new WaitForSeconds(startTime);
         PublicTool.PlaySound(soundType);
+    }
+
+    private IEnumerator IE_SkillEffectChangeCamera(CameraPosType posType, float startTime)
+    {
+        yield return new WaitForSeconds(startTime);
+        PublicTool.EventChangeCamera(new ChangeCameraInfo(CameraType.SkillPerformCamera, posType, skillSubject.posID, skillTargetPos, skillTargetPosExtra));
     }
 }

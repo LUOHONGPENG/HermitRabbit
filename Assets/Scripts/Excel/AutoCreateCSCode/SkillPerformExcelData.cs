@@ -17,6 +17,8 @@ public partial class SkillPerformExcelItem : ExcelItemBase
 	public List<int> listEffectViewTime;
 	public List<string> listSoundType;
 	public List<int> listSoundTime;
+	public List<string> listCameraPosType;
+	public List<int> listCameraTime;
 }
 
 [CreateAssetMenu(fileName = "SkillPerformExcelData", menuName = "Excel To ScriptableObject/Create SkillPerformExcelData", order = 1)]
@@ -46,6 +48,8 @@ public class SkillPerformAssetAssignment
 			items[i].listEffectViewTime = new List<int>(Array.ConvertAll((allItemValueRowList[i]["listEffectViewTime"]).Split(';'), int.Parse));
 			items[i].listSoundType = new List<string>(allItemValueRowList[i]["listSoundType"].Split(';'));
 			items[i].listSoundTime = new List<int>(Array.ConvertAll((allItemValueRowList[i]["listSoundTime"]).Split(';'), int.Parse));
+			items[i].listCameraPosType = new List<string>(allItemValueRowList[i]["listCameraPosType"].Split(';'));
+			items[i].listCameraTime = new List<int>(Array.ConvertAll((allItemValueRowList[i]["listCameraTime"]).Split(';'), int.Parse));
 		}
 		SkillPerformExcelData excelDataAsset = ScriptableObject.CreateInstance<SkillPerformExcelData>();
 		excelDataAsset.items = items;

@@ -238,15 +238,17 @@ public struct ChangeCameraInfo
 {
     public CameraType cameraType;
     public CameraPosType posType;
-    public Vector2Int posFollow;
-    public Vector2Int posLookAt;
+    public Vector2Int posSubject;
+    public Vector2Int posTarget;
+    public Vector2Int posExtraTarget;
 
-    public ChangeCameraInfo(CameraType type, CameraPosType posType, Vector2Int posFollow, Vector2Int posLookAt)
+    public ChangeCameraInfo(CameraType type, CameraPosType posType, Vector2Int posSubject, Vector2Int posTarget,Vector2Int posExtraTarget)
     {
         this.cameraType = type;
         this.posType = posType;
-        this.posFollow = posFollow;
-        this.posLookAt = posLookAt;
+        this.posSubject = posSubject;
+        this.posTarget = posTarget;
+        this.posExtraTarget = posExtraTarget;
     }
 }
 
