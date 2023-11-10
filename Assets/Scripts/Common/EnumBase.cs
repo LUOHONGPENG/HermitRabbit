@@ -275,3 +275,17 @@ public enum TalkStep
 }
 
 #endregion
+
+#region Camera
+
+public enum CameraType
+{
+    NormalCamera,
+    SkillPerformCamera
+}
+
+public enum CameraPosType
+{
+    CharacterLeft
+}
+#endregion

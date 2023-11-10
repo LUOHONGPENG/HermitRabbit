@@ -22,8 +22,7 @@ public class SceneGameMgr : MonoBehaviour
         yield return new WaitUntil(() => GameMgr.Instance.isInit);
         GameMgr.Instance.curSceneGameMgr = this;
         GameMgr.Instance.curUICamera = uiCamera;
-        virtualCamera.Follow = cameraMgr.transform;
-        virtualCamera.LookAt = cameraMgr.transform;
+        SetVirtualCameraTarget(cameraMgr.tfNormalCamera);
 
         //Reset Phase
         InputMgr.Instance.SetInteractState(InteractState.PeaceNormal);
@@ -43,5 +42,11 @@ public class SceneGameMgr : MonoBehaviour
         }
 
         //Set Current SceneMgr
+    }
+
+    public void SetVirtualCameraTarget(Transform tf)
+    {
+        virtualCamera.Follow = tf;
+        virtualCamera.LookAt = tf;
     }
 }

@@ -83,7 +83,7 @@ public partial class BattleMgr
             gameData.SetCurUnitInfo(new UnitInfo(BattleUnitType.Foe, foeKeyID));
 
             //Move Camera to the cur unit
-            PublicTool.EventCameraGoPosID(foeData.posID);
+            PublicTool.EventNormalCameraGoPosID(foeData.posID);
             yield return new WaitForSeconds(0.5f);
 
             List<FoeFindTargetInfo> listFoeTargetInfo = new List<FoeFindTargetInfo>();

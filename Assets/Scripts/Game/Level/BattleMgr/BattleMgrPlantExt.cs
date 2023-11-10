@@ -109,7 +109,7 @@ public partial class BattleMgr
             if (tarUnitData != null && !tarUnitData.isDead)//Except for revive
             {
                 //When the plant will execute the skill, camera can be moved.
-                PublicTool.EventCameraGoPosID(plantData.posID);
+                PublicTool.EventNormalCameraGoPosID(plantData.posID);
                 yield return new WaitForSeconds(0.5f);
                 isInPlantSkill = true;
                 SkillActionRequest(tarUnitData.posID);
@@ -121,7 +121,7 @@ public partial class BattleMgr
         {
             gameData.SetCurUnitInfo(new UnitInfo(BattleUnitType.Character, plantRecordCharacter.keyID));
             gameData.SetCurBattleSkill(beforeSkillID);
-            PublicTool.EventCameraGoPosID(plantRecordCharacter.posID);
+            PublicTool.EventNormalCameraGoPosID(plantRecordCharacter.posID);
             plantRecordCharacter = null;
         }
         yield break;

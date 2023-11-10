@@ -84,7 +84,7 @@ public partial class LevelMgr
         mapViewMgr.RefreshCurUnit();
         //Event
         PublicTool.EventChangeInteract(InteractState.CharacterMove);
-        PublicTool.EventCameraGoPosID(characterData.posID);
+        PublicTool.EventNormalCameraGoPosID(characterData.posID);
     }
 
 

@@ -85,7 +85,7 @@ public partial class InputMgr
         switch (interactState)
         {
             case InteractState.PeaceNormal:
-                PublicTool.EventCameraGoPosID(mapTile.posID);
+                PublicTool.EventNormalCameraGoPosID(mapTile.posID);
                 return true;
             case InteractState.PeacePlant:
                 EventCenter.Instance.EventTrigger("InputModifyPlant", mapTile.posID);
@@ -99,7 +99,7 @@ public partial class InputMgr
                 }
                 break;
             case InteractState.BattleNormal:
-                PublicTool.EventCameraGoPosID(mapTile.posID);
+                PublicTool.EventNormalCameraGoPosID(mapTile.posID);
                 return true;
             case InteractState.CharacterMove:
                 EventCenter.Instance.EventTrigger("InputMoveAction", mapTile.posID);

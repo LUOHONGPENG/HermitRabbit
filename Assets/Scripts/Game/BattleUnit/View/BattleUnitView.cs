@@ -40,7 +40,7 @@ public partial class BattleUnitView : MonoBehaviour
         {
             Vector3 tilePos = PublicTool.ConvertPosFromID(path[i]);
             this.transform.DOLocalMove(new Vector3(tilePos.x, GameGlobal.commonUnitPosY, tilePos.z), 0.2f);
-            PublicTool.EventCameraGoPosID(path[i]);
+            PublicTool.EventNormalCameraGoPosID(path[i]);
             yield return new WaitForSeconds(0.2f);
         }
     }

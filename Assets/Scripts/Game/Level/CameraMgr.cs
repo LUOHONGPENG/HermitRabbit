@@ -6,16 +6,18 @@ using DG.Tweening;
 
 public class CameraMgr : MonoBehaviour
 {
+    public Transform tfNormalCamera;
+    public Transform tfSkillPerformCamera;
+
     public void OnEnable()
     {
-        EventCenter.Instance.AddEventListener("CameraGoTo", CameraGoToEvent);
+        EventCenter.Instance.AddEventListener("NormalCameraGoTo", CameraGoToEvent);
     }
 
     public void OnDisable()
     {
-        EventCenter.Instance.RemoveEventListener("CameraGoTo", CameraGoToEvent);
+        EventCenter.Instance.RemoveEventListener("NormalCameraGoTo", CameraGoToEvent);
     }
-
 
     private void CameraGoToEvent(object arg0)
     {
@@ -30,7 +32,7 @@ public class CameraMgr : MonoBehaviour
             pos.z = GameGlobal.cameraLimit * pos.z / Mathf.Abs(pos.z);
         }
 
-        transform.DOMove(new Vector3(pos.x, transform.position.y, pos.z),0.5f);
+        tfNormalCamera.DOMove(new Vector3(pos.x, tfNormalCamera.position.y, pos.z),0.5f);
     }
 
     private void FixedUpdate()
@@ -58,33 +60,32 @@ public class CameraMgr : MonoBehaviour
     private void FixedGoMoveCamera()
     {
         Vector2 moveInput = InputMgr.Instance.camMoveVector;
-        Vector3 moveDir = transform.forward * moveInput.y + transform.right * moveInput.x;
+        Vector3 moveDir = tfNormalCamera.forward * moveInput.y + tfNormalCamera.right * moveInput.x;
         float moveSpeed = 5f;
-        transform.position += moveDir * moveSpeed * Time.deltaTime;
+        tfNormalCamera.position += moveDir * moveSpeed * Time.deltaTime;
     }
 
     private void FixedGoStrictCamera()
     {
         float limit = GameGlobal.cameraLimit;
 
-        if (transform.position.x < -limit)
+        if (tfNormalCamera.position.x < -limit)
         {
-            transform.position = new Vector3(-limit, transform.position.y, transform.position.z);
+            tfNormalCamera.position = new Vector3(-limit, tfNormalCamera.position.y, tfNormalCamera.position.z);
 
         }
-        else if (transform.position.x > limit)
+        else if (tfNormalCamera.position.x > limit)
         {
-            transform.position = new Vector3(limit, transform.position.y, transform.position.z);
+            tfNormalCamera.position = new Vector3(limit, tfNormalCamera.position.y, tfNormalCamera.position.z);
         }
 
-        if (transform.position.z < -limit)
+        if (tfNormalCamera.position.z < -limit)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, -limit);
-
+            tfNormalCamera.position = new Vector3(tfNormalCamera.position.x, tfNormalCamera.position.y, -limit);
         }
-        else if (transform.position.z > limit)
+        else if (tfNormalCamera.position.z > limit)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, limit);
+            tfNormalCamera.position = new Vector3(tfNormalCamera.position.x, tfNormalCamera.position.y, limit);
         }
     }
 
@@ -92,6 +93,6 @@ public class CameraMgr : MonoBehaviour
     {
         float rotateInput = InputMgr.Instance.camRotateValue;
         float rotateSpeed = 5f;
-        transform.eulerAngles += new Vector3(0, rotateInput * rotateSpeed, 0);
+        tfNormalCamera.eulerAngles += new Vector3(0, rotateInput * rotateSpeed, 0);
     }
 }
