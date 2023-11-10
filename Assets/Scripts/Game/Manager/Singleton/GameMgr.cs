@@ -60,4 +60,23 @@ public partial class GameMgr : MonoSingleton<GameMgr>
     }
     #endregion
 
+    public bool GetWhetherPageOn()
+    {
+        if (curSceneGameMgr != null)
+        {
+            if (curSceneGameMgr.uiMgr.pageUIMgr.isPageOn)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 }

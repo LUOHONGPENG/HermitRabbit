@@ -14,4 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - id: 1
-    name: 1
+    group: 0
+    step: 0
+    talkSubjectID: 0
+    content: 
+  - id: 2
+    group: 0
+    step: 1
+    talkSubjectID: 1001
+    content: What is going on? Why there are some monsters in my tower?
+  - id: 3
+    group: 0
+    step: 1
+    talkSubjectID: 1002
+    content: These are your fear. Let's fight against your fear.
+  - id: 4
+    group: 0
+    step: 2
+    talkSubjectID: 0
+    content: 

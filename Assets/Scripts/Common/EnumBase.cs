@@ -258,3 +258,20 @@ public enum UITipType
     SkillNode,
     SkillButton
 }
+
+
+#region Talk
+
+public enum TalkGroup
+{
+    Day1
+}
+
+public enum TalkStep
+{
+    BattleStart,
+    Text,
+    End
+}
+
+#endregion

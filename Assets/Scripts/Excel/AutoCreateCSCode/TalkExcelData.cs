@@ -8,7 +8,10 @@ using System.IO;
 [Serializable]
 public partial class TalkExcelItem : ExcelItemBase
 {
-	public string name;
+	public TalkGroup group;
+	public TalkStep step;
+	public int talkSubjectID;
+	public string content;
 }
 
 [CreateAssetMenu(fileName = "TalkExcelData", menuName = "Excel To ScriptableObject/Create TalkExcelData", order = 1)]
@@ -29,7 +32,10 @@ public class TalkAssetAssignment
 		{
 			items[i] = new TalkExcelItem();
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
-			items[i].name = allItemValueRowList[i]["name"];
+			items[i].group = (TalkGroup) Enum.Parse(typeof(TalkGroup), allItemValueRowList[i]["group"], true);
+			items[i].step = (TalkStep) Enum.Parse(typeof(TalkStep), allItemValueRowList[i]["step"], true);
+			items[i].talkSubjectID = Convert.ToInt32(allItemValueRowList[i]["talkSubjectID"]);
+			items[i].content = allItemValueRowList[i]["content"];
 		}
 		TalkExcelData excelDataAsset = ScriptableObject.CreateInstance<TalkExcelData>();
 		excelDataAsset.items = items;

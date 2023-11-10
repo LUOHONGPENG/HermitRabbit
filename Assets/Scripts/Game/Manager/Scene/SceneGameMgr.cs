@@ -15,6 +15,8 @@ public class SceneGameMgr : MonoBehaviour
     public CameraMgr cameraMgr;
     public LightMgr lightMgr;
 
+    private bool isInit = false;
+
     public IEnumerator IE_Init()
     {
         yield return new WaitUntil(() => GameMgr.Instance.isInit);
@@ -30,6 +32,15 @@ public class SceneGameMgr : MonoBehaviour
         lightMgr.Init();
 
         GameMgr.Instance.curMapCamera = mapCamera;
+
+        isInit = true;
+
+        yield return new WaitForEndOfFrame();
+
+        if (PublicTool.GetGameData().numDay == 1)
+        {
+            uiMgr.pageUIMgr.talkUIMgr.StartTalk(TalkGroup.Day1);
+        }
 
         //Set Current SceneMgr
     }

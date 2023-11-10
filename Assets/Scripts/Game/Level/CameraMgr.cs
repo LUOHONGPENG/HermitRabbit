@@ -45,14 +45,14 @@ public class CameraMgr : MonoBehaviour
             case InteractState.PeaceNormal:
             case InteractState.PeacePlant:
             case InteractState.PeaceMap:
-                FixedGoMoveCamera();
-                FixedGoRotateCamera();
+                if (!GameMgr.Instance.GetWhetherPageOn())
+                {
+                    FixedGoMoveCamera();
+                    FixedGoRotateCamera();
+                }
                 break;
         }
-
-
         FixedGoStrictCamera();
-
     }
 
     private void FixedGoMoveCamera()
