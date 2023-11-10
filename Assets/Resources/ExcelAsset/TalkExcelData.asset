@@ -27,8 +27,18 @@ MonoBehaviour:
     group: 0
     step: 1
     talkSubjectID: 1002
-    content: These are your fear. Let's fight against your fear.
+    content: 'These are your fear. '
   - id: 4
+    group: 0
+    step: 1
+    talkSubjectID: 1001
+    content: Who are you?
+  - id: 5
+    group: 0
+    step: 1
+    talkSubjectID: 1002
+    content: I am here to help you. Let's fight against your fear.
+  - id: 6
     group: 0
     step: 2
     talkSubjectID: 0
