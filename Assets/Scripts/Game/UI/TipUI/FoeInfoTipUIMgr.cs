@@ -1,3 +1,4 @@
+using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -13,6 +14,7 @@ public class FoeInfoTipUIMgr : MonoBehaviour
     public Text codeName;
     public Text codeDesc;
     public Image imgHPFill;
+    public Text codeHP;
     public Text codeATK;
     public Text codeDEF;
     public Text codeRES;
@@ -26,6 +28,7 @@ public class FoeInfoTipUIMgr : MonoBehaviour
         if(foeData != null)
         {
             imgHPFill.fillAmount = foeData.HPrate;
+            codeHP.text = string.Format("{0}/{1}", foeData.curHP, foeData.curMaxHP);
             codeATK.text = foeData.curATK.ToString();
             codeDEF.text = foeData.curDEF.ToString();
             codeRES.text = foeData.curRES.ToString();
