@@ -13,6 +13,8 @@ public class CameraMgr : MonoBehaviour
     public Transform tfSkillPerformFollow;
     public Transform tfSkillPerformDelta;
 
+    private CameraType lastCameraType = CameraType.NormalCamera;
+
     public void OnEnable()
     {
         EventCenter.Instance.AddEventListener("NormalCameraGoTo", NormalCameraGoToEvent);
@@ -110,38 +112,54 @@ public class CameraMgr : MonoBehaviour
     private void ChangeCameraEvent(object arg0)
     {
         ChangeCameraInfo info = (ChangeCameraInfo)arg0;
-        Vector3 tempPosSubject;
-        Vector3 tempPosTarget;
-        Vector3 direction;
-        switch (info.cameraType)
+        if(info.cameraType == CameraType.SkillPerformCamera)
         {
-            case CameraType.SkillPerformCamera:
-                switch (info.posType)
-                {
-                    case CameraPosType.CharacterLeftLow:
-                        tempPosSubject = PublicTool.ConvertPosFromID(info.posSubject);
-                        tfSkillPerformFollow.position = tempPosSubject;
-                        tempPosTarget = PublicTool.ConvertPosFromID(info.posTarget);
-                        tfSkillPerformLookAt.position = tempPosTarget;
-                        //Delta
-                        direction = tempPosTarget - tempPosSubject;
-                        tfSkillPerformFollow.LookAt(tempPosTarget);
-                        tfSkillPerformDelta.localPosition = new Vector3(-2f, -1f, -1f);
-                        break;
-                    case CameraPosType.CharacterLeftHigh:
-                        tempPosSubject = PublicTool.ConvertPosFromID(info.posSubject);
-                        tfSkillPerformFollow.position = tempPosSubject;
-                        tempPosTarget = PublicTool.ConvertPosFromID(info.posTarget);
-                        tfSkillPerformLookAt.position = tempPosTarget;
-                        //Delta
-                        direction = tempPosTarget - tempPosSubject;
-                        tfSkillPerformFollow.LookAt(tempPosTarget);
-                        tfSkillPerformDelta.localPosition = new Vector3(-2f, 1f, -1f);
-                        break;
-                }
+            if(lastCameraType == CameraType.SkillPerformCamera)
+            {
+                SetSkillPerformCamera(info,true);
+            }
+            else
+            {
+                SetSkillPerformCamera(info, false);
+            }
+        }
+        lastCameraType = info.cameraType;
+    }
+
+    public void SetSkillPerformCamera(ChangeCameraInfo info,bool isFromSkill)
+    {
+        Vector3 tempPosSubject = PublicTool.ConvertPosFromID(info.posSubject);
+        Vector3 tempPosTarget = PublicTool.ConvertPosFromID(info.posTarget);
+        Vector3 direction = tempPosTarget - tempPosSubject;
+        float distance = direction.magnitude;
+        Vector3 tempDelta = Vector3.zero;
+        switch (info.posType)
+        {
+            case CameraPosType.CharacterLeftLow:
+                tempDelta = new Vector3(-2f, -1f, -0.3f * distance);
+                break;
+            case CameraPosType.CharacterLeftHigh:
+                tempDelta = new Vector3(-2f, 1f, -0.2f * distance);
                 break;
         }
 
+        if (isFromSkill)
+        {
+            tfSkillPerformFollow.DOMove(tempPosSubject, 0.2f);
+            tfSkillPerformLookAt.DOMove(tempPosTarget, 0.2f);
+            tfSkillPerformFollow.LookAt(tempPosTarget);
+            tfSkillPerformDelta.DOLocalMove(tempDelta, 0.2f);
+        }
+        else
+        {
+            tfSkillPerformFollow.position = tempPosSubject;
+            tfSkillPerformLookAt.position = tempPosTarget;
+            tfSkillPerformFollow.LookAt(tempPosTarget);
+            tfSkillPerformDelta.localPosition = tempDelta;
+        }
+
     }
+
+
     #endregion
 }
