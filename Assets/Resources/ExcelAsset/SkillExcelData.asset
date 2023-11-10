@@ -62,7 +62,7 @@ MonoBehaviour:
     listSpecialDelta: 00000000
     activeSkillType: 1
     characterID: 1001
-    iconUrl: imgIconSkill_1101
+    iconUrl: imgIconSkill_FireBall
     unlockNodeID: 1101
     desc: Use fire ball to attack multiple foes.
   - id: 1102
@@ -88,7 +88,7 @@ MonoBehaviour:
     listSpecialDelta: 00000000
     activeSkillType: 1
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Boom
     unlockNodeID: 1102
     desc: Deal damage according to burning level.
   - id: 1201

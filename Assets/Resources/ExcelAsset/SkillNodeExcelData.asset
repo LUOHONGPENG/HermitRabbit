@@ -67,12 +67,12 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_FireBall
     rowID: 1
     columnID: -3
     remark: 
   - id: 1191
-    name: Quick Fire
+    name: Quick Cast
     desc: AP Cost of Fire Ball - 1, but damage - 4.
     nodeType: 1
     costSP: 1
@@ -81,12 +81,12 @@ MonoBehaviour:
     conflictNode: 1193
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_FireCostDown
     rowID: 2
     columnID: -4
     remark: 
   - id: 1192
-    name: Field of Scorch
+    name: Inferno
     desc: Skill Radius of Fire Ball + 1,but damage reduce 25%.
     nodeType: 1
     costSP: 1
@@ -95,12 +95,12 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_FireRadius
     rowID: 2
     columnID: -2
     remark: 
   - id: 1193
-    name: Confocal
+    name: Focus
     desc: Fire Ball will cost all AP, each extra AP deal more damage.
     nodeType: 1
     costSP: 1
@@ -109,7 +109,7 @@ MonoBehaviour:
     conflictNode: 1191
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_FireCostUp
     rowID: 1
     columnID: -5
     remark: 
@@ -123,7 +123,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Boom
     rowID: 3
     columnID: -3
     remark: 
