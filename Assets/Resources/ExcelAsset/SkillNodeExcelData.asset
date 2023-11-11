@@ -224,7 +224,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_TimeExpand
     rowID: 4
     columnID: -2
     remark: 
@@ -241,12 +241,12 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Infinity
     rowID: 4
     columnID: 2
     remark: 
   - id: 1903
-    name: Final Chant
+    name: Rabbit Chant
     desc: Increase skill range and AP but can't get Movement when turn starts.
     nodeType: 0
     costSP: 3
@@ -255,7 +255,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_MagicCircle
     rowID: 4
     columnID: 0
     remark: 
