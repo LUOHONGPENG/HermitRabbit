@@ -159,7 +159,7 @@ MonoBehaviour:
     columnID: -1
     remark: 
   - id: 1301
-    name: Stream
+    name: Fourtain
     desc: Magic attack that can heal plants in the range.
     nodeType: 0
     costSP: 2
@@ -168,12 +168,12 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Stream
+    iconUrl: imgIconSkill_Fourtain
     rowID: 1
     columnID: 1
     remark: 
   - id: 1302
-    name: Time Mending
+    name: Clean
     desc: Remove 1 debuff for an ally or remove 1 buff for foe.
     nodeType: 0
     costSP: 2
@@ -182,7 +182,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Clean
     rowID: 3
     columnID: 1
     remark: 
@@ -210,7 +210,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Teleport
     rowID: 3
     columnID: 3
     remark: 

@@ -147,7 +147,7 @@ MonoBehaviour:
       Deal damage according to difference
       of movement between source and target.'
   - id: 1301
-    name: Stream
+    name: Fourtain
     costAP: 1
     costMOV: 0
     costHP: 0
@@ -169,11 +169,11 @@ MonoBehaviour:
     listSpecialDelta: 00000000
     activeSkillType: 1
     characterID: 1001
-    iconUrl: imgIconSkill_Stream
+    iconUrl: imgIconSkill_Fourtain
     unlockNodeID: 1301
     desc: Magic attack that can heal plants in the range.
   - id: 1302
-    name: Time Mending
+    name: Clean
     costAP: 1
     costMOV: 0
     costHP: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
     listSpecialDelta: 0000000000000000
     activeSkillType: 2
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Clean
     unlockNodeID: 1302
     desc: Remove 1 debuff for an ally or remove 1 buff for foe.
   - id: 1401
@@ -247,7 +247,7 @@ MonoBehaviour:
     listSpecialDelta: 00000000
     activeSkillType: 2
     characterID: 1001
-    iconUrl: imgIconSkill_1302
+    iconUrl: imgIconSkill_Teleport
     unlockNodeID: 1402
     desc: Change one character or plant position.
   - id: 1901
