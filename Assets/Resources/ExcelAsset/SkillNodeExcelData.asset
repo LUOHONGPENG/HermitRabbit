@@ -127,20 +127,6 @@ MonoBehaviour:
     rowID: 3
     columnID: -3
     remark: 
-  - id: 1201
-    name: Chronal Shift
-    desc: Dodge next attack.
-    nodeType: 0
-    costSP: 2
-    conditionSPSpent: 0
-    conditionPreNode: e9030000
-    conflictNode: 0
-    isInitUnlock: 0
-    characterID: 1001
-    iconUrl: imgIconSkill_ChronalShift
-    rowID: 1
-    columnID: -1
-    remark: 
   - id: 1202
     name: 'Gravity '
     desc: 'Magic attack that reduce movement.
@@ -150,11 +136,25 @@ MonoBehaviour:
     nodeType: 0
     costSP: 2
     conditionSPSpent: 0
-    conditionPreNode: b1040000
+    conditionPreNode: e9030000
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
     iconUrl: imgIconSkill_Gravity
+    rowID: 1
+    columnID: -1
+    remark: 
+  - id: 1201
+    name: Chronal Shift
+    desc: Dodge next attack.
+    nodeType: 0
+    costSP: 2
+    conditionSPSpent: 0
+    conditionPreNode: b2040000
+    conflictNode: 0
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_ChronalShift
     rowID: 3
     columnID: -1
     remark: 
@@ -220,7 +220,7 @@ MonoBehaviour:
     nodeType: 0
     costSP: 3
     conditionSPSpent: 0
-    conditionPreNode: 4e040000b2040000
+    conditionPreNode: 4e040000b1040000
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
@@ -251,7 +251,7 @@ MonoBehaviour:
     nodeType: 0
     costSP: 3
     conditionSPSpent: 0
-    conditionPreNode: b204000016050000
+    conditionPreNode: b104000016050000
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
