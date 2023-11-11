@@ -289,6 +289,7 @@ public enum CameraPosType
 {
     None,
     CharacterLeftLow,
-    CharacterLeftHigh
+    CharacterLeftHigh,
+    MiddleLeft
 }
 #endregion

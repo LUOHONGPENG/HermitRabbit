@@ -435,5 +435,5 @@ MonoBehaviour:
     - FinalWork
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
+    - MiddleLeft
     listCameraTime: 00000000
