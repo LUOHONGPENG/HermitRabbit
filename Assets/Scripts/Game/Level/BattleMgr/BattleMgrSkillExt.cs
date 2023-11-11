@@ -107,6 +107,7 @@ public partial class BattleMgr
             skillSubject.curAP -= skillBattleInfo.costAP;
             skillSubject.curMOV -= skillBattleInfo.costMOV;
             skillSubject.GetHurt(skillBattleInfo.costHP);
+            gameData.CostMemory(skillBattleInfo.costMemory);
         }
         yield break;
     }
@@ -329,6 +330,11 @@ public partial class BattleMgr
         else if(skillSubject.curHP < skillBattleInfo.costHP + 1)
         {
             EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("HP not enough", targetPos));
+            return false;
+        }
+        else if(gameData.GetMemory() < skillBattleInfo.costMemory)
+        {
+            EventCenter.Instance.EventTrigger("EffectWarningText", new EffectWarningTextInfo("Memory not enough", targetPos));
             return false;
         }
         else

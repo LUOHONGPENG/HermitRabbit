@@ -48,6 +48,16 @@ public partial class GameData
     {
         memory += memoryCount;
         EventCenter.Instance.EventTrigger("RefreshResourceUI", null);
+    }
 
+    public void CostMemory(int memoryCount)
+    {
+        memory -= memoryCount;
+        EventCenter.Instance.EventTrigger("RefreshResourceUI", null);
+    }
+
+    public int GetMemory()
+    {
+        return memory;
     }
 }
