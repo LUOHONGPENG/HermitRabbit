@@ -161,7 +161,7 @@ MonoBehaviour:
     listCameraTime: 00000000
   - id: 1402
     name: Teleport
-    totalTime: 0.6
+    totalTime: 1.1
     listUnitAniState:
     - 0
     listUnitAniTime: 00000000
@@ -174,8 +174,9 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
-    listCameraTime: 00000000
+    - FocusTarget
+    - FocusTargetExtra
+    listCameraTime: 0000000006000000
   - id: 1901
     name: Time Expand
     totalTime: 0.6
@@ -329,7 +330,7 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
+    - FocusSubject
     listCameraTime: 00000000
   - id: 2302
     name: Fish Drat

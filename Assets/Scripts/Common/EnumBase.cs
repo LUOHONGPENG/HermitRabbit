@@ -290,6 +290,9 @@ public enum CameraPosType
     None,
     CharacterLeftLow,
     CharacterLeftHigh,
-    MiddleLeft
+    MiddleLeft,
+    FocusSubject,
+    FocusTarget,
+    FocusTargetExtra
 }
 #endregion

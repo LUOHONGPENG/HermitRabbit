@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using static UnityEditor.PlayerSettings;
 
 public class CameraMgr : MonoBehaviour
 {
@@ -130,6 +131,7 @@ public class CameraMgr : MonoBehaviour
     {
         Vector3 tempPosSubject = PublicTool.ConvertPosFromID(info.posSubject);
         Vector3 tempPosTarget = PublicTool.ConvertPosFromID(info.posTarget);
+        Vector3 tempPosTargetExtra = PublicTool.ConvertPosFromID(info.posExtraTarget);
         Vector3 tempPosMiddle = (tempPosSubject + tempPosTarget) / 2;
         Vector3 direction = tempPosTarget - tempPosSubject;
         float distance = direction.magnitude;
@@ -137,19 +139,33 @@ public class CameraMgr : MonoBehaviour
         //Define
         Vector3 posFollow = tempPosSubject;
         Vector3 posLookAt = tempPosTarget;
+        Quaternion rotate = Quaternion.Euler(Vector3.zero);
         Vector3 tempDelta = Vector3.zero;
-
+        bool needLookAt = false;
 
         //FollowLookAt
         switch (info.posType)
         {
             case CameraPosType.CharacterLeftLow:
             case CameraPosType.CharacterLeftHigh:
-
-
-                break;
             case CameraPosType.MiddleLeft:
+                needLookAt = true;
                 //posLookAt = tempPosMiddle;
+                break;
+            case CameraPosType.FocusSubject:
+                posFollow = GetNormalCameraLimitPos(tempPosSubject);
+                posLookAt = GetNormalCameraLimitPos(tempPosSubject);
+                rotate = tfNormalCamera.rotation;
+                break;
+            case CameraPosType.FocusTarget:
+                posFollow = GetNormalCameraLimitPos(tempPosTarget);
+                posLookAt = GetNormalCameraLimitPos(tempPosTarget);
+                rotate = tfNormalCamera.rotation;
+                break;
+            case CameraPosType.FocusTargetExtra:
+                posFollow = GetNormalCameraLimitPos(tempPosTargetExtra);
+                posLookAt = GetNormalCameraLimitPos(tempPosTargetExtra);
+                rotate = tfNormalCamera.rotation;
                 break;
         }
 
@@ -166,25 +182,55 @@ public class CameraMgr : MonoBehaviour
             case CameraPosType.MiddleLeft:
                 tempDelta = new Vector3(-3f, -1, 0.5f * distance);
                 break;
+            case CameraPosType.FocusSubject:
+            case CameraPosType.FocusTarget:
+            case CameraPosType.FocusTargetExtra:
+                break;
         }
 
         if (isFromSkill)
         {
-            tfSkillPerformFollow.DOMove(posFollow, 0.2f);
-            tfSkillPerformLookAt.DOMove(posLookAt, 0.2f);
-            tfSkillPerformFollow.LookAt(posLookAt);
-            tfSkillPerformDelta.DOLocalMove(tempDelta, 0.2f);
+            tfSkillPerformFollow.DOMove(posFollow, 0.5f);
+            tfSkillPerformLookAt.DOMove(posLookAt, 0.5f);
+            if(tfSkillPerformFollow.rotation != rotate)
+            {
+                tfSkillPerformFollow.DORotateQuaternion(rotate, 0.5f);
+            }
+            if (needLookAt)
+            {
+                tfSkillPerformFollow.LookAt(posLookAt);
+            }
+            tfSkillPerformDelta.DOLocalMove(tempDelta, 0.5f);
         }
         else
         {
             tfSkillPerformFollow.position = posFollow;
             tfSkillPerformLookAt.position = posLookAt;
-            tfSkillPerformFollow.LookAt(posLookAt);
+            tfSkillPerformFollow.rotation = rotate;
+            if (needLookAt)
+            {
+                tfSkillPerformFollow.LookAt(posLookAt);
+            }
             tfSkillPerformDelta.localPosition = tempDelta;
         }
 
+        
     }
 
+    public Vector3 GetNormalCameraLimitPos(Vector3 pos)
+    {
+        if (Mathf.Abs(pos.x) > GameGlobal.cameraLimit)
+        {
+            pos.x = GameGlobal.cameraLimit * pos.x / Mathf.Abs(pos.x);
+        }
+
+        if (Mathf.Abs(pos.z) > GameGlobal.cameraLimit)
+        {
+            pos.z = GameGlobal.cameraLimit * pos.z / Mathf.Abs(pos.z);
+        }
+
+        return pos;
+    }
 
     #endregion
 }
