@@ -274,6 +274,14 @@ public partial class BattleMgr
                 }
                 unitViewMgr.GenerateFoeView(newFoeData);
                 break;
+            case 9998:
+                source.GetHurt(99);
+                break;
+            case 9999:
+                source.GetHurt(99);
+                break;
+
+
         }
 
     }

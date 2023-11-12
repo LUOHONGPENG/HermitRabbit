@@ -43,3 +43,13 @@ MonoBehaviour:
     skillID: 3201
     essence: 2
     pixelUrl: pp_Hero_Idle
+  - id: 1004
+    name: Unstable
+    HP: 15
+    ATK: 10
+    DEF: 0
+    RES: 0
+    triggerCondition: 3
+    skillID: 3301
+    essence: 2
+    pixelUrl: pp_Cook_Idle

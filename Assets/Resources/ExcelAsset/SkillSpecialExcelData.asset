@@ -65,3 +65,11 @@ MonoBehaviour:
     name: Summon Foe
     effectType: 2
     timeType: 0
+  - id: 9998
+    name: Self Kill Harm
+    effectType: 1
+    timeType: 1
+  - id: 9999
+    name: Self Kill Help
+    effectType: 2
+    timeType: 1

@@ -507,3 +507,20 @@ MonoBehaviour:
     listCameraPosType:
     - FocusSubject
     listCameraTime: 00000000
+  - id: 3301
+    name: Unstable Rabbit
+    totalTime: 0.6
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - FireBallBoom
+    listEffectPosType:
+    - AllTile
+    listEffectViewTime: 06000000
+    listSoundType:
+    - Boom
+    listSoundTime: 06000000
+    listCameraPosType:
+    - FocusSubject
+    listCameraTime: 00000000

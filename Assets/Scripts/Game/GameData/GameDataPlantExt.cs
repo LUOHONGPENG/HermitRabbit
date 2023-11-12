@@ -19,6 +19,7 @@ public partial class GameData
         listPlantHeld.Add(1001);
         listPlantHeld.Add(1002);
         listPlantHeld.Add(1003);
+        listPlantHeld.Add(1004);
 
         //Cur Plant
         listPlant.Clear();
