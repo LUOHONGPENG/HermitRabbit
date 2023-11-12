@@ -26,6 +26,12 @@ public class VictoryUIMgr : MonoBehaviour
     public Button btnRefreshMap;
     public Button btnSkipMap;
 
+    [Header("Plant")]
+    public Transform tfPlant;
+    public GameObject pfPlant;
+    public Button btnRefreshPlant;
+    public Button btnSkipPlant;
+
     private VictoryPhase victoryPhase;
     private GameData gameData;
 
@@ -64,6 +70,17 @@ public class VictoryUIMgr : MonoBehaviour
             DrawMapClip();
         });
 
+        btnSkipPlant.onClick.RemoveAllListeners();
+        btnSkipPlant.onClick.AddListener(delegate ()
+        {
+            SkipPlant();
+        });
+
+        btnRefreshPlant.onClick.RemoveAllListeners();
+        btnRefreshPlant.onClick.AddListener(delegate ()
+        {
+            DrawPlant();
+        });
 
         gameData = PublicTool.GetGameData();
     }
@@ -72,14 +89,19 @@ public class VictoryUIMgr : MonoBehaviour
     {
         EventCenter.Instance.AddEventListener("NormalVictoryStart", ShowVictoryEvent);
         EventCenter.Instance.AddEventListener("VictoryAddMapClip", AddMapClipEvent);
+        EventCenter.Instance.AddEventListener("VictoryAddPlant", AddPlantEvent);
+
     }
 
     private void OnDisable()
     {
         EventCenter.Instance.RemoveEventListener("NormalVictoryStart", ShowVictoryEvent);
         EventCenter.Instance.RemoveEventListener("VictoryAddMapClip", AddMapClipEvent);
+        EventCenter.Instance.RemoveEventListener("VictoryAddPlant", AddPlantEvent);
+
 
     }
+
 
     private void ShowVictoryEvent(object arg0)
     {
@@ -106,6 +128,7 @@ public class VictoryUIMgr : MonoBehaviour
                 CommonReward();
                 StartExpPhase();
                 objMapClip.SetActive(false);
+                objPlant.SetActive(false);
                 btnContinue.gameObject.SetActive(false);
                 break;
             case VictoryPhase.MapClip1:
@@ -116,9 +139,10 @@ public class VictoryUIMgr : MonoBehaviour
                 break;
             case VictoryPhase.Plant:
                 objMapClip.SetActive(false);
-                NextPhase();
+                StartPlantPhase();
                 break;
             case VictoryPhase.End:
+                objPlant.SetActive(false);
                 btnContinue.gameObject.SetActive(true);
                 break;
         }
@@ -243,11 +267,40 @@ public class VictoryUIMgr : MonoBehaviour
 
     #region ShowPlant
 
-    public void ShowPlant()
+    public void StartPlantPhase()
     {
-        
+        DrawPlant();
+
+        objPlant.SetActive(true);
+    }
+
+    public void DrawPlant()
+    {
+        //Draw
+        List<int> listPool = ExcelDataMgr.Instance.plantExcelData.GetAllPlantID();
+        List<int> listDelete = new List<int>(gameData.listPlantHeld);
+        List<int> listDraw = PublicTool.DrawNum(2, listPool, listDelete);
+
+        PublicTool.ClearChildItem(tfPlant);
+        for (int i = 0; i < listDraw.Count; i++)
+        {
+            GameObject objPlant = GameObject.Instantiate(pfPlant, tfPlant);
+            VictoryPlantItem itemPlant = objPlant.GetComponent<VictoryPlantItem>();
+            itemPlant.Init(listDraw[i]);
+        }
     }
 
 
+    private void AddPlantEvent(object arg0)
+    {
+        gameData.AddPlantHeld((int)arg0);
+
+        NextPhase();
+    }
+    private void SkipPlant()
+    {
+        gameData.AddMemory(50);
+        NextPhase();
+    }
     #endregion
 }

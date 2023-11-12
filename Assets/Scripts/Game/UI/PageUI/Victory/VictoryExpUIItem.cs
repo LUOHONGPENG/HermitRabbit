@@ -25,6 +25,7 @@ public class VictoryExpUIItem : MonoBehaviour
     public void Init(int characterID,int beforeExp,int addExp)
     {
         expExcelData = ExcelDataMgr.Instance.characterExpExcelData;
+        imgIcon.sprite = Resources.Load("Sprite/CharacterIcon/" + PublicTool.GetCharacterExcelItem(characterID).iconUrl, typeof(Sprite)) as Sprite;
         isGrowExp = false;
         //Data
         this.beforeExp = beforeExp;

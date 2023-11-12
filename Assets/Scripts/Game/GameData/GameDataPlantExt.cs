@@ -15,23 +15,21 @@ public partial class GameData
     {
         //Unlock Plant
         listPlantHeld.Clear();
-        //Test
-        listPlantHeld.Add(1001);
-        listPlantHeld.Add(1002);
-        listPlantHeld.Add(1003);
-        listPlantHeld.Add(1004);
-        listPlantHeld.Add(1005);
-        listPlantHeld.Add(1006);
-
-        listPlantHeld.Add(2001);
-        listPlantHeld.Add(2002);
-
 
         //Cur Plant
         listPlant.Clear();
         dicPlant.Clear();
         curPlantKeyID = -1;
     }
+
+    public void AddPlantHeld(int typeID)
+    {
+        if (!listPlantHeld.Contains(typeID))
+        {
+            listPlantHeld.Add(typeID);
+        }
+    }
+
 
     public void LoadPlantData(GameSaveData savedata)
     {
