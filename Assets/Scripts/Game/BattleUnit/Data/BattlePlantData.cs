@@ -74,7 +74,6 @@ public class BattlePlantData : BattleUnitData
             int tempRES = 0;
             tempRES += item.RES;
             tempRES += buffRES;
-            tempRES += PublicTool.GetPlantNumInThisColumn(posID.x, 2002);
             if (tempRES < 0)
             {
                 tempRES = 0;

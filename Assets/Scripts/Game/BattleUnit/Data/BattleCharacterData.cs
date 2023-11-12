@@ -98,7 +98,6 @@ public partial class BattleCharacterData : BattleUnitData
             {
                 tempRES += 1;
             }
-            tempRES += PublicTool.GetPlantNumInThisColumn(posID.x, 2002);
             if (tempRES < 0)
             {
                 tempRES = 0;

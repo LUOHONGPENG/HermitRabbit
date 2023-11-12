@@ -290,10 +290,19 @@ public partial class MapViewMgr : MonoBehaviour
 
     public void UpdateMapHavorUnitUI()
     {
-        if (gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Plant)
+        InteractState state = InputMgr.Instance.GetInteractState();
+
+        if(state != InteractState.WaitAction)
         {
-            BattlePlantData plantData = (BattlePlantData)gameData.GetDataFromUnitInfo(gameData.GetUnitInfoFromHoverTileID());
-            SetMapRangeUI_Plant(plantData.listValidTouchRange);
+            if (gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Plant)
+            {
+                BattlePlantData plantData = (BattlePlantData)gameData.GetDataFromUnitInfo(gameData.GetUnitInfoFromHoverTileID());
+                SetMapRangeUI_Plant(plantData.listValidTouchRange);
+            }
+            else
+            {
+                ResetAllTileHavorUnit();
+            }
         }
         else
         {

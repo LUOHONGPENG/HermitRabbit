@@ -59,7 +59,7 @@ MonoBehaviour:
     desc: Suicide bombing when the second turn start.
   - id: 2001
     name: Maleficia
-    HP: 10
+    HP: 5
     ATK: 0
     DEF: 0
     RES: 1
@@ -70,7 +70,7 @@ MonoBehaviour:
     desc: Increase ATK of units in same row by 1.
   - id: 2002
     name: Beneficia
-    HP: 10
+    HP: 5
     ATK: 0
     DEF: 1
     RES: 0
@@ -78,4 +78,4 @@ MonoBehaviour:
     skillID: -1
     essence: 1
     pixelUrl: pp_Beneficia_Idle
-    desc: Increase DEF and RES of units in same column by 1.
+    desc: Increase DEF of units in same column by 1.
