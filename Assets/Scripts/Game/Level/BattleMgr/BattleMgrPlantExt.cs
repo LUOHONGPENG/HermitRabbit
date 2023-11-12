@@ -76,7 +76,6 @@ public partial class BattleMgr
         {
             yield return StartCoroutine(IE_CheckAllPlantInDic(PlantTriggerType.SecondTurn));
         }
-
         //For
         yield break;
     }
