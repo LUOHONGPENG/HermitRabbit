@@ -68,14 +68,15 @@ MonoBehaviour:
     - Boom
     listSoundTime: 06000000
     listCameraPosType:
-    - 0
+    - FocusSubject
     listCameraTime: 00000000
   - id: 1201
     name: Chronal Shift
-    totalTime: 0.6
+    totalTime: 1.1
     listUnitAniState:
-    - 0
-    listUnitAniTime: 00000000
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000006000000
     listEffectViewType:
     - 0
     listEffectPosType:
@@ -85,8 +86,9 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
-    listCameraTime: 00000000
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000006000000
   - id: 1202
     name: 'Gravity '
     totalTime: 1.4
@@ -124,10 +126,11 @@ MonoBehaviour:
     listCameraTime: 00000000
   - id: 1302
     name: Time Mending
-    totalTime: 0.6
+    totalTime: 1.1
     listUnitAniState:
-    - 0
-    listUnitAniTime: 00000000
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000006000000
     listEffectViewType:
     - 0
     listEffectPosType:
@@ -137,8 +140,9 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
-    listCameraTime: 00000000
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000006000000
   - id: 1401
     name: Lightning Bolt
     totalTime: 2.5
@@ -163,8 +167,9 @@ MonoBehaviour:
     name: Teleport
     totalTime: 1.1
     listUnitAniState:
-    - 0
-    listUnitAniTime: 00000000
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000006000000
     listEffectViewType:
     - 0
     listEffectPosType:
@@ -179,10 +184,11 @@ MonoBehaviour:
     listCameraTime: 0000000006000000
   - id: 1901
     name: Time Expand
-    totalTime: 0.6
+    totalTime: 1.1
     listUnitAniState:
-    - 0
-    listUnitAniTime: 00000000
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000006000000
     listEffectViewType:
     - 0
     listEffectPosType:
@@ -192,14 +198,16 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
-    listCameraTime: 00000000
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000006000000
   - id: 1902
     name: Infinity
-    totalTime: 0.6
+    totalTime: 1.1
     listUnitAniState:
-    - 0
-    listUnitAniTime: 00000000
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000006000000
     listEffectViewType:
     - 0
     listEffectPosType:
@@ -209,13 +217,14 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
-    listCameraTime: 00000000
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000006000000
   - id: 1903
     name: Final Chant
     totalTime: 0.6
     listUnitAniState:
-    - 0
+    - Focus
     listUnitAniTime: 00000000
     listEffectViewType:
     - 0
@@ -226,7 +235,7 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
+    - FocusSubject
     listCameraTime: 00000000
   - id: 2001
     name: Strike
@@ -252,7 +261,7 @@ MonoBehaviour:
     listUnitAniState:
     - Focus
     - Attack
-    listUnitAniTime: 0000000005000000
+    listUnitAniTime: 0000000006000000
     listEffectViewType:
     - 0
     listEffectPosType:
@@ -262,13 +271,13 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
+    - MiddleLeft
     listCameraTime: 00000000
   - id: 2102
     name: Overtime Work
     totalTime: 0.6
     listUnitAniState:
-    - 0
+    - Focus
     listUnitAniTime: 00000000
     listEffectViewType:
     - 0
@@ -279,14 +288,15 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
+    - FocusSubject
     listCameraTime: 00000000
   - id: 2201
     name: Curse
-    totalTime: 0.6
+    totalTime: 1.1
     listUnitAniState:
-    - 0
-    listUnitAniTime: 00000000
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000006000000
     listEffectViewType:
     - 0
     listEffectPosType:
@@ -296,13 +306,14 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
-    listCameraTime: 00000000
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000006000000
   - id: 2202
     name: Provoke
     totalTime: 0.6
     listUnitAniState:
-    - 0
+    - Focus
     listUnitAniTime: 00000000
     listEffectViewType:
     - 0
@@ -313,13 +324,13 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
+    - FocusSubject
     listCameraTime: 00000000
   - id: 2301
     name: Take a Nap
     totalTime: 0.6
     listUnitAniState:
-    - 0
+    - Focus
     listUnitAniTime: 00000000
     listEffectViewType:
     - 0
@@ -334,10 +345,11 @@ MonoBehaviour:
     listCameraTime: 00000000
   - id: 2302
     name: Fish Drat
-    totalTime: 0.6
+    totalTime: 1.1
     listUnitAniState:
-    - 0
-    listUnitAniTime: 00000000
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000006000000
     listEffectViewType:
     - 0
     listEffectPosType:
@@ -347,14 +359,15 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
+    - CharacterLeftHigh
     listCameraTime: 00000000
   - id: 2401
     name: Rush Hour
-    totalTime: 0.6
+    totalTime: 1.1
     listUnitAniState:
-    - 0
-    listUnitAniTime: 00000000
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000006000000
     listEffectViewType:
     - 0
     listEffectPosType:
@@ -364,14 +377,16 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
-    listCameraTime: 00000000
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000006000000
   - id: 2402
     name: Inspire
-    totalTime: 0.6
+    totalTime: 1.1
     listUnitAniState:
-    - 0
-    listUnitAniTime: 00000000
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000006000000
     listEffectViewType:
     - 0
     listEffectPosType:
@@ -381,13 +396,14 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
-    listCameraTime: 00000000
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000006000000
   - id: 2901
     name: Final Guard
     totalTime: 0.6
     listUnitAniState:
-    - 0
+    - Focus
     listUnitAniTime: 00000000
     listEffectViewType:
     - 0
@@ -398,14 +414,15 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
+    - FocusSubject
     listCameraTime: 00000000
   - id: 2902
     name: Super Worker
-    totalTime: 0.6
+    totalTime: 1.1
     listUnitAniState:
-    - 0
-    listUnitAniTime: 00000000
+    - Focus
+    - Attack
+    listUnitAniTime: 0000000006000000
     listEffectViewType:
     - 0
     listEffectPosType:
@@ -415,8 +432,9 @@ MonoBehaviour:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
-    listCameraTime: 00000000
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000006000000
   - id: 2903
     name: Finish Work
     totalTime: 3.8
