@@ -280,8 +280,6 @@ public partial class BattleMgr
             case 9999:
                 source.GetHurt(99);
                 break;
-
-
         }
 
     }

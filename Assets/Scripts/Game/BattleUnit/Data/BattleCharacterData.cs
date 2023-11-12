@@ -58,6 +58,7 @@ public partial class BattleCharacterData : BattleUnitData
             {
                 tempATK += 1;
             }
+            tempATK += PublicTool.GetPlantNumInThisRow(posID.y, 2001);
             if (tempATK < 0)
             {
                 tempATK = 0;
@@ -77,6 +78,7 @@ public partial class BattleCharacterData : BattleUnitData
             {
                 tempDEF += 1;
             }
+            tempDEF += PublicTool.GetPlantNumInThisColumn(posID.x, 2002);
             if (tempDEF < 0)
             {
                 tempDEF = 0;
@@ -96,6 +98,7 @@ public partial class BattleCharacterData : BattleUnitData
             {
                 tempRES += 1;
             }
+            tempRES += PublicTool.GetPlantNumInThisColumn(posID.x, 2002);
             if (tempRES < 0)
             {
                 tempRES = 0;

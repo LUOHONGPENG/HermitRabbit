@@ -101,7 +101,7 @@ public enum BarResourceType
 
 #endregion
 
-#region SkillEnum
+#region Skill
 
 public enum SkillRegionType
 {
@@ -145,7 +145,8 @@ public enum PlantTriggerType
     CharacterNormalAttack,
     TurnStart,
     FirstTurn,
-    SecondTurn
+    SecondTurn,
+    Passive
 }
 
 public enum SkillNodeType

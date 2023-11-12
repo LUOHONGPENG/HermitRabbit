@@ -52,4 +52,24 @@ MonoBehaviour:
     triggerCondition: 3
     skillID: 3301
     essence: 2
-    pixelUrl: pp_Cook_Idle
+    pixelUrl: pp_Unstable_Idle
+  - id: 2001
+    name: Maleficia
+    HP: 10
+    ATK: 0
+    DEF: 0
+    RES: 2
+    triggerCondition: 4
+    skillID: -1
+    essence: 1
+    pixelUrl: pp_Maleficia_Idle
+  - id: 2002
+    name: Beneficia
+    HP: 10
+    ATK: 0
+    DEF: 2
+    RES: 0
+    triggerCondition: 4
+    skillID: -1
+    essence: 1
+    pixelUrl: pp_Beneficia_Idle
