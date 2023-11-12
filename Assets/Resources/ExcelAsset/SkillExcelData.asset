@@ -722,6 +722,60 @@ MonoBehaviour:
     iconUrl: 
     unlockNodeID: 0
     desc: 
+  - id: 3102
+    name: Unstable Rabbit
+    costAP: 0
+    costMOV: 0
+    costHP: 0
+    costMemory: 0
+    range: 1
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 0
+    regionType: 3
+    foeEffect: 1
+    characterEffect: 0
+    plantEffect: 0
+    damageType: 2
+    damageDeltaStd: 2
+    damageDelta: 100
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
+    activeSkillType: 4
+    characterID: 0
+    iconUrl: 
+    unlockNodeID: 0
+    desc: 
+  - id: 3103
+    name: Random MilkTea
+    costAP: 0
+    costMOV: 0
+    costHP: 0
+    costMemory: 0
+    range: 3
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 1
+    characterEffect: 0
+    plantEffect: 0
+    damageType: 0
+    damageDeltaStd: 0
+    damageDelta: 0
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: 411f0000
+    listSpecialDelta: 00000000
+    activeSkillType: 4
+    characterID: 0
+    iconUrl: 
+    unlockNodeID: 0
+    desc: 
   - id: 3201
     name: Hero Rabbit
     costAP: 0
@@ -750,7 +804,7 @@ MonoBehaviour:
     unlockNodeID: 0
     desc: 
   - id: 3301
-    name: Unstable Rabbit
+    name: Void Rabbit
     costAP: 0
     costMOV: 0
     costHP: 0

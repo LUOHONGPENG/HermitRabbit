@@ -239,13 +239,13 @@ public partial class BattleMgr
                 break;
             case 3002:
                 target.AddBuff(4001, delta);
-                BuffExcelItem burnBuffItem4001 = PublicTool.GetBuffExcelItem(4001);
-                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, burnBuffItem4001.name, target.posID));
+                BuffExcelItem buffItem4001 = PublicTool.GetBuffExcelItem(4001);
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, buffItem4001.name, target.posID));
                 break;
             case 3003:
                 source.AddBuff(1007,delta);
-                BuffExcelItem burnBuffItem1007 = PublicTool.GetBuffExcelItem(1007);
-                source.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, burnBuffItem1007.name, source.posID));
+                BuffExcelItem buffItem1007 = PublicTool.GetBuffExcelItem(1007);
+                source.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, buffItem1007.name, source.posID));
                 break;
             case 5001:
                 target.DoubleAllBuff();
@@ -262,6 +262,30 @@ public partial class BattleMgr
             case 6002:
                 target.ClearFirstBuff();
                 target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, string.Format("Clear Buff", delta), target.posID));
+                break;
+            case 8001:
+                int ranMilkTea = UnityEngine.Random.Range(0, 3);
+                switch (ranMilkTea)
+                {
+                    case 0:
+                        target.AddBuff(4001, 3);
+                        BuffExcelItem burnBuffItem4001 = PublicTool.GetBuffExcelItem(4001);
+                        target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, burnBuffItem4001.name, target.posID));
+                        break;
+                    case 1:
+                        target.AddBuff(2001, 3);
+                        BuffExcelItem burnBuffItem4002 = PublicTool.GetBuffExcelItem(4002);
+                        target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, burnBuffItem4002.name, target.posID));
+                        break;
+                    case 2:
+                        target.curMOV -= 2;
+                        if (target.curMOV < 0)
+                        {
+                            target.curMOV = 0;
+                        }
+                        target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, string.Format("MOV-{0}", 2), target.posID));
+                        break;
+                }
                 break;
             case 9001:
                 BattleFoeData newFoeData = gameData.GenerateFoeData(delta);

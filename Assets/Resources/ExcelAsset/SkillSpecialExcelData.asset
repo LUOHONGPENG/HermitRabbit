@@ -61,6 +61,10 @@ MonoBehaviour:
     name: Clear Buff
     effectType: 1
     timeType: 0
+  - id: 8001
+    name: Random MilkTea
+    effectType: 1
+    timeType: 0
   - id: 9001
     name: Summon Foe
     effectType: 2

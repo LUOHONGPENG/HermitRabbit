@@ -48,6 +48,17 @@ MonoBehaviour:
     desc: Attract the attack from foes.
   - id: 1004
     name: Unstable
+    HP: 10
+    ATK: 4
+    DEF: 0
+    RES: 1
+    triggerCondition: 1
+    skillID: 3102
+    essence: 2
+    pixelUrl: pp_Unstable_Idle
+    desc: Hit nearby tiles with electricity that can be transmitted by water.
+  - id: 1005
+    name: Void
     HP: 15
     ATK: 10
     DEF: 0
@@ -55,8 +66,19 @@ MonoBehaviour:
     triggerCondition: 3
     skillID: 3301
     essence: 2
-    pixelUrl: pp_Unstable_Idle
+    pixelUrl: pp_Void_Idle
     desc: Suicide bombing when the second turn start.
+  - id: 1006
+    name: Bubble
+    HP: 20
+    ATK: 0
+    DEF: 1
+    RES: 1
+    triggerCondition: 1
+    skillID: 3103
+    essence: 2
+    pixelUrl: pp_Bubble_Idle
+    desc: Random effect from fragile, burning and reducing movement.
   - id: 2001
     name: Maleficia
     HP: 5

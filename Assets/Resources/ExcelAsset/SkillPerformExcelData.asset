@@ -490,6 +490,42 @@ MonoBehaviour:
     listCameraPosType:
     - FocusSubject
     listCameraTime: 00000000
+  - id: 3102
+    name: Unstable Rabbit
+    totalTime: 1
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - Thunder
+    - ThunderHit
+    listEffectPosType:
+    - TargetPos
+    - AllTile
+    listEffectViewTime: 0000000006000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    listCameraTime: 00000000
+  - id: 3103
+    name: Random MilkTea
+    totalTime: 0.5
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    listCameraTime: 00000000
   - id: 3201
     name: Hero Rabbit
     totalTime: 0.5
@@ -508,7 +544,7 @@ MonoBehaviour:
     - FocusSubject
     listCameraTime: 00000000
   - id: 3301
-    name: Unstable Rabbit
+    name: Void Rabbit
     totalTime: 0.6
     listUnitAniState:
     - 0

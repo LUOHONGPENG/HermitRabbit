@@ -92,7 +92,8 @@ public partial class BattleMgr
                 BattlePlantData plantData = (BattlePlantData)gameData.GetCurUnitData();
                 if (CheckPossiblePlantSkill(plantData))
                 {
-                    yield return StartCoroutine(IE_ExecutePlantSkillFindTarget(plantData, plantData.listValidSkill[0]));
+                    int ran = UnityEngine.Random.Range(0, plantData.listValidSkill.Count);
+                    yield return StartCoroutine(IE_ExecutePlantSkillFindTarget(plantData, plantData.listValidSkill[ran]));
                 }
             }
         }
