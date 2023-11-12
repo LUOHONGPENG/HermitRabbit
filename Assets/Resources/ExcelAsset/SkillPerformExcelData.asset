@@ -456,3 +456,54 @@ MonoBehaviour:
     listCameraPosType:
     - MiddleLeft
     listCameraTime: 00000000
+  - id: 3001
+    name: Tadpole Strike
+    totalTime: 0.5
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    listCameraTime: 00000000
+  - id: 3101
+    name: Cook Human On Time
+    totalTime: 0.5
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    listCameraTime: 00000000
+  - id: 3201
+    name: Hero Rabbit
+    totalTime: 0.5
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    listCameraTime: 00000000

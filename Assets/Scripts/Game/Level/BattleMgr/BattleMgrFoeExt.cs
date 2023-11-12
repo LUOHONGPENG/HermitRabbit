@@ -105,7 +105,7 @@ public partial class BattleMgr
             }
 
             //5.Spell skill and aim at the target first
-            if (CheckPossibleSkill(foeData))
+            if (CheckPossibleFoeSkill(foeData))
             {
                 if (foeData.listValidSkill.Contains(targetPos))
                 {
@@ -129,7 +129,7 @@ public partial class BattleMgr
     /// </summary>
     /// <param name="foeData"></param>
     /// <returns></returns>
-    private bool CheckPossibleSkill(BattleFoeData foeData)
+    private bool CheckPossibleFoeSkill(BattleFoeData foeData)
     {
         gameData.SetCurBattleSkill(foeData.GetSkillID());
         PublicTool.RecalculateSkillCover();
@@ -255,8 +255,8 @@ public partial class BattleMgr
     private IEnumerator IE_ExecuteFoeSkill(BattleFoeData foeData,Vector2Int targetPos)
     {
         //        SkillActionRequest(foeData.listValidSkill[0]);
-        SkillActionRequest(targetPos);
         isInFoeSkill = true;
+        SkillActionRequest(targetPos);
         yield return new WaitUntil(() => !isInFoeSkill);
     }
 

@@ -12,6 +12,12 @@ public partial class BattleMgr
         {
             yield break;
         }
+        GeneratePlantTriggerDic();
+        yield return StartCoroutine(IE_CheckPlantTurnStart());
+        if (isBattleEnd)
+        {
+            yield break;
+        }
         ResetNewTurn();
         PublicTool.RecalculateOccupancy();
         yield return new WaitForEndOfFrame();

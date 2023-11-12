@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public partial class BattleMgr
 {
@@ -62,6 +63,45 @@ public partial class BattleMgr
         }
     }
 
+    private IEnumerator IE_CheckPlantTurnStart()
+    {
+        //TurnStart
+        yield return StartCoroutine(IE_CheckAllPlantInDic(PlantTriggerType.TurnStart));
+        //FirstTurn
+        if (numTurn == 1)
+        {
+            yield return StartCoroutine(IE_CheckAllPlantInDic(PlantTriggerType.FirstTurn));
+        }
+        else if(numTurn == 2)
+        {
+            yield return StartCoroutine(IE_CheckAllPlantInDic(PlantTriggerType.SecondTurn));
+        }
+
+        //For
+        yield break;
+    }
+
+    private IEnumerator IE_CheckAllPlantInDic(PlantTriggerType type)
+    {
+        List<int> listTemp = new List<int>();
+        if (dicPlantTrigger.ContainsKey(type))
+        {
+            listTemp = dicPlantTrigger[type];
+            foreach (var keyID in listTemp)
+            {
+                gameData.SetCurUnitInfo(new UnitInfo(BattleUnitType.Plant, keyID));
+                BattlePlantData plantData = (BattlePlantData)gameData.GetCurUnitData();
+                if (CheckPossiblePlantSkill(plantData))
+                {
+                    yield return StartCoroutine(IE_ExecutePlantSkillFindTarget(plantData, plantData.listValidSkill[0]));
+                }
+            }
+        }
+        yield break;
+    }
+
+
+
     private IEnumerator IE_CheckPlantBeforeSkill()
     {
         if (skillSubject.battleUnitType == BattleUnitType.Plant)
@@ -69,7 +109,7 @@ public partial class BattleMgr
             yield break;
         }
 
-        yield return StartCoroutine(IE_ExecutePlantSkill());
+        yield return StartCoroutine(IE_ExecutePlantSkillFixedTarget());
     }
 
     private IEnumerator IE_CheckPlantAfterSkill()
@@ -79,16 +119,16 @@ public partial class BattleMgr
             yield break;
         }
 
-        //Character Normal Attack
+        //Character Normal Attack Request Plant Attack
         if (skillBattleInfo.activeSkillType == ActiveSkillType.NormalAttack && skillSubject.battleUnitType == BattleUnitType.Character && gameData.dicTempMapUnit.ContainsKey(skillTargetPos))
         {
             CheckAddPlantSkillRequest(PlantTriggerType.CharacterNormalAttack, gameData.dicTempMapUnit[skillTargetPos]);
         }
 
-        yield return StartCoroutine(IE_ExecutePlantSkill());
+        yield return StartCoroutine(IE_ExecutePlantSkillFixedTarget());
     }
 
-    private IEnumerator IE_ExecutePlantSkill()
+    private IEnumerator IE_ExecutePlantSkillFixedTarget()
     {
         if (battleTurnPhase == BattlePhase.CharacterPhase && queueSkillRequest.Count > 0)
         {
@@ -98,14 +138,14 @@ public partial class BattleMgr
 
         while (queueSkillRequest.Count > 0)
         {
-            PlantSkillRequestInfo plantSkill = queueSkillRequest.Dequeue();
+            PlantSkillRequestInfo plantSkillInfo = queueSkillRequest.Dequeue();
 
-            gameData.SetCurUnitInfo(new UnitInfo(BattleUnitType.Plant, plantSkill.keyID));
+            gameData.SetCurUnitInfo(new UnitInfo(BattleUnitType.Plant, plantSkillInfo.keyID));
             BattlePlantData plantData = (BattlePlantData)gameData.GetCurUnitData();
             gameData.SetCurBattleSkill(plantData.GetSkillID());
             PublicTool.RecalculateSkillCover();
 
-            BattleUnitData tarUnitData = gameData.GetDataFromUnitInfo(plantSkill.tarUnit);
+            BattleUnitData tarUnitData = gameData.GetDataFromUnitInfo(plantSkillInfo.tarUnit);
             if (tarUnitData != null && !tarUnitData.isDead)//Except for revive
             {
                 //When the plant will execute the skill, camera can be moved.
@@ -125,6 +165,27 @@ public partial class BattleMgr
             plantRecordCharacter = null;
         }
         yield break;
+    }
 
+    private IEnumerator IE_ExecutePlantSkillFindTarget(BattlePlantData plantData, Vector2Int targetPos)
+    {
+        isInPlantSkill = true;
+        SkillActionRequest(targetPos);
+        yield return new WaitUntil(() => !isInPlantSkill);
+        yield break;
+    }
+
+    private bool CheckPossiblePlantSkill(BattlePlantData plantData)
+    {
+        gameData.SetCurBattleSkill(plantData.GetSkillID());
+        PublicTool.RecalculateSkillCover();
+        if (plantData.listValidSkill.Count > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

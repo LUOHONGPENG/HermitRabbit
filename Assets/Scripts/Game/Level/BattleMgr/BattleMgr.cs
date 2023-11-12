@@ -40,7 +40,6 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
 
     public void StartTurnPhase()
     {
-        GeneratePlantTriggerDic();
         switch (battleTurnPhase)
         {
             case BattlePhase.CharacterPhase:
