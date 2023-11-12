@@ -111,5 +111,11 @@ public class MapTileBase : MonoBehaviour
         }
     }
 
+    public void ResetRangeIndicator()
+    {
+        spPlantRange.gameObject.SetActive(false);
+
+    }
+
     #endregion
 }

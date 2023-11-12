@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -243,11 +244,16 @@ public partial class GameData
 
         foreach (var foe in listFoe)
         {
-            foe.RefreshAttackRange();
+            foe.RefreshTouchRange();
+        }
+
+        foreach(var plant in listPlant)
+        {
+            plant.RefreshTouchRange();
         }
 
         //Need Optimise
-        if(BattleMgr.Instance.battleTurnPhase == BattlePhase.CharacterPhase)
+        if (BattleMgr.Instance.battleTurnPhase == BattlePhase.CharacterPhase)
         {
             //Scan the possible position of the character
             foreach (var character in listCharacter)

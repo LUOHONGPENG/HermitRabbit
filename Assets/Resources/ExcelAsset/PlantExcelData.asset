@@ -62,20 +62,20 @@ MonoBehaviour:
     HP: 10
     ATK: 0
     DEF: 0
-    RES: 2
+    RES: 1
     triggerCondition: 4
     skillID: -1
     essence: 1
     pixelUrl: pp_Maleficia_Idle
-    desc: Increase ATK of character in same row by 1.
+    desc: Increase ATK of units in same row by 1.
   - id: 2002
     name: Beneficia
     HP: 10
     ATK: 0
-    DEF: 2
+    DEF: 1
     RES: 0
     triggerCondition: 4
     skillID: -1
     essence: 1
     pixelUrl: pp_Beneficia_Idle
-    desc: Increase DEF and RES of character in same column by 1.
+    desc: Increase DEF and RES of units in same column by 1.

@@ -18,7 +18,7 @@ public partial class BattleUnitData
     //Store the valid pos that the player can choose
     public List<Vector2Int> listValidSkill = new List<Vector2Int>();
 
-    public List<Vector2Int> listValidRange = new List<Vector2Int>();
+    public List<Vector2Int> listValidTouchRange = new List<Vector2Int>();
 
 
     #region FindPathForMove
@@ -471,7 +471,7 @@ public partial class BattleUnitData
 
 
 
-    public void RefreshAttackRange()
+    public virtual void RefreshTouchRange()
     {
         //I will write it later
     }

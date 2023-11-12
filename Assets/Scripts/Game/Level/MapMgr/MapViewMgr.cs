@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public partial class MapViewMgr : MonoBehaviour
 {
@@ -13,9 +14,11 @@ public partial class MapViewMgr : MonoBehaviour
 
     private bool isInit = false;
     private BattleUnitData curUnitData;
+    private GameData gameData;
 
     public void Init()
     {
+        gameData = PublicTool.GetGameData();
         InitMapTileView();
         isInit = true;
     }
@@ -27,7 +30,7 @@ public partial class MapViewMgr : MonoBehaviour
         dicMapTile.Clear();
         PublicTool.ClearChildItem(tfMapTile);
         //GenerateTile(GameGlobal.mapSize, GameGlobal.mapSize);
-        foreach(var mapTileData in PublicTool.GetGameData().listMapTile)
+        foreach(var mapTileData in gameData.listMapTile)
         {
             GenerateTile(mapTileData); 
         }
@@ -63,6 +66,7 @@ public partial class MapViewMgr : MonoBehaviour
         }
 
         UpdateMapUI();
+        UpdateMapHavorUnitUI();
     }
 
     public void RefreshCurUnit()
@@ -129,10 +133,10 @@ public partial class MapViewMgr : MonoBehaviour
 
     private void SetMapUI_Skill()
     {
-        SkillBattleInfo skillMapInfo = PublicTool.GetGameData().GetCurSkillBattleInfo();
+        SkillBattleInfo skillMapInfo = gameData.GetCurSkillBattleInfo();
 
         //Deal with the hover radius
-        Vector2Int hoverTileID = PublicTool.GetGameData().hoverTileID;
+        Vector2Int hoverTileID = gameData.hoverTileID;
         bool isHover = false;
         List<Vector2Int> listHoverPos = new List<Vector2Int>();
         if (curUnitData != null && curUnitData.listViewSkill.Contains(hoverTileID))
@@ -284,15 +288,46 @@ public partial class MapViewMgr : MonoBehaviour
 
     #region Display Havor Unit Range
 
-
-    private void SetMapRangeUI_Plant()
+    public void UpdateMapHavorUnitUI()
     {
-
+        if (gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Plant)
+        {
+            BattlePlantData plantData = (BattlePlantData)gameData.GetDataFromUnitInfo(gameData.GetUnitInfoFromHoverTileID());
+            SetMapRangeUI_Plant(plantData.listValidTouchRange);
+        }
+        else
+        {
+            ResetAllTileHavorUnit();
+        }
     }
 
-    private void SetMapRangeUI_Foe()
+
+    private void SetMapRangeUI_Plant(List<Vector2Int> listPos)
+    {
+        foreach (MapTileBase mapTile in listMapTile)
+        {
+            if (listPos.Contains(mapTile.posID))
+            {
+                mapTile.SetPlantRangeIndicator(true);
+            }
+            else
+            {
+                mapTile.SetPlantRangeIndicator(false);
+            }
+        }
+    }
+
+/*    private void SetMapRangeUI_Foe()
     {
 
+    }*/
+
+    private void ResetAllTileHavorUnit()
+    {
+        foreach (MapTileBase mapTile in listMapTile)
+        {
+            mapTile.ResetRangeIndicator();
+        }
     }
 
     #endregion
