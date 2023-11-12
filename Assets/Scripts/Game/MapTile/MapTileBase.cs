@@ -5,6 +5,8 @@ using UnityEngine;
 public class MapTileBase : MonoBehaviour
 {
     public SpriteRenderer spIndicator;
+    public SpriteRenderer spPlantRange;
+    
     public List<Color> listColorIndicator;
 
     public MapTileData mapTileData;
@@ -94,6 +96,18 @@ public class MapTileBase : MonoBehaviour
                 ShowIndicator();
                 spIndicator.color = listColorIndicator[3];
                 break;
+        }
+    }
+
+    public void SetPlantRangeIndicator(bool isPlantRange)
+    {
+        if (isPlantRange)
+        {
+            spPlantRange.gameObject.SetActive(true);
+        }
+        else
+        {
+            spPlantRange.gameObject.SetActive(false);
         }
     }
 

@@ -66,6 +66,9 @@ public enum MapIndicatorType
     Blue
 }
 
+
+
+
 public enum Rarity
 {
     Common,

@@ -54,7 +54,7 @@ public partial class MapViewMgr : MonoBehaviour
 
     #endregion
 
-    #region Display the MapTile state
+    #region Display the MapTile state Common
     public void TimeGo()
     {
         if (!isInit)
@@ -100,7 +100,9 @@ public partial class MapViewMgr : MonoBehaviour
                 break;
         }
     }
+    #endregion
 
+    #region Display Common Interact
 
     private void SetMapUI_CharacterMove()
     {
@@ -277,5 +279,21 @@ public partial class MapViewMgr : MonoBehaviour
             mapTile.SetIndicator(MapIndicatorType.Hide);
         }
     }
+    #endregion
+
+
+    #region Display Havor Unit Range
+
+
+    private void SetMapRangeUI_Plant()
+    {
+
+    }
+
+    private void SetMapRangeUI_Foe()
+    {
+
+    }
+
     #endregion
 }

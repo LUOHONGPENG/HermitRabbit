@@ -17,6 +17,7 @@ public partial class PlantExcelItem : ExcelItemBase
 	public int skillID;
 	public int essence;
 	public string pixelUrl;
+	public string desc;
 }
 
 [CreateAssetMenu(fileName = "PlantExcelData", menuName = "Excel To ScriptableObject/Create PlantExcelData", order = 1)]
@@ -46,6 +47,7 @@ public class PlantAssetAssignment
 			items[i].skillID = Convert.ToInt32(allItemValueRowList[i]["skillID"]);
 			items[i].essence = Convert.ToInt32(allItemValueRowList[i]["essence"]);
 			items[i].pixelUrl = allItemValueRowList[i]["pixelUrl"];
+			items[i].desc = allItemValueRowList[i]["desc"];
 		}
 		PlantExcelData excelDataAsset = ScriptableObject.CreateInstance<PlantExcelData>();
 		excelDataAsset.items = items;

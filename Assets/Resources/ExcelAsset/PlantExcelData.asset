@@ -23,6 +23,7 @@ MonoBehaviour:
     skillID: 3001
     essence: 1
     pixelUrl: pp_Frog_Idle
+    desc: Attack the foe in range if character hit it with normal attack.
   - id: 1002
     name: Cookee
     HP: 10
@@ -33,6 +34,7 @@ MonoBehaviour:
     skillID: 3101
     essence: 2
     pixelUrl: pp_Cook_Idle
+    desc: Apply burning by 2 levels every turn.
   - id: 1003
     name: Hero
     HP: 20
@@ -43,6 +45,7 @@ MonoBehaviour:
     skillID: 3201
     essence: 2
     pixelUrl: pp_Hero_Idle
+    desc: Attract the attack from foes.
   - id: 1004
     name: Unstable
     HP: 15
@@ -53,6 +56,7 @@ MonoBehaviour:
     skillID: 3301
     essence: 2
     pixelUrl: pp_Unstable_Idle
+    desc: Suicide bombing when the second turn start.
   - id: 2001
     name: Maleficia
     HP: 10
@@ -63,6 +67,7 @@ MonoBehaviour:
     skillID: -1
     essence: 1
     pixelUrl: pp_Maleficia_Idle
+    desc: Increase ATK of character in same row by 1.
   - id: 2002
     name: Beneficia
     HP: 10
@@ -73,3 +78,4 @@ MonoBehaviour:
     skillID: -1
     essence: 1
     pixelUrl: pp_Beneficia_Idle
+    desc: Increase DEF and RES of character in same column by 1.
