@@ -180,7 +180,7 @@ MonoBehaviour:
     desc: Magic attack that can heal plants in the range.
   - id: 1302
     name: Clean
-    costAP: 1
+    costAP: 2
     costMOV: 0
     costHP: 0
     costMemory: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
     desc: Magic attack that can be transmitted damage by water tile.
   - id: 1402
     name: Teleport
-    costAP: 1
+    costAP: 2
     costMOV: 0
     costHP: 0
     costMemory: 0
@@ -819,7 +819,7 @@ MonoBehaviour:
     plantEffect: 1
     damageType: 2
     damageDeltaStd: 2
-    damageDelta: 100
+    damageDelta: 500
     damageModifier: 0
     listBuffEffect: 00000000
     listBuffDelta: 00000000
