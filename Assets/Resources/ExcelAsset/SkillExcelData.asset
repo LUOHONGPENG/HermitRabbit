@@ -153,7 +153,7 @@ MonoBehaviour:
       of movement between source and target.'
   - id: 1301
     name: Fourtain
-    costAP: 1
+    costAP: 2
     costMOV: 0
     costHP: 0
     costMemory: 0
@@ -168,7 +168,7 @@ MonoBehaviour:
     damageType: 2
     damageDeltaStd: 7
     damageDelta: 200
-    damageModifier: 0
+    damageModifier: 1
     listBuffEffect: 00000000
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
@@ -207,7 +207,7 @@ MonoBehaviour:
     desc: Remove 1 debuff for an ally or remove 1 buff for foe.
   - id: 1401
     name: Lightning Bolt
-    costAP: 1
+    costAP: 2
     costMOV: 0
     costHP: 0
     costMemory: 0
@@ -222,7 +222,7 @@ MonoBehaviour:
     damageType: 2
     damageDeltaStd: 2
     damageDelta: 100
-    damageModifier: 0
+    damageModifier: 4
     listBuffEffect: 00000000
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
