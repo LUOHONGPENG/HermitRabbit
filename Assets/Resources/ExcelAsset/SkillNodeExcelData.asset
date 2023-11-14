@@ -57,7 +57,7 @@ MonoBehaviour:
     remark: 
   - id: 1101
     name: Fire Ball
-    desc: 'Target all units and deal ATK+2 damage,
+    desc: 'Deal ATK+2 damage to all unit in skill radius,
 
       with one level burning.'
     nodeType: 0
