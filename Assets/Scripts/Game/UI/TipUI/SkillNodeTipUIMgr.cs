@@ -10,6 +10,7 @@ public class SkillNodeTipUIMgr : MonoBehaviour
     public Text codeName;
     public Text codeType;
     public Text codeDesc;
+    public SkillRangeTipUIMgr rangeUI;
 
     private int curNodeID;
 
@@ -23,13 +24,21 @@ public class SkillNodeTipUIMgr : MonoBehaviour
             {
                 SkillExcelItem skillItem = PublicTool.GetSkillItem(nodeExcelItem.id);
                 codeType.text = skillItem.activeSkillType.ToString();
+
+                rangeUI.gameObject.SetActive(true);
+
+                rangeUI.Init(skillItem.regionType, skillItem.RealRange, skillItem.RealRadius);
+
             }
             else
             {
+                rangeUI.gameObject.SetActive(false);
+
                 codeType.text = nodeExcelItem.nodeType.ToString();
             }
             codeDesc.text = nodeExcelItem.desc;
         }
+
         tfMouse.position = new Vector3(mousePos.x,mousePos.y,tfMouse.transform.position.z);
         objPopup.SetActive(true);
     }

@@ -12,6 +12,9 @@ public class SkillButtonTipUIMgr : MonoBehaviour
     public Text codeType;
     public Text codeDesc;
 
+    public SkillRangeTipUIMgr rangeUI;
+
+
     [Header("Cost")]
     public GameObject objCostAP;
     public Text codeCostAP;
@@ -69,6 +72,8 @@ public class SkillButtonTipUIMgr : MonoBehaviour
         {
             objCostMemory.SetActive(false);
         }
+
+        rangeUI.Init(skillItem.regionType, skillItem.RealRange, skillItem.RealRadius);
 
         tfMouse.position = new Vector3(mousePos.x, mousePos.y, tfMouse.transform.position.z);
         objPopup.SetActive(true);
