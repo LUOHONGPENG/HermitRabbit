@@ -22,6 +22,7 @@ public partial class FoeExcelItem : ExcelItemBase
 	public int pos0;
 	public int pos1;
 	public string pixelUrl;
+	public string aniUrl;
 }
 
 [CreateAssetMenu(fileName = "FoeExcelData", menuName = "Excel To ScriptableObject/Create FoeExcelData", order = 1)]
@@ -56,6 +57,7 @@ public class FoeAssetAssignment
 			items[i].pos0 = Convert.ToInt32(allItemValueRowList[i]["pos0"]);
 			items[i].pos1 = Convert.ToInt32(allItemValueRowList[i]["pos1"]);
 			items[i].pixelUrl = allItemValueRowList[i]["pixelUrl"];
+			items[i].aniUrl = allItemValueRowList[i]["aniUrl"];
 		}
 		FoeExcelData excelDataAsset = ScriptableObject.CreateInstance<FoeExcelData>();
 		excelDataAsset.items = items;

@@ -14,7 +14,18 @@ public class BattleFoeView : BattleUnitView
 
         CommonInit();
 
-        srUnit.sprite = Resources.Load("Sprite/Foe/"+foeData.GetItem().pixelUrl, typeof(Sprite)) as Sprite;
+        FoeExcelItem excelItem = foeData.GetItem();
+
+        if (excelItem.aniUrl.Length > 1)
+        {
+            aniUnit.runtimeAnimatorController = Resources.Load("Ani/Foe/" + excelItem.aniUrl) as RuntimeAnimatorController;
+            ChangeAniState(UnitAniState.Idle);
+        }
+        else
+        {
+            srUnit.sprite = Resources.Load("Sprite/Foe/" + foeData.GetItem().pixelUrl, typeof(Sprite)) as Sprite;
+        }
+
         MoveToPos();
 
         isInit = true;

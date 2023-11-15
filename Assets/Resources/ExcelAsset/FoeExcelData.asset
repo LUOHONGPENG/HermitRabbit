@@ -28,6 +28,7 @@ MonoBehaviour:
     pos0: 3
     pos1: 0
     pixelUrl: PixelEvilGod
+    aniUrl: ani_pf_LinkedList
   - id: 1002
     name: LinkedList
     desc: Attack near and dying unit with melee attack.
@@ -43,6 +44,7 @@ MonoBehaviour:
     pos0: 3
     pos1: 0
     pixelUrl: PixelEvilGod
+    aniUrl: ani_pf_LinkedList
   - id: 1011
     name: Resume
     desc: Can do ranged magic attack.
@@ -58,6 +60,7 @@ MonoBehaviour:
     pos0: 3
     pos1: 0
     pixelUrl: PixelEvilBoss
+    aniUrl: ani_pf_Resume
   - id: 1021
     name: HR_Normal
     desc: Can do ranged physical attack.
@@ -73,6 +76,7 @@ MonoBehaviour:
     pos0: 3
     pos1: 0
     pixelUrl: pixelHR_Black
+    aniUrl: 
   - id: 1022
     name: HR_Red
     desc: Can spell fire magic and apply .
@@ -88,6 +92,7 @@ MonoBehaviour:
     pos0: 3
     pos1: 0
     pixelUrl: pixelHR_Red
+    aniUrl: 
   - id: 1023
     name: HR_Blue
     desc: Can spell water magic and recover HP.
@@ -103,6 +108,7 @@ MonoBehaviour:
     pos0: 3
     pos1: 0
     pixelUrl: pixelHR_Blue
+    aniUrl: 
   - id: 1024
     name: HR_Dark
     desc: Can spell gravity magic to reduce movement.
@@ -118,6 +124,7 @@ MonoBehaviour:
     pos0: 3
     pos1: 0
     pixelUrl: pixelHR_Purple
+    aniUrl: 
   - id: 1031
     name: Interviewer_F
     desc: Attack range is super long and will hit farthest unit first.
@@ -133,6 +140,7 @@ MonoBehaviour:
     pos0: 1
     pos1: 0
     pixelUrl: pixelHR_Black
+    aniUrl: 
   - id: 1032
     name: Interviewer_M
     desc: Can move fast.
@@ -148,6 +156,7 @@ MonoBehaviour:
     pos0: 1
     pos1: 0
     pixelUrl: PixelEvilBoss
+    aniUrl: 
   - id: 1041
     name: CEO
     desc: Can deal high damage but move slow.
@@ -163,6 +172,7 @@ MonoBehaviour:
     pos0: 1
     pos1: 0
     pixelUrl: PixelEvilBoss
+    aniUrl: 
   - id: 1042
     name: Secretary_F
     desc: 
@@ -178,6 +188,7 @@ MonoBehaviour:
     pos0: 1
     pos1: 0
     pixelUrl: PixelEvilBoss
+    aniUrl: 
   - id: 1043
     name: Secretary_M
     desc: 
@@ -193,6 +204,7 @@ MonoBehaviour:
     pos0: 1
     pos1: 0
     pixelUrl: PixelEvilBoss
+    aniUrl: 
   - id: 1099
     name: Interview
     desc: Can summon pressure.
@@ -208,6 +220,7 @@ MonoBehaviour:
     pos0: 1
     pos1: 0
     pixelUrl: PixelEvilBoss
+    aniUrl: 
   - id: 1098
     name: Pressure
     desc: 
@@ -223,3 +236,4 @@ MonoBehaviour:
     pos0: 1
     pos1: 0
     pixelUrl: PixelEvilGod
+    aniUrl: 
