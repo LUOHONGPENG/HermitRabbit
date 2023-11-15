@@ -11,6 +11,8 @@ public class MenuUIMgr : MonoBehaviour
     public Button btnTest;
     public Button btnNewGame;
     public Button btnLoadGame;
+    public Button btnDelete;
+
 
     public void Init()
     {
@@ -32,6 +34,12 @@ public class MenuUIMgr : MonoBehaviour
         btnLoadGame.onClick.AddListener(delegate ()
         {
             loadGameUIMgr.ShowPopup();
+        });
+
+        btnDelete.onClick.RemoveAllListeners();
+        btnDelete.onClick.AddListener(delegate ()
+        {
+            PlayerPrefs.DeleteAll();
         });
     }
 }

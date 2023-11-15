@@ -60,7 +60,7 @@ MonoBehaviour:
   - id: 1005
     name: Void
     HP: 15
-    ATK: 10
+    ATK: 3
     DEF: 0
     RES: 0
     triggerCondition: 3
