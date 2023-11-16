@@ -560,3 +560,161 @@ MonoBehaviour:
     listCameraPosType:
     - FocusSubject
     listCameraTime: 00000000
+  - id: 9001
+    name: Bite
+    totalTime: 0.5
+    listUnitAniState:
+    - Attack
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    listCameraTime: 00000000
+  - id: 9002
+    name: Write me!
+    totalTime: 0.5
+    listUnitAniState:
+    - Attack
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    listCameraTime: 00000000
+  - id: 9101
+    name: Anxious Nodule
+    totalTime: 1
+    listUnitAniState:
+    - Attack
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000005000000
+  - id: 9102
+    name: Anxious Fire
+    totalTime: 1
+    listUnitAniState:
+    - Attack
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000005000000
+  - id: 9103
+    name: Anxious Water
+    totalTime: 1
+    listUnitAniState:
+    - Attack
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000005000000
+  - id: 9104
+    name: Anxious Gravity
+    totalTime: 1
+    listUnitAniState:
+    - Attack
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000005000000
+  - id: 9201
+    name: Vision
+    totalTime: 1
+    listUnitAniState:
+    - Attack
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000005000000
+  - id: 9202
+    name: Cruelty
+    totalTime: 0.5
+    listUnitAniState:
+    - Attack
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    listCameraTime: 00000000
+  - id: 9301
+    name: Emotional Damage
+    totalTime: 0.5
+    listUnitAniState:
+    - Attack
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    listCameraTime: 00000000
