@@ -280,6 +280,10 @@ public partial class BattleUnitData
         while (ququeOpen.Count > 0)
         {
             FindPathNode tarNode = ququeOpen.Dequeue();
+            if(tarNode == null)
+            {
+                continue;
+            }
             FindPathNode validNode = new FindPathNode(new Vector2Int(-1,-1));
             bool haveValidNode = false;
             if(PublicTool.GetFindPathNode(dicValidMoveNode, tarNode.pos) != null)

@@ -63,6 +63,8 @@ public class TipUIMgr : MonoBehaviour
     {
         skillNodeTipUIMgr.HideTip();
         skillButtonTipUIMgr.HideTip();
+        plantPreviewTipUIMgr.HideTip();
+
     }
 
 

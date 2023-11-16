@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -140,6 +141,13 @@ public partial class InputMgr
                 {
                     VictoryPlantItem plantUI = item.gameObject.transform.GetComponent<VictoryPlantItem>();
                     UITipInfo uiTipInfo = new UITipInfo(UITipType.PlantPreview, plantUI.GetTypeID(), -1, GetMousePosUI());
+                    EventCenter.Instance.EventTrigger("ShowUITip", uiTipInfo);
+                    return;
+                }
+                else if(item.gameObject.GetComponent<PeacePlantUIItem>() != null)
+                {
+                    PeacePlantUIItem peacePlantUI = item.gameObject.transform.GetComponent<PeacePlantUIItem>();
+                    UITipInfo uiTipInfo = new UITipInfo(UITipType.PlantPreview, peacePlantUI.GetTypeID(), -1, GetMousePosUI());
                     EventCenter.Instance.EventTrigger("ShowUITip", uiTipInfo);
                     return;
                 }

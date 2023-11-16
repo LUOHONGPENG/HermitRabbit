@@ -56,7 +56,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 0
+  m_Spacing: -5
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -329,4 +329,5 @@ MonoBehaviour:
   pfPlantBtn: {fileID: 9164108657779411343, guid: 22570e2fd0d43af489b8f9940477a5ab,
     type: 3}
   btnClose: {fileID: 0}
+  btnSave: {fileID: 0}
   btnRemovePlant: {fileID: 166480762880351678}

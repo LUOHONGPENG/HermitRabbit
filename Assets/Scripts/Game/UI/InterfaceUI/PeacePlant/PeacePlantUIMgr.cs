@@ -12,6 +12,8 @@ public class PeacePlantUIMgr : MonoBehaviour
 
     public Button btnClose;
 
+    public Button btnSave;
+
     public Button btnRemovePlant;
 
     private List<PeacePlantUIItem> listPlantBtn = new List<PeacePlantUIItem>();
