@@ -15,6 +15,7 @@ public class InterfaceUIMgr : MonoBehaviour
 
     public Text txPhase;
     public Text txDayInfo;
+    public Button btnSetting;
 
     private bool isInit = false;
 
@@ -26,6 +27,12 @@ public class InterfaceUIMgr : MonoBehaviour
         peacePlantUIMgr.Init();
         peaceMapClipUIMgr.Init();
         resourceInterfaceUIMgr.Init();
+
+        btnSetting.onClick.RemoveAllListeners();
+        btnSetting.onClick.AddListener(delegate ()
+        {
+            EventCenter.Instance.EventTrigger("ShowSetting", null);
+        });
 
         if (InputMgr.Instance.GetInteractState() == InteractState.PeaceNormal)
         {

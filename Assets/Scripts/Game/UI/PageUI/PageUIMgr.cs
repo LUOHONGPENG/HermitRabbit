@@ -8,6 +8,7 @@ public class PageUIMgr : MonoBehaviour
     public StatusUIMgr statusUIMgr;
     public VictoryUIMgr victoryUIMgr;
     public TalkUIMgr talkUIMgr;
+    public SettingUIMgr settingUIMgr;
 
     private bool isInit = false;
 
@@ -17,6 +18,7 @@ public class PageUIMgr : MonoBehaviour
         statusUIMgr.Init();
         victoryUIMgr.Init();
         talkUIMgr.Init();
+        settingUIMgr.Init();
 
         isInit = true;
     }
@@ -38,6 +40,10 @@ public class PageUIMgr : MonoBehaviour
                 return true;
             }
             else if (talkUIMgr.objPopup.activeSelf)
+            {
+                return true;
+            }
+            else if (settingUIMgr.objPopup.activeSelf)
             {
                 return true;
             }
