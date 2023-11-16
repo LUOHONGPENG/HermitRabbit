@@ -831,7 +831,7 @@ MonoBehaviour:
     unlockNodeID: 0
     desc: 
   - id: 9001
-    name: Slap
+    name: Bite
     costAP: 1
     costMOV: 0
     costHP: 0
@@ -858,7 +858,7 @@ MonoBehaviour:
     unlockNodeID: 0
     desc: 
   - id: 9002
-    name: Anxiety
+    name: Write me!
     costAP: 1
     costMOV: 0
     costHP: 0

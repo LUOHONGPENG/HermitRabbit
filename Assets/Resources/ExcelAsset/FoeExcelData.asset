@@ -76,7 +76,7 @@ MonoBehaviour:
     pos0: 3
     pos1: 0
     pixelUrl: pixelHR_Black
-    aniUrl: 
+    aniUrl: ani_pf_HRGray
   - id: 1022
     name: HR_Red
     desc: Can spell fire magic and apply .
@@ -92,7 +92,7 @@ MonoBehaviour:
     pos0: 3
     pos1: 0
     pixelUrl: pixelHR_Red
-    aniUrl: 
+    aniUrl: ani_pf_HRRed
   - id: 1023
     name: HR_Blue
     desc: Can spell water magic and recover HP.
@@ -108,7 +108,7 @@ MonoBehaviour:
     pos0: 3
     pos1: 0
     pixelUrl: pixelHR_Blue
-    aniUrl: 
+    aniUrl: ani_pf_HRBlue
   - id: 1024
     name: HR_Dark
     desc: Can spell gravity magic to reduce movement.
@@ -124,7 +124,7 @@ MonoBehaviour:
     pos0: 3
     pos1: 0
     pixelUrl: pixelHR_Purple
-    aniUrl: 
+    aniUrl: ani_pf_HRPurple
   - id: 1031
     name: Interviewer_F
     desc: Attack range is super long and will hit farthest unit first.
@@ -140,7 +140,7 @@ MonoBehaviour:
     pos0: 1
     pos1: 0
     pixelUrl: pixelHR_Black
-    aniUrl: 
+    aniUrl: ani_pf_InterviewF
   - id: 1032
     name: Interviewer_M
     desc: Can move fast.
@@ -156,7 +156,7 @@ MonoBehaviour:
     pos0: 1
     pos1: 0
     pixelUrl: PixelEvilBoss
-    aniUrl: 
+    aniUrl: ani_pf_InterviewM
   - id: 1041
     name: CEO
     desc: Can deal high damage but move slow.
@@ -188,7 +188,7 @@ MonoBehaviour:
     pos0: 1
     pos1: 0
     pixelUrl: PixelEvilBoss
-    aniUrl: 
+    aniUrl: ani_pf_InterviewF
   - id: 1043
     name: Secretary_M
     desc: 
@@ -204,7 +204,7 @@ MonoBehaviour:
     pos0: 1
     pos1: 0
     pixelUrl: PixelEvilBoss
-    aniUrl: 
+    aniUrl: ani_pf_InterviewM
   - id: 1099
     name: Interview
     desc: Can summon pressure.
