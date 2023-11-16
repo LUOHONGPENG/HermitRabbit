@@ -57,6 +57,7 @@ public partial class BattleMgr
     {
         float realDamage = 0;
         float damageSource = 0;
+
         //Calculate the source damage
         switch (skillBattleInfo.damageDeltaStd)
         {
@@ -72,6 +73,18 @@ public partial class BattleMgr
                 {
                     damageSource += 2 * (source.curMOV - target.curMOV);
                 }
+                break;
+            case SkillDamageDeltaStd.ATKDISD1:
+                damageSource = source.curATK * skillBattleInfo.damageDeltaFloat;
+                damageSource -= (PublicTool.CalculateGlobalDis(skillTargetPos, target.posID) / 1);
+                break;
+            case SkillDamageDeltaStd.ATKDISD2:
+                damageSource = source.curATK * skillBattleInfo.damageDeltaFloat;
+                damageSource -= (PublicTool.CalculateGlobalDis(skillTargetPos, target.posID) / 2);
+                break;
+            case SkillDamageDeltaStd.ATKDISD3:
+                damageSource = source.curATK * skillBattleInfo.damageDeltaFloat;
+                damageSource -= (PublicTool.CalculateGlobalDis(skillTargetPos, target.posID) / 3);
                 break;
             case SkillDamageDeltaStd.MAXHP:
                 damageSource = source.curMaxHP * skillBattleInfo.damageDeltaFloat;
@@ -108,6 +121,11 @@ public partial class BattleMgr
         }
 
         damageSource += skillBattleInfo.damageModifier;
+        //Make sure the damage is not lower than 0
+        if (damageSource <= 0)
+        {
+            damageSource = 0;
+        }
 
         if (effectType == SkillEffectType.Harm)
         {
