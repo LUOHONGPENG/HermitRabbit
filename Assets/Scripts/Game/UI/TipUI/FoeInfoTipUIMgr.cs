@@ -11,7 +11,6 @@ public class FoeInfoTipUIMgr : UnitInfoTipUIMgr
 {
     private int recordTypeID = -1;
 
-
     protected override void UpdateSpecial(BattleUnitData unitData)
     {
         if (!objPopup.activeSelf || recordTypeID != unitData.typeID)

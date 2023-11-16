@@ -1,19 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Networking.Types;
 using UnityEngine.UI;
 
-public class SkillButtonTipUIMgr : MonoBehaviour
+public class SkillButtonTipUIMgr : ButtonInfoTipUIMgr
 {
-    public GameObject objPopup;
-    public Transform tfMouse;
+    [Header("BasicInfo")]
     public Text codeName;
     public Text codeType;
     public Text codeDesc;
-
     public SkillRangeTipUIMgr rangeUI;
-
 
     [Header("Cost")]
     public GameObject objCostAP;
@@ -25,14 +23,27 @@ public class SkillButtonTipUIMgr : MonoBehaviour
     public GameObject objCostMemory;
     public Text codeCostMemory;
 
-    public void ShowTip(int skillID,int characterID, Vector2 mousePos)
+    public void ShowTip(int skillID, Vector2 mousePos)
     {
-        SkillExcelItem skillItem = PublicTool.GetSkillItem(skillID);
+        if (!objPopup.activeSelf || recordID != skillID)
+        {
+            SkillExcelItem skillItem = PublicTool.GetSkillItem(skillID);
 
-        codeName.text = skillItem.name;
-        codeType.text = skillItem.activeSkillType.ToString();
-        codeDesc.text = skillItem.desc;
+            codeName.text = skillItem.name;
+            codeType.text = skillItem.activeSkillType.ToString();
+            codeDesc.text = skillItem.desc;
 
+            RefreshCost(skillItem);
+
+            rangeUI.Init(skillItem.regionType, skillItem.RealRange, skillItem.RealRadius);
+            recordID = skillID;
+        }
+
+        ShowTipSetPos(mousePos);
+    }
+
+    private void RefreshCost(SkillExcelItem skillItem)
+    {
         if (skillItem.RealCostAP > 0)
         {
             objCostAP.SetActive(true);
@@ -72,15 +83,6 @@ public class SkillButtonTipUIMgr : MonoBehaviour
         {
             objCostMemory.SetActive(false);
         }
-
-        rangeUI.Init(skillItem.regionType, skillItem.RealRange, skillItem.RealRadius);
-
-        tfMouse.position = new Vector3(mousePos.x, mousePos.y, tfMouse.transform.position.z);
-        objPopup.SetActive(true);
     }
 
-    public void HideTip()
-    {
-        objPopup.SetActive(false);
-    }
 }

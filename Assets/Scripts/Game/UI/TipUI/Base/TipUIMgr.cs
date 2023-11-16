@@ -6,8 +6,12 @@ using UnityEngine.Playables;
 
 public class TipUIMgr : MonoBehaviour
 {
+    [Header("ButtonTip")]
     public SkillNodeTipUIMgr skillNodeTipUIMgr;
     public SkillButtonTipUIMgr skillButtonTipUIMgr;
+    public PlantPreviewTipUIMgr plantPreviewTipUIMgr;
+
+    [Header("UnitInfoTip")]
     public FoeInfoTipUIMgr foeInfoTipUIMgr;
     public PlantInfoTipUIMgr plantInfoTipUIMgr;
 
@@ -19,7 +23,6 @@ public class TipUIMgr : MonoBehaviour
         gameData = PublicTool.GetGameData();
         isInit = true;
     }
-
 
     private void OnEnable()
     {
@@ -33,8 +36,6 @@ public class TipUIMgr : MonoBehaviour
         EventCenter.Instance.RemoveEventListener("HideUITip", HideUITipEvent);
     }
 
-
-
     private void ShowUITipEvent(object arg0)
     {
         UITipInfo uiTipInfo = (UITipInfo)arg0;
@@ -43,10 +44,17 @@ public class TipUIMgr : MonoBehaviour
             case UITipType.SkillNode:
                 skillNodeTipUIMgr.ShowTip(uiTipInfo.ID, uiTipInfo.mousePos);
                 skillButtonTipUIMgr.HideTip();
+                plantPreviewTipUIMgr.HideTip();
                 break;
             case UITipType.SkillButton:
                 skillNodeTipUIMgr.HideTip();
-                skillButtonTipUIMgr.ShowTip(uiTipInfo.ID, uiTipInfo.unitID, uiTipInfo.mousePos);
+                skillButtonTipUIMgr.ShowTip(uiTipInfo.ID, uiTipInfo.mousePos);
+                plantPreviewTipUIMgr.HideTip();
+                break;
+            case UITipType.PlantPreview:
+                skillNodeTipUIMgr.HideTip();
+                skillButtonTipUIMgr.HideTip();
+                plantPreviewTipUIMgr.ShowTip(uiTipInfo.ID,uiTipInfo.mousePos);
                 break;
         }
     }

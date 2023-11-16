@@ -134,6 +134,16 @@ public partial class InputMgr
                     return;
                 }
             }
+            else if(item.gameObject.tag == "PlantPreview")
+            {
+                if(item.gameObject.GetComponent<VictoryPlantItem>() != null)
+                {
+                    VictoryPlantItem plantUI = item.gameObject.transform.GetComponent<VictoryPlantItem>();
+                    UITipInfo uiTipInfo = new UITipInfo(UITipType.PlantPreview, plantUI.GetTypeID(), -1, GetMousePosUI());
+                    EventCenter.Instance.EventTrigger("ShowUITip", uiTipInfo);
+                    return;
+                }
+            }
         }
         EventCenter.Instance.EventTrigger("HideUITip", null);
     }

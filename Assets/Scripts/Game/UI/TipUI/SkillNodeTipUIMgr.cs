@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SkillNodeTipUIMgr : MonoBehaviour
+public class SkillNodeTipUIMgr : ButtonInfoTipUIMgr
 {
-    public GameObject objPopup;
-    public Transform tfMouse;
+    [Header("BasicInfo")]
     public Text codeName;
     public Text codeType;
     public Text codeDesc;
     public SkillRangeTipUIMgr rangeUI;
 
-    private int curNodeID;
+    [Header("Cost")]
+    public Text codeCostSP;
 
     public void ShowTip(int nodeID,Vector2 mousePos)
     {
-        if (nodeID != curNodeID)
+        if (!objPopup.activeSelf || recordID != nodeID)
         {
             SkillNodeExcelItem nodeExcelItem = PublicTool.GetSkillNodeItem(nodeID);
             codeName.text = nodeExcelItem.name;
-            if(nodeExcelItem.nodeType == SkillNodeType.Active)
+            if (nodeExcelItem.nodeType == SkillNodeType.Active)
             {
                 SkillExcelItem skillItem = PublicTool.GetSkillItem(nodeExcelItem.id);
                 codeType.text = skillItem.activeSkillType.ToString();
@@ -37,15 +37,10 @@ public class SkillNodeTipUIMgr : MonoBehaviour
                 codeType.text = nodeExcelItem.nodeType.ToString();
             }
             codeDesc.text = nodeExcelItem.desc;
+
+            recordID = nodeID;
         }
+        ShowTipSetPos(mousePos);
 
-        tfMouse.position = new Vector3(mousePos.x,mousePos.y,tfMouse.transform.position.z);
-        objPopup.SetActive(true);
     }
-
-    public void HideTip()
-    {
-        objPopup.SetActive(false);
-    }
-
 }

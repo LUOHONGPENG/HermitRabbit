@@ -29,6 +29,9 @@ public class VictoryPlantItem : MonoBehaviour
         });
     }
 
-
+    public int GetTypeID()
+    {
+        return typeID;
+    }
 
 }

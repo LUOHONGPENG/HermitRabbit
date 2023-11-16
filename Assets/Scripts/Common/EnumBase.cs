@@ -266,7 +266,8 @@ public enum SkillPerformInfoType
 public enum UITipType
 {
     SkillNode,
-    SkillButton
+    SkillButton,
+    PlantPreview
 }
 
 

@@ -7,7 +7,6 @@ public class PlantInfoTipUIMgr : UnitInfoTipUIMgr
 {
     private int recordTypeID = -1;
 
-
     protected override void UpdateSpecial(BattleUnitData unitData)
     {
         if (!objPopup.activeSelf || recordTypeID != unitData.typeID)
@@ -18,6 +17,7 @@ public class PlantInfoTipUIMgr : UnitInfoTipUIMgr
                 recordTypeID = unitData.typeID;
                 codeName.text = plantExcelItem.name;
                 codeDesc.text = plantExcelItem.desc;
+                codeMOV.gameObject.SetActive(false);
             }
         }
     }
