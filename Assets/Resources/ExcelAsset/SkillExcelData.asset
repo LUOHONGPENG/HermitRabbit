@@ -222,7 +222,7 @@ MonoBehaviour:
     damageType: 2
     damageDeltaStd: 4
     damageDelta: 100
-    damageModifier: 5
+    damageModifier: 4
     listBuffEffect: 00000000
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
