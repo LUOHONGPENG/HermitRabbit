@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1532834347469823752}
   m_Layer: 5
   m_Name: BuffTinyUIItem
-  m_TagString: Untagged
+  m_TagString: BuffIconUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

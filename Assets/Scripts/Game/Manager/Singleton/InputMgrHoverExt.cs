@@ -135,7 +135,7 @@ public partial class InputMgr
                     return;
                 }
             }
-            else if(item.gameObject.tag == "PlantPreview")
+            else if(item.gameObject.tag == "PlantPreviewUI")
             {
                 if(item.gameObject.GetComponent<VictoryPlantItem>() != null)
                 {
@@ -148,6 +148,16 @@ public partial class InputMgr
                 {
                     PeacePlantUIItem peacePlantUI = item.gameObject.transform.GetComponent<PeacePlantUIItem>();
                     UITipInfo uiTipInfo = new UITipInfo(UITipType.PlantPreview, peacePlantUI.GetTypeID(), -1, GetMousePosUI());
+                    EventCenter.Instance.EventTrigger("ShowUITip", uiTipInfo);
+                    return;
+                }
+            }
+            else if(item.gameObject.tag == "BuffIconUI")
+            {
+                if (item.gameObject.GetComponent<BuffTinyUIItem>() != null)
+                {
+                    BuffTinyUIItem buffItem = item.gameObject.transform.GetComponent<BuffTinyUIItem>();
+                    UITipInfo uiTipInfo = new UITipInfo(UITipType.BuffIcon, buffItem.GetBuffID(), -1, GetMousePosUI());
                     EventCenter.Instance.EventTrigger("ShowUITip", uiTipInfo);
                     return;
                 }

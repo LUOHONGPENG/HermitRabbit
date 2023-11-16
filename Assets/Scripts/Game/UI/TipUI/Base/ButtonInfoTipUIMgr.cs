@@ -16,6 +16,7 @@ public class ButtonInfoTipUIMgr : MonoBehaviour
     }
 
     public virtual void HideTip()
+
     {
         objPopup.SetActive(false);
     }

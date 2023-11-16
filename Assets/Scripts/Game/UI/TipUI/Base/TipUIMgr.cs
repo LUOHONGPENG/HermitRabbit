@@ -10,6 +10,7 @@ public class TipUIMgr : MonoBehaviour
     public SkillNodeTipUIMgr skillNodeTipUIMgr;
     public SkillButtonTipUIMgr skillButtonTipUIMgr;
     public PlantPreviewTipUIMgr plantPreviewTipUIMgr;
+    public BuffIconTipUIMgr buffIconTipUIMgr;
 
     [Header("UnitInfoTip")]
     public FoeInfoTipUIMgr foeInfoTipUIMgr;
@@ -45,16 +46,25 @@ public class TipUIMgr : MonoBehaviour
                 skillNodeTipUIMgr.ShowTip(uiTipInfo.ID, uiTipInfo.mousePos);
                 skillButtonTipUIMgr.HideTip();
                 plantPreviewTipUIMgr.HideTip();
+                buffIconTipUIMgr.HideTip();
                 break;
             case UITipType.SkillButton:
                 skillNodeTipUIMgr.HideTip();
                 skillButtonTipUIMgr.ShowTip(uiTipInfo.ID, uiTipInfo.mousePos);
                 plantPreviewTipUIMgr.HideTip();
+                buffIconTipUIMgr.HideTip();
                 break;
             case UITipType.PlantPreview:
                 skillNodeTipUIMgr.HideTip();
                 skillButtonTipUIMgr.HideTip();
                 plantPreviewTipUIMgr.ShowTip(uiTipInfo.ID,uiTipInfo.mousePos);
+                buffIconTipUIMgr.HideTip();
+                break;
+            case UITipType.BuffIcon:
+                skillNodeTipUIMgr.HideTip();
+                skillButtonTipUIMgr.HideTip();
+                plantPreviewTipUIMgr.HideTip();
+                buffIconTipUIMgr.ShowTip(uiTipInfo.ID, uiTipInfo.mousePos);
                 break;
         }
     }
@@ -64,7 +74,7 @@ public class TipUIMgr : MonoBehaviour
         skillNodeTipUIMgr.HideTip();
         skillButtonTipUIMgr.HideTip();
         plantPreviewTipUIMgr.HideTip();
-
+        buffIconTipUIMgr.HideTip();
     }
 
 

@@ -267,7 +267,8 @@ public enum UITipType
 {
     SkillNode,
     SkillButton,
-    PlantPreview
+    PlantPreview,
+    BuffIcon
 }
 
 
