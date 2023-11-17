@@ -18,6 +18,7 @@ public partial class BuffExcelItem : ExcelItemBase
 	public string desc;
 	public int firstSpecialEffect;
 	public int firstSpecialDelta;
+	public string iconUrl;
 }
 
 [CreateAssetMenu(fileName = "BuffExcelData", menuName = "Excel To ScriptableObject/Create BuffExcelData", order = 1)]
@@ -48,6 +49,7 @@ public class BuffAssetAssignment
 			items[i].desc = allItemValueRowList[i]["desc"];
 			items[i].firstSpecialEffect = Convert.ToInt32(allItemValueRowList[i]["firstSpecialEffect"]);
 			items[i].firstSpecialDelta = Convert.ToInt32(allItemValueRowList[i]["firstSpecialDelta"]);
+			items[i].iconUrl = allItemValueRowList[i]["iconUrl"];
 		}
 		BuffExcelData excelDataAsset = ScriptableObject.CreateInstance<BuffExcelData>();
 		excelDataAsset.items = items;

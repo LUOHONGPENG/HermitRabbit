@@ -154,9 +154,9 @@ public partial class InputMgr
             }
             else if(item.gameObject.tag == "BuffIconUI")
             {
-                if (item.gameObject.GetComponent<BuffTinyUIItem>() != null)
+                if (item.gameObject.transform.parent.GetComponent<BuffTinyUIItem>() != null)
                 {
-                    BuffTinyUIItem buffItem = item.gameObject.transform.GetComponent<BuffTinyUIItem>();
+                    BuffTinyUIItem buffItem = item.gameObject.transform.parent.GetComponent<BuffTinyUIItem>();
                     UITipInfo uiTipInfo = new UITipInfo(UITipType.BuffIcon, buffItem.GetBuffID(), -1, GetMousePosUI());
                     EventCenter.Instance.EventTrigger("ShowUITip", uiTipInfo);
                     return;

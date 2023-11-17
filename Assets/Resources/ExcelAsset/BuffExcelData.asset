@@ -24,6 +24,7 @@ MonoBehaviour:
     desc: Won't die before next turn.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
+    iconUrl: buff_Up
   - id: 1002
     name: Overtime Work
     effectType: 2
@@ -35,6 +36,7 @@ MonoBehaviour:
     desc: Get extra AP when turn starts.
     firstSpecialEffect: 1003
     firstSpecialDelta: 1
+    iconUrl: buff_Up
   - id: 1003
     name: Infinity
     effectType: 2
@@ -46,6 +48,7 @@ MonoBehaviour:
     desc: Next X skills can enlarge the radius.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
+    iconUrl: buff_Up
   - id: 1004
     name: Super Worker
     effectType: 2
@@ -57,6 +60,7 @@ MonoBehaviour:
     desc: Increase ability in X turns.
     firstSpecialEffect: 1004
     firstSpecialDelta: 1
+    iconUrl: buff_Up
   - id: 1005
     name: Chanting
     effectType: 2
@@ -68,6 +72,7 @@ MonoBehaviour:
     desc: Increase range and AP in X turns.
     firstSpecialEffect: 1003
     firstSpecialDelta: 1
+    iconUrl: buff_Up
   - id: 1006
     name: Chronal Shift
     effectType: 2
@@ -79,6 +84,7 @@ MonoBehaviour:
     desc: Dodge Next X attack from enemy.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
+    iconUrl: buff_Up
   - id: 1007
     name: Absorb
     effectType: 2
@@ -90,6 +96,7 @@ MonoBehaviour:
     desc: 
     firstSpecialEffect: 0
     firstSpecialDelta: 0
+    iconUrl: buff_Up
   - id: 1008
     name: Hated
     effectType: 2
@@ -101,6 +108,7 @@ MonoBehaviour:
     desc: Attract enemies' attack
     firstSpecialEffect: 0
     firstSpecialDelta: 0
+    iconUrl: buff_Up
   - id: 2001
     name: Curse
     effectType: 1
@@ -112,6 +120,7 @@ MonoBehaviour:
     desc: 
     firstSpecialEffect: 0
     firstSpecialDelta: 0
+    iconUrl: buff_Down
   - id: 3001
     name: Regen
     effectType: 2
@@ -123,6 +132,7 @@ MonoBehaviour:
     desc: Recover X HP when turn starts
     firstSpecialEffect: 0
     firstSpecialDelta: 0
+    iconUrl: buff_Up
   - id: 3002
     name: Reduce Damage
     effectType: 2
@@ -134,6 +144,7 @@ MonoBehaviour:
     desc: 
     firstSpecialEffect: 0
     firstSpecialDelta: 0
+    iconUrl: buff_Up
   - id: 4001
     name: Burning
     effectType: 1
@@ -145,6 +156,7 @@ MonoBehaviour:
     desc: Receive X damage when turn starts.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
+    iconUrl: buff_Burning
   - id: 4002
     name: Fragile
     effectType: 1
@@ -156,3 +168,4 @@ MonoBehaviour:
     desc: 
     firstSpecialEffect: 0
     firstSpecialDelta: 0
+    iconUrl: buff_Down

@@ -22,13 +22,10 @@ public class BuffTinyUIItem : MonoBehaviour
         buffID = buffInfo.id;
 
         codeBuffLevel.text = buffInfo.GetLevel().ToString();
-        if(buffInfo.effectType == SkillEffectType.Harm)
-        {
-            imgIcon.color = Color.red;
-        }
-        else if(buffInfo.effectType == SkillEffectType.Help)
-        {
-            imgIcon.color = Color.blue;
-        }
+
+
+        BuffExcelItem buffItem = PublicTool.GetBuffExcelItem(buffInfo.id);
+        imgIcon.sprite = Resources.Load("Sprite/Buff/"+ buffItem.iconUrl, typeof(Sprite)) as Sprite;
+
     }
 }
