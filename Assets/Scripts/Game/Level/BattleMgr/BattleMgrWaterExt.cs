@@ -13,7 +13,7 @@ public partial class BattleMgr
         for (int i = 0; i < gameData.listMapTile.Count; i++)
         {
             MapTileData tileData = gameData.listMapTile[i];
-            if (tileData.tileType == MapTileType.Water)
+            if (tileData.GetMapType() == MapTileType.Water)
             {
                 if (GetWaterGroup(tileData.posID) == null)
                 {

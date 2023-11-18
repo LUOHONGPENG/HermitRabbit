@@ -178,7 +178,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
-    tileEffectType: 0
+    tileEffectType: 2
     activeSkillType: 1
     characterID: 1001
     iconUrl: imgIconSkill_Fourtain

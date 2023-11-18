@@ -341,7 +341,30 @@ public partial class BattleMgr
                 if(gameData.GetMapTileData(posID) !=null)
                 {
                     tileData = gameData.GetMapTileData(posID);
-                    tileData.isBurning = true;
+                    if(tileData.GetMapType() == MapTileType.Grass)
+                    {
+                        tileData.isBurning = true;
+                    }
+                }
+                break;
+            case SkillTileEffectType.Water:
+                if (gameData.GetMapTileData(posID) != null)
+                {
+                    tileData = gameData.GetMapTileData(posID);
+                    if (tileData.GetMapType() == MapTileType.Grass && tileData.isBurning)
+                    {
+                        tileData.isBurning = false;
+                    }
+                }
+                break;
+            case SkillTileEffectType.WaterPlus:
+                if (gameData.GetMapTileData(posID) != null)
+                {
+                    tileData = gameData.GetMapTileData(posID);
+                    if (tileData.GetMapType() == MapTileType.Grass && tileData.isBurning)
+                    {
+                        tileData.isBurning = false;
+                    }
                 }
                 break;
         }

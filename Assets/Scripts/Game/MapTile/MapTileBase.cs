@@ -121,7 +121,7 @@ public class MapTileBase : MonoBehaviour
         {
             if (mapTileData != null)
             {
-                return mapTileData.tileType;
+                return mapTileData.GetMapType();
             }
             return MapTileType.Normal;
         }

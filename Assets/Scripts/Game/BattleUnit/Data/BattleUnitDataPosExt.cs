@@ -316,7 +316,8 @@ public partial class BattleUnitData
 
     public void RefreshValidSkill()
     {
-        SkillBattleInfo skillInfo = PublicTool.GetGameData().GetCurSkillBattleInfo();
+        GameData gameData = PublicTool.GetGameData();
+        SkillBattleInfo skillInfo = gameData.GetCurSkillBattleInfo();
 
         if (skillInfo.ID == 1402 && BattleMgr.Instance.isFirstTargetSelected)
         {
@@ -327,7 +328,7 @@ public partial class BattleUnitData
             listViewSkill.Remove(BattleMgr.Instance.skillTargetPos);
 
             List<Vector2Int> listTemp = new List<Vector2Int>();
-            List<Vector2Int> listEmptyPos = PublicTool.GetGameData().listTempEmptyPos;
+            List<Vector2Int> listEmptyPos = gameData.listTempEmptyPos;
             CheckWhetherSkillContainTarget(listTemp, listEmptyPos, listViewSkill, skillInfo);
 
             listValidSkill = listTemp;
@@ -369,29 +370,75 @@ public partial class BattleUnitData
                     else
                     {
                         //Get the position of All Foes
-                        List<Vector2Int> listFoePos = PublicTool.GetGameData().listTempFoePos;
+                        List<Vector2Int> listFoePos = gameData.listTempFoePos;
                         CheckWhetherSkillContainTarget(listTemp, listFoePos, listViewSkill, skillInfo);
                     }
                 }
                 else
                 {
                     //Get the position of All Foes
-                    List<Vector2Int> listFoePos = PublicTool.GetGameData().listTempFoePos;
+                    List<Vector2Int> listFoePos = gameData.listTempFoePos;
                     CheckWhetherSkillContainTarget(listTemp, listFoePos, listViewSkill, skillInfo);
                 }
             }
 
             if (skillInfo.isTargetCharacter)
             {
-                List<Vector2Int> listCharacterPos = PublicTool.GetGameData().listTempCharacterPos;
+                List<Vector2Int> listCharacterPos = gameData.listTempCharacterPos;
                 CheckWhetherSkillContainTarget(listTemp, listCharacterPos, listViewSkill, skillInfo);
             }
 
             if (skillInfo.isTargetPlant)
             {
-                List<Vector2Int> listPlantPos = PublicTool.GetGameData().listTempPlantPos;
+                List<Vector2Int> listPlantPos = gameData.listTempPlantPos;
                 CheckWhetherSkillContainTarget(listTemp, listPlantPos, listViewSkill, skillInfo);
             }
+
+            switch (skillInfo.tileEffectType)
+            {
+                case SkillTileEffectType.Burn:
+                    List<Vector2Int> listToBurn = new List<Vector2Int>();
+                    for(int i = 0;i< gameData.listMapTile.Count; i++)
+                    {
+                        MapTileData tileData = gameData.listMapTile[i];
+                        if (tileData.GetMapType() == MapTileType.Grass && !tileData.isBurning)
+                        {
+                            listToBurn.Add(tileData.posID);
+                        }
+                    }
+                    CheckWhetherSkillContainTarget(listTemp, listToBurn, listViewSkill, skillInfo);
+                    break;
+                case SkillTileEffectType.Water:
+                    List<Vector2Int> listWater = new List<Vector2Int>();
+                    for (int i = 0; i < gameData.listMapTile.Count; i++)
+                    {
+                        MapTileData tileData = gameData.listMapTile[i];
+                        if (tileData.GetMapType() == MapTileType.Grass && tileData.isBurning)
+                        {
+                            listWater.Add(tileData.posID);
+                        }
+                    }
+                    CheckWhetherSkillContainTarget(listTemp, listWater, listViewSkill, skillInfo);
+                    break;
+                case SkillTileEffectType.WaterPlus:
+                    List<Vector2Int> listWaterPlus = new List<Vector2Int>();
+                    for (int i = 0; i < gameData.listMapTile.Count; i++)
+                    {
+                        MapTileData tileData = gameData.listMapTile[i];
+                        if (tileData.GetMapType() == MapTileType.Grass && tileData.isBurning)
+                        {
+                            listWaterPlus.Add(tileData.posID);
+                        }
+                        else if(tileData.GetMapType() == MapTileType.Normal)
+                        {
+                            listWaterPlus.Add(tileData.posID);
+                        }
+                    }
+                    CheckWhetherSkillContainTarget(listTemp, listWaterPlus, listViewSkill, skillInfo);
+                    break;
+            }
+
+
             listValidSkill = listTemp;
         }
     }

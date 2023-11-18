@@ -6,19 +6,25 @@ using UnityEngine;
 public class MapTileData
 {
     public Vector2Int posID;
-    public MapTileType tileType = MapTileType.Normal;
+    private MapTileType tileType = MapTileType.Normal;
     public bool isBurning = false;
-
+    public bool isWet = false;
     public MapTileData(Vector2Int posID)
     {
         this.posID = posID;
         SetMapType(MapTileType.Normal);
         isBurning = false;
+        isWet = false;
     }
 
     public void SetMapType(MapTileType tileType)
     {
         this.tileType = tileType;
+    }
+
+    public MapTileType GetMapType()
+    {
+        return tileType;
     }
 }
 

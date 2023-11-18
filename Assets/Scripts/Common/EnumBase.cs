@@ -133,7 +133,9 @@ public enum SkillEffectType
 public enum SkillTileEffectType
 {
     None,
-    Burn
+    Burn,
+    Water,
+    WaterPlus
 }
 
 public enum SkillDamageDeltaStd

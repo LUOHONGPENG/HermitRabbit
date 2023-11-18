@@ -107,6 +107,7 @@ public partial class GameData
         for(int i = 0; i < listMapTile.Count; i++)
         {
             listMapTile[i].isBurning = false;
+            listMapTile[i].isWet = false;
         }
     }
 
@@ -358,7 +359,7 @@ public partial class GameData
 
         foreach (var map in listMapTile)
         {
-            if(map.tileType == MapTileType.Stone)
+            if(map.GetMapType() == MapTileType.Stone)
             {
                 listMapStonePos.Add(map.posID);
             }
