@@ -182,7 +182,7 @@ public partial class GameData
                         Vector2Int tarPos = startPos + new Vector2Int(j, i);
                         if (dicMapTile.ContainsKey(tarPos))
                         {
-                            dicMapTile[tarPos].tileType = clipItem.listMapTile[i * GameGlobal.mapClipSize + j];
+                            dicMapTile[tarPos].SetMapType(clipItem.listMapTile[i * GameGlobal.mapClipSize + j]);
                         }
                     }
                 }

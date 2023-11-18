@@ -7,26 +7,19 @@ public class MapTileData
 {
     public Vector2Int posID;
     public MapTileType tileType = MapTileType.Normal;
+    public bool isBurning = false;
 
     public MapTileData(Vector2Int posID)
     {
         this.posID = posID;
-        tileType = MapTileType.Normal;
+        SetMapType(MapTileType.Normal);
+        isBurning = false;
     }
 
     public void SetMapType(MapTileType tileType)
     {
         this.tileType = tileType;
     }
-
-    public void RandomMapType()
-    {
-        if(posID.y>=1 && posID.y <= 9)
-        {
-            tileType = (MapTileType)Random.Range(0, 4);
-        }
-    }
-
 }
 
 /// <summary>

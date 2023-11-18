@@ -4,49 +4,19 @@ using UnityEngine;
 
 public class MapTileBase : MonoBehaviour
 {
+    [Header("Indicator")]
     public SpriteRenderer spIndicator;
     public SpriteRenderer spPlantRange;
-    
     public List<Color> listColorIndicator;
 
-    public MapTileData mapTileData;
-    public Vector2Int posID
-    {
-        get
-        {
-            if(mapTileData != null)
-            {
-                return mapTileData.posID;
-            }
-            return Vector2Int.zero;
-        }
-    }
-
-    public MapTileType tileType
-    {
-        get
-        {
-            if (mapTileData != null)
-            {
-                return mapTileData.tileType;
-            }
-            return MapTileType.Normal;
-        }
-    }
-
+    [Header("Display")]
     public List<GameObject> listModel = new List<GameObject>();
-
+    public GameObject objBurning;
 
     public void Init(MapTileData mapTileData)
     {
         this.mapTileData = mapTileData;
 
-        RefreshMapTile();
-    }
-
-    public void TestRandomSetTileType()
-    {
-        mapTileData.RandomMapType();
         RefreshMapTile();
     }
 
@@ -58,6 +28,16 @@ public class MapTileBase : MonoBehaviour
         }
 
         listModel[(int)tileType].SetActive(true);
+
+        //Burning
+        if (isBurning)
+        {
+            objBurning.SetActive(true);
+        }
+        else
+        {
+            objBurning.SetActive(false);
+        }
     }
 
 
@@ -117,5 +97,46 @@ public class MapTileBase : MonoBehaviour
 
     }
 
+    #endregion
+
+    #region MaptileData
+    [HideInInspector]
+    public MapTileData mapTileData;
+
+    public Vector2Int posID
+    {
+        get
+        {
+            if (mapTileData != null)
+            {
+                return mapTileData.posID;
+            }
+            return Vector2Int.zero;
+        }
+    }
+
+    public MapTileType tileType
+    {
+        get
+        {
+            if (mapTileData != null)
+            {
+                return mapTileData.tileType;
+            }
+            return MapTileType.Normal;
+        }
+    }
+
+    public bool isBurning
+    {
+        get
+        {
+            if (mapTileData != null)
+            {
+                return mapTileData.isBurning;
+            }
+            return false;
+        }
+    }
     #endregion
 }

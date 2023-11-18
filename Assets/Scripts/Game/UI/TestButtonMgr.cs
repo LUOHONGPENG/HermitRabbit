@@ -8,8 +8,6 @@ public class TestButtonMgr : MonoBehaviour
     public GameObject objPopup;
 
     public Button btnAddExp;
-    public Button btnGenerateFoe;
-    public Button btnRandomMap;
 
     public Button btnSave1;
     public Button btnSave2;
@@ -22,18 +20,6 @@ public class TestButtonMgr : MonoBehaviour
         btnAddExp.onClick.AddListener(delegate ()
         {
             EventCenter.Instance.EventTrigger("TestButton", "AddExp");
-        });
-
-        btnGenerateFoe.onClick.RemoveAllListeners();
-        btnGenerateFoe.onClick.AddListener(delegate ()
-        {
-            EventCenter.Instance.EventTrigger("TestButton", "GenerateFoe");
-        });
-
-        btnRandomMap.onClick.RemoveAllListeners();
-        btnRandomMap.onClick.AddListener(delegate ()
-        {
-            EventCenter.Instance.EventTrigger("TestButton", "RandomMap");
         });
 
         btnSave1.onClick.RemoveAllListeners();

@@ -125,16 +125,6 @@ public partial class LevelMgr
                 gameData.AddCharacterExp(1001, 50);
                 gameData.AddCharacterExp(1002, 50);
                 break;
-            case "GenerateFoe":
-                BattleFoeData newFoeData = gameData.GenerateFoeData(1001);
-                unitViewMgr.GenerateFoeView(newFoeData);
-                break;
-            case "RandomMap":
-                for(int i = 0; i < mapViewMgr.listMapTile.Count; i++)
-                {
-                    mapViewMgr.listMapTile[i].TestRandomSetTileType();
-                }
-                break;
             case "Save1":
                 if(gameData.gamePhase == GamePhase.Peace)
                 {
