@@ -130,28 +130,7 @@ public partial class BattleUnitData
         dicValidMoveNode.Clear();
 
         //GetBlockPos
-        List<Vector2Int> listBlock = new List<Vector2Int>();
-        foreach(Vector2Int blockPos in PublicTool.GetGameData().listTempCharacterPos)
-        {
-            if (!listBlock.Contains(blockPos))
-            {
-                listBlock.Add(blockPos);
-            }
-        }
-        foreach (Vector2Int blockPos in PublicTool.GetGameData().listTempPlantPos)
-        {
-            if (!listBlock.Contains(blockPos))
-            {
-                listBlock.Add(blockPos);
-            }
-        }
-        foreach (Vector2Int blockPos in PublicTool.GetGameData().listMapStonePos)
-        {
-            if (!listBlock.Contains(blockPos))
-            {
-                listBlock.Add(blockPos);
-            }
-        }
+        List<Vector2Int> listBlock = PublicTool.GetGameData().GetFoeBlockPos();
 
         //Prepare the container for search
 
@@ -217,6 +196,7 @@ public partial class BattleUnitData
             }
         }
 
+        //Remove Unit Pos
         foreach (Vector2Int tarPos in PublicTool.GetGameData().listTempAllPos)
         {
             if (dicValidMoveNode.ContainsKey(tarPos))
@@ -225,6 +205,7 @@ public partial class BattleUnitData
             }
         }
 
+        //Remove Stone Pos
         foreach (Vector2Int tarPos in PublicTool.GetGameData().listMapStonePos)
         {
             if (dicValidMoveNode.ContainsKey(tarPos))
@@ -237,28 +218,7 @@ public partial class BattleUnitData
     public void RefreshDistanceFromAimNode(Vector2Int aimPos,int touchRange)
     {
         //GetBlockPos
-        List<Vector2Int> listBlock = new List<Vector2Int>();
-        foreach (Vector2Int blockPos in PublicTool.GetGameData().listTempCharacterPos)
-        {
-            if (!listBlock.Contains(blockPos))
-            {
-                listBlock.Add(blockPos);
-            }
-        }
-        foreach (Vector2Int blockPos in PublicTool.GetGameData().listTempPlantPos)
-        {
-            if (!listBlock.Contains(blockPos))
-            {
-                listBlock.Add(blockPos);
-            }
-        }
-        foreach (Vector2Int blockPos in PublicTool.GetGameData().listMapStonePos)
-        {
-            if (!listBlock.Contains(blockPos))
-            {
-                listBlock.Add(blockPos);
-            }
-        }
+        List<Vector2Int> listBlock = PublicTool.GetGameData().GetFoeBlockPos();
 
         //GetFoePos
         List<Vector2Int> listTeam = new List<Vector2Int>();

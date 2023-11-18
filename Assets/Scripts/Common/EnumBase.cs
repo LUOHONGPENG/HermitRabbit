@@ -130,6 +130,12 @@ public enum SkillEffectType
     Help
 }
 
+public enum SkillTileEffectType
+{
+    None,
+    Burn
+}
+
 public enum SkillDamageDeltaStd
 {
     None,

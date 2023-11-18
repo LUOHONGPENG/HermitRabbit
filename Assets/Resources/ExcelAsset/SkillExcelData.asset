@@ -35,6 +35,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 0
     characterID: 1001
     iconUrl: 
@@ -62,6 +63,7 @@ MonoBehaviour:
     listBuffDelta: 01000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 1
     activeSkillType: 1
     characterID: 1001
     iconUrl: imgIconSkill_FireBall
@@ -89,6 +91,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 1
     characterID: 1001
     iconUrl: imgIconSkill_Boom
@@ -116,6 +119,7 @@ MonoBehaviour:
     listBuffDelta: 01000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 2
     characterID: 1001
     iconUrl: imgIconSkill_ChronalShift
@@ -143,6 +147,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: d1070000
     listSpecialDelta: 01000000
+    tileEffectType: 0
     activeSkillType: 1
     characterID: 1001
     iconUrl: imgIconSkill_Gravity
@@ -173,6 +178,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 1
     characterID: 1001
     iconUrl: imgIconSkill_Fourtain
@@ -200,6 +206,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 8a13000072170000
     listSpecialDelta: 0000000000000000
+    tileEffectType: 0
     activeSkillType: 2
     characterID: 1001
     iconUrl: imgIconSkill_Clean
@@ -227,6 +234,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 1
     characterID: 1001
     iconUrl: imgIconSkill_Lightning
@@ -254,6 +262,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: b90b0000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 2
     characterID: 1001
     iconUrl: imgIconSkill_Teleport
@@ -281,6 +290,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 8913000071170000
     listSpecialDelta: 0000000000000000
+    tileEffectType: 0
     activeSkillType: 3
     characterID: 1001
     iconUrl: imgIconSkill_TimeExpand
@@ -308,6 +318,7 @@ MonoBehaviour:
     listBuffDelta: 03000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 3
     characterID: 1001
     iconUrl: imgIconSkill_Infinity
@@ -338,6 +349,7 @@ MonoBehaviour:
     listBuffDelta: 03000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 3
     characterID: 1001
     iconUrl: imgIconSkill_MagicCircle
@@ -365,6 +377,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 0
     characterID: 1002
     iconUrl: 
@@ -392,6 +405,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 1
     characterID: 1002
     iconUrl: imgIconSkill_BFCut
@@ -419,6 +433,7 @@ MonoBehaviour:
     listBuffDelta: 03000000
     listSpecialEffect: ba0b0000
     listSpecialDelta: 03000000
+    tileEffectType: 0
     activeSkillType: 2
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -446,6 +461,7 @@ MonoBehaviour:
     listBuffDelta: 0100000001000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 1
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -473,6 +489,7 @@ MonoBehaviour:
     listBuffDelta: 02000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 2
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -500,6 +517,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 2
     characterID: 1002
     iconUrl: imgIconSkill_Rest
@@ -527,6 +545,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: bb0b0000
     listSpecialDelta: 01000000
+    tileEffectType: 0
     activeSkillType: 1
     characterID: 1002
     iconUrl: imgIconSkill_FishDrat
@@ -555,6 +574,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: ea030000
     listSpecialDelta: 03000000
+    tileEffectType: 0
     activeSkillType: 2
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -582,6 +602,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: e9030000
     listSpecialDelta: 01000000
+    tileEffectType: 0
     activeSkillType: 2
     characterID: 1002
     iconUrl: imgIconSkill_2301
@@ -609,6 +630,7 @@ MonoBehaviour:
     listBuffDelta: 01000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 3
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -636,6 +658,7 @@ MonoBehaviour:
     listBuffDelta: 03000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 3
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -663,6 +686,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 3
     characterID: 1002
     iconUrl: imgIconSkill_Default
@@ -690,6 +714,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 4
     characterID: 0
     iconUrl: 
@@ -717,6 +742,7 @@ MonoBehaviour:
     listBuffDelta: 03000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 4
     characterID: 0
     iconUrl: 
@@ -744,6 +770,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 4
     characterID: 0
     iconUrl: 
@@ -771,6 +798,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 411f0000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 4
     characterID: 0
     iconUrl: 
@@ -798,6 +826,7 @@ MonoBehaviour:
     listBuffDelta: 05000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 4
     characterID: 0
     iconUrl: 
@@ -825,6 +854,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 0e270000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 4
     characterID: 0
     iconUrl: 
@@ -852,6 +882,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 5
     characterID: 0
     iconUrl: 
@@ -879,6 +910,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 5
     characterID: 0
     iconUrl: 
@@ -906,6 +938,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 5
     characterID: 0
     iconUrl: 
@@ -933,6 +966,7 @@ MonoBehaviour:
     listBuffDelta: 01000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 1
     activeSkillType: 5
     characterID: 0
     iconUrl: 
@@ -960,6 +994,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: bb0b0000
     listSpecialDelta: 01000000
+    tileEffectType: 0
     activeSkillType: 5
     characterID: 0
     iconUrl: 
@@ -987,6 +1022,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: d1070000
     listSpecialDelta: 01000000
+    tileEffectType: 0
     activeSkillType: 5
     characterID: 0
     iconUrl: 
@@ -1014,6 +1050,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 5
     characterID: 0
     iconUrl: 
@@ -1041,6 +1078,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 5
     characterID: 0
     iconUrl: 
@@ -1068,6 +1106,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
+    tileEffectType: 0
     activeSkillType: 5
     characterID: 0
     iconUrl: 
@@ -1095,6 +1134,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 29230000
     listSpecialDelta: 4a040000
+    tileEffectType: 0
     activeSkillType: 5
     characterID: 0
     iconUrl: 

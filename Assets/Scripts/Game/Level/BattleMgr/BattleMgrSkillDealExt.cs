@@ -325,4 +325,21 @@ public partial class BattleMgr
         }
 
     }
+
+
+    private void SkillTileEffectDeal(Vector2Int posID, SkillTileEffectType tileEffectType)
+    {
+        MapTileData tileData;
+
+        switch (tileEffectType)
+        {
+            case SkillTileEffectType.Burn:
+                if(gameData.GetMapTileData(posID) !=null)
+                {
+                    tileData = gameData.GetMapTileData(posID);
+                    tileData.isBurning = true;
+                }
+                break;
+        }
+    }
 }

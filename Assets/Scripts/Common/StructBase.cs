@@ -52,6 +52,7 @@ public struct SkillBattleInfo
     //Special
     public List<SkillSpecialExcelItem> listSpecialEffect;
     public List<int> listSpecialDelta;
+    public SkillTileEffectType tileEffectType;
 
     public SkillBattleInfo(SkillExcelItem item)
     {
@@ -88,6 +89,7 @@ public struct SkillBattleInfo
         //SpecialEffect
         this.listSpecialEffect = item.listSpecialEffectUse;
         this.listSpecialDelta = new List<int>(item.listSpecialDelta);
+        this.tileEffectType = item.tileEffectType;
     }
 }
 

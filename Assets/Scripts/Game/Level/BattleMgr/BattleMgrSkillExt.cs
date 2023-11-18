@@ -200,6 +200,12 @@ public partial class BattleMgr
             BattlePlantData plantData = item.Value;
             SkillEffectRequest(skillSubject, plantData, skillBattleInfo.plantEffect);
         }
+
+        //Tile
+        foreach(var pos in listSkillRadiusEffectPos)
+        {
+            SkillTileEffectDeal(pos, skillBattleInfo.tileEffectType);
+        }
         yield break;
     }
 
@@ -238,6 +244,7 @@ public partial class BattleMgr
         CheckClearDeadUnitView();
         RefreshSkillRange();
         RefreshWaterRange();
+        mapViewMgr.RefreshTileView();
         yield break;
     }
 

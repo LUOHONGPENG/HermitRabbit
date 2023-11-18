@@ -150,6 +150,19 @@ public partial class GameData
         return false;
     }
 
+    public MapTileData GetMapTileData(Vector2Int posID)
+    {
+        if (dicMapTile.ContainsKey(posID))
+        {
+            return dicMapTile[posID];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+
 
     public void ReadClipToTile()
     {
@@ -165,9 +178,10 @@ public partial class GameData
                     for (int j = 0; j < GameGlobal.mapClipSize; j++)
                     {
                         Vector2Int tarPos = startPos + new Vector2Int(j, i);
-                        if (dicMapTile.ContainsKey(tarPos))
+
+                        if (GetMapTileData(tarPos)!=null)
                         {
-                            dicMapTile[tarPos].tileType = MapTileType.Normal;
+                            GetMapTileData(tarPos).SetMapType(MapTileType.Normal);
                         }
                     }
                 }
@@ -180,16 +194,14 @@ public partial class GameData
                     for (int j = 0; j < GameGlobal.mapClipSize; j++)
                     {
                         Vector2Int tarPos = startPos + new Vector2Int(j, i);
-                        if (dicMapTile.ContainsKey(tarPos))
+                        if (GetMapTileData(tarPos) != null)
                         {
-                            dicMapTile[tarPos].SetMapType(clipItem.listMapTile[i * GameGlobal.mapClipSize + j]);
+                            GetMapTileData(tarPos).SetMapType(clipItem.listMapTile[i * GameGlobal.mapClipSize + j]);
                         }
                     }
                 }
             }
         }
-
-
     }
 
     #endregion
@@ -215,11 +227,7 @@ public partial class GameData
             return new UnitInfo(BattleUnitType.None,-1);
         }
     }
-
-
-
     #endregion
-
 
     #region CalculateRegion
     public List<Vector2Int> listTempDeadCharacterPos = new List<Vector2Int>();

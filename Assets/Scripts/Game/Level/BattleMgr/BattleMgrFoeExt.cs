@@ -204,18 +204,10 @@ public partial class BattleMgr
     }
 
 
-
-
-
-
-
-
-
     private IEnumerator IE_ExecuteFoeMove(BattleFoeData foeData,Vector2Int aimPos)
     {
         int touchRange = foeData.GetSkillTouchRange();
         foeData.RefreshDistanceFromAimNode(aimPos, touchRange);
-
 
         Debug.Log(foeData.keyID + "dicValidCount " + foeData.dicValidMoveNode.Count +"CurMP " + foeData.curMOV);
         List<FindPathNode> listValidNode = new List<FindPathNode>();

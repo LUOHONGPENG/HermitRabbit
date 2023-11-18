@@ -113,11 +113,10 @@ public partial class PublicTool
         while (listOpen.Count > 0)
         {
             Vector2Int tarPos = listOpen.Dequeue();
-            if (gameData.dicMapTile.ContainsKey(tarPos) && !listClose.Contains(tarPos))
+            if (gameData.GetMapTileData(tarPos)!=null && !listClose.Contains(tarPos))
             {
                 listClose.Add(tarPos);
-
-                MapTileData mapTileData = gameData.dicMapTile[tarPos];
+                MapTileData mapTileData = gameData.GetMapTileData(tarPos);
 
                 if(mapTileData.tileType == MapTileType.Water)
                 {
