@@ -91,10 +91,11 @@ public class BattlePlantData : BattleUnitData
 
     public override void ResetBattleEnd()
     {
+        ClearAllBuff();
+
         curHP = curMaxHP;
         curAP = curMaxAP;
 
-        ClearAllBuff();
     }
 
     public override void RefreshTouchRange()

@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 public partial class GameData
 {
@@ -104,6 +102,15 @@ public partial class GameData
 
     }
 
+    public void RefreshMapTileStatusData()
+    {
+        for(int i = 0; i < listMapTile.Count; i++)
+        {
+            listMapTile[i].isBurning = false;
+        }
+    }
+
+
     #endregion
 
     #region Use-Map
@@ -161,8 +168,6 @@ public partial class GameData
             return null;
         }
     }
-
-
 
     public void ReadClipToTile()
     {

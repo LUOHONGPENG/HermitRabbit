@@ -197,6 +197,16 @@ public partial class LevelMgr
                 unitViewMgr.GetCharacterView(characterData.keyID).MoveToPos();
             }
         }
+        //PlantReset
+        for(int i = 0; i < gameData.listPlant.Count; i++)
+        {
+            BattlePlantData plantData = gameData.listPlant[i];
+            plantData.ResetBattleEnd();
+        }
+        //TileReset
+        gameData.RefreshMapTileStatusData();
+        mapViewMgr.RefreshTileView();
+
         PublicTool.RecalculateOccupancy();
         EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
         PublicTool.EventReadyAni(-1);

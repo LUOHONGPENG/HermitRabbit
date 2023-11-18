@@ -177,6 +177,7 @@ public partial class BattleCharacterData : BattleUnitData
     {
         ClearAllBuff();
 
+        isDead = false;
         curHP = curMaxHP;
         curAP = regenAP;
         curMOV = regenMOV;

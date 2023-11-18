@@ -78,6 +78,7 @@ public partial class BattleMgr
             if (!listCharacter[i].isDead)
             {
                 EventCenter.Instance.EventTrigger("InputChooseCharacter", listCharacter[i].keyID);
+                break;
             }
         }
         yield break;
