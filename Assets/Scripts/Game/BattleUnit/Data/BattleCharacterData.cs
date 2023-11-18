@@ -164,13 +164,24 @@ public partial class BattleCharacterData : BattleUnitData
         }
     }
 
-    public override void ResetNewTurn()
+    public override void ResetNewTurnBefore()
     {
-        //Buff will affect AP and MOV
-        TurnBuffDecrease();
-
         curAP = regenAP;
         curMOV = regenMOV;
+    }
+
+    public override void ResetNewTurnAfter()
+    {
+        TurnBuffDecrease();
+
+        if (curAP > curMaxAP)
+        {
+            curAP = curMaxAP;
+        }
+        if(curMOV > curMaxMOV)
+        {
+            curMOV = curMaxMOV;
+        }
     }
 
     public override void ResetBattleEnd()

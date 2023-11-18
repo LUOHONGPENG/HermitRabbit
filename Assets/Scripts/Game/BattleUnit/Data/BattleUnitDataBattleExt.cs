@@ -6,7 +6,9 @@ public partial class BattleUnitData
 {
     public bool isDead = false;
 
-    public virtual void ResetNewTurn() { }
+    public virtual void ResetNewTurnBefore() { }
+
+    public virtual void ResetNewTurnAfter() { }
     public virtual void ResetBattleEnd() { }
 
     public virtual void InvokeDead() { }

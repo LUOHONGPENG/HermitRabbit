@@ -83,11 +83,20 @@ public class BattlePlantData : BattleUnitData
     }
     #endregion
 
-    public override void ResetNewTurn()
+    public override void ResetNewTurnBefore()
     {
-        TurnBuffDecrease();
         curAP = curMaxAP;
     }
+
+    public override void ResetNewTurnAfter()
+    {
+        TurnBuffDecrease();
+        if (curAP > curMaxAP)
+        {
+            curAP = curMaxAP;
+        }
+    }
+
 
     public override void ResetBattleEnd()
     {

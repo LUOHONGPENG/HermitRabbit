@@ -256,14 +256,16 @@ public partial class BattleMgr
                 }
                 break;
             case 3002:
-                target.AddBuff(4001, delta);
+                SkillBuffEffectDeal(target, 4001, delta, PublicTool.GetBuffExcelItem(4001).name, SkillEffectType.Harm);
+/*                target.AddBuff(4001, delta);
                 BuffExcelItem buffItem4001 = PublicTool.GetBuffExcelItem(4001);
-                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, buffItem4001.name, target.posID));
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, buffItem4001.name, target.posID));*/
                 break;
             case 3003:
-                source.AddBuff(1007,delta);
+                SkillBuffEffectDeal(source, 1007, delta, PublicTool.GetBuffExcelItem(1007).name, SkillEffectType.Help);
+/*                source.AddBuff(1007,delta);
                 BuffExcelItem buffItem1007 = PublicTool.GetBuffExcelItem(1007);
-                source.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, buffItem1007.name, source.posID));
+                source.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, buffItem1007.name, source.posID));*/
                 break;
             case 5001:
                 target.DoubleAllBuff();
@@ -286,14 +288,16 @@ public partial class BattleMgr
                 switch (ranMilkTea)
                 {
                     case 0:
-                        target.AddBuff(4001, 3);
+                        SkillBuffEffectDeal(target, 4001, 4, PublicTool.GetBuffExcelItem(4001).name, SkillEffectType.Harm);
+/*                        target.AddBuff(4001, 3);
                         BuffExcelItem burnBuffItem4001 = PublicTool.GetBuffExcelItem(4001);
-                        target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, burnBuffItem4001.name, target.posID));
+                        target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, burnBuffItem4001.name, target.posID));*/
                         break;
                     case 1:
-                        target.AddBuff(2001, 3);
+                        SkillBuffEffectDeal(target, 4002, 3, PublicTool.GetBuffExcelItem(4002).name, SkillEffectType.Harm);
+/*                        target.AddBuff(2001, 3);
                         BuffExcelItem burnBuffItem4002 = PublicTool.GetBuffExcelItem(4002);
-                        target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, burnBuffItem4002.name, target.posID));
+                        target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, burnBuffItem4002.name, target.posID));*/
                         break;
                     case 2:
                         target.curMOV -= 2;

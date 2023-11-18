@@ -204,7 +204,7 @@ public partial class SkillExcelItem
             {
                 temp++;
             }
-            if (characterID == 1001)
+            if (characterID == 1001 && id != 1903)
             {
                 BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
                 if (characterData.CheckBuffExist(1005))
@@ -226,7 +226,7 @@ public partial class SkillExcelItem
                 temp++;
             }
             if (skillSubjectType == BattleUnitType.Character && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1902)&&
-                 //id != 1402 &&
+                 
                  (activeSkillType == ActiveSkillType.SupportSkill || activeSkillType == ActiveSkillType.DamageSkill))
             {
                 BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);

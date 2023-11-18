@@ -216,11 +216,16 @@ public partial class GameData
 
     public UnitInfo GetUnitInfoFromHoverTileID()
     {
-        if(hoverTileID.x >=0 && hoverTileID.y >= 0)
+        return GetUnitInfoFromPosID(hoverTileID);
+    }
+
+    public UnitInfo GetUnitInfoFromPosID(Vector2Int posID)
+    {
+        if (posID.x >= 0 && posID.y >= 0)
         {
-            if (dicTempMapUnit.ContainsKey(hoverTileID))
+            if (dicTempMapUnit.ContainsKey(posID))
             {
-                return dicTempMapUnit[hoverTileID];
+                return dicTempMapUnit[posID];
             }
             else
             {
@@ -229,9 +234,12 @@ public partial class GameData
         }
         else
         {
-            return new UnitInfo(BattleUnitType.None,-1);
+            return new UnitInfo(BattleUnitType.None, -1);
         }
     }
+
+
+
     #endregion
 
     #region CalculateRegion

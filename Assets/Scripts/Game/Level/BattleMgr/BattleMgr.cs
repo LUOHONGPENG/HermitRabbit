@@ -29,7 +29,7 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     public void StartNewBattle(LevelMgr parent)
     {
         numTurn = 1;
-        ResetNewTurn(); 
+        ResetNewTurnBefore(); 
         PublicTool.RecalculateOccupancy();
         ResetCharacterExp();
         RefreshWaterRange();
@@ -67,28 +67,53 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
         StartTurnPhase();
     }
 
-    private void ResetNewTurn()
+    private void ResetNewTurnBefore()
     {
         List<BattleCharacterData> listCharacter = gameData.listCharacter;
         for(int i = 0; i < listCharacter.Count; i++)
         {
-            listCharacter[i].ResetNewTurn();
+            listCharacter[i].ResetNewTurnBefore();
         }
 
         List<BattlePlantData> listPlant = gameData.listPlant;
         for (int i = 0; i < listPlant.Count; i++)
         {
-            listPlant[i].ResetNewTurn();
+            listPlant[i].ResetNewTurnBefore();
         }
 
         List<BattleFoeData> listFoe = gameData.listFoe;
         for (int i = 0; i < listFoe.Count; i++)
         {
-            listFoe[i].ResetNewTurn();
+            listFoe[i].ResetNewTurnBefore();
         }
 
         PublicTool.EventRefreshCharacterUI();
     }
+
+    private void ResetNewTurnAfter()
+    {
+        List<BattleCharacterData> listCharacter = gameData.listCharacter;
+        for (int i = 0; i < listCharacter.Count; i++)
+        {
+            listCharacter[i].ResetNewTurnAfter();
+        }
+
+        List<BattlePlantData> listPlant = gameData.listPlant;
+        for (int i = 0; i < listPlant.Count; i++)
+        {
+            listPlant[i].ResetNewTurnAfter();
+        }
+
+        List<BattleFoeData> listFoe = gameData.listFoe;
+        for (int i = 0; i < listFoe.Count; i++)
+        {
+            listFoe[i].ResetNewTurnAfter();
+        }
+
+        PublicTool.EventRefreshCharacterUI();
+    }
+
+
 
     private void StartCharacterPhase()
     {

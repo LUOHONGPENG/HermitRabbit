@@ -55,12 +55,20 @@ public class BattleFoeData : BattleUnitData
 
     #region Override
 
-    public override void ResetNewTurn()
+    public override void ResetNewTurnBefore()
     {
-        //Buff Go first
-        TurnBuffDecrease();
         curMOV = regenMOV;
     }
+
+    public override void ResetNewTurnAfter()
+    {
+        TurnBuffDecrease();
+        if (curMOV > curMaxMOV)
+        {
+            curMOV = curMaxMOV;
+        }
+    }
+
 
     public override void InvokeDead()
     {

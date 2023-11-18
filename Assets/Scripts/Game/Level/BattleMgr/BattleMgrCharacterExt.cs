@@ -7,18 +7,26 @@ public partial class BattleMgr
     #region StartCharacterTurn
     private IEnumerator IE_WholeStartCharacterTurn()
     {
+        //ResetBefore
+        ResetNewTurnBefore();
+        //TileFire
+        TileBurningExpand();
+        yield return StartCoroutine(IE_TileApplyBurning());
+        //BuffCheck
         yield return StartCoroutine(IE_FriendBuffCheck());
         if (isBattleEnd)
         {
             yield break;
         }
+        //PlantTurnStart
         GeneratePlantTriggerDic();
         yield return StartCoroutine(IE_CheckPlantTurnStart());
         if (isBattleEnd)
         {
             yield break;
         }
-        ResetNewTurn();
+        //ResetAfter
+        ResetNewTurnAfter();
         PublicTool.RecalculateOccupancy();
         yield return new WaitForEndOfFrame();
         yield return StartCoroutine(IE_StartCharacterTurnControl());
