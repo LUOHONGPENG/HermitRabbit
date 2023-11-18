@@ -26,6 +26,26 @@ public class MapTileData
     {
         return tileType;
     }
+
+    public bool canTransmitElectricity
+    {
+        get
+        {
+            if (GetMapType()== MapTileType.Water)
+            {
+                return true;
+            }
+            else if(GetMapType() == MapTileType.Normal && isWet)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
 }
 
 /// <summary>

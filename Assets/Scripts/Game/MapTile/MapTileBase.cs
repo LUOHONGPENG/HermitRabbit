@@ -27,7 +27,23 @@ public class MapTileBase : MonoBehaviour
             model.SetActive(false);
         }
 
-        listModel[(int)tileType].SetActive(true);
+        switch (tileType)
+        {
+            case MapTileType.Normal:
+                if(isWet)
+                {
+                    listModel[(int)MapTileType.Water].SetActive(true);
+                }
+                else
+                {
+                    listModel[(int)MapTileType.Normal].SetActive(true);
+                }
+                break;
+            default:
+                listModel[(int)tileType].SetActive(true);
+                break;
+        }
+
 
         //Burning
         if (isBurning)
@@ -134,6 +150,18 @@ public class MapTileBase : MonoBehaviour
             if (mapTileData != null)
             {
                 return mapTileData.isBurning;
+            }
+            return false;
+        }
+    }
+
+    public bool isWet
+    {
+        get
+        {
+            if (mapTileData != null)
+            {
+                return mapTileData.isWet;
             }
             return false;
         }

@@ -79,7 +79,7 @@ public struct SkillBattleInfo
         this.plantEffect = item.plantEffect;
         //Damage
         this.damageType = item.damageType;
-        this.damageDeltaStd = item.damageDeltaStd;
+        this.damageDeltaStd = item.RealDamageStd;
         this.damageDeltaFloat = item.damageDeltaFloat;
         this.damageModifier = item.RealDamageModifier;
         this.activeSkillType = item.activeSkillType;
@@ -89,7 +89,7 @@ public struct SkillBattleInfo
         //SpecialEffect
         this.listSpecialEffect = item.listSpecialEffectUse;
         this.listSpecialDelta = new List<int>(item.listSpecialDelta);
-        this.tileEffectType = item.tileEffectType;
+        this.tileEffectType = item.RealTileEffectType;
     }
 }
 

@@ -42,7 +42,7 @@ public partial class SkillExcelItem
     {
         get
         {
-            if(foeEffect != SkillEffectType.None)
+            if (foeEffect != SkillEffectType.None)
             {
                 return true;
             }
@@ -138,7 +138,7 @@ public partial class SkillExcelItem
         {
             List<SkillSpecialExcelItem> listTemp = new List<SkillSpecialExcelItem>();
 
-            for(int i = 0; i < listSpecialEffect.Count; i++)
+            for (int i = 0; i < listSpecialEffect.Count; i++)
             {
                 int tempID = listSpecialEffect[i];
                 if (tempID > 0)
@@ -158,14 +158,14 @@ public partial class SkillExcelItem
             int temp = costAP;
             if (id == 1101)
             {
-                if(PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1191))
+                if (PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1191))
                 {
                     temp--;
                 }
                 else if (PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1193) && characterID == 1001)
                 {
                     BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
-                    if(characterData.curAP > costAP)
+                    if (characterData.curAP > costAP)
                     {
                         temp = characterData.curAP;
                     }
@@ -180,14 +180,14 @@ public partial class SkillExcelItem
         get
         {
             int temp = costHP;
-            if(id == 2903)
+            if (id == 2903)
             {
                 if (characterID == 1002)
                 {
                     BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
-                    if (costHP+1 >= characterData.curHP)
+                    if (costHP + 1 >= characterData.curHP)
                     {
-                        temp = Mathf.RoundToInt(characterData.curHP-1);
+                        temp = Mathf.RoundToInt(characterData.curHP - 1);
                     }
                 }
             }
@@ -200,7 +200,7 @@ public partial class SkillExcelItem
         get
         {
             int temp = range;
-            if(characterID == 1002 && activeSkillType == ActiveSkillType.SupportSkill && PublicTool.CheckWhetherCharacterUnlockSkill(1002, 2491))
+            if (characterID == 1002 && activeSkillType == ActiveSkillType.SupportSkill && PublicTool.CheckWhetherCharacterUnlockSkill(1002, 2491))
             {
                 temp++;
             }
@@ -209,7 +209,7 @@ public partial class SkillExcelItem
                 BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
                 if (characterData.CheckBuffExist(1005))
                 {
-                    temp+=2;
+                    temp += 2;
                 }
             }
             return temp;
@@ -221,12 +221,12 @@ public partial class SkillExcelItem
         get
         {
             int temp = radius;
-            if(id == 1101 && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1192))
+            if (id == 1101 && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1192))
             {
                 temp++;
             }
-            if (skillSubjectType == BattleUnitType.Character && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1902)&&
-                 
+            if (skillSubjectType == BattleUnitType.Character && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1902) &&
+
                  (activeSkillType == ActiveSkillType.SupportSkill || activeSkillType == ActiveSkillType.DamageSkill))
             {
                 BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
@@ -238,6 +238,17 @@ public partial class SkillExcelItem
             return temp;
         }
     }
+
+    public SkillDamageDeltaStd RealDamageStd
+    {
+        get
+        {
+            SkillDamageDeltaStd temp = damageDeltaStd;
+
+            return temp;
+        }
+    }
+
 
     public float RealDamageDelta
     {
@@ -285,6 +296,20 @@ public partial class SkillExcelItem
                     int lostHP = Mathf.RoundToInt((characterData.curMaxHP - characterData.curHP) / 2);
                     temp += lostHP;
                 }
+            }
+            return temp;
+        }
+    }
+
+    public SkillTileEffectType RealTileEffectType
+    {
+        get
+        {
+            SkillTileEffectType temp = tileEffectType;
+
+            if(id == 1301 && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1391))
+            {
+                temp = SkillTileEffectType.WaterPlus;
             }
             return temp;
         }

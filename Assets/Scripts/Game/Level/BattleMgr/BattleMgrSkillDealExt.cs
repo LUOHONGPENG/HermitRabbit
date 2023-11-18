@@ -365,6 +365,10 @@ public partial class BattleMgr
                     {
                         tileData.isBurning = false;
                     }
+                    else if(tileData.GetMapType() == MapTileType.Normal)
+                    {
+                        tileData.isWet = true;
+                    }
                 }
                 break;
         }
