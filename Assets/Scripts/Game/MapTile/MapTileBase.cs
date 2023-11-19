@@ -50,6 +50,9 @@ public class MapTileBase : MonoBehaviour
                         case 1:
                             listModel[(int)MapTileType.Duel].SetActive(true);
                             break;
+                        case 2:
+                            listModel[(int)MapTileType.Guard].SetActive(true);
+                            break;
                         default:
                             listModel[(int)MapTileType.End].SetActive(true);
                             break;

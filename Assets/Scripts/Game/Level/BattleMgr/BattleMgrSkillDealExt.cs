@@ -379,9 +379,9 @@ public partial class BattleMgr
                     {
                         tileData.isBroken = true;
                         int ranCanSpecial = UnityEngine.Random.Range(0, 100);
-                        if (ranCanSpecial < 50)
+                        if (ranCanSpecial < 40)
                         {
-                            int ran = UnityEngine.Random.Range(0, 2);
+                            int ran = UnityEngine.Random.Range(0, 3);
                             tileData.bonusID = ran;
                         }
                     }
