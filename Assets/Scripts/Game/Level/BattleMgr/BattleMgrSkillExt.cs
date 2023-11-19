@@ -106,7 +106,7 @@ public partial class BattleMgr
         {
             skillSubject.curAP -= skillBattleInfo.costAP;
             skillSubject.curMOV -= skillBattleInfo.costMOV;
-            skillSubject.GetHurt(skillBattleInfo.costHP);
+            skillSubject.GetHurt(skillBattleInfo.costHP,false);
             gameData.CostMemory(skillBattleInfo.costMemory);
         }
         yield break;

@@ -160,10 +160,10 @@ MonoBehaviour:
   - id: 1041
     name: CEO
     desc: Can deal high damage but move slow.
-    HP: 150
+    HP: 80
     ATK: 10
     DEF: 4
-    RES: 1
+    RES: 4
     MOV: 1
     skillID: 9301
     findTargetType: 0

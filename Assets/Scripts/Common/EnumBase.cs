@@ -140,6 +140,7 @@ public enum SkillTileEffectType
 {
     None,
     Burn,
+    BurnUnitOnly,
     Water,
     WaterPlus,
     Break

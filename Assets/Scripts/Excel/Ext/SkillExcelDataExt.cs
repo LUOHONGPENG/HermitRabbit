@@ -246,6 +246,15 @@ public partial class SkillExcelItem
         }
     }
 
+    public SkillDamageType RealDamageType
+    {
+        get
+        {
+            SkillDamageType temp = damageType;
+            return temp;
+        }
+    }
+
     public SkillDamageDeltaStd RealDamageStd
     {
         get

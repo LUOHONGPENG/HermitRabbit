@@ -78,7 +78,7 @@ public struct SkillBattleInfo
         this.characterEffect = item.characterEffect;
         this.plantEffect = item.plantEffect;
         //Damage
-        this.damageType = item.damageType;
+        this.damageType = item.RealDamageType;
         this.damageDeltaStd = item.RealDamageStd;
         this.damageDeltaFloat = item.damageDeltaFloat;
         this.damageModifier = item.RealDamageModifier;
@@ -132,6 +132,13 @@ public class FoeFindTargetInfo
                     Debug.Log(keyID + "HateFar:" + Mathf.RoundToInt(2f * CalculateHateGCostFar()));
                     break;
             }
+
+            //Standard HATE
+            if(temp < 0)
+            {
+                temp = 0;
+            }
+
 
             if(HPRate <= 0)
             {

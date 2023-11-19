@@ -138,7 +138,7 @@ public partial class BattleUnitData
                 switch (listBuff[i].id)
                 {
                     case 4001:
-                        GetHurt(buffInfo.level);
+                        GetHurt(buffInfo.level,true);
                         EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-buffInfo.level).ToString(), posID));
                         isTriggered = true;
                         break;

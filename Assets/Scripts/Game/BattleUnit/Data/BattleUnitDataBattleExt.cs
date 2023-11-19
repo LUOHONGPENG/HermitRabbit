@@ -14,18 +14,35 @@ public partial class BattleUnitData
     public virtual void InvokeDead() { }
 
 
-    public float GetHurt(float damage)
+    public float GetHurt(float damage,bool canReduceDamages)
     {
         if (damage > 0)
         {
+            //ReduceDamage
+            if (canReduceDamages)
+            {
+                damage -= buffReduceHurt;
+                damage -= damage * buffReduceHurtRate;
+            }
+
             if (CheckBuffExist(1001) && damage > curHP)
             {
+                //Final Guard
                 damage = curHP - 1;
-                Debug.Log("ReduceDamage");
             }
+            //Curse //Fragile
             if (CheckBuffExist(2001))
             {
                 AddBuff(4002,1);
+            }
+
+            if (damage < 0)
+            {
+                damage = 0;
+            }
+            else
+            {
+                damage = Mathf.RoundToInt(damage);
             }
         }
         curHP -= damage;

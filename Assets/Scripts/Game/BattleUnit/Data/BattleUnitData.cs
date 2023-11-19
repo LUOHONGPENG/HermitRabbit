@@ -70,6 +70,10 @@ public partial class BattleUnitData
             {
                 temp = curMaxMOV;
             }
+            else if(temp < 0)
+            {
+                temp = 0;
+            }
             return temp;
         }
     }
@@ -96,6 +100,10 @@ public partial class BattleUnitData
             {
                 temp = curMaxAP;
             }
+            else if (temp < 0)
+            {
+                temp = 0;
+            }
             return temp; 
         }
     }
@@ -110,6 +118,7 @@ public partial class BattleUnitData
             {
                 temp++;
             }
+            temp += tileBuffATK;
             return temp;
         }
     }
@@ -123,6 +132,7 @@ public partial class BattleUnitData
             {
                 temp++;
             }
+            temp += tileBuffDEF;
             return temp;
         }
     }
@@ -136,6 +146,7 @@ public partial class BattleUnitData
             {
                 temp++;
             }
+            temp += tileBuffRES;
             return temp;
         }
     }
@@ -158,6 +169,7 @@ public partial class BattleUnitData
         get
         {
             int temp = 0;
+            temp += tileBuffRegenMOV;
             return temp;
         }
     }
@@ -191,7 +203,7 @@ public partial class BattleUnitData
 
     #region Special Buff Affect
 
-    //Yi Shang
+    //Damage = Damage + X
     public virtual int buffAddHurt
     {
         get
@@ -199,7 +211,48 @@ public partial class BattleUnitData
             int temp = 0;
             if (CheckBuffExist(4002))
             {
-                temp+=GetBuffLevel(4002);
+                temp += GetBuffLevel(4002);
+            }
+            return temp;
+        }
+    }
+
+    //Damage = Damage + X%
+    public virtual float buffAddHurtRate
+    {
+        get
+        {
+            float temp = 0;
+            return temp;
+        }
+    }
+
+
+    //Damage = Damage - X
+    public virtual int buffReduceHurt
+    {
+        get
+        {
+            int temp = 0;
+            return temp;
+        }
+    }
+
+    //Damage = Damage - X%
+    public virtual float buffReduceHurtRate
+    {
+        get
+        {
+            float temp = 0;
+            temp += tileBuffReduceHurtRate;
+
+            if (temp > 1f)
+            {
+                temp = 1f;
+            }
+            else if (temp < 0)
+            {
+                temp = 0;
             }
             return temp;
         }
@@ -242,6 +295,7 @@ public partial class BattleUnitData
             {
                 temp += 1000;
             }
+            temp += tileBuffHateChange;
             return temp;
         }
     }

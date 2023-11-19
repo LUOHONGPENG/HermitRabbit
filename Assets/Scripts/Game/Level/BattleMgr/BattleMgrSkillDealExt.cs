@@ -58,6 +58,18 @@ public partial class BattleMgr
         float realDamage = 0;
         float damageSource = 0;
 
+        int calculateATK = source.curATK;
+
+        //Tile Buff Filter
+        if (source.tileBuffChangeDmgReal)
+        {
+            skillBattleInfo.damageType = SkillDamageType.Real;
+        }
+        if(skillBattleInfo.damageType == SkillDamageType.Magic)
+        {
+            calculateATK += source.tileBuffMagicATKAdd;
+        }
+
         //Calculate the source damage
         switch (skillBattleInfo.damageDeltaStd)
         {
@@ -65,25 +77,25 @@ public partial class BattleMgr
                 damageSource = skillBattleInfo.damageDeltaFloat;
                 break;
             case SkillDamageDeltaStd.ATK:
-                damageSource = source.curATK * skillBattleInfo.damageDeltaFloat;
+                damageSource = calculateATK * skillBattleInfo.damageDeltaFloat;
                 break;
             case SkillDamageDeltaStd.ATKMOV:
-                damageSource = source.curATK * skillBattleInfo.damageDeltaFloat;
+                damageSource = calculateATK * skillBattleInfo.damageDeltaFloat;
                 if (source.curMOV >= target.curMOV)
                 {
                     damageSource += 2 * (source.curMOV - target.curMOV);
                 }
                 break;
             case SkillDamageDeltaStd.ATKDISD1:
-                damageSource = source.curATK * skillBattleInfo.damageDeltaFloat;
+                damageSource = calculateATK * skillBattleInfo.damageDeltaFloat;
                 damageSource -= (PublicTool.CalculateGlobalDis(skillTargetPos, target.posID) / 1);
                 break;
             case SkillDamageDeltaStd.ATKDISD2:
-                damageSource = source.curATK * skillBattleInfo.damageDeltaFloat;
+                damageSource = calculateATK * skillBattleInfo.damageDeltaFloat;
                 damageSource -= (PublicTool.CalculateGlobalDis(skillTargetPos, target.posID) / 2);
                 break;
             case SkillDamageDeltaStd.ATKDISD3:
-                damageSource = source.curATK * skillBattleInfo.damageDeltaFloat;
+                damageSource = calculateATK * skillBattleInfo.damageDeltaFloat;
                 damageSource -= (PublicTool.CalculateGlobalDis(skillTargetPos, target.posID) / 3);
                 break;
             case SkillDamageDeltaStd.MAXHP:
@@ -149,9 +161,10 @@ public partial class BattleMgr
             }
             else
             {
+                realDamage += realDamage * target.buffAddHurtRate;
                 realDamage += target.buffAddHurt;
                 int NormalizedDamage = NormalizeRealDamage(realDamage);
-                int FinalDamage = NormalizeRealDamage(target.GetHurt(NormalizedDamage));
+                int FinalDamage = NormalizeRealDamage(target.GetHurt(NormalizedDamage, true));
                 target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-FinalDamage).ToString(), target.posID));
 
                 //Absorb
@@ -168,7 +181,7 @@ public partial class BattleMgr
             if (target.curCounter > 0)
             {
                 int counterHurt = target.curCounter + source.buffAddHurt;
-                source.GetHurt(counterHurt);
+                source.GetHurt(counterHurt, true);
                 source.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-counterHurt).ToString(), source.posID));
             }
         }
@@ -321,10 +334,10 @@ public partial class BattleMgr
                 unitViewMgr.GenerateFoeView(newFoeData);
                 break;
             case 9998:
-                source.GetHurt(99);
+                source.GetHurt(99,false);
                 break;
             case 9999:
-                source.GetHurt(99);
+                source.GetHurt(99,false);
                 break;
         }
 
@@ -338,7 +351,8 @@ public partial class BattleMgr
         switch (tileEffectType)
         {
             case SkillTileEffectType.Burn:
-                if(gameData.GetMapTileData(posID) !=null)
+            case SkillTileEffectType.BurnUnitOnly:
+                if (gameData.GetMapTileData(posID) !=null)
                 {
                     tileData = gameData.GetMapTileData(posID);
                     if(tileData.curMapTileStatus == MapTileStatus.CanBurn)
