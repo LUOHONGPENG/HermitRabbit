@@ -171,6 +171,13 @@ public partial class SkillExcelItem
                     }
                 }
             }
+            else if(id == 1301)
+            {
+                if (PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1391))
+                {
+                    temp++;
+                }
+            }
             return temp;
         }
     }

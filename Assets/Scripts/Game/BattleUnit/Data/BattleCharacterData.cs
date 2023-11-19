@@ -50,14 +50,6 @@ public partial class BattleCharacterData : BattleUnitData
             //Basic ATK
             tempATK += ATK;
             tempATK += buffATK;
-            if (PublicTool.CheckWhetherCharacterUnlockSkill(1001,1021))
-            {
-                tempATK += 1;
-            }
-            if (PublicTool.CheckWhetherCharacterUnlockSkill(1002,2021))
-            {
-                tempATK += 1;
-            }
             tempATK += PublicTool.GetPlantNumInThisRow(posID.y, 2001);
             if (tempATK < 0)
             {
@@ -74,10 +66,6 @@ public partial class BattleCharacterData : BattleUnitData
             int tempDEF = 0;
             tempDEF += DEF;
             tempDEF += buffDEF;
-            if (PublicTool.CheckWhetherCharacterUnlockSkill(1002, 2031))
-            {
-                tempDEF += 1;
-            }
             tempDEF += PublicTool.GetPlantNumInThisColumn(posID.x, 2002);
             if (tempDEF < 0)
             {
@@ -94,10 +82,6 @@ public partial class BattleCharacterData : BattleUnitData
             int tempRES = 0;
             tempRES += RES;
             tempRES += buffRES;
-            if (PublicTool.CheckWhetherCharacterUnlockSkill(1001, 2041))
-            {
-                tempRES += 1;
-            }
             if (tempRES < 0)
             {
                 tempRES = 0;
