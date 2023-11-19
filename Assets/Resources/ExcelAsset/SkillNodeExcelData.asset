@@ -116,6 +116,20 @@ MonoBehaviour:
     rowID: 1
     columnID: -1
     remark: 
+  - id: 1291
+    name: Genesis
+    desc: Gravity can break stone and randomly create special tile.
+    nodeType: 1
+    costSP: 1
+    conditionSPSpent: 0
+    conditionPreNode: b2040000
+    conflictNode: 0
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Gravity
+    rowID: 2
+    columnID: 0
+    remark: 
   - id: 1201
     name: Chronal Shift
     desc: Dodge next attack.

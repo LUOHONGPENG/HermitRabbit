@@ -321,6 +321,10 @@ public partial class SkillExcelItem
             {
                 temp = SkillTileEffectType.WaterPlus;
             }
+            else if(id == 1202 && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1291))
+            {
+                temp = SkillTileEffectType.Break;
+            }
             return temp;
         }
     }
