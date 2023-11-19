@@ -59,7 +59,7 @@ public enum MapTileType
     Magic,
     Duel,
     Guard,
-    Evade,
+    Stealth,
     End
 }
 
