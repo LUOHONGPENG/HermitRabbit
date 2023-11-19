@@ -378,8 +378,12 @@ public partial class BattleMgr
                     if (tileData.curMapTileStatus == MapTileStatus.CanBreak)
                     {
                         tileData.isBroken = true;
-                        int ran = UnityEngine.Random.Range(0, 2);
-                        tileData.bonusID = ran;
+                        int ranCanSpecial = UnityEngine.Random.Range(0, 100);
+                        if (ranCanSpecial < 50)
+                        {
+                            int ran = UnityEngine.Random.Range(0, 2);
+                            tileData.bonusID = ran;
+                        }
                     }
                 }
                 break;
