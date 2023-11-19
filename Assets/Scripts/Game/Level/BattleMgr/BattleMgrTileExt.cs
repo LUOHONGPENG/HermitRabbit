@@ -75,15 +75,27 @@ public partial class BattleMgr
             if(burnUnit.type != BattleUnitType.None)
             {
                 BattleUnitData unitData = gameData.GetDataFromUnitInfo(burnUnit);
-                SkillBuffEffectDeal(unitData, 4001, 1, PublicTool.GetBuffExcelItem(4001).name, SkillEffectType.Harm);
+                int BurnDelta = 0;
+                if (unitData.CheckBuffExist(4001))
+                {
+                    BurnDelta = 1;
+                }
+                else
+                {
+                    BurnDelta = 2;
+                }
+                SkillBuffEffectDeal(unitData, 4001, BurnDelta, PublicTool.GetBuffExcelItem(4001).name, SkillEffectType.Harm);
+
+                BattleUnitView unitView = unitViewMgr.GetViewFromUnitInfo(burnUnit);
+                unitView.RequestBattleText();
+
                 isApplyBurn = true;
-                //SkillBuffEffectDeal
             }
         }
 
         if (isApplyBurn)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
         }
 
         yield break;

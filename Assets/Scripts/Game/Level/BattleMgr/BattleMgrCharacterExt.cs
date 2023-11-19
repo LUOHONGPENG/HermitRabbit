@@ -6,18 +6,16 @@ public partial class BattleMgr
 {
     #region StartCharacterTurn
     private IEnumerator IE_WholeStartCharacterTurn()
-    {
-        //ResetBefore
+    {        
         ResetNewTurnBefore();
+        //Show Animation Of new Turn
+        yield return new WaitForSeconds(0.5f);
+
+
         //TileFire
         TileBurningExpand();
         yield return StartCoroutine(IE_TileApplyBurning());
-        //BuffCheck
-        yield return StartCoroutine(IE_FriendBuffCheck());
-        if (isBattleEnd)
-        {
-            yield break;
-        }
+
         //PlantTurnStart
         GeneratePlantTriggerDic();
         yield return StartCoroutine(IE_CheckPlantTurnStart());
@@ -25,6 +23,14 @@ public partial class BattleMgr
         {
             yield break;
         }
+
+        //BuffCheck
+        yield return StartCoroutine(IE_FriendBuffCheck());
+        if (isBattleEnd)
+        {
+            yield break;
+        }
+
         //ResetAfter
         ResetNewTurnAfter();
         PublicTool.RecalculateOccupancy();
