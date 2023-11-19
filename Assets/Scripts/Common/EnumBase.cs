@@ -54,7 +54,9 @@ public enum MapTileType
     Normal,
     Water,
     Grass,
-    Stone
+    Stone,
+    Flower,
+    Magic
 }
 
 public enum MapIndicatorType
