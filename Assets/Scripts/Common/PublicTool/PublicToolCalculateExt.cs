@@ -118,7 +118,7 @@ public partial class PublicTool
                 listClose.Add(tarPos);
                 MapTileData mapTileData = gameData.GetMapTileData(tarPos);
 
-                if(mapTileData.canTransmitElectricity)
+                if(mapTileData.curMapTileStatus == MapTileStatus.Wet)
                 {
                     if (!listRange.Contains(tarPos))
                     {

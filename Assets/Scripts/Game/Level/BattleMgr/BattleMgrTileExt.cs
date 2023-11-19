@@ -12,7 +12,7 @@ public partial class BattleMgr
         for (int i = 0; i < gameData.listMapTile.Count; i++)
         {
             MapTileData mapTileData = gameData.listMapTile[i];
-            if(mapTileData.GetMapType() == MapTileType.Grass && mapTileData.isBurning)
+            if(mapTileData.curMapTileStatus == MapTileStatus.Burning)
             {
                 queueOpen.Enqueue(mapTileData);
             }
@@ -43,7 +43,7 @@ public partial class BattleMgr
         if (gameData.GetMapTileData(tarPos) != null)
         {
             MapTileData tileData = gameData.GetMapTileData(tarPos);
-            if(tileData.GetMapType() == MapTileType.Grass && !tileData.isBurning)
+            if(tileData.curMapTileStatus == MapTileStatus.CanBurn)
             {
                 tileData.isBurning = true;
             }
@@ -60,7 +60,7 @@ public partial class BattleMgr
         for (int i = 0; i < gameData.listMapTile.Count; i++)
         {
             MapTileData mapTileData = gameData.listMapTile[i];
-            if (mapTileData.GetMapType() == MapTileType.Grass && mapTileData.isBurning)
+            if (mapTileData.curMapTileStatus == MapTileStatus.Burning)
             {
                 listBurn.Add(mapTileData.posID);
             }

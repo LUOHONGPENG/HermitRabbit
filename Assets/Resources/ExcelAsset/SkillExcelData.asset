@@ -147,7 +147,7 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: d1070000
     listSpecialDelta: 01000000
-    tileEffectType: 0
+    tileEffectType: 4
     activeSkillType: 1
     characterID: 1001
     iconUrl: imgIconSkill_Gravity

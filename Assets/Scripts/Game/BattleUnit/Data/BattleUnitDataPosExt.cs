@@ -38,9 +38,9 @@ public partial class BattleUnitData
 
         //Get Block Pos
         List<Vector2Int> listBlock = new List<Vector2Int>();
-        for(int i = 0;i< PublicTool.GetGameData().listMapStonePos.Count; i++)
+        for(int i = 0;i< PublicTool.GetGameData().listMapCurStonePos.Count; i++)
         {
-            listBlock.Add(PublicTool.GetGameData().listMapStonePos[i]);
+            listBlock.Add(PublicTool.GetGameData().listMapCurStonePos[i]);
         }
         for (int i = 0; i < PublicTool.GetGameData().listTempFoePos.Count; i++)
         {
@@ -397,23 +397,23 @@ public partial class BattleUnitData
             switch (skillInfo.tileEffectType)
             {
                 case SkillTileEffectType.Burn:
-                    List<Vector2Int> listToBurn = new List<Vector2Int>();
+                    List<Vector2Int> listCanBurn = new List<Vector2Int>();
                     for(int i = 0;i< gameData.listMapTile.Count; i++)
                     {
                         MapTileData tileData = gameData.listMapTile[i];
-                        if (tileData.GetMapType() == MapTileType.Grass && !tileData.isBurning)
+                        if (tileData.curMapTileStatus == MapTileStatus.CanBurn)
                         {
-                            listToBurn.Add(tileData.posID);
+                            listCanBurn.Add(tileData.posID);
                         }
                     }
-                    CheckWhetherSkillContainTarget(listTemp, listToBurn, listViewSkill, skillInfo);
+                    CheckWhetherSkillContainTarget(listTemp, listCanBurn, listViewSkill, skillInfo);
                     break;
                 case SkillTileEffectType.Water:
                     List<Vector2Int> listWater = new List<Vector2Int>();
                     for (int i = 0; i < gameData.listMapTile.Count; i++)
                     {
                         MapTileData tileData = gameData.listMapTile[i];
-                        if (tileData.GetMapType() == MapTileType.Grass && tileData.isBurning)
+                        if (tileData.curMapTileStatus == MapTileStatus.Burning)
                         {
                             listWater.Add(tileData.posID);
                         }
@@ -425,17 +425,30 @@ public partial class BattleUnitData
                     for (int i = 0; i < gameData.listMapTile.Count; i++)
                     {
                         MapTileData tileData = gameData.listMapTile[i];
-                        if (tileData.GetMapType() == MapTileType.Grass && tileData.isBurning)
+                        if (tileData.curMapTileStatus == MapTileStatus.Burning)
                         {
                             listWaterPlus.Add(tileData.posID);
                         }
-                        else if(tileData.GetMapType() == MapTileType.Normal)
+                        else if(tileData.curMapTileStatus == MapTileStatus.CanWet)
                         {
                             listWaterPlus.Add(tileData.posID);
                         }
                     }
                     CheckWhetherSkillContainTarget(listTemp, listWaterPlus, listViewSkill, skillInfo);
                     break;
+                case SkillTileEffectType.Break:
+                    List<Vector2Int> listCanBreak = new List<Vector2Int>();
+                    for (int i = 0; i < gameData.listMapTile.Count; i++)
+                    {
+                        MapTileData tileData = gameData.listMapTile[i];
+                        if (tileData.curMapTileStatus == MapTileStatus.CanBreak)
+                        {
+                            listCanBreak.Add(tileData.posID);
+                        }
+                    }
+                    CheckWhetherSkillContainTarget(listTemp, listCanBreak, listViewSkill, skillInfo);
+                    break;
+
             }
 
 

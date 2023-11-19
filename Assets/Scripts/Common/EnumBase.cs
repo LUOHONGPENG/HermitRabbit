@@ -56,7 +56,11 @@ public enum MapTileType
     Grass,
     Stone,
     Flower,
-    Magic
+    Magic,
+    Duel,
+    Guard,
+    Evade,
+    End
 }
 
 public enum MapIndicatorType
@@ -137,7 +141,8 @@ public enum SkillTileEffectType
     None,
     Burn,
     Water,
-    WaterPlus
+    WaterPlus,
+    Break
 }
 
 public enum SkillDamageDeltaStd

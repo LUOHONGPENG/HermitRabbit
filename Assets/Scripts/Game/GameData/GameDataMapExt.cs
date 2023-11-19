@@ -106,8 +106,7 @@ public partial class GameData
     {
         for(int i = 0; i < listMapTile.Count; i++)
         {
-            listMapTile[i].isBurning = false;
-            listMapTile[i].isWet = false;
+            listMapTile[i].ResetTileStatus();
         }
     }
 
@@ -255,6 +254,8 @@ public partial class GameData
     public Dictionary<Vector2Int, UnitInfo> dicTempMapUnit = new Dictionary<Vector2Int, UnitInfo>();
 
     public List<Vector2Int> listMapStonePos = new List<Vector2Int>();
+    public List<Vector2Int> listMapCurStonePos = new List<Vector2Int>();
+
 
     //Refresh Valid Range for display map
     public void RecalculateOccupancy()
@@ -356,12 +357,17 @@ public partial class GameData
     {
         //listMapStonePos
         listMapStonePos.Clear();
+        listMapCurStonePos.Clear();
 
         foreach (var map in listMapTile)
         {
             if(map.GetMapType() == MapTileType.Stone)
             {
                 listMapStonePos.Add(map.posID);
+                if (!map.isBroken)
+                {
+                    listMapCurStonePos.Add(map.posID);
+                }
             }
         }
     }
@@ -375,7 +381,7 @@ public partial class GameData
         List<Vector2Int> listTemp = new List<Vector2Int>();
         AddPosForList(listTemp, listTempCharacterPos);
         AddPosForList(listTemp, listTempPlantPos);
-        AddPosForList(listTemp, listMapStonePos);
+        AddPosForList(listTemp, listMapCurStonePos);
         return listTemp;
     }
 

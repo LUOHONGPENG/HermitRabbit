@@ -62,7 +62,43 @@ MonoBehaviour:
   - {fileID: 7128628243611324871}
   - {fileID: 5805979322827932600}
   - {fileID: 7197807965086613263}
+  - {fileID: 7197807965086613263}
+  - {fileID: 7197807965086613263}
+  - {fileID: 7197807965086613263}
+  - {fileID: 1434292964520062590}
   objBurning: {fileID: 1703814579085310566}
+--- !u!1 &1434292964520062590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6462578108002892109}
+  m_Layer: 6
+  m_Name: StoneLow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6462578108002892109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434292964520062590}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 749513765927800664}
+  m_Father: {fileID: 1834041731540881821}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1703814579085310566
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7405633831047872951}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1834041731540881821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tfModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,6 +518,7 @@ Transform:
   - {fileID: 3428532693383955931}
   - {fileID: 7405633831047872951}
   - {fileID: 5161409610652810428}
+  - {fileID: 6462578108002892109}
   m_Father: {fileID: 7386052430020159583}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -494,7 +531,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3428532693383955931}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +563,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5161409610652810428}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Magic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5538962642199147047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,6 +663,86 @@ Transform:
   m_Father: {fileID: 1834041731540881821}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1003308423164012723
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6462578108002892109}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1896ed856a7da4346b4f298642d7e4cb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1896ed856a7da4346b4f298642d7e4cb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1896ed856a7da4346b4f298642d7e4cb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1896ed856a7da4346b4f298642d7e4cb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1896ed856a7da4346b4f298642d7e4cb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -3.7493994e-33
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1896ed856a7da4346b4f298642d7e4cb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -6.123234e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1896ed856a7da4346b4f298642d7e4cb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1896ed856a7da4346b4f298642d7e4cb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 6.123234e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1896ed856a7da4346b4f298642d7e4cb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1896ed856a7da4346b4f298642d7e4cb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1896ed856a7da4346b4f298642d7e4cb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1896ed856a7da4346b4f298642d7e4cb,
+        type: 3}
+      propertyPath: m_Name
+      value: PixelTileStone
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1896ed856a7da4346b4f298642d7e4cb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1896ed856a7da4346b4f298642d7e4cb, type: 3}
+--- !u!4 &749513765927800664 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1896ed856a7da4346b4f298642d7e4cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1003308423164012723}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2079348275766650401
 PrefabInstance:
   m_ObjectHideFlags: 0

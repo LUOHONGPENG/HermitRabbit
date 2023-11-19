@@ -341,7 +341,7 @@ public partial class BattleMgr
                 if(gameData.GetMapTileData(posID) !=null)
                 {
                     tileData = gameData.GetMapTileData(posID);
-                    if(tileData.GetMapType() == MapTileType.Grass)
+                    if(tileData.curMapTileStatus == MapTileStatus.CanBurn)
                     {
                         tileData.isBurning = true;
                     }
@@ -351,7 +351,7 @@ public partial class BattleMgr
                 if (gameData.GetMapTileData(posID) != null)
                 {
                     tileData = gameData.GetMapTileData(posID);
-                    if (tileData.GetMapType() == MapTileType.Grass && tileData.isBurning)
+                    if (tileData.curMapTileStatus == MapTileStatus.Burning)
                     {
                         tileData.isBurning = false;
                     }
@@ -361,13 +361,23 @@ public partial class BattleMgr
                 if (gameData.GetMapTileData(posID) != null)
                 {
                     tileData = gameData.GetMapTileData(posID);
-                    if (tileData.GetMapType() == MapTileType.Grass && tileData.isBurning)
+                    if (tileData.curMapTileStatus == MapTileStatus.Burning)
                     {
                         tileData.isBurning = false;
                     }
-                    else if(tileData.GetMapType() == MapTileType.Normal)
+                    else if(tileData.curMapTileStatus == MapTileStatus.CanWet)
                     {
                         tileData.isWet = true;
+                    }
+                }
+                break;
+            case SkillTileEffectType.Break:
+                if (gameData.GetMapTileData(posID) != null)
+                {
+                    tileData = gameData.GetMapTileData(posID);
+                    if (tileData.curMapTileStatus == MapTileStatus.CanBreak)
+                    {
+                        tileData.isBroken = true;
                     }
                 }
                 break;

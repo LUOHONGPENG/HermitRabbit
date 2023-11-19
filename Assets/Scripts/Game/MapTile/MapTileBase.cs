@@ -30,13 +30,23 @@ public class MapTileBase : MonoBehaviour
         switch (tileType)
         {
             case MapTileType.Normal:
-                if(isWet)
+                if(tileStatus == MapTileStatus.Wet)
                 {
                     listModel[(int)MapTileType.Water].SetActive(true);
                 }
                 else
                 {
                     listModel[(int)MapTileType.Normal].SetActive(true);
+                }
+                break;
+            case MapTileType.Stone:
+                if (tileStatus == MapTileStatus.Broken)
+                {
+                    listModel[(int)MapTileType.End].SetActive(true);
+                }
+                else
+                {
+                    listModel[(int)MapTileType.Stone].SetActive(true);
                 }
                 break;
             default:
@@ -46,7 +56,7 @@ public class MapTileBase : MonoBehaviour
 
 
         //Burning
-        if (isBurning)
+        if (tileStatus == MapTileStatus.Burning)
         {
             objBurning.SetActive(true);
         }
@@ -143,28 +153,17 @@ public class MapTileBase : MonoBehaviour
         }
     }
 
-    public bool isBurning
+    public MapTileStatus tileStatus
     {
         get
         {
             if (mapTileData != null)
             {
-                return mapTileData.isBurning;
+                return mapTileData.curMapTileStatus;
             }
-            return false;
+            return MapTileStatus.None;
         }
     }
 
-    public bool isWet
-    {
-        get
-        {
-            if (mapTileData != null)
-            {
-                return mapTileData.isWet;
-            }
-            return false;
-        }
-    }
     #endregion
 }

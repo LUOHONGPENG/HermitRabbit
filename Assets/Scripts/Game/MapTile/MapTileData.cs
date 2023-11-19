@@ -1,20 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
+public enum MapTileStatus
+{
+    None,
+    CanBurn,
+    Burning,
+    CanWet,
+    Wet,
+    CanBreak,
+    Broken
+}
 
 public class MapTileData
 {
     public Vector2Int posID;
     private MapTileType tileType = MapTileType.Normal;
-    public bool isBurning = false;
-    public bool isWet = false;
     public MapTileData(Vector2Int posID)
     {
         this.posID = posID;
         SetMapType(MapTileType.Normal);
-        isBurning = false;
-        isWet = false;
+        ResetTileStatus();
     }
 
     public void SetMapType(MapTileType tileType)
@@ -27,24 +35,73 @@ public class MapTileData
         return tileType;
     }
 
-    public bool canTransmitElectricity
+    #region Status
+    public MapTileStatus curMapTileStatus
     {
         get
         {
-            if (GetMapType()== MapTileType.Water)
+            switch (tileType)
             {
-                return true;
-            }
-            else if(GetMapType() == MapTileType.Normal && isWet)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
+                case MapTileType.Normal:
+                    if (isWet)
+                    {
+                        return MapTileStatus.Wet;
+                    }
+                    else
+                    {
+                        return MapTileStatus.CanWet;
+                    }
+                case MapTileType.Water:
+                    return MapTileStatus.Wet;
+                case MapTileType.Grass:
+                    if (isBurning)
+                    {
+                        return MapTileStatus.Burning;
+                    }
+                    else
+                    {
+                        return MapTileStatus.CanBurn;
+                    }
+                case MapTileType.Flower:
+                    if (isBurning)
+                    {
+                        return MapTileStatus.Burning;
+                    }
+                    else
+                    {
+                        return MapTileStatus.CanBurn;
+                    }
+                case MapTileType.Stone:
+                    if (isBroken)
+                    {
+                        return MapTileStatus.Broken;
+                    }
+                    else
+                    {
+                        return MapTileStatus.CanBreak;
+                    }
+                default:
+                    return MapTileStatus.None;
             }
         }
     }
+
+
+    //Special
+    public bool isBurning = false;
+    public bool isWet = false;
+    public bool isBroken = false;
+    public int bonusID = -1;
+
+    public void ResetTileStatus()
+    {
+        isBurning = false;
+        isWet = false;
+        isBroken = false;
+        bonusID = -1;
+    }
+
+    #endregion
 
 }
 

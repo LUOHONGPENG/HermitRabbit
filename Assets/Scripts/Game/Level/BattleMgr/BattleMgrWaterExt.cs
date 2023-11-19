@@ -13,7 +13,7 @@ public partial class BattleMgr
         for (int i = 0; i < gameData.listMapTile.Count; i++)
         {
             MapTileData tileData = gameData.listMapTile[i];
-            if (tileData.canTransmitElectricity)
+            if (tileData.curMapTileStatus == MapTileStatus.Wet)
             {
                 if (GetWaterGroup(tileData.posID) == null)
                 {
