@@ -244,7 +244,10 @@ public partial class SkillExcelItem
         get
         {
             SkillDamageDeltaStd temp = damageDeltaStd;
-
+            if (id == 1401 && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1491))
+            {
+                temp = SkillDamageDeltaStd.ATKDISD2;
+            }
             return temp;
         }
     }

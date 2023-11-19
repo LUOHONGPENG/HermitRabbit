@@ -202,7 +202,10 @@ MonoBehaviour:
     remark: 
   - id: 1401
     name: Lightning Bolt
-    desc: Magic attack that can be transmitted damage by water tile.
+    desc: 'Magic attack that can be transmitted damage by water tile.
+
+      The
+      damage will reduce according to distance.'
     nodeType: 0
     costSP: 2
     conditionSPSpent: 0
@@ -227,6 +230,20 @@ MonoBehaviour:
     iconUrl: imgIconSkill_Teleport
     rowID: 3
     columnID: 3
+    remark: 
+  - id: 1491
+    name: High Voltage
+    desc: The damage decay of Lightning Bolt will be reduced.
+    nodeType: 1
+    costSP: 1
+    conditionSPSpent: 0
+    conditionPreNode: 79050000
+    conflictNode: 0
+    isInitUnlock: 0
+    characterID: 1001
+    iconUrl: imgIconSkill_Default
+    rowID: 2
+    columnID: 4
     remark: 
   - id: 1901
     name: Time Expand
