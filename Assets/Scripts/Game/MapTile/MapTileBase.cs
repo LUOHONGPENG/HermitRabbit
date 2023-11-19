@@ -27,39 +27,13 @@ public class MapTileBase : MonoBehaviour
             model.SetActive(false);
         }
 
-        switch (tileType)
+        MapTileType displayTileType = mapTileData.GetDisplayMapType();
+        switch (displayTileType)
         {
-            case MapTileType.Normal:
-                if(tileStatus == MapTileStatus.Wet)
-                {
-                    listModel[(int)MapTileType.Water].SetActive(true);
-                }
-                else
-                {
-                    listModel[(int)MapTileType.Normal].SetActive(true);
-                }
-                break;
             case MapTileType.Stone:
-                if (tileStatus == MapTileStatus.Broken)
+                if(tileStatus == MapTileStatus.Broken)
                 {
-                    switch (mapTileData.bonusID)
-                    {
-                        case 0:
-                            listModel[(int)MapTileType.Magic].SetActive(true);
-                            break;
-                        case 1:
-                            listModel[(int)MapTileType.Duel].SetActive(true);
-                            break;
-                        case 2:
-                            listModel[(int)MapTileType.Guard].SetActive(true);
-                            break;
-                        case 3:
-                            listModel[(int)MapTileType.Stealth].SetActive(true);
-                            break;
-                        default:
-                            listModel[(int)MapTileType.End].SetActive(true);
-                            break;
-                    }
+                    listModel[(int)MapTileType.End].SetActive(true);
                 }
                 else
                 {
@@ -67,7 +41,7 @@ public class MapTileBase : MonoBehaviour
                 }
                 break;
             default:
-                listModel[(int)tileType].SetActive(true);
+                listModel[(int)displayTileType].SetActive(true);
                 break;
         }
 

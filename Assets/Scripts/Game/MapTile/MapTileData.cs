@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -91,16 +92,58 @@ public class MapTileData
     public bool isBurning = false;
     public bool isWet = false;
     public bool isBroken = false;
-    public int bonusID = -1;
+    public int breakResultID = -1;
 
     public void ResetTileStatus()
     {
         isBurning = false;
         isWet = false;
         isBroken = false;
-        bonusID = -1;
+        breakResultID = -1;
     }
 
+    #endregion
+
+    #region Display
+
+    public MapTileType GetDisplayMapType()
+    {
+        switch (tileType)
+        {
+            case MapTileType.Normal:
+                if (curMapTileStatus == MapTileStatus.Wet)
+                {
+                    return MapTileType.Water;
+                }
+                else
+                {
+                    return MapTileType.Normal;
+                }
+            case MapTileType.Stone:
+                if (curMapTileStatus == MapTileStatus.Broken)
+                {
+                    switch (breakResultID)
+                    {
+                        case 0:
+                            return MapTileType.Magic;
+                        case 1:
+                            return MapTileType.Duel;
+                        case 2:
+                            return MapTileType.Guard;
+                        case 3:
+                            return MapTileType.Stealth;
+                        default:
+                            return MapTileType.Stone;
+                    }
+                }
+                else
+                {
+                    return MapTileType.Stone;
+                }
+            default:
+                return tileType;
+        }
+    }
     #endregion
 
 }
