@@ -16,6 +16,7 @@ public static class GameGlobal
     public static int mapClipNumY = 3;
     public static int mapRowFriend = 1;
     public static int mapRowFoe = 1;
+    public static int mapRowCanPlant = 5;
 
     public static float skillNodeSpacingX = 120f;
     public static float skillNodeSpacingY = 200f;

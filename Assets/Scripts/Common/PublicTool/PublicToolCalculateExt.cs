@@ -33,7 +33,7 @@ public partial class PublicTool
         return disX + disY;
     }
 
-    #region CalculateRange
+    #region CalculateSkillRange
     public static List<Vector2Int> GetTargetCircleRange(Vector2Int targetPos, int Range)
     {
         List<Vector2Int> listRange = new List<Vector2Int>();
@@ -191,8 +191,6 @@ public partial class PublicTool
     #endregion
 
     #region FindPathSupporter
-
-
     public static FindPathNode GetFindPathNode(Dictionary<Vector2Int, FindPathNode> dic, Vector2Int tarPos)
     {
         if (dic.ContainsKey(tarPos))
@@ -291,6 +289,25 @@ public partial class PublicTool
             }
         }
         return listTemp;
+    }
+    #endregion
+
+    #region Plant
+
+    public static bool CheckWhetherPlantValidRow(Vector2Int posID)
+    {
+        //mapRowCanPlant
+        int upperLimit = GameGlobal.mapRowFriend + GameGlobal.mapRowCanPlant;
+        int lowerLimit = GameGlobal.mapRowFriend;
+
+        if(posID.y >= lowerLimit && posID.y < upperLimit)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     #endregion
 }

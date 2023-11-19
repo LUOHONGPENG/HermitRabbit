@@ -146,6 +146,24 @@ public class MapTileData
     }
     #endregion
 
+    public bool CanPlant
+    {
+        get
+        {
+            switch (GetDisplayMapType())
+            {
+                case MapTileType.Normal:
+                case MapTileType.Water:
+                case MapTileType.Grass:
+                case MapTileType.Flower:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+    }
+
+
 }
 
 /// <summary>

@@ -105,7 +105,19 @@ public partial class PeaceMgr : MonoSingleton<PeaceMgr>
     private void RefreshPlantPosInfo()
     {
         listHavePlant = gameData.listTempPlantPos;
-        listValidForPlant = gameData.listTempEmptyPos;
+
+
+        listValidForPlant.Clear();
+        for(int i = 0; i < gameData.listTempEmptyPos.Count; i++)
+        {
+            Vector2Int posID = gameData.listTempEmptyPos[i];
+            MapTileData mapTileData = gameData.GetMapTileData(posID);
+
+            if(PublicTool.CheckWhetherPlantValidRow(posID) && mapTileData.CanPlant)
+            {
+                listValidForPlant.Add(posID);
+            }
+        }
     }
 
     #endregion
