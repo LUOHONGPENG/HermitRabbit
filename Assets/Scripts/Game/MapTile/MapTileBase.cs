@@ -42,7 +42,15 @@ public class MapTileBase : MonoBehaviour
             case MapTileType.Stone:
                 if (tileStatus == MapTileStatus.Broken)
                 {
-                    listModel[(int)MapTileType.End].SetActive(true);
+                    if (mapTileData.bonusID > 0)
+                    {
+                        listModel[(int)MapTileType.Magic].SetActive(true);
+                    }
+                    else
+                    {
+                        listModel[(int)MapTileType.End].SetActive(true);
+
+                    }
                 }
                 else
                 {
