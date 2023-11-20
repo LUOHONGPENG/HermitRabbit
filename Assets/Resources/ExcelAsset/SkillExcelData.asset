@@ -581,10 +581,10 @@ MonoBehaviour:
     unlockNodeID: 2401
     desc: Gain 3 Movement.
   - id: 2402
-    name: Inspire
+    name: Handover
     costAP: 1
-    costMOV: 1
-    costHP: 2
+    costMOV: 2
+    costHP: 0
     costMemory: 0
     range: 1
     isRangeSelf: 0

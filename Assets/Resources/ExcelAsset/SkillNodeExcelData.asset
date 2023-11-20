@@ -435,7 +435,7 @@ MonoBehaviour:
     columnID: 2
     remark: 
   - id: 2402
-    name: Inspire
+    name: Handover
     desc: Gain 1 AP.
     nodeType: 0
     costSP: 2
