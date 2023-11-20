@@ -48,6 +48,7 @@ public class TileInfoTipUIMgr : MonoBehaviour
             MapTileExcelItem tileItem = PublicTool.GetMapTileItem(recordTileType);
             codeName.text = tileItem.name;
             codeDesc.text = tileItem.desc;
+            imgIcon.sprite = Resources.Load("Sprite/Tile/" + tileItem.iconUrl, typeof(Sprite)) as Sprite;
         }
     }
 
