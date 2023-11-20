@@ -15,7 +15,7 @@ public class TileInfoTipUIMgr : MonoBehaviour
     public Image imgIcon;
 
     private MapTileData recordTileData = null;
-    private MapTileType recordTileType = MapTileType.Normal;
+    private MapTileType recordTileType = MapTileType.End;
 
     public void UpdateBasicInfo(MapTileData tileData)
     {

@@ -28,6 +28,18 @@ public partial class MapClipExcelData
             }
         }
     }
+
+    public int GetMapClipWeight(int id)
+    {
+        if (dicMapClipWeight.ContainsKey(id))
+        {
+            return dicMapClipWeight[id];
+        }
+        else
+        {
+            return 1;
+        }
+    }
 }
 
 

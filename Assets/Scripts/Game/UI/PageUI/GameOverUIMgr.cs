@@ -31,11 +31,11 @@ public class GameOverUIMgr : MonoBehaviour
     private void BattleLoseEvent(object arg0)
     {
         codeGameOver.text = "Game Over";
-        codeBtnAction.text = "Retry";
+        codeBtnAction.text = "Menu";
         btnAction.onClick.RemoveAllListeners();
         btnAction.onClick.AddListener(delegate ()
         {
-
+            GameMgr.Instance.LoadScene(SceneName.Menu);
         });
         ShowPopup();
     }

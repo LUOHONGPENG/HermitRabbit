@@ -236,9 +236,16 @@ public class VictoryUIMgr : MonoBehaviour
     public void DrawMapClip()
     {
         //Draw
-        List<int> listPool = ExcelDataMgr.Instance.mapClipExcelData.GetAllMapClipID();
+        MapClipExcelData mapClipExcel = ExcelDataMgr.Instance.mapClipExcelData;
+        List<int> listPool = mapClipExcel.GetAllMapClipID();
         List<int> listDelete = new List<int>(gameData.listMapClipHeld);
-        List<int> listDraw = PublicTool.DrawNum(3, listPool, listDelete);
+        List<int> listWeight = new List<int>();
+        for(int i = 0; i < listPool.Count; i++)
+        {
+            int keyID = listPool[i];
+            listWeight.Add(mapClipExcel.GetMapClipWeight(keyID));
+        }
+        List<int> listDraw = PublicTool.DrawNumWeight(3, listPool, listWeight, listDelete);
 
         PublicTool.ClearChildItem(tfMapClip);
         for (int i = 0; i < listDraw.Count; i++)
