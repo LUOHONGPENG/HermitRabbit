@@ -12,7 +12,11 @@ public class TipUIMgr : MonoBehaviour
     public PlantPreviewTipUIMgr plantPreviewTipUIMgr;
     public BuffIconTipUIMgr buffIconTipUIMgr;
 
+    [Header("TileInfoTip")]
+
+
     [Header("UnitInfoTip")]
+    public CharacterInfoTipUIMgr characterInfoTipUIMgr;
     public FoeInfoTipUIMgr foeInfoTipUIMgr;
     public PlantInfoTipUIMgr plantInfoTipUIMgr;
 
@@ -83,18 +87,27 @@ public class TipUIMgr : MonoBehaviour
         if (isInit)
         {
             //DisplayFoeTip
-            if(gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Foe)
+            if(gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Character)
             {
+                characterInfoTipUIMgr.UpdateBasicInfo(gameData.GetUnitInfoFromHoverTileID());
+                foeInfoTipUIMgr.HideTip();
+                plantInfoTipUIMgr.HideTip();
+            }
+            else if(gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Foe)
+            {
+                characterInfoTipUIMgr.HideTip();
                 foeInfoTipUIMgr.UpdateBasicInfo(gameData.GetUnitInfoFromHoverTileID());
                 plantInfoTipUIMgr.HideTip();
             }
             else if(gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Plant)
             {
+                characterInfoTipUIMgr.HideTip();
                 foeInfoTipUIMgr.HideTip();
                 plantInfoTipUIMgr.UpdateBasicInfo(gameData.GetUnitInfoFromHoverTileID());
             }
             else
             {
+                characterInfoTipUIMgr.HideTip();
                 foeInfoTipUIMgr.HideTip();
                 plantInfoTipUIMgr.HideTip();
             }

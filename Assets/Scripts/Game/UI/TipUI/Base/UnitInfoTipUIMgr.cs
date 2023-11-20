@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class UnitInfoTipUIMgr : MonoBehaviour
 {
+    [Header("Basic")]
     public GameObject objPopup;
     public Transform tfMouse;
-
+    [Header("Basic Info")]
     public Text codeName;
     public Text codeDesc;
     public Image imgHPFill;
