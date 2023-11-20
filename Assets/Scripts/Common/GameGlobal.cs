@@ -23,6 +23,22 @@ public static class GameGlobal
 
     public static float waitTimeText = 0.6f;
 
+    public static int mapMaxNumX
+    {
+        get
+        {
+            return mapClipNumX * mapClipSize;
+        }
+    }
+
+    public static int mapMaxNumY
+    {
+        get
+        {
+            return mapClipNumY * mapClipSize + mapRowFriend + mapRowFoe;
+        }
+    }
+
     #region Shared Data
 
 

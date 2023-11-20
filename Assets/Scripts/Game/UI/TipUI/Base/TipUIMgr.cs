@@ -13,7 +13,7 @@ public class TipUIMgr : MonoBehaviour
     public BuffIconTipUIMgr buffIconTipUIMgr;
 
     [Header("TileInfoTip")]
-
+    public TileInfoTipUIMgr tileInfoTipUIMgr;
 
     [Header("UnitInfoTip")]
     public CharacterInfoTipUIMgr characterInfoTipUIMgr;
@@ -86,7 +86,17 @@ public class TipUIMgr : MonoBehaviour
     {
         if (isInit)
         {
-            //DisplayFoeTip
+            //DisplayTileTip
+            if (gameData.CheckWhetherHoverTileValid())
+            {
+                tileInfoTipUIMgr.UpdateBasicInfo(gameData.GetMapTileDataFromHoverTile());
+            }
+            else
+            {
+                tileInfoTipUIMgr.HideTip();
+            }
+
+            //DisplayUnitTip
             if(gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Character)
             {
                 characterInfoTipUIMgr.UpdateBasicInfo(gameData.GetUnitInfoFromHoverTileID());

@@ -121,14 +121,14 @@ public class BattlePlantData : BattleUnitData
         {
             if(typeID == 2001)
             {
-                for(int i = 0; i < GameGlobal.mapClipSize * GameGlobal.mapClipNumX; i++)
+                for(int i = 0; i < GameGlobal.mapMaxNumX; i++)
                 {
                     listValidTouchRange.Add(new Vector2Int(i,posID.y));
                 }
             }
             else if(typeID == 2002)
             {
-                for (int i = 0; i < GameGlobal.mapClipSize * GameGlobal.mapClipNumY + GameGlobal.mapRowFriend + GameGlobal.mapRowFoe; i++)
+                for (int i = 0; i < GameGlobal.mapMaxNumY; i++)
                 {
                     listValidTouchRange.Add(new Vector2Int(posID.x,i));
                 }

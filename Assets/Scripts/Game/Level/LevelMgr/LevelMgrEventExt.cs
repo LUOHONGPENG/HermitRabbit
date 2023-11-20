@@ -150,7 +150,7 @@ public partial class LevelMgr
         {
             List<Vector3Int> listFoeInfo = ExcelDataMgr.Instance.dayExcelData.dicDayFoe[gameData.numDay];
 
-            int rowMax = GameGlobal.mapRowFriend + GameGlobal.mapClipNumY * GameGlobal.mapClipSize + GameGlobal.mapRowFoe - 1;
+            int rowMax = GameGlobal.mapMaxNumY - 1;
 
             for (int i = 0; i < listFoeInfo.Count; i++)
             {

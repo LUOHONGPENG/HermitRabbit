@@ -43,9 +43,9 @@ public partial class GameData
         listMapTile.Clear();
         dicMapTile.Clear();
 
-        for (int i = 0; i < GameGlobal.mapClipSize * GameGlobal.mapClipNumX; i++)
+        for (int i = 0; i < GameGlobal.mapMaxNumX; i++)
         {
-            for (int j = 0; j < GameGlobal.mapClipSize * GameGlobal.mapClipNumY + GameGlobal.mapRowFriend + GameGlobal.mapRowFoe; j++)
+            for (int j = 0; j < GameGlobal.mapMaxNumY; j++)
             {
                 Vector2Int posID = new Vector2Int(i, j);
 
@@ -238,7 +238,22 @@ public partial class GameData
         }
     }
 
+    public bool CheckWhetherHoverTileValid()
+    {
+        if (PublicTool.CheckWhetherTileIDValid(hoverTileID))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
+    public MapTileData GetMapTileDataFromHoverTile()
+    {
+        return GetMapTileData(hoverTileID);
+    }
 
     #endregion
 

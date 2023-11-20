@@ -558,7 +558,7 @@ MonoBehaviour:
     costMOV: 0
     costHP: 0
     costMemory: 0
-    range: 4
+    range: 3
     isRangeSelf: 1
     needExtraTarget: 0
     radius: 0
@@ -583,10 +583,10 @@ MonoBehaviour:
   - id: 2402
     name: Inspire
     costAP: 1
-    costMOV: 0
-    costHP: 0
+    costMOV: 1
+    costHP: 2
     costMemory: 0
-    range: 4
+    range: 1
     isRangeSelf: 0
     needExtraTarget: 0
     radius: 0
@@ -641,7 +641,7 @@ MonoBehaviour:
     costAP: 0
     costMOV: 0
     costHP: 0
-    costMemory: 10
+    costMemory: 30
     range: 2
     isRangeSelf: 1
     needExtraTarget: 0

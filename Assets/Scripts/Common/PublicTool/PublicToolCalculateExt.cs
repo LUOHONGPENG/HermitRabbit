@@ -12,8 +12,8 @@ public partial class PublicTool
     /// <returns></returns>
     public static Vector3 ConvertPosFromID(Vector2Int posID)
     {
-        int centerX = (GameGlobal.mapClipSize * GameGlobal.mapClipNumX - 1) / 2;
-        int centerZ = (GameGlobal.mapClipSize * GameGlobal.mapClipNumY + GameGlobal.mapRowFoe + GameGlobal.mapRowFriend - 1) / 2;
+        int centerX = (GameGlobal.mapMaxNumX - 1) / 2;
+        int centerZ = (GameGlobal.mapMaxNumY - 1) / 2;
         /*        int centerX = 0;
                 int centerZ = 0;*/
 
@@ -292,7 +292,31 @@ public partial class PublicTool
     }
     #endregion
 
-    #region Plant
+    #region MapTile
+
+    public static bool CheckWhetherTileIDValid(Vector2Int posID)
+    {
+        if (posID.x < 0)
+        {
+            return false;
+        }
+        else if(posID.x > GameGlobal.mapMaxNumX - 1)
+        {
+            return false;
+        }
+        else if (posID.y < 0)
+        {
+            return false;
+        }
+        else if (posID.y > GameGlobal.mapMaxNumY - 1)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 
     public static bool CheckWhetherPlantValidRow(Vector2Int posID)
     {
