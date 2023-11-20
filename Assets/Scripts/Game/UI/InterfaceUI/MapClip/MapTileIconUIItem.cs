@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class MapTileIconUIItem : MonoBehaviour
 {
-    public Image imgFill;
     public Image imgIcon;
 
     public void Init(MapTileType tileType)
@@ -14,7 +13,8 @@ public class MapTileIconUIItem : MonoBehaviour
 
         if(mapTileItem != null)
         {
-            
+            imgIcon.sprite = Resources.Load("Sprite/Tile/" + mapTileItem.iconUrl, typeof(Sprite)) as Sprite;
+            imgIcon.SetNativeSize();
         }
 
     }

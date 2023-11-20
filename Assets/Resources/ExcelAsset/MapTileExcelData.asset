@@ -17,43 +17,43 @@ MonoBehaviour:
     tileType: 0
     name: Soil
     desc: Normal tile
-    iconUrl: 
+    iconUrl: imgIconTile_Soil
   - id: 2
     tileType: 1
     name: Water
     desc: Can transmit electricity
-    iconUrl: 
+    iconUrl: imgIconTile_Water
   - id: 3
     tileType: 2
     name: Grass
     desc: Fire will burn it
-    iconUrl: 
+    iconUrl: imgIconTile_Grass
   - id: 4
     tileType: 3
     name: Stone
     desc: Unit can't pass it if it is not broken
-    iconUrl: 
+    iconUrl: imgIconTile_Stone
   - id: 5
     tileType: 4
     name: Flower
     desc: 'Fire will burn it
 
       Can heal plant'
-    iconUrl: 
+    iconUrl: imgIconTile_Flower
   - id: 6
     tileType: 5
     name: Magic
     desc: 'RES+1;
 
       ATK+1 when spelling skill that deal magic damage.'
-    iconUrl: 
+    iconUrl: imgIconTile_Magic
   - id: 7
     tileType: 6
     name: Duel
     desc: 'DEF-1 RES-1
 
       Skill damage will ignore DEF and RES'
-    iconUrl: 
+    iconUrl: imgIconTile_Duel
   - id: 8
     tileType: 7
     name: Guard
@@ -61,11 +61,11 @@ MonoBehaviour:
 
       Only recover half of movement when
       turn starts'
-    iconUrl: 
+    iconUrl: imgIconTile_Guard
   - id: 9
     tileType: 8
     name: Stealth
     desc: 'ATK-2
 
       Uneasy to become foes'' target.'
-    iconUrl: 
+    iconUrl: imgIconTile_Stealth
