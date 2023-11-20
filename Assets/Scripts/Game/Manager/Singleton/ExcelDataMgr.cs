@@ -52,6 +52,7 @@ public class ExcelDataMgr : MonoSingleton<ExcelDataMgr>
         skillPerformExcelData.Init();
         skillEffectViewExcelData.Init();
 
+        mapClipExcelData.Init();
         mapTileExcelData.Init();
 
         characterExpExcelData.Init();

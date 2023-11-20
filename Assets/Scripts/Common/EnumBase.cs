@@ -80,7 +80,8 @@ public enum Rarity
     Common,
     UnCommon,
     Rare,
-    Epic
+    Epic,
+    Legendary
 }
 
 #endregion

@@ -95,4 +95,65 @@ public partial class PublicTool
         }
         return listTemp;
     }
+
+    public static List<int> DrawNumWeight(int num,List<int> listPool, List<int> listWeight, List<int> listDelete)
+    {
+        //Weight cant be 0,Delete listDraw with 0
+        List<int> listTemp = new List<int>();
+        List<int> listDraw = new List<int>(listPool);
+        List<int> listDrawWeight = new List<int>(listWeight);
+        Dictionary<int, int> dicWeight = new Dictionary<int, int>();
+
+        if(listDraw.Count != listWeight.Count)
+        {
+            Debug.LogError("Lose Weight!");
+        }
+
+        dicWeight.Clear();
+        for(int i = 0; i < listDraw.Count; i++)
+        {
+            int keyID = listDraw[i];
+            if (!dicWeight.ContainsKey(keyID))
+            {
+                dicWeight.Add(keyID, listDrawWeight[i]);
+            }
+        }
+
+        if (listDelete != null)
+        {
+            for (int i = 0; i < listDelete.Count; i++)
+            {
+                listDraw.Remove(listDelete[i]);
+            }
+        }
+
+        int TotalWeight = 0;
+        List<int> listWeightSum = new List<int>();
+        for (int i = 0; i < listDraw.Count; i++)
+        {
+            listWeightSum.Add(TotalWeight);
+            TotalWeight += dicWeight[listDraw[i]];
+        }
+
+        while (listTemp.Count < num)
+        {
+            int ran = UnityEngine.Random.Range(0, TotalWeight);
+            int keyIndex = listWeightSum.Count - 1;
+            for(int i = 0;i< listWeightSum.Count-1; i++)
+            {
+                if(ran >= listWeightSum[i] && ran< listWeightSum[i + 1])
+                {
+                    keyIndex = i;
+                    break;
+                }
+            }
+            int keyID = listDraw[keyIndex];
+            if (!listTemp.Contains(keyID))
+            {
+                listTemp.Add(keyID);
+            }
+        }
+
+        return listTemp;
+    }
 }

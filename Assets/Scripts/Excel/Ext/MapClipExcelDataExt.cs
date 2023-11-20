@@ -4,6 +4,8 @@ using UnityEngine;
 
 public partial class MapClipExcelData
 {
+    public Dictionary<int, int> dicMapClipWeight = new Dictionary<int, int>();
+
     public List<int> GetAllMapClipID()
     {
         List<int> listTemp = new List<int>();
@@ -12,6 +14,19 @@ public partial class MapClipExcelData
             listTemp.Add(items[i].id);
         }
         return listTemp;
+    }
+
+    public void Init()
+    {
+        dicMapClipWeight.Clear();
+        for(int i = 0; i < items.Length; i++)
+        {
+            MapClipExcelItem item = items[i];
+            if (!dicMapClipWeight.ContainsKey(item.id))
+            {
+                dicMapClipWeight.Add(item.id, item.weight);
+            }
+        }
     }
 }
 
