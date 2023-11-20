@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class CharacterInfoTipUIMgr : UnitInfoTipUIMgr
 {
-    private int recordTypeID = -1;
 
     protected override void UpdateSpecial(BattleUnitData unitData)
     {
+        //This Phase wont change when HP change
         if (!objPopup.activeSelf || recordTypeID != unitData.typeID)
         {
             CharacterExcelItem characterExcelItem = PublicTool.GetCharacterExcelItem(unitData.typeID);

@@ -19,6 +19,8 @@ public class UnitInfoTipUIMgr : MonoBehaviour
     public Text codeRES;
     public Text codeMOV;
 
+    protected int recordTypeID = -1;
+
 
     public void UpdateBasicInfo(UnitInfo unitInfo)
     {

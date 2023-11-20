@@ -89,5 +89,10 @@ public partial class PublicTool
     {
         return ExcelDataMgr.Instance.mapClipExcelData.GetExcelItem(mapClipID);
     }
+
+    public static MapTileExcelItem GetMapTileItem(MapTileType tileType)
+    {
+        return ExcelDataMgr.Instance.mapTileExcelData.GetMapTileInfo(tileType);
+    }
     #endregion
 }

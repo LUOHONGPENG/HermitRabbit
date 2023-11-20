@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class PlantInfoTipUIMgr : UnitInfoTipUIMgr
 {
-    private int recordTypeID = -1;
-
     [Header("Special")]
     public GameObject objMove;
 
     protected override void UpdateSpecial(BattleUnitData unitData)
     {
+        //This Phase wont change when HP change
         if (!objPopup.activeSelf || recordTypeID != unitData.typeID)
         {
             PlantExcelItem plantExcelItem = PublicTool.GetPlantItem(unitData.typeID);
