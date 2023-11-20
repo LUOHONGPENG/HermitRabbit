@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PeaceMapClipUIItem : MonoBehaviour
 {
     public Button btnClip;
+    public Image imgSelected;
 
     public Outline outlineClip;
     public CanvasGroup canvasGroupClip;
@@ -37,11 +38,14 @@ public class PeaceMapClipUIItem : MonoBehaviour
     {
         if (isSelected)
         {
-            outlineClip.enabled = true;
+            imgSelected.gameObject.SetActive(true);
+            //outlineClip.enabled = true;
         }
         else
         {
-            outlineClip.enabled = false;
+            imgSelected.gameObject.SetActive(false);
+
+            //outlineClip.enabled = false;
         }
     }
 
