@@ -19,6 +19,9 @@ public class VictoryUIMgr : MonoBehaviour
     private List<VictoryExpUIItem> listExpFrame = new List<VictoryExpUIItem>();
     private Dictionary<int, int> dicBeforeExp = new Dictionary<int, int>();
     private Dictionary<int, int> dicGrowExp = new Dictionary<int, int>();
+    public ResourceCostUIItem battleBonusMemory;
+    public ResourceCostUIItem battleBonusEssence;
+
 
     [Header("MapClip")]
     public Transform tfMapClip;
@@ -104,10 +107,10 @@ public class VictoryUIMgr : MonoBehaviour
             }
         });
 
-        costRefreshMap.Init(-GameGlobal.CostRefreshMapClip);
-        costSkipMap.Init(GameGlobal.AddSkipMapClip);
-        costRefreshPlant.Init(-GameGlobal.CostRefreshPlant);
-        costSkipPlant.Init(GameGlobal.AddSkipPlant);
+        costRefreshMap.Init(ResourceType.Memory,-GameGlobal.CostRefreshMapClip);
+        costSkipMap.Init(ResourceType.Memory, GameGlobal.AddSkipMapClip);
+        costRefreshPlant.Init(ResourceType.Memory, -GameGlobal.CostRefreshPlant);
+        costSkipPlant.Init(ResourceType.Memory, GameGlobal.AddSkipPlant);
     }
 
     private void OnEnable()
@@ -175,8 +178,10 @@ public class VictoryUIMgr : MonoBehaviour
 
     private void CommonReward()
     {
-        gameData.AddMemory(50);
-        gameData.AddEssenceLimit(1);
+        battleBonusMemory.Init(ResourceType.Memory, GameGlobal.BattleBonusMemory);
+        gameData.AddMemory(GameGlobal.BattleBonusMemory);
+        battleBonusEssence.Init(ResourceType.Essence, GameGlobal.BattleBonusEssence);
+        gameData.AddEssenceLimit(GameGlobal.BattleBonusEssence);
 
     }
 

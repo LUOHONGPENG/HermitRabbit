@@ -45,6 +45,12 @@ public enum InteractTargetType
     Character
 }
 
+public enum ResourceType
+{
+    Essence,
+    Memory
+}
+
 #endregion
 
 #region Map

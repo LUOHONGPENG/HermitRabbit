@@ -50,5 +50,9 @@ public static class GameGlobal
     public static int AddSkipMapClip = 20;
     public static int AddSkipPlant = 20;
 
+    public static int BattleBonusMemory = 50;
+    public static int BattleBonusEssence = 1;
+
+
     #endregion
 }

@@ -8,8 +8,22 @@ public class ResourceCostUIItem : MonoBehaviour
     public Image imgIcon;
     public Text codeCostNum;
 
-    public void Init(int num)
+    public List<Sprite> listSp = new List<Sprite>();
+
+    public void Init(ResourceType resourceType,int num)
     {
+        switch (resourceType)
+        {
+            case ResourceType.Essence:
+                imgIcon.sprite = listSp[0];
+                break;
+            case ResourceType.Memory:
+                imgIcon.sprite = listSp[1];
+                break;
+        }
+        imgIcon.SetNativeSize();
+
+
         if(num >= 0)
         {
             codeCostNum.text = string.Format("+{0}", num);

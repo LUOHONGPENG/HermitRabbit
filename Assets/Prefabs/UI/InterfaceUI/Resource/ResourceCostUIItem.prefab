@@ -54,6 +54,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imgIcon: {fileID: 8280876703119057920}
   codeCostNum: {fileID: 1140400680623421598}
+  listSp:
+  - {fileID: 21300000, guid: 1ebcdba3ee562d949a56391e985e2308, type: 3}
+  - {fileID: 21300000, guid: 2787d68c3423d1648a2c9365bf9d9161, type: 3}
 --- !u!225 &-1629187636781061794
 CanvasGroup:
   m_ObjectHideFlags: 0
