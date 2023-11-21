@@ -8,6 +8,8 @@ public static class GameGlobal
 
     public static float cameraLimit = 3.2f;
 
+    #region Map
+
     //The size of a clip
     public static int mapClipSize = 3;
     public static float commonUnitPosY = 0.35f;
@@ -39,10 +41,14 @@ public static class GameGlobal
         }
     }
 
-    #region Shared Data
+    #endregion
 
+    #region Cost
 
-
+    public static int CostRefreshMapClip = 50;
+    public static int CostRefreshPlant = 50;
+    public static int AddSkipMapClip = 20;
+    public static int AddSkipPlant = 20;
 
     #endregion
 }

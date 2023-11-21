@@ -25,12 +25,16 @@ public class VictoryUIMgr : MonoBehaviour
     public GameObject pfMapClip;
     public Button btnRefreshMap;
     public Button btnSkipMap;
+    public ResourceCostUIItem costRefreshMap;
+    public ResourceCostUIItem costSkipMap;
 
     [Header("Plant")]
     public Transform tfPlant;
     public GameObject pfPlant;
     public Button btnRefreshPlant;
     public Button btnSkipPlant;
+    public ResourceCostUIItem costRefreshPlant;
+    public ResourceCostUIItem costSkipPlant;
 
     private VictoryPhase victoryPhase;
     private GameData gameData;
@@ -48,6 +52,8 @@ public class VictoryUIMgr : MonoBehaviour
     #region Basic
     public void Init()
     {
+        gameData = PublicTool.GetGameData();
+
         btnContinue.onClick.RemoveAllListeners();
         btnContinue.onClick.AddListener(delegate ()
         {
@@ -67,7 +73,15 @@ public class VictoryUIMgr : MonoBehaviour
         btnRefreshMap.onClick.RemoveAllListeners();
         btnRefreshMap.onClick.AddListener(delegate ()
         {
-            DrawMapClip();
+            if(GameGlobal.CostRefreshMapClip <= gameData.GetMemory())
+            {
+                gameData.CostMemory(GameGlobal.CostRefreshMapClip);
+                DrawMapClip();
+            }
+            else
+            {
+
+            }
         });
 
         btnSkipPlant.onClick.RemoveAllListeners();
@@ -79,10 +93,21 @@ public class VictoryUIMgr : MonoBehaviour
         btnRefreshPlant.onClick.RemoveAllListeners();
         btnRefreshPlant.onClick.AddListener(delegate ()
         {
-            DrawPlant();
+            if (GameGlobal.CostRefreshPlant <= gameData.GetMemory())
+            {
+                gameData.CostMemory(GameGlobal.CostRefreshPlant);
+                DrawPlant();
+            }
+            else
+            {
+
+            }
         });
 
-        gameData = PublicTool.GetGameData();
+        costRefreshMap.Init(-GameGlobal.CostRefreshMapClip);
+        costSkipMap.Init(GameGlobal.AddSkipMapClip);
+        costRefreshPlant.Init(-GameGlobal.CostRefreshPlant);
+        costSkipPlant.Init(GameGlobal.AddSkipPlant);
     }
 
     private void OnEnable()
@@ -265,7 +290,7 @@ public class VictoryUIMgr : MonoBehaviour
 
     private void SkipMapClip()
     {
-        gameData.AddMemory(50);
+        gameData.AddMemory(GameGlobal.AddSkipMapClip);
         NextPhase();
     }
 
@@ -306,7 +331,7 @@ public class VictoryUIMgr : MonoBehaviour
     }
     private void SkipPlant()
     {
-        gameData.AddMemory(50);
+        gameData.AddMemory(GameGlobal.AddSkipPlant);
         NextPhase();
     }
     #endregion

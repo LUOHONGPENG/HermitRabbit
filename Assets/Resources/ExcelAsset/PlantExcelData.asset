@@ -26,18 +26,18 @@ MonoBehaviour:
     desc: Attack the foe in range if character hit it with normal attack.
   - id: 1002
     name: Cookee
-    HP: 10
-    ATK: 0
+    HP: 8
+    ATK: 3
     DEF: 0
     RES: 1
     triggerCondition: 1
     skillID: 3101
     essence: 2
     pixelUrl: pp_Cook_Idle
-    desc: Apply burning by 2 levels every turn.
+    desc: Apply burning by 3 levels every turn.
   - id: 1003
     name: Hero Grass
-    HP: 20
+    HP: 15
     ATK: 0
     DEF: 1
     RES: 1
@@ -81,7 +81,7 @@ MonoBehaviour:
     desc: Random effect from fragile, burning and reducing movement.
   - id: 2001
     name: Maleficia
-    HP: 5
+    HP: 3
     ATK: 0
     DEF: 0
     RES: 1
@@ -92,7 +92,7 @@ MonoBehaviour:
     desc: Increase ATK of units in same row by 1.
   - id: 2002
     name: Beneficia
-    HP: 5
+    HP: 3
     ATK: 0
     DEF: 1
     RES: 0

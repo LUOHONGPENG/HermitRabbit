@@ -275,10 +275,10 @@ MonoBehaviour:
     tile0: 1
     tile1: 1
     tile2: 1
-    tile3: 1
+    tile3: 3
     tile4: 3
     tile5: 1
-    tile6: 1
+    tile6: 3
     tile7: 3
     tile8: 1
     waterValue: 7
@@ -327,7 +327,7 @@ MonoBehaviour:
     tile4: 5
     tile5: 3
     tile6: 3
-    tile7: 3
+    tile7: 0
     tile8: 3
     waterValue: 0
     grassValue: 0
@@ -336,15 +336,15 @@ MonoBehaviour:
   - id: 5002
     rarity: 4
     weight: 5
-    tile0: 3
+    tile0: 1
     tile1: 1
-    tile2: 3
+    tile2: 1
     tile3: 8
     tile4: 1
     tile5: 1
-    tile6: 1
+    tile6: 3
     tile7: 1
-    tile8: 1
+    tile8: 3
     waterValue: 6
     grassValue: 0
     blockValue: 2
