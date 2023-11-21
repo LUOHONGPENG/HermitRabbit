@@ -13,6 +13,10 @@ public class SettingUIMgr : MonoBehaviour
     public Button btnLoad;
     public Button btnBackToMain;
 
+    [Header("SaveLoad")]
+    public SaveLoadGameUIMgr saveLoadGameUIMgr;
+
+
     private void OnEnable()
     {
         EventCenter.Instance.AddEventListener("ShowSetting", ShowSettingEvent);
@@ -34,13 +38,13 @@ public class SettingUIMgr : MonoBehaviour
         btnSave.onClick.RemoveAllListeners();
         btnSave.onClick.AddListener(delegate ()
         {
-
+            saveLoadGameUIMgr.ShowPopup(SaveSlotUIItem.SaveButtonType.GameSave);
         });
 
         btnLoad.onClick.RemoveAllListeners();
         btnLoad.onClick.AddListener(delegate ()
         {
-
+            saveLoadGameUIMgr.ShowPopup(SaveSlotUIItem.SaveButtonType.GameLoad);
         });
 
         btnBackToMain.onClick.RemoveAllListeners();

@@ -33,7 +33,7 @@ public class MenuUIMgr : MonoBehaviour
         btnLoadGame.onClick.RemoveAllListeners();
         btnLoadGame.onClick.AddListener(delegate ()
         {
-            loadGameUIMgr.ShowPopup();
+            loadGameUIMgr.ShowPopup(SaveSlotUIItem.SaveButtonType.MenuLoad);
         });
 
         btnDelete.onClick.RemoveAllListeners();

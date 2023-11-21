@@ -10,31 +10,81 @@ public class SaveLoadGameUIMgr : MonoBehaviour
     public Transform tfSaveSlot;
     public GameObject pfSaveSlot;
 
+    public Text codeTitle;
     public Button btnClose;
+
+    public SaveSlotUIItem.SaveButtonType saveButtonType;
 
     public void Init()
     {
         btnClose.onClick.RemoveAllListeners();
         btnClose.onClick.AddListener(delegate ()
         {
-            objPopup.SetActive(false);
+            HidePopup();
         });
     }
 
-    public void ShowPopup()
+    public void ShowPopup(SaveSlotUIItem.SaveButtonType saveButtonType)
     {
+        this.saveButtonType = saveButtonType;
+
         PublicTool.ClearChildItem(tfSaveSlot);
 
-        for(int i = (int)SaveSlotName.Auto;i < (int)SaveSlotName.End; i++)
+        switch (saveButtonType)
+        {
+            case SaveSlotUIItem.SaveButtonType.MenuLoad:
+                codeTitle.text = "Load";
+                ShowMenuLoad();
+                break;
+            case SaveSlotUIItem.SaveButtonType.GameLoad:
+                codeTitle.text = "Load";
+                ShowGameLoad();
+                break;
+            case SaveSlotUIItem.SaveButtonType.GameSave:
+                codeTitle.text = "Save";
+                ShowGameSave();
+                break;
+        }
+
+        objPopup.SetActive(true);
+    }
+
+    public void HidePopup()
+    {
+        objPopup.SetActive(false);
+    }
+
+
+    public void ShowMenuLoad()
+    {
+        for (int i = (int)SaveSlotName.Auto; i < (int)SaveSlotName.End; i++)
         {
             SaveSlotName slotName = (SaveSlotName)i;
             GameObject objSlot = GameObject.Instantiate(pfSaveSlot, tfSaveSlot);
             SaveSlotUIItem itemSlot = objSlot.GetComponent<SaveSlotUIItem>();
-            itemSlot.Init(SaveSlotUIItem.SaveButtonType.MenuLoad,slotName,null);
+            itemSlot.Init(SaveSlotUIItem.SaveButtonType.MenuLoad, slotName, null);
         }
-
-        objPopup.SetActive(true);
-
     }
 
+    public void ShowGameLoad()
+    {
+        for (int i = (int)SaveSlotName.Auto; i < (int)SaveSlotName.End; i++)
+        {
+            SaveSlotName slotName = (SaveSlotName)i;
+            GameObject objSlot = GameObject.Instantiate(pfSaveSlot, tfSaveSlot);
+            SaveSlotUIItem itemSlot = objSlot.GetComponent<SaveSlotUIItem>();
+            itemSlot.Init(SaveSlotUIItem.SaveButtonType.GameLoad, slotName, null);
+        }
+    }
+
+    public void ShowGameSave()
+    {
+        for (int i = (int)SaveSlotName.Auto; i < (int)SaveSlotName.End; i++)
+        {
+            SaveSlotName slotName = (SaveSlotName)i;
+            GameObject objSlot = GameObject.Instantiate(pfSaveSlot, tfSaveSlot);
+            SaveSlotUIItem itemSlot = objSlot.GetComponent<SaveSlotUIItem>();
+            itemSlot.Init(SaveSlotUIItem.SaveButtonType.GameSave, slotName, HidePopup);
+        }
+    }
 }
