@@ -7,6 +7,7 @@ public class BattleInfoBarItem : MonoBehaviour
 {
     public Image imgFill;
     public Image imgIcon;
+    public Image imgFrame;
     public Text codeInfo;
     public List<Sprite> listIcon = new List<Sprite>();
     public List<Color> listColor = new List<Color>();
@@ -23,16 +24,22 @@ public class BattleInfoBarItem : MonoBehaviour
                 imgIcon.sprite = listIcon[0];
                 imgFill.color = listColor[0];
                 codeInfo.color = listColorText[0];
+                imgFrame.color = listColorText[0];
+
                 break;
             case BarResourceType.Skill:
                 imgIcon.sprite = listIcon[1];
                 imgFill.color = listColor[1];
                 codeInfo.color = listColorText[1];
+                imgFrame.color = listColorText[1];
+
                 break;
             case BarResourceType.Move:
                 imgIcon.sprite = listIcon[2];
                 imgFill.color = listColor[2];
                 codeInfo.color = listColorText[2];
+                imgFrame.color = listColorText[2];
+
                 break;
         }
         imgIcon.SetNativeSize();
