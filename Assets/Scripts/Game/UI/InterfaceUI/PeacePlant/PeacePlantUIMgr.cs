@@ -37,7 +37,6 @@ public class PeacePlantUIMgr : MonoBehaviour
         {
             PublicTool.EventChangeInteract(InteractState.PeaceNormal);
             EventCenter.Instance.EventTrigger("PeacePlantEnd", null);
-
         });
     }
 

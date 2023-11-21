@@ -12,16 +12,25 @@ public class PeaceMapClipUIMgr : MonoBehaviour
     public GameObject pfMapClip;
 
     public Button btnClose;
+    public Button btnSave;
+
 
     private List<PeaceMapClipUIItem> listClip = new List<PeaceMapClipUIItem>();
 
     public void Init()
     {
-/*        btnClose.onClick.RemoveAllListeners();
-        btnClose.onClick.AddListener(delegate ()
-        {
+        /*        btnClose.onClick.RemoveAllListeners();
+                btnClose.onClick.AddListener(delegate ()
+                {
 
-        });*/
+                });*/
+
+        btnSave.onClick.RemoveAllListeners();
+        btnSave.onClick.AddListener(delegate ()
+        {
+            PublicTool.EventChangeInteract(InteractState.PeaceNormal);
+            EventCenter.Instance.EventTrigger("PeaceMapEnd", null);
+        });
     }
 
     private void OnEnable()
