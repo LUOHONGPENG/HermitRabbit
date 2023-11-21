@@ -41,6 +41,10 @@ public partial class BattleUnitData
             {
                 temp-=2;
             }
+            else if(GetCurTileExpressType() == MapTileType.Grass && battleUnitType == BattleUnitType.Plant)
+            {
+                temp++;
+            }
             return temp;
         }
     }

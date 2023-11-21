@@ -18,7 +18,7 @@ MonoBehaviour:
     effectType: 2
     maxLevel: 1
     counterType: 3
-    countDownType: 0
+    countDownType: 1
     canBeRemoved: 1
     canBeDouble: 0
     desc: Won't die before next turn.
@@ -150,7 +150,7 @@ MonoBehaviour:
     effectType: 1
     maxLevel: 10
     counterType: 1
-    countDownType: 0
+    countDownType: 1
     canBeRemoved: 1
     canBeDouble: 1
     desc: Receive X damage when turn starts.

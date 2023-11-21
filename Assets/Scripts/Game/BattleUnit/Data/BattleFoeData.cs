@@ -57,12 +57,15 @@ public class BattleFoeData : BattleUnitData
 
     public override void ResetNewTurnBefore()
     {
+        TurnBuffDecreaseBefore();
+
         curMOV = regenMOV;
-        TurnBuffDecrease();
     }
 
     public override void ResetNewTurnAfter()
     {
+        TurnBuffDecreaseAfter();
+
         if (curMOV > curMaxMOV)
         {
             curMOV = curMaxMOV;

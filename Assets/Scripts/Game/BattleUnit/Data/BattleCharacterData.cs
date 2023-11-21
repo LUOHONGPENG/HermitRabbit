@@ -150,13 +150,15 @@ public partial class BattleCharacterData : BattleUnitData
 
     public override void ResetNewTurnBefore()
     {
+        TurnBuffDecreaseBefore();
+
         curAP = regenAP;
         curMOV = regenMOV;
     }
 
     public override void ResetNewTurnAfter()
     {
-        TurnBuffDecrease();
+        TurnBuffDecreaseAfter();
 
         if (curAP > curMaxAP)
         {

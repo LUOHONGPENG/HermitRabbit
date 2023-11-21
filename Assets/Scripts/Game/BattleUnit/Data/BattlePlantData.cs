@@ -85,12 +85,14 @@ public class BattlePlantData : BattleUnitData
 
     public override void ResetNewTurnBefore()
     {
+        TurnBuffDecreaseBefore();
+
         curAP = curMaxAP;
     }
 
     public override void ResetNewTurnAfter()
     {
-        TurnBuffDecrease();
+        TurnBuffDecreaseAfter();
         if (curAP > curMaxAP)
         {
             curAP = curMaxAP;

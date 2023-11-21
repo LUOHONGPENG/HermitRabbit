@@ -367,7 +367,7 @@ MonoBehaviour:
     radius: 0
     regionType: 0
     foeEffect: 1
-    characterEffect: 1
+    characterEffect: 0
     plantEffect: 0
     damageType: 1
     damageDeltaStd: 2

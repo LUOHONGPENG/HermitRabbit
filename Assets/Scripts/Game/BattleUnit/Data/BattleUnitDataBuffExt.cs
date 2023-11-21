@@ -93,25 +93,50 @@ public partial class BattleUnitData
         }
     }
 
-    public void TurnBuffDecrease()
+    public void TurnBuffDecreaseBefore()
     {
         for(int i = listBuff.Count - 1; i >= 0; i--)
         {
             Buff tarBuff = listBuff[i];
-            switch (tarBuff.counterType)
+            if(tarBuff.countDownType == BuffCountDownType.BeforeReset)
             {
-                case BuffCounterType.TurnDecrease:
-                    DecreaseBuff(tarBuff.id);
-                    break;
-                case BuffCounterType.TurnHalf:
-                    HalfBuff(tarBuff.id);
-                    break;
-                case BuffCounterType.TurnRemove:
-                    RemoveBuff(tarBuff.id);
-                    break;
+                switch (tarBuff.counterType)
+                {
+                    case BuffCounterType.TurnDecrease:
+                        DecreaseBuff(tarBuff.id);
+                        break;
+                    case BuffCounterType.TurnHalf:
+                        HalfBuff(tarBuff.id);
+                        break;
+                    case BuffCounterType.TurnRemove:
+                        RemoveBuff(tarBuff.id);
+                        break;
+                }
             }
         }
-        //EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
+    }
+
+    public void TurnBuffDecreaseAfter()
+    {
+        for (int i = listBuff.Count - 1; i >= 0; i--)
+        {
+            Buff tarBuff = listBuff[i];
+            if (tarBuff.countDownType == BuffCountDownType.AfterReset)
+            {
+                switch (tarBuff.counterType)
+                {
+                    case BuffCounterType.TurnDecrease:
+                        DecreaseBuff(tarBuff.id);
+                        break;
+                    case BuffCounterType.TurnHalf:
+                        HalfBuff(tarBuff.id);
+                        break;
+                    case BuffCounterType.TurnRemove:
+                        RemoveBuff(tarBuff.id);
+                        break;
+                }
+            }
+        }
     }
 
     public void ClearAllBuff()
@@ -208,6 +233,7 @@ public class Buff
     public int level;
     public int maxLevel;
     public BuffCounterType counterType;
+    public BuffCountDownType countDownType;
     public SkillEffectType effectType;
 
     public Buff(int id, int level)
@@ -217,6 +243,7 @@ public class Buff
         BuffExcelItem buffItem = PublicTool.GetBuffExcelItem(id);
         this.maxLevel = buffItem.maxLevel;
         this.counterType = buffItem.counterType;
+        this.countDownType = buffItem.countDownType;
         this.effectType = buffItem.effectType;
 
         CheckMaxLevel();

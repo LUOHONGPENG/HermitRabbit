@@ -101,5 +101,42 @@ public partial class BattleMgr
         yield break;
     }
 
+    public IEnumerator IE_FlowerTileHealPlant()
+    {
+        List<Vector2Int> listFlower = new List<Vector2Int>();
+
+        for (int i = 0; i < gameData.listMapTile.Count; i++)
+        {
+            MapTileData mapTileData = gameData.listMapTile[i];
+            if (mapTileData.GetDisplayMapType() == MapTileType.Flower)
+            {
+                listFlower.Add(mapTileData.posID);
+            }
+        }
+
+        bool isApplyHeal = false;
+
+        for (int i = 0; i < listFlower.Count; i++)
+        {
+            Vector2Int healPos = listFlower[i];
+            UnitInfo healUnit = gameData.GetUnitInfoFromPosID(healPos);
+            if (healUnit.type == BattleUnitType.Plant)
+            {
+                BattleUnitData unitData = gameData.GetDataFromUnitInfo(healUnit);
+                unitData.GetHeal(2);
+                unitData.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Heal, 2.ToString(), unitData.posID));
+
+                BattleUnitView unitView = unitViewMgr.GetViewFromUnitInfo(healUnit);
+                unitView.RequestBattleText();
+
+                isApplyHeal = true;
+            }
+        }
+
+        if (isApplyHeal)
+        {
+            yield return new WaitForSeconds(1f);
+        }
+    }
 
 }

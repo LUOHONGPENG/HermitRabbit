@@ -321,13 +321,13 @@ MonoBehaviour:
     rarity: 4
     weight: 5
     tile0: 3
-    tile1: 3
+    tile1: 0
     tile2: 3
     tile3: 3
     tile4: 5
     tile5: 3
     tile6: 3
-    tile7: 0
+    tile7: 3
     tile8: 3
     waterValue: 0
     grassValue: 0

@@ -11,10 +11,12 @@ public partial class BattleMgr
         //Show Animation Of new Turn
         yield return new WaitForSeconds(0.5f);
 
-
         //TileFire
         TileBurningExpand();
         yield return StartCoroutine(IE_TileApplyBurning());
+
+        //PlantHeal
+        yield return StartCoroutine(IE_FlowerTileHealPlant());
 
         //PlantTurnStart
         GeneratePlantTriggerDic();
