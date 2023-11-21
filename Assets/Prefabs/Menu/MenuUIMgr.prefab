@@ -998,7 +998,7 @@ RectTransform:
   - {fileID: 585789973375907324}
   - {fileID: 438849678432322613}
   - {fileID: 8243187361385435194}
-  - {fileID: 7078648542710803360}
+  - {fileID: 8365353054978162136}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b170f3f32bf08249978765e3ea86247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadGameUIMgr: {fileID: 1823261526389403342}
+  loadGameUIMgr: {fileID: 236553932115618540}
   btnTest: {fileID: 3211886496453334057}
   btnNewGame: {fileID: 2357227824111943015}
   btnLoadGame: {fileID: 631023433913202835}
@@ -1085,7 +1085,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!1001 &3253293072373763440
+--- !u!1001 &4255296642694863624
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1095,7 +1095,7 @@ PrefabInstance:
     - target: {fileID: 519005423875788851, guid: 45cdfbc344c58ff4c93493946734cbab,
         type: 3}
       propertyPath: m_Name
-      value: MenuLoadGameUIMgr
+      value: SaveLoadGameUIMgr
       objectReference: {fileID: 0}
     - target: {fileID: 5699988711137011408, guid: 45cdfbc344c58ff4c93493946734cbab,
         type: 3}
@@ -1204,11 +1204,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45cdfbc344c58ff4c93493946734cbab, type: 3}
---- !u!114 &1823261526389403342 stripped
+--- !u!114 &236553932115618540 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3777256072918623166, guid: 45cdfbc344c58ff4c93493946734cbab,
+  m_CorrespondingSourceObject: {fileID: 4054841979564224996, guid: 45cdfbc344c58ff4c93493946734cbab,
     type: 3}
-  m_PrefabInstance: {fileID: 3253293072373763440}
+  m_PrefabInstance: {fileID: 4255296642694863624}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -1216,9 +1216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e65c7b17cb3fac14da2910e6aafb809b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &7078648542710803360 stripped
+--- !u!224 &8365353054978162136 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5699988711137011408, guid: 45cdfbc344c58ff4c93493946734cbab,
     type: 3}
-  m_PrefabInstance: {fileID: 3253293072373763440}
+  m_PrefabInstance: {fileID: 4255296642694863624}
   m_PrefabAsset: {fileID: 0}

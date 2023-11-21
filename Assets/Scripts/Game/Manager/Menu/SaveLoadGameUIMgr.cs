@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuLoadGameUIMgr : MonoBehaviour
+public class SaveLoadGameUIMgr : MonoBehaviour
 {
     public GameObject objPopup;
 
@@ -30,7 +30,7 @@ public class MenuLoadGameUIMgr : MonoBehaviour
             SaveSlotName slotName = (SaveSlotName)i;
             GameObject objSlot = GameObject.Instantiate(pfSaveSlot, tfSaveSlot);
             SaveSlotUIItem itemSlot = objSlot.GetComponent<SaveSlotUIItem>();
-            itemSlot.Init(slotName);
+            itemSlot.Init(SaveSlotUIItem.SaveButtonType.MenuLoad,slotName,null);
         }
 
         objPopup.SetActive(true);

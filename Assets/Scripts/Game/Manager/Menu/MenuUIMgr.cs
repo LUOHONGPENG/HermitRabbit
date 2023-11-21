@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuUIMgr : MonoBehaviour
 {
-    public MenuLoadGameUIMgr loadGameUIMgr;
+    public SaveLoadGameUIMgr loadGameUIMgr;
 
     public Button btnTest;
     public Button btnNewGame;

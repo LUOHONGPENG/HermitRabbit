@@ -342,7 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   txSlotName: {fileID: 267502988625063493}
   codeMemory: {fileID: 706183211676498620}
-  btnLoadSlot: {fileID: 8003450995304632719}
+  btnSlot: {fileID: 8003450995304632719}
   objInfo: {fileID: 1514113996789842044}
   objNull: {fileID: 2543350628952457130}
 --- !u!114 &8943639450851471292
