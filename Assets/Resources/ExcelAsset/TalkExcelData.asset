@@ -40,6 +40,41 @@ MonoBehaviour:
     content: I am here to help you. Let's fight against your fear.
   - id: 6
     group: 0
+    step: 1
+    talkSubjectID: 1002
+    content: You can Click Move Button to cost movement to move.
+  - id: 7
+    group: 0
+    step: 1
+    talkSubjectID: 1002
+    content: Then you can click Attack Button to cost AP to attack.
+  - id: 8
+    group: 0
+    step: 2
+    talkSubjectID: 0
+    content: 
+  - id: 9
+    group: 1
+    step: 1
+    talkSubjectID: 1002
+    content: We have leveled up and get some Mapclips and plants just now.
+  - id: 10
+    group: 1
+    step: 1
+    talkSubjectID: 1002
+    content: You can click Skill Button to cost SP to unlock character's skill.
+  - id: 11
+    group: 1
+    step: 1
+    talkSubjectID: 1002
+    content: You can click Map Button to set Mapclip on the map.
+  - id: 12
+    group: 1
+    step: 1
+    talkSubjectID: 1002
+    content: You can click Plant Button to set Plant on the map.
+  - id: 13
+    group: 1
     step: 2
     talkSubjectID: 0
     content: 

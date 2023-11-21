@@ -64,6 +64,12 @@ public class VictoryUIMgr : MonoBehaviour
             if(victoryPhase == VictoryPhase.End)
             {
                 HidePopup();
+
+                if(gameData.numDay == 2)
+                {
+                    EventCenter.Instance.EventTrigger("TalkStart", TalkGroup.Day2);
+                }
+
             }
         });
 

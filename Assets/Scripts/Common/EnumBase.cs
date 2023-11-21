@@ -299,7 +299,8 @@ public enum UITipType
 
 public enum TalkGroup
 {
-    Day1
+    Day1,
+    Day2
 }
 
 public enum TalkStep
