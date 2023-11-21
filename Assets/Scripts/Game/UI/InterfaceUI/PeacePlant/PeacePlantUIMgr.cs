@@ -31,6 +31,14 @@ public class PeacePlantUIMgr : MonoBehaviour
         {
             PeaceMgr.Instance.plantTypeID = -1;
         });
+
+        btnSave.onClick.RemoveAllListeners();
+        btnSave.onClick.AddListener(delegate ()
+        {
+            PublicTool.EventChangeInteract(InteractState.PeaceNormal);
+            EventCenter.Instance.EventTrigger("PeacePlantEnd", null);
+
+        });
     }
 
     private void OnEnable()

@@ -18,9 +18,9 @@ public partial class InputMgr
     {
         switch (interactState)
         {
-            case InteractState.PeacePlant:
+            case InteractState.PeacePlant:/*
                 SetInteractState(InteractState.PeaceNormal);
-                EventCenter.Instance.EventTrigger("PeacePlantEnd", null);
+                EventCenter.Instance.EventTrigger("PeacePlantEnd", null);*/
                 break;
             case InteractState.PeaceMap:
                 SetInteractState(InteractState.PeaceNormal);
