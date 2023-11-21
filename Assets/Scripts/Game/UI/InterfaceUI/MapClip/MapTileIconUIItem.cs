@@ -14,7 +14,7 @@ public class MapTileIconUIItem : MonoBehaviour
         if(mapTileItem != null)
         {
             imgIcon.sprite = Resources.Load("Sprite/Tile/" + mapTileItem.iconUrl, typeof(Sprite)) as Sprite;
-            imgIcon.SetNativeSize();
+            //imgIcon.SetNativeSize();
         }
 
     }
