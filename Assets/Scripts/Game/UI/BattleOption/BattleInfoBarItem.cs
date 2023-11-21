@@ -12,6 +12,8 @@ public class BattleInfoBarItem : MonoBehaviour
     public List<Sprite> listIcon = new List<Sprite>();
     public List<Color> listColor = new List<Color>();
     public List<Color> listColorText = new List<Color>();
+    public List<Color> listColorFrame = new List<Color>();
+
 
     private BarResourceType resourceType;
 
@@ -24,21 +26,21 @@ public class BattleInfoBarItem : MonoBehaviour
                 imgIcon.sprite = listIcon[0];
                 imgFill.color = listColor[0];
                 codeInfo.color = listColorText[0];
-                imgFrame.color = listColorText[0];
+                imgFrame.color = listColorFrame[0];
 
                 break;
             case BarResourceType.Skill:
                 imgIcon.sprite = listIcon[1];
                 imgFill.color = listColor[1];
                 codeInfo.color = listColorText[1];
-                imgFrame.color = listColorText[1];
+                imgFrame.color = listColorFrame[1];
 
                 break;
             case BarResourceType.Move:
                 imgIcon.sprite = listIcon[2];
                 imgFill.color = listColor[2];
                 codeInfo.color = listColorText[2];
-                imgFrame.color = listColorText[2];
+                imgFrame.color = listColorFrame[2];
 
                 break;
         }
