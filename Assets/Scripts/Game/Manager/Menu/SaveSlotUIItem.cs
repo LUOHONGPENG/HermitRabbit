@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuSaveSlotUIItem : MonoBehaviour
+public class SaveSlotUIItem : MonoBehaviour
 {
     public Text txSlotName;
     public Text codeMemory;

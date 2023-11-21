@@ -29,7 +29,7 @@ public class MenuLoadGameUIMgr : MonoBehaviour
         {
             SaveSlotName slotName = (SaveSlotName)i;
             GameObject objSlot = GameObject.Instantiate(pfSaveSlot, tfSaveSlot);
-            MenuSaveSlotUIItem itemSlot = objSlot.GetComponent<MenuSaveSlotUIItem>();
+            SaveSlotUIItem itemSlot = objSlot.GetComponent<SaveSlotUIItem>();
             itemSlot.Init(slotName);
         }
 

@@ -287,11 +287,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1630168789042152042}
   - component: {fileID: 4368541518425077237}
-  - component: {fileID: 207920906642034404}
+  - component: {fileID: 7720752308985183880}
   - component: {fileID: 8943639450851471292}
   - component: {fileID: 8003450995304632719}
   m_Layer: 5
-  m_Name: MenuSaveSlotUIItem
+  m_Name: SaveSlotUIItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,7 +328,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9015178476321558254}
   m_CullTransparentMesh: 1
---- !u!114 &207920906642034404
+--- !u!114 &7720752308985183880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
