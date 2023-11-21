@@ -14,10 +14,14 @@ public class SaveSlotUIItem : MonoBehaviour
     }
 
     public Text txSlotName;
-    public Text codeMemory;
     public Button btnSlot;
     public GameObject objInfo;
     public GameObject objNull;
+
+    [Header("Info")]
+    public Text codeMemory;
+    public Text codeLv1001;
+    public Text codeLv1002;
 
     private bool isNull = true;
     private SaveSlotName slotName;
@@ -79,5 +83,19 @@ public class SaveSlotUIItem : MonoBehaviour
     private void RefreshInfo(GameSaveData saveData)
     {
         codeMemory.text = saveData.memory.ToString();
+
+        for(int i = 0; i< saveData.listCharacterExp.Count; i++)
+        {
+            Vector2Int characterExp = saveData.listCharacterExp[i];
+            int Level = ExcelDataMgr.Instance.characterExpExcelData.GetLevelFromExp(characterExp.y);
+            if (characterExp.x == 1001)
+            {
+                codeLv1001.text = string.Format("Lv.{0}", Level);
+            }
+            else if(characterExp.x == 1002)
+            {
+                codeLv1002.text = string.Format("Lv.{0}", Level);
+            }
+        }
     }
 }

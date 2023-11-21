@@ -29,6 +29,8 @@ public class SettingUIMgr : MonoBehaviour
 
     public void Init()
     {
+        saveLoadGameUIMgr.Init();
+
         btnClose.onClick.RemoveAllListeners();
         btnClose.onClick.AddListener(delegate ()
         {
@@ -56,6 +58,15 @@ public class SettingUIMgr : MonoBehaviour
 
     private void ShowSettingEvent(object arg0)
     {
+        if(PublicTool.GetGameData().gamePhase == GamePhase.Battle)
+        {
+            btnSave.interactable = false;
+        }
+        else
+        {
+            btnSave.interactable = true;
+        }
+
         objPopup.SetActive(true);
     }
 

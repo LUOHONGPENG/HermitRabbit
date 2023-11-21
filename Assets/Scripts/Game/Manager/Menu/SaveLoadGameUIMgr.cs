@@ -79,7 +79,7 @@ public class SaveLoadGameUIMgr : MonoBehaviour
 
     public void ShowGameSave()
     {
-        for (int i = (int)SaveSlotName.Auto; i < (int)SaveSlotName.End; i++)
+        for (int i = (int)SaveSlotName.Slot1; i < (int)SaveSlotName.End; i++)
         {
             SaveSlotName slotName = (SaveSlotName)i;
             GameObject objSlot = GameObject.Instantiate(pfSaveSlot, tfSaveSlot);
