@@ -57,7 +57,8 @@ public struct SkillBattleInfo
     public SkillBattleInfo(SkillExcelItem item)
     {
         this.ID = item.id;
-        this.name = item.name;
+
+        this.name = item.GetDescItem().GetName();
         this.skillSubjectType = item.skillSubjectType;
         this.costAP = item.RealCostAP;
         this.costMOV = item.costMOV;

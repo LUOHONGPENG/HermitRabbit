@@ -54,11 +54,11 @@ public class SkillDescTipUIMgr : MonoBehaviour
         else
         {
             costTipUIMgr.HideCost();
-            codeType.text = string.Format("{0}  {1}", "<sprite=\"SkillType\" name=\"PSkill\">", "Passive Skill").ToString();
+            codeType.text = string.Format("{0} {1}", "<sprite=\"SkillType\" name=\"PSkill\">", "Passive Skill").ToString();
         }
 
-        codeName.text = descExcelItem.name;
-        codeDesc.text = descExcelItem.desc;
+        codeName.text = descExcelItem.GetName();
+        codeDesc.text = descExcelItem.GetDesc();
 
         objPopup.SetActive(true);
     }

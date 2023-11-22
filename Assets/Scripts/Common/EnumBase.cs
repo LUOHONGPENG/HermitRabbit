@@ -180,6 +180,7 @@ public enum PlantTriggerType
 
 public enum SkillNodeType
 {
+    None,
     Active,
     Passive,
     Numerical

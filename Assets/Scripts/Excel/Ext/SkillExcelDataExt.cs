@@ -38,6 +38,11 @@ public partial class SkillExcelData
 
 public partial class SkillExcelItem
 {
+    public SkillDescExcelItem GetDescItem()
+    {
+        return PublicTool.GetSkillDescItem(id);
+    }
+
     public bool isTargetFoe
     {
         get

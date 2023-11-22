@@ -177,3 +177,51 @@ MonoBehaviour:
     name: Finish Work
     desc: Cost <sprite="Common" name="HP"> HP to deal damage, the damage will be
       equal to cost <sprite="Common" name="HP"> HP.
+  - id: 3001
+    name: Tadpole Strike
+    desc: 
+  - id: 3101
+    name: Cook Human On Time
+    desc: 
+  - id: 3102
+    name: Unstable Rabbit
+    desc: 
+  - id: 3103
+    name: Random MilkTea
+    desc: 
+  - id: 3201
+    name: Hero Rabbit
+    desc: 
+  - id: 3301
+    name: Void Rabbit
+    desc: 
+  - id: 9001
+    name: Bite
+    desc: 
+  - id: 9002
+    name: Write me!
+    desc: 
+  - id: 9101
+    name: Anxious Nodule
+    desc: 
+  - id: 9102
+    name: Anxious Fire
+    desc: 
+  - id: 9103
+    name: Anxious Water
+    desc: 
+  - id: 9104
+    name: Anxious Gravity
+    desc: 
+  - id: 9201
+    name: Vision
+    desc: 
+  - id: 9202
+    name: Cruelty
+    desc: 
+  - id: 9301
+    name: Emotional Damage
+    desc: 
+  - id: 9901
+    name: Summon Darkness
+    desc: 
