@@ -13,15 +13,7 @@ public class SkillButtonTipUIMgr : ButtonInfoTipUIMgr
     public TextMeshProUGUI codeDesc;
     public SkillRangeTipUIMgr rangeUI;
 
-    [Header("Cost")]
-    public GameObject objCostAP;
-    public Text codeCostAP;
-    public GameObject objCostMOV;
-    public Text codeCostMOV;
-    public GameObject objCostHP;
-    public Text codeCostHP;
-    public GameObject objCostMemory;
-    public Text codeCostMemory;
+    public SkillCostTipUIMgr costTipUI;
 
     public void ShowTip(int skillID, Vector2 mousePos)
     {
@@ -46,45 +38,7 @@ public class SkillButtonTipUIMgr : ButtonInfoTipUIMgr
 
     private void RefreshCost(SkillExcelItem skillItem)
     {
-        if (skillItem.RealCostAP > 0)
-        {
-            objCostAP.SetActive(true);
-            codeCostAP.text = skillItem.RealCostAP.ToString();
-        }
-        else
-        {
-            objCostAP.SetActive(false);
-        }
-
-        if (skillItem.costMOV > 0)
-        {
-            objCostMOV.SetActive(true);
-            codeCostMOV.text = skillItem.costMOV.ToString();
-        }
-        else
-        {
-            objCostMOV.SetActive(false);
-        }
-
-        if (skillItem.RealCostHP > 0)
-        {
-            objCostHP.SetActive(true);
-            codeCostHP.text = skillItem.RealCostHP.ToString();
-        }
-        else
-        {
-            objCostHP.SetActive(false);
-        }
-
-        if (skillItem.costMemory > 0)
-        {
-            objCostMemory.SetActive(true);
-            codeCostMemory.text = skillItem.costMemory.ToString();
-        }
-        else
-        {
-            objCostMemory.SetActive(false);
-        }
+        costTipUI.UpdateUI(skillItem.RealCostAP, skillItem.costMOV, skillItem.RealCostHP, skillItem.costMemory);
     }
 
 }
