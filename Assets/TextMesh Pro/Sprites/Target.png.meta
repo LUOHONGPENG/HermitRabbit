@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9360eb8f639277047afb49c5770092dd
+guid: 3d6a07ad780dbe44caeed2ecd90ba699
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HP
+      name: TargetA
       rect:
         serializedVersion: 2
-        x: 0
-        y: 99
-        width: 57
-        height: 47
+        x: 3
+        y: 190
+        width: 70
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,146 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ccb71d5dbcf2dc43adfee8cbe0feed5
-      internalID: 1811205075
+      spriteID: 192fe410bb06a2a4cb47b6f690f5527c
+      internalID: 891205987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AP
+      name: CUnit
       rect:
         serializedVersion: 2
-        x: 70
-        y: 90
-        width: 55
-        height: 62
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16495bf107f72f8409661d7a8ece5a8f
-      internalID: 1973435709
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MOV
-      rect:
-        serializedVersion: 2
-        x: 149
-        y: 93
-        width: 49
-        height: 56
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb774cf1511d12a40b1e57fb6ddd03f8
-      internalID: -894606084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATK
-      rect:
-        serializedVersion: 2
-        x: 233
-        y: 92
-        width: 45
-        height: 60
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fece5b1ba28d0664b913722626b282ca
-      internalID: 1806406516
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEF
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 4
-        width: 44
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11ce1b887e76d9544ac0553d3d7d611e
-      internalID: 1521172237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RES
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 3
-        width: 60
-        height: 54
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3cbe886720e587647ba32d77512de1db
-      internalID: -412855029
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Essence
-      rect:
-        serializedVersion: 2
-        x: 149
-        y: 6
-        width: 53
-        height: 55
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d711cb3114beeb8499394fcc2e66f053
-      internalID: -1440427825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Memory
-      rect:
-        serializedVersion: 2
-        x: 235
-        y: 0
+        x: 80
+        y: 195
         width: 46
-        height: 53
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,8 +163,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66d9842bccd8abb4f9d108f6d030a468
-      internalID: -79220948
+      spriteID: 05d49029da651444298bd4bf000a852b
+      internalID: 1160358799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TargetC
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 119
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b604eb01f100a9b4abac7f29077408ef
+      internalID: -321884558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FUnit
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 124
+        width: 54
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0a69b1b0e7aad34597645c597b468db
+      internalID: -855315460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUnit
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 54
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aedf77f9d8a36464e9e34f9945b3d273
+      internalID: -1866009779
       vertices: []
       indices: 
       edges: []
@@ -298,7 +235,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1d6df1c635dfeaa49a233f3360e2aa8d
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -306,14 +243,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Essence: -1440427825
-      ATK: 1806406516
-      AP: 1973435709
-      MOV: -894606084
-      RES: -412855029
-      Memory: -79220948
-      DEF: 1521172237
-      HP: 1811205075
+      PUnit: -1866009779
+      FUnit: -855315460
+      TargetC: -321884558
+      TargetA: 891205987
+      CUnit: 1160358799
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
