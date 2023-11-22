@@ -15,8 +15,7 @@ MonoBehaviour:
   items:
   - id: 1001
     name: Elemental Ball
-    desc: Normal Attack,deal ATK damage to single foe.
-    nodeType: 0
+    nodeType: 1
     costSP: 0
     conditionSPSpent: 0
     conditionPreNode: 00000000
@@ -29,10 +28,7 @@ MonoBehaviour:
     remark: 
   - id: 1101
     name: Fire Ball
-    desc: 'Deal ATK+2 damage to all unit in skill radius,
-
-      with one level burning.'
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: e9030000
@@ -45,8 +41,7 @@ MonoBehaviour:
     remark: 
   - id: 1191
     name: Quick Cast
-    desc: AP Cost of Fire Ball - 1, but damage - 4.
-    nodeType: 1
+    nodeType: 2
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 4d040000
@@ -59,8 +54,7 @@ MonoBehaviour:
     remark: 
   - id: 1192
     name: Inferno
-    desc: Skill Radius of Fire Ball + 1,but damage reduce 25%.
-    nodeType: 1
+    nodeType: 2
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 4d040000
@@ -73,8 +67,7 @@ MonoBehaviour:
     remark: 
   - id: 1193
     name: Focus
-    desc: Fire Ball will cost all AP, each extra AP deal more damage.
-    nodeType: 1
+    nodeType: 2
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 4d040000
@@ -87,8 +80,7 @@ MonoBehaviour:
     remark: 
   - id: 1102
     name: Boom!
-    desc: Deal damage according to burning.
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 4d040000
@@ -101,11 +93,7 @@ MonoBehaviour:
     remark: 
   - id: 1202
     name: 'Gravity '
-    desc: 'Magic attack that reduce movement.
-
-      Deal damage according to difference
-      of movement between source and target.'
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: e9030000
@@ -118,8 +106,7 @@ MonoBehaviour:
     remark: 
   - id: 1291
     name: Genesis
-    desc: Gravity can break stone and randomly create special tile.
-    nodeType: 1
+    nodeType: 2
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: b2040000
@@ -132,8 +119,7 @@ MonoBehaviour:
     remark: 
   - id: 1201
     name: Chronal Shift
-    desc: Dodge next attack.
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: b2040000
@@ -146,8 +132,7 @@ MonoBehaviour:
     remark: 
   - id: 1301
     name: Fourtain
-    desc: Magic attack that can heal plants in the range.
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: e9030000
@@ -160,8 +145,7 @@ MonoBehaviour:
     remark: 
   - id: 1302
     name: Clean
-    desc: Remove 1 debuff for an ally or remove 1 buff for foe.
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 15050000
@@ -174,11 +158,7 @@ MonoBehaviour:
     remark: 
   - id: 1391
     name: Drown
-    desc: 'AP Cost of Fourtain +1.
-
-      Fourtain will turn soil tile into water
-      tile.'
-    nodeType: 1
+    nodeType: 2
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 15050000
@@ -191,11 +171,7 @@ MonoBehaviour:
     remark: 
   - id: 1401
     name: Lightning Bolt
-    desc: 'Magic attack that can be transmitted damage by water tile.
-
-      The
-      damage will reduce according to distance.'
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: e9030000
@@ -208,8 +184,7 @@ MonoBehaviour:
     remark: 
   - id: 1402
     name: Teleport
-    desc: Change one character or plant position.
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 79050000
@@ -222,8 +197,7 @@ MonoBehaviour:
     remark: 
   - id: 1491
     name: High Voltage
-    desc: The damage decay of Lightning Bolt will be reduced.
-    nodeType: 1
+    nodeType: 2
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 79050000
@@ -236,8 +210,7 @@ MonoBehaviour:
     remark: 
   - id: 1901
     name: Time Expand
-    desc: Double the level of all debuff for foe or buff for allies
-    nodeType: 0
+    nodeType: 1
     costSP: 3
     conditionSPSpent: 0
     conditionPreNode: 4e040000b1040000
@@ -250,11 +223,7 @@ MonoBehaviour:
     remark: 
   - id: 1902
     name: Infinity
-    desc: 'Gain 3 Infinity.
-
-      Infinity can enlarge next X skills'' radius by
-      1 unit.'
-    nodeType: 0
+    nodeType: 1
     costSP: 3
     conditionSPSpent: 0
     conditionPreNode: 160500007a050000
@@ -267,8 +236,7 @@ MonoBehaviour:
     remark: 
   - id: 1903
     name: Rabbit Chant
-    desc: Increase skill range and AP but can't get Movement when turn starts.
-    nodeType: 0
+    nodeType: 1
     costSP: 3
     conditionSPSpent: 0
     conditionPreNode: b104000016050000
@@ -281,8 +249,7 @@ MonoBehaviour:
     remark: 
   - id: 2001
     name: Strike
-    desc: Normal Attack,deal ATK damage.
-    nodeType: 0
+    nodeType: 1
     costSP: 0
     conditionSPSpent: 0
     conditionPreNode: 00000000
@@ -295,8 +262,7 @@ MonoBehaviour:
     remark: 
   - id: 2101
     name: Worker Wind
-    desc: Deal damage to enemy around.
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: d1070000
@@ -309,8 +275,7 @@ MonoBehaviour:
     remark: 
   - id: 2191
     name: Injury Benefit
-    desc: Deal more damage when lost more HP.
-    nodeType: 1
+    nodeType: 2
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 35080000
@@ -323,8 +288,7 @@ MonoBehaviour:
     remark: 
   - id: 2102
     name: Overtime Work
-    desc: Gain extra AP every turn but gain burning as well.
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 35080000
@@ -337,8 +301,7 @@ MonoBehaviour:
     remark: 
   - id: 2201
     name: Curse
-    desc: The target will receive Fragile every time lost HP.
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: d1070000
@@ -351,8 +314,7 @@ MonoBehaviour:
     remark: 
   - id: 2291
     name: Counter
-    desc: Deal damage to the unit that attack Bond.
-    nodeType: 1
+    nodeType: 2
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 99080000
@@ -365,8 +327,7 @@ MonoBehaviour:
     remark: 
   - id: 2202
     name: Provoke
-    desc: Attract enemies' attack.
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 99080000
@@ -379,8 +340,7 @@ MonoBehaviour:
     remark: 
   - id: 2301
     name: Take a Nap
-    desc: Heal one character according to HP.
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: d1070000
@@ -393,9 +353,7 @@ MonoBehaviour:
     remark: 
   - id: 2302
     name: Fish Drat
-    desc: Deal damage according to DEF, next strike will recover HP according to
-      damage.
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: fd080000
@@ -408,8 +366,7 @@ MonoBehaviour:
     remark: 
   - id: 2401
     name: Rush Hour
-    desc: Gain 3 Movement.
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: d1070000
@@ -422,8 +379,7 @@ MonoBehaviour:
     remark: 
   - id: 2491
     name: Helper Hand
-    desc: Enlarge the range of the support skill
-    nodeType: 1
+    nodeType: 2
     costSP: 1
     conditionSPSpent: 0
     conditionPreNode: 61090000
@@ -436,8 +392,7 @@ MonoBehaviour:
     remark: 
   - id: 2402
     name: Handover
-    desc: Gain 1 AP.
-    nodeType: 0
+    nodeType: 1
     costSP: 2
     conditionSPSpent: 0
     conditionPreNode: 61090000
@@ -450,8 +405,7 @@ MonoBehaviour:
     remark: 
   - id: 2901
     name: Final Guard
-    desc: HP won't become 0.
-    nodeType: 0
+    nodeType: 1
     costSP: 3
     conditionSPSpent: 0
     conditionPreNode: 360800009a080000
@@ -464,8 +418,7 @@ MonoBehaviour:
     remark: 
   - id: 2902
     name: Super Worker
-    desc: Increase ATK,DEF,RES,max Movement by 1.
-    nodeType: 0
+    nodeType: 1
     costSP: 3
     conditionSPSpent: 0
     conditionPreNode: fe08000062090000
@@ -478,8 +431,7 @@ MonoBehaviour:
     remark: 
   - id: 2903
     name: Finish Work
-    desc: Cost HP to deal damage, the damage will be equal to lost HP.
-    nodeType: 0
+    nodeType: 1
     costSP: 3
     conditionSPSpent: 0
     conditionPreNode: 9a080000fe080000

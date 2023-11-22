@@ -9,7 +9,6 @@ using System.IO;
 public partial class SkillNodeExcelItem : ExcelItemBase
 {
 	public string name;
-	public string desc;
 	public SkillNodeType nodeType;
 	public int costSP;
 	public int conditionSPSpent;
@@ -42,7 +41,6 @@ public class SkillNodeAssetAssignment
 			items[i] = new SkillNodeExcelItem();
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].name = allItemValueRowList[i]["name"];
-			items[i].desc = allItemValueRowList[i]["desc"];
 			items[i].nodeType = (SkillNodeType) Enum.Parse(typeof(SkillNodeType), allItemValueRowList[i]["nodeType"], true);
 			items[i].costSP = Convert.ToInt32(allItemValueRowList[i]["costSP"]);
 			items[i].conditionSPSpent = Convert.ToInt32(allItemValueRowList[i]["conditionSPSpent"]);
