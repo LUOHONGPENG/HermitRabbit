@@ -18,116 +18,162 @@ MonoBehaviour:
     desc: Deal <sprite="Common" name="ATK"> ATK damage.
   - id: 1101
     name: Fire Ball
-    desc: 'Deal <sprite="Common" name="ATK"> ATK + 2 damage.
+    desc: 'Deal <sprite="Common" name="ATK"> ATK + 3 damage.
 
-      Apply one level
-      burning.'
+      Apply 1 level
+      Burning.'
   - id: 1191
     name: Quick Cast
-    desc: <sprite="Common" name="AP"> AP Cost of Fire Ball - 1, but damage - 4.
-  - id: 1192
-    name: Inferno
-    desc: '<sprite="Common" name="Radius"> Radius + 1 for Fire Ball
+    desc: '<sprite="Common" name="AP"> AP Cost - 1 for <b>Fire Ball</b>
 
       Damage
-      of Fire Ball reduce 25%.'
+      - 4 for <b>Fire Ball</b>'
+  - id: 1192
+    name: Inferno
+    desc: '<sprite="Common" name="Radius"> Radius + 1 for <b>Fire Ball</b>
+
+      Damage
+      of <b>Fire Ball</b> reduce 25%.'
   - id: 1193
     name: Focus
-    desc: Fire Ball will cost all AP, each extra AP deal more damage.
+    desc: '<b>Fire Ball</b> will cost all <sprite="Common" name="AP"> AP
+
+      Each
+      extra <sprite="Common" name="AP"> AP deal more damage.'
   - id: 1102
     name: Boom!
-    desc: Deal damage according to burning.
+    desc: 'Select All Burning Targets.
+
+      Deal damage equal to Burning X 2.5.'
   - id: 1202
     name: 'Gravity '
-    desc: 'Magic attack that reduce movement.
+    desc: 'Deal <sprite="Common" name="ATK"> ATK - 1 damage.
 
-      Deal damage according to difference
-      of movement between source and target.'
+      Reduce targets''
+      <sprite="Common" name="MOV"> MOV.
+
+      Damage will increase if higher <sprite="Common"
+      name="MOV"> MOV of source and lower <sprite="Common" name="MOV"> MOV of target.'
   - id: 1291
     name: Genesis
-    desc: Gravity can break stone and randomly create special tile.
+    desc: '<b>Gravity</b> can break <sprite="Tile" name="StoneT">Stone tile.
+
+      Randomly
+      create special tile like <sprite="Tile" name="MagicT"> <sprite="Tile" name="DuelT">
+      <sprite="Tile" name="GuardT"> <sprite="Tile" name="StealthT">'
   - id: 1201
     name: Chronal Shift
-    desc: Dodge next attack.
+    desc: Dodge next attack from <sprite="Target" name="CUnit"> Character,<sprite="Target"
+      name="FUnit"> Foe or <sprite="Target" name="PUnit"> Plant.
   - id: 1301
     name: Fourtain
-    desc: Magic attack that can heal plants in the range.
+    desc: 'Deal damage to <sprite="Target" name="FUnit"> Foe equal to <sprite="Common"
+      name="RES"> RESX2 + 1.
+
+      Heal <sprite="Target" name="PUnit"> Plant equal
+      to <sprite="Common" name="RES"> RES X2 + 1.'
   - id: 1302
     name: Clean
-    desc: Remove 1 debuff for an ally or remove 1 buff for foe.
+    desc: 'Remove 1 debuff for <sprite="Target" name="CUnit"> Character or <sprite="Target"
+      name="PUnit"> Plant
+
+      Remove 1 buff for <sprite="Target" name="FUnit">
+      Foe'
   - id: 1391
     name: Drown
-    desc: 'AP Cost of Fourtain +1.
+    desc: '<sprite="Common" name="AP"> AP Cost + 1 for <b>Fourtain</b>
 
-      Fourtain will turn soil tile into water
-      tile.'
+      <b>Fourtain</b>
+      will turn <sprite="Tile" name="SoilT"> Soil tile into <sprite="Tile" name="WaterT">
+      Water tile.'
   - id: 1401
     name: Lightning Bolt
-    desc: 'Magic attack that can be transmitted damage by water tile.
+    desc: 'Deal <sprite="Common" name="ATK"> ATK + 4 damage.
 
-      The
-      damage will reduce according to distance.'
+      Damage can be
+      transmitted by <sprite="Tile" name="WaterT"> Water tile.
+
+      But damage
+      will reduce according to distance.'
   - id: 1402
     name: Teleport
-    desc: Change one character or plant position.
+    desc: 'Change position of <sprite="Target" name="CUnit"> Character or <sprite="Target"
+      name="PUnit"> Plant.
+
+      Distance of <b>Teleport</b> will determined by
+      <sprite="Common" name="MOV"> MOV.'
   - id: 1491
     name: High Voltage
-    desc: The damage decay of Lightning Bolt will be reduced.
+    desc: The damage decay of <b>Lightning Bolt</b> will be reduced.
   - id: 1901
     name: Time Expand
-    desc: Double the level of all debuff for foe or buff for allies
+    desc: 'Double the level of all debuff for <sprite="Target" name="FUnit"> Foe
+
+      buff
+      for <sprite="Target" name="CUnit"> Character or <sprite="Target" name="PUnit">
+      Plant'
   - id: 1902
     name: Infinity
     desc: 'Gain 3 Infinity.
 
-      Infinity can enlarge next X skills'' radius by
-      1 unit.'
+      Infinity can enlarge next X skills'' <sprite="Common"
+      name="Radius"> Radius by 1.'
   - id: 1903
     name: Rabbit Chant
-    desc: Increase skill range and AP but can't get Movement when turn starts.
+    desc: '<sprite="Common" name="Range"> Range + 2 and <sprite="Common" name="AP">
+      AP + 1
+
+      Can''t regain <sprite="Common" name="MOV"> MOV when turn starts.'
   - id: 2001
     name: Strike
-    desc: Normal Attack,deal ATK damage.
+    desc: Deal <sprite="Common" name="ATK"> ATK damage.
   - id: 2101
     name: Worker Wind
-    desc: Deal damage to enemy around.
+    desc: Deal <sprite="Common" name="ATK"> ATK damage.
   - id: 2191
     name: Injury Benefit
-    desc: Deal more damage when lost more HP.
+    desc: Deal 1 more damage when lost 3 <sprite="Common" name="HP"> HP.
   - id: 2102
     name: Overtime Work
-    desc: Gain extra AP every turn but gain burning as well.
+    desc: "Gain extra <sprite=\"Common\" name=\"AP\"> AP every turn \nGain 3 level
+      Burning."
   - id: 2201
     name: Curse
-    desc: The target will receive Fragile every time lost HP.
+    desc: The target will receive Fragile every time lost <sprite="Common" name="HP">
+      HP.
   - id: 2291
     name: Counter
-    desc: Deal damage to the unit that attack Bond.
+    desc: Deal damage to the unit that attack Ward.
   - id: 2202
     name: Provoke
     desc: Attract enemies' attack.
   - id: 2301
     name: Take a Nap
-    desc: Heal one character according to HP.
+    desc: Heal one character equal to <sprite="Common" name="HP"> 25%HP.
   - id: 2302
     name: Fish Drat
-    desc: Deal damage according to DEF, next strike will recover HP according to
-      damage.
+    desc: 'Deal damage equal to <sprite="Common" name="DEF"> DEF
+
+      Next strike
+      will restore <sprite="Common" name="HP"> HP according to damage.'
   - id: 2401
     name: Rush Hour
-    desc: Gain 3 Movement.
+    desc: Give 3 <sprite="Common" name="MOV"> MOV.
   - id: 2491
     name: Helper Hand
-    desc: Enlarge the range of the support skill
+    desc: <sprite="Common" name="Range"> Range + 1 for <sprite="SkillType" name="SSkill">
+      Support Skill
   - id: 2402
     name: Handover
-    desc: Gain 1 AP.
+    desc: Give 1 <sprite="Common" name="AP">.
   - id: 2901
     name: Final Guard
-    desc: HP won't become 0.
+    desc: <sprite="Common" name="HP"> HP won't become 0.
   - id: 2902
     name: Super Worker
-    desc: Increase ATK,DEF,RES,max Movement by 1.
+    desc: 'Increase <sprite="Common" name="ATK"> ATK <sprite="Common" name="DEF">
+      DEF <sprite="Common" name="RES"> RES <sprite="Common" name="MOV"> MOV by 1. '
   - id: 2903
     name: Finish Work
-    desc: Cost HP to deal damage, the damage will be equal to lost HP.
+    desc: Cost <sprite="Common" name="HP"> HP to deal damage, the damage will be
+      equal to cost <sprite="Common" name="HP"> HP.

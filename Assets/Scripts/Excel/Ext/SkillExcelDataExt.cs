@@ -312,7 +312,7 @@ public partial class SkillExcelItem
                 if(activeSkillType == ActiveSkillType.NormalAttack || activeSkillType == ActiveSkillType.DamageSkill || activeSkillType == ActiveSkillType.UltimateSkill)
                 {
                     BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
-                    int lostHP = Mathf.RoundToInt((characterData.curMaxHP - characterData.curHP) / 2);
+                    int lostHP = Mathf.RoundToInt((characterData.curMaxHP - characterData.curHP) / 3);
                     temp += lostHP;
                 }
             }
