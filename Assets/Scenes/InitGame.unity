@@ -239,4 +239,5 @@ MonoBehaviour:
   curMapCamera: {fileID: 0}
   curUICamera: {fileID: 0}
   curSceneGameMgr: {fileID: 0}
+  curSceneName: 0
   isInit: 0

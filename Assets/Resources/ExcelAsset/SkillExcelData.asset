@@ -239,7 +239,10 @@ MonoBehaviour:
     characterID: 1001
     iconUrl: imgIconSkill_Lightning
     unlockNodeID: 1401
-    desc: Magic attack that can be transmitted damage by water tile.
+    desc: 'Deal <sprite="Common" name="ATK"> ATK + 4 damage.
+
+      Can be transmitted
+      damage by water tile.'
   - id: 1402
     name: Teleport
     costAP: 2

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Networking.Types;
 using UnityEngine.UI;
@@ -9,7 +10,7 @@ public class SkillButtonTipUIMgr : ButtonInfoTipUIMgr
     [Header("BasicInfo")]
     public Text codeName;
     public Text codeType;
-    public Text codeDesc;
+    public TextMeshProUGUI codeDesc;
     public SkillRangeTipUIMgr rangeUI;
 
     [Header("Cost")]
@@ -30,6 +31,8 @@ public class SkillButtonTipUIMgr : ButtonInfoTipUIMgr
 
             codeName.text = skillItem.name;
             codeType.text = skillItem.activeSkillType.ToString();
+
+            codeDesc.spriteAsset = Resources.Load<TMP_SpriteAsset>("Sprite Assets/Common");
             codeDesc.text = skillItem.desc;
 
             RefreshCost(skillItem);
