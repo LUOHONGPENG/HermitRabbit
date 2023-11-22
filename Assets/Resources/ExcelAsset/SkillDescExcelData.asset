@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842f43d3c73d2d946b36bd87be820e98, type: 3}
+  m_Name: SkillDescExcelData
+  m_EditorClassIdentifier: 
+  items:
+  - id: 1001
+    name: Elemental Ball
+    desc: Deal <sprite="Common" name="ATK"> ATK damage.
+  - id: 1101
+    name: Fire Ball
+    desc: 'Deal <sprite="Common" name="ATK"> ATK + 2 damage.
+
+      Apply one level
+      burning.'
+  - id: 1191
+    name: Quick Cast
+    desc: <sprite="Common" name="AP"> AP Cost of Fire Ball - 1, but damage - 4.
+  - id: 1192
+    name: Inferno
+    desc: '<sprite="Common" name="Radius"> Radius + 1 for Fire Ball
+
+      Damage
+      of Fire Ball reduce 25%.'
+  - id: 1193
+    name: Focus
+    desc: Fire Ball will cost all AP, each extra AP deal more damage.
+  - id: 1102
+    name: Boom!
+    desc: Deal damage according to burning.
+  - id: 1202
+    name: 'Gravity '
+    desc: 'Magic attack that reduce movement.
+
+      Deal damage according to difference
+      of movement between source and target.'
+  - id: 1291
+    name: Genesis
+    desc: Gravity can break stone and randomly create special tile.
+  - id: 1201
+    name: Chronal Shift
+    desc: Dodge next attack.
+  - id: 1301
+    name: Fourtain
+    desc: Magic attack that can heal plants in the range.
+  - id: 1302
+    name: Clean
+    desc: Remove 1 debuff for an ally or remove 1 buff for foe.
+  - id: 1391
+    name: Drown
+    desc: 'AP Cost of Fourtain +1.
+
+      Fourtain will turn soil tile into water
+      tile.'
+  - id: 1401
+    name: Lightning Bolt
+    desc: 'Magic attack that can be transmitted damage by water tile.
+
+      The
+      damage will reduce according to distance.'
+  - id: 1402
+    name: Teleport
+    desc: Change one character or plant position.
+  - id: 1491
+    name: High Voltage
+    desc: The damage decay of Lightning Bolt will be reduced.
+  - id: 1901
+    name: Time Expand
+    desc: Double the level of all debuff for foe or buff for allies
+  - id: 1902
+    name: Infinity
+    desc: 'Gain 3 Infinity.
+
+      Infinity can enlarge next X skills'' radius by
+      1 unit.'
+  - id: 1903
+    name: Rabbit Chant
+    desc: Increase skill range and AP but can't get Movement when turn starts.
+  - id: 2001
+    name: Strike
+    desc: Normal Attack,deal ATK damage.
+  - id: 2101
+    name: Worker Wind
+    desc: Deal damage to enemy around.
+  - id: 2191
+    name: Injury Benefit
+    desc: Deal more damage when lost more HP.
+  - id: 2102
+    name: Overtime Work
+    desc: Gain extra AP every turn but gain burning as well.
+  - id: 2201
+    name: Curse
+    desc: The target will receive Fragile every time lost HP.
+  - id: 2291
+    name: Counter
+    desc: Deal damage to the unit that attack Bond.
+  - id: 2202
+    name: Provoke
+    desc: Attract enemies' attack.
+  - id: 2301
+    name: Take a Nap
+    desc: Heal one character according to HP.
+  - id: 2302
+    name: Fish Drat
+    desc: Deal damage according to DEF, next strike will recover HP according to
+      damage.
+  - id: 2401
+    name: Rush Hour
+    desc: Gain 3 Movement.
+  - id: 2491
+    name: Helper Hand
+    desc: Enlarge the range of the support skill
+  - id: 2402
+    name: Handover
+    desc: Gain 1 AP.
+  - id: 2901
+    name: Final Guard
+    desc: HP won't become 0.
+  - id: 2902
+    name: Super Worker
+    desc: Increase ATK,DEF,RES,max Movement by 1.
+  - id: 2903
+    name: Finish Work
+    desc: Cost HP to deal damage, the damage will be equal to lost HP.

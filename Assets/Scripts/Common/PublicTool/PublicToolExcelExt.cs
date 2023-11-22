@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Networking.Types;
 
@@ -20,6 +21,11 @@ public partial class PublicTool
     public static SkillNodeExcelItem GetSkillNodeItem(int nodeID)
     {
         return ExcelDataMgr.Instance.skillNodeExcelData.GetExcelItem(nodeID);
+    }
+
+    public static SkillDescExcelItem GetSkillDescItem(int skillID)
+    {
+        return ExcelDataMgr.Instance.skillDescExcelData.GetExcelItem(skillID);
     }
 
     public static List<SkillPerformInfo> GetSkillPerformInfo(int skillID)

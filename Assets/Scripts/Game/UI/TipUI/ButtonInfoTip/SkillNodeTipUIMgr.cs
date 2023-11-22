@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ public class SkillNodeTipUIMgr : ButtonInfoTipUIMgr
     [Header("BasicInfo")]
     public Text codeName;
     public Text codeType;
-    public Text codeDesc;
+    public TextMeshProUGUI codeDesc;
     public SkillRangeTipUIMgr rangeUI;
 
     [Header("Cost")]
@@ -19,6 +20,8 @@ public class SkillNodeTipUIMgr : ButtonInfoTipUIMgr
         if (!objPopup.activeSelf || recordID != nodeID)
         {
             SkillNodeExcelItem nodeExcelItem = PublicTool.GetSkillNodeItem(nodeID);
+            SkillDescExcelItem descExcelItem = PublicTool.GetSkillDescItem(nodeID);
+
             codeName.text = nodeExcelItem.name;
             if (nodeExcelItem.nodeType == SkillNodeType.Active)
             {
@@ -36,7 +39,7 @@ public class SkillNodeTipUIMgr : ButtonInfoTipUIMgr
 
                 codeType.text = nodeExcelItem.nodeType.ToString();
             }
-            codeDesc.text = nodeExcelItem.desc;
+            codeDesc.text = descExcelItem.desc;
 
             recordID = nodeID;
         }

@@ -7,6 +7,7 @@ public class ExcelDataMgr : MonoSingleton<ExcelDataMgr>
     public SkillExcelData skillExcelData;
     public SkillSpecialExcelData skillSpecialExcelData;
     public SkillNodeExcelData skillNodeExcelData;
+    public SkillDescExcelData skillDescExcelData;
     public SkillPerformExcelData skillPerformExcelData;
     public SkillEffectViewExcelData skillEffectViewExcelData;
     public BuffExcelData buffExcelData;
@@ -29,6 +30,7 @@ public class ExcelDataMgr : MonoSingleton<ExcelDataMgr>
         skillExcelData = ExcelManager.Instance.GetExcelData<SkillExcelData, SkillExcelItem>();
         skillSpecialExcelData = ExcelManager.Instance.GetExcelData<SkillSpecialExcelData, SkillSpecialExcelItem>();
         skillNodeExcelData = ExcelManager.Instance.GetExcelData<SkillNodeExcelData, SkillNodeExcelItem>();
+        skillDescExcelData = ExcelManager.Instance.GetExcelData<SkillDescExcelData, SkillDescExcelItem>();
         skillPerformExcelData = ExcelManager.Instance.GetExcelData<SkillPerformExcelData, SkillPerformExcelItem>();
         skillEffectViewExcelData = ExcelManager.Instance.GetExcelData<SkillEffectViewExcelData, SkillEffectViewExcelItem>();
         buffExcelData = ExcelManager.Instance.GetExcelData<BuffExcelData, BuffExcelItem>();
