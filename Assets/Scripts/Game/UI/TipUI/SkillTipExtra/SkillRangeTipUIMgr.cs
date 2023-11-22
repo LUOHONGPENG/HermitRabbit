@@ -14,7 +14,6 @@ public class SkillRangeTipUIMgr : MonoBehaviour
     public GameObject pfRangeSource;
     public GameObject pfRangeDot;
 
-
     public void Init(SkillRegionType regionType,int range, int radius)
     {
         PublicTool.ClearChildItem(tfRangeIcon);

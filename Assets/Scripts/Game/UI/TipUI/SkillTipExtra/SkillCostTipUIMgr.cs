@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class SkillCostTipUIMgr : MonoBehaviour
 {
+    public GameObject objPopus;
+
     [Header("Cost")]
     public GameObject objCostAP;
     public TextMeshProUGUI codeCostAP;
@@ -15,6 +17,16 @@ public class SkillCostTipUIMgr : MonoBehaviour
     public TextMeshProUGUI codeCostHP;
     public GameObject objCostMemory;
     public TextMeshProUGUI codeCostMemory;
+
+    public void ShowCost()
+    {
+        objPopus.SetActive(true);
+    }
+
+    public void HideCost()
+    {
+        objPopus.SetActive(false);
+    }
 
     public void UpdateUI(int AP,int MOV,int HP,int Memory)
     {

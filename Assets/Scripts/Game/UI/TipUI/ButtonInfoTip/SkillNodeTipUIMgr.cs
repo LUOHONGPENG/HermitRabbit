@@ -6,10 +6,8 @@ using UnityEngine.UI;
 
 public class SkillNodeTipUIMgr : ButtonInfoTipUIMgr
 {
-    [Header("BasicInfo")]
-    public Text codeName;
-    public Text codeType;
-    public TextMeshProUGUI codeDesc;
+    [Header("Info")]
+    public SkillDescTipUIMgr descUI;
     public SkillRangeTipUIMgr rangeUI;
 
     [Header("Cost")]
@@ -20,26 +18,20 @@ public class SkillNodeTipUIMgr : ButtonInfoTipUIMgr
         if (!objPopup.activeSelf || recordID != nodeID)
         {
             SkillNodeExcelItem nodeExcelItem = PublicTool.GetSkillNodeItem(nodeID);
-            SkillDescExcelItem descExcelItem = PublicTool.GetSkillDescItem(nodeID);
 
-            codeName.text = nodeExcelItem.name;
+            descUI.Init(nodeID,true);
+
             if (nodeExcelItem.nodeType == SkillNodeType.Active)
             {
                 SkillExcelItem skillItem = PublicTool.GetSkillItem(nodeExcelItem.id);
-                codeType.text = skillItem.activeSkillType.ToString();
 
                 rangeUI.gameObject.SetActive(true);
-
                 rangeUI.Init(skillItem.regionType, skillItem.RealRange, skillItem.RealRadius);
-
             }
             else
             {
                 rangeUI.gameObject.SetActive(false);
-
-                codeType.text = nodeExcelItem.nodeType.ToString();
             }
-            codeDesc.text = descExcelItem.desc;
 
             recordID = nodeID;
         }

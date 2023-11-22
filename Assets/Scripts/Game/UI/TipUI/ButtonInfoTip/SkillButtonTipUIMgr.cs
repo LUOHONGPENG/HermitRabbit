@@ -8,12 +8,8 @@ using UnityEngine.UI;
 public class SkillButtonTipUIMgr : ButtonInfoTipUIMgr
 {
     [Header("BasicInfo")]
-    public Text codeName;
-    public Text codeType;
-    public TextMeshProUGUI codeDesc;
+    public SkillDescTipUIMgr descUI;
     public SkillRangeTipUIMgr rangeUI;
-
-    public SkillCostTipUIMgr costTipUI;
 
     public void ShowTip(int skillID, Vector2 mousePos)
     {
@@ -21,13 +17,7 @@ public class SkillButtonTipUIMgr : ButtonInfoTipUIMgr
         {
             SkillExcelItem skillItem = PublicTool.GetSkillItem(skillID);
 
-            codeName.text = skillItem.name;
-            codeType.text = skillItem.activeSkillType.ToString();
-
-            codeDesc.spriteAsset = Resources.Load<TMP_SpriteAsset>("Sprite Assets/Common");
-            codeDesc.text = skillItem.desc;
-
-            RefreshCost(skillItem);
+            descUI.Init(skillID, false);
 
             rangeUI.Init(skillItem.regionType, skillItem.RealRange, skillItem.RealRadius);
             recordID = skillID;
@@ -36,9 +26,5 @@ public class SkillButtonTipUIMgr : ButtonInfoTipUIMgr
         ShowTipSetPos(mousePos);
     }
 
-    private void RefreshCost(SkillExcelItem skillItem)
-    {
-        costTipUI.UpdateUI(skillItem.RealCostAP, skillItem.costMOV, skillItem.RealCostHP, skillItem.costMemory);
-    }
 
 }
