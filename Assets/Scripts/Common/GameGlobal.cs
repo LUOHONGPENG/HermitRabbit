@@ -5,6 +5,7 @@ using UnityEngine;
 public static class GameGlobal
 {
     public static SceneName targetScene = SceneName.Menu;
+    public static LanguageType languageType = LanguageType.CN;
 
     public static float cameraLimit = 3.2f;
 

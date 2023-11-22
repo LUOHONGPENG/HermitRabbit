@@ -6,12 +6,26 @@ public partial class SkillDescExcelItem
 {
     public string GetName()
     {
-        return name;
+        if(GameGlobal.languageType == LanguageType.CN)
+        {
+            return name_CN;
+        }
+        else
+        {
+            return name_EN;
+        }
     }
 
     public string GetDesc()
     {
-        return desc;
+        if (GameGlobal.languageType == LanguageType.CN)
+        {
+            return desc_CN;
+        }
+        else
+        {
+            return desc_EN;
+        }
     }
 
 

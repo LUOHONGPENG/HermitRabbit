@@ -10,6 +10,12 @@ public enum SceneName
     Game
 }
 
+public enum LanguageType
+{
+    EN,
+    CN
+}
+
 public enum SaveSlotName
 {
     Auto,
