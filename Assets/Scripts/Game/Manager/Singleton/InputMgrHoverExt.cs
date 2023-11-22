@@ -19,12 +19,7 @@ public partial class InputMgr
         }
     }
 
-
-
     #region Hover
-
-
-
     /// <summary>
     /// The main function of 
     /// </summary>
@@ -81,7 +76,6 @@ public partial class InputMgr
     {
         EventCenter.Instance.EventTrigger("InputSetHoverTile", new Vector2Int(-99, -99));
     }
-
 
     /// <summary>
     /// Check whether the mouse hover the UI
