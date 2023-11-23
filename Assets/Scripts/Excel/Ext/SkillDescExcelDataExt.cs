@@ -36,7 +36,14 @@ public partial class SkillDescExcelData
         }
     }
 
-
+    public List<SkillTag> GetTag(int skillID)
+    {
+        if (dicSkillTag.ContainsKey(skillID))
+        {
+            return dicSkillTag[skillID];
+        }
+        else { return null; }
+    }
 
 
 }
