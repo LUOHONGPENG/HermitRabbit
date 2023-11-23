@@ -12,6 +12,7 @@ public partial class SkillDescExcelItem : ExcelItemBase
 	public string name_CN;
 	public string desc_EN;
 	public string desc_CN;
+	public List<string> listTagType;
 }
 
 [CreateAssetMenu(fileName = "SkillDescExcelData", menuName = "Excel To ScriptableObject/Create SkillDescExcelData", order = 1)]
@@ -36,6 +37,7 @@ public class SkillDescAssetAssignment
 			items[i].name_CN = allItemValueRowList[i]["name_CN"];
 			items[i].desc_EN = allItemValueRowList[i]["desc_EN"];
 			items[i].desc_CN = allItemValueRowList[i]["desc_CN"];
+			items[i].listTagType = new List<string>(allItemValueRowList[i]["listTagType"].Split(';'));
 		}
 		SkillDescExcelData excelDataAsset = ScriptableObject.CreateInstance<SkillDescExcelData>();
 		excelDataAsset.items = items;

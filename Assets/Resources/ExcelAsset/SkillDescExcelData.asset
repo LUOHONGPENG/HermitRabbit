@@ -19,6 +19,8 @@ MonoBehaviour:
     desc_EN: Deal <sprite="Common" name="ATK"> ATK damage.
     desc_CN: "\u9020\u6210\u76F8\u5F53\u4E8E <sprite=\"Common\" name=\"ATK\"> \u529B\u91CF
       \u7684\u4F24\u5BB3"
+    listTagType:
+    - MDmg
   - id: 1101
     name_EN: Fire Ball
     name_CN: "\u706B\u7403\u672F"
@@ -28,6 +30,9 @@ MonoBehaviour:
       Burning.'
     desc_CN: "\u9020\u6210\u76F8\u5F53\u4E8E <sprite=\"Common\" name=\"ATK\"> \u529B\u91CF+3
       \u7684\u4F24\u5BB3\n\u9644\u52A01\u5C42\u707C\u70E7"
+    listTagType:
+    - MDmg
+    - HurtAll
   - id: 1191
     name_EN: Quick Cast
     name_CN: "\u5373\u523B\u548F\u5531"
@@ -36,6 +41,8 @@ MonoBehaviour:
       Damage
       - 4 for <b>Fire Ball</b>'
     desc_CN: 
+    listTagType:
+    - 0
   - id: 1192
     name_EN: Inferno
     name_CN: "\u70BC\u72F1\u706B\u6D77"
@@ -44,6 +51,8 @@ MonoBehaviour:
       Damage
       of <b>Fire Ball</b> reduce 25%.'
     desc_CN: 
+    listTagType:
+    - 0
   - id: 1193
     name_EN: Focus
     name_CN: "\u805A\u7126"
@@ -52,6 +61,8 @@ MonoBehaviour:
       Each
       extra <sprite="Common" name="AP"> AP deal more damage.'
     desc_CN: 
+    listTagType:
+    - 0
   - id: 1102
     name_EN: Boom!
     name_CN: "\u7206\u7834\u672F"
@@ -59,6 +70,9 @@ MonoBehaviour:
 
       Deal damage equal to Burning X 2.5.'
     desc_CN: 
+    listTagType:
+    - TDmg
+    - HurtAll
   - id: 1202
     name_EN: 'Gravity '
     name_CN: "\u91CD\u529B"
@@ -70,6 +84,8 @@ MonoBehaviour:
       Damage will increase if higher <sprite="Common"
       name="MOV"> MOV of source and lower <sprite="Common" name="MOV"> MOV of target.'
     desc_CN: 
+    listTagType:
+    - MDmg
   - id: 1291
     name_EN: Genesis
     name_CN: "\u521B\u4E16"
@@ -79,12 +95,16 @@ MonoBehaviour:
       create special tile like <sprite="Tile" name="MagicT"> <sprite="Tile" name="DuelT">
       <sprite="Tile" name="GuardT"> <sprite="Tile" name="StealthT">'
     desc_CN: 
+    listTagType:
+    - 0
   - id: 1201
     name_EN: Chronal Shift
     name_CN: "\u65F6\u95F4\u53D8\u6362"
     desc_EN: Dodge next attack from <sprite="Target" name="CUnit"> Character,<sprite="Target"
       name="FUnit"> Foe or <sprite="Target" name="PUnit"> Plant.
     desc_CN: 
+    listTagType:
+    - 0
   - id: 1301
     name_EN: Fourtain
     name_CN: "\u55B7\u6D41"
@@ -94,6 +114,8 @@ MonoBehaviour:
       Heal <sprite="Target" name="PUnit"> Plant equal
       to <sprite="Common" name="RES"> RES X2 + 1.'
     desc_CN: 
+    listTagType:
+    - MDmg
   - id: 1302
     name_EN: Clear
     name_CN: "\u6E05\u5FC3\u672F"
@@ -103,6 +125,8 @@ MonoBehaviour:
       Remove 1 buff for <sprite="Target" name="FUnit">
       Foe'
     desc_CN: 
+    listTagType:
+    - 0
   - id: 1391
     name_EN: Drown
     name_CN: "\u6DF9\u6CA1"
@@ -112,6 +136,8 @@ MonoBehaviour:
       will turn <sprite="Tile" name="SoilT"> Soil tile into <sprite="Tile" name="WaterT">
       Water tile.'
     desc_CN: 
+    listTagType:
+    - 0
   - id: 1401
     name_EN: Lightning
     name_CN: "\u95EA\u7535\u672F"
@@ -123,6 +149,9 @@ MonoBehaviour:
       But damage
       will reduce according to distance.'
     desc_CN: 
+    listTagType:
+    - MDmg
+    - HurtCharacter
   - id: 1402
     name_EN: Teleport
     name_CN: "\u65F6\u7A7A\u4E4B\u95E8"
@@ -132,11 +161,15 @@ MonoBehaviour:
       Distance of <b>Teleport</b> will determined by
       <sprite="Common" name="MOV"> MOV.'
     desc_CN: 
+    listTagType:
+    - 0
   - id: 1491
     name_EN: High Voltage
     name_CN: "\u9AD8\u538B\u7535"
     desc_EN: The damage decay of <b>Lightning Bolt</b> will be reduced.
     desc_CN: 
+    listTagType:
+    - 0
   - id: 1901
     name_EN: Time Expand
     name_CN: "\u65F6\u95F4\u81A8\u80C0"
@@ -146,6 +179,8 @@ MonoBehaviour:
       for <sprite="Target" name="CUnit"> Character or <sprite="Target" name="PUnit">
       Plant'
     desc_CN: 
+    listTagType:
+    - 0
   - id: 1902
     name_EN: Infinity
     name_CN: "\u65E0\u9650\uFF01"
@@ -154,6 +189,8 @@ MonoBehaviour:
       Infinity can enlarge next X skills'' <sprite="Common"
       name="Radius"> Radius by 1.'
     desc_CN: 
+    listTagType:
+    - 0
   - id: 1903
     name_EN: Rabbit Chant
     name_CN: "\u5154\u5154\u541F\u5531"
@@ -162,48 +199,67 @@ MonoBehaviour:
 
       Can''t regain <sprite="Common" name="MOV"> MOV when turn starts.'
     desc_CN: 
+    listTagType:
+    - 0
   - id: 2001
     name_EN: Strike
     name_CN: 
     desc_EN: Deal <sprite="Common" name="ATK"> ATK damage.
     desc_CN: 
+    listTagType:
+    - PDmg
   - id: 2101
     name_EN: Worker Wind
     name_CN: 
     desc_EN: Deal <sprite="Common" name="ATK"> ATK damage.
     desc_CN: 
+    listTagType:
+    - PDmg
   - id: 2191
     name_EN: Injury Benefit
     name_CN: 
     desc_EN: Deal 1 more damage when lost 3 <sprite="Common" name="HP"> HP.
     desc_CN: 
+    listTagType:
+    - 0
   - id: 2102
     name_EN: Overtime Work
     name_CN: 
     desc_EN: "Gain extra <sprite=\"Common\" name=\"AP\"> AP every turn \nGain 3 level
       Burning."
     desc_CN: 
+    listTagType:
+    - 0
   - id: 2201
     name_EN: Curse
     name_CN: 
     desc_EN: The target will receive Fragile every time lost <sprite="Common" name="HP">
       HP.
     desc_CN: 
+    listTagType:
+    - 0
   - id: 2291
     name_EN: Counter
     name_CN: 
     desc_EN: Deal damage to the unit that attack Ward.
     desc_CN: 
+    listTagType:
+    - 0
   - id: 2202
     name_EN: Provoke
     name_CN: 
     desc_EN: Attract enemies' attack.
     desc_CN: 
+    listTagType:
+    - 0
   - id: 2301
     name_EN: Take a Nap
     name_CN: 
-    desc_EN: Heal one character equal to <sprite="Common" name="HP"> 25%HP.
+    desc_EN: Heal <sprite="Target" name="CUnit"> Character equal to <sprite="Common"
+      name="HP"> 25%HP.
     desc_CN: 
+    listTagType:
+    - 0
   - id: 2302
     name_EN: Fish Drat
     name_CN: 
@@ -212,116 +268,162 @@ MonoBehaviour:
       Next strike
       will restore <sprite="Common" name="HP"> HP according to damage.'
     desc_CN: 
+    listTagType:
+    - TDmg
   - id: 2401
     name_EN: Rush Hour
     name_CN: 
     desc_EN: Give 3 <sprite="Common" name="MOV"> MOV.
     desc_CN: 
+    listTagType:
+    - 0
   - id: 2491
     name_EN: Helper Hand
     name_CN: 
     desc_EN: <sprite="Common" name="Range"> Range + 1 for <sprite="SkillType" name="SSkill">
       Support Skill
     desc_CN: 
+    listTagType:
+    - 0
   - id: 2402
     name_EN: Handover
     name_CN: 
     desc_EN: Give 1 <sprite="Common" name="AP">.
     desc_CN: 
+    listTagType:
+    - 0
   - id: 2901
     name_EN: Final Guard
     name_CN: 
     desc_EN: <sprite="Common" name="HP"> HP won't become 0.
     desc_CN: 
+    listTagType:
+    - 0
   - id: 2902
     name_EN: Super Worker
     name_CN: 
     desc_EN: 'Increase <sprite="Common" name="ATK"> ATK <sprite="Common" name="DEF">
       DEF <sprite="Common" name="RES"> RES <sprite="Common" name="MOV"> MOV by 1. '
     desc_CN: 
+    listTagType:
+    - 0
   - id: 2903
     name_EN: Finish Work
     name_CN: 
     desc_EN: Cost <sprite="Common" name="HP"> HP to deal damage, the damage will
       be equal to cost <sprite="Common" name="HP"> HP.
     desc_CN: 
+    listTagType:
+    - PDmg
   - id: 3001
     name_EN: Tadpole Strike
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - TDmg
   - id: 3101
     name_EN: Cook Human On Time
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - 0
   - id: 3102
     name_EN: Unstable Rabbit
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - MDmg
   - id: 3103
     name_EN: Random MilkTea
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - 0
   - id: 3201
     name_EN: Hero Rabbit
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - 0
   - id: 3301
     name_EN: Void Rabbit
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - 0
   - id: 9001
     name_EN: Bite
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - 0
   - id: 9002
     name_EN: Write me!
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - 0
   - id: 9101
     name_EN: Anxious Nodule
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - 0
   - id: 9102
     name_EN: Anxious Fire
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - 0
   - id: 9103
     name_EN: Anxious Water
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - 0
   - id: 9104
     name_EN: Anxious Gravity
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - 0
   - id: 9201
     name_EN: Vision
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - 0
   - id: 9202
     name_EN: Cruelty
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - 0
   - id: 9301
     name_EN: Emotional Damage
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - 0
   - id: 9901
     name_EN: Summon Darkness
     name_CN: 
     desc_EN: 
     desc_CN: 
+    listTagType:
+    - 0

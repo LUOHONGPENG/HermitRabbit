@@ -142,6 +142,15 @@ public enum SkillDamageType
     Real
 }
 
+public enum SkillTag
+{
+    PDmg,
+    MDmg,
+    TDmg,
+    HurtAll,
+    HurtCharacter
+}
+
 public enum SkillEffectType
 {
     None,

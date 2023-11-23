@@ -4,7 +4,6 @@ using UnityEngine;
 
 public partial class SkillPerformExcelData
 {
-
     public Dictionary<int, List<SkillPerformInfo>> dicSkillPerformInfo = new Dictionary<int, List<SkillPerformInfo>>();
     public Dictionary<int, float> dicSkillPerformTotalTime = new Dictionary<int, float>();
 

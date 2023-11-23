@@ -648,7 +648,7 @@ MonoBehaviour:
     foeEffect: 1
     characterEffect: 0
     plantEffect: 0
-    damageType: 3
+    damageType: 1
     damageDeltaStd: 8
     damageDelta: 100
     damageModifier: 0

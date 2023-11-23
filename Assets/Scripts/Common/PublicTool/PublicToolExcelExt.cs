@@ -27,6 +27,11 @@ public partial class PublicTool
         return ExcelDataMgr.Instance.skillDescExcelData.GetExcelItem(skillID);
     }
 
+    public static SkillTagExcelItem GetSkillTagItem(SkillTag tag)
+    {
+        return ExcelDataMgr.Instance.skillTagExcelData.GetItem(tag);
+    }
+
     public static List<SkillPerformInfo> GetSkillPerformInfo(int skillID)
     {
         if (ExcelDataMgr.Instance.skillPerformExcelData.dicSkillPerformInfo.ContainsKey(skillID))
