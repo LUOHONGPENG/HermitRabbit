@@ -65,10 +65,7 @@ public partial class BattleMgr
         {
             skillBattleInfo.damageType = SkillDamageType.Real;
         }
-        if(skillBattleInfo.damageType == SkillDamageType.Magic)
-        {
-            calculateATK += source.tileBuffMagicATKAdd;
-        }
+
 
         //Calculate the source damage
         switch (skillBattleInfo.damageDeltaStd)

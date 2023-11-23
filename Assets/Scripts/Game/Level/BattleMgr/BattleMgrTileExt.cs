@@ -139,4 +139,38 @@ public partial class BattleMgr
         }
     }
 
+    public IEnumerator IE_HopeApplyFragile()
+    {
+        List<Vector2Int> listHope = new List<Vector2Int>();
+
+        for (int i = 0; i < gameData.listMapTile.Count; i++)
+        {
+            MapTileData mapTileData = gameData.listMapTile[i];
+            if (mapTileData.GetDisplayMapType() == MapTileType.Hope)
+            {
+                listHope.Add(mapTileData.posID);
+            }
+        }
+
+        bool isApplyFragile = false;
+
+        for (int i = 0; i < listHope.Count; i++)
+        {
+            Vector2Int hopePos = listHope[i];
+            UnitInfo hopeUnit = gameData.GetUnitInfoFromPosID(hopePos);
+            BattleUnitData unitData = gameData.GetDataFromUnitInfo(hopeUnit);
+            SkillBuffEffectDeal(unitData, 4002, 1, PublicTool.GetBuffExcelItem(4002).name, SkillEffectType.Harm);
+            BattleUnitView unitView = unitViewMgr.GetViewFromUnitInfo(hopeUnit);
+            unitView.RequestBattleText();
+
+            isApplyFragile = true;
+
+        }
+
+        if (isApplyFragile)
+        {
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
 }

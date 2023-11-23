@@ -188,6 +188,10 @@ public partial class BattleUnitData
             {
                 temp++;
             }
+            if (tileBuffHope)
+            {
+                temp++;
+            }
             return temp;
         }
     }

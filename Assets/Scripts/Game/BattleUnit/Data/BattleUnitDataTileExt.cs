@@ -122,16 +122,33 @@ public partial class BattleUnitData
         }
     }
 
-    public int tileBuffMagicATKAdd
+    public bool tileBuffMagicDamageAdd
     {
         get
         {
-            int temp = 0;
             if (GetCurTileExpressType() == MapTileType.Magic)
             {
-                temp++;
+                return true;
             }
-            return temp;
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    public bool tileBuffHope
+    {
+        get
+        {
+            if (GetCurTileExpressType() == MapTileType.Hope)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 
