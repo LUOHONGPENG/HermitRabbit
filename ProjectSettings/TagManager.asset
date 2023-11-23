@@ -8,6 +8,7 @@ TagManager:
   - SkillButtonUI
   - PlantPreviewUI
   - BuffIconUI
+  - TileIconUI
   layers:
   - Default
   - TransparentFX

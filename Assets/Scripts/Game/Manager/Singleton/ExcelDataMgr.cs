@@ -24,7 +24,9 @@ public class ExcelDataMgr : MonoSingleton<ExcelDataMgr>
     public PlantExcelData plantExcelData;
 
     public TalkExcelData talkExcelData;
+    public TutorialExcelData tutorialExcelData;
 
+    public LanguageExcelData languageExcelData;
     public SoundExcelData soundExcelData;
 
     public IEnumerator IE_Init()
@@ -48,7 +50,9 @@ public class ExcelDataMgr : MonoSingleton<ExcelDataMgr>
         plantExcelData = ExcelManager.Instance.GetExcelData<PlantExcelData, PlantExcelItem>();
 
         talkExcelData = ExcelManager.Instance.GetExcelData<TalkExcelData, TalkExcelItem>();
+        tutorialExcelData = ExcelManager.Instance.GetExcelData<TutorialExcelData, TutorialExcelItem>();
 
+        languageExcelData = ExcelManager.Instance.GetExcelData<LanguageExcelData, LanguageExcelItem>();
         soundExcelData = ExcelManager.Instance.GetExcelData<SoundExcelData, SoundExcelItem>();
 
         //Init Data Table
@@ -66,6 +70,9 @@ public class ExcelDataMgr : MonoSingleton<ExcelDataMgr>
         dayExcelData.Init();
 
         talkExcelData.Init();
+        tutorialExcelData.Init();
+
+        languageExcelData.Init();
         soundExcelData.Init();
         yield break;
     }

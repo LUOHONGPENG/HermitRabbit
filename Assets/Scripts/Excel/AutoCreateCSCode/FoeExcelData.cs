@@ -18,6 +18,7 @@ public partial class FoeExcelItem : ExcelItemBase
 	public int skillID;
 	public FoeFindTargetType findTargetType;
 	public FoeFocusType focusType;
+	public int foeTraitID;
 	public FoeGenerateType generateType;
 	public int pos0;
 	public int pos1;
@@ -53,6 +54,7 @@ public class FoeAssetAssignment
 			items[i].skillID = Convert.ToInt32(allItemValueRowList[i]["skillID"]);
 			items[i].findTargetType = (FoeFindTargetType) Enum.Parse(typeof(FoeFindTargetType), allItemValueRowList[i]["findTargetType"], true);
 			items[i].focusType = (FoeFocusType) Enum.Parse(typeof(FoeFocusType), allItemValueRowList[i]["focusType"], true);
+			items[i].foeTraitID = Convert.ToInt32(allItemValueRowList[i]["foeTraitID"]);
 			items[i].generateType = (FoeGenerateType) Enum.Parse(typeof(FoeGenerateType), allItemValueRowList[i]["generateType"], true);
 			items[i].pos0 = Convert.ToInt32(allItemValueRowList[i]["pos0"]);
 			items[i].pos1 = Convert.ToInt32(allItemValueRowList[i]["pos1"]);

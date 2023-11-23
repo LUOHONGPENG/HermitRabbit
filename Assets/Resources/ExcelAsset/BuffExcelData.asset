@@ -45,7 +45,7 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 0
-    desc: Next X skills can enlarge the radius.
+    desc: '<sprite="Common" name="Radius"> Radius + 1 for next X '
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: buff_Up
@@ -114,7 +114,7 @@ MonoBehaviour:
     firstSpecialDelta: 0
     iconUrl: buff_Up
   - id: 2001
-    name: Curse
+    name: Fear
     effectType: 1
     maxLevel: 10
     counterType: 1

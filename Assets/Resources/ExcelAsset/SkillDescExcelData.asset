@@ -210,7 +210,7 @@ MonoBehaviour:
     listBuffType: eb030000
   - id: 1903
     name_EN: Rabbit Chant
-    name_CN: "\u5154\u5154\u541F\u5531"
+    name_CN: "\u7EC8\u7109\u541F\u5531"
     desc_EN: Cost <sprite="Common" name="MOV"> MOV to gain 3 Chanting.
     desc_CN: 
     listTagType:
@@ -218,7 +218,7 @@ MonoBehaviour:
     listBuffType: ed030000
   - id: 2001
     name_EN: Strike
-    name_CN: 
+    name_CN: "\u516C\u6587\u5305\u6253\u51FB"
     desc_EN: Deal <sprite="Common" name="ATK"> ATK damage.
     desc_CN: 
     listTagType:
@@ -226,7 +226,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 2101
     name_EN: Worker Wind
-    name_CN: 
+    name_CN: "\u52E4\u52B3\u65B0\u98CE"
     desc_EN: Deal <sprite="Common" name="ATK"> ATK damage.
     desc_CN: 
     listTagType:
@@ -234,7 +234,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 2191
     name_EN: Injury Benefit
-    name_CN: 
+    name_CN: "\u5DE5\u4F24\u8D54\u4ED8"
     desc_EN: Deal 1 more damage when lost 3 <sprite="Common" name="HP"> HP.
     desc_CN: 
     listTagType:
@@ -242,7 +242,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 2102
     name_EN: Overtime Work
-    name_CN: 
+    name_CN: "\u52A0\u73ED\u65F6\u523B"
     desc_EN: "Cost <sprite=\"Common\" name=\"MOV\"> MOV to gain 3 Overtime Work.
       \nGain 3 Burning."
     desc_CN: 
@@ -250,16 +250,16 @@ MonoBehaviour:
     - 0
     listBuffType: ea030000a10f0000
   - id: 2201
-    name_EN: Curse
-    name_CN: 
-    desc_EN: Apply 2 Curse and 1 Fragile.
+    name_EN: Bully
+    name_CN: "\u804C\u573A\u9738\u51CC"
+    desc_EN: Apply 2 Fear and 1 Fragile.
     desc_CN: 
     listTagType:
     - 0
     listBuffType: d1070000a20f0000
   - id: 2291
-    name_EN: Counter
-    name_CN: 
+    name_EN: Your fault!
+    name_CN: "\u7529\u9505"
     desc_EN: Deal damage to the unit that attack Ward.
     desc_CN: 
     listTagType:
@@ -267,7 +267,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 2202
     name_EN: Provoke
-    name_CN: 
+    name_CN: "\u6076\u6BD2\u5632\u7B11"
     desc_EN: Attract enemies' attack.
     desc_CN: 
     listTagType:
@@ -275,7 +275,7 @@ MonoBehaviour:
     listBuffType: f0030000
   - id: 2301
     name_EN: Take a Nap
-    name_CN: 
+    name_CN: "\u4E09\u70B9\u996E\u8336"
     desc_EN: Heal <sprite="Target" name="CUnit"> Character equal to <sprite="Common"
       name="HP"> 25%HP.
     desc_CN: 
@@ -284,7 +284,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 2302
     name_EN: Fish Drat
-    name_CN: 
+    name_CN: "\u7ED9\u6211\u6478\u9C7C"
     desc_EN: 'Deal damage equal to <sprite="Common" name="DEF"> DEF
 
       Next strike
@@ -295,15 +295,15 @@ MonoBehaviour:
     listBuffType: ed030000
   - id: 2401
     name_EN: Rush Hour
-    name_CN: 
+    name_CN: "\u4E0B\u73ED\u6253\u5361"
     desc_EN: Give 3 <sprite="Common" name="MOV"> MOV.
     desc_CN: 
     listTagType:
     - 0
     listBuffType: 00000000
   - id: 2491
-    name_EN: Helper Hand
-    name_CN: 
+    name_EN: Help from seniors
+    name_CN: "\u4EE5\u8001\u5E26\u65B0"
     desc_EN: <sprite="Common" name="Range"> Range + 1 for <sprite="SkillType" name="SSkill">
       Support Skill
     desc_CN: 
@@ -312,15 +312,15 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 2402
     name_EN: Handover
-    name_CN: 
+    name_CN: "\u5DE5\u4F5C\u4EA4\u63A5"
     desc_EN: Give 1 <sprite="Common" name="AP"> AP.
     desc_CN: 
     listTagType:
     - 0
     listBuffType: 00000000
   - id: 2901
-    name_EN: Final Guard
-    name_CN: 
+    name_EN: Deadline
+    name_CN: "\u622A\u6B62\u65E5\u671F"
     desc_EN: <sprite="Common" name="HP"> HP won't become 0.
     desc_CN: 
     listTagType:
@@ -328,7 +328,7 @@ MonoBehaviour:
     listBuffType: e9030000
   - id: 2902
     name_EN: Super Worker
-    name_CN: 
+    name_CN: "\u8D85\u7EA7\u6253\u5DE5\u4EBA"
     desc_EN: 'Increase <sprite="Common" name="ATK"> ATK <sprite="Common" name="DEF">
       DEF <sprite="Common" name="RES"> RES <sprite="Common" name="MOV"> MOV by 1. '
     desc_CN: 
@@ -337,7 +337,7 @@ MonoBehaviour:
     listBuffType: ec030000
   - id: 2903
     name_EN: Finish Work
-    name_CN: 
+    name_CN: "\u5B8C\u6210\u5DE5\u4F5C\uFF01"
     desc_EN: Cost <sprite="Common" name="HP"> HP to deal damage, the damage will
       be equal to cost <sprite="Common" name="HP"> HP.
     desc_CN: 

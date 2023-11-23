@@ -24,6 +24,7 @@ MonoBehaviour:
     skillID: 9001
     findTargetType: 0
     focusType: 1
+    foeTraitID: -1
     generateType: 0
     pos0: 3
     pos1: 0
@@ -40,6 +41,7 @@ MonoBehaviour:
     skillID: 9001
     findTargetType: 0
     focusType: 1
+    foeTraitID: -1
     generateType: 0
     pos0: 3
     pos1: 0
@@ -56,6 +58,7 @@ MonoBehaviour:
     skillID: 9002
     findTargetType: 0
     focusType: 1
+    foeTraitID: -1
     generateType: 0
     pos0: 3
     pos1: 0
@@ -72,6 +75,7 @@ MonoBehaviour:
     skillID: 9101
     findTargetType: 0
     focusType: 1
+    foeTraitID: -1
     generateType: 0
     pos0: 3
     pos1: 0
@@ -88,6 +92,7 @@ MonoBehaviour:
     skillID: 9102
     findTargetType: 0
     focusType: 1
+    foeTraitID: -1
     generateType: 0
     pos0: 3
     pos1: 0
@@ -104,6 +109,7 @@ MonoBehaviour:
     skillID: 9103
     findTargetType: 0
     focusType: 1
+    foeTraitID: -1
     generateType: 0
     pos0: 3
     pos1: 0
@@ -120,6 +126,7 @@ MonoBehaviour:
     skillID: 9104
     findTargetType: 0
     focusType: 1
+    foeTraitID: -1
     generateType: 0
     pos0: 3
     pos1: 0
@@ -136,6 +143,7 @@ MonoBehaviour:
     skillID: 9201
     findTargetType: 1
     focusType: 1
+    foeTraitID: -1
     generateType: 0
     pos0: 1
     pos1: 0
@@ -152,6 +160,7 @@ MonoBehaviour:
     skillID: 9202
     findTargetType: 0
     focusType: 1
+    foeTraitID: -1
     generateType: 0
     pos0: 1
     pos1: 0
@@ -168,6 +177,7 @@ MonoBehaviour:
     skillID: 9301
     findTargetType: 0
     focusType: 1
+    foeTraitID: -1
     generateType: 0
     pos0: 1
     pos1: 0
@@ -184,6 +194,7 @@ MonoBehaviour:
     skillID: 9201
     findTargetType: 1
     focusType: 1
+    foeTraitID: -1
     generateType: 0
     pos0: 1
     pos1: 0
@@ -200,6 +211,7 @@ MonoBehaviour:
     skillID: 9202
     findTargetType: 0
     focusType: 1
+    foeTraitID: -1
     generateType: 0
     pos0: 1
     pos1: 0
@@ -216,6 +228,7 @@ MonoBehaviour:
     skillID: 9901
     findTargetType: 0
     focusType: 0
+    foeTraitID: -1
     generateType: 0
     pos0: 1
     pos1: 0
@@ -232,6 +245,7 @@ MonoBehaviour:
     skillID: 9201
     findTargetType: 1
     focusType: 1
+    foeTraitID: -1
     generateType: 0
     pos0: 1
     pos1: 0

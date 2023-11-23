@@ -330,6 +330,18 @@ public enum TalkStep
 
 #endregion
 
+#region Tutorial
+
+public enum TutorialGroup
+{
+    Battle,
+    Skill,
+    MapClip,
+    Plant
+}
+
+#endregion
+
 #region Camera
 
 public enum CameraType

@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1eeb215c82acc46af2d095c651f541, type: 3}
+  m_Name: TutorialExcelData
+  m_EditorClassIdentifier: 
+  items:
+  - id: 1
+    group: 0
+    strContent: 'When Move Button selected, you can click tile to move.
+
+      Moving
+      character will cost <sprite="Common" name="MOV"> MOV.
+
+      (Move Button will
+      selected automatically after choosing a character.)'
+    imgUrl: 
+  - id: 2
+    group: 0
+    strContent: 'When Attack Button selected, the <sprite="Common" name="Range">
+      range will be shown and you can click tile to attack <sprite="Target" name="FUnit">
+      Foe in range.
+
+      Attack will cost <sprite="Common" name="AP"> AP'
+    imgUrl: 
+  - id: 3
+    group: 0
+    strContent: You can click the character box to select <sprite="Target" name="CUnit">
+      Character in your turn.
+    imgUrl: 
+  - id: 4
+    group: 0
+    strContent: 'After you finish what you want to do, you can click button to end
+      turn.
+
+      If you kill all the <sprite="Target" name="FUnit"> Foe, you win.'
+    imgUrl: 
+  - id: 5
+    group: 1
+    strContent: 1
+    imgUrl: 
+  - id: 6
+    group: 1
+    strContent: 2
+    imgUrl: 
+  - id: 7
+    group: 2
+    strContent: 1
+    imgUrl: 
+  - id: 8
+    group: 2
+    strContent: 2
+    imgUrl: 
+  - id: 9
+    group: 3
+    strContent: 1
+    imgUrl: 
+  - id: 10
+    group: 3
+    strContent: 2
+    imgUrl: 
