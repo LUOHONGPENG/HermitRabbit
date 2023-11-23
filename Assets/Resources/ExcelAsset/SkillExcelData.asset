@@ -420,7 +420,7 @@ MonoBehaviour:
     unlockNodeID: 2102
   - id: 2201
     name: Curse
-    costAP: 1
+    costAP: 2
     costMOV: 0
     costHP: 0
     costMemory: 0
@@ -437,7 +437,7 @@ MonoBehaviour:
     damageDelta: 0
     damageModifier: 0
     listBuffEffect: d1070000a20f0000
-    listBuffDelta: 0100000001000000
+    listBuffDelta: 0200000001000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
     tileEffectType: 0

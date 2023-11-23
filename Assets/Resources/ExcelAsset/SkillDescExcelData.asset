@@ -27,8 +27,7 @@ MonoBehaviour:
     name_CN: "\u706B\u7403\u672F"
     desc_EN: 'Deal <sprite="Common" name="ATK"> ATK + 3 damage.
 
-      Apply 1 level
-      Burning.'
+      Apply 1 Burning.'
     desc_CN: "\u9020\u6210\u76F8\u5F53\u4E8E <sprite=\"Common\" name=\"ATK\"> \u529B\u91CF+3
       \u7684\u4F24\u5BB3\n\u9644\u52A01\u5C42\u707C\u70E7"
     listTagType:
@@ -204,10 +203,7 @@ MonoBehaviour:
   - id: 1902
     name_EN: Infinity
     name_CN: "\u65E0\u9650\uFF01"
-    desc_EN: 'Gain 3 Infinity.
-
-      Infinity can enlarge next X skills'' <sprite="Common"
-      name="Radius"> Radius by 1.'
+    desc_EN: Gain 3 Infinity.
     desc_CN: 
     listTagType:
     - 0
@@ -215,10 +211,7 @@ MonoBehaviour:
   - id: 1903
     name_EN: Rabbit Chant
     name_CN: "\u5154\u5154\u541F\u5531"
-    desc_EN: '<sprite="Common" name="Range"> Range + 2 and <sprite="Common" name="AP">
-      AP + 1
-
-      Can''t regain <sprite="Common" name="MOV"> MOV when turn starts.'
+    desc_EN: Cost <sprite="Common" name="MOV"> MOV to gain 3 Chanting.
     desc_CN: 
     listTagType:
     - 0
@@ -250,8 +243,8 @@ MonoBehaviour:
   - id: 2102
     name_EN: Overtime Work
     name_CN: 
-    desc_EN: "Gain extra <sprite=\"Common\" name=\"AP\"> AP every turn \nGain 3 level
-      Burning."
+    desc_EN: "Cost <sprite=\"Common\" name=\"MOV\"> MOV to gain 3 Overtime Work.
+      \nGain 3 Burning."
     desc_CN: 
     listTagType:
     - 0
@@ -259,8 +252,7 @@ MonoBehaviour:
   - id: 2201
     name_EN: Curse
     name_CN: 
-    desc_EN: The target will receive Fragile every time lost <sprite="Common" name="HP">
-      HP.
+    desc_EN: Apply 2 Curse and 1 Fragile.
     desc_CN: 
     listTagType:
     - 0
@@ -321,7 +313,7 @@ MonoBehaviour:
   - id: 2402
     name_EN: Handover
     name_CN: 
-    desc_EN: Give 1 <sprite="Common" name="AP">.
+    desc_EN: Give 1 <sprite="Common" name="AP"> AP.
     desc_CN: 
     listTagType:
     - 0

@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BuffIconTipUIMgr : ButtonInfoTipUIMgr
 {
     [Header("BasicInfo")]
-    public Text codeName;
-    public Text codeDesc;
+    public TextMeshProUGUI codeName;
+    public TextMeshProUGUI codeDesc;
     public Image imgIcon;
 
     public void ShowTip(int buffID, Vector2 mousePos)
@@ -20,7 +21,6 @@ public class BuffIconTipUIMgr : ButtonInfoTipUIMgr
 
             codeName.text = buffItem.name;
             codeDesc.text = buffItem.desc;
-
         }
 
         ShowTipSetPos(mousePos);

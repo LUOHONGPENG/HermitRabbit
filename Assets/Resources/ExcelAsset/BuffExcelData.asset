@@ -21,7 +21,7 @@ MonoBehaviour:
     countDownType: 1
     canBeRemoved: 1
     canBeDouble: 0
-    desc: Won't die before next turn.
+    desc: Won't die before next turn. Remove buff when turn start.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: buff_Up
@@ -33,7 +33,7 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Get extra AP when turn starts.
+    desc: <sprite="Common" name="AP"> AP + 1. Decrease buff by turn.
     firstSpecialEffect: 1003
     firstSpecialDelta: 1
     iconUrl: buff_Up
@@ -57,7 +57,9 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 0
-    desc: Increase ability in X turns.
+    desc: Increase <sprite="Common" name="ATK"> ATK <sprite="Common" name="DEF">
+      DEF <sprite="Common" name="RES"> RES <sprite="Common" name="MOV"> MOV by 1
+      in X turns. Decrease buff by turn.
     firstSpecialEffect: 1004
     firstSpecialDelta: 1
     iconUrl: buff_Up
@@ -69,7 +71,9 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 0
-    desc: Increase range and AP in X turns.
+    desc: <sprite="Common" name="Range"> Range + 2 and <sprite="Common" name="AP">
+      AP + 1. <sprite="Common" name="MOV"> MOV = 0 when turn starts. Decrease buff
+      by turn.
     firstSpecialEffect: 1003
     firstSpecialDelta: 1
     iconUrl: buff_Up
@@ -81,7 +85,7 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Dodge Next X attack from enemy.
+    desc: Dodge Next X attack from enemy. Remove buff when turn start.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: buff_Up
@@ -93,7 +97,7 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: 
+    desc: Next X skill can restore <sprite="Common" name="HP"> HP according to damage.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: buff_Up
@@ -105,7 +109,7 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Attract enemies' attack
+    desc: Attract enemies' attack. Buff decrease by turn.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: buff_Up
@@ -117,7 +121,8 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: 
+    desc: Get 1 level Fragile when losting <sprite="Common" name="HP"> HP. Buff decrease
+      by turn.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: buff_Down
@@ -129,19 +134,21 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Recover X HP when turn starts
+    desc: Restore X <sprite="Common" name="HP"> HP when turn starts. Buff decrease
+      by turn.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: buff_Up
   - id: 3002
-    name: Reduce Damage
+    name: Shield
     effectType: 2
     maxLevel: 10
     counterType: 3
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: 
+    desc: Reduce X damage when losting <sprite="Common" name="HP"> HP. Remove buff
+      when turn start.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: buff_Up
@@ -153,7 +160,8 @@ MonoBehaviour:
     countDownType: 1
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Receive X damage when turn starts.
+    desc: Lost X <sprite="Common" name="HP"> HP when turn starts. Decrease buff by
+      turn.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: buff_Burning
@@ -165,7 +173,8 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: 
+    desc: Lost extra X <sprite="Common" name="HP"> HP when losting <sprite="Common"
+      name="HP"> HP. Buff reduces by half every turn.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: buff_Down
