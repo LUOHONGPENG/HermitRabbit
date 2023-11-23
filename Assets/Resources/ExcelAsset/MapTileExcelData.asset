@@ -71,7 +71,7 @@ MonoBehaviour:
   - id: 9
     tileType: 8
     name: Stealth
-    desc: '<sprite="Common" name="ATK">ATK-2
+    desc: '<sprite="Common" name="ATK"> ATK-2
 
       Uneasy to become foes'' target.'
     iconUrl: imgIconTile_Stealth

@@ -134,6 +134,7 @@ MonoBehaviour:
   rangeUI: {fileID: 2671676978774501396}
   tfTag: {fileID: 8150083044836547590}
   pfTag: {fileID: 1735011589434475528, guid: 9bf3c916ee780b04fb62b3c6e3960c6e, type: 3}
+  pfBuff: {fileID: 2143012965337965157, guid: 46ff46dc7391e7546aa0f0b3d2080c4a, type: 3}
   codeCostSP: {fileID: 0}
 --- !u!1 &9132970659226304247
 GameObject:

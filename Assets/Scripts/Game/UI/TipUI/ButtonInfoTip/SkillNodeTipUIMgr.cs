@@ -13,6 +13,7 @@ public class SkillNodeTipUIMgr : ButtonInfoTipUIMgr
     [Header("Tag")]
     public Transform tfTag;
     public GameObject pfTag;
+    public GameObject pfBuff;
 
     [Header("Cost")]
     public Text codeCostSP;
@@ -46,6 +47,20 @@ public class SkillNodeTipUIMgr : ButtonInfoTipUIMgr
                 GameObject objTag = GameObject.Instantiate(pfTag, tfTag);
                 SkillTagTipUIMgr tagUI = objTag.GetComponent<SkillTagTipUIMgr>();
                 tagUI.Init(listTag[i]);
+            }
+
+            //BuffUI
+            SkillDescExcelItem descItem = PublicTool.GetSkillDescItem(nodeID);
+            List<int> listBuff = descItem.listBuffType;
+            if (listBuff[0] != 0)
+            {
+                for (int i = 0; i < listBuff.Count; i++)
+                {
+                    BuffExcelItem buffItem = PublicTool.GetBuffExcelItem(listBuff[i]);
+                    GameObject objBuff = GameObject.Instantiate(pfBuff, tfTag);
+                    SkillBuffTipUIMgr buffUI = objBuff.GetComponent<SkillBuffTipUIMgr>();
+                    buffUI.Init(buffItem);
+                }
             }
 
             recordID = nodeID;
