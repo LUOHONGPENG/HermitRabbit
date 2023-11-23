@@ -71,3 +71,8 @@ MonoBehaviour:
 
       Uneasy to become foes'' target.'
     iconUrl: imgIconTile_Stealth
+  - id: 10
+    tileType: 9
+    name: Hope
+    desc: Get extra AP when turn starts.
+    iconUrl: imgIconTile_Hope

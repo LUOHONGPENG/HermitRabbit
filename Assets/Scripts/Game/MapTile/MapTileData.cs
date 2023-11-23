@@ -132,6 +132,8 @@ public class MapTileData
                             return MapTileType.Guard;
                         case 3:
                             return MapTileType.Stealth;
+                        case 4:
+                            return MapTileType.Hope;
                         default:
                             return MapTileType.Stone;
                     }

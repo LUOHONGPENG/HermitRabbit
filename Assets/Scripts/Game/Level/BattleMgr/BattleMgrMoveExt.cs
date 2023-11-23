@@ -50,7 +50,7 @@ public partial class BattleMgr
     {
         //ViewMove
         BattleUnitView moveView = unitViewMgr.GetViewFromUnitInfo(moveSubjectInfo);
-        if (moveView != null)
+        if (moveView != null && moveView.gameObject!=null)
         {
             yield return StartCoroutine(moveView.IE_MovePath(path));
         }

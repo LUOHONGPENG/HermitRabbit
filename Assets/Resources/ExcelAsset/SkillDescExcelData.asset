@@ -93,7 +93,8 @@ MonoBehaviour:
 
       Randomly
       create special tile like <sprite="Tile" name="MagicT"> <sprite="Tile" name="DuelT">
-      <sprite="Tile" name="GuardT"> <sprite="Tile" name="StealthT">'
+      <sprite="Tile" name="GuardT"> <sprite="Tile" name="StealthT"> <sprite="Tile"
+      name="HopeT">'
     desc_CN: 
     listTagType:
     - 0

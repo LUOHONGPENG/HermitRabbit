@@ -72,6 +72,7 @@ public enum MapTileType
     Duel,
     Guard,
     Stealth,
+    Hope,
     End
 }
 

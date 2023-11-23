@@ -319,7 +319,7 @@ MonoBehaviour:
     remark: 0
   - id: 5001
     rarity: 4
-    weight: 5
+    weight: 4
     tile0: 3
     tile1: 0
     tile2: 3
@@ -335,7 +335,7 @@ MonoBehaviour:
     remark: 20
   - id: 5002
     rarity: 4
-    weight: 5
+    weight: 4
     tile0: 1
     tile1: 1
     tile2: 1
@@ -351,7 +351,7 @@ MonoBehaviour:
     remark: 0
   - id: 5003
     rarity: 4
-    weight: 5
+    weight: 4
     tile0: 2
     tile1: 2
     tile2: 2
@@ -367,7 +367,7 @@ MonoBehaviour:
     remark: 0
   - id: 5004
     rarity: 4
-    weight: 5
+    weight: 4
     tile0: 1
     tile1: 1
     tile2: 2
@@ -377,6 +377,22 @@ MonoBehaviour:
     tile6: 3
     tile7: 6
     tile8: 3
+    waterValue: 0
+    grassValue: 0
+    blockValue: 0
+    remark: 0
+  - id: 5005
+    rarity: 4
+    weight: 4
+    tile0: 0
+    tile1: 0
+    tile2: 0
+    tile3: 0
+    tile4: 9
+    tile5: 0
+    tile6: 0
+    tile7: 0
+    tile8: 0
     waterValue: 0
     grassValue: 0
     blockValue: 0
