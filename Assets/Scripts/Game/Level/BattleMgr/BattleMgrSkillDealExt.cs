@@ -203,6 +203,11 @@ public partial class BattleMgr
 
     private void SkillBuffEffectDeal(BattleUnitData target, int buffID, int delta, string buffName, SkillEffectType effect)
     {
+        if (target == null)
+        {
+            return;
+        }
+
         bool firstTimeBuff = target.AddBuff(buffID, delta);
         if(effect == SkillEffectType.Help)
         {

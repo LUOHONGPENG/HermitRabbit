@@ -158,13 +158,15 @@ public partial class BattleMgr
         {
             Vector2Int hopePos = listHope[i];
             UnitInfo hopeUnit = gameData.GetUnitInfoFromPosID(hopePos);
-            BattleUnitData unitData = gameData.GetDataFromUnitInfo(hopeUnit);
-            SkillBuffEffectDeal(unitData, 4002, 1, PublicTool.GetBuffExcelItem(4002).name, SkillEffectType.Harm);
-            BattleUnitView unitView = unitViewMgr.GetViewFromUnitInfo(hopeUnit);
-            unitView.RequestBattleText();
+            if (hopeUnit.type != BattleUnitType.None)
+            {
+                BattleUnitData unitData = gameData.GetDataFromUnitInfo(hopeUnit);
+                SkillBuffEffectDeal(unitData, 4002, 1, PublicTool.GetBuffExcelItem(4002).name, SkillEffectType.Harm);
+                BattleUnitView unitView = unitViewMgr.GetViewFromUnitInfo(hopeUnit);
+                unitView.RequestBattleText();
 
-            isApplyFragile = true;
-
+                isApplyFragile = true;
+            }
         }
 
         if (isApplyFragile)

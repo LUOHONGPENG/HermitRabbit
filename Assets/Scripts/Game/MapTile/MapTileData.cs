@@ -124,6 +124,10 @@ public class MapTileData
                 {
                     switch (breakResultID)
                     {
+/*                        default:
+                            return MapTileType.Hope;*/
+
+
                         case 0:
                             return MapTileType.Magic;
                         case 1:
