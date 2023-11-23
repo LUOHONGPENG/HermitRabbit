@@ -56,6 +56,7 @@ MonoBehaviour:
   rangeUI: {fileID: 7641283191257464604}
   tfTag: {fileID: 5465276083427298365}
   pfTag: {fileID: 1735011589434475528, guid: 9bf3c916ee780b04fb62b3c6e3960c6e, type: 3}
+  pfBuff: {fileID: 2143012965337965157, guid: 46ff46dc7391e7546aa0f0b3d2080c4a, type: 3}
 --- !u!1 &3627028995897750336
 GameObject:
   m_ObjectHideFlags: 0
