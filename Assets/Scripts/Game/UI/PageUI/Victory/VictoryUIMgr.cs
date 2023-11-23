@@ -31,6 +31,10 @@ public class VictoryUIMgr : MonoBehaviour
     public ResourceCostUIItem costRefreshMap;
     public ResourceCostUIItem costSkipMap;
 
+    [Header("MapTile")]
+    public Transform tfTileTip;
+    public GameObject pfTileTip;
+
     [Header("Plant")]
     public Transform tfPlant;
     public GameObject pfPlant;
@@ -117,6 +121,14 @@ public class VictoryUIMgr : MonoBehaviour
         costSkipMap.Init(ResourceType.Memory, GameGlobal.AddSkipMapClip);
         costRefreshPlant.Init(ResourceType.Memory, -GameGlobal.CostRefreshPlant);
         costSkipPlant.Init(ResourceType.Memory, GameGlobal.AddSkipPlant);
+
+        PublicTool.ClearChildItem(tfTileTip);
+        for(MapTileType i = MapTileType.Normal; i < MapTileType.End; i++)
+        {
+            GameObject objTileTip = GameObject.Instantiate(pfTileTip, tfTileTip);
+            VictoryTileTipUIItem itemTileTip = objTileTip.GetComponent<VictoryTileTipUIItem>();
+            itemTileTip.Init(i);
+        }
     }
 
     private void OnEnable()

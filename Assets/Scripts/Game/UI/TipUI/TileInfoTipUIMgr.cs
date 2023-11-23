@@ -32,6 +32,15 @@ public class TileInfoTipUIMgr : MonoBehaviour
         }
     }
 
+    public void UpdateBasicInfo(MapTileType tileType)
+    {
+        MapTileExcelItem tileItem = PublicTool.GetMapTileItem(tileType);
+        codeName.text = tileItem.name;
+        codeDesc.text = tileItem.desc;
+        imgIcon.sprite = Resources.Load("Sprite/Tile/" + tileItem.iconUrl, typeof(Sprite)) as Sprite;
+        objPopup.SetActive(true);
+    }
+
     //Not Include Burning
     private void RefreshBasicInfo()
     {

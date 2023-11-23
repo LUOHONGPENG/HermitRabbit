@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class SaveSlotUIItem : MonoBehaviour
@@ -25,12 +26,14 @@ public class SaveSlotUIItem : MonoBehaviour
 
     private bool isNull = true;
     private SaveSlotName slotName;
+    private GameData gameData;
 
     public void Init(SaveButtonType saveButtonType, SaveSlotName tempSlotName,UnityAction extraAction)
     {
         this.slotName = tempSlotName;
         txSlotName.text = slotName.ToString();
         GameSaveData saveData = GameMgr.Instance.GetSaveData(slotName);
+        gameData = PublicTool.GetGameData();
         CheckWhetherNull(saveData);
 
         btnSlot.onClick.RemoveAllListeners();
@@ -47,7 +50,14 @@ public class SaveSlotUIItem : MonoBehaviour
                 case SaveButtonType.GameLoad:
                     if (!isNull)
                     {
-                        GameMgr.Instance.LoadScene(SceneName.Game, false, slotName);
+                        if(gameData.gamePhase == GamePhase.Battle && InputMgr.Instance.interactState == InteractState.WaitAction)
+                        {
+
+                        }
+                        else
+                        {
+                            GameMgr.Instance.LoadScene(SceneName.Game, false, slotName);
+                        }
                     }
                     break;
                 case SaveButtonType.GameSave:
