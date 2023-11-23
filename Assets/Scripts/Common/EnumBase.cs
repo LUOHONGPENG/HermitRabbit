@@ -308,7 +308,8 @@ public enum UITipType
     SkillNode,
     SkillButton,
     PlantPreview,
-    BuffIcon
+    BuffIcon,
+    TileIcon
 }
 
 

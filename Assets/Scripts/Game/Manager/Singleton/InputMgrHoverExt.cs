@@ -156,6 +156,16 @@ public partial class InputMgr
                     return;
                 }
             }
+            else if (item.gameObject.tag == "TileIconUI")
+            {
+                if (item.gameObject.transform.GetComponent<VictoryTileTipUIItem>() != null)
+                {
+                    VictoryTileTipUIItem tileItem = item.gameObject.transform.GetComponent<VictoryTileTipUIItem>();
+                    UITipInfo uiTipInfo = new UITipInfo(UITipType.TileIcon, (int)tileItem.GetTileType(), -1, GetMousePosUI());
+                    EventCenter.Instance.EventTrigger("ShowUITip", uiTipInfo);
+                    return;
+                }
+            }
         }
         EventCenter.Instance.EventTrigger("HideUITip", null);
     }

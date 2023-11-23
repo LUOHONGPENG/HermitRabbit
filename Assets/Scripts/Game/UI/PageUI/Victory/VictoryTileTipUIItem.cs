@@ -14,6 +14,7 @@ public class VictoryTileTipUIItem : MonoBehaviour
     public void Init(MapTileType tileType)
     {
         MapTileExcelItem tileItem = PublicTool.GetMapTileItem(tileType);
+        this.tileType = tileType;
         codeName.text = tileItem.name;
         imgIcon.sprite = Resources.Load("Sprite/Tile/" + tileItem.iconUrl, typeof(Sprite)) as Sprite;
     }

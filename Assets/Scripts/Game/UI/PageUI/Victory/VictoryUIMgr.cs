@@ -136,7 +136,6 @@ public class VictoryUIMgr : MonoBehaviour
         EventCenter.Instance.AddEventListener("NormalVictoryStart", ShowVictoryEvent);
         EventCenter.Instance.AddEventListener("VictoryAddMapClip", AddMapClipEvent);
         EventCenter.Instance.AddEventListener("VictoryAddPlant", AddPlantEvent);
-
     }
 
     private void OnDisable()
@@ -144,8 +143,6 @@ public class VictoryUIMgr : MonoBehaviour
         EventCenter.Instance.RemoveEventListener("NormalVictoryStart", ShowVictoryEvent);
         EventCenter.Instance.RemoveEventListener("VictoryAddMapClip", AddMapClipEvent);
         EventCenter.Instance.RemoveEventListener("VictoryAddPlant", AddPlantEvent);
-
-
     }
 
 

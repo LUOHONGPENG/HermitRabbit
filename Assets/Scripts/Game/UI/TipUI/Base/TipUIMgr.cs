@@ -23,6 +23,8 @@ public class TipUIMgr : MonoBehaviour
     private bool isInit = false;
     private GameData gameData;
 
+    private bool shouldHideTile = false;
+
     public void Init()
     {
         gameData = PublicTool.GetGameData();
@@ -51,24 +53,36 @@ public class TipUIMgr : MonoBehaviour
                 skillButtonTipUIMgr.HideTip();
                 plantPreviewTipUIMgr.HideTip();
                 buffIconTipUIMgr.HideTip();
+                shouldHideTile = true;
                 break;
             case UITipType.SkillButton:
                 skillNodeTipUIMgr.HideTip();
                 skillButtonTipUIMgr.ShowTip(uiTipInfo.ID, uiTipInfo.mousePos);
                 plantPreviewTipUIMgr.HideTip();
                 buffIconTipUIMgr.HideTip();
+                shouldHideTile = true;
                 break;
             case UITipType.PlantPreview:
                 skillNodeTipUIMgr.HideTip();
                 skillButtonTipUIMgr.HideTip();
                 plantPreviewTipUIMgr.ShowTip(uiTipInfo.ID,uiTipInfo.mousePos);
                 buffIconTipUIMgr.HideTip();
+                shouldHideTile = true;
                 break;
             case UITipType.BuffIcon:
                 skillNodeTipUIMgr.HideTip();
                 skillButtonTipUIMgr.HideTip();
                 plantPreviewTipUIMgr.HideTip();
                 buffIconTipUIMgr.ShowTip(uiTipInfo.ID, uiTipInfo.mousePos);
+                shouldHideTile = true;
+                break;
+            case UITipType.TileIcon:
+                skillNodeTipUIMgr.HideTip();
+                skillButtonTipUIMgr.HideTip();
+                plantPreviewTipUIMgr.HideTip();
+                buffIconTipUIMgr.HideTip();
+                tileInfoTipUIMgr.UpdateBasicInfo((MapTileType)uiTipInfo.ID);
+                shouldHideTile = false;
                 break;
         }
     }
@@ -79,6 +93,7 @@ public class TipUIMgr : MonoBehaviour
         skillButtonTipUIMgr.HideTip();
         plantPreviewTipUIMgr.HideTip();
         buffIconTipUIMgr.HideTip();
+        shouldHideTile = true;
     }
 
 
@@ -87,14 +102,22 @@ public class TipUIMgr : MonoBehaviour
         if (isInit)
         {
             //DisplayTileTip
-            if (gameData.CheckWhetherHoverTileValid())
+            if (shouldHideTile)
             {
-                tileInfoTipUIMgr.UpdateBasicInfo(gameData.GetMapTileDataFromHoverTile());
+                if (gameData.CheckWhetherHoverTileValid())
+                {
+                    tileInfoTipUIMgr.UpdateBasicInfo(gameData.GetMapTileDataFromHoverTile());
+                }
+                else
+                {
+                    tileInfoTipUIMgr.HideTip();
+                }
             }
             else
             {
-                tileInfoTipUIMgr.HideTip();
+                
             }
+
 
             //DisplayUnitTip
             if(gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Character)
