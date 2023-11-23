@@ -13,6 +13,10 @@ public class MenuUIMgr : MonoBehaviour
     public Button btnLoadGame;
     public Button btnDelete;
 
+    public Button btnEN;
+    public Button btnCN;
+
+
 
     public void Init()
     {
@@ -40,6 +44,20 @@ public class MenuUIMgr : MonoBehaviour
         btnDelete.onClick.AddListener(delegate ()
         {
             PlayerPrefs.DeleteAll();
+        });
+
+        btnEN.onClick.RemoveAllListeners();
+        btnEN.onClick.AddListener(delegate ()
+        {
+            GameGlobal.languageType = LanguageType.EN;
+            GameMgr.Instance.LoadScene(SceneName.Menu);
+        });
+
+        btnCN.onClick.RemoveAllListeners();
+        btnCN.onClick.AddListener(delegate ()
+        {
+            GameGlobal.languageType = LanguageType.CN;
+            GameMgr.Instance.LoadScene(SceneName.Menu);
         });
     }
 }
