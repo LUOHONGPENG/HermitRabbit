@@ -26,9 +26,10 @@ MonoBehaviour:
   - id: 3
     tileType: 2
     name: Grass
-    desc: 'Fire will burn it
+    desc: 'Fire can burn it
 
-      ATK of Plant + 1'
+      <sprite="Common" name="ATK"> ATK+1 for <sprite="Target"
+      name="PUnit"> Plant'
     iconUrl: imgIconTile_Grass
   - id: 4
     tileType: 3
@@ -38,41 +39,47 @@ MonoBehaviour:
   - id: 5
     tileType: 4
     name: Flower
-    desc: 'Fire will burn it
+    desc: 'Fire can burn it
 
-      Can heal Plant'
+      Can heal <sprite="Target" name="PUnit"> Plant'
     iconUrl: imgIconTile_Flower
   - id: 6
     tileType: 5
     name: Magic
-    desc: 'RES+1;
+    desc: '<sprite="Common" name="RES"> RES+1
 
-      ATK+1 when spelling skill that deal magic damage.'
+      Cost extra <sprite="Common"
+      name="HP"> HP to deal more <sprite="SkillType" name="MDmg"> Magic Damage'
     iconUrl: imgIconTile_Magic
   - id: 7
     tileType: 6
     name: Duel
-    desc: 'DEF-1 RES-1
+    desc: '<sprite="Common" name="DEF"> DEF-1 <sprite="Common" name="RES"> RES-1
 
-      Skill damage will ignore DEF and RES'
+      Skill
+      cause <sprite="SkillType" name="TDmg"> True Damage that ignores <sprite="Common"
+      name="DEF"> DEF and <sprite="Common" name="RES"> RES'
     iconUrl: imgIconTile_Duel
   - id: 8
     tileType: 7
     name: Guard
     desc: 'Reduce 40% damage from others.
 
-      Only recover half of movement when
-      turn starts'
+      Only recover half of <sprite="Common"
+      name="MOV"> MOV when turn starts'
     iconUrl: imgIconTile_Guard
   - id: 9
     tileType: 8
     name: Stealth
-    desc: 'ATK-2
+    desc: '<sprite="Common" name="ATK">ATK-2
 
       Uneasy to become foes'' target.'
     iconUrl: imgIconTile_Stealth
   - id: 10
     tileType: 9
     name: Hope
-    desc: Get extra AP when turn starts.
+    desc: 'Get extra <sprite="Common" name="AP">AP and 1 level fragile
+
+      when
+      turn starts'
     iconUrl: imgIconTile_Hope

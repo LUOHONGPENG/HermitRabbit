@@ -38,13 +38,13 @@ public partial class GameData
     public void SetCurBattleSkill(int skillID)
     {
         SkillExcelItem skillItem = PublicTool.GetSkillItem(skillID);
-        curSkillBattleInfo = new SkillBattleInfo(skillItem);
+        curSkillBattleInfo = new SkillBattleInfo(skillItem, GetCurUnitData());
     }
 
     public int RefreshBattleSkillForCostHP()
     {
         SkillExcelItem skillItem = PublicTool.GetSkillItem(curSkillBattleInfo.ID);
-        return new SkillBattleInfo(skillItem).damageModifier;
+        return new SkillBattleInfo(skillItem, GetCurUnitData()).damageModifier;
     }
 
     public void RefreshBattleSkill()
@@ -52,7 +52,7 @@ public partial class GameData
         SkillExcelItem skillItem = PublicTool.GetSkillItem(curSkillBattleInfo.ID);
         if (skillItem != null)
         {
-            curSkillBattleInfo = new SkillBattleInfo(skillItem);
+            curSkillBattleInfo = new SkillBattleInfo(skillItem, GetCurUnitData());
         }
     }
 

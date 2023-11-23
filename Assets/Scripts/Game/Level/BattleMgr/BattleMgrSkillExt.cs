@@ -37,6 +37,8 @@ public partial class BattleMgr
         //Check Skill Condition
         if (!CheckSkillCondition(targetPos))
         {
+            isInFoeSkill = false;
+            isInPlantSkill = false;
             return;
         }
 

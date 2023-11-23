@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ public class TileInfoTipUIMgr : MonoBehaviour
 
     [Header("Info")]
     public Text codeName;
-    public Text codeDesc;
+    public TextMeshProUGUI codeDesc;
     public Image imgIcon;
 
     private MapTileData recordTileData = null;

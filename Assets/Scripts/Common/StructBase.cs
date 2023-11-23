@@ -45,6 +45,7 @@ public struct SkillBattleInfo
     public SkillDamageDeltaStd damageDeltaStd;
     public float damageDeltaFloat;
     public int damageModifier;
+    public float damageExtraBonus;
     public ActiveSkillType activeSkillType;
     //Special
     public List<BuffExcelItem> listBuffEffect;
@@ -54,7 +55,7 @@ public struct SkillBattleInfo
     public List<int> listSpecialDelta;
     public SkillTileEffectType tileEffectType;
 
-    public SkillBattleInfo(SkillExcelItem item)
+    public SkillBattleInfo(SkillExcelItem item,BattleUnitData unitData)
     {
         this.ID = item.id;
 
@@ -83,6 +84,7 @@ public struct SkillBattleInfo
         this.damageDeltaStd = item.RealDamageStd;
         this.damageDeltaFloat = item.damageDeltaFloat;
         this.damageModifier = item.RealDamageModifier;
+        this.damageExtraBonus = 0;
         this.activeSkillType = item.activeSkillType;
         //Buff
         this.listBuffEffect = item.listBuffUse;
@@ -91,6 +93,25 @@ public struct SkillBattleInfo
         this.listSpecialEffect = item.listSpecialEffectUse;
         this.listSpecialDelta = new List<int>(item.listSpecialDelta);
         this.tileEffectType = item.RealTileEffectType;
+
+        //UnitDataBuff
+        if (unitData != null)
+        {
+            if (unitData.tileBuffChangeDmgReal)
+            {
+                damageType = SkillDamageType.Real;
+            }
+
+            if (unitData.tileBuffMagicDamageAdd)
+            {
+                if(damageType == SkillDamageType.Magic)
+                {
+                    this.costHP++;
+                    damageExtraBonus = 0.6f;
+                }
+            }
+        }
+
     }
 }
 

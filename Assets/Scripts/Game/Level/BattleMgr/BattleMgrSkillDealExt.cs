@@ -60,13 +60,6 @@ public partial class BattleMgr
 
         int calculateATK = source.curATK;
 
-        //Tile Buff Filter
-        if (source.tileBuffChangeDmgReal)
-        {
-            skillBattleInfo.damageType = SkillDamageType.Real;
-        }
-
-
         //Calculate the source damage
         switch (skillBattleInfo.damageDeltaStd)
         {
@@ -130,6 +123,7 @@ public partial class BattleMgr
         }
 
         damageSource += skillBattleInfo.damageModifier;
+        damageSource *= (1 + skillBattleInfo.damageExtraBonus);
         //Make sure the damage is not lower than 0
         if (damageSource <= 0)
         {
