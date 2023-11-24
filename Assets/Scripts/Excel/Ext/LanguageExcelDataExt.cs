@@ -16,16 +16,44 @@ public partial class LanguageExcelData
         {
             LanguageExcelItem languageItem = items[i];
             string key = languageItem.key;
-            if (!dicKeyEN.ContainsKey(key))
+            if (key.Length > 0)
             {
-                dicKeyEN.Add(key, languageItem.descEN);
-            }
-            if (!dicKeyCN.ContainsKey(key))
-            {
-                dicKeyCN.Add(key, languageItem.descCN);
+                if (!dicKeyEN.ContainsKey(key))
+                {
+                    dicKeyEN.Add(key, languageItem.descEN);
+                }
+                if (!dicKeyCN.ContainsKey(key))
+                {
+                    dicKeyCN.Add(key, languageItem.descCN);
+                }
             }
         }
     }
 
+    public string GetText(string key)
+    {
+        if (GameGlobal.languageType == LanguageType.CN)
+        {
+            if (dicKeyCN.ContainsKey(key))
+            {
+                return dicKeyCN[key];
+            }
+            else
+            {
+                return "";
+            }
+        }
+        else
+        {
+            if (dicKeyEN.ContainsKey(key))
+            {
+                return dicKeyEN[key];
+            }
+            else
+            {
+                return "";
+            }
+        }
+    }
 
 }

@@ -110,4 +110,9 @@ public partial class PublicTool
         return ExcelDataMgr.Instance.mapTileExcelData.GetMapTileInfo(tileType);
     }
     #endregion
+
+    public static string GetLanguageText(string key)
+    {
+        return ExcelDataMgr.Instance.languageExcelData.GetText(key);
+    }
 }

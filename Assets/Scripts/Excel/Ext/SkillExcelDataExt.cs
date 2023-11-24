@@ -233,10 +233,21 @@ public partial class SkillExcelItem
         get
         {
             int temp = radius;
-            if (id == 1101 && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1192))
+            if (id == 1101)
             {
-                temp++;
+                if(PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1192))
+                {
+                    temp++;
+                }
+                if(PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1193))
+                { 
+                    temp--; 
+                }
             }
+
+            //if (PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1193) && characterID == 1001)
+
+
             if (skillSubjectType == BattleUnitType.Character && PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1902) &&
 
                  (activeSkillType == ActiveSkillType.SupportSkill || activeSkillType == ActiveSkillType.DamageSkill))

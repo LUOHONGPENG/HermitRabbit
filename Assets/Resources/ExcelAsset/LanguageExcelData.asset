@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - id: 1
+    key: tx_menu_language
+    descEN: "Current Language: \nEnglish"
+    descCN: "Current Language: \n\u4E2D\u6587"
+  - id: 2
     key: tx_skill_cost
     descEN: 'Cost:'
     descCN: "\u6280\u80FD\u6D88\u8017"

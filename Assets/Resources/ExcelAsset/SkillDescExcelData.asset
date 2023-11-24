@@ -37,33 +37,37 @@ MonoBehaviour:
   - id: 1191
     name_EN: Quick Cast
     name_CN: "\u5373\u523B\u548F\u5531"
-    desc_EN: '<sprite="Common" name="AP"> AP Cost - 1 for <b>Fire Ball</b>
+    desc_EN: '<sprite="Common" name="AP"> AP Cost - 1 for Fire Ball
 
       Damage
-      - 4 for <b>Fire Ball</b>'
-    desc_CN: 
+      - 4 for Fire Ball'
+    desc_CN: "\u706B\u7403\u672F\u7684 <sprite=\"Common\" name=\"AP\"> \u884C\u52A8\u529B\u6D88\u8017-1\n\u4F46\u662F\u4F24\u5BB3\u4E5F\u4F1A-4"
     listTagType:
     - 0
     listBuffType: 00000000
   - id: 1192
     name_EN: Inferno
     name_CN: "\u70BC\u72F1\u706B\u6D77"
-    desc_EN: '<sprite="Common" name="Radius"> Radius + 1 for <b>Fire Ball</b>
+    desc_EN: '<sprite="Common" name="Radius"> Radius + 1 for Fire Ball
 
       Damage
-      of <b>Fire Ball</b> reduce 25%.'
-    desc_CN: 
+      of Fire Ball reduce 25%.'
+    desc_CN: "\u706B\u7403\u672F\u7684 <sprite=\"Common\" name=\"Radius\"> \u8303\u56F4+1\n\u4F46\u4F24\u5BB3\u51CF\u5C1125%"
     listTagType:
     - 0
     listBuffType: 00000000
   - id: 1193
     name_EN: Focus
     name_CN: "\u805A\u7126"
-    desc_EN: '<b>Fire Ball</b> will cost all <sprite="Common" name="AP"> AP
+    desc_EN: 'Fire Ball will cost all <sprite="Common" name="AP"> AP and <sprite="Common"
+      name="Radius"> Radius - 1
 
-      Each
-      extra <sprite="Common" name="AP"> AP deal more damage.'
-    desc_CN: 
+      Each extra <sprite="Common" name="AP"> AP
+      deal more damage.'
+    desc_CN: "\u706B\u7403\u672F\u4F1A\u6D88\u8017\u6240\u6709 <sprite=\"Common\"
+      name=\"AP\"> \u884C\u52A8\u529B\u5E76\u4E14 <sprite=\"Common\" name=\"Radius\">
+      \u8303\u56F4-1\n\u989D\u5916\u6D88\u8017\u7684 <sprite=\"Common\" name=\"AP\">
+      \u884C\u52A8\u529B\u4F1A\u589E\u5E45\u4F24\u5BB3"
     listTagType:
     - 0
     listBuffType: 00000000
@@ -73,7 +77,7 @@ MonoBehaviour:
     desc_EN: 'Select All Burning Targets.
 
       Deal damage equal to Burning X 2.5.'
-    desc_CN: 
+    desc_CN: "\u9009\u53D6\u6240\u6709\u707C\u70E7\u5355\u4F4D\n\u9020\u6210\u76F8\u5F53\u4E8E\u707C\u70E7\u5C42\u6570X2.5\u7684\u4F24\u5BB3"
     listTagType:
     - TDmg
     - HurtAll
@@ -88,20 +92,26 @@ MonoBehaviour:
 
       Damage will increase if higher <sprite="Common"
       name="MOV"> MOV of source and lower <sprite="Common" name="MOV"> MOV of target.'
-    desc_CN: 
+    desc_CN: "\u9020\u6210\u76F8\u5F53\u4E8E <sprite=\"Common\" name=\"ATK\"> \u529B\u91CF-1
+      \u7684\u4F24\u5BB3\n\u51CF\u5C11\u76EE\u6807 <sprite=\"Common\" name=\"MOV\">
+      \u79FB\u52A8\u529B\n\u81EA\u8EAB <sprite=\"Common\" name=\"MOV\"> \u79FB\u52A8\u529B\u8D8A\u9AD8\uFF0C\u76EE\u6807
+      <sprite=\"Common\" name=\"MOV\"> \u79FB\u52A8\u529B\u8D8A\u4F4E\uFF0C\u4F24\u5BB3\u8D8A\u9AD8"
     listTagType:
     - MDmg
     listBuffType: 00000000
   - id: 1291
     name_EN: Genesis
     name_CN: "\u521B\u4E16"
-    desc_EN: '<b>Gravity</b> can break <sprite="Tile" name="StoneT">Stone tile.
+    desc_EN: 'Gravity can break <sprite="Tile" name="StoneT"> Stone tile.
 
       Randomly
       create special tile like <sprite="Tile" name="MagicT"> <sprite="Tile" name="DuelT">
       <sprite="Tile" name="GuardT"> <sprite="Tile" name="StealthT"> <sprite="Tile"
       name="HopeT">'
-    desc_CN: 
+    desc_CN: "\u91CD\u529B\u4F1A\u7834\u574F <sprite=\"Tile\" name=\"StoneT\"> \u77F3\u5730\u5757\n\u6982\u7387\u751F\u6210\u7C7B\u4F3C
+      <sprite=\"Tile\" name=\"MagicT\"> <sprite=\"Tile\" name=\"DuelT\"> <sprite=\"Tile\"
+      name=\"GuardT\"> <sprite=\"Tile\" name=\"StealthT\"> <sprite=\"Tile\" name=\"HopeT\">
+      \u7B49\u7279\u6B8A\u5730\u5757"
     listTagType:
     - 0
     listBuffType: 00000000
@@ -110,7 +120,9 @@ MonoBehaviour:
     name_CN: "\u65F6\u95F4\u53D8\u6362"
     desc_EN: Dodge next attack from <sprite="Target" name="CUnit"> Character,<sprite="Target"
       name="FUnit"> Foe or <sprite="Target" name="PUnit"> Plant.
-    desc_CN: 
+    desc_CN: "\u5FC5\u5B9A\u95EA\u907F\u4E0B\u6B21\u6765\u81EA\u4E8E <sprite=\"Target\"
+      name=\"CUnit\"> \u89D2\u8272,<sprite=\"Target\" name=\"FUnit\"> \u654C\u4EBA
+      or <sprite=\"Target\" name=\"PUnit\"> \u690D\u7269\u7684\u653B\u51FB"
     listTagType:
     - 0
     listBuffType: ee030000
@@ -122,7 +134,10 @@ MonoBehaviour:
 
       Heal <sprite="Target" name="PUnit"> Plant equal
       to <sprite="Common" name="RES"> RES X2 + 1.'
-    desc_CN: 
+    desc_CN: "\u5BF9 <sprite=\"Target\" name=\"FUnit\"> \u654C\u4EBA\u9020\u6210\u76F8\u5F53\u4E8E
+      <sprite=\"Common\" name=\"RES\"> \u9B54\u9632X2 + 1\u7684\u4F24\u5BB3\n\u5BF9
+      <sprite=\"Target\" name=\"PUnit\"> \u690D\u7269\u9020\u6210\u76F8\u5F53\u4E8E
+      <sprite=\"Common\" name=\"RES\"> \u9B54\u9632X2 + 1\u7684\u6CBB\u7597"
     listTagType:
     - MDmg
     listBuffType: 00000000
@@ -134,19 +149,23 @@ MonoBehaviour:
 
       Remove 1 buff for <sprite="Target" name="FUnit">
       Foe'
-    desc_CN: 
+    desc_CN: "\u7ED9 <sprite=\"Target\" name=\"CUnit\"> \u89D2\u8272\u6216 <sprite=\"Target\"
+      name=\"PUnit\"> \u690D\u7269\u79FB\u96641\u5C42\u51CF\u76CA\n\u7ED9 <sprite=\"Target\"
+      name=\"FUnit\"> \u654C\u4EBA\u79FB\u96641\u5C42\u589E\u76CA"
     listTagType:
     - 0
     listBuffType: 00000000
   - id: 1391
     name_EN: Drown
     name_CN: "\u6DF9\u6CA1"
-    desc_EN: '<sprite="Common" name="AP"> AP Cost + 1 for <b>Fourtain</b>
+    desc_EN: '<sprite="Common" name="AP"> AP Cost + 1 for Fourtain
 
-      <b>Fourtain</b>
+      Fourtain
       will turn <sprite="Tile" name="SoilT"> Soil tile into <sprite="Tile" name="WaterT">
       Water tile.'
-    desc_CN: 
+    desc_CN: "\u55B7\u6D41\u7684 <sprite=\"Common\" name=\"AP\"> \u884C\u52A8\u529B\u6D88\u8017+1\n\u55B7\u6D41\u4F1A\u8F6C\u5316
+      <sprite=\"Tile\" name=\"SoilT\"> \u571F\u5730\u5757\u6210 <sprite=\"Tile\"
+      name=\"WaterT\"> \u6C34\u5730\u5757."
     listTagType:
     - 0
     listBuffType: 00000000
@@ -160,7 +179,9 @@ MonoBehaviour:
 
       But damage
       will reduce according to distance.'
-    desc_CN: 
+    desc_CN: "\u9020\u6210\u76F8\u5F53\u4E8E <sprite=\"Common\" name=\"ATK\"> \u529B\u91CF+4
+      \u7684\u4F24\u5BB3\n\u4F24\u5BB3\u80FD\u88AB <sprite=\"Tile\" name=\"WaterT\">
+      \u6C34\u5730\u5757\u4F20\u9012\uFF0C\n\u4F46\u4F24\u5BB3\u968F\u8DDD\u79BB\u8870\u51CF."
     listTagType:
     - MDmg
     - HurtCharacter
@@ -171,17 +192,19 @@ MonoBehaviour:
     desc_EN: 'Change position of <sprite="Target" name="CUnit"> Character or <sprite="Target"
       name="PUnit"> Plant.
 
-      Distance of <b>Teleport</b> will determined by
-      <sprite="Common" name="MOV"> MOV.'
-    desc_CN: 
+      Distance of Teleport will determined by <sprite="Common"
+      name="MOV"> MOV.'
+    desc_CN: "\u4F20\u9001 <sprite=\"Target\" name=\"CUnit\"> \u89D2\u8272\u6216
+      <sprite=\"Target\" name=\"PUnit\"> \u690D\u7269\n\u4F20\u9001\u8DDD\u79BB\u7531
+      <sprite=\"Common\" name=\"MOV\"> \u79FB\u52A8\u529B\u51B3\u5B9A"
     listTagType:
     - 0
     listBuffType: 00000000
   - id: 1491
     name_EN: High Voltage
     name_CN: "\u9AD8\u538B\u7535"
-    desc_EN: The damage decay of <b>Lightning Bolt</b> will be reduced.
-    desc_CN: 
+    desc_EN: The damage decay of Lightning Bolt will be reduced.
+    desc_CN: "\u95EA\u7535\u672F\u7684\u4F24\u5BB3\u8870\u51CF\u51CF\u5C11"
     listTagType:
     - 0
     listBuffType: 00000000
@@ -196,7 +219,10 @@ MonoBehaviour:
 
       Except the buff from <sprite="SkillType" name="USkill"> Ultimate
       Skill'
-    desc_CN: 
+    desc_CN: "\u7FFB\u500D <sprite=\"Target\" name=\"FUnit\"> \u654C\u4EBA\u7684\u51CF\u76CA\u5C42\u6570\n\u7FFB\u500D
+      <sprite=\"Target\" name=\"CUnit\"> \u89D2\u8272\u6216 <sprite=\"Target\" name=\"PUnit\">
+      \u690D\u7269\u7684\u589E\u76CA\u5C42\u6570\n\u6765\u81EA <sprite=\"SkillType\"
+      name=\"USkill\"> \u7EC8\u6781\u6280\u80FD\u7684\u72B6\u6001\u4E0D\u53D7\u5F71\u54CD"
     listTagType:
     - 0
     listBuffType: 00000000
@@ -204,7 +230,7 @@ MonoBehaviour:
     name_EN: Infinity
     name_CN: "\u65E0\u9650\uFF01"
     desc_EN: Gain 3 Infinity.
-    desc_CN: 
+    desc_CN: "\u83B7\u5F973\u5C42\u65E0\u9650"
     listTagType:
     - 0
     listBuffType: eb030000
@@ -212,7 +238,7 @@ MonoBehaviour:
     name_EN: Rabbit Chant
     name_CN: "\u7EC8\u7109\u541F\u5531"
     desc_EN: Cost <sprite="Common" name="MOV"> MOV to gain 3 Chanting.
-    desc_CN: 
+    desc_CN: "\u6D88\u8017 <sprite=\"Common\" name=\"MOV\"> \u79FB\u52A8\u529B\u83B7\u5F973\u5C42\u541F\u5531"
     listTagType:
     - 0
     listBuffType: ed030000
@@ -220,7 +246,8 @@ MonoBehaviour:
     name_EN: Strike
     name_CN: "\u516C\u6587\u5305\u6253\u51FB"
     desc_EN: Deal <sprite="Common" name="ATK"> ATK damage.
-    desc_CN: 
+    desc_CN: "\u9020\u6210\u76F8\u5F53\u4E8E <sprite=\"Common\" name=\"ATK\"> \u529B\u91CF
+      \u7684\u4F24\u5BB3"
     listTagType:
     - PDmg
     listBuffType: 00000000
@@ -228,7 +255,8 @@ MonoBehaviour:
     name_EN: Worker Wind
     name_CN: "\u52E4\u52B3\u65B0\u98CE"
     desc_EN: Deal <sprite="Common" name="ATK"> ATK damage.
-    desc_CN: 
+    desc_CN: "\u9020\u6210\u76F8\u5F53\u4E8E <sprite=\"Common\" name=\"ATK\"> \u529B\u91CF
+      \u7684\u8303\u56F4\u4F24\u5BB3"
     listTagType:
     - PDmg
     listBuffType: 00000000
@@ -236,7 +264,7 @@ MonoBehaviour:
     name_EN: Injury Benefit
     name_CN: "\u5DE5\u4F24\u8D54\u4ED8"
     desc_EN: Deal 1 more damage when lost 3 <sprite="Common" name="HP"> HP.
-    desc_CN: 
+    desc_CN: "\u6BCF\u635F\u59313\u70B9 <sprite=\"Common\" name=\"HP\"> \u751F\u547D\u9020\u6210\u989D\u59161\u70B9\u4F24\u5BB3"
     listTagType:
     - 0
     listBuffType: 00000000
@@ -245,7 +273,7 @@ MonoBehaviour:
     name_CN: "\u52A0\u73ED\u65F6\u523B"
     desc_EN: "Cost <sprite=\"Common\" name=\"MOV\"> MOV to gain 3 Overtime Work.
       \nGain 3 Burning."
-    desc_CN: 
+    desc_CN: "\u6D88\u8017 <sprite=\"Common\" name=\"MOV\"> \u79FB\u52A8\u529B\u83B7\u5F973\u5C42\u52A0\u73ED\n\u83B7\u5F973\u5C42\u707C\u70E7"
     listTagType:
     - 0
     listBuffType: ea030000a10f0000
@@ -253,7 +281,7 @@ MonoBehaviour:
     name_EN: Bully
     name_CN: "\u804C\u573A\u9738\u51CC"
     desc_EN: Apply 2 Fear and 1 Fragile.
-    desc_CN: 
+    desc_CN: "\u9644\u52A02\u5C42\u6050\u60E7\u548C1\u5C42\u8106\u5F31"
     listTagType:
     - 0
     listBuffType: d1070000a20f0000
@@ -261,7 +289,7 @@ MonoBehaviour:
     name_EN: Your fault!
     name_CN: "\u7529\u9505"
     desc_EN: Deal damage to the unit that attack Ward.
-    desc_CN: 
+    desc_CN: "\u5BF9\u653B\u51FBWard\u7684\u654C\u4EBA\u9020\u62101\u70B9\u53CD\u4F24"
     listTagType:
     - 0
     listBuffType: 00000000
@@ -269,7 +297,7 @@ MonoBehaviour:
     name_EN: Provoke
     name_CN: "\u6076\u6BD2\u5632\u7B11"
     desc_EN: Attract enemies' attack.
-    desc_CN: 
+    desc_CN: "\u5438\u5F15\u654C\u4EBA\u7684\u6CE8\u610F"
     listTagType:
     - 0
     listBuffType: f0030000
@@ -277,8 +305,9 @@ MonoBehaviour:
     name_EN: Take a Nap
     name_CN: "\u4E09\u70B9\u996E\u8336"
     desc_EN: Heal <sprite="Target" name="CUnit"> Character equal to <sprite="Common"
-      name="HP"> 25%HP.
-    desc_CN: 
+      name="HP"> 25%HP of Ward
+    desc_CN: "\u5BF9<sprite=\"Target\" name=\"CUnit\"> \u89D2\u8272\u9020\u6210\u76F8\u5F53\u4E8EWard
+      <sprite=\"Common\" name=\"HP\"> 25%\u751F\u547D\u7684\u6CBB\u7597"
     listTagType:
     - 0
     listBuffType: 00000000
@@ -289,7 +318,9 @@ MonoBehaviour:
 
       Next strike
       will restore <sprite="Common" name="HP"> HP according to damage.'
-    desc_CN: 
+    desc_CN: "\u9020\u6210\u76F8\u5F53\u4E8E <sprite=\"Common\" name=\"DEF\"> \u9632\u5FA1
+      \u7684\u4F24\u5BB3\n\u4E0B\u4E00\u6B21\u653B\u51FB\u6062\u590D\u7B49\u540C\u4E8E\u4F24\u5BB3\u7684
+      <sprite=\"Common\" name=\"HP\"> \u751F\u547D"
     listTagType:
     - TDmg
     listBuffType: ed030000
@@ -297,7 +328,7 @@ MonoBehaviour:
     name_EN: Rush Hour
     name_CN: "\u4E0B\u73ED\u6253\u5361"
     desc_EN: Give 3 <sprite="Common" name="MOV"> MOV.
-    desc_CN: 
+    desc_CN: "\u63D0\u4F9B3\u70B9 <sprite=\"Common\" name=\"MOV\"> \u79FB\u52A8\u529B."
     listTagType:
     - 0
     listBuffType: 00000000
@@ -306,7 +337,8 @@ MonoBehaviour:
     name_CN: "\u4EE5\u8001\u5E26\u65B0"
     desc_EN: <sprite="Common" name="Range"> Range + 1 for <sprite="SkillType" name="SSkill">
       Support Skill
-    desc_CN: 
+    desc_CN: "<sprite=\"SkillType\" name=\"SSkill\"> \u8F85\u52A9\u6280\u80FD\u7684<sprite=\"Common\"
+      name=\"Range\"> \u5C04\u7A0B+1"
     listTagType:
     - 0
     listBuffType: 00000000
@@ -314,24 +346,27 @@ MonoBehaviour:
     name_EN: Handover
     name_CN: "\u5DE5\u4F5C\u4EA4\u63A5"
     desc_EN: Give 1 <sprite="Common" name="AP"> AP.
-    desc_CN: 
+    desc_CN: "\u63D0\u4F9B1\u70B9 <sprite=\"Common\" name=\"AP\"> \u884C\u52A8\u529B"
     listTagType:
     - 0
     listBuffType: 00000000
   - id: 2901
-    name_EN: Deadline
+    name_EN: Deadline Fighter
     name_CN: "\u622A\u6B62\u65E5\u671F"
-    desc_EN: <sprite="Common" name="HP"> HP won't become 0.
-    desc_CN: 
+    desc_EN: <sprite="Common" name="HP"> HP won't become 0 this turn
+    desc_CN: "\u672C\u56DE\u5408 <sprite=\"Common\" name=\"HP\"> \u751F\u547D\u503C\u4E0D\u4F1A\u5F520"
     listTagType:
     - 0
     listBuffType: e9030000
   - id: 2902
     name_EN: Super Worker
     name_CN: "\u8D85\u7EA7\u6253\u5DE5\u4EBA"
-    desc_EN: 'Increase <sprite="Common" name="ATK"> ATK <sprite="Common" name="DEF">
-      DEF <sprite="Common" name="RES"> RES <sprite="Common" name="MOV"> MOV by 1. '
-    desc_CN: 
+    desc_EN: 'Cost <sprite="Common" name="Memory"> Memory to increase <sprite="Common"
+      name="ATK"> ATK <sprite="Common" name="DEF"> DEF <sprite="Common" name="RES">
+      RES <sprite="Common" name="MOV"> MOV by 1. '
+    desc_CN: "\u6D88\u8017 <sprite=\"Common\" name=\"Memory\"> \u56DE\u5FC6\uFF0C<sprite=\"Common\"
+      name=\"ATK\"> \u653B\u51FB <sprite=\"Common\" name=\"DEF\"> \u9632\u5FA1 <sprite=\"Common\"
+      name=\"RES\"> \u9B54\u9632 <sprite=\"Common\" name=\"MOV\"> \u6700\u5927\u79FB\u52A8\u529B\u5404+1 "
     listTagType:
     - 0
     listBuffType: ec030000
@@ -340,7 +375,8 @@ MonoBehaviour:
     name_CN: "\u5B8C\u6210\u5DE5\u4F5C\uFF01"
     desc_EN: Cost <sprite="Common" name="HP"> HP to deal damage, the damage will
       be equal to cost <sprite="Common" name="HP"> HP.
-    desc_CN: 
+    desc_CN: "\u6D88\u8017 <sprite=\"Common\" name=\"HP\"> \u751F\u547D\u9020\u6210\u76F8\u5F53\u4E8E\u6D88\u8017
+      <sprite=\"Common\" name=\"HP\"> \u751F\u547D\u91CF\u7684\u4F24\u5BB3"
     listTagType:
     - PDmg
     listBuffType: 00000000
