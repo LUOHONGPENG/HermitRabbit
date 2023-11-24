@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - id: 1
-    group: 0
+    group: 1
+    strTitle: Move
     strContent: 'When Move Button selected, you can click tile to move.
 
       Moving
@@ -24,7 +25,8 @@ MonoBehaviour:
       selected automatically after choosing a character.)'
     imgUrl: 
   - id: 2
-    group: 0
+    group: 1
+    strTitle: Attack
     strContent: 'When Attack Button selected, the <sprite="Common" name="Range">
       range will be shown and you can click tile to attack <sprite="Target" name="FUnit">
       Foe in range.
@@ -32,38 +34,52 @@ MonoBehaviour:
       Attack will cost <sprite="Common" name="AP"> AP'
     imgUrl: 
   - id: 3
-    group: 0
+    group: 1
+    strTitle: Change Character
     strContent: You can click the character box to select <sprite="Target" name="CUnit">
       Character in your turn.
     imgUrl: 
   - id: 4
-    group: 0
-    strContent: 'After you finish what you want to do, you can click button to end
+    group: 1
+    strTitle: End Turn
+    strContent: After you finish what you want to do, you can click button to end
       turn.
-
-      If you kill all the <sprite="Target" name="FUnit"> Foe, you win.'
     imgUrl: 
   - id: 5
     group: 1
+    strTitle: Win and Lose
+    strContent: 'If you kill all the <sprite="Target" name="FUnit"> Foe, you win.
+
+      If
+      all character''s <sprite="Common" name="HP"> HP become 0, you will lose.'
+    imgUrl: 
+  - id: 5
+    group: 2
+    strTitle: 
     strContent: 1
     imgUrl: 
   - id: 6
-    group: 1
+    group: 2
+    strTitle: 
     strContent: 2
     imgUrl: 
   - id: 7
-    group: 2
+    group: 3
+    strTitle: 
     strContent: 1
     imgUrl: 
   - id: 8
-    group: 2
+    group: 3
+    strTitle: 
     strContent: 2
     imgUrl: 
   - id: 9
-    group: 3
+    group: 4
+    strTitle: 
     strContent: 1
     imgUrl: 
   - id: 10
-    group: 3
+    group: 4
+    strTitle: 
     strContent: 2
     imgUrl: 

@@ -28,4 +28,15 @@ public partial class TalkExcelData
         }
     }
 
+    public List<TalkExcelItem> GetTalkGroup(TalkGroup talkGroup)
+    {
+        if (dicTalk.ContainsKey(talkGroup))
+        {
+            return dicTalk[talkGroup];
+        }
+        else
+        {
+            return null;
+        }
+    }
 }

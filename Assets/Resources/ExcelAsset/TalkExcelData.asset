@@ -14,67 +14,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - id: 1
-    group: 0
+    group: 1
     step: 0
     talkSubjectID: 0
     content: 
   - id: 2
-    group: 0
+    group: 1
     step: 1
     talkSubjectID: 1001
     content: What is going on? Why there are some monsters in my tower?
   - id: 3
-    group: 0
+    group: 1
     step: 1
     talkSubjectID: 1002
     content: 'These are your fear. '
   - id: 4
-    group: 0
+    group: 1
     step: 1
     talkSubjectID: 1001
     content: Who are you?
   - id: 5
-    group: 0
+    group: 1
     step: 1
     talkSubjectID: 1002
     content: I am here to help you. Let's fight against your fear.
   - id: 6
-    group: 0
-    step: 1
-    talkSubjectID: 1002
-    content: You can Click Move Button to cost movement to move.
-  - id: 7
-    group: 0
-    step: 1
-    talkSubjectID: 1002
-    content: Then you can click Attack Button to cost AP to attack.
-  - id: 8
-    group: 0
+    group: 1
     step: 2
     talkSubjectID: 0
     content: 
-  - id: 9
-    group: 1
+  - id: 7
+    group: 2
     step: 1
     talkSubjectID: 1002
     content: We have leveled up and get some Mapclips and plants just now.
-  - id: 10
-    group: 1
+  - id: 8
+    group: 2
     step: 1
     talkSubjectID: 1002
     content: You can click Skill Button to cost SP to unlock character's skill.
-  - id: 11
-    group: 1
+  - id: 9
+    group: 2
     step: 1
     talkSubjectID: 1002
     content: You can click Map Button to set Mapclip on the map.
-  - id: 12
-    group: 1
+  - id: 10
+    group: 2
     step: 1
     talkSubjectID: 1002
     content: You can click Plant Button to set Plant on the map.
-  - id: 13
-    group: 1
+  - id: 11
+    group: 2
     step: 2
     talkSubjectID: 0
     content: 

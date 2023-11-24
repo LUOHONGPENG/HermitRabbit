@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class TalkUIMgr : MonoBehaviour
@@ -15,10 +16,13 @@ public class TalkUIMgr : MonoBehaviour
 
     private List<TalkExcelItem> listTalk;
     private int curIndex = -1;
-
+    private GameData gameData;
+    private TalkGroup curTalkGroup = TalkGroup.None;
 
     public void Init()
     {
+        gameData = PublicTool.GetGameData();
+
         btnContinue.onClick.RemoveAllListeners();
         btnContinue.onClick.AddListener(delegate ()
         {
@@ -28,7 +32,7 @@ public class TalkUIMgr : MonoBehaviour
         btnSkip.onClick.RemoveAllListeners();
         btnSkip.onClick.AddListener(delegate ()
         {
-            Close();
+            CloseTalk();
         });
     }
 
@@ -55,6 +59,7 @@ public class TalkUIMgr : MonoBehaviour
         if (ExcelDataMgr.Instance.talkExcelData.dicTalk.ContainsKey(talkGroup))
         {
             listTalk = ExcelDataMgr.Instance.talkExcelData.dicTalk[talkGroup];
+            curTalkGroup = TalkGroup.Day1;
             Continue();
             objPopup.SetActive(true);
         }
@@ -83,7 +88,7 @@ public class TalkUIMgr : MonoBehaviour
                 //May cause bug
                 break;
             case TalkStep.End:
-                Close();
+                CloseTalk();
                 break;
         }
 
@@ -99,10 +104,18 @@ public class TalkUIMgr : MonoBehaviour
         }
     }
 
-    private void Close()
+    private void CloseTalk()
     {
+        CheckWhetherOpenTutorial();
         objPopup.SetActive(false);
     }
 
+    private void CheckWhetherOpenTutorial()
+    {
+        if (curTalkGroup == TalkGroup.Day1)
+        {
+            EventCenter.Instance.EventTrigger("StartTutorial", new StartTutorialInfo(TutorialMode.First, TutorialGroup.Battle));
+        }
+    }
 
 }

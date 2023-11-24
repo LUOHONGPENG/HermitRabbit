@@ -111,6 +111,16 @@ public partial class PublicTool
     }
     #endregion
 
+    public static List<TalkExcelItem> GetTalkGroup(TalkGroup talkGroup)
+    {
+        return ExcelDataMgr.Instance.talkExcelData.GetTalkGroup(talkGroup);
+    }
+
+    public static List<TutorialExcelItem> GetTutorialGroup(TutorialGroup tutorialGroup)
+    {
+        return ExcelDataMgr.Instance.tutorialExcelData.GetTutorialGroup(tutorialGroup);
+    }
+
     public static string GetLanguageText(string key)
     {
         return ExcelDataMgr.Instance.languageExcelData.GetText(key);

@@ -317,6 +317,7 @@ public enum UITipType
 
 public enum TalkGroup
 {
+    None,
     Day1,
     Day2
 }
@@ -334,6 +335,7 @@ public enum TalkStep
 
 public enum TutorialGroup
 {
+    None,
     Battle,
     Skill,
     MapClip,

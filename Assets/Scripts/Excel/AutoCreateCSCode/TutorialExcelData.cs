@@ -9,6 +9,7 @@ using System.IO;
 public partial class TutorialExcelItem : ExcelItemBase
 {
 	public TutorialGroup group;
+	public string strTitle;
 	public string strContent;
 	public string imgUrl;
 }
@@ -32,6 +33,7 @@ public class TutorialAssetAssignment
 			items[i] = new TutorialExcelItem();
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].group = (TutorialGroup) Enum.Parse(typeof(TutorialGroup), allItemValueRowList[i]["group"], true);
+			items[i].strTitle = allItemValueRowList[i]["strTitle"];
 			items[i].strContent = allItemValueRowList[i]["strContent"];
 			items[i].imgUrl = allItemValueRowList[i]["imgUrl"];
 		}

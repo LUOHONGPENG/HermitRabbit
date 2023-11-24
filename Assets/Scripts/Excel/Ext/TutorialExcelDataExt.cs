@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class TutorialExcelData 
+public partial class TutorialExcelData
 {
     public Dictionary<TutorialGroup, List<TutorialExcelItem>> dicTutorial = new Dictionary<TutorialGroup, List<TutorialExcelItem>>();
 
@@ -10,7 +10,7 @@ public partial class TutorialExcelData
     {
         dicTutorial.Clear();
 
-        for(int i = 0; i < items.Length; i++)
+        for (int i = 0; i < items.Length; i++)
         {
             TutorialExcelItem tempItem = items[i];
 
@@ -26,7 +26,18 @@ public partial class TutorialExcelData
                 dicTutorial.Add(tempItem.group, listTemp);
             }
         }
+    }
 
+    public List<TutorialExcelItem> GetTutorialGroup(TutorialGroup tutorialGroup)
+    {
+        if (dicTutorial.ContainsKey(tutorialGroup))
+        {
+            return dicTutorial[tutorialGroup];
+        }
+        else
+        {
+            return null;
+        }
     }
 
 }
