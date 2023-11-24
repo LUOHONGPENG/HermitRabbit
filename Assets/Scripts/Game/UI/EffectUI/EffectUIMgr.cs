@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class EffectUIMgr : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class EffectUIMgr : MonoBehaviour
     public GameObject pfWarningText;
 
     public CanvasGroup groupSkillName;
-    public Text txSkillName;
+    public TextMeshProUGUI txSkillName;
     Sequence seq;
 
     private void OnEnable()

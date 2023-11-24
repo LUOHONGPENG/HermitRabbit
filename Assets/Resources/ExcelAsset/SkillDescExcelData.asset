@@ -171,7 +171,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 1401
     name_EN: Lightning
-    name_CN: "\u95EA\u7535\u672F"
+    name_CN: "\u5524\u96F7\u672F"
     desc_EN: 'Deal <sprite="Common" name="ATK"> ATK + 4 damage.
 
       Damage can
@@ -204,7 +204,7 @@ MonoBehaviour:
     name_EN: High Voltage
     name_CN: "\u9AD8\u538B\u7535"
     desc_EN: The damage decay of Lightning Bolt will be reduced.
-    desc_CN: "\u95EA\u7535\u672F\u7684\u4F24\u5BB3\u8870\u51CF\u51CF\u5C11"
+    desc_CN: "\u5524\u96F7\u672F\u7684\u4F24\u5BB3\u8870\u51CF\u51CF\u5C11"
     listTagType:
     - 0
     listBuffType: 00000000
@@ -381,8 +381,8 @@ MonoBehaviour:
     - PDmg
     listBuffType: 00000000
   - id: 3001
-    name_EN: Tadpole Strike
-    name_CN: 
+    name_EN: Tadpole Hair
+    name_CN: Tadpole Hair
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -390,7 +390,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 3101
     name_EN: Cook Human On Time
-    name_CN: 
+    name_CN: Cook Human On Time
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -398,7 +398,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 3102
     name_EN: Unstable Rabbit
-    name_CN: 
+    name_CN: Unstable Rabbit
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -406,7 +406,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 3103
     name_EN: Random MilkTea
-    name_CN: 
+    name_CN: "\u5976\u8336\u4E09\u5144\u5F1F"
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -414,7 +414,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 3201
     name_EN: Hero Rabbit
-    name_CN: 
+    name_CN: Hero Rabbit
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -422,7 +422,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 3301
     name_EN: Void Rabbit
-    name_CN: 
+    name_CN: Void Rabbit
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -430,7 +430,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9001
     name_EN: Bite
-    name_CN: 
+    name_CN: Bite
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -438,7 +438,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9002
     name_EN: Write me!
-    name_CN: 
+    name_CN: Write me!
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -446,7 +446,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9101
     name_EN: Anxious Nodule
-    name_CN: 
+    name_CN: Anxious Nodule
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -454,7 +454,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9102
     name_EN: Anxious Fire
-    name_CN: 
+    name_CN: Anxious Fire
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -462,7 +462,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9103
     name_EN: Anxious Water
-    name_CN: 
+    name_CN: Anxious Water
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -470,7 +470,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9104
     name_EN: Anxious Gravity
-    name_CN: 
+    name_CN: Anxious Gravity
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -478,7 +478,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9201
     name_EN: Vision
-    name_CN: 
+    name_CN: Vision
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -486,7 +486,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9202
     name_EN: Cruelty
-    name_CN: 
+    name_CN: Cruelty
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -494,7 +494,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9301
     name_EN: Emotional Damage
-    name_CN: 
+    name_CN: Emotional Damage
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -502,7 +502,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9901
     name_EN: Summon Darkness
-    name_CN: 
+    name_CN: Summon Darkness
     desc_EN: 
     desc_CN: 
     listTagType:
