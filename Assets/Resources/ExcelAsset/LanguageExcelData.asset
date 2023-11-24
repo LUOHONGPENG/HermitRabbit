@@ -21,3 +21,11 @@ MonoBehaviour:
     key: tx_skill_cost
     descEN: 'Cost:'
     descCN: "\u6280\u80FD\u6D88\u8017"
+  - id: 3
+    key: tx_tutorial_continue
+    descEN: Continue
+    descCN: "\u7EE7\u7EED"
+  - id: 4
+    key: tx_tutorial_finish
+    descEN: Finish
+    descCN: "\u5B8C\u6210"

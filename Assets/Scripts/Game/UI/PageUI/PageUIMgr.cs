@@ -8,6 +8,7 @@ public class PageUIMgr : MonoBehaviour
     public StatusUIMgr statusUIMgr;
     public VictoryUIMgr victoryUIMgr;
     public TalkUIMgr talkUIMgr;
+    public TutorialUIMgr tutorialUIMgr;
     public SettingUIMgr settingUIMgr;
 
     private bool isInit = false;
@@ -18,6 +19,7 @@ public class PageUIMgr : MonoBehaviour
         statusUIMgr.Init();
         victoryUIMgr.Init();
         talkUIMgr.Init();
+        tutorialUIMgr.Init();
         settingUIMgr.Init();
 
         isInit = true;
