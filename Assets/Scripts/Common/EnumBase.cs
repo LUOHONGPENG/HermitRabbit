@@ -338,9 +338,12 @@ public enum TutorialGroup
 {
     None,
     Battle,
-    Skill,
     MapClip,
-    Plant
+    Plant,
+    Peace,
+    Skill,
+    Buff,
+    End
 }
 
 #endregion

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,6 +40,9 @@ public class TutorialUIMgr : MonoBehaviour
     [Header("Common")]
     public GameObject objCommon;
     public Button btnClose;
+    public Transform tfTag;
+    public GameObject pfTag;
+    private List<TutorialTagUIItem> listTag = new List<TutorialTagUIItem>();
 
     [Header("Page")]
     public Button btnLeft;
@@ -69,10 +73,29 @@ public class TutorialUIMgr : MonoBehaviour
         });
 
         btnLeft.onClick.RemoveAllListeners();
-        btnLeft.onClick.AddListener(LeftButtonEvent);
+        btnLeft.onClick.AddListener(delegate () 
+        {
+            LeftButtonEvent();
+        });
 
         btnRight.onClick.RemoveAllListeners();
-        btnRight.onClick.AddListener(RightButtonEvent);
+        btnRight.onClick.AddListener(delegate ()
+        {
+            RightButtonEvent();
+        });
+
+        listTag.Clear();
+        PublicTool.ClearChildItem(tfTag);
+        for(TutorialGroup i = TutorialGroup.None+1; i < TutorialGroup.End; i++)
+        {
+            GameObject objTag = GameObject.Instantiate(pfTag, tfTag);
+            TutorialTagUIItem itemTag = objTag.GetComponent<TutorialTagUIItem>();
+            itemTag.Init(i, delegate ()
+            {
+                SelectTutorialGroup(i);
+            });
+            listTag.Add(itemTag);
+        }
     }
 
     public void OnEnable()

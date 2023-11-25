@@ -504,6 +504,8 @@ MonoBehaviour:
   btnFinish: {fileID: 330050005597281335}
   objCommon: {fileID: 1626037483010818470}
   btnClose: {fileID: 2370308794948235569}
+  tfTag: {fileID: 3394361865592331443}
+  pfTag: {fileID: 4247800317964703945, guid: ee99a7b385c8ba44fa218a9061ad1a0f, type: 3}
   btnLeft: {fileID: 9142234520018729660}
   btnRight: {fileID: 8488760463506533739}
   codePage: {fileID: 1211951445200449503}
@@ -516,6 +518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3394361865592331443}
+  - component: {fileID: 187169372301487221}
   m_Layer: 5
   m_Name: listTag
   m_TagString: Untagged
@@ -543,6 +546,32 @@ RectTransform:
   m_AnchoredPosition: {x: -400, y: 70}
   m_SizeDelta: {x: 200, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &187169372301487221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2616191569770558573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 1
+  m_Spacing: 5
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &3036279136182063529
 GameObject:
   m_ObjectHideFlags: 0
