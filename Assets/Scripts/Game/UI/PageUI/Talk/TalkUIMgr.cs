@@ -115,7 +115,11 @@ public class TalkUIMgr : MonoBehaviour
     {
         if (curTalkGroup == TalkGroup.Day1)
         {
-            EventCenter.Instance.EventTrigger("StartTutorial", new StartTutorialInfo(TutorialMode.First, TutorialGroup.Battle));
+            PublicTool.StartConditionalTutorial(TutorialGroup.Battle);
+        }
+        else if(curTalkGroup == TalkGroup.Day2)
+        {
+            PublicTool.StartConditionalTutorial(TutorialGroup.Peace);
         }
     }
 

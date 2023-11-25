@@ -125,6 +125,7 @@ public class TutorialUIMgr : MonoBehaviour
             objCommon.SetActive(false);
 
             SelectTutorialGroup(group);
+            RefreshButton();
         }
         else if(tutorialMode == TutorialMode.Common)
         {
@@ -155,16 +156,22 @@ public class TutorialUIMgr : MonoBehaviour
         {
             ReadTutorialData();
 
-            if (curTutorialID == listCurTutorial.Count - 1)
-            {
-                btnContinue.gameObject.SetActive(false);
-                btnFinish.gameObject.SetActive(true);
-            }
-            else
-            {
-                btnFinish.gameObject.SetActive(false);
-                btnContinue.gameObject.SetActive(true);
-            }
+            RefreshButton();
+        }
+    }
+
+    public void RefreshButton()
+    {
+
+        if (curTutorialID == listCurTutorial.Count - 1)
+        {
+            btnContinue.gameObject.SetActive(false);
+            btnFinish.gameObject.SetActive(true);
+        }
+        else
+        {
+            btnFinish.gameObject.SetActive(false);
+            btnContinue.gameObject.SetActive(true);
         }
     }
 

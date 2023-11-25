@@ -62,4 +62,16 @@ public partial class PublicTool
         EventCenter.Instance.EventTrigger("PlaySound", soundType);
 
     }
+
+
+    #region Tutorial
+
+    public static void StartConditionalTutorial(TutorialGroup group)
+    {
+        EventCenter.Instance.EventTrigger("StartTutorial", new StartTutorialInfo(TutorialMode.First, group));
+
+    }
+
+
+    #endregion
 }
