@@ -176,13 +176,7 @@ public partial class SkillExcelItem
                     }
                 }
             }
-            else if(id == 1301)
-            {
-                if (PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1391))
-                {
-                    temp++;
-                }
-            }
+
             return temp;
         }
     }
@@ -307,6 +301,8 @@ public partial class SkillExcelItem
                     temp *= 0.75f;
                 }
             }
+
+
             return temp;
         }
     }
@@ -330,6 +326,14 @@ public partial class SkillExcelItem
                     BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
                     int lostHP = Mathf.RoundToInt((characterData.curMaxHP - characterData.curHP) / 3);
                     temp += lostHP;
+                }
+            }
+
+            if (id == 1301)
+            {
+                if (PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1391))
+                {
+                    temp--;
                 }
             }
             return temp;

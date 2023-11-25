@@ -86,7 +86,7 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Dodge Next X attack from enemy. Remove buff when turn start.
+    desc: Dodge Next X attack from unit. Remove buff when turn start.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Evade
@@ -188,6 +188,18 @@ MonoBehaviour:
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_BuyRES
+  - id: 3006
+    name: Spike
+    effectType: 2
+    maxLevel: 10
+    counterType: 0
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: Deal X damage to the source that hit this unit.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
+    iconUrl: imgBuff_Spike
   - id: 4001
     name: Burning
     effectType: 1
@@ -282,7 +294,7 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="ATK"> ATK - 1 in X turns.
+    desc: <sprite="Common" name="ATK"> ATK - X in X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_ATKDOWN
@@ -294,7 +306,7 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="DEF"> DEF - 1 in X turns.
+    desc: <sprite="Common" name="DEF"> DEF - X in X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_DEFDOWN
@@ -306,7 +318,7 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="RES"> RES - 1 in X turns.
+    desc: <sprite="Common" name="RES"> RES - X in X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_RESDOWN
@@ -318,7 +330,7 @@ MonoBehaviour:
     countDownType: 1
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="MOV"> MOV - 1 in next X turns.
+    desc: <sprite="Common" name="MOV"> MOV - X in next X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_MOVDOWN
