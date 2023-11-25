@@ -150,14 +150,15 @@ MonoBehaviour:
   - id: 1302
     name_EN: Clear
     name_CN: "\u6E05\u5FC3\u672F"
-    desc_EN: 'Remove 1 debuff for <sprite="Target" name="CUnit"> Character or <sprite="Target"
-      name="PUnit"> Plant
+    desc_EN: 'Remove 1 <sprite="BuffS" name="Down"> debuff for <sprite="Target" name="CUnit">
+      Character or <sprite="Target" name="PUnit"> Plant
 
-      Remove 1 buff for <sprite="Target" name="FUnit">
-      Foe'
+      Remove 1 <sprite="BuffS"
+      name="Up"> buff for <sprite="Target" name="FUnit"> Foe'
     desc_CN: "\u7ED9 <sprite=\"Target\" name=\"CUnit\"> \u89D2\u8272\u6216 <sprite=\"Target\"
-      name=\"PUnit\"> \u690D\u7269\u79FB\u96641\u5C42\u51CF\u76CA\n\u7ED9 <sprite=\"Target\"
-      name=\"FUnit\"> \u654C\u4EBA\u79FB\u96641\u5C42\u589E\u76CA"
+      name=\"PUnit\"> \u690D\u7269\u79FB\u96641\u5C42 <sprite=\"BuffS\" name=\"Down\">
+      \u51CF\u76CA\n\u7ED9 <sprite=\"Target\" name=\"FUnit\"> \u654C\u4EBA\u79FB\u96641\u5C42
+      <sprite=\"BuffS\" name=\"Up\"> \u589E\u76CA"
     listTagType:
     - 0
     listBuffType: 00000000
@@ -217,13 +218,11 @@ MonoBehaviour:
     name_EN: Time Expand
     name_CN: "\u65F6\u95F4\u81A8\u80C0"
     desc_EN: 'Double the level of all <sprite="BuffS" name="Down"> debuff for <sprite="Target"
-      name="FUnit"> Foe
-
-      <sprite="BuffS" name="Up"> buff for <sprite="Target"
-      name="CUnit"> Character or <sprite="Target" name="PUnit"> Plant
+      name="FUnit"> Foe. Double <sprite="BuffS" name="Up"> buff for <sprite="Target"
+      name="CUnit"> Character or <sprite="Target" name="PUnit"> Plant.
 
       Except
-      the buff from <sprite="SkillType" name="USkill"> Ultimate Skill'
+      the buff from <sprite="SkillType" name="USkill"> Ultimate Skill.'
     desc_CN: "\u7FFB\u500D <sprite=\"Target\" name=\"FUnit\"> \u654C\u4EBA\u7684
       <sprite=\"BuffS\" name=\"Down\"> \u51CF\u76CA\u5C42\u6570\n\u7FFB\u500D <sprite=\"Target\"
       name=\"CUnit\"> \u89D2\u8272\u6216 <sprite=\"Target\" name=\"PUnit\"> \u690D\u7269\u7684

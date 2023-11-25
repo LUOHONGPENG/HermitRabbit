@@ -122,7 +122,8 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Get 1 level Fragile when losting <sprite="Common" name="HP"> HP in X turns.
+    desc: Get 1 level <sprite="BuffS" name="Fragile"> Fragile when losting <sprite="Common"
+      name="HP"> HP in X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Fear
