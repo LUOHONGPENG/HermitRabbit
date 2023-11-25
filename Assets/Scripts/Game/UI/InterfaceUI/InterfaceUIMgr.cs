@@ -16,6 +16,7 @@ public class InterfaceUIMgr : MonoBehaviour
     public Text txPhase;
     public Text txDayInfo;
     public Button btnSetting;
+    public Button btnHelp;
 
     private bool isInit = false;
 
@@ -32,6 +33,12 @@ public class InterfaceUIMgr : MonoBehaviour
         btnSetting.onClick.AddListener(delegate ()
         {
             EventCenter.Instance.EventTrigger("ShowSetting", null);
+        });
+
+        btnHelp.onClick.RemoveAllListeners();
+        btnHelp.onClick.AddListener(delegate ()
+        {
+            EventCenter.Instance.EventTrigger("StartTutorial", new StartTutorialInfo(TutorialMode.Common, TutorialGroup.None));
         });
 
         if (InputMgr.Instance.GetInteractState() == InteractState.PeaceNormal)

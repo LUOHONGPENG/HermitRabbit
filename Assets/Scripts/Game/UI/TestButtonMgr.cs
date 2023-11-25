@@ -9,9 +9,6 @@ public class TestButtonMgr : MonoBehaviour
 
     public Button btnAddExp;
 
-    public Button btnSave1;
-    public Button btnSave2;
-
     public Button btnBack;
 
     public void Init()
@@ -22,17 +19,6 @@ public class TestButtonMgr : MonoBehaviour
             EventCenter.Instance.EventTrigger("TestButton", "AddExp");
         });
 
-        btnSave1.onClick.RemoveAllListeners();
-        btnSave1.onClick.AddListener(delegate ()
-        {
-            EventCenter.Instance.EventTrigger("TestButton", "Save1");
-        });
-
-        btnSave2.onClick.RemoveAllListeners();
-        btnSave2.onClick.AddListener(delegate ()
-        {
-            EventCenter.Instance.EventTrigger("TestButton", "Save2");
-        });
 
         btnBack.onClick.RemoveAllListeners();
         btnBack.onClick.AddListener(delegate ()

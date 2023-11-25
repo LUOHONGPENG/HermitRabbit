@@ -323,7 +323,7 @@ MonoBehaviour:
       <sprite=\"Common\" name=\"HP\"> \u751F\u547D"
     listTagType:
     - TDmg
-    listBuffType: ed030000
+    listBuffType: ef030000
   - id: 2401
     name_EN: Rush Hour
     name_CN: "\u4E0B\u73ED\u6253\u5361"

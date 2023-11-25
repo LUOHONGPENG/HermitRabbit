@@ -40,6 +40,11 @@ public class TutorialUIMgr : MonoBehaviour
     public GameObject objCommon;
     public Button btnClose;
 
+    [Header("Page")]
+    public Button btnLeft;
+    public Button btnRight;
+    public TextMeshProUGUI codePage;
+
     private List<TutorialExcelItem> listCurTutorial = new List<TutorialExcelItem>();
     private int curTutorialID = -1;
 
@@ -62,6 +67,12 @@ public class TutorialUIMgr : MonoBehaviour
         {
             HidePopup();
         });
+
+        btnLeft.onClick.RemoveAllListeners();
+        btnLeft.onClick.AddListener(LeftButtonEvent);
+
+        btnRight.onClick.RemoveAllListeners();
+        btnRight.onClick.AddListener(RightButtonEvent);
     }
 
     public void OnEnable()
@@ -83,18 +94,25 @@ public class TutorialUIMgr : MonoBehaviour
 
     public void StartTutorial(TutorialMode tutorialMode,TutorialGroup group)
     {
-        if(tutorialMode == TutorialMode.First)
+        if (tutorialMode == TutorialMode.First)
         {
             objFirst.SetActive(true);
             objCommon.SetActive(false);
+
+            SelectTutorialGroup(group);
         }
         else if(tutorialMode == TutorialMode.Common)
         {
             objFirst.SetActive(false);
             objCommon.SetActive(true);
-        }
 
-        //LoadTutorial
+            SelectTutorialGroup(TutorialGroup.Battle);
+            RefreshPageNum();
+        }
+    }
+
+    public void SelectTutorialGroup(TutorialGroup group)
+    {
         listCurTutorial = PublicTool.GetTutorialGroup(group);
         if (listCurTutorial != null)
         {
@@ -102,15 +120,25 @@ public class TutorialUIMgr : MonoBehaviour
             ReadTutorialData();
             objPopup.SetActive(true);
         }
-
     }
 
     public void TutorialNextStep()
     {
         curTutorialID++;
-        if(curTutorialID< listCurTutorial.Count && curTutorialID >= 0)
+        if(curTutorialID < listCurTutorial.Count && curTutorialID >= 0)
         {
             ReadTutorialData();
+
+            if (curTutorialID == listCurTutorial.Count - 1)
+            {
+                btnContinue.gameObject.SetActive(false);
+                btnFinish.gameObject.SetActive(true);
+            }
+            else
+            {
+                btnFinish.gameObject.SetActive(false);
+                btnContinue.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -133,16 +161,6 @@ public class TutorialUIMgr : MonoBehaviour
                 imgDesc.sprite = null;
             }
 
-            if (curTutorialID == listCurTutorial.Count - 1)
-            {
-                btnContinue.gameObject.SetActive(false);
-                btnFinish.gameObject.SetActive(true);
-            }
-            else
-            {
-                btnFinish.gameObject.SetActive(false);
-                btnContinue.gameObject.SetActive(true);
-            }
         }
     }
 
@@ -151,4 +169,37 @@ public class TutorialUIMgr : MonoBehaviour
         objPopup.SetActive(false);
     }
 
+    public void LeftButtonEvent()
+    {
+        if (curTutorialID >= 1)
+        {
+            curTutorialID--;
+            if (curTutorialID < listCurTutorial.Count && curTutorialID >= 0)
+            {
+                ReadTutorialData();
+                RefreshPageNum();
+            }
+        }
+    }
+
+    public void RightButtonEvent()
+    {
+        if (curTutorialID < listCurTutorial.Count-1)
+        {
+            curTutorialID++;
+            if (curTutorialID < listCurTutorial.Count && curTutorialID >= 0)
+            {
+                ReadTutorialData();
+                RefreshPageNum();
+            }
+        }
+    }
+
+    private void RefreshPageNum()
+    {
+        if (listCurTutorial != null)
+        {
+            codePage.text = string.Format("{0}/{1}", curTutorialID + 1, listCurTutorial.Count);
+        }
+    }
 }

@@ -21,6 +21,7 @@ public enum SaveSlotName
     Auto,
     Slot1,
     Slot2,
+    Slot3,
     End,
     BeforeBattle
 }

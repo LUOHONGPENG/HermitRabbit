@@ -59,7 +59,7 @@ public class TalkUIMgr : MonoBehaviour
         if (ExcelDataMgr.Instance.talkExcelData.dicTalk.ContainsKey(talkGroup))
         {
             listTalk = ExcelDataMgr.Instance.talkExcelData.dicTalk[talkGroup];
-            curTalkGroup = TalkGroup.Day1;
+            curTalkGroup = talkGroup;
             Continue();
             objPopup.SetActive(true);
         }
@@ -108,6 +108,7 @@ public class TalkUIMgr : MonoBehaviour
     {
         CheckWhetherOpenTutorial();
         objPopup.SetActive(false);
+        curTalkGroup = TalkGroup.None;
     }
 
     private void CheckWhetherOpenTutorial()
