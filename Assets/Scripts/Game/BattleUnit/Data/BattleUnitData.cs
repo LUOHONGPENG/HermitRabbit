@@ -118,6 +118,18 @@ public partial class BattleUnitData
             {
                 temp++;
             }
+            if (CheckBuffExist(3003))
+            {
+                temp += GetBuffLevel(3003);
+            }
+            if (CheckBuffExist(5001))
+            {
+                temp++;
+            }
+            if (CheckBuffExist(6001))
+            {
+                temp -= GetBuffLevel(6001);
+            }
             temp += tileBuffATK;
             return temp;
         }
@@ -131,6 +143,18 @@ public partial class BattleUnitData
             if (CheckBuffExist(1004))
             {
                 temp++;
+            }
+            if (CheckBuffExist(3004))
+            {
+                temp += GetBuffLevel(3004);
+            }
+            if (CheckBuffExist(5002))
+            {
+                temp++;
+            }
+            if (CheckBuffExist(6002))
+            {
+                temp -= GetBuffLevel(6002);
             }
             temp += tileBuffDEF;
             return temp;
@@ -146,6 +170,18 @@ public partial class BattleUnitData
             {
                 temp++;
             }
+            if (CheckBuffExist(3005))
+            {
+                temp += GetBuffLevel(3005);
+            }
+            if (CheckBuffExist(5003))
+            {
+                temp++;
+            }
+            if (CheckBuffExist(6003))
+            {
+                temp -= GetBuffLevel(6003);
+            }
             temp += tileBuffRES;
             return temp;
         }
@@ -160,6 +196,10 @@ public partial class BattleUnitData
             {
                 temp++;
             }
+            if (CheckBuffExist(5004))
+            {
+                temp++;
+            }
             return temp;
         }
     }
@@ -169,6 +209,10 @@ public partial class BattleUnitData
         get
         {
             int temp = 0;
+            if (CheckBuffExist(6004))
+            {
+                temp -= GetBuffLevel(6004);
+            }
             temp += tileBuffRegenMOV;
             return temp;
         }
@@ -206,6 +250,26 @@ public partial class BattleUnitData
     }
 
     #region Special Buff Affect
+
+    public virtual int buffHeal
+    {
+        get
+        {
+            int temp = 0;
+            if (CheckBuffExist(5005))
+            {
+                temp+=2;
+            }
+            if (CheckBuffExist(6005))
+            {
+                temp -= GetBuffLevel(6005);
+            }
+            return temp;
+        }
+
+
+    }
+
 
     //Damage = Damage + X
     public virtual int buffAddHurt
@@ -276,6 +340,10 @@ public partial class BattleUnitData
         get
         {
             int temp = 0;
+            if (CheckBuffExist(3006))
+            {
+                temp += GetBuffLevel(3006);
+            }
             return temp;
         }
     }

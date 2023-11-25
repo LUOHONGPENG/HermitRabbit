@@ -29,6 +29,7 @@ public partial class BattleMgr
         //HopeTile
         yield return StartCoroutine(IE_HopeApplyFragile());
 
+
         //BuffCheck
         yield return StartCoroutine(IE_FriendBuffCheck());
         if (isBattleEnd)

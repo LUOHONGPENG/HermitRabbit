@@ -23,6 +23,20 @@ public partial class BattleUnitData
             {
                 damage -= buffReduceHurt;
                 damage -= damage * buffReduceHurtRate;
+
+                if (CheckBuffExist(3002))
+                {
+                    if(damage > GetBuffLevel(3002))
+                    {
+                        damage -= GetBuffLevel(3002);
+                        RemoveBuff(3002);
+                    }
+                    else
+                    {
+                        DecreaseBuffNum(3002,Mathf.CeilToInt(damage));
+                        damage = 0;
+                    }
+                }
             }
 
             if (CheckBuffExist(1001) && damage > curHP)
@@ -31,7 +45,7 @@ public partial class BattleUnitData
                 damage = curHP - 1;
             }
             //Curse //Fragile
-            if (CheckBuffExist(2001))
+            if (damage > 0 && CheckBuffExist(2001))
             {
                 AddBuff(4002,1);
             }
@@ -56,13 +70,24 @@ public partial class BattleUnitData
         return damage;
     }
 
-    public void GetHeal(float healPoint)
+    public float GetHeal(float healPoint)
     {
-        curHP += healPoint;
-        EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
-        if (curHP >= curMaxHP)
+        float RealHealPoint = healPoint + buffHeal;
+
+        if(RealHealPoint > 0)
         {
-            curHP = curMaxHP;
+            curHP += RealHealPoint;
+            EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
+            if (curHP >= curMaxHP)
+            {
+                curHP = curMaxHP;
+            }
+            return RealHealPoint;
         }
+        else
+        {
+            return 0;
+        }
+
     }
 }

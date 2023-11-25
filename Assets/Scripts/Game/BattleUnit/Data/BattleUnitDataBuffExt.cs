@@ -65,6 +65,20 @@ public partial class BattleUnitData
             EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
         }
     }
+    public void DecreaseBuffNum(int id,int num)
+    {
+        if (CheckBuffExist(id))
+        {
+            Buff buff = dicBuff[id];
+            buff.level-= num;
+            if (buff.level <= 0)
+            {
+                RemoveBuff(id);
+            }
+            EventCenter.Instance.EventTrigger("UnitUIRefresh", null);
+        }
+    }
+
     public void HalfBuff(int id)
     {
         if (CheckBuffExist(id))
@@ -162,9 +176,14 @@ public partial class BattleUnitData
             {
                 switch (listBuff[i].id)
                 {
+                    case 3001:
+                        int FinalHeal = Mathf.RoundToInt(GetHeal(buffInfo.level));
+                        EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Heal, FinalHeal.ToString(), posID));
+                        isTriggered = true;
+                        break;
                     case 4001:
-                        GetHurt(buffInfo.level,true);
-                        EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-buffInfo.level).ToString(), posID));
+                        int FinalBurn = Mathf.RoundToInt(GetHurt(buffInfo.level,true));
+                        EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-FinalBurn).ToString(), posID));
                         isTriggered = true;
                         break;
                 }

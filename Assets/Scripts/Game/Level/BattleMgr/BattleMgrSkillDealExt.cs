@@ -154,6 +154,7 @@ public partial class BattleMgr
             {
                 realDamage += realDamage * target.buffAddHurtRate;
                 realDamage += target.buffAddHurt;
+
                 int NormalizedDamage = NormalizeRealDamage(realDamage);
                 int FinalDamage = NormalizeRealDamage(target.GetHurt(NormalizedDamage, true));
                 target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Damage, (-FinalDamage).ToString(), target.posID));
@@ -162,8 +163,8 @@ public partial class BattleMgr
                 if (source.GetBuffLevel(1007) > 0)
                 {
                     int absorbHP = (FinalDamage + 1) / 2;
-                    source.GetHeal(absorbHP);
-                    source.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Heal, (absorbHP).ToString(), source.posID));
+                    int FinalHeal = NormalizeRealDamage(source.GetHeal(absorbHP));
+                    source.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Heal, (FinalHeal).ToString(), source.posID));
                     source.DecreaseBuff(1007);
                 }
             }
@@ -180,8 +181,8 @@ public partial class BattleMgr
         {
             realDamage = damageSource;
             int NormalizedDamage = NormalizeRealDamage(realDamage);
-            target.GetHeal(NormalizedDamage);
-            target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Heal, (NormalizedDamage).ToString(), target.posID));
+            int FinalHeal = NormalizeRealDamage(target.GetHeal(NormalizedDamage));
+            target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Heal, (FinalHeal).ToString(), target.posID));
         }
     }
 

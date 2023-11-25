@@ -123,9 +123,8 @@ public partial class BattleMgr
             if (healUnit.type == BattleUnitType.Plant)
             {
                 BattleUnitData unitData = gameData.GetDataFromUnitInfo(healUnit);
-                unitData.GetHeal(2);
-                unitData.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Heal, 2.ToString(), unitData.posID));
-
+                int FinalHeal = Mathf.RoundToInt(unitData.GetHeal(2));
+                unitData.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Heal, FinalHeal.ToString(), unitData.posID));
                 BattleUnitView unitView = unitViewMgr.GetViewFromUnitInfo(healUnit);
                 unitView.RequestBattleText();
 

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - id: 1001
-    name: FinalGuard
+    name: Deadline Fighter
     effectType: 2
     maxLevel: 1
     counterType: 3
@@ -24,7 +24,7 @@ MonoBehaviour:
     desc: Won't die before next turn. Remove buff when turn start.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
-    iconUrl: buff_Up
+    iconUrl: imgBuff_Deadline
   - id: 1002
     name: Overtime Work
     effectType: 2
@@ -33,22 +33,23 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="AP"> AP + 1. Decrease buff by turn.
+    desc: <sprite="Common" name="AP"> MaxAP + 1 in X turns.
     firstSpecialEffect: 1003
     firstSpecialDelta: 1
-    iconUrl: buff_Up
+    iconUrl: imgBuff_Overtime
   - id: 1003
     name: Infinity
     effectType: 2
-    maxLevel: 3
+    maxLevel: 4
     counterType: 0
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 0
-    desc: '<sprite="Common" name="Radius"> Radius + 1 for next X '
+    desc: <sprite="Common" name="Radius"> Radius + 1 for next X <sprite="SkillType"
+      name="SSkill"> Support Skill or <sprite="SkillType" name="HSkill"> Hurt Skill.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
-    iconUrl: buff_Up
+    iconUrl: imgBuff_Infinity
   - id: 1004
     name: Super Worker
     effectType: 2
@@ -58,11 +59,11 @@ MonoBehaviour:
     canBeRemoved: 1
     canBeDouble: 0
     desc: Increase <sprite="Common" name="ATK"> ATK <sprite="Common" name="DEF">
-      DEF <sprite="Common" name="RES"> RES <sprite="Common" name="MOV"> MOV by 1
-      in X turns. Decrease buff by turn.
+      DEF <sprite="Common" name="RES"> RES and <sprite="Common" name="MOV"> MaxMOV
+      by 1 in X turns.
     firstSpecialEffect: 1004
     firstSpecialDelta: 1
-    iconUrl: buff_Up
+    iconUrl: imgBuff_Super
   - id: 1005
     name: Chanting
     effectType: 2
@@ -71,14 +72,14 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 0
-    desc: <sprite="Common" name="Range"> Range + 2 and <sprite="Common" name="AP">
-      AP + 1. <sprite="Common" name="MOV"> MOV = 0 when turn starts. Decrease buff
-      by turn.
+    desc: <sprite="Common" name="Range"> Range + 2 and  <sprite="Common" name="AP">
+      MaxAP + 1. <sprite="Common" name="MOV"> MOV = 0 when turn starts. Decrease
+      buff by turn.
     firstSpecialEffect: 1003
     firstSpecialDelta: 1
-    iconUrl: buff_Up
+    iconUrl: imgBuff_Chant
   - id: 1006
-    name: Chronal Shift
+    name: Evade
     effectType: 2
     maxLevel: 10
     counterType: 3
@@ -88,7 +89,7 @@ MonoBehaviour:
     desc: Dodge Next X attack from enemy. Remove buff when turn start.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
-    iconUrl: buff_Up
+    iconUrl: imgBuff_Evade
   - id: 1007
     name: Absorb
     effectType: 2
@@ -100,7 +101,7 @@ MonoBehaviour:
     desc: Next X skill can restore <sprite="Common" name="HP"> HP according to damage.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
-    iconUrl: buff_Up
+    iconUrl: imgBuff_Absorb
   - id: 1008
     name: Hated
     effectType: 2
@@ -112,7 +113,7 @@ MonoBehaviour:
     desc: Attract enemies' attack. Buff decrease by turn.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
-    iconUrl: buff_Up
+    iconUrl: imgBuff_Hated
   - id: 2001
     name: Fear
     effectType: 1
@@ -121,11 +122,10 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Get 1 level Fragile when losting <sprite="Common" name="HP"> HP. Buff decrease
-      by turn.
+    desc: Get 1 level Fragile when losting <sprite="Common" name="HP"> HP in X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
-    iconUrl: buff_Down
+    iconUrl: imgBuff_Fear
   - id: 3001
     name: Regen
     effectType: 2
@@ -138,7 +138,7 @@ MonoBehaviour:
       by turn.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
-    iconUrl: buff_Up
+    iconUrl: imgBuff_Regen
   - id: 3002
     name: Shield
     effectType: 2
@@ -147,11 +147,47 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Reduce X damage when losting <sprite="Common" name="HP"> HP. Remove buff
-      when turn start.
+    desc: Block X damage and buff decrease according to damage. Remove buff when
+      turn start.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
-    iconUrl: buff_Up
+    iconUrl: imgBuff_Shield
+  - id: 3003
+    name: Angry
+    effectType: 2
+    maxLevel: 10
+    counterType: 0
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: <sprite="Common" name="ATK"> ATK + X.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
+    iconUrl: imgBuff_Angry
+  - id: 3004
+    name: Buy DEF
+    effectType: 2
+    maxLevel: 10
+    counterType: 1
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: <sprite="Common" name="DEF"> DEF + X in X turns.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
+    iconUrl: imgBuff_BuyDEF
+  - id: 3005
+    name: Buy RES
+    effectType: 2
+    maxLevel: 10
+    counterType: 1
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: <sprite="Common" name="RES"> RES + X in X turns.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
+    iconUrl: imgBuff_BuyRES
   - id: 4001
     name: Burning
     effectType: 1
@@ -164,7 +200,7 @@ MonoBehaviour:
       turn.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
-    iconUrl: buff_Burning
+    iconUrl: imgBuff_Burn
   - id: 4002
     name: Fragile
     effectType: 1
@@ -177,4 +213,125 @@ MonoBehaviour:
       name="HP"> HP. Buff reduces by half every turn.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
-    iconUrl: buff_Down
+    iconUrl: imgBuff_Fragile
+  - id: 5001
+    name: 'ATK UP '
+    effectType: 2
+    maxLevel: 10
+    counterType: 1
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: <sprite="Common" name="ATK"> ATK + 1 in X turns.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
+    iconUrl: imgBuff_ATKUP
+  - id: 5002
+    name: DEF UP
+    effectType: 2
+    maxLevel: 10
+    counterType: 1
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: <sprite="Common" name="DEF"> DEF + 1 in X turns.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
+    iconUrl: imgBuff_DEFUP
+  - id: 5003
+    name: RES UP
+    effectType: 2
+    maxLevel: 10
+    counterType: 1
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: <sprite="Common" name="RES"> RES + 1 in X turns.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
+    iconUrl: imgBuff_RESUP
+  - id: 5004
+    name: MOV UP
+    effectType: 2
+    maxLevel: 10
+    counterType: 1
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: <sprite="Common" name="MOV"> MaxMOV + 1 in X turns.
+    firstSpecialEffect: 1004
+    firstSpecialDelta: 1
+    iconUrl: imgBuff_MOVUP
+  - id: 5005
+    name: Heal UP
+    effectType: 2
+    maxLevel: 10
+    counterType: 1
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: Recover extra 2 <sprite="Common" name="HP"> HP when being healed in X turns.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
+    iconUrl: imgBuff_HealUP
+  - id: 6001
+    name: ATK DOWN
+    effectType: 1
+    maxLevel: 10
+    counterType: 1
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: <sprite="Common" name="ATK"> ATK - 1 in X turns.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
+    iconUrl: imgBuff_ATKDOWN
+  - id: 6002
+    name: DEF DOWN
+    effectType: 1
+    maxLevel: 10
+    counterType: 1
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: <sprite="Common" name="DEF"> DEF - 1 in X turns.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
+    iconUrl: imgBuff_DEFDOWN
+  - id: 6003
+    name: RES DOWN
+    effectType: 1
+    maxLevel: 10
+    counterType: 1
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: <sprite="Common" name="RES"> RES - 1 in X turns.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
+    iconUrl: imgBuff_RESDOWN
+  - id: 6004
+    name: MOV DOWN
+    effectType: 1
+    maxLevel: 10
+    counterType: 1
+    countDownType: 1
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: <sprite="Common" name="MOV"> MOV - 1 in next X turns.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
+    iconUrl: imgBuff_MOVDOWN
+  - id: 6005
+    name: Heal DOWN
+    effectType: 1
+    maxLevel: 10
+    counterType: 1
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    desc: The amount of recovering <sprite="Common" name="HP"> HP - X when being
+      healed. Decrease buff by turn.
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
+    iconUrl: imgBuff_HealDown
