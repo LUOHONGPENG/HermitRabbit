@@ -90,9 +90,11 @@ public class TutorialUIMgr : MonoBehaviour
         {
             GameObject objTag = GameObject.Instantiate(pfTag, tfTag);
             TutorialTagUIItem itemTag = objTag.GetComponent<TutorialTagUIItem>();
-            itemTag.Init(i, delegate ()
+            TutorialGroup tempGroup = i;
+            itemTag.Init(tempGroup, delegate ()
             {
-                SelectTutorialGroup(i);
+                SelectTutorialGroup(tempGroup);
+                RefreshPageNum();
             });
             listTag.Add(itemTag);
         }
@@ -136,9 +138,10 @@ public class TutorialUIMgr : MonoBehaviour
 
     public void SelectTutorialGroup(TutorialGroup group)
     {
-        listCurTutorial = PublicTool.GetTutorialGroup(group);
-        if (listCurTutorial != null)
+        List<TutorialExcelItem> listTemp = PublicTool.GetTutorialGroup(group);
+        if (listTemp != null && listTemp.Count>0)
         {
+            listCurTutorial = listTemp;
             curTutorialID = 0;
             ReadTutorialData();
             objPopup.SetActive(true);

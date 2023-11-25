@@ -53,33 +53,86 @@ MonoBehaviour:
       If
       all character''s <sprite="Common" name="HP"> HP become 0, you will lose.'
     imgUrl: 
-  - id: 5
-    group: 2
-    strTitle: 
-    strContent: 1
-    imgUrl: 
   - id: 6
     group: 2
-    strTitle: 
-    strContent: 2
+    strTitle: Select Map
+    strContent: 'You can select 2 mapclips after battle.
+
+      Tiles on the mapclip
+      can change the map and create advantage.'
     imgUrl: 
   - id: 7
-    group: 3
-    strTitle: 
-    strContent: 1
+    group: 2
+    strTitle: Tile Function
+    strContent: 'For example, <sprite="Tile" name="GrassT"> Grass tile can burn and
+      hurt unit above when turn starts.
+
+      <sprite="Tile" name="StoneT"> Stone
+      tile can block the path of foes.'
     imgUrl: 
   - id: 8
-    group: 3
-    strTitle: 
-    strContent: 2
+    group: 2
+    strTitle: Refresh Map
+    strContent: You can refresh the choices by clicking REFRESH, which cost <sprite="Common"
+      name="Memory"> Memory.
     imgUrl: 
   - id: 9
-    group: 4
-    strTitle: 
-    strContent: 1
+    group: 3
+    strTitle: Plant
+    strContent: 'You can select 1 plant after battle.
+
+      <sprite="Target" name="PUnit">
+      Plant is a special unit without <sprite="Common" name="MOV"> MOV and <sprite="Common"
+      name="AP"> AP.'
     imgUrl: 
   - id: 10
+    group: 3
+    strTitle: Plant
+    strContent: '<sprite="Target" name="PUnit"> Plant is useful if the condition
+      of spelling skill is triggered.
+
+      For example, Void Grass will injure
+      everyone near it when the second turn starts.'
+    imgUrl: 
+  - id: 11
     group: 4
-    strTitle: 
+    strTitle: Day Time
+    strContent: In day time, you can do a lot of things to prepare for next battle.
+    imgUrl: 
+  - id: 12
+    group: 4
+    strTitle: Learn Skill-1
+    strContent: 'Firstly, you can click the SKILL button to open the skill tree page.
+
+      Then
+      you can spend <sprite="Common" name="SP"> Confidence to learn Skill.'
+    imgUrl: 
+  - id: 13
+    group: 4
+    strTitle: Learn Skill-2
+    strContent: You can reset the skill tree without limitation.
+    imgUrl: 
+  - id: 14
+    group: 4
+    strTitle: Set Map
+    strContent: Secondly, you can click the MAP button to set mapclips.
+    imgUrl: 
+  - id: 15
+    group: 4
+    strTitle: Set Plant
+    strContent: 'Thirdly, you can click Plant button to set <sprite="Target" name="PUnit">
+      Plant.
+
+      Setting <sprite="Target" name="PUnit"> Plant will occupy the
+      <sprite="Common" name="Essence"> Essence Points.'
+    imgUrl: 
+  - id: 16
+    group: 5
+    strTitle: Spell Skill
+    strContent: 1
+    imgUrl: 
+  - id: 17
+    group: 5
+    strTitle: Combination
     strContent: 2
     imgUrl: 
