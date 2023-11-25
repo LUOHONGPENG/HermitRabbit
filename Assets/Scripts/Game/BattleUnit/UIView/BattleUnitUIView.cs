@@ -45,7 +45,12 @@ public class BattleUnitUIView : MonoBehaviour
 
     public void RefreshUIPos()
     {
-        tfUIView.localPosition = PublicTool.CalculateScreenUIPos(parent.transform.position, GameMgr.Instance.curMapCamera);
+        Vector2 cameraPos = new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.z);
+        Vector2 thisPos = new Vector2(parent.transform.position.x, parent.transform.position.z);
+        Vector2 direction = cameraPos - thisPos;
+        float delta = direction.magnitude / 20f - 0.25f;
+
+        tfUIView.localPosition = PublicTool.CalculateScreenUIPos(parent.transform.position + new Vector3(0,delta, 0), GameMgr.Instance.curMapCamera);
     }
 
     public void RefreshHPBar(float HPrate)
