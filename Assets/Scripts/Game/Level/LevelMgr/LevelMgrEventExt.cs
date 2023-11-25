@@ -171,6 +171,14 @@ public partial class LevelMgr
             }
             battleMgr.StartNewBattle(this);
         }
+
+        //Tutorial
+        if(gameData.numDay == 2)
+        {
+            PublicTool.StartConditionalTutorial(TutorialGroup.Skill);
+        }
+
+
     }
 
     private void BattleEndEvent(object arg0)
