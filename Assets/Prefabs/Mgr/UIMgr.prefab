@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2163677679965199076}
   - component: {fileID: 243453141940502224}
   - component: {fileID: 243453141940502227}
-  - component: {fileID: 243453141940502226}
+  - component: {fileID: 3145360367766014395}
   m_Layer: 5
   m_Name: UIMgr
   m_TagString: Untagged
@@ -80,7 +80,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: -345052059
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!114 &243453141940502226
+--- !u!114 &3145360367766014395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 243453141940502237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ef5b9dd8ccf0e44b831371e7faed03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
