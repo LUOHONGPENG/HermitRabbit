@@ -22,7 +22,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 1
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Pulse
     rowID: 0
     columnID: 0
     remark: 
@@ -113,7 +113,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Gravity
+    iconUrl: imgIconSkill_Genesis
     rowID: 2
     columnID: 0
     remark: 
@@ -165,7 +165,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Drown
     rowID: 2
     columnID: 2
     remark: 
@@ -204,7 +204,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1001
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Voltage
     rowID: 2
     columnID: 4
     remark: 

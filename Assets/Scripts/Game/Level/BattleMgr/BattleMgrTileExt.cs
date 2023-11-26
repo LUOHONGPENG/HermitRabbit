@@ -78,7 +78,7 @@ public partial class BattleMgr
                 int BurnDelta = 0;
                 if (unitData.CheckBuffExist(4001))
                 {
-                    BurnDelta = 1;
+                    BurnDelta = 2;
                 }
                 else
                 {
