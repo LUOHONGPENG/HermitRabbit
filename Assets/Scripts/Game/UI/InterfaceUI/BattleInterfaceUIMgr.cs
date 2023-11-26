@@ -16,9 +16,18 @@ public class BattleInterfaceUIMgr : MonoBehaviour
     {
         btnEndTurn.onClick.RemoveAllListeners();
         btnEndTurn.onClick.AddListener(delegate() {
-            EventCenter.Instance.EventTrigger("CharacterPhaseEnd", null);
-            HideEndTurnBtn();
-            PublicTool.EventReadyAni(-1);
+
+            switch (InputMgr.Instance.interactState)
+            {
+                case InteractState.BattleNormal:
+                case InteractState.CharacterMove:
+                case InteractState.CharacterSkill:
+                    EventCenter.Instance.EventTrigger("CharacterPhaseEnd", null);
+                    HideEndTurnBtn();
+                    PublicTool.EventReadyAni(-1);
+                    break;
+            }
+
         });
     }
 
