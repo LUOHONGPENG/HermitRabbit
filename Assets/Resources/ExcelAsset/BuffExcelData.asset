@@ -161,7 +161,8 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="ATK"> ATK + X.
+    desc: <sprite="Common" name="ATK"> ATK + X and <sprite="Common" name="DEF"> DEF
+      - X.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Angry

@@ -471,7 +471,7 @@ MonoBehaviour:
     plantEffect: 2
     damageType: 3
     damageDeltaStd: 7
-    damageDelta: 25
+    damageDelta: 20
     damageModifier: 0
     listBuffEffect: 00000000
     listBuffDelta: 00000000

@@ -26,6 +26,9 @@ public partial class BattleMgr
             yield break;
         }
 
+        //Angry
+        yield return StartCoroutine(IE_FriendPassiveCheck());
+
         //HopeTile
         yield return StartCoroutine(IE_HopeApplyFragile());
 
@@ -82,6 +85,25 @@ public partial class BattleMgr
             yield return new WaitForSeconds(GameGlobal.waitTimeText);
             yield return StartCoroutine(IE_AfterSkill());
             yield return StartCoroutine(IE_CheckBattleOver());
+        }
+        yield break;
+    }
+
+    private IEnumerator IE_FriendPassiveCheck()
+    {
+        if (PublicTool.CheckWhetherCharacterUnlockSkill(1002, 2391) && numTurn > 1)
+        {
+            BattleCharacterData foxData = gameData.GetBattleCharacterData(1002);
+            if (foxData.HPrate >= 0.85)
+            {
+                BuffExcelItem buff = PublicTool.GetBuffExcelItem(3003);
+                SkillBuffEffectDeal(foxData, 3003, 1, buff.name, buff.effectType);
+                BattleCharacterView foxView = unitViewMgr.GetCharacterView(foxData.keyID);
+                foxView.RequestBattleText();
+                PublicTool.EventNormalCameraGoPosID(foxData.posID);
+                yield return new WaitForSeconds(GameGlobal.waitTimeText);
+
+            }
         }
         yield break;
 

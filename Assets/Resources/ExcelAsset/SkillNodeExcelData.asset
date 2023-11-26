@@ -351,6 +351,19 @@ MonoBehaviour:
     rowID: 1
     columnID: 1
     remark: 
+  - id: 2391
+    name: Pretend Working
+    nodeType: 2
+    costSP: 1
+    conditionSPSpent: 0
+    conditionPreNode: fd080000
+    conflictNode: 0
+    isInitUnlock: 0
+    characterID: 1002
+    iconUrl: imgIconSkill_Angry
+    rowID: 2
+    columnID: 0
+    remark: 
   - id: 2302
     name: Fish Drat
     nodeType: 1
