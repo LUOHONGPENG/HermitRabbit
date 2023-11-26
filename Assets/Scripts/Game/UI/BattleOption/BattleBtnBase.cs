@@ -6,17 +6,17 @@ using UnityEngine.Events;
 
 public class BattleBtnBase : MonoBehaviour
 {
-    public Outline outlineSelect;
+    public Image imgSelected;
     public Button btnAction;
 
     public void RefreshOnSelect()
     {
-        outlineSelect.enabled = true;
+        imgSelected.gameObject.SetActive(true);
     }
 
     public void RefreshOffSelect()
     {
-        outlineSelect.enabled = false;
+        imgSelected.gameObject.SetActive(false);
     }
 
     public void InitButton(UnityAction action)

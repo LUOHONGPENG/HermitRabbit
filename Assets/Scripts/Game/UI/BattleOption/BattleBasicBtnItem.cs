@@ -16,7 +16,7 @@ public class BattleBasicBtnItem : BattleBtnBase
 
     public void Init(BattleBasicBtnType type)
     {
-        switch (type)
+/*        switch (type)
         {
             case BattleBasicBtnType.Move:
                 imgBtn.sprite = listSpBtn[0];
@@ -24,6 +24,6 @@ public class BattleBasicBtnItem : BattleBtnBase
             case BattleBasicBtnType.Attack:
                 imgBtn.sprite = listSpBtn[1];
                 break;
-        }
+        }*/
     }
 }
