@@ -16,7 +16,7 @@ public class SkillNodeTipUIMgr : ButtonInfoTipUIMgr
     public GameObject pfBuff;
 
     [Header("Cost")]
-    public Text codeCostSP;
+    public SkillSPCostUIMgr costSPUI;
 
     public void ShowTip(int nodeID,Vector2 mousePos)
     {
@@ -62,6 +62,9 @@ public class SkillNodeTipUIMgr : ButtonInfoTipUIMgr
                     buffUI.Init(buffItem);
                 }
             }
+
+            //Cost
+            costSPUI.Init(nodeExcelItem.costSP);
 
             recordID = nodeID;
         }
