@@ -73,7 +73,10 @@ public partial class InputMgr
         switch (interactState)
         {
             case InteractState.BattleNormal:
-                EventCenter.Instance.EventTrigger("InputChooseCharacter", character.GetTypeID());
+                if(character!=null && !character.characterData.isDead)
+                {
+                    EventCenter.Instance.EventTrigger("InputChooseCharacter", character.GetTypeID());
+                }
                 return true;
         }
         return false;

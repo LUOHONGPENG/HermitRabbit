@@ -62,6 +62,8 @@ public class BattleInterfaceUIMgr : MonoBehaviour
         miniCharacterUI1001.Init(gameData.GetBattleCharacterData(1001));
         miniCharacterUI1002.Init(gameData.GetBattleCharacterData(1002));
 
+        miniCharacterUI1001.RefreshButton(false);
+        miniCharacterUI1002.RefreshButton(false);
     }
 
     public void RefreshCharacterInfo()

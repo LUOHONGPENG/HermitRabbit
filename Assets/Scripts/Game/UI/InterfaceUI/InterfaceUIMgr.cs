@@ -113,11 +113,27 @@ public class InterfaceUIMgr : MonoBehaviour
     {
         BattleCharacterData characterData = (BattleCharacterData)PublicTool.GetGameData().GetDataFromUnitInfo(new UnitInfo(BattleUnitType.Character, (int)arg0));
         battleOptionUIMgr.ShowBattleOptionPage(characterData);
+
+        if (characterData.typeID == 1001)
+        {
+            battleInterfaceUIMgr.miniCharacterUI1001.RefreshButton(true);
+            battleInterfaceUIMgr.miniCharacterUI1002.RefreshButton(false);
+        }
+        else if (characterData.typeID == 1002)
+        {
+            battleInterfaceUIMgr.miniCharacterUI1001.RefreshButton(false);
+            battleInterfaceUIMgr.miniCharacterUI1002.RefreshButton(true);
+        }
+
+
     }
 
     private void InputCancelCharacterEvent(object arg0)
     {
         battleOptionUIMgr.HideBattleOptionPage();
+
+        battleInterfaceUIMgr.miniCharacterUI1001.RefreshButton(false);
+        battleInterfaceUIMgr.miniCharacterUI1002.RefreshButton(false);
     }
 
     /// <summary>
@@ -143,6 +159,8 @@ public class InterfaceUIMgr : MonoBehaviour
     private void CharacterPhaseEndEvent(object arg0)
     {
         battleOptionUIMgr.HideBattleOptionPage();
+        battleInterfaceUIMgr.miniCharacterUI1001.RefreshButton(false);
+        battleInterfaceUIMgr.miniCharacterUI1002.RefreshButton(false);
     }
 
     private void BattleStartEvent(object arg0)
