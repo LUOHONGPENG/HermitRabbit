@@ -32,7 +32,6 @@ public partial class SkillExcelItem : ExcelItemBase
 	public SkillTileEffectType tileEffectType;
 	public ActiveSkillType activeSkillType;
 	public int characterID;
-	public string iconUrl;
 	public int unlockNodeID;
 }
 
@@ -78,7 +77,6 @@ public class SkillAssetAssignment
 			items[i].tileEffectType = (SkillTileEffectType) Enum.Parse(typeof(SkillTileEffectType), allItemValueRowList[i]["tileEffectType"], true);
 			items[i].activeSkillType = (ActiveSkillType) Enum.Parse(typeof(ActiveSkillType), allItemValueRowList[i]["activeSkillType"], true);
 			items[i].characterID = Convert.ToInt32(allItemValueRowList[i]["characterID"]);
-			items[i].iconUrl = allItemValueRowList[i]["iconUrl"];
 			items[i].unlockNodeID = Convert.ToInt32(allItemValueRowList[i]["unlockNodeID"]);
 		}
 		SkillExcelData excelDataAsset = ScriptableObject.CreateInstance<SkillExcelData>();

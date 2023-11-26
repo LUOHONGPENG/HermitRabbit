@@ -306,7 +306,7 @@ MonoBehaviour:
     - 0
     listBuffType: 00000000
   - id: 2202
-    name_EN: Provoke
+    name_EN: Mockery
     name_CN: "\u6076\u6BD2\u5632\u7B11"
     desc_EN: Apply 2 <sprite="BuffS" name="Hated"> Hated to attract enemies' attack.
     desc_CN: "\u83B7\u5F972\u5C42 <sprite=\"BuffS\" name=\"Hated\"> \u4F17\u77E2\u4E4B\u7684\uFF0C\u5438\u5F15\u654C\u4EBA\u7684\u6CE8\u610F"
@@ -314,7 +314,7 @@ MonoBehaviour:
     - 0
     listBuffType: f0030000
   - id: 2301
-    name_EN: Take a Nap
+    name_EN: Tea Break
     name_CN: "\u4E09\u70B9\u996E\u8336"
     desc_EN: Heal <sprite="Target" name="CUnit"> Character equal to <sprite="Common"
       name="HP"> 25%HP of Ward

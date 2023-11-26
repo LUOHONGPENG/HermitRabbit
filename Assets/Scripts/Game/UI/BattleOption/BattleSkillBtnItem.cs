@@ -14,7 +14,12 @@ public class BattleSkillBtnItem : BattleBtnBase
     {
         this.skillItem = skill;
 
-        imgIcon.sprite  = Resources.Load("Sprite/Skill/" + skill.iconUrl, typeof(Sprite)) as Sprite;
+        if (skill.unlockNodeID > 0)
+        {
+            SkillNodeExcelItem nodeItem = PublicTool.GetSkillNodeItem(skill.unlockNodeID);
+
+            imgIcon.sprite = Resources.Load("Sprite/Skill/" + nodeItem.iconUrl, typeof(Sprite)) as Sprite;
+        }
 
 
         InitButton(delegate ()

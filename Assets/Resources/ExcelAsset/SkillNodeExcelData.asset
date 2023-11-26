@@ -300,7 +300,7 @@ MonoBehaviour:
     columnID: -3
     remark: 
   - id: 2201
-    name: Curse
+    name: Bully
     nodeType: 1
     costSP: 2
     conditionSPSpent: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Bully
     rowID: 1
     columnID: -1
     remark: 
@@ -321,12 +321,12 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Fault
     rowID: 2
     columnID: -2
     remark: 
   - id: 2202
-    name: Provoke
+    name: Mockery
     nodeType: 1
     costSP: 2
     conditionSPSpent: 0
@@ -334,7 +334,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Mockery
     rowID: 3
     columnID: -1
     remark: 
@@ -373,7 +373,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_RushHour
     rowID: 1
     columnID: 3
     remark: 
@@ -386,7 +386,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Help
     rowID: 2
     columnID: 2
     remark: 
@@ -399,12 +399,12 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_HandOver
     rowID: 3
     columnID: 3
     remark: 
   - id: 2901
-    name: Final Guard
+    name: Deadline
     nodeType: 1
     costSP: 3
     conditionSPSpent: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_Deadline
     rowID: 4
     columnID: -2
     remark: 
@@ -425,7 +425,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_SuperWorker
     rowID: 4
     columnID: 2
     remark: 
@@ -438,7 +438,7 @@ MonoBehaviour:
     conflictNode: 0
     isInitUnlock: 0
     characterID: 1002
-    iconUrl: imgIconSkill_Default
+    iconUrl: imgIconSkill_FinishWork
     rowID: 4
     columnID: 0
     remark: 
