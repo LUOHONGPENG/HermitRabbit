@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
+using static UnityEditor.PlayerSettings;
 
 public class PeaceMapClipUIMgr : MonoBehaviour
 {
@@ -28,8 +30,7 @@ public class PeaceMapClipUIMgr : MonoBehaviour
         btnSave.onClick.RemoveAllListeners();
         btnSave.onClick.AddListener(delegate ()
         {
-            PublicTool.EventChangeInteract(InteractState.PeaceNormal);
-            EventCenter.Instance.EventTrigger("PeaceMapEnd", null);
+            SaveFunction();
         });
     }
 
@@ -113,4 +114,117 @@ public class PeaceMapClipUIMgr : MonoBehaviour
         RefreshMapClipUsed();
     }
 
+
+
+    public void SaveFunction()
+    {
+        PublicTool.RecalculateOccupancy();
+
+        if (!CheckWhetherBlock())
+        {
+            RemovePlant();
+            PublicTool.EventChangeInteract(InteractState.PeaceNormal);
+            EventCenter.Instance.EventTrigger("PeaceMapEnd", null);
+        }
+
+
+    }
+
+
+    public bool CheckWhetherBlock()
+    {
+
+        Vector2Int startPos = new Vector2Int(0, 0);
+        Vector2Int endPos = new Vector2Int(GameGlobal.mapMaxNumY - 1, 0);
+
+        List<Vector2Int> listExistPos = new List<Vector2Int>();
+        List<MapTileData> listMap = PublicTool.GetGameData().listMapTile;
+        for (int i = 0; i < listMap.Count; i++)
+        {
+            listExistPos.Add(listMap[i].posID);
+        }
+
+        //Get Block Pos
+        List<Vector2Int> listBlock = new List<Vector2Int>();
+        for (int i = 0; i < PublicTool.GetGameData().listMapCurStonePos.Count; i++)
+        {
+            listBlock.Add(PublicTool.GetGameData().listMapCurStonePos[i]);
+        }
+
+        //Prepare the container for search
+        Queue<Vector2Int> ququeOpen = new Queue<Vector2Int>();
+        List<Vector2Int> listClose = new List<Vector2Int>();
+
+        listClose.Clear();
+
+        ququeOpen.Enqueue(startPos);
+        while (ququeOpen.Count > 0)
+        {
+
+            Vector2Int checkPos = ququeOpen.Dequeue();
+            Vector2Int tempPos;
+            tempPos = checkPos + new Vector2Int(0, 1);
+            if (listExistPos.Contains(tempPos) && !listBlock.Contains(tempPos) && !ququeOpen.Contains(tempPos) && !listClose.Contains(tempPos))
+            {
+                ququeOpen.Enqueue(tempPos);
+            }
+
+            tempPos = checkPos + new Vector2Int(0, -1);
+            if (listExistPos.Contains(tempPos) && !listBlock.Contains(tempPos) && !ququeOpen.Contains(tempPos) && !listClose.Contains(tempPos))
+            {
+                ququeOpen.Enqueue(tempPos);
+            }
+
+            tempPos = checkPos + new Vector2Int(1, 0);
+            if (listExistPos.Contains(tempPos) && !listBlock.Contains(tempPos) && !ququeOpen.Contains(tempPos) && !listClose.Contains(tempPos))
+            {
+                ququeOpen.Enqueue(tempPos);
+            }
+
+            tempPos = checkPos + new Vector2Int(-1, 0);
+            if (listExistPos.Contains(tempPos) && !listBlock.Contains(tempPos) && !ququeOpen.Contains(tempPos) && !listClose.Contains(tempPos))
+            {
+                ququeOpen.Enqueue(tempPos);
+            }
+
+            listClose.Add(checkPos);
+        }
+
+        if (listClose.Contains(endPos))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void RemovePlant()
+    {
+        GameData gameData = PublicTool.GetGameData();
+        List<Vector2Int> listBlock = new List<Vector2Int>();
+        for (int i = 0; i < gameData.listMapCurStonePos.Count; i++)
+        {
+            listBlock.Add(gameData.listMapCurStonePos[i]);
+        }
+
+        List<BattlePlantData> listPlant = gameData.listPlant;
+
+        for(int i = 0; i < listPlant.Count; i++)
+        {
+            BattlePlantData plantData = listPlant[i];
+            if (listBlock.Contains(plantData.posID))
+            {
+                if (plantData != null)
+                {
+                    GameMgr.Instance.curSceneGameMgr.levelMgr.unitViewMgr.RemovePlantView(plantData.keyID);
+                    gameData.RemovePlantData(plantData.keyID);
+                    PublicTool.RecalculateOccupancy();
+                    EventCenter.Instance.EventTrigger("RefreshResourceUI", null);
+                }
+            }
+        }
+
+    }
 }

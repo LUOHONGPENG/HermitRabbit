@@ -102,23 +102,9 @@ public class PeacePlantUIMgr : MonoBehaviour
 
     public void SaveFunction()
     {
-        if (!CheckWhetherBlock())
-        {
-
-            RemovePlant();
-            PublicTool.EventChangeInteract(InteractState.PeaceNormal);
-            EventCenter.Instance.EventTrigger("PeacePlantEnd", null);
-
-        }
+        PublicTool.EventChangeInteract(InteractState.PeaceNormal);
+        EventCenter.Instance.EventTrigger("PeacePlantEnd", null);
     }
 
-    public bool CheckWhetherBlock()
-    {
-        return false;
-    }
 
-    public void RemovePlant()
-    {
-
-    }
 }
