@@ -224,16 +224,25 @@ public class BattleFoeData : BattleUnitData
 
         //Range
         listValidAttackRange.Clear();
-        int range = 0;
         if (GetSkillID() > 0)
         {
             SkillExcelItem skillItem = PublicTool.GetSkillItem(GetSkillID());
-            range = skillItem.RealRange;
+            int skillTouchRange = skillItem.RealRadius + skillItem.RealRange;
 
-            for(int i = 0; i < listValidTouchRange.Count; i++)
+            List<Vector2Int> listTemp = PublicTool.GetTargetCircleRange(posID, skillTouchRange);
+            for (int j = 0; j < listTemp.Count; j++)
+            {
+                Vector2Int validAttack = listTemp[j];
+                if (!listValidAttackRange.Contains(validAttack))
+                {
+                    listValidAttackRange.Add(validAttack);
+                }
+            }
+
+            for (int i = 0; i < listValidTouchRange.Count; i++)
             {
                 Vector2Int validMove = listValidTouchRange[i];
-                List<Vector2Int> listTemp = PublicTool.GetTargetCircleRange(validMove, range);
+                listTemp = PublicTool.GetTargetCircleRange(validMove, skillTouchRange);
                 for(int j = 0; j < listTemp.Count; j++)
                 {
                     Vector2Int validAttack = listTemp[j];
@@ -243,6 +252,8 @@ public class BattleFoeData : BattleUnitData
                     }
                 }
             }
+
+            listValidAttackRange.Remove(posID);
             //listValidTouchRange = PublicTool.GetTargetCircleRange(posID, skillTouchRange);
         }
 
