@@ -146,7 +146,6 @@ public class TutorialUIMgr : MonoBehaviour
 
             SelectTutorialGroup(TutorialGroup.Battle);
             RefreshPageNum();
-            RefreshSelectGroup();
         }
     }
 
@@ -167,6 +166,8 @@ public class TutorialUIMgr : MonoBehaviour
             }
             objPopup.SetActive(true);
             ReadTutorialData();
+            RefreshSelectGroup();
+
         }
     }
 
@@ -212,8 +213,14 @@ public class TutorialUIMgr : MonoBehaviour
             codeContent.text = tutorialItem.strContent;
 
 
-
-            aniGif.Play("CameraControl");
+            if (tutorialItem.gifUrl.Length > 0)
+            {
+                aniGif.Play(tutorialItem.gifUrl);
+            }
+            else
+            {
+                aniGif.Play("None");
+            }
 
         }
     }

@@ -11,7 +11,7 @@ public partial class TutorialExcelItem : ExcelItemBase
 	public TutorialGroup group;
 	public string strTitle;
 	public string strContent;
-	public string imgUrl;
+	public string gifUrl;
 }
 
 [CreateAssetMenu(fileName = "TutorialExcelData", menuName = "Excel To ScriptableObject/Create TutorialExcelData", order = 1)]
@@ -35,7 +35,7 @@ public class TutorialAssetAssignment
 			items[i].group = (TutorialGroup) Enum.Parse(typeof(TutorialGroup), allItemValueRowList[i]["group"], true);
 			items[i].strTitle = allItemValueRowList[i]["strTitle"];
 			items[i].strContent = allItemValueRowList[i]["strContent"];
-			items[i].imgUrl = allItemValueRowList[i]["imgUrl"];
+			items[i].gifUrl = allItemValueRowList[i]["gifUrl"];
 		}
 		TutorialExcelData excelDataAsset = ScriptableObject.CreateInstance<TutorialExcelData>();
 		excelDataAsset.items = items;

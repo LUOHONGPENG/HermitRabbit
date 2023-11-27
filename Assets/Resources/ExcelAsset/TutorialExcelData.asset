@@ -17,7 +17,7 @@ MonoBehaviour:
     group: 1
     strTitle: Camera Control
     strContent: You can press WASD to move the camera and QE to rotate camera.
-    imgUrl: 
+    gifUrl: CameraControl
   - id: 2
     group: 1
     strTitle: Move
@@ -28,19 +28,19 @@ MonoBehaviour:
 
       (Move Button will
       selected automatically after choosing a character.)'
-    imgUrl: 
+    gifUrl: 
   - id: 3
     group: 1
     strTitle: Change Character
     strContent: You can click the character box to select <sprite="Target" name="CUnit">
       Character in your turn.
-    imgUrl: 
+    gifUrl: 
   - id: 4
     group: 1
     strTitle: End Turn
     strContent: After you finish what you want to do, you can click button to end
       turn.
-    imgUrl: 
+    gifUrl: 
   - id: 5
     group: 1
     strTitle: Attack
@@ -49,7 +49,7 @@ MonoBehaviour:
       Foe in range.
 
       Attack will cost <sprite="Common" name="AP"> AP'
-    imgUrl: 
+    gifUrl: 
   - id: 6
     group: 1
     strTitle: Win and Lose
@@ -57,7 +57,7 @@ MonoBehaviour:
 
       If
       all character''s <sprite="Common" name="HP"> HP become 0, you will lose.'
-    imgUrl: 
+    gifUrl: 
   - id: 7
     group: 2
     strTitle: Select Map
@@ -65,7 +65,7 @@ MonoBehaviour:
 
       Tiles on the mapclip
       can change the map and create advantage.'
-    imgUrl: 
+    gifUrl: 
   - id: 8
     group: 2
     strTitle: Tile Function
@@ -74,13 +74,13 @@ MonoBehaviour:
 
       <sprite="Tile" name="StoneT"> Stone
       tile can block the path of foes.'
-    imgUrl: 
+    gifUrl: 
   - id: 9
     group: 2
     strTitle: Refresh Map
     strContent: You can refresh the choices by clicking REFRESH, which cost <sprite="Common"
       name="Memory"> Memory.
-    imgUrl: 
+    gifUrl: 
   - id: 10
     group: 3
     strTitle: Plant
@@ -89,7 +89,7 @@ MonoBehaviour:
       <sprite="Target" name="PUnit">
       Plant is a special unit without <sprite="Common" name="MOV"> MOV and <sprite="Common"
       name="AP"> AP.'
-    imgUrl: 
+    gifUrl: 
   - id: 11
     group: 3
     strTitle: Plant
@@ -98,12 +98,12 @@ MonoBehaviour:
 
       For example, Void Grass will injure
       everyone near it when the second turn starts.'
-    imgUrl: 
+    gifUrl: 
   - id: 12
     group: 4
     strTitle: Day Time
     strContent: In day time, you can do a lot of things to prepare for next battle.
-    imgUrl: 
+    gifUrl: 
   - id: 13
     group: 4
     strTitle: Learn Skill-1
@@ -111,17 +111,17 @@ MonoBehaviour:
 
       Then
       you can spend <sprite="Common" name="SP"> Confidence to learn Skill.'
-    imgUrl: 
+    gifUrl: 
   - id: 14
     group: 4
     strTitle: Learn Skill-2
     strContent: You can reset the skill tree without limitation.
-    imgUrl: 
+    gifUrl: 
   - id: 15
     group: 4
     strTitle: Set Map
     strContent: Secondly, you can click the MAP button to set mapclips.
-    imgUrl: 
+    gifUrl: 
   - id: 16
     group: 4
     strTitle: Set Plant
@@ -130,14 +130,14 @@ MonoBehaviour:
 
       Setting <sprite="Target" name="PUnit"> Plant will occupy the
       <sprite="Common" name="Essence"> Essence Points.'
-    imgUrl: 
+    gifUrl: 
   - id: 17
     group: 5
     strTitle: Spell Skill
     strContent: 1
-    imgUrl: 
+    gifUrl: 
   - id: 18
     group: 5
     strTitle: Combination
     strContent: 2
-    imgUrl: 
+    gifUrl: 
