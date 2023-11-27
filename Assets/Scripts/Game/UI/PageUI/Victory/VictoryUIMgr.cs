@@ -122,13 +122,7 @@ public class VictoryUIMgr : MonoBehaviour
         costRefreshPlant.Init(ResourceType.Memory, -GameGlobal.CostRefreshPlant);
         costSkipPlant.Init(ResourceType.Memory, GameGlobal.AddSkipPlant);
 
-        PublicTool.ClearChildItem(tfTileTip);
-        for(MapTileType i = MapTileType.Normal; i < MapTileType.End; i++)
-        {
-            GameObject objTileTip = GameObject.Instantiate(pfTileTip, tfTileTip);
-            VictoryTileTipUIItem itemTileTip = objTileTip.GetComponent<VictoryTileTipUIItem>();
-            itemTileTip.Init(i);
-        }
+
     }
 
     private void OnEnable()
@@ -283,6 +277,8 @@ public class VictoryUIMgr : MonoBehaviour
     {
         DrawMapClip();
 
+        RefreshMapTip();
+
         objMapClip.SetActive(true);
     }
 
@@ -330,6 +326,32 @@ public class VictoryUIMgr : MonoBehaviour
     }
 
 
+    public void RefreshMapTip()
+    {
+        PublicTool.ClearChildItem(tfTileTip);
+
+        if(gameData.numDay == 2)
+        {
+            for (MapTileType i = MapTileType.Normal; i < MapTileType.Magic; i++)
+            {
+                GameObject objTileTip = GameObject.Instantiate(pfTileTip, tfTileTip);
+                VictoryTileTipUIItem itemTileTip = objTileTip.GetComponent<VictoryTileTipUIItem>();
+                itemTileTip.Init(i);
+            }
+        }
+        else
+        {
+            for (MapTileType i = MapTileType.Normal; i < MapTileType.End; i++)
+            {
+                GameObject objTileTip = GameObject.Instantiate(pfTileTip, tfTileTip);
+                VictoryTileTipUIItem itemTileTip = objTileTip.GetComponent<VictoryTileTipUIItem>();
+                itemTileTip.Init(i);
+            }
+        }
+
+    }
+
+
     #endregion
 
     #region ShowPlant
@@ -369,5 +391,8 @@ public class VictoryUIMgr : MonoBehaviour
         gameData.AddMemory(GameGlobal.AddSkipPlant);
         NextPhase();
     }
+
+
+
     #endregion
 }
