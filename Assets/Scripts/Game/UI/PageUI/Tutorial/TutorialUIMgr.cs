@@ -36,6 +36,7 @@ public class TutorialUIMgr : MonoBehaviour
     public TextMeshProUGUI codeTitle;
     public TextMeshProUGUI codeContent;
     public Image imgDesc;
+    public Animator aniGif;
 
     [Header("First")]
     public GameObject objFirst;
@@ -164,8 +165,8 @@ public class TutorialUIMgr : MonoBehaviour
             {
                 curTutorialID = startID;
             }
-            ReadTutorialData();
             objPopup.SetActive(true);
+            ReadTutorialData();
         }
     }
 
@@ -210,14 +211,9 @@ public class TutorialUIMgr : MonoBehaviour
             codeTitle.text = tutorialItem.strTitle;
             codeContent.text = tutorialItem.strContent;
 
-            if (tutorialItem.imgUrl.Length > 0)
-            {
 
-            }
-            else
-            {
-                imgDesc.sprite = null;
-            }
+
+            aniGif.Play("CameraControl");
 
         }
     }
