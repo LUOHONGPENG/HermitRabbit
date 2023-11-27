@@ -46,6 +46,15 @@ public class PeaceInterfaceUIMgr : MonoBehaviour
 
     public void ShowPopup()
     {
+        if(PublicTool.GetGameData().numDay == 2)
+        {
+            btnStartPlant.gameObject.SetActive(false);
+        }
+        else
+        {
+            btnStartPlant.gameObject.SetActive(true);
+        }
+
         objPopup.SetActive(true);
     }
 
