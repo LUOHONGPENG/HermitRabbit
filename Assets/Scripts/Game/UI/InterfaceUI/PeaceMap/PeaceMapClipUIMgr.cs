@@ -15,7 +15,7 @@ public class PeaceMapClipUIMgr : MonoBehaviour
 
     public Button btnClose;
     public Button btnSave;
-
+    public GameObject objPath;
 
     private List<PeaceMapClipUIItem> listClip = new List<PeaceMapClipUIItem>();
 
@@ -65,6 +65,7 @@ public class PeaceMapClipUIMgr : MonoBehaviour
             listClip.Add(itemClip);
         }
         RefreshMapClipUsed();
+        objPath.SetActive(false);
         objPopup.SetActive(true);
     }
 
@@ -126,6 +127,11 @@ public class PeaceMapClipUIMgr : MonoBehaviour
             PublicTool.EventChangeInteract(InteractState.PeaceNormal);
             EventCenter.Instance.EventTrigger("PeaceMapEnd", null);
         }
+        else
+        {
+            objPath.SetActive(true);
+
+        }
 
 
     }
@@ -133,9 +139,8 @@ public class PeaceMapClipUIMgr : MonoBehaviour
 
     public bool CheckWhetherBlock()
     {
-
         Vector2Int startPos = new Vector2Int(0, 0);
-        Vector2Int endPos = new Vector2Int(GameGlobal.mapMaxNumY - 1, 0);
+        Vector2Int endPos = new Vector2Int(0, GameGlobal.mapMaxNumY - 1);
 
         List<Vector2Int> listExistPos = new List<Vector2Int>();
         List<MapTileData> listMap = PublicTool.GetGameData().listMapTile;
@@ -192,11 +197,11 @@ public class PeaceMapClipUIMgr : MonoBehaviour
 
         if (listClose.Contains(endPos))
         {
-            return true;
+            return false;
         }
         else
         {
-            return false;
+            return true;
         }
     }
 

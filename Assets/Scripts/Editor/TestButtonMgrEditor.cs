@@ -6,6 +6,9 @@ public class TestButtonMgrEditor : Editor
 {
     int Day = 0;
 
+    int MapID = 0;
+
+
     public override void OnInspectorGUI()
     {
         //base.OnInspectorGUI();
@@ -18,6 +21,13 @@ public class TestButtonMgrEditor : Editor
         if (GUILayout.Button("SetDay"))
         {
             PublicTool.GetGameData().numDay = Day;
+        }
+
+        MapID = EditorGUILayout.IntField("MapID", MapID);
+
+        if (GUILayout.Button("AddMapClip"))
+        {
+            PublicTool.GetGameData().AddMapClipHeld(MapID);
         }
     }
 }

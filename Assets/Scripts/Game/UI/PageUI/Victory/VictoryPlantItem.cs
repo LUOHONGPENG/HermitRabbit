@@ -11,6 +11,10 @@ public class VictoryPlantItem : MonoBehaviour
 
     public Image imgPlant;
 
+    public Text codeName;
+    public Text codeEssence;
+
+
     private int typeID = -1;
     private VictoryUIMgr parent;
 
@@ -21,6 +25,9 @@ public class VictoryPlantItem : MonoBehaviour
 
         PlantExcelItem plantExcelItem = PublicTool.GetPlantItem(typeID);
         imgPlant.sprite = Resources.Load("Sprite/Plant/" + plantExcelItem.pixelUrl, typeof(Sprite)) as Sprite;
+
+        codeName.text = plantExcelItem.name;
+        codeEssence.text = plantExcelItem.essence.ToString();
 
         btnMapClip.onClick.RemoveAllListeners();
         btnMapClip.onClick.AddListener(delegate ()
