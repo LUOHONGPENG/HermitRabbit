@@ -13,8 +13,14 @@ public class InterfaceUIMgr : MonoBehaviour
     public PeaceMapClipUIMgr peaceMapClipUIMgr;
     public ResourceInterfaceUIMgr resourceInterfaceUIMgr;
 
+    [Header("Phase")]
     public Text txPhase;
     public Text txDayInfo;
+    public Image imgDay;
+    public List<Sprite> listDay = new List<Sprite>();
+
+
+    [Header("Setting")]
     public Button btnSetting;
     public Button btnHelp;
 
@@ -214,11 +220,13 @@ public class InterfaceUIMgr : MonoBehaviour
     {
         if (PublicTool.GetGameData().gamePhase == GamePhase.Peace)
         {
+            imgDay.sprite = listDay[0];
             txPhase.text = "Peace";
             txDayInfo.text = String.Format("Day {0}", PublicTool.GetGameData().numDay.ToString());
         }
         else if (PublicTool.GetGameData().gamePhase == GamePhase.Battle)
         {
+            imgDay.sprite = listDay[1];
             txPhase.text = "Battle";
             txDayInfo.text = String.Format("Turn {0}", BattleMgr.Instance.numTurn.ToString());
         }
