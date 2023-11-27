@@ -9,12 +9,18 @@ public class ResourceInterfaceUIMgr : MonoBehaviour
     public Text codeEssence;
     public Text codeMemory;
 
+    public Canvas canvas;
     private GameData gameData;
 
+    private VictoryUIMgr victoryUIMgr;
+    private bool isInit = false;
     public void Init()
     {
         gameData = PublicTool.GetGameData();
         RefreshResourceUI();
+
+        victoryUIMgr = GameMgr.Instance.curSceneGameMgr.uiMgr.pageUIMgr.victoryUIMgr;
+        isInit = true;
     }
 
     private void OnEnable()
@@ -36,5 +42,20 @@ public class ResourceInterfaceUIMgr : MonoBehaviour
     {
         codeEssence.text = string.Format("{0}/{1}", gameData.curEssence, gameData.essence);
         codeMemory.text = gameData.memory.ToString();
+    }
+
+    private void Update()
+    {
+        if (isInit)
+        {
+            if (victoryUIMgr.objMapClip.activeSelf||victoryUIMgr.objPlant.activeSelf)
+            {
+                canvas.sortingOrder = 10;
+            }
+            else
+            {
+                canvas.sortingOrder = 0;
+            }
+        }
     }
 }
