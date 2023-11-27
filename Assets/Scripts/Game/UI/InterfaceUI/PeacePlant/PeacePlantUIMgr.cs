@@ -15,6 +15,7 @@ public class PeacePlantUIMgr : MonoBehaviour
     public Button btnSave;
 
     public Button btnRemovePlant;
+    public Image imgRemovePlantSelected;
 
     private List<PeacePlantUIItem> listPlantBtn = new List<PeacePlantUIItem>();
 
@@ -30,13 +31,13 @@ public class PeacePlantUIMgr : MonoBehaviour
         btnRemovePlant.onClick.AddListener(delegate ()
         {
             PeaceMgr.Instance.plantTypeID = -1;
+            RefreshSelected();
         });
 
         btnSave.onClick.RemoveAllListeners();
         btnSave.onClick.AddListener(delegate ()
         {
-            PublicTool.EventChangeInteract(InteractState.PeaceNormal);
-            EventCenter.Instance.EventTrigger("PeacePlantEnd", null);
+            SaveFunction();
         });
     }
 
@@ -61,10 +62,11 @@ public class PeacePlantUIMgr : MonoBehaviour
             int typeID = PublicTool.GetGameData().listPlantHeld[i];
             GameObject objPlant = GameObject.Instantiate(pfPlantBtn, tfPlantBtn);
             PeacePlantUIItem itemPlant = objPlant.GetComponent<PeacePlantUIItem>();
-            itemPlant.Init(typeID);
+            itemPlant.Init(typeID,this);
             listPlantBtn.Add(itemPlant);
         }
 
+        RefreshSelected();
         objPopup.SetActive(true);
     }
 
@@ -73,5 +75,50 @@ public class PeacePlantUIMgr : MonoBehaviour
         objPopup.SetActive(false);
     }
 
+    public void RefreshSelected()
+    {
+        for(int i = 0; i < listPlantBtn.Count; i++)
+        {
+            PeacePlantUIItem itemPlant = listPlantBtn[i];
+            if (PeaceMgr.Instance.plantTypeID == itemPlant.GetTypeID())
+            {
+                itemPlant.UpdateSelect(true);
+            }
+            else
+            {
+                itemPlant.UpdateSelect(false);
+            }
+        }
 
+        if (PeaceMgr.Instance.plantTypeID == -1)
+        {
+            imgRemovePlantSelected.gameObject.SetActive(true);
+        }
+        else
+        {
+            imgRemovePlantSelected.gameObject.SetActive(false);
+        }
+    }
+
+    public void SaveFunction()
+    {
+        if (!CheckWhetherBlock())
+        {
+
+            RemovePlant();
+            PublicTool.EventChangeInteract(InteractState.PeaceNormal);
+            EventCenter.Instance.EventTrigger("PeacePlantEnd", null);
+
+        }
+    }
+
+    public bool CheckWhetherBlock()
+    {
+        return false;
+    }
+
+    public void RemovePlant()
+    {
+
+    }
 }
