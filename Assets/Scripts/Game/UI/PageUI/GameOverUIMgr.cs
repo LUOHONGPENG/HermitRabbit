@@ -35,7 +35,7 @@ public class GameOverUIMgr : MonoBehaviour
         btnAction.onClick.RemoveAllListeners();
         btnAction.onClick.AddListener(delegate ()
         {
-            GameMgr.Instance.LoadScene(SceneName.Menu);
+            GoBackToMenu();
         });
         ShowPopup();
     }
@@ -46,9 +46,15 @@ public class GameOverUIMgr : MonoBehaviour
         btnAction.onClick.RemoveAllListeners();
         btnAction.onClick.AddListener(delegate ()
         {
-            GameMgr.Instance.LoadScene(SceneName.Menu);
+            GoBackToMenu();
         });
         ShowPopup();
+    }
+
+    public void GoBackToMenu()
+    {
+        PublicTool.BeforeLoad();
+        GameMgr.Instance.LoadScene(SceneName.Menu);
     }
 
     public void ShowPopup()

@@ -125,9 +125,6 @@ public partial class LevelMgr
                 gameData.AddCharacterExp(1001, 50);
                 gameData.AddCharacterExp(1002, 50);
                 break;
-            case "BackToMenu":
-                GameMgr.Instance.LoadScene(SceneName.Menu);
-                break;
         }
     }
 

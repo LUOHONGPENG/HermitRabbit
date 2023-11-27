@@ -43,6 +43,7 @@ public class BattleCharacterView : BattleUnitView
 
     public override void ChangeAniState(UnitAniState state)
     {
+
         base.ChangeAniState(state);
 
         //Ball
@@ -58,6 +59,18 @@ public class BattleCharacterView : BattleUnitView
             effectSpinBallMgr.HideBall();
         }
 
+    }
+
+    public void UpdateCharacterState()
+    {
+        if (characterData.isDead)
+        {
+            ChangeAniState(UnitAniState.Dead);
+        }
+        else
+        {
+            ChangeAniState(UnitAniState.Idle);
+        }
     }
 
 

@@ -85,6 +85,7 @@ public partial class BattleMgr
         yield return new WaitForSeconds(GameGlobal.waitTimeText);
         yield return StartCoroutine(IE_CheckBuffConsume());
         //Plant Skill Go first so that Alfven skill work
+        PublicTool.EventReadyAni(-1);
         yield return StartCoroutine(IE_CheckPlantAfterSkill());
         yield return StartCoroutine(IE_AfterSkill());
         yield return StartCoroutine(IE_CheckBattleOver());
@@ -99,6 +100,10 @@ public partial class BattleMgr
                 PublicTool.EventChangeInteract(InteractState.CharacterSkill);
                 EventCenter.Instance.EventTrigger("CharacterActionEnd", null);
             }
+        }
+        else
+        {
+            StopCoroutine(routineFoe);
         }
     }
 

@@ -50,14 +50,9 @@ public class SaveSlotUIItem : MonoBehaviour
                 case SaveButtonType.GameLoad:
                     if (!isNull)
                     {
-                        if(gameData.gamePhase == GamePhase.Battle && InputMgr.Instance.interactState == InteractState.WaitAction)
-                        {
-
-                        }
-                        else
-                        {
-                            GameMgr.Instance.LoadScene(SceneName.Game, false, slotName);
-                        }
+                        //if(gameData.gamePhase == GamePhase.Battle && InputMgr.Instance.interactState == InteractState.WaitAction)
+                        PublicTool.BeforeLoad();
+                        GameMgr.Instance.LoadScene(SceneName.Game, false, slotName);
                     }
                     break;
                 case SaveButtonType.GameSave:

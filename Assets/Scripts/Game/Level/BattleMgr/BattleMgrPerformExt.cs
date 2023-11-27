@@ -47,6 +47,10 @@ public partial class BattleMgr
             BattleCharacterView characterView = unitViewMgr.GetCharacterView(skillSubject.keyID);
             characterView.ChangeAniState(state);
         }
+        else if(skillSubject.battleUnitType == BattleUnitType.Foe)
+        {
+
+        }
         yield break;
     }
 

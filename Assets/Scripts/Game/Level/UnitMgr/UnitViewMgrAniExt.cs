@@ -21,15 +21,15 @@ public partial class UnitViewMgr
         {
             case 1001:
                 dicCharacterView[1001].ChangeAniState(UnitAniState.Ready);
-                dicCharacterView[1002].ChangeAniState(UnitAniState.Idle);
+                dicCharacterView[1002].UpdateCharacterState();
                 break;
             case 1002:
-                dicCharacterView[1001].ChangeAniState(UnitAniState.Idle);
+                dicCharacterView[1001].UpdateCharacterState();
                 dicCharacterView[1002].ChangeAniState(UnitAniState.Ready);
                 break;
             default:
-                dicCharacterView[1001].ChangeAniState(UnitAniState.Idle);
-                dicCharacterView[1002].ChangeAniState(UnitAniState.Idle);
+                dicCharacterView[1001].UpdateCharacterState();
+                dicCharacterView[1002].UpdateCharacterState();
                 break;
         }
 

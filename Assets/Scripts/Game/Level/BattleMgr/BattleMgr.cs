@@ -17,6 +17,8 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
 
     private bool isBattleEnd = true;
 
+    private Coroutine routineFoe = null;
+
     #region Basic Function
 
     public void Init(LevelMgr levelMgr)
@@ -126,7 +128,7 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     {
         PublicTool.EventChangeInteract(InteractState.WaitAction);
 
-        StartCoroutine(IE_WholeFoeTurn());
+        routineFoe = StartCoroutine(IE_WholeFoeTurn());
     }
 
 
@@ -157,6 +159,17 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
         EventCenter.Instance.EventTrigger("BattleLose", null);
 
     }
+
+    public void StopForQuit()
+    {
+        if (routineFoe != null)
+        {
+            StopCoroutine(routineFoe);
+        }
+        StopAllCoroutines();
+
+    }
+
 
     #endregion
 

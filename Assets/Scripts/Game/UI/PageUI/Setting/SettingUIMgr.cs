@@ -52,6 +52,7 @@ public class SettingUIMgr : MonoBehaviour
         btnBackToMain.onClick.RemoveAllListeners();
         btnBackToMain.onClick.AddListener(delegate ()
         {
+
             GameMgr.Instance.LoadScene(SceneName.Menu);
         });
     }

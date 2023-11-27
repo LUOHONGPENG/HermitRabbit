@@ -7,7 +7,8 @@ public enum UnitAniState
     Idle,
     Ready,
     Focus,
-    Attack
+    Attack,
+    Dead
 }
 
 
