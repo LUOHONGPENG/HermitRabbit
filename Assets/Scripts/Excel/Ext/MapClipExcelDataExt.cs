@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public partial class MapClipExcelData
 {
-    public Dictionary<int, int> dicMapClipWeight = new Dictionary<int, int>();
+    //public Dictionary<int, int> dicMapClipWeight = new Dictionary<int, int>();
 
     public List<int> GetAllMapClipID()
     {
@@ -18,7 +19,7 @@ public partial class MapClipExcelData
 
     public void Init()
     {
-        dicMapClipWeight.Clear();
+/*        dicMapClipWeight.Clear();
         for(int i = 0; i < items.Length; i++)
         {
             MapClipExcelItem item = items[i];
@@ -26,14 +27,16 @@ public partial class MapClipExcelData
             {
                 dicMapClipWeight.Add(item.id, item.weight);
             }
-        }
+        }*/
     }
 
     public int GetMapClipWeight(int id)
     {
-        if (dicMapClipWeight.ContainsKey(id))
+        MapClipExcelItem clipItem = GetExcelItem(id);
+
+        if (clipItem!=null)
         {
-            return dicMapClipWeight[id];
+            return clipItem.Weight;
         }
         else
         {
@@ -60,6 +63,21 @@ public partial class MapClipExcelItem
             listTemp.Add(tile7);
             listTemp.Add(tile8);
             return listTemp;
+        }
+    }
+
+    public int Weight
+    {
+        get
+        {
+            if (PublicTool.GetGameData() != null)
+            {
+                if(PublicTool.GetGameData().numDay == 2 && rarity == Rarity.Legendary)
+                {
+                    return 0;
+                }
+            }
+            return weight;
         }
     }
 }

@@ -121,6 +121,14 @@ public partial class PublicTool
 
         if (listDelete != null)
         {
+            for(int i = 0; i < listWeight.Count; i++)
+            {
+                if (listWeight[i] <= 0 && !listDelete.Contains(listDraw[i]))
+                {
+                    listDelete.Add(listDraw[i]);
+                }
+            }
+
             for (int i = 0; i < listDelete.Count; i++)
             {
                 listDraw.Remove(listDelete[i]);

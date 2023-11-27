@@ -296,7 +296,14 @@ public class VictoryUIMgr : MonoBehaviour
         for(int i = 0; i < listPool.Count; i++)
         {
             int keyID = listPool[i];
-            listWeight.Add(mapClipExcel.GetMapClipWeight(keyID));
+
+            int weight = mapClipExcel.GetMapClipWeight(keyID);
+            listWeight.Add(weight);
+/*
+            if (weight <= 0 )
+            {
+
+            }*/
         }
         List<int> listDraw = PublicTool.DrawNumWeight(3, listPool, listWeight, listDelete);
 
