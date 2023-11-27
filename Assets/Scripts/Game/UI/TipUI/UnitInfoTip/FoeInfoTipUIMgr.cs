@@ -18,8 +18,7 @@ public class FoeInfoTipUIMgr : UnitInfoTipUIMgr
             if (foeExcelItem != null)
             {
                 recordTypeID = unitData.typeID;
-                codeName.text = foeExcelItem.name;
-                codeDesc.text = foeExcelItem.desc;
+                basicUIMgr.SetNameDesc(foeExcelItem.name, foeExcelItem.desc);
             }
         }
     }

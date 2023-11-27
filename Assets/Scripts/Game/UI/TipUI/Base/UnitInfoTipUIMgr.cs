@@ -9,16 +9,8 @@ public class UnitInfoTipUIMgr : MonoBehaviour
     [Header("Basic")]
     public GameObject objPopup;
     public Transform tfMouse;
-    [Header("Basic Info")]
-    public Text codeName;
-    public Text codeDesc;
-    public Image imgHPFill;
-    public Text codeHP;
-    public Text codeATK;
-    public Text codeDEF;
-    public Text codeRES;
-    public Text codeMOV;
 
+    public UnitInfoBasicUIMgr basicUIMgr;
     protected int recordTypeID = -1;
 
 
@@ -28,12 +20,14 @@ public class UnitInfoTipUIMgr : MonoBehaviour
 
         if (unitData != null)
         {
-            imgHPFill.fillAmount = unitData.HPrate;
-            codeHP.text = string.Format("{0}/{1}", unitData.curHP, unitData.curMaxHP);
-            codeATK.text = unitData.curATK.ToString();
-            codeDEF.text = unitData.curDEF.ToString();
-            codeRES.text = unitData.curRES.ToString();
-            codeMOV.text = unitData.curMOV.ToString();
+            basicUIMgr.UpdateInfo(unitData);
+
+            /*            imgHPFill.fillAmount = unitData.HPrate;
+                        codeHP.text = string.Format("{0}/{1}", unitData.curHP, unitData.curMaxHP);
+                        codeATK.text = unitData.curATK.ToString();
+                        codeDEF.text = unitData.curDEF.ToString();
+                        codeRES.text = unitData.curRES.ToString();
+                        codeMOV.text = unitData.curMOV.ToString();*/
 
             UpdateSpecial(unitData);
             objPopup.SetActive(true);

@@ -15,8 +15,7 @@ public class CharacterInfoTipUIMgr : UnitInfoTipUIMgr
             if (characterExcelItem != null)
             {
                 recordTypeID = unitData.typeID;
-                codeName.text = characterExcelItem.name;
-                codeDesc.text = "";
+                basicUIMgr.SetNameDesc(characterExcelItem.name, "");
             }
         }
     }

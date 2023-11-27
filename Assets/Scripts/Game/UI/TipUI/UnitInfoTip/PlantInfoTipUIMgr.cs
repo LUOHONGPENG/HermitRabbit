@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class PlantInfoTipUIMgr : UnitInfoTipUIMgr
 {
-    [Header("Special")]
-    public GameObject objMove;
 
     protected override void UpdateSpecial(BattleUnitData unitData)
     {
@@ -17,9 +15,8 @@ public class PlantInfoTipUIMgr : UnitInfoTipUIMgr
             if (plantExcelItem != null)
             {
                 recordTypeID = unitData.typeID;
-                codeName.text = plantExcelItem.name;
-                codeDesc.text = plantExcelItem.desc;
-                objMove.SetActive(false);
+                basicUIMgr.SetNameDesc(plantExcelItem.name, plantExcelItem.desc);
+                basicUIMgr.HideMov();
             }
         }
     }
