@@ -7,6 +7,9 @@ public class MapTileBase : MonoBehaviour
     [Header("Indicator")]
     public SpriteRenderer spIndicator;
     public SpriteRenderer spPlantRange;
+    public SpriteRenderer spFoeMove;
+    public SpriteRenderer spFoeAttack;
+
     public List<Color> listColorIndicator;
 
     [Header("Display")]
@@ -106,12 +109,40 @@ public class MapTileBase : MonoBehaviour
         {
             spPlantRange.gameObject.SetActive(false);
         }
+        spFoeMove.gameObject.SetActive(false);
+        spFoeAttack.gameObject.SetActive(false);
     }
+
+    public void SetFoeRangeIndicator(bool isFoeMove,bool isFoeAttack)
+    {
+        if (isFoeMove)
+        {
+            spFoeMove.gameObject.SetActive(true);
+            spFoeAttack.gameObject.SetActive(false);
+        }
+        else
+        {
+            if (isFoeAttack)
+            {
+                spFoeMove.gameObject.SetActive(false);
+                spFoeAttack.gameObject.SetActive(true);
+            }
+            else
+            {
+                spFoeMove.gameObject.SetActive(false);
+                spFoeAttack.gameObject.SetActive(false);
+            }
+        }
+        spPlantRange.gameObject.SetActive(false);
+
+    }
+
 
     public void ResetRangeIndicator()
     {
         spPlantRange.gameObject.SetActive(false);
-
+        spFoeAttack.gameObject.SetActive(false);
+        spFoeMove.gameObject.SetActive(false);
     }
 
     #endregion

@@ -292,12 +292,17 @@ public partial class MapViewMgr : MonoBehaviour
     {
         InteractState state = InputMgr.Instance.GetInteractState();
 
-        if(state != InteractState.WaitAction)
+        if(state != InteractState.WaitAction && state != InteractState.CharacterSkill)
         {
             if (gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Plant)
             {
                 BattlePlantData plantData = (BattlePlantData)gameData.GetDataFromUnitInfo(gameData.GetUnitInfoFromHoverTileID());
                 SetMapRangeUI_Plant(plantData.listValidTouchRange);
+            }
+            else if(gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Foe)
+            {
+                BattleFoeData foeData = (BattleFoeData)gameData.GetDataFromUnitInfo(gameData.GetUnitInfoFromHoverTileID());
+                SetMapRangeUI_Foe(foeData.listValidTouchRange, foeData.listValidAttackRange);
             }
             else
             {
@@ -315,16 +320,22 @@ public partial class MapViewMgr : MonoBehaviour
     {
         foreach (MapTileBase mapTile in listMapTile)
         {
-            if (listPos.Contains(mapTile.posID))
-            {
-                mapTile.SetPlantRangeIndicator(true);
-            }
-            else
-            {
-                mapTile.SetPlantRangeIndicator(false);
-            }
+            mapTile.SetPlantRangeIndicator(listPos.Contains(mapTile.posID));
         }
     }
+
+    private void SetMapRangeUI_Foe(List<Vector2Int> listMove,List<Vector2Int> listAttack)
+    {
+        foreach(MapTileBase mapTile in listMapTile)
+        {
+            bool isInMove = listMove.Contains(mapTile.posID);
+            bool isInAttack = listAttack.Contains(mapTile.posID);
+            mapTile.SetFoeRangeIndicator(isInMove, isInAttack);
+        }
+
+
+    }
+
 
 /*    private void SetMapRangeUI_Foe()
     {

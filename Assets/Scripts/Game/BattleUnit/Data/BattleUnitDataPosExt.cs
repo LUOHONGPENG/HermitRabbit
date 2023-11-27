@@ -497,6 +497,9 @@ public partial class BattleUnitData
 
     public virtual void RefreshTouchRange()
     {
+
+
+
         //I will write it later
     }
 
