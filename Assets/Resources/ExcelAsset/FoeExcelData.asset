@@ -68,7 +68,7 @@ MonoBehaviour:
     name: HR_Normal
     desc: Can do ranged physical attack.
     HP: 30
-    ATK: 3
+    ATK: 4
     DEF: 1
     RES: 1
     MOV: 4
@@ -85,7 +85,7 @@ MonoBehaviour:
     name: HR_Red
     desc: Can spell fire magic and apply .
     HP: 25
-    ATK: 2
+    ATK: 3
     DEF: 0
     RES: 1
     MOV: 3
@@ -102,7 +102,7 @@ MonoBehaviour:
     name: HR_Blue
     desc: Can spell water magic and recover HP.
     HP: 25
-    ATK: 3
+    ATK: 4
     DEF: 0
     RES: 1
     MOV: 3
@@ -139,7 +139,7 @@ MonoBehaviour:
     ATK: 5
     DEF: 0
     RES: 1
-    MOV: 0
+    MOV: 2
     skillID: 9201
     findTargetType: 1
     focusType: 1
@@ -156,7 +156,7 @@ MonoBehaviour:
     ATK: 5
     DEF: 3
     RES: 0
-    MOV: 9
+    MOV: 8
     skillID: 9202
     findTargetType: 0
     focusType: 1
@@ -169,11 +169,11 @@ MonoBehaviour:
   - id: 1041
     name: CEO
     desc: Can deal high damage but move slow.
-    HP: 80
+    HP: 30
     ATK: 10
     DEF: 4
     RES: 4
-    MOV: 1
+    MOV: 2
     skillID: 9301
     findTargetType: 0
     focusType: 1
@@ -186,14 +186,14 @@ MonoBehaviour:
   - id: 1042
     name: Secretary_F
     desc: 
-    HP: 50
-    ATK: 3
+    HP: 25
+    ATK: 4
     DEF: 0
-    RES: 4
-    MOV: 2
-    skillID: 9201
-    findTargetType: 1
-    focusType: 1
+    RES: 5
+    MOV: 5
+    skillID: 9302
+    findTargetType: 2
+    focusType: 0
     foeTraitID: -1
     generateType: 0
     pos0: 1
@@ -224,7 +224,7 @@ MonoBehaviour:
     ATK: 0
     DEF: 0
     RES: 0
-    MOV: 0
+    MOV: 2
     skillID: 9901
     findTargetType: 0
     focusType: 0

@@ -527,6 +527,14 @@ MonoBehaviour:
     listTagType:
     - 0
     listBuffType: 00000000
+  - id: 9302
+    name_EN: Coffee
+    name_CN: "\u8001\u677F\u559D\u8336"
+    desc_EN: 
+    desc_CN: 
+    listTagType:
+    - 0
+    listBuffType: 00000000
   - id: 9901
     name_EN: Summon Darkness
     name_CN: Summon Darkness

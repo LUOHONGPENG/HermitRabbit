@@ -247,7 +247,8 @@ public enum FoeGenerateType
 public enum FoeFindTargetType
 {
     Normal,
-    Farthest
+    Farthest,
+    HPLowest
 }
 
 public enum FoeFocusType

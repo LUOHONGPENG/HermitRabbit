@@ -132,7 +132,7 @@ MonoBehaviour:
     effectType: 2
     maxLevel: 10
     counterType: 1
-    countDownType: 0
+    countDownType: 1
     canBeRemoved: 1
     canBeDouble: 1
     desc: Restore X <sprite="Common" name="HP"> HP when turn starts. Buff decrease

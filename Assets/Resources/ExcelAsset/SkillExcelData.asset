@@ -955,7 +955,7 @@ MonoBehaviour:
     costMOV: 0
     costHP: 0
     costMemory: 0
-    range: 10
+    range: 7
     isRangeSelf: 0
     needExtraTarget: 0
     radius: 0
@@ -1021,6 +1021,32 @@ MonoBehaviour:
     damageModifier: 0
     listBuffEffect: 00000000
     listBuffDelta: 00000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
+    tileEffectType: 0
+    activeSkillType: 5
+    characterID: 0
+    unlockNodeID: 0
+  - id: 9302
+    name: Coffee
+    costAP: 1
+    costMOV: 0
+    costHP: 0
+    costMemory: 0
+    range: 1
+    isRangeSelf: 1
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 2
+    characterEffect: 0
+    plantEffect: 0
+    damageType: 3
+    damageDeltaStd: 2
+    damageDelta: 100
+    damageModifier: 0
+    listBuffEffect: b90b0000
+    listBuffDelta: 02000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
     tileEffectType: 0

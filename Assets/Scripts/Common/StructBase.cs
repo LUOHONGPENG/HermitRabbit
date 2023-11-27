@@ -125,16 +125,19 @@ public class FoeFindTargetInfo
 
     public int GCost = 99;
     private float HPRate = 1f;
-    private int sourceHate = 0; 
+    private int sourceHate = 0;
 
-    public FoeFindTargetInfo(FoeFindTargetType findTargetType, BattleUnitData unit)
+    public int realDistance = 0;
+
+    public FoeFindTargetInfo(BattleFoeData foeData, BattleUnitData unit)
     {
-        this.findTargetType = findTargetType;
+        this.findTargetType = foeData.findTargetType;
         this.keyID = unit.keyID;
         this.unitType = unit.battleUnitType;
         this.posID = unit.posID;
         this.sourceHate = unit.curHate;
         this.HPRate = unit.HPrate;
+        this.realDistance = PublicTool.CalculateGlobalDis(foeData.posID, unit.posID);
     }
 
     public int TotalHate
@@ -149,9 +152,10 @@ public class FoeFindTargetInfo
                     temp += Mathf.RoundToInt(1f * CalculateHateGCostNear());
                     break;
                 case FoeFindTargetType.Farthest:
-                    temp += Mathf.RoundToInt(0 * CalculateHateHP());
-                    temp += Mathf.RoundToInt(2f * CalculateHateGCostFar());
-                    Debug.Log(keyID + "HateFar:" + Mathf.RoundToInt(2f * CalculateHateGCostFar()));
+                    temp += Mathf.RoundToInt(2f * CalculateHateDis());
+                    break;
+                case FoeFindTargetType.HPLowest:
+                    temp += Mathf.RoundToInt(2f * CalculateHateHP());
                     break;
             }
 
@@ -206,6 +210,19 @@ public class FoeFindTargetInfo
         }
     }
 
+    public int CalculateHateDis()
+    {
+        //GCost = 0 -> 0
+        //GCost = 20 -> 1000
+        if (realDistance > 20)
+        {
+            return 1000;
+        }
+        else
+        {
+            return Mathf.RoundToInt(GCost * 1000f / 20f);
+        }
+    }
 }
 
 

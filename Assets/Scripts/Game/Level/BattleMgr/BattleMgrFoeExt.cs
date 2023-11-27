@@ -154,18 +154,18 @@ public partial class BattleMgr
         {
             foreach(var unit in gameData.listFoe)
             {
-                listInfo.Add(new FoeFindTargetInfo(foeData.findTargetType,unit));
+                listInfo.Add(new FoeFindTargetInfo(foeData,unit));
             }
         }
         else if(foeData.focusType == FoeFocusType.Friend)
         {
             foreach (var unit in gameData.listCharacter)
             {
-                listInfo.Add(new FoeFindTargetInfo(foeData.findTargetType, unit));
+                listInfo.Add(new FoeFindTargetInfo(foeData, unit));
             }
             foreach (var unit in gameData.listPlant)
             {
-                listInfo.Add(new FoeFindTargetInfo(foeData.findTargetType, unit));
+                listInfo.Add(new FoeFindTargetInfo(foeData, unit));
             }
         }
 
