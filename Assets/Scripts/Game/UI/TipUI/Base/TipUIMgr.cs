@@ -104,7 +104,7 @@ public class TipUIMgr : MonoBehaviour
             //DisplayTileTip
             if (shouldHideTile)
             {
-                if (gameData.CheckWhetherHoverTileValid())
+                if (gameData.CheckWhetherHoverTileValid() && InputMgr.Instance.interactState != InteractState.WaitAction)
                 {
                     tileInfoTipUIMgr.UpdateBasicInfo(gameData.GetMapTileDataFromHoverTile());
                 }
@@ -119,24 +119,33 @@ public class TipUIMgr : MonoBehaviour
             }
 
 
-            //DisplayUnitTip
-            if(gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Character)
+            if(InputMgr.Instance.interactState != InteractState.WaitAction)
             {
-                characterInfoTipUIMgr.UpdateBasicInfo(gameData.GetUnitInfoFromHoverTileID());
-                foeInfoTipUIMgr.HideTip();
-                plantInfoTipUIMgr.HideTip();
-            }
-            else if(gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Foe)
-            {
-                characterInfoTipUIMgr.HideTip();
-                foeInfoTipUIMgr.UpdateBasicInfo(gameData.GetUnitInfoFromHoverTileID());
-                plantInfoTipUIMgr.HideTip();
-            }
-            else if(gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Plant)
-            {
-                characterInfoTipUIMgr.HideTip();
-                foeInfoTipUIMgr.HideTip();
-                plantInfoTipUIMgr.UpdateBasicInfo(gameData.GetUnitInfoFromHoverTileID());
+                //DisplayUnitTip
+                if (gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Character)
+                {
+                    characterInfoTipUIMgr.UpdateBasicInfo(gameData.GetUnitInfoFromHoverTileID());
+                    foeInfoTipUIMgr.HideTip();
+                    plantInfoTipUIMgr.HideTip();
+                }
+                else if (gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Foe)
+                {
+                    characterInfoTipUIMgr.HideTip();
+                    foeInfoTipUIMgr.UpdateBasicInfo(gameData.GetUnitInfoFromHoverTileID());
+                    plantInfoTipUIMgr.HideTip();
+                }
+                else if (gameData.GetUnitInfoFromHoverTileID().type == BattleUnitType.Plant)
+                {
+                    characterInfoTipUIMgr.HideTip();
+                    foeInfoTipUIMgr.HideTip();
+                    plantInfoTipUIMgr.UpdateBasicInfo(gameData.GetUnitInfoFromHoverTileID());
+                }
+                else
+                {
+                    characterInfoTipUIMgr.HideTip();
+                    foeInfoTipUIMgr.HideTip();
+                    plantInfoTipUIMgr.HideTip();
+                }
             }
             else
             {
@@ -144,6 +153,7 @@ public class TipUIMgr : MonoBehaviour
                 foeInfoTipUIMgr.HideTip();
                 plantInfoTipUIMgr.HideTip();
             }
+
         }
     }
 
