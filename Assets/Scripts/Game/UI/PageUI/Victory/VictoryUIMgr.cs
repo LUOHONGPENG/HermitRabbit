@@ -182,9 +182,18 @@ public class VictoryUIMgr : MonoBehaviour
                 objMapClip.SetActive(false);
                 if (gameData.numDay == 2)
                 {
-                    PublicTool.StartConditionalTutorial(TutorialGroup.Plant);
+                    NextPhase();
                 }
-                StartPlantPhase();
+                else
+                {
+                    if (gameData.numDay == 3)
+                    {
+                        PublicTool.StartConditionalTutorial(TutorialGroup.Plant);
+                    }
+
+                    StartPlantPhase();
+                }
+
                 break;
             case VictoryPhase.End:
                 objPlant.SetActive(false);
