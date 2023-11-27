@@ -66,9 +66,9 @@ public partial class PublicTool
 
     #region Tutorial
 
-    public static void StartConditionalTutorial(TutorialGroup group)
+    public static void StartConditionalTutorial(TutorialGroup group,int startIndex = -1,int endIndex = -1)
     {
-        EventCenter.Instance.EventTrigger("StartTutorial", new StartTutorialInfo(TutorialMode.First, group));
+        EventCenter.Instance.EventTrigger("StartTutorial", new StartTutorialInfo(TutorialMode.First, group, startIndex,endIndex));
 
     }
 

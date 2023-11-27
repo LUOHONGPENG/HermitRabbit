@@ -64,6 +64,12 @@ MonoBehaviour:
   - id: 9
     Level: 9
     EXP: 650
-    SP: 16
+    SP: 15
     HP1: 8
     HP2: 12
+  - id: 10
+    Level: 10
+    EXP: 800
+    SP: 16
+    HP1: 9
+    HP2: 14

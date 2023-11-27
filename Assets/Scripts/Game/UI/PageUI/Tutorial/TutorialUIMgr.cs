@@ -12,15 +12,20 @@ public enum TutorialMode
     Common
 }
 
-public struct StartTutorialInfo
+public class StartTutorialInfo
 {
     public TutorialMode mode;
     public TutorialGroup group;
+    public int startIndex = -1;
+    public int endIndex = -1;
 
-    public StartTutorialInfo(TutorialMode mode,TutorialGroup group)
+    public StartTutorialInfo(TutorialMode mode,TutorialGroup group,int startIndex = -1, int endIndex = -1)
     {
         this.mode = mode;
         this.group = group;
+
+        this.startIndex = startIndex;
+        this.endIndex = endIndex;
     }
 }
 
@@ -50,7 +55,10 @@ public class TutorialUIMgr : MonoBehaviour
     public TextMeshProUGUI codePage;
 
     private List<TutorialExcelItem> listCurTutorial = new List<TutorialExcelItem>();
+    private TutorialGroup curGroup = TutorialGroup.None;
     private int curTutorialID = -1;
+    private int startIndex = -1;
+    private int endIndex = -1;
 
     public void Init()
     {
@@ -114,17 +122,20 @@ public class TutorialUIMgr : MonoBehaviour
     {
         StartTutorialInfo info = (StartTutorialInfo)arg0;
 
-        StartTutorial(info.mode, info.group);
+        StartTutorial(info.mode, info.group,info.startIndex,info.endIndex);
     }
 
-    public void StartTutorial(TutorialMode tutorialMode,TutorialGroup group)
+    public void StartTutorial(TutorialMode tutorialMode,TutorialGroup group,int startID,int endID)
     {
         if (tutorialMode == TutorialMode.First)
         {
             objFirst.SetActive(true);
             objCommon.SetActive(false);
 
-            SelectTutorialGroup(group);
+            startIndex = startID;
+            endIndex = endID;
+
+            SelectTutorialGroup(group, startIndex);
             RefreshButton();
         }
         else if(tutorialMode == TutorialMode.Common)
@@ -134,16 +145,25 @@ public class TutorialUIMgr : MonoBehaviour
 
             SelectTutorialGroup(TutorialGroup.Battle);
             RefreshPageNum();
+            RefreshSelectGroup();
         }
     }
 
-    public void SelectTutorialGroup(TutorialGroup group)
+    public void SelectTutorialGroup(TutorialGroup group,int startID = -1)
     {
         List<TutorialExcelItem> listTemp = PublicTool.GetTutorialGroup(group);
         if (listTemp != null && listTemp.Count>0)
         {
             listCurTutorial = listTemp;
-            curTutorialID = 0;
+            curGroup = group;
+            if (startID < 0)
+            {
+                curTutorialID = 0;
+            }
+            else
+            {
+                curTutorialID = startID;
+            }
             ReadTutorialData();
             objPopup.SetActive(true);
         }
@@ -163,7 +183,12 @@ public class TutorialUIMgr : MonoBehaviour
     public void RefreshButton()
     {
 
-        if (curTutorialID == listCurTutorial.Count - 1)
+        if (endIndex < 0 && curTutorialID == listCurTutorial.Count - 1)
+        {
+            btnContinue.gameObject.SetActive(false);
+            btnFinish.gameObject.SetActive(true);
+        }
+        else if (endIndex >= 0 && curTutorialID == endIndex)
         {
             btnContinue.gameObject.SetActive(false);
             btnFinish.gameObject.SetActive(true);
@@ -199,6 +224,8 @@ public class TutorialUIMgr : MonoBehaviour
 
     public void HidePopup()
     {
+        startIndex = -1;
+        endIndex = -1;
         objPopup.SetActive(false);
     }
 
@@ -233,6 +260,16 @@ public class TutorialUIMgr : MonoBehaviour
         if (listCurTutorial != null)
         {
             codePage.text = string.Format("{0}/{1}", curTutorialID + 1, listCurTutorial.Count);
+        }
+    }
+
+    private void RefreshSelectGroup()
+    {
+        for(int i = 0; i < listTag.Count; i++)
+        {
+            TutorialTagUIItem tag = listTag[i];
+
+            tag.SetSelected(curGroup);
         }
     }
 }

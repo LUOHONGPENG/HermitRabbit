@@ -82,6 +82,7 @@ public class BattleOptionUIMgr : MonoBehaviour
         listSkillBtn.Clear();
         List<SkillExcelItem> listSkill = ExcelDataMgr.Instance.skillExcelData.dicAllCharacterSkill[curCharacterData.typeID];
         int counter = 0;
+        bool createSkillBtn = false;
         for (int i = 0; i < listSkill.Count; i++)
         {
             SkillExcelItem skill = listSkill[i];
@@ -101,9 +102,10 @@ public class BattleOptionUIMgr : MonoBehaviour
                 itemSkill.Init(listSkill[i]);
                 listSkillBtn.Add(itemSkill);
                 counter++;
+                createSkillBtn = true;
             }
         }
-        if (listSkill.Count > 0)
+        if (createSkillBtn)
         {
             imgSkillText.gameObject.SetActive(true);
         }

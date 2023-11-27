@@ -26,7 +26,7 @@ MonoBehaviour:
     focusType: 1
     foeTraitID: -1
     generateType: 0
-    pos0: 3
+    pos0: 0
     pos1: 0
     pixelUrl: PixelEvilGod
     aniUrl: ani_pf_LinkedList

@@ -8,7 +8,10 @@ using UnityEngine.UI;
 public class TutorialTagUIItem : MonoBehaviour
 {
     public Button btnTag;
+    public Image imgBtn;
     public TextMeshProUGUI codeTag;
+
+    public List<Color> listColorBg = new List<Color>();
 
     private TutorialGroup recordGroup;
 
@@ -25,10 +28,13 @@ public class TutorialTagUIItem : MonoBehaviour
     {
         if(recordGroup == curGroup)
         {
+            imgBtn.color = listColorBg[0];
+
 
         }
         else
         {
+            imgBtn.color = listColorBg[1];
 
         }
     }

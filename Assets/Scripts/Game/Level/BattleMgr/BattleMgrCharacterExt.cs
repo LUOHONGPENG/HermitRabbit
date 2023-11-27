@@ -45,6 +45,8 @@ public partial class BattleMgr
         PublicTool.RecalculateOccupancy();
         yield return new WaitForEndOfFrame();
         yield return StartCoroutine(IE_StartCharacterTurnControl());
+
+        CheckTurnStartTutorial();
         yield break;
     }
 
