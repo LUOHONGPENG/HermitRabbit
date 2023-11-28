@@ -71,12 +71,12 @@ MonoBehaviour:
 
       Then you can spend <sprite="Common" name="SP"> Confidence to learn
       Skill.'
-    gifUrl: 
+    gifUrl: LearnSkill
   - id: 8
     group: 2
     strTitle: Reset Skill
     strContent: You can reset the skill tree without limitation.
-    gifUrl: 
+    gifUrl: ResetSkill
   - id: 9
     group: 2
     strTitle: Spell Skill
@@ -115,8 +115,8 @@ MonoBehaviour:
 
       <sprite="Target" name="PUnit">
       Plant is a special unit without <sprite="Common" name="MOV"> MOV and <sprite="Common"
-      name="AP"> AP.'
-    gifUrl: 
+      name="AP"> AP, and their skills can be triggered via different condition.'
+    gifUrl: SelectPlant
   - id: 14
     group: 4
     strTitle: Plant Example
@@ -134,4 +134,4 @@ MonoBehaviour:
 
       Setting <sprite="Target" name="PUnit"> Plant will occupy the
       <sprite="Common" name="Essence"> Essence Points.'
-    gifUrl: 
+    gifUrl: SetPlant
