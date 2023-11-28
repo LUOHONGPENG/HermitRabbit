@@ -537,7 +537,15 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9901
     name_EN: Summon Darkness
-    name_CN: Summon Darkness
+    name_CN: "\u9ED1\u6697\u53EC\u5524"
+    desc_EN: 
+    desc_CN: 
+    listTagType:
+    - 0
+    listBuffType: 00000000
+  - id: 9902
+    name_EN: Pressure
+    name_CN: "\u538B\u529B\u602A"
     desc_EN: 
     desc_CN: 
     listTagType:

@@ -230,8 +230,8 @@ MonoBehaviour:
     focusType: 0
     foeTraitID: -1
     generateType: 0
-    pos0: 1
-    pos1: 0
+    pos0: 3
+    pos1: 1
     pixelUrl: PixelEvilBoss
     aniUrl: 
   - id: 1098
@@ -251,3 +251,20 @@ MonoBehaviour:
     pos1: 0
     pixelUrl: PixelEvilGod
     aniUrl: 
+  - id: 1097
+    name: Sadness
+    desc: 
+    HP: 5
+    ATK: 5
+    DEF: 0
+    RES: 0
+    MOV: 5
+    skillID: 9302
+    findTargetType: 2
+    focusType: 0
+    foeTraitID: -1
+    generateType: 0
+    pos0: 1
+    pos1: 0
+    pixelUrl: 
+    aniUrl: ani_pf_InterviewF

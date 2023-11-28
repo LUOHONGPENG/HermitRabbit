@@ -152,13 +152,14 @@ public partial class LevelMgr
                             newFoeData.posID = new Vector2Int(foeItem.pos0, foeItem.pos1);
                             break;
                         case FoeGenerateType.RowRange:
-                            List<Vector2Int> listPos = PublicTool.GetEmptyPosFromRowRange(rowMax-foeItem.pos0 ,rowMax);
+                            List<Vector2Int> listPos = PublicTool.GetEmptyPosFromRowRange(rowMax-foeItem.pos0 ,rowMax - foeItem.pos1);
                             if (listPos.Count > 0)
                             {
                                 int ran = UnityEngine.Random.Range(0, listPos.Count);
                                 newFoeData.posID = listPos[ran];
                             }
                             break;
+                        
                     }
                     //Set eXP
                     newFoeData.exp = foeInfo.z;

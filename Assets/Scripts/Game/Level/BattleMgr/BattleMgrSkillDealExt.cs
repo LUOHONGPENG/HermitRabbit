@@ -323,8 +323,22 @@ public partial class BattleMgr
                 }
                 break;
             case 9001:
-                BattleFoeData newFoeData = gameData.GenerateFoeData(delta);
-                FoeExcelItem foeItemData = PublicTool.GetFoeExcelItem(delta);
+                int ranFoe = UnityEngine.Random.Range(0, 3);
+                int foeRandomID = -1;
+                switch (ranFoe)
+                {
+                    case 0:
+                        foeRandomID = 1022;
+                        break;
+                    case 1:
+                        foeRandomID = 1098;
+                        break;
+                    case 2:
+                        foeRandomID = 1097;
+                        break;
+                }
+                BattleFoeData newFoeData = gameData.GenerateFoeData(foeRandomID);
+                FoeExcelItem foeItemData = PublicTool.GetFoeExcelItem(foeRandomID);
                 List<Vector2Int> listPos = PublicTool.GetEmptyPosFromRowRange(3 - foeItemData.pos0, 3);
                 if (listPos.Count > 0)
                 {
