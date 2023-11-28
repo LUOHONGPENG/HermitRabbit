@@ -240,4 +240,5 @@ MonoBehaviour:
   curUICamera: {fileID: 0}
   curSceneGameMgr: {fileID: 0}
   curSceneName: 0
+  cursorTex: {fileID: 2800000, guid: 10953e6ce616fc749a8d665c1c29274e, type: 3}
   isInit: 0

@@ -10,6 +10,9 @@ public partial class GameMgr : MonoSingleton<GameMgr>
     public Camera curUICamera;
     public SceneGameMgr curSceneGameMgr = null;
     public SceneName curSceneName = SceneName.Init;
+
+    public Texture2D cursorTex;
+
     public bool isInit = false;
 
     #region Init
@@ -20,6 +23,8 @@ public partial class GameMgr : MonoSingleton<GameMgr>
 
     public IEnumerator IE_InitGame()
     {
+        Cursor.SetCursor(cursorTex, Vector2.zero, CursorMode.Auto);
+
         yield return StartCoroutine(ExcelDataMgr.Instance.IE_Init());
         yield return StartCoroutine(InputMgr.Instance.IE_Init());
         yield return StartCoroutine(SoundMgr.Instance.IE_Init());
