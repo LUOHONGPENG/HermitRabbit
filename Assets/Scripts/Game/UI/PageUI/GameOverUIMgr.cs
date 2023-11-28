@@ -11,6 +11,8 @@ public class GameOverUIMgr : MonoBehaviour
     public Button btnAction;
     public Text codeBtnAction;
 
+    public Image imgIcon;
+    public List<Sprite> listSp = new List<Sprite>();
     public void Init()
     {
 
@@ -32,6 +34,7 @@ public class GameOverUIMgr : MonoBehaviour
     {
         codeGameOver.text = "Game Over";
         codeBtnAction.text = "Menu";
+        imgIcon.sprite = listSp[0];
         btnAction.onClick.RemoveAllListeners();
         btnAction.onClick.AddListener(delegate ()
         {
@@ -42,7 +45,8 @@ public class GameOverUIMgr : MonoBehaviour
     private void GoodEndStartEvent(object arg0)
     {
         codeGameOver.text = "Good End";
-        codeBtnAction.text = "Back To Menu";
+        codeBtnAction.text = "Menu";
+        imgIcon.sprite = listSp[1];
         btnAction.onClick.RemoveAllListeners();
         btnAction.onClick.AddListener(delegate ()
         {
