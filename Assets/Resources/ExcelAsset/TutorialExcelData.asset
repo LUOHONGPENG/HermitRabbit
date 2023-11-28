@@ -124,8 +124,8 @@ MonoBehaviour:
       of spelling skill is triggered.
 
       For example, Void Grass will injure
-      everyone near it when the second turn starts.'
-    gifUrl: 
+      everyone around it when the second turn starts.'
+    gifUrl: PlantBoom
   - id: 15
     group: 4
     strTitle: Set Plant

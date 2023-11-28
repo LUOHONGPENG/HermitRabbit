@@ -73,6 +73,10 @@ public class VictoryUIMgr : MonoBehaviour
                 {
                     EventCenter.Instance.EventTrigger("TalkStart", TalkGroup.Day2);
                 }
+                else if(gameData.numDay == 7)
+                {
+                    EventCenter.Instance.EventTrigger("TalkStart", TalkGroup.Day7);
+                }
 
             }
         });

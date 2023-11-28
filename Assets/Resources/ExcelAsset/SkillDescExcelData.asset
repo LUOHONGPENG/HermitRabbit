@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - id: 1001
-    name_EN: Pluse Wave
+    name_EN: Pulse Wave
     name_CN: "\u8109\u51B2\u6CE2\u52A8"
     desc_EN: Deal <sprite="Common" name="ATK"> ATK damage.
     desc_CN: "\u9020\u6210\u76F8\u5F53\u4E8E <sprite=\"Common\" name=\"ATK\"> \u653B\u51FB

@@ -322,7 +322,9 @@ public enum TalkGroup
 {
     None,
     Day1,
-    Day2
+    Day2,
+    Day7
+
 }
 
 public enum TalkStep
