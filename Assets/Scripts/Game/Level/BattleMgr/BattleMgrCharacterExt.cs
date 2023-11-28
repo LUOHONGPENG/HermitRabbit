@@ -101,7 +101,7 @@ public partial class BattleMgr
         if (PublicTool.CheckWhetherCharacterUnlockSkill(1002, 2391) && numTurn > 1 )
         {
             BattleCharacterData foxData = gameData.GetBattleCharacterData(1002);
-            if (foxData.HPrate >= 0.85 && foxData.GetBuffLevel(3003) <= 6)
+            if (foxData.HPrate >= 0.85 && foxData.GetBuffLevel(3003) <= 5)
             {
                 BuffExcelItem buff = PublicTool.GetBuffExcelItem(3003);
                 SkillBuffEffectDeal(foxData, 3003, 1, buff.name, buff.effectType);

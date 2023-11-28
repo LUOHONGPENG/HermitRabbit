@@ -328,10 +328,10 @@ MonoBehaviour:
     name_CN: "\u6478\u9C7C\u5148\u544A\u72B6"
     desc_EN: If <sprite="Common" name="HP"> HP is higher than 85% when turn start
       (except the first turn), gain 1 <sprite="BuffS" name="Angry"> Angry and won't
-      exceed 6 levels.
+      exceed 5 levels.
     desc_CN: "\u9664\u4E86\u7B2C\u4E00\u56DE\u5408\uFF0C\u56DE\u5408\u5F00\u59CB\u65F6
       <sprite=\"Common\" name=\"HP\"> \u751F\u547D\u5927\u4E8E85%\u5219\u83B7\u5F971\u5C42
-      <sprite=\"BuffS\" name=\"Angry\"> \u6124\u6012\uFF0C\u4E0D\u4F1A\u8D85\u8FC76\u5C42"
+      <sprite=\"BuffS\" name=\"Angry\"> \u6124\u6012\uFF0C\u4E0D\u4F1A\u8D85\u8FC75\u5C42"
     listTagType:
     - 0
     listBuffType: bb0b0000
