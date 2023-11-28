@@ -14,10 +14,14 @@ public class StatusUIMgr : MonoBehaviour
 
     public Button btnChoose1001;
     public Button btnChoose1002;
+    public Image imgSelect1001;
+    public Image imgSelect1002;
+
     public Button btnClose;
     public Button btnReset;
 
     [Header("Status")]
+    public Text codeName;
     public Text codeLevel;
     public Text codeSPLeft;
     public Text codeEXP;
@@ -101,7 +105,27 @@ public class StatusUIMgr : MonoBehaviour
     {
         objPopup.SetActive(true);
         characterData = PublicTool.GetGameData().GetBattleCharacterData(1001);
+
         RefreshCharacterInfo();
+    }
+
+    public void RefreshSelect()
+    {
+        if(characterData.typeID == 1001)
+        {
+            imgSelect1001.gameObject.SetActive(true);
+            imgSelect1002.gameObject.SetActive(false);
+        }
+        else if(characterData.typeID == 1002)
+        {
+            imgSelect1001.gameObject.SetActive(false);
+            imgSelect1002.gameObject.SetActive(true);
+        }
+        else
+        {
+            imgSelect1001.gameObject.SetActive(false);
+            imgSelect1002.gameObject.SetActive(false);
+        }
     }
 
     public void HidePopup()
@@ -115,6 +139,7 @@ public class StatusUIMgr : MonoBehaviour
     {
         RefreshCharacterStatus();
         InitSkillTree();
+        RefreshSelect();
 
     }
 
@@ -122,6 +147,7 @@ public class StatusUIMgr : MonoBehaviour
     {
         if (characterData != null)
         {
+            codeName.text = PublicTool.GetCharacterExcelItem(characterData.typeID).name;
             codeLevel.text = characterData.Level.ToString();
             codeSPLeft.text = characterData.SPLeft.ToString();
             if (characterData.CheckWhetherMaxLevel())
