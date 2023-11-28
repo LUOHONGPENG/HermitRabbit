@@ -291,7 +291,11 @@ public partial class SkillExcelItem
                     BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
                     if (characterData.curAP > costAP)
                     {
-                        temp += (characterData.curAP - costAP) * 115;
+                        temp += (characterData.curAP - costAP) * 115 + costAP * 50;
+                    }
+                    else
+                    {
+                        temp += characterData.curAP * 50;
                     }
                 }
 

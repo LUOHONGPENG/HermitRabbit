@@ -177,6 +177,10 @@ public partial class BattleMgr
 
     private bool CheckPossiblePlantSkill(BattlePlantData plantData)
     {
+        if(plantData==null || plantData.isDead)
+        {
+            return false;
+        }
         gameData.SetCurBattleSkill(plantData.GetSkillID());
         PublicTool.RecalculateSkillCover();
         if (plantData.listValidSkill.Count > 0)
