@@ -10,6 +10,8 @@ public class MapTileBase : MonoBehaviour
     public SpriteRenderer spFoeMove;
     public SpriteRenderer spFoeAttack;
 
+    public GameObject objSelect;
+
     public List<Color> listColorIndicator;
 
     [Header("Display")]
@@ -188,4 +190,16 @@ public class MapTileBase : MonoBehaviour
     }
 
     #endregion
+
+    public void UpdateSelect(bool isSelected)
+    {
+        if (isSelected)
+        {
+            objSelect.SetActive(true);
+        }
+        else
+        {
+            objSelect.SetActive(false);
+        }
+    }
 }

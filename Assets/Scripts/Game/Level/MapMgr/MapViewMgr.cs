@@ -103,6 +103,31 @@ public partial class MapViewMgr : MonoBehaviour
                 ResetAllTile();
                 break;
         }
+
+        if(state!= InteractState.WaitAction && state != InteractState.PeaceMap)
+        {
+            Vector2Int hoverTileID = gameData.hoverTileID;
+
+            foreach (MapTileBase mapTile in listMapTile)
+            {
+                if(mapTile.posID == hoverTileID)
+                {
+                    mapTile.UpdateSelect(true);
+                }
+                else
+                {
+                    mapTile.UpdateSelect(false);
+                }
+            }
+        }
+        else
+        {
+            foreach (MapTileBase mapTile in listMapTile)
+            {
+                mapTile.UpdateSelect(false);
+            }
+        }
+
     }
     #endregion
 
