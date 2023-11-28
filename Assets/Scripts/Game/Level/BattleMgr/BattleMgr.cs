@@ -136,20 +136,31 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
 
     private void BattleOverWin()
     {
-        //Reward
-        List<Vector2Int> listVictoryExp = new List<Vector2Int>();
-        listVictoryExp.Add(new Vector2Int(1001, GetCharacterExp(1001)));
-        listVictoryExp.Add(new Vector2Int(1002, GetCharacterExp(1002)));
+        if (gameData.numDay < 7)
+        {
+            //Reward
+            List<Vector2Int> listVictoryExp = new List<Vector2Int>();
+            listVictoryExp.Add(new Vector2Int(1001, GetCharacterExp(1001)));
+            listVictoryExp.Add(new Vector2Int(1002, GetCharacterExp(1002)));
 
-        //Invoke Victory Page
-        EventCenter.Instance.EventTrigger("NormalVictoryStart", listVictoryExp);
+            //Invoke Victory Page
+            EventCenter.Instance.EventTrigger("NormalVictoryStart", listVictoryExp);
 
-        //End Battle Flow
-        isBattleEnd = true;
-        gameData.numDay++;
-        gameData.gamePhase = GamePhase.Peace;
-        PublicTool.EventChangeInteract(InteractState.PeaceNormal);
-        EventCenter.Instance.EventTrigger("BattleEnd", null);
+            //End Battle Flow
+            isBattleEnd = true;
+            gameData.numDay++;
+            gameData.gamePhase = GamePhase.Peace;
+            PublicTool.EventChangeInteract(InteractState.PeaceNormal);
+            EventCenter.Instance.EventTrigger("BattleEnd", null);
+        }
+        else
+        {
+            isBattleEnd = true;
+            gameData.gamePhase = GamePhase.Peace;
+            PublicTool.EventChangeInteract(InteractState.PeaceNormal);
+            EventCenter.Instance.EventTrigger("GoodEndStart", null);
+        }
+
     }
 
     private void BattleOverLose()
