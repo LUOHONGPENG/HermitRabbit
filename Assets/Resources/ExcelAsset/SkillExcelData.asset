@@ -80,7 +80,7 @@ MonoBehaviour:
     characterEffect: 1
     plantEffect: 1
     damageType: 3
-    damageDeltaStd: 11
+    damageDeltaStd: 12
     damageDelta: 250
     damageModifier: 0
     listBuffEffect: 00000000
@@ -158,7 +158,7 @@ MonoBehaviour:
     characterEffect: 0
     plantEffect: 2
     damageType: 2
-    damageDeltaStd: 10
+    damageDeltaStd: 11
     damageDelta: 200
     damageModifier: 1
     listBuffEffect: 00000000
@@ -496,7 +496,7 @@ MonoBehaviour:
     characterEffect: 0
     plantEffect: 0
     damageType: 3
-    damageDeltaStd: 9
+    damageDeltaStd: 10
     damageDelta: 100
     damageModifier: 0
     listBuffEffect: 00000000
@@ -1075,6 +1075,32 @@ MonoBehaviour:
     listBuffDelta: 00000000
     listSpecialEffect: 29230000
     listSpecialDelta: 4a040000
+    tileEffectType: 0
+    activeSkillType: 5
+    characterID: 0
+    unlockNodeID: 0
+  - id: 9902
+    name: Pressure
+    costAP: 1
+    costMOV: 0
+    costHP: 0
+    costMemory: 0
+    range: 1
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 1
+    plantEffect: 1
+    damageType: 3
+    damageDeltaStd: 9
+    damageDelta: 100
+    damageModifier: 0
+    listBuffEffect: d1070000
+    listBuffDelta: 01000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
     tileEffectType: 0
     activeSkillType: 5
     characterID: 0

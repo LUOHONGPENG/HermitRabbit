@@ -259,4 +259,21 @@ public class BattleFoeData : BattleUnitData
 
 
     }
+
+    public int TraitID
+    {
+        get
+        {
+            FoeExcelItem item = GetItem();
+            if (item != null)
+            {
+                return item.foeTraitID;
+            }
+            else
+            {
+                return -1;
+            }
+
+        }
+    }
 }

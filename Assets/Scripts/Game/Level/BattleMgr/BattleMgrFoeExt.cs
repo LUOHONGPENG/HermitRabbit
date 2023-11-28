@@ -26,6 +26,51 @@ public partial class BattleMgr
         yield break;
     }
 
+    private IEnumerator IE_TurnStartCheckFoeTrait()
+    {
+        foreach (BattleFoeData foe in gameData.listFoe)
+        {
+            if (!foe.isDead)
+            {
+                if (foe.TraitID > 0)
+                {
+                    switch (foe.TraitID)
+                    {
+                        case 1001:
+                            if(numTurn == 1)
+                            {
+                                BuffExcelItem buff3004 = PublicTool.GetBuffExcelItem(3004);
+                                SkillBuffEffectDeal(foe, 3004, 6, buff3004.name, buff3004.effectType);
+
+                                BuffExcelItem buff3005 = PublicTool.GetBuffExcelItem(3005);
+                                SkillBuffEffectDeal(foe, 3005, 6, buff3005.name, buff3005.effectType);
+
+                                BattleFoeView foeView = unitViewMgr.GetFoeView(foe.keyID);
+                                foeView.RequestBattleText();
+                                PublicTool.EventNormalCameraGoPosID(foe.posID);
+                                yield return new WaitForSeconds(GameGlobal.waitTimeText);
+                            }
+                            break;
+                        case 1002:
+
+                            BuffExcelItem buff3003 = PublicTool.GetBuffExcelItem(3003);
+                            SkillBuffEffectDeal(foe, 3003, 1, buff3003.name, buff3003.effectType);
+
+                            BattleFoeView foeView1002 = unitViewMgr.GetFoeView(foe.keyID);
+                            foeView1002.RequestBattleText();
+                            PublicTool.EventNormalCameraGoPosID(foe.posID);
+                            yield return new WaitForSeconds(GameGlobal.waitTimeText);
+                            break;
+
+                    }
+                }
+            }
+        }
+        yield break;
+
+    }
+
+
     private IEnumerator IE_FoeBuffCheck()
     {
         //If the buff such as burning is triggered 

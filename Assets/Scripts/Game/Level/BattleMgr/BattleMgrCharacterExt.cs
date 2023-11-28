@@ -26,11 +26,16 @@ public partial class BattleMgr
             yield break;
         }
 
+        //FoeTrait
+        yield return StartCoroutine(IE_TurnStartCheckFoeTrait());
+
         //Angry
         yield return StartCoroutine(IE_FriendPassiveCheck());
 
         //HopeTile
         yield return StartCoroutine(IE_HopeApplyFragile());
+
+
 
 
         //BuffCheck

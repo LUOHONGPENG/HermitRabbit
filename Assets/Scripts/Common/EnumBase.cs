@@ -181,6 +181,7 @@ public enum SkillDamageDeltaStd
     ATKDISD3,
     MAXHP,
     COSTHP,
+    CURHP,
     DEF,
     RES,
     BURN

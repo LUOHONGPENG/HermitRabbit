@@ -177,7 +177,7 @@ MonoBehaviour:
     skillID: 9301
     findTargetType: 0
     focusType: 1
-    foeTraitID: -1
+    foeTraitID: 1001
     generateType: 0
     pos0: 1
     pos1: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
     aniUrl: ani_pf_CEO
   - id: 1042
     name: Secretary_F
-    desc: 
+    desc: Can heal.
     HP: 25
     ATK: 4
     DEF: 0
@@ -202,16 +202,16 @@ MonoBehaviour:
     aniUrl: ani_pf_InterviewF
   - id: 1043
     name: Secretary_M
-    desc: 
-    HP: 50
-    ATK: 4
-    DEF: 0
-    RES: 0
+    desc: Get 1 level Angry when turn start.
+    HP: 40
+    ATK: 1
+    DEF: 5
+    RES: 1
     MOV: 6
     skillID: 9202
     findTargetType: 0
     focusType: 1
-    foeTraitID: -1
+    foeTraitID: 1002
     generateType: 0
     pos0: 1
     pos1: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
   - id: 1099
     name: Interview
     desc: Can summon pressure.
-    HP: 180
+    HP: 140
     ATK: 0
     DEF: 0
     RES: 0
@@ -236,14 +236,14 @@ MonoBehaviour:
     aniUrl: 
   - id: 1098
     name: Pressure
-    desc: 
+    desc: Can deal damage according to left HP.
     HP: 8
-    ATK: 10
+    ATK: 0
     DEF: 0
     RES: 0
     MOV: 5
-    skillID: 9201
-    findTargetType: 1
+    skillID: 9902
+    findTargetType: 0
     focusType: 1
     foeTraitID: -1
     generateType: 0

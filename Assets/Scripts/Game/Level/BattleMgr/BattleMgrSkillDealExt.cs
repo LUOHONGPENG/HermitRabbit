@@ -95,6 +95,9 @@ public partial class BattleMgr
                 damageSource = skillBattleInfo.costHP * skillBattleInfo.damageDeltaFloat;
                 skillBattleInfo.damageModifier = gameData.RefreshBattleSkillForCostHP();
                 break;
+            case SkillDamageDeltaStd.CURHP:
+                damageSource = source.curHP * skillBattleInfo.damageDeltaFloat;
+                break;
             case SkillDamageDeltaStd.DEF:
                 damageSource = source.curDEF * skillBattleInfo.damageDeltaFloat;
                 break;
