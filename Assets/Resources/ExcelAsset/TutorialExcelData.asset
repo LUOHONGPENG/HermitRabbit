@@ -28,7 +28,7 @@ MonoBehaviour:
 
       (Move Button will
       selected automatically after choosing a character.)'
-    gifUrl: 
+    gifUrl: Move
   - id: 3
     group: 1
     strTitle: Change Character

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 90b2a3ae5c5922c46833e2e2235bfcf7
+guid: 3fdab9e45eb69fe43a035d766051d070
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -310,27 +310,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: CameraControl_11
-      rect:
-        serializedVersion: 2
-        x: 2407
-        y: 453
-        width: 800
-        height: 450
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b977efafa99f307a0800000000000000
-      internalID: -6412007000414193765
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -344,7 +323,6 @@ TextureImporter:
     nameFileIdTable:
       CameraControl_10: -7177599196267417526
       CameraControl_8: -2713800140734267460
-      CameraControl_11: -6412007000414193765
       CameraControl_0: -1728496222329581945
       CameraControl_6: -7673555497002035351
       CameraControl_4: 3508245211034139588
