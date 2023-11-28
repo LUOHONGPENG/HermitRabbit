@@ -721,14 +721,14 @@ MonoBehaviour:
     costMOV: 0
     costHP: 0
     costMemory: 0
-    range: 3
-    isRangeSelf: 0
+    range: 0
+    isRangeSelf: 1
     needExtraTarget: 0
-    radius: 0
+    radius: 3
     regionType: 0
-    foeEffect: 1
-    characterEffect: 0
-    plantEffect: 0
+    foeEffect: 0
+    characterEffect: 2
+    plantEffect: 2
     damageType: 0
     damageDeltaStd: 0
     damageDelta: 0

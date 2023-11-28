@@ -8,7 +8,7 @@ public class TestButtonMgrEditor : Editor
 
     int MapID = 0;
 
-
+    int PlantID = 0;
     public override void OnInspectorGUI()
     {
         //base.OnInspectorGUI();
@@ -29,5 +29,13 @@ public class TestButtonMgrEditor : Editor
         {
             PublicTool.GetGameData().AddMapClipHeld(MapID);
         }
+
+        PlantID = EditorGUILayout.IntField("PlantID", PlantID);
+
+        if (GUILayout.Button("AddPlant"))
+        {
+            PublicTool.GetGameData().AddPlantHeld(PlantID);
+        }
+
     }
 }

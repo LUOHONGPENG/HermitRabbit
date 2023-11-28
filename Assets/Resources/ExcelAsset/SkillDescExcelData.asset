@@ -60,15 +60,15 @@ MonoBehaviour:
   - id: 1193
     name_EN: Focus
     name_CN: "\u805A\u7126"
-    desc_EN: 'Fire Ball will cost all <sprite="Common" name="AP"> AP and <sprite="Common"
-      name="Radius"> Radius - 1
-
-      Each extra <sprite="Common" name="AP"> AP
-      deal more damage.'
+    desc_EN: Fire Ball will cost all <sprite="Common" name="AP"> AP and <sprite="Common"
+      name="Radius"> Radius - 1. If <sprite="Common" name="AP"> AP is bigger than
+      1, each extra <sprite="Common" name="AP"> AP deal more 125% <sprite="Common"
+      name="ATK"> ATK damage.
     desc_CN: "\u706B\u7403\u672F\u4F1A\u6D88\u8017\u6240\u6709 <sprite=\"Common\"
       name=\"AP\"> \u884C\u52A8\u529B\u5E76\u4E14 <sprite=\"Common\" name=\"Radius\">
-      \u8303\u56F4-1\n\u989D\u5916\u6D88\u8017\u7684 <sprite=\"Common\" name=\"AP\">
-      \u884C\u52A8\u529B\u4F1A\u589E\u5E45\u4F24\u5BB3"
+      \u8303\u56F4-1\u3002\u5982\u679C<sprite=\"Common\" name=\"AP\"> \u884C\u52A8\u529B\u5927\u4E8E1\uFF0C\u5927\u4E8E1\u7684\u6BCF\u70B9
+      <sprite=\"Common\" name=\"AP\"> \u884C\u52A8\u529B\u4F1A\u8FFD\u52A0125% <sprite=\"Common\"
+      name=\"ATK\"> \u653B\u51FB\u7684\u4F24\u5BB3"
     listTagType:
     - 0
     listBuffType: 00000000

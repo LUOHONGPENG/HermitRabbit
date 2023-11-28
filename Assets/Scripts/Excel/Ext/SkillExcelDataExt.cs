@@ -289,14 +289,8 @@ public partial class SkillExcelItem
                 if (PublicTool.CheckWhetherCharacterUnlockSkill(1001, 1193) && characterID == 1001)
                 {
                     BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
-                    if (characterData.curAP > costAP)
-                    {
-                        temp += (characterData.curAP - costAP) * 115 + costAP * 50;
-                    }
-                    else
-                    {
-                        temp += characterData.curAP * 50;
-                    }
+
+                    temp += (-125) + characterData.curAP * 125;
                 }
 
                 //Radius Up

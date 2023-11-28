@@ -26,7 +26,7 @@ MonoBehaviour:
     desc: Attack the foe in range if character hit it with normal attack.
   - id: 1002
     name: Cookee
-    HP: 8
+    HP: 10
     ATK: 3
     DEF: 0
     RES: 1
@@ -59,7 +59,7 @@ MonoBehaviour:
     desc: Hit nearby tiles with electricity that can be transmitted by water.
   - id: 1005
     name: Void Grass
-    HP: 15
+    HP: 18
     ATK: 3
     DEF: 0
     RES: 0
@@ -70,15 +70,15 @@ MonoBehaviour:
     desc: Suicide bombing when the second turn start.
   - id: 1006
     name: Bubblia
-    HP: 20
+    HP: 13
     ATK: 0
-    DEF: 1
-    RES: 1
+    DEF: 0
+    RES: 0
     triggerCondition: 1
     skillID: 3103
     essence: 2
     pixelUrl: pp_Bubble_Idle
-    desc: Random effect from fragile, burning and reducing movement.
+    desc: Random effect from giving buff of ATKUP, DEFUP, RESUP.
   - id: 2001
     name: Maleficia
     HP: 3
