@@ -68,7 +68,7 @@ MonoBehaviour:
     name: HR_Normal
     desc: Can do ranged physical attack.
     HP: 30
-    ATK: 4
+    ATK: 5
     DEF: 1
     RES: 1
     MOV: 4

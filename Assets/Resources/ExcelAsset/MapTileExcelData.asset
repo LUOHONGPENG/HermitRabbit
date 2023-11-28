@@ -54,7 +54,7 @@ MonoBehaviour:
   - id: 7
     tileType: 6
     name: Duel
-    desc: '<sprite="Common" name="DEF"> DEF-1 <sprite="Common" name="RES"> RES-1
+    desc: '<sprite="Common" name="DEF"> DEF-1 and <sprite="Common" name="RES"> RES-1
 
       Skill
       cause <sprite="SkillType" name="TDmg"> True Damage that ignores <sprite="Common"
@@ -78,8 +78,6 @@ MonoBehaviour:
   - id: 10
     tileType: 9
     name: Hope
-    desc: 'Get extra <sprite="Common" name="AP">AP and 1 level fragile
-
-      when
-      turn starts'
+    desc: Get extra <sprite="Common" name="AP"> AP and 1 level <sprite="BuffS" name="Fragile">
+      fragile when turn starts
     iconUrl: imgIconTile_Hope

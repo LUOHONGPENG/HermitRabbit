@@ -14,7 +14,7 @@ public class CommonRangeUIMgr : MonoBehaviour
 
     bool isSelf = false;
 
-    public void Init(SkillRegionType regionType, int range, int radius)
+    public void Init(SkillRegionType regionType, int range, int radius, BattleUnitType type)
     {
         PublicTool.ClearChildItem(tfRangeIcon);
 
@@ -60,7 +60,7 @@ public class CommonRangeUIMgr : MonoBehaviour
         
 
 
-        GenerateSource(sourcePos);
+        GenerateSource(sourcePos, type);
         GenerateDot(targetPos, sourcePos);
 
         GenerateRadius(regionType, range, radius);
@@ -81,9 +81,11 @@ public class CommonRangeUIMgr : MonoBehaviour
 
     }
 
-    public void GenerateSource(Vector2Int posID)
+    public void GenerateSource(Vector2Int posID,BattleUnitType type)
     {
         GameObject objSource = GameObject.Instantiate(pfRangeSource, tfRangeIcon);
+        SkillRangeSourceItem itemSource = objSource.GetComponent<SkillRangeSourceItem>();
+        itemSource.Init(type);
         objSource.transform.localPosition = new Vector2(posID.x * 22f, posID.y * 22f);
     }
 

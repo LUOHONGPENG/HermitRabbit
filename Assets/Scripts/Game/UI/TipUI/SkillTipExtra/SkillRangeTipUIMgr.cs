@@ -12,7 +12,7 @@ public class SkillRangeTipUIMgr : MonoBehaviour
 
     public void Init(SkillRegionType regionType,int range, int radius)
     {
-        rangeIconUI.Init(regionType, range, radius);
+        rangeIconUI.Init(regionType, range, radius,BattleUnitType.Character);
 
         txRange.text = range.ToString();
         txRadius.text = radius.ToString();

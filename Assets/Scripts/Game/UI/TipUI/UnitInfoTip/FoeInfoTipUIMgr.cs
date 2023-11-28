@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class FoeInfoTipUIMgr : UnitInfoTipUIMgr
 {
+    public UnitSkillUIMgr skillUIMgr;
+
     protected override void UpdateSpecial(BattleUnitData unitData)
     {
         //This Phase wont change when HP change
@@ -21,6 +23,8 @@ public class FoeInfoTipUIMgr : UnitInfoTipUIMgr
                 basicUIMgr.SetNameDesc(foeExcelItem.name, foeExcelItem.desc);
                 basicUIMgr.SetType(BattleUnitType.Foe);
 
+
+                skillUIMgr.Init(foeExcelItem.skillID,BattleUnitType.Foe);
             }
         }
     }
