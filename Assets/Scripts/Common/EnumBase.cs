@@ -339,11 +339,9 @@ public enum TutorialGroup
 {
     None,
     Battle,
-    MapClip,
-    Plant,
-    Peace,
     Skill,
-    Buff,
+    Map,
+    Plant,
     End
 }
 

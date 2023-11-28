@@ -171,7 +171,7 @@ public class VictoryUIMgr : MonoBehaviour
             case VictoryPhase.MapClip1:
                 if(gameData.numDay == 2)
                 {
-                    PublicTool.StartConditionalTutorial(TutorialGroup.MapClip);
+                    PublicTool.StartConditionalTutorial(TutorialGroup.Map,0,3);
                 }
                 StartMapClipPhase();
                 break;

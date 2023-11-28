@@ -119,7 +119,7 @@ public class TalkUIMgr : MonoBehaviour
         }
         else if(curTalkGroup == TalkGroup.Day2)
         {
-            PublicTool.StartConditionalTutorial(TutorialGroup.Peace);
+            PublicTool.StartConditionalTutorial(TutorialGroup.Skill,0,1);
         }
     }
 
