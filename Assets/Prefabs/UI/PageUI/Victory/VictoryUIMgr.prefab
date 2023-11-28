@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 6130455415995607207}
   - component: {fileID: 4803559231378557221}
   - component: {fileID: 6918385436748880593}
+  - component: {fileID: 7947618666878165636}
   m_Layer: 5
   m_Name: btnRefreshPlant
   m_TagString: Untagged
@@ -203,6 +204,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7947618666878165636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195938850848579637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c9ee39009272e4397b361bb5740698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnabled: 1
+  isHavor: 0
+  scaleTf: {fileID: 487550383120276607}
 --- !u!1 &1947567615783396426
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +794,7 @@ GameObject:
   - component: {fileID: 7420774305751658798}
   - component: {fileID: 3502309563227071521}
   - component: {fileID: 6576735411564292123}
+  - component: {fileID: 8710093174518149189}
   m_Layer: 5
   m_Name: btnRefreshMap
   m_TagString: Untagged
@@ -889,6 +906,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8710093174518149189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5004878186159895689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c9ee39009272e4397b361bb5740698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnabled: 1
+  isHavor: 0
+  scaleTf: {fileID: 1965429766853471192}
 --- !u!1 &5178036338729990754
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,6 +1013,7 @@ GameObject:
   - component: {fileID: 1927737654222412490}
   - component: {fileID: 4086001540397312596}
   - component: {fileID: 23119825174855057}
+  - component: {fileID: 2258239363993054331}
   m_Layer: 5
   m_Name: btnSkipMap
   m_TagString: Untagged
@@ -1092,6 +1125,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2258239363993054331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5876126201691416138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c9ee39009272e4397b361bb5740698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnabled: 1
+  isHavor: 0
+  scaleTf: {fileID: 2466246803489668828}
 --- !u!1 &6135527980298002260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,7 +1279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.38679248, g: 0.17563659, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1239,7 +1287,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: a6b8d8763b4ee344680984462ba8211a, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -1790,15 +1838,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.99951994, g: 1, b: 0.65723264, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 15cec46573057a64f982cf4c09a6e567, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1863,6 +1911,7 @@ GameObject:
   - component: {fileID: 5480088325035778299}
   - component: {fileID: 7318632440457654575}
   - component: {fileID: 7093989610969124730}
+  - component: {fileID: 4127592859036436400}
   m_Layer: 5
   m_Name: btnSkipPlant
   m_TagString: Untagged
@@ -1974,6 +2023,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4127592859036436400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8326213455846940108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c9ee39009272e4397b361bb5740698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnabled: 1
+  isHavor: 0
+  scaleTf: {fileID: 5191032535008610191}
 --- !u!1 &8386096479978897433
 GameObject:
   m_ObjectHideFlags: 0

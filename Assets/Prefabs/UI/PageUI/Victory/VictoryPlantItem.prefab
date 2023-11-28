@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 370044714257921363}
   - component: {fileID: 3614739608205674112}
   - component: {fileID: 2930187842441026257}
+  - component: {fileID: 2361105233181181757}
   m_Layer: 5
   m_Name: VictoryPlantItem
   m_TagString: PlantPreviewUI
@@ -142,6 +143,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2361105233181181757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491571125730934194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c9ee39009272e4397b361bb5740698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnabled: 1
+  isHavor: 0
+  scaleTf: {fileID: 3411142099884987014}
 --- !u!1 &1068315406358599784
 GameObject:
   m_ObjectHideFlags: 0
