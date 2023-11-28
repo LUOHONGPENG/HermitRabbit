@@ -16,6 +16,8 @@ public class CharacterInfoTipUIMgr : UnitInfoTipUIMgr
             {
                 recordTypeID = unitData.typeID;
                 basicUIMgr.SetNameDesc(characterExcelItem.name, "");
+                basicUIMgr.SetType(BattleUnitType.Character);
+
             }
         }
     }

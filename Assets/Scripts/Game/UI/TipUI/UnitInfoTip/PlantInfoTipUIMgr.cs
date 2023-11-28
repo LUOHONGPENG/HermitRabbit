@@ -16,6 +16,7 @@ public class PlantInfoTipUIMgr : UnitInfoTipUIMgr
             {
                 recordTypeID = unitData.typeID;
                 basicUIMgr.SetNameDesc(plantExcelItem.name, plantExcelItem.desc);
+                basicUIMgr.SetType(BattleUnitType.Plant);
                 basicUIMgr.HideMov();
             }
         }

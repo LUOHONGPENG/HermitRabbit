@@ -19,6 +19,8 @@ public class FoeInfoTipUIMgr : UnitInfoTipUIMgr
             {
                 recordTypeID = unitData.typeID;
                 basicUIMgr.SetNameDesc(foeExcelItem.name, foeExcelItem.desc);
+                basicUIMgr.SetType(BattleUnitType.Foe);
+
             }
         }
     }
