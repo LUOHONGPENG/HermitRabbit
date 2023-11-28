@@ -11,6 +11,8 @@ public class MenuUIMgr : MonoBehaviour
     public Button btnTest;
     public Button btnNewGame;
     public Button btnLoadGame;
+    public Button btnQuit;
+
     public Button btnDelete;
 
     public Button btnEN;
@@ -40,6 +42,18 @@ public class MenuUIMgr : MonoBehaviour
             loadGameUIMgr.ShowPopup(SaveSlotUIItem.SaveButtonType.MenuLoad);
         });
 
+        btnQuit.onClick.RemoveAllListeners();
+        btnQuit.onClick.AddListener(delegate ()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;//用于退出运行
+
+#else
+Application.Quit();
+#endif
+        });
+
+
         btnDelete.onClick.RemoveAllListeners();
         btnDelete.onClick.AddListener(delegate ()
         {
@@ -59,5 +73,14 @@ public class MenuUIMgr : MonoBehaviour
             GameGlobal.languageType = LanguageType.CN;
             GameMgr.Instance.LoadScene(SceneName.Menu);
         });
+
+        if(Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            btnQuit.gameObject.SetActive(false);
+        }
+        else
+        {
+            btnQuit.gameObject.SetActive(true);
+        }
     }
 }
