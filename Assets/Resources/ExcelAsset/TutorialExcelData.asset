@@ -86,35 +86,29 @@ MonoBehaviour:
       Some skills will have some combination with
       map.'
     gifUrl: Lightening
-  - id: 11
+  - id: 10
     group: 3
     strTitle: Select Map
     strContent: 'You can select mapclips after battle.
 
-      Tiles on the mapclip
-      can change the map and create advantage.'
-    gifUrl: 
-  - id: 12
+      You can refresh the
+      choices by clicking REFRESH, which cost <sprite="Common" name="Memory"> Memory.'
+    gifUrl: SelectMap
+  - id: 11
     group: 3
     strTitle: Tile Function
-    strContent: 'For example, <sprite="Tile" name="GrassT"> Grass tile can burn and
-      hurt unit above when turn starts.
+    strContent: 'Some tiles can create advantage.
 
-      <sprite="Tile" name="StoneT"> Stone
-      tile can block the path of foes.'
-    gifUrl: 
-  - id: 13
-    group: 3
-    strTitle: Refresh Map
-    strContent: You can refresh the choices by clicking REFRESH, which cost <sprite="Common"
-      name="Memory"> Memory.
-    gifUrl: 
-  - id: 14
+      For example, <sprite="Tile"
+      name="GrassT"> Grass tile can burn and hurt unit above when turn starts, <sprite="Tile"
+      name="StoneT"> Stone tile can block the path of foes.'
+    gifUrl: GrassBurn
+  - id: 12
     group: 3
     strTitle: Set Map
     strContent: In day time, you can click the MAP button to set mapclips.
-    gifUrl: 
-  - id: 15
+    gifUrl: SetMap
+  - id: 13
     group: 4
     strTitle: Select Plant
     strContent: 'You can select 1 plant after battle.
@@ -123,7 +117,7 @@ MonoBehaviour:
       Plant is a special unit without <sprite="Common" name="MOV"> MOV and <sprite="Common"
       name="AP"> AP.'
     gifUrl: 
-  - id: 16
+  - id: 14
     group: 4
     strTitle: Plant Example
     strContent: '<sprite="Target" name="PUnit"> Plant is useful if the condition
@@ -132,7 +126,7 @@ MonoBehaviour:
       For example, Void Grass will injure
       everyone near it when the second turn starts.'
     gifUrl: 
-  - id: 17
+  - id: 15
     group: 4
     strTitle: Set Plant
     strContent: 'You can click Plant button to set <sprite="Target" name="PUnit">
