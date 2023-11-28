@@ -111,7 +111,15 @@ public class ConvertWindow : EditorWindow
                     }
                     int spriteDimension = (Mathf.CeilToInt(Mathf.Sqrt(frameCountPerSplit)));
                     int finalWidth = spriteDimension * (gifImg.Width + 2);
+
+                    finalWidth += (4 - finalWidth % 4) % 4;
+
                     int finalHeight = spriteDimension * (gifImg.Height + 2);
+
+                    finalHeight += (4 - finalHeight % 4) % 4;
+
+                    Debug.Log(finalWidth + " " + finalHeight);
+
                     using (Bitmap finalSprite = new Bitmap(finalWidth, finalHeight))
                     {
                         using (System.Drawing.Graphics canvas = System.Drawing.Graphics.FromImage(finalSprite))

@@ -66,9 +66,57 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 3
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: 12
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -84,7 +132,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 1357
+        y: 3165
         width: 800
         height: 450
       alignment: 0
@@ -105,7 +153,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 803
-        y: 1357
+        y: 3165
         width: 800
         height: 450
       alignment: 0
@@ -126,7 +174,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1605
-        y: 1357
+        y: 3165
         width: 800
         height: 450
       alignment: 0
@@ -147,7 +195,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2407
-        y: 1357
+        y: 3165
         width: 800
         height: 450
       alignment: 0
@@ -167,8 +215,8 @@ TextureImporter:
       name: WinLose_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 905
+        x: 3209
+        y: 3165
         width: 800
         height: 450
       alignment: 0
@@ -188,8 +236,8 @@ TextureImporter:
       name: WinLose_5
       rect:
         serializedVersion: 2
-        x: 803
-        y: 905
+        x: 4011
+        y: 3165
         width: 800
         height: 450
       alignment: 0
@@ -209,8 +257,8 @@ TextureImporter:
       name: WinLose_6
       rect:
         serializedVersion: 2
-        x: 1605
-        y: 905
+        x: 4813
+        y: 3165
         width: 800
         height: 450
       alignment: 0
@@ -230,8 +278,8 @@ TextureImporter:
       name: WinLose_7
       rect:
         serializedVersion: 2
-        x: 2407
-        y: 905
+        x: 5615
+        y: 3165
         width: 800
         height: 450
       alignment: 0
@@ -252,7 +300,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 453
+        y: 2713
         width: 800
         height: 450
       alignment: 0
@@ -273,7 +321,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 803
-        y: 453
+        y: 2713
         width: 800
         height: 450
       alignment: 0
@@ -294,7 +342,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1605
-        y: 453
+        y: 2713
         width: 800
         height: 450
       alignment: 0
@@ -315,7 +363,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2407
-        y: 453
+        y: 2713
         width: 800
         height: 450
       alignment: 0
@@ -335,8 +383,8 @@ TextureImporter:
       name: WinLose_12
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
+        x: 3209
+        y: 2713
         width: 800
         height: 450
       alignment: 0
@@ -356,8 +404,8 @@ TextureImporter:
       name: WinLose_13
       rect:
         serializedVersion: 2
-        x: 803
-        y: 1
+        x: 4011
+        y: 2713
         width: 800
         height: 450
       alignment: 0
@@ -377,8 +425,8 @@ TextureImporter:
       name: WinLose_14
       rect:
         serializedVersion: 2
-        x: 1605
-        y: 1
+        x: 4813
+        y: 2713
         width: 800
         height: 450
       alignment: 0
@@ -394,6 +442,909 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: WinLose_15
+      rect:
+        serializedVersion: 2
+        x: 5615
+        y: 2713
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d41bfe22e581ea40800000000000000
+      internalID: 5395741035063874774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2261
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6acf8397dcae62b60800000000000000
+      internalID: 7721116779396267174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_17
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 2261
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a634ab6e216f3470800000000000000
+      internalID: 8376520683934725793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_18
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 2261
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 161e226c205af2aa0800000000000000
+      internalID: -6183542332023709343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_19
+      rect:
+        serializedVersion: 2
+        x: 2407
+        y: 2261
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b232d7e368b28760800000000000000
+      internalID: 7458726672109548212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_20
+      rect:
+        serializedVersion: 2
+        x: 3209
+        y: 2261
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fbce94b93cfb9ab0800000000000000
+      internalID: -5000125636491162633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_21
+      rect:
+        serializedVersion: 2
+        x: 4011
+        y: 2261
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2adf4a8b8caa98080800000000000000
+      internalID: -9184622185977414238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_22
+      rect:
+        serializedVersion: 2
+        x: 4813
+        y: 2261
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d268b1569edc40410800000000000000
+      internalID: 1442504182972778029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_23
+      rect:
+        serializedVersion: 2
+        x: 5615
+        y: 2261
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3efd78da9e07ca570800000000000000
+      internalID: 8479276347372855267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_24
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1809
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf196e38a12851b0800000000000000
+      internalID: -5667743124560470102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_25
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 1809
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4966066be8e5e4b0800000000000000
+      internalID: -5411663279489128114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_26
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 1809
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7cae9c5fd88af790800000000000000
+      internalID: -7495528136891782021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_27
+      rect:
+        serializedVersion: 2
+        x: 2407
+        y: 1809
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f91be7e37c33bf600800000000000000
+      internalID: 503052714221941151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_28
+      rect:
+        serializedVersion: 2
+        x: 3209
+        y: 1809
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83392c3ae7062c9c0800000000000000
+      internalID: -3908455429574585544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_29
+      rect:
+        serializedVersion: 2
+        x: 4011
+        y: 1809
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204a59554af6a2d90800000000000000
+      internalID: -7121757109131828222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_30
+      rect:
+        serializedVersion: 2
+        x: 4813
+        y: 1809
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f5d87769f76922a0800000000000000
+      internalID: -6761759044639599120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_31
+      rect:
+        serializedVersion: 2
+        x: 5615
+        y: 1809
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4a826343f222f180800000000000000
+      internalID: -9083159070249940406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_32
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1357
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f492552f7b83d63a0800000000000000
+      internalID: -6670613110369998513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_33
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 1357
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2634ed7a51b24450800000000000000
+      internalID: 6071610249866130986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_34
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 1357
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99d38a1cff672c4d0800000000000000
+      internalID: -3115797151349195367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_35
+      rect:
+        serializedVersion: 2
+        x: 2407
+        y: 1357
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd81559e93c5fc90800000000000000
+      internalID: -7136582948621283893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_36
+      rect:
+        serializedVersion: 2
+        x: 3209
+        y: 1357
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79df8c672890d5f80800000000000000
+      internalID: -8116320497508483689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_37
+      rect:
+        serializedVersion: 2
+        x: 4011
+        y: 1357
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03c27e0f3e5d61890800000000000000
+      internalID: -7487562155480896464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_38
+      rect:
+        serializedVersion: 2
+        x: 4813
+        y: 1357
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549463802ca529960800000000000000
+      internalID: 7607242509990119749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_39
+      rect:
+        serializedVersion: 2
+        x: 5615
+        y: 1357
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4618861ca518142f0800000000000000
+      internalID: -990368216252907164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_40
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 905
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0cef1af31b663f20800000000000000
+      internalID: 3402024302069935115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_41
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 905
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 043851642ebc12de0800000000000000
+      internalID: -1359581439790316736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_42
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 905
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c3d4f04517c28e90800000000000000
+      internalID: -7024833574646524983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_43
+      rect:
+        serializedVersion: 2
+        x: 2407
+        y: 905
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80518d080399c8bf0800000000000000
+      internalID: -320713039851023096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_44
+      rect:
+        serializedVersion: 2
+        x: 3209
+        y: 905
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aa335333b5b07a50800000000000000
+      internalID: 6516908442069973672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_45
+      rect:
+        serializedVersion: 2
+        x: 4011
+        y: 905
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2c58de069d30a3c0800000000000000
+      internalID: -4350409525336450006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_46
+      rect:
+        serializedVersion: 2
+        x: 4813
+        y: 905
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d18f20355fd3f00800000000000000
+      internalID: 1098303621029174669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_47
+      rect:
+        serializedVersion: 2
+        x: 5615
+        y: 905
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc989bcc201d0c650800000000000000
+      internalID: 6251226092745099727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_48
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 453
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beb5782350febc9a0800000000000000
+      internalID: -6211608455425860629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_49
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 453
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a65fcecbb2ba259f0800000000000000
+      internalID: -481134005833632406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_50
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 453
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fed161903aaec3250800000000000000
+      internalID: 5925869195665743343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_51
+      rect:
+        serializedVersion: 2
+        x: 2407
+        y: 453
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb75e98cb82eda6a0800000000000000
+      internalID: -6436239202448418881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_52
+      rect:
+        serializedVersion: 2
+        x: 3209
+        y: 453
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6154f2ddbb394d80800000000000000
+      internalID: -8266009954587750038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_53
+      rect:
+        serializedVersion: 2
+        x: 4011
+        y: 453
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf88362337df69b0800000000000000
+      internalID: -5084608839593455702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_54
+      rect:
+        serializedVersion: 2
+        x: 4813
+        y: 453
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1293f8e2bc03ed60800000000000000
+      internalID: 7918186532399452703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_55
+      rect:
+        serializedVersion: 2
+        x: 5615
+        y: 453
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8968dcb2de93bdb0800000000000000
+      internalID: -4777300151761344116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_56
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0df1ac74cc6ca990800000000000000
+      internalID: -7373398898751963892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinLose_57
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 1
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbee7cae8cf799370800000000000000
+      internalID: 8329829486707601085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -405,21 +1356,64 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WinLose_3: 4144709702647630453
-      WinLose_9: 1381136652023279270
-      WinLose_1: -6069833877584795436
+      WinLose_33: 6071610249866130986
+      WinLose_36: -8116320497508483689
+      WinLose_23: 8479276347372855267
+      WinLose_20: -5000125636491162633
+      WinLose_56: -7373398898751963892
+      WinLose_53: -5084608839593455702
+      WinLose_31: -9083159070249940406
+      WinLose_19: 7458726672109548212
+      WinLose_16: 7721116779396267174
+      WinLose_25: -5411663279489128114
+      WinLose_44: 6516908442069973672
       WinLose_14: -3505597507546302778
+      WinLose_48: -6211608455425860629
       WinLose_11: 5612650137801420270
-      WinLose_2: 4483375640589263043
       WinLose_8: -6202479175648605913
       WinLose_7: -8312956054827279517
+      WinLose_28: -3908455429574585544
       WinLose_6: -1748743227790132006
-      WinLose_13: 6371777674092335648
       WinLose_12: -1552112695406472411
-      WinLose_10: 398326550125745047
+      WinLose_41: -1359581439790316736
+      WinLose_47: 6251226092745099727
+      WinLose_35: -7136582948621283893
+      WinLose_18: -6183542332023709343
+      WinLose_42: -7024833574646524983
       WinLose_4: -1762432709819645497
       WinLose_5: 7998766265821803823
+      WinLose_21: -9184622185977414238
+      WinLose_43: -320713039851023096
+      WinLose_27: 503052714221941151
+      WinLose_38: 7607242509990119749
+      WinLose_49: -481134005833632406
+      WinLose_39: -990368216252907164
+      WinLose_55: -4777300151761344116
+      WinLose_3: 4144709702647630453
+      WinLose_9: 1381136652023279270
+      WinLose_46: 1098303621029174669
+      WinLose_51: -6436239202448418881
+      WinLose_57: 8329829486707601085
+      WinLose_1: -6069833877584795436
+      WinLose_17: 8376520683934725793
+      WinLose_40: 3402024302069935115
+      WinLose_52: -8266009954587750038
+      WinLose_2: 4483375640589263043
+      WinLose_50: 5925869195665743343
+      WinLose_54: 7918186532399452703
+      WinLose_13: 6371777674092335648
+      WinLose_24: -5667743124560470102
+      WinLose_45: -4350409525336450006
+      WinLose_22: 1442504182972778029
+      WinLose_15: 5395741035063874774
+      WinLose_10: 398326550125745047
+      WinLose_30: -6761759044639599120
+      WinLose_26: -7495528136891782021
+      WinLose_37: -7487562155480896464
+      WinLose_29: -7121757109131828222
+      WinLose_32: -6670613110369998513
       WinLose_0: 6491422366005456718
+      WinLose_34: -3115797151349195367
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
