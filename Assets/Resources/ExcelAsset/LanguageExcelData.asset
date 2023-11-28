@@ -16,7 +16,7 @@ MonoBehaviour:
   - id: 1
     key: tx_menu_language
     descEN: "Current Language: \nEnglish"
-    descCN: "Current Language: \n\u4E2D\u6587"
+    descCN: "Current Language: \n\u4E2D\u6587\uFF08\u90E8\u5206\u7FFB\u8BD1\uFF09"
   - id: 2
     key: tx_skill_cost
     descEN: 'Cost:'

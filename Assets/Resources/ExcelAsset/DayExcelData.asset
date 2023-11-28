@@ -90,42 +90,82 @@ MonoBehaviour:
     foeID: 1031
     foeNum: 1
     dayExp: 100
-    foeExp: 50
-    totalFoeExp: 50
+    foeExp: 30
+    totalFoeExp: 30
     Remark: Interviewer
   - id: 11
     dayCount: 5
     foeID: 1032
     foeNum: 1
     dayExp: 0
-    foeExp: 50
-    totalFoeExp: 50
+    foeExp: 30
+    totalFoeExp: 30
     Remark: 
   - id: 12
+    dayCount: 5
+    foeID: 1022
+    foeNum: 1
+    dayExp: 0
+    foeExp: 15
+    totalFoeExp: 15
+    Remark: 
+  - id: 13
+    dayCount: 5
+    foeID: 1023
+    foeNum: 1
+    dayExp: 0
+    foeExp: 15
+    totalFoeExp: 15
+    Remark: 
+  - id: 14
+    dayCount: 5
+    foeID: 1024
+    foeNum: 1
+    dayExp: 0
+    foeExp: 15
+    totalFoeExp: 15
+    Remark: 
+  - id: 15
+    dayCount: 5
+    foeID: 1011
+    foeNum: 1
+    dayExp: 0
+    foeExp: 5
+    totalFoeExp: 5
+    Remark: 
+  - id: 16
+    dayCount: 5
+    foeID: 1021
+    foeNum: 1
+    dayExp: 0
+    foeExp: 5
+    totalFoeExp: 5
+    Remark: 
+  - id: 17
     dayCount: 6
     foeID: 1041
     foeNum: 1
     dayExp: 100
-    foeExp: 100
-    totalFoeExp: 100
+    foeExp: 60
+    totalFoeExp: 60
     Remark: CEO
-  - id: 13
+  - id: 18
     dayCount: 6
     foeID: 1042
     foeNum: 1
     dayExp: 0
-    foeExp: 30
-    totalFoeExp: 30
+    foeExp: 35
+    totalFoeExp: 35
     Remark: 
-  - id: 14
+  - id: 19
     dayCount: 6
     foeID: 1043
     foeNum: 1
     dayExp: 0
-    foeExp: 30
-    totalFoeExp: 30
+    foeExp: 35
+    totalFoeExp: 35
     Remark: 
-  - id: 15
+  - id: 20
     dayCount: 6
     foeID: 1011
     foeNum: 6
@@ -133,7 +173,7 @@ MonoBehaviour:
     foeExp: 6
     totalFoeExp: 36
     Remark: 
-  - id: 16
+  - id: 21
     dayCount: 7
     foeID: 1099
     foeNum: 1
