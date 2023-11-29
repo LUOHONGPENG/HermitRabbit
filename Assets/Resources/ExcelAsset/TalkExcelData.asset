@@ -52,8 +52,8 @@ MonoBehaviour:
     group: 2
     step: 1
     talkSubjectID: 1002
-    content: Enhance your skill and Seek a job to start a new fight when you are
-      ready.
+    content: Enhance your skill and <color="red">Seek a job </color>to start a new
+      fight when you are ready.
   - id: 9
     group: 2
     step: 2

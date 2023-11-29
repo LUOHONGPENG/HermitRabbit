@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UI;
@@ -10,7 +11,7 @@ public class TalkUIMgr : MonoBehaviour
     public Button btnContinue;
     public Button btnSkip;
     public Image imgCharacter;
-    public Text codeTalk;
+    public TextMeshProUGUI codeTalk;
 
     public List<Sprite> listSpCharacter = new List<Sprite>();
 
