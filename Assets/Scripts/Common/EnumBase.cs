@@ -283,8 +283,9 @@ public enum EffectViewType
     Gravity,
     Thunder,
     ThunderHit,
-    EnergyFire
-    
+    EnergyFire,
+    Fourtain,
+    Cut
 }
 
 public enum EffectViewPosType

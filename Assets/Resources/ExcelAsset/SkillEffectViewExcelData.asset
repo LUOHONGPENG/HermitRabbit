@@ -37,3 +37,7 @@ MonoBehaviour:
     effectViewType: 5
     prefabUrl: peEnergyFire
     destroyTime: 1
+  - id: 7
+    effectViewType: 6
+    prefabUrl: peFourtain
+    destroyTime: 0.7

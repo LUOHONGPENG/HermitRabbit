@@ -109,20 +109,22 @@ MonoBehaviour:
     listCameraTime: 00000000
   - id: 1301
     name: Stream
-    totalTime: 0.6
+    totalTime: 1.2
     listUnitAniState:
-    - 0
-    listUnitAniTime: 00000000
+    - Focus
+    - Attack
+    - Ready
+    listUnitAniTime: 00000000060000000c000000
     listEffectViewType:
-    - 0
+    - Fourtain
     listEffectPosType:
-    - 0
-    listEffectViewTime: 00000000
+    - AllTile
+    listEffectViewTime: 06000000
     listSoundType:
     - 0
     listSoundTime: 00000000
     listCameraPosType:
-    - 0
+    - MiddleLeft
     listCameraTime: 00000000
   - id: 1302
     name: Time Mending
