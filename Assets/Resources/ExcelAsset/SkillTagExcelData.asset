@@ -38,6 +38,5 @@ MonoBehaviour:
   - id: 5
     tag: 4
     name: HurtCharacter
-    desc: Damage will also hurt <sprite="Target" name="CUnit"> Character and <sprite="Target"
-      name="PUnit"> Plant
+    desc: Damage will also hurt <sprite="Target" name="CUnit"> Character
     iconUrl: imgIconHurtCharacter

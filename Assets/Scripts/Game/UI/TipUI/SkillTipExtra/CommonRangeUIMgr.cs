@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
 
 public class CommonRangeUIMgr : MonoBehaviour
 {
@@ -42,17 +43,18 @@ public class CommonRangeUIMgr : MonoBehaviour
             case SkillRegionType.BurnUnit:
                 sourcePos = new Vector2Int(0, -3);
                 rtSelf.anchoredPosition = new Vector2(0, -30 + 4 * -20f);
-                GenerateTarget(regionType);
+                GenerateTarget(targetPos,regionType);
                 break;
             case SkillRegionType.Line:
-                sourcePos = new Vector2Int(0, -1);
-                GenerateTarget();
+                targetPos = new Vector2Int(0, -3);
+                sourcePos = new Vector2Int(0, -4);
+                GenerateTarget(targetPos);
                 break;
             case SkillRegionType.Water:
-                GenerateTarget(regionType);
+                GenerateTarget(targetPos,regionType);
                 break;
             default:
-                GenerateTarget();
+                GenerateTarget(targetPos);
                 rtSelf.anchoredPosition = new Vector2(0, -30 + radius * -20f);
                 break;
         }
@@ -63,20 +65,20 @@ public class CommonRangeUIMgr : MonoBehaviour
         GenerateSource(sourcePos, type);
         GenerateDot(targetPos, sourcePos);
 
-        GenerateRadius(regionType, range, radius);
+        GenerateRadius(regionType, range, radius, targetPos, sourcePos);
 
 
     }
 
 
-    public void GenerateTarget(SkillRegionType skillRegionType = SkillRegionType.Circle)
+    public void GenerateTarget(Vector2Int targetPos,SkillRegionType skillRegionType = SkillRegionType.Circle)
     {
         if(!isSelf || skillRegionType== SkillRegionType.BurnUnit)
         {
             GameObject objTarget = GameObject.Instantiate(pfRangeTarget, tfRangeIcon);
             SkillRangeTargetItem itemTarget = objTarget.GetComponent<SkillRangeTargetItem>();
             itemTarget.Init(skillRegionType);
-            objTarget.transform.localPosition = Vector2.zero;
+            objTarget.transform.localPosition = new Vector2(targetPos.x * 22f, targetPos.y * 22f);
         }
 
     }
@@ -98,7 +100,7 @@ public class CommonRangeUIMgr : MonoBehaviour
         }
     }
 
-    public void GenerateRadius(SkillRegionType regionType, int range, int radius)
+    public void GenerateRadius(SkillRegionType regionType, int range, int radius,Vector2Int target,Vector2Int source)
     {
         List<Vector2Int> listPos = new List<Vector2Int>();
         switch (regionType)
@@ -110,13 +112,13 @@ public class CommonRangeUIMgr : MonoBehaviour
                 listPos = PublicTool.GetTargetSquareRange(Vector2Int.zero, radius);
                 break;
             case SkillRegionType.Line:
-                listPos = PublicTool.GetTargetLineRange(Vector2Int.zero, new Vector2Int(0, -1), range, radius);
+                listPos = PublicTool.GetTargetLineRange(target, source, range, radius);
                 break;
         }
 
         for (int i = 0; i < listPos.Count; i++)
         {
-            if (listPos[i] != Vector2Int.zero)
+            if (listPos[i] != target)
             {
                 Vector2Int posID = listPos[i];
                 GameObject objRadius = GameObject.Instantiate(pfRangeRadius, tfRangeIcon);
