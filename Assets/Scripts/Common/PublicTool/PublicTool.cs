@@ -60,7 +60,7 @@ public partial class PublicTool
 
         Vector2 finalPos = new Vector2(targetPos.x * 1920f / Screen.width, targetPos.y * 1080f/ Screen.height);
 
-        Debug.Log(screenPos + " " + targetPos + " "+ finalPos) ;
+        //Debug.Log(screenPos + " " + targetPos + " "+ finalPos) ;
 
         return new Vector3(finalPos.x, finalPos.y, 0);
     }

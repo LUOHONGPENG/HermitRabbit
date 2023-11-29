@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class BattleInterfaceUIMgr : MonoBehaviour
@@ -10,6 +11,7 @@ public class BattleInterfaceUIMgr : MonoBehaviour
     public BattleMiniCharacterUIItem miniCharacterUI1001;
     public BattleMiniCharacterUIItem miniCharacterUI1002;
 
+    public Button btnSwitch;
     public Button btnEndTurn;
 
     public void Init()
@@ -25,6 +27,58 @@ public class BattleInterfaceUIMgr : MonoBehaviour
                     EventCenter.Instance.EventTrigger("CharacterPhaseEnd", null);
                     HideEndTurnBtn();
                     PublicTool.EventReadyAni(-1);
+                    break;
+            }
+
+        });
+
+        btnSwitch.onClick.RemoveAllListeners();
+        btnSwitch.onClick.AddListener(delegate () {
+
+            switch (InputMgr.Instance.interactState)
+            {
+                case InteractState.BattleNormal:
+                case InteractState.CharacterMove:
+                case InteractState.CharacterSkill:
+                    GameData gameData = PublicTool.GetGameData();
+
+                    UnitInfo info = gameData.GetCurUnitInfo();
+                    if (info.type == BattleUnitType.Character && info.keyID == 1001)
+                    {
+                        if (!gameData.GetBattleCharacterData(1002).isDead)
+                        {
+                            EventCenter.Instance.EventTrigger("InputChooseCharacter", 1002);
+
+                        }
+                        else if(!gameData.GetBattleCharacterData(1001).isDead)
+                        {
+                            EventCenter.Instance.EventTrigger("InputChooseCharacter", 1001);
+                        }
+                    }
+                    else if (info.type == BattleUnitType.Character && info.keyID == 1002)
+                    {
+                        if (!gameData.GetBattleCharacterData(1001).isDead)
+                        {
+                            EventCenter.Instance.EventTrigger("InputChooseCharacter", 1001);
+                        }
+                        else if (!gameData.GetBattleCharacterData(1002).isDead)
+                        {
+                            EventCenter.Instance.EventTrigger("InputChooseCharacter", 1002);
+
+                        }
+                    }
+                    else
+                    {
+                        List<BattleCharacterData> listCharacter = PublicTool.GetGameData().listCharacter;
+                        for (int i = 0; i < listCharacter.Count; i++)
+                        {
+                            if (!listCharacter[i].isDead)
+                            {
+                                EventCenter.Instance.EventTrigger("InputChooseCharacter", listCharacter[i].keyID);
+                                break;
+                            }
+                        }
+                    }
                     break;
             }
 
