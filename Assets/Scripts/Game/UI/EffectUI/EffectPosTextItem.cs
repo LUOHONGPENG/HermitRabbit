@@ -16,7 +16,7 @@ public class EffectPosTextItem : MonoBehaviour
     {
         if (isInit)
         {
-            transform.localPosition = PublicTool.CalculateScreenUIPos(posSource, GameMgr.Instance.curMapCamera);
+            transform.localPosition = PublicTool.CalculateScreenUIPosText(posSource, GameMgr.Instance.curMapCamera);
         }
     }
 

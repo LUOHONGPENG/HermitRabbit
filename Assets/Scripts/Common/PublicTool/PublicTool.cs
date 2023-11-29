@@ -45,6 +45,26 @@ public partial class PublicTool
         return new Vector3(targetPos.x, targetPos.y, 0);
     }
 
+    public static Vector3 CalculateScreenUIPosText(Vector3 objPos, Camera tarCamera)
+    {
+        Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(tarCamera, objPos);
+        /*        screenPos = new Vector2(screenPos.x * 1920f / Screen.width, screenPos.y * 1080f / Screen.height);
+                Vector2 targetPos = new Vector2(screenPos.x - 1920f / 2, screenPos.y - 1080f / 2);*/
+
+
+        //screenPos = new Vector2(screenPos.x * Screen.width / 1920, screenPos.y * Screen.height / 1080f);
+        //Vector2 targetPos = new Vector2(screenPos.x - Screen.width / 2, screenPos.y - Screen.height/2);
+
+
+        Vector2 targetPos = new Vector2(screenPos.x - Screen.width / 2, screenPos.y - Screen.height / 2);
+
+        Vector2 finalPos = new Vector2(targetPos.x * 1920f / Screen.width, targetPos.y * 1080f/ Screen.height);
+
+        Debug.Log(screenPos + " " + targetPos + " "+ finalPos) ;
+
+        return new Vector3(finalPos.x, finalPos.y, 0);
+    }
+
     /// <summary>
     /// Randomly pick one index with weight
     /// </summary>
