@@ -26,7 +26,7 @@ MonoBehaviour:
     desc: Attack the foe in range if character hit it with normal attack.
   - id: 1002
     name: Cookee
-    HP: 10
+    HP: 12
     ATK: 3
     DEF: 0
     RES: 1
@@ -34,7 +34,7 @@ MonoBehaviour:
     skillID: 3101
     essence: 2
     pixelUrl: pp_Cook_Idle
-    desc: Apply burning by 3 levels every turn.
+    desc: Apply burning according to ATK every turn.
   - id: 1003
     name: Hero Grass
     HP: 15

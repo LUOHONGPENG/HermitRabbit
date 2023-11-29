@@ -669,7 +669,7 @@ MonoBehaviour:
     costMOV: 0
     costHP: 0
     costMemory: 0
-    range: 3
+    range: 4
     isRangeSelf: 0
     needExtraTarget: 0
     radius: 0
@@ -681,10 +681,10 @@ MonoBehaviour:
     damageDeltaStd: 0
     damageDelta: 0
     damageModifier: 0
-    listBuffEffect: a10f0000
-    listBuffDelta: 03000000
-    listSpecialEffect: 00000000
-    listSpecialDelta: 00000000
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: bc0b0000
+    listSpecialDelta: a10f0000
     tileEffectType: 2
     activeSkillType: 4
     characterID: 0

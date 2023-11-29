@@ -280,6 +280,9 @@ public partial class BattleMgr
                 BuffExcelItem buffItem1007 = PublicTool.GetBuffExcelItem(1007);
                 source.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, buffItem1007.name, source.posID));*/
                 break;
+            case 3004:
+                SkillBuffEffectDeal(target, delta, source.curATK, PublicTool.GetBuffExcelItem(delta).name, PublicTool.GetBuffExcelItem(delta).effectType);
+                break;
             case 5001:
                 target.DoubleAllBuff();
                 target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, string.Format("Buff Extend", delta), target.posID));

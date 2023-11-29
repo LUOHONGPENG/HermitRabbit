@@ -45,6 +45,10 @@ MonoBehaviour:
     name: Self Absorb
     effectType: 1
     timeType: 1
+  - id: 3004
+    name: DebuffFromATK
+    effectType: 1
+    timeType: 0
   - id: 5001
     name: Double Buff
     effectType: 2
