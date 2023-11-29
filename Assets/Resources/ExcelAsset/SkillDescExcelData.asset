@@ -234,8 +234,8 @@ MonoBehaviour:
   - id: 1902
     name_EN: Infinity
     name_CN: "\u65E0\u9650\uFF01"
-    desc_EN: Gain 3 <sprite="BuffS" name="Infinity"> Infinity.
-    desc_CN: "\u83B7\u5F973\u5C42 <sprite=\"BuffS\" name=\"Infinity\"> \u65E0\u9650"
+    desc_EN: Gain 4 <sprite="BuffS" name="Infinity"> Infinity.
+    desc_CN: "\u83B7\u5F974\u5C42 <sprite=\"BuffS\" name=\"Infinity\"> \u65E0\u9650"
     listTagType:
     - 0
     listBuffType: eb030000
@@ -338,10 +338,11 @@ MonoBehaviour:
   - id: 2302
     name_EN: Fish Drat
     name_CN: "\u7ED9\u6211\u6478\u9C7C"
-    desc_EN: 'Deal damage equal to <sprite="Common" name="DEF"> DEF
+    desc_EN: 'Deal damage equal to <sprite="Common" name="DEF"> DEF.
 
-      Gain 1
-      <sprite="BuffS" name="Absorb"> Absorb.'
+      Gain
+      1 <sprite="BuffS" name="Absorb"> Absorb, next skill can restore <sprite="Common"
+      name="HP"> HP equal to half of damage.'
     desc_CN: "\u9020\u6210\u76F8\u5F53\u4E8E <sprite=\"Common\" name=\"DEF\"> \u9632\u5FA1
       \u7684\u4F24\u5BB3\n\u83B7\u5F971\u5C42 <sprite=\"BuffS\" name=\"Absorb\">
       \u5438\u6536"
@@ -401,9 +402,9 @@ MonoBehaviour:
   - id: 2903
     name_EN: Finish Work
     name_CN: "\u5B8C\u6210\u5DE5\u4F5C\uFF01"
-    desc_EN: Cost <sprite="Common" name="HP"> HP to deal damage, the damage will
-      be equal to cost <sprite="Common" name="HP"> HP.
-    desc_CN: "\u6D88\u8017 <sprite=\"Common\" name=\"HP\"> \u751F\u547D\u9020\u6210\u76F8\u5F53\u4E8E\u6D88\u8017
+    desc_EN: Set <sprite="Common" name="HP"> HP to 1 and deal damage that equal to
+      cost <sprite="Common" name="HP"> HP.
+    desc_CN: "\u5F53\u524D <sprite=\"Common\" name=\"HP\"> \u751F\u547D\u964D\u81F31\uFF0C\u9020\u6210\u76F8\u5F53\u4E8E\u6D88\u8017
       <sprite=\"Common\" name=\"HP\"> \u751F\u547D\u91CF\u7684\u4F24\u5BB3"
     listTagType:
     - PDmg

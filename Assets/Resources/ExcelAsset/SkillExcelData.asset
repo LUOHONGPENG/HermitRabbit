@@ -292,7 +292,7 @@ MonoBehaviour:
     damageDelta: 0
     damageModifier: 0
     listBuffEffect: eb030000
-    listBuffDelta: 03000000
+    listBuffDelta: 04000000
     listSpecialEffect: 00000000
     listSpecialDelta: 00000000
     tileEffectType: 0

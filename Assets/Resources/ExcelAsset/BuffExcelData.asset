@@ -98,7 +98,8 @@ MonoBehaviour:
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Next X skill can restore <sprite="Common" name="HP"> HP according to damage.
+    desc: Next X skill can restore <sprite="Common" name="HP"> HP equal to half of
+      damage.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Absorb
