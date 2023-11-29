@@ -259,16 +259,16 @@ MonoBehaviour:
     listCameraTime: 00000000
   - id: 2101
     name: Wind Chop
-    totalTime: 0.6
+    totalTime: 0.9
     listUnitAniState:
     - Focus
     - Attack
     listUnitAniTime: 0000000006000000
     listEffectViewType:
-    - 0
+    - Cut
     listEffectPosType:
-    - 0
-    listEffectViewTime: 00000000
+    - TargetPos
+    listEffectViewTime: 05000000
     listSoundType:
     - 0
     listSoundTime: 00000000

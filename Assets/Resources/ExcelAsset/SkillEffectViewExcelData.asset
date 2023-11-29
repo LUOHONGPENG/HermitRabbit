@@ -41,3 +41,7 @@ MonoBehaviour:
     effectViewType: 6
     prefabUrl: peFourtain
     destroyTime: 0.7
+  - id: 8
+    effectViewType: 7
+    prefabUrl: peCut
+    destroyTime: 0.4
