@@ -171,9 +171,13 @@ public partial class LevelMgr
         }
 
         //Tutorial
-        if(gameData.numDay == 2)
+        if (gameData.numDay == 2)
         {
-            PublicTool.StartConditionalTutorial(TutorialGroup.Skill,2,-1);
+            PublicTool.StartConditionalTutorial(TutorialGroup.Skill, 2, -1);
+        }
+        else if(gameData.numDay == 3)
+        {
+            PublicTool.StartConditionalTutorial(TutorialGroup.Battle, 6, -1);
         }
 
 

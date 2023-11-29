@@ -64,6 +64,15 @@ MonoBehaviour:
       all character''s <sprite="Common" name="HP"> HP become 0, you will lose.'
     gifUrl: WinLose
   - id: 7
+    group: 1
+    strTitle: Target Detail
+    strContent: 'When you put mouse over the <sprite="Target" name="FUnit"> Foe without
+      selecting skill, you can see the move and attack range of the unit.
+
+      If
+      you put mouse over the buff icon, you can read the buff detail.'
+    gifUrl: TargetDetail
+  - id: 8
     group: 2
     strTitle: Learn Skill
     strContent: 'In day time, you can click the SKILL button to open the skill tree
@@ -72,12 +81,12 @@ MonoBehaviour:
       Then you can spend <sprite="Common" name="SP"> Confidence to learn
       Skill.'
     gifUrl: LearnSkill
-  - id: 8
+  - id: 9
     group: 2
     strTitle: Reset Skill
     strContent: You can reset the skill tree without limitation.
     gifUrl: ResetSkill
-  - id: 9
+  - id: 10
     group: 2
     strTitle: Spell Skill
     strContent: 'In battle, you can spell skill after you click a skill button and
@@ -86,7 +95,7 @@ MonoBehaviour:
       Some skills will have some combination with
       map.'
     gifUrl: Lightening
-  - id: 10
+  - id: 11
     group: 3
     strTitle: Select Map
     strContent: 'You can select mapclips after battle.
@@ -94,7 +103,7 @@ MonoBehaviour:
       You can refresh the
       choices by clicking REFRESH, which cost <sprite="Common" name="Memory"> Memory.'
     gifUrl: SelectMap
-  - id: 11
+  - id: 12
     group: 3
     strTitle: Tile Function
     strContent: 'Some tiles can create advantage.
@@ -103,12 +112,12 @@ MonoBehaviour:
       name="GrassT"> Grass tile can burn and hurt unit above when turn starts, <sprite="Tile"
       name="StoneT"> Stone tile can block the path of foes.'
     gifUrl: GrassBurn
-  - id: 12
+  - id: 13
     group: 3
     strTitle: Set Map
     strContent: In day time, you can click the MAP button to set mapclips.
     gifUrl: SetMap
-  - id: 13
+  - id: 14
     group: 4
     strTitle: Select Plant
     strContent: 'You can select 1 plant after battle.
@@ -117,7 +126,7 @@ MonoBehaviour:
       Plant is a special unit without <sprite="Common" name="MOV"> MOV and <sprite="Common"
       name="AP"> AP, and their skills can be triggered via different condition.'
     gifUrl: SelectPlant
-  - id: 14
+  - id: 15
     group: 4
     strTitle: Plant Example
     strContent: '<sprite="Target" name="PUnit"> Plant is useful if the condition
@@ -126,7 +135,7 @@ MonoBehaviour:
       For example, Void Grass will injure
       everyone around it when the second turn starts.'
     gifUrl: PlantBoom
-  - id: 15
+  - id: 16
     group: 4
     strTitle: Set Plant
     strContent: 'You can click Plant button to set <sprite="Target" name="PUnit">

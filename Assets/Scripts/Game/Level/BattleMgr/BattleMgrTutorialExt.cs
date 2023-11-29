@@ -10,7 +10,7 @@ public partial class BattleMgr
     {
         if(gameData.numDay == 1 && numTurn == 2)
         {
-            PublicTool.StartConditionalTutorial(TutorialGroup.Battle, 4, -1);
+            PublicTool.StartConditionalTutorial(TutorialGroup.Battle, 4, 5);
         }
         else if(gameData.numDay == 2 && numTurn == 1)
         {
