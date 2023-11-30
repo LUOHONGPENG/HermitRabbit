@@ -176,6 +176,9 @@ public class InterfaceUIMgr : MonoBehaviour
         battleInterfaceUIMgr.ShowPopup();
         battleInterfaceUIMgr.BindCharacterData();
 
+
+        PublicTool.PlayMusic(MusicType.Battle);
+
         RefreshPhaseUI();
     }
 

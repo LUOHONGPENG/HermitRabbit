@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,12 @@ public enum SoundType
     FinalWork
 }
 
+public enum MusicType
+{
+    Menu,
+    Peace,
+    Battle
+}
 
 public class SoundMgr : MonoSingleton<SoundMgr>
 {
@@ -21,6 +28,12 @@ public class SoundMgr : MonoSingleton<SoundMgr>
     public Dictionary<SoundType, AudioSource> dicSoundAudio = new Dictionary<SoundType, AudioSource>();
     public Dictionary<SoundType, float> dicSoundTime = new Dictionary<SoundType, float>();
 
+    public AudioSource musicMenu;
+    public AudioSource musicPeace;
+    public AudioSource musicBattle;
+
+    public Dictionary<MusicType, AudioSource> dicMusic = new Dictionary<MusicType, AudioSource>();
+
 
     [Header("Test")]
     public SoundType testSoundType;
@@ -29,13 +42,16 @@ public class SoundMgr : MonoSingleton<SoundMgr>
     {
         EventCenter.Instance.AddEventListener("PlaySound", PlaySoundEvent);
         EventCenter.Instance.AddEventListener("StopSound", StopSoundEvent);
+        EventCenter.Instance.AddEventListener("PlayMusic", PlayMusicEvent);
 
     }
+
 
     public void OnDestroy()
     {
         EventCenter.Instance.RemoveEventListener("PlaySound", PlaySoundEvent);
         EventCenter.Instance.RemoveEventListener("StopSound", StopSoundEvent);
+        EventCenter.Instance.RemoveEventListener("PlayMusic", PlayMusicEvent);
 
     }
     public IEnumerator IE_Init()
@@ -61,6 +77,10 @@ public class SoundMgr : MonoSingleton<SoundMgr>
             dicSoundTime.Add(info.Key, info.Value);
         }
 
+        dicMusic.Clear();
+        dicMusic.Add(MusicType.Menu, musicMenu);
+        dicMusic.Add(MusicType.Peace, musicPeace);
+        dicMusic.Add(MusicType.Battle, musicBattle);
 
         Debug.Log("Init Sound Manager");
         yield break;
@@ -106,6 +126,28 @@ public class SoundMgr : MonoSingleton<SoundMgr>
             float playTime = playtime;
             targetSound.time = playTime;
             targetSound.Play();
+        }
+    }
+
+    private void PlayMusicEvent(object arg0)
+    {
+        MusicType musicType = (MusicType)arg0;
+        PlayMusic(musicType);
+    }
+
+
+    public void PlayMusic(MusicType musicType)
+    {
+        foreach(var info in dicMusic)
+        {
+            if(info.Key != musicType)
+            {
+                info.Value.Stop();
+            }
+            else
+            {
+                info.Value.Play();
+            }
         }
     }
 }

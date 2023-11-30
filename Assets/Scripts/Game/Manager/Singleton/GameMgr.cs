@@ -55,9 +55,14 @@ public partial class GameMgr : MonoSingleton<GameMgr>
                 {
                     LoadGameData(saveSlotName);
                 }
+
+                PublicTool.PlayMusic(MusicType.Peace);
                 break;
             case SceneName.Menu:
-
+                if (curSceneName != SceneName.Menu)
+                {
+                    PublicTool.PlayMusic(MusicType.Menu);
+                }
                 break;
         }
         curSceneName = sceneName;

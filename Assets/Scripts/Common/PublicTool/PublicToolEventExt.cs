@@ -62,7 +62,11 @@ public partial class PublicTool
         EventCenter.Instance.EventTrigger("PlaySound", soundType);
 
     }
+    public static void PlayMusic(MusicType musicType)
+    {
+        EventCenter.Instance.EventTrigger("PlayMusic", musicType);
 
+    }
 
     #region Tutorial
 
