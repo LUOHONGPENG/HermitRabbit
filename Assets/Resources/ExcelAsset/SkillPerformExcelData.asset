@@ -574,8 +574,8 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
-    listSoundTime: 00000000
+    - Bite
+    listSoundTime: 04000000
     listCameraPosType:
     - FocusSubject
     listCameraTime: 00000000

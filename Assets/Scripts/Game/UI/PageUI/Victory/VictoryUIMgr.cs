@@ -78,6 +78,7 @@ public class VictoryUIMgr : MonoBehaviour
                     EventCenter.Instance.EventTrigger("TalkStart", TalkGroup.Day7);
                 }
 
+                PublicTool.PlayMusic(MusicType.Peace);
             }
         });
 
@@ -149,6 +150,7 @@ public class VictoryUIMgr : MonoBehaviour
         victoryPhase = VictoryPhase.Start;
         listGrowExp = (List<Vector2Int>)arg0;
         NextPhase();
+        PublicTool.PlaySound(SoundType.Victory);
     }
 
     public void HidePopup()

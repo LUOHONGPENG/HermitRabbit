@@ -6,11 +6,14 @@ using UnityEngine;
 public enum SoundType
 {
     UnlockSkillNode,
+    Victory,
     //Skill
     FireBall,
     Boom,
     LightingDestroy,
-    FinalWork
+    FinalWork,
+    //Foe
+    Bite
 }
 
 public enum MusicType
