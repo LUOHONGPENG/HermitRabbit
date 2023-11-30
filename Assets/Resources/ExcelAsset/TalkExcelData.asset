@@ -47,30 +47,79 @@ MonoBehaviour:
     group: 2
     step: 1
     talkSubjectID: 1002
-    content: You need to be confident. You can fight against interview.
+    content: You need to be confident. You can fight against them.
   - id: 8
+    group: 2
+    step: 1
+    talkSubjectID: 1001
+    content: Why these monsters come to my home? I just research magic in the tower
+      and never hurt them.
+  - id: 9
+    group: 2
+    step: 1
+    talkSubjectID: 1002
+    content: Damn it. You are not a wizard. You are a game designer named Joshua
+      Rabbit.
+  - id: 10
+    group: 2
+    step: 1
+    talkSubjectID: 1001
+    content: No. I am Leo Bright. A talented wizard who experts at Time Magic.
+  - id: 11
+    group: 2
+    step: 1
+    talkSubjectID: 1002
+    content: Reality is right at the door and it is time for you to seek a job!
+  - id: 12
     group: 2
     step: 1
     talkSubjectID: 1002
     content: Enhance your skill and <color="red">Seek a job </color>to start a new
       fight when you are ready.
-  - id: 9
+  - id: 13
     group: 2
     step: 2
     talkSubjectID: 0
     content: 
-  - id: 10
-    group: 3
-    step: 1
-    talkSubjectID: 1002
-    content: This is the last fight. Let's fight against the interview.
-  - id: 11
+  - id: 14
     group: 3
     step: 1
     talkSubjectID: 1001
-    content: Yes.I will try my best!
-  - id: 12
+    content: This is the magic plant and we can plant it to fight against the monster.
+  - id: 15
     group: 3
+    step: 1
+    talkSubjectID: 1002
+    content: You call the games that you have developed as plant? Interesting.
+  - id: 16
+    group: 3
+    step: 1
+    talkSubjectID: 1002
+    content: Anyway, put the games into the portfolio just like put the plants at
+      the garden.
+  - id: 17
+    group: 3
+    step: 1
+    talkSubjectID: 1002
+    content: Click <color="red">Plant </color> to place them. They will help you
+      to pass the interview.
+  - id: 18
+    group: 3
+    step: 2
+    talkSubjectID: 0
+    content: 
+  - id: 19
+    group: 4
+    step: 1
+    talkSubjectID: 1002
+    content: This is the last fight. Let's fight against the interview.
+  - id: 20
+    group: 4
+    step: 1
+    talkSubjectID: 1001
+    content: Yes.I will try my best!
+  - id: 21
+    group: 4
     step: 2
     talkSubjectID: 0
     content: 

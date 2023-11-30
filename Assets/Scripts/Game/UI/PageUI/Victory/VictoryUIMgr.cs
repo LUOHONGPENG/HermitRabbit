@@ -73,6 +73,10 @@ public class VictoryUIMgr : MonoBehaviour
                 {
                     EventCenter.Instance.EventTrigger("TalkStart", TalkGroup.Day2);
                 }
+                else if(gameData.numDay == 3)
+                {
+                    EventCenter.Instance.EventTrigger("TalkStart", TalkGroup.Day3);
+                }
                 else if(gameData.numDay == 7)
                 {
                     EventCenter.Instance.EventTrigger("TalkStart", TalkGroup.Day7);
@@ -151,6 +155,7 @@ public class VictoryUIMgr : MonoBehaviour
         listGrowExp = (List<Vector2Int>)arg0;
         NextPhase();
         PublicTool.PlaySound(SoundType.Victory);
+        PublicTool.StopMusic();
     }
 
     public void HidePopup()

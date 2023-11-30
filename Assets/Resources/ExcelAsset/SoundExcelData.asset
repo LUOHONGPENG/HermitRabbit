@@ -23,21 +23,29 @@ MonoBehaviour:
     soundStartTime: 0.3
   - id: 3
     name: 2
-    soundUrl: FireBall
-    soundStartTime: 0.6
+    soundUrl: RabbitAttack
+    soundStartTime: 0.2
   - id: 4
     name: 3
-    soundUrl: Boom
-    soundStartTime: 0.6
+    soundUrl: Strike
+    soundStartTime: 0.4
   - id: 5
     name: 4
-    soundUrl: LightingDestroy
-    soundStartTime: 0.3
+    soundUrl: FireBall
+    soundStartTime: 0.6
   - id: 6
     name: 5
-    soundUrl: FinalWork
+    soundUrl: Boom
     soundStartTime: 0.6
   - id: 7
     name: 6
+    soundUrl: LightingDestroy
+    soundStartTime: 0.3
+  - id: 8
+    name: 7
+    soundUrl: FinalWork
+    soundStartTime: 0.6
+  - id: 9
+    name: 8
     soundUrl: Bite
     soundStartTime: 0.6

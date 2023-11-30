@@ -324,6 +324,7 @@ public enum TalkGroup
     None,
     Day1,
     Day2,
+    Day3,
     Day7
 
 }

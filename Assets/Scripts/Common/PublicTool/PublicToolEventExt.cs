@@ -68,6 +68,12 @@ public partial class PublicTool
 
     }
 
+    public static void StopMusic()
+    {
+        EventCenter.Instance.EventTrigger("StopMusic", null);
+
+    }
+
     #region Tutorial
 
     public static void StartConditionalTutorial(TutorialGroup group,int startIndex = -1,int endIndex = -1)

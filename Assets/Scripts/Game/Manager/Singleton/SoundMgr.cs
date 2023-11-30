@@ -7,6 +7,8 @@ public enum SoundType
 {
     UnlockSkillNode,
     Victory,
+    RabbitAttack,
+    Strike,
     //Skill
     FireBall,
     Boom,
@@ -46,6 +48,7 @@ public class SoundMgr : MonoSingleton<SoundMgr>
         EventCenter.Instance.AddEventListener("PlaySound", PlaySoundEvent);
         EventCenter.Instance.AddEventListener("StopSound", StopSoundEvent);
         EventCenter.Instance.AddEventListener("PlayMusic", PlayMusicEvent);
+        EventCenter.Instance.AddEventListener("StopMusic", StopMusicEvent);
 
     }
 
@@ -55,8 +58,11 @@ public class SoundMgr : MonoSingleton<SoundMgr>
         EventCenter.Instance.RemoveEventListener("PlaySound", PlaySoundEvent);
         EventCenter.Instance.RemoveEventListener("StopSound", StopSoundEvent);
         EventCenter.Instance.RemoveEventListener("PlayMusic", PlayMusicEvent);
+        EventCenter.Instance.RemoveEventListener("StopMusic", StopMusicEvent);
 
     }
+
+
     public IEnumerator IE_Init()
     {
         dicSoundAudio.Clear();
@@ -153,4 +159,13 @@ public class SoundMgr : MonoSingleton<SoundMgr>
             }
         }
     }
+
+    private void StopMusicEvent(object arg0)
+    {
+        foreach (var info in dicMusic)
+        {
+            info.Value.Stop();
+        }
+    }
+
 }
