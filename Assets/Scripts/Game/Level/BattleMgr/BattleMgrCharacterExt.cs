@@ -104,7 +104,7 @@ public partial class BattleMgr
             if (foxData.HPrate >= 0.85 && foxData.GetBuffLevel(3003) < 5)
             {
                 BuffExcelItem buff = PublicTool.GetBuffExcelItem(3003);
-                SkillBuffEffectDeal(foxData, 3003, 1, buff.name, buff.effectType);
+                SkillBuffEffectDeal(foxData, 3003, 1, buff.GetName(), buff.effectType);
                 BattleCharacterView foxView = unitViewMgr.GetCharacterView(foxData.keyID);
                 foxView.RequestBattleText();
                 PublicTool.EventNormalCameraGoPosID(foxData.posID);

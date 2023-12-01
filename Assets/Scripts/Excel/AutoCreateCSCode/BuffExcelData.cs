@@ -8,14 +8,16 @@ using System.IO;
 [Serializable]
 public partial class BuffExcelItem : ExcelItemBase
 {
-	public string name;
+	public string name_EN;
+	public string name_CN;
+	public string desc_EN;
+	public string desc_CN;
 	public SkillEffectType effectType;
 	public int maxLevel;
 	public BuffCounterType counterType;
 	public BuffCountDownType countDownType;
 	public bool canBeRemoved;
 	public bool canBeDouble;
-	public string desc;
 	public int firstSpecialEffect;
 	public int firstSpecialDelta;
 	public string iconUrl;
@@ -39,14 +41,16 @@ public class BuffAssetAssignment
 		{
 			items[i] = new BuffExcelItem();
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
-			items[i].name = allItemValueRowList[i]["name"];
+			items[i].name_EN = allItemValueRowList[i]["name_EN"];
+			items[i].name_CN = allItemValueRowList[i]["name_CN"];
+			items[i].desc_EN = allItemValueRowList[i]["desc_EN"];
+			items[i].desc_CN = allItemValueRowList[i]["desc_CN"];
 			items[i].effectType = (SkillEffectType) Enum.Parse(typeof(SkillEffectType), allItemValueRowList[i]["effectType"], true);
 			items[i].maxLevel = Convert.ToInt32(allItemValueRowList[i]["maxLevel"]);
 			items[i].counterType = (BuffCounterType) Enum.Parse(typeof(BuffCounterType), allItemValueRowList[i]["counterType"], true);
 			items[i].countDownType = (BuffCountDownType) Enum.Parse(typeof(BuffCountDownType), allItemValueRowList[i]["countDownType"], true);
 			items[i].canBeRemoved = Convert.ToBoolean(allItemValueRowList[i]["canBeRemoved"]);
 			items[i].canBeDouble = Convert.ToBoolean(allItemValueRowList[i]["canBeDouble"]);
-			items[i].desc = allItemValueRowList[i]["desc"];
 			items[i].firstSpecialEffect = Convert.ToInt32(allItemValueRowList[i]["firstSpecialEffect"]);
 			items[i].firstSpecialDelta = Convert.ToInt32(allItemValueRowList[i]["firstSpecialDelta"]);
 			items[i].iconUrl = allItemValueRowList[i]["iconUrl"];

@@ -14,7 +14,7 @@ public class SkillBuffTipUIMgr : MonoBehaviour
     {
         imgIcon.sprite = Resources.Load("Sprite/Buff/" + buffItem.iconUrl, typeof(Sprite)) as Sprite;
 
-        codeName.text = buffItem.name;
-        codeDesc.text = buffItem.desc;
+        codeName.text = buffItem.GetName();
+        codeDesc.text = buffItem.GetDesc();
     }
 }

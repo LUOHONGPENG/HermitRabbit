@@ -14,339 +14,408 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - id: 1001
-    name: Deadline Fighter
+    name_EN: Deadline
+    name_CN: "\u622A\u6B62\u65E5"
+    desc_EN: Won't die before next turn. Remove buff when turn start.
+    desc_CN: "\u5728\u4E0B\u56DE\u5408\u4E4B\u524D <sprite=\"Common\" name=\"HP\">
+      HP\u4E0D\u4F1A\u5F52\u96F6\u3002\u56DE\u5408\u5F00\u59CB\u65F6\u79FB\u9664\u72B6\u6001\u3002"
     effectType: 2
     maxLevel: 1
     counterType: 3
     countDownType: 1
     canBeRemoved: 1
     canBeDouble: 0
-    desc: Won't die before next turn. Remove buff when turn start.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Deadline
   - id: 1002
-    name: Overtime Work
+    name_EN: Overtime Work
+    name_CN: "\u52A0\u73ED"
+    desc_EN: <sprite="Common" name="AP"> MaxAP + 1 in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C<sprite=\"Common\" name=\"AP\"> \u6700\u5927\u884C\u52A8\u529B+1\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="AP"> MaxAP + 1 in X turns.
     firstSpecialEffect: 1003
     firstSpecialDelta: 1
     iconUrl: imgBuff_Overtime
   - id: 1003
-    name: Infinity
+    name_EN: Infinity
+    name_CN: "\u65E0\u9650"
+    desc_EN: <sprite="Common" name="Radius"> Radius + 1 for next X <sprite="SkillType"
+      name="SSkill"> Support Skill or <sprite="SkillType" name="HSkill"> Hurt Skill.
+    desc_CN: "\u4E4B\u540EX\u4E2A <sprite=\"SkillType\" name=\"SSkill\"> \u652F\u63F4\u6280\u80FD\u6216
+      <sprite=\"SkillType\" name=\"HSkill\"> \u4F24\u5BB3\u6280\u80FD\u7684 <sprite=\"Common\"
+      name=\"Radius\"> \u8303\u56F4 + 1\u3002"
     effectType: 2
     maxLevel: 4
     counterType: 0
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 0
-    desc: <sprite="Common" name="Radius"> Radius + 1 for next X <sprite="SkillType"
-      name="SSkill"> Support Skill or <sprite="SkillType" name="HSkill"> Hurt Skill.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Infinity
   - id: 1004
-    name: Super Worker
+    name_EN: Super Worker
+    name_CN: "\u8D85\u7EA7\u6253\u5DE5\u4EBA"
+    desc_EN: Increase <sprite="Common" name="ATK"> ATK <sprite="Common" name="DEF">
+      DEF <sprite="Common" name="RES"> RES and <sprite="Common" name="MOV"> MaxMOV
+      by 1 in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C\u63D0\u5347 <sprite=\"Common\" name=\"ATK\">
+      \u653B\u51FB <sprite=\"Common\" name=\"DEF\"> \u9632\u5FA1 <sprite=\"Common\"
+      name=\"RES\"> \u9B54\u9632 and <sprite=\"Common\" name=\"MOV\"> \u6700\u5927\u79FB\u52A8\u529B1\u70B9\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 0
-    desc: Increase <sprite="Common" name="ATK"> ATK <sprite="Common" name="DEF">
-      DEF <sprite="Common" name="RES"> RES and <sprite="Common" name="MOV"> MaxMOV
-      by 1 in X turns.
     firstSpecialEffect: 1004
     firstSpecialDelta: 1
     iconUrl: imgBuff_Super
   - id: 1005
-    name: Chanting
+    name_EN: Chanting
+    name_CN: "\u541F\u5531"
+    desc_EN: <sprite="Common" name="Range"> Range + 2 and  <sprite="Common" name="AP">
+      MaxAP + 1 in X turns.<sprite="Common" name="MOV"> MOV = 0 when turn starts.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C<sprite=\"Common\" name=\"Range\"> \u5C04\u7A0B+2
+      and  <sprite=\"Common\" name=\"AP\"> \u6700\u5927\u884C\u52A8\u529B+1\u3002\u56DE\u5408\u5F00\u59CB\u65F6
+      <sprite=\"Common\" name=\"MOV\"> \u79FB\u52A8\u529B\u4E3A0\u3002"
     effectType: 2
     maxLevel: 3
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 0
-    desc: <sprite="Common" name="Range"> Range + 2 and  <sprite="Common" name="AP">
-      MaxAP + 1. <sprite="Common" name="MOV"> MOV = 0 when turn starts. Decrease
-      buff by turn.
     firstSpecialEffect: 1003
     firstSpecialDelta: 1
     iconUrl: imgBuff_Chant
   - id: 1006
-    name: Evade
+    name_EN: Evade
+    name_CN: "\u56DE\u907F"
+    desc_EN: Dodge Next X attack from unit. Remove buff when turn start.
+    desc_CN: "\u5FC5\u5B9A\u56DE\u907F\u4E4B\u540EX\u6B21\u6765\u81EA\u5355\u4F4D\u7684\u653B\u51FB\u3002\u56DE\u5408\u5F00\u59CB\u65F6\u79FB\u9664\u72B6\u6001\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 3
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Dodge Next X attack from unit. Remove buff when turn start.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Evade
   - id: 1007
-    name: Absorb
+    name_EN: Absorb
+    name_CN: "\u5438\u6536"
+    desc_EN: Next X skill can restore <sprite="Common" name="HP"> HP equal to half
+      of damage.
+    desc_CN: "\u4E4B\u540EX\u4E2A\u53EF\u4EE5\u9020\u6210\u4F24\u5BB3\u7684\u6280\u80FD\u4F1A\u6062\u590D\u76F8\u5F53\u4E8E\u4E00\u534A\u4F24\u5BB3\u7684
+      <sprite=\"Common\" name=\"HP\"> \u751F\u547D\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 0
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Next X skill can restore <sprite="Common" name="HP"> HP equal to half of
-      damage.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Absorb
   - id: 1008
-    name: Hated
+    name_EN: Hated
+    name_CN: "\u5632\u8BBD"
+    desc_EN: Attract enemies' attack in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C\u5438\u5F15\u654C\u4EBA\u7684\u653B\u51FB\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Attract enemies' attack. Buff decrease by turn.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Hated
   - id: 2001
-    name: Fear
+    name_EN: Fear
+    name_CN: "\u6050\u60E7"
+    desc_EN: Get 1 level <sprite="BuffS" name="Fragile"> Fragile when losting <sprite="Common"
+      name="HP"> HP in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C\u5931\u53BB <sprite=\"Common\" name=\"HP\">
+      \u751F\u547D\u65F6\u83B7\u5F971\u5C42 <sprite=\"BuffS\" name=\"Fragile\"> \u8106\u5F31\u3002"
     effectType: 1
     maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Get 1 level <sprite="BuffS" name="Fragile"> Fragile when losting <sprite="Common"
-      name="HP"> HP in X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Fear
   - id: 3001
-    name: Regen
+    name_EN: Regen
+    name_CN: "\u518D\u751F"
+    desc_EN: Restore X <sprite="Common" name="HP"> HP when turn starts. Decrease
+      buff by turn.
+    desc_CN: "\u56DE\u5408\u5F00\u59CB\u65F6\u6062\u590DX\u70B9 <sprite=\"Common\"
+      name=\"HP\"> \u751F\u547D\u3002\u56DE\u5408\u5F00\u59CB\u65F6\u51CF\u5C111\u5C42\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 1
     countDownType: 1
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Restore X <sprite="Common" name="HP"> HP when turn starts. Buff decrease
-      by turn.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Regen
   - id: 3002
-    name: Shield
+    name_EN: Shield
+    name_CN: "\u62A4\u76FE"
+    desc_EN: Block X damage and buff decrease according to damage. Remove buff when
+      turn start.
+    desc_CN: "\u683C\u6321X\u70B9\u4F24\u5BB3\u5E76\u6D88\u8017\u683C\u6321\u4F24\u5BB3\u7684\u5C42\u6570\u3002\u56DE\u5408\u5F00\u59CB\u65F6\u79FB\u9664\u72B6\u6001\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 3
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Block X damage and buff decrease according to damage. Remove buff when
-      turn start.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Shield
   - id: 3003
-    name: Angry
+    name_EN: Angry
+    name_CN: "\u6124\u6012"
+    desc_EN: <sprite="Common" name="ATK"> ATK + X and <sprite="Common" name="DEF">
+      DEF - X.
+    desc_CN: "<sprite=\"Common\" name=\"ATK\"> \u653B\u51FB + X and <sprite=\"Common\"
+      name=\"DEF\"> \u9632\u5FA1 - X\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 0
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="ATK"> ATK + X and <sprite="Common" name="DEF"> DEF
-      - X.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Angry
   - id: 3004
-    name: Buy DEF
+    name_EN: Buy DEF
+    name_CN: "\u4E70\u5165\u9632\u5FA1"
+    desc_EN: <sprite="Common" name="DEF"> DEF + X in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C<sprite=\"Common\" name=\"DEF\"> \u9632\u5FA1+X\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="DEF"> DEF + X in X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_BuyDEF
   - id: 3005
-    name: Buy RES
+    name_EN: Buy RES
+    name_CN: "\u4E70\u5165\u9B54\u9632"
+    desc_EN: <sprite="Common" name="RES"> RES + X in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C<sprite=\"Common\" name=\"RES\"> \u9B54\u9632+X\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="RES"> RES + X in X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_BuyRES
   - id: 3006
-    name: Spike
+    name_EN: Spike
+    name_CN: "\u8346\u68D8"
+    desc_EN: Deal X damage to the source that hit this unit.
+    desc_CN: "\u53D7\u5230\u4F24\u5BB3\u65F6\uFF0C\u5BF9\u4F24\u5BB3\u6765\u6E90\u9020\u6210X\u70B9\u4F24\u5BB3\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 0
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Deal X damage to the source that hit this unit.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Spike
   - id: 4001
-    name: Burning
+    name_EN: Burning
+    name_CN: "\u707C\u70E7"
+    desc_EN: Lost X <sprite="Common" name="HP"> HP when turn starts. Decrease buff
+      by turn.
+    desc_CN: "\u56DE\u5408\u5F00\u59CB\u65F6\u5931\u53BBX\u70B9 <sprite=\"Common\"
+      name=\"HP\"> \u751F\u547D\u3002\u56DE\u5408\u5F00\u59CB\u65F6\u51CF\u5C111\u5C42\u3002"
     effectType: 1
     maxLevel: 10
     counterType: 1
     countDownType: 1
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Lost X <sprite="Common" name="HP"> HP when turn starts. Decrease buff by
-      turn.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Burn
   - id: 4002
-    name: Fragile
+    name_EN: Fragile
+    name_CN: "\u8106\u5F31"
+    desc_EN: Lost extra X <sprite="Common" name="HP"> HP when losting <sprite="Common"
+      name="HP"> HP. Buff reduces by half every turn.
+    desc_CN: "\u5931\u53BB <sprite=\"Common\" name=\"HP\"> \u751F\u547D\u65F6\u989D\u5916\u5931\u53BBX\u70B9
+      <sprite=\"Common\" name=\"HP\"> \u751F\u547D\u3002\u56DE\u5408\u5F00\u59CB\u65F6\u5C42\u6570\u51CF\u534A\u3002"
     effectType: 1
     maxLevel: 10
     counterType: 2
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Lost extra X <sprite="Common" name="HP"> HP when losting <sprite="Common"
-      name="HP"> HP. Buff reduces by half every turn.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Fragile
   - id: 5001
-    name: 'ATK UP '
+    name_EN: 'ATK UP '
+    name_CN: "\u653B\u51FB\u63D0\u5347"
+    desc_EN: <sprite="Common" name="ATK"> ATK + 1 in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C<sprite=\"Common\" name=\"ATK\"> \u653B\u51FB+1\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="ATK"> ATK + 1 in X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_ATKUP
   - id: 5002
-    name: DEF UP
+    name_EN: DEF UP
+    name_CN: "\u9632\u5FA1\u63D0\u5347"
+    desc_EN: <sprite="Common" name="DEF"> DEF + 1 in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C<sprite=\"Common\" name=\"DEF\"> \u9632\u5FA1+1\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="DEF"> DEF + 1 in X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_DEFUP
   - id: 5003
-    name: RES UP
+    name_EN: RES UP
+    name_CN: "\u9B54\u9632\u63D0\u5347"
+    desc_EN: <sprite="Common" name="RES"> RES + 1 in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C<sprite=\"Common\" name=\"RES\"> \u9B54\u9632+1\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="RES"> RES + 1 in X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_RESUP
   - id: 5004
-    name: MOV UP
+    name_EN: MOV UP
+    name_CN: "\u79FB\u52A8\u63D0\u5347"
+    desc_EN: <sprite="Common" name="MOV"> MaxMOV + 1 in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C<sprite=\"Common\" name=\"MOV\"> \u6700\u5927\u79FB\u52A8\u529B+1\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="MOV"> MaxMOV + 1 in X turns.
     firstSpecialEffect: 1004
     firstSpecialDelta: 1
     iconUrl: imgBuff_MOVUP
   - id: 5005
-    name: Heal UP
+    name_EN: Heal UP
+    name_CN: "\u6CBB\u7597\u63D0\u5347"
+    desc_EN: Recover extra 2 <sprite="Common" name="HP"> HP when being healed in
+      X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C\u53D7\u5230\u6CBB\u7597\u65F6\u989D\u5916\u6062\u590D2\u70B9<sprite=\"Common\"
+      name=\"HP\"> \u751F\u547D\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: Recover extra 2 <sprite="Common" name="HP"> HP when being healed in X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_HealUP
   - id: 6001
-    name: ATK DOWN
+    name_EN: ATK DOWN
+    name_CN: "\u653B\u51FB\u4E0B\u964D"
+    desc_EN: <sprite="Common" name="ATK"> ATK - X in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C<sprite=\"Common\" name=\"ATK\"> \u653B\u51FB-X\u3002"
     effectType: 1
     maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="ATK"> ATK - X in X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_ATKDOWN
   - id: 6002
-    name: DEF DOWN
+    name_EN: DEF DOWN
+    name_CN: "\u9632\u5FA1\u4E0B\u964D"
+    desc_EN: <sprite="Common" name="DEF"> DEF - X in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C<sprite=\"Common\" name=\"DEF\"> \u9632\u5FA1-X\u3002"
     effectType: 1
     maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="DEF"> DEF - X in X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_DEFDOWN
   - id: 6003
-    name: RES DOWN
+    name_EN: RES DOWN
+    name_CN: "\u9B54\u9632\u4E0B\u964D"
+    desc_EN: <sprite="Common" name="RES"> RES - X in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C<sprite=\"Common\" name=\"RES\"> \u9B54\u9632-X\u3002"
     effectType: 1
     maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="RES"> RES - X in X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_RESDOWN
   - id: 6004
-    name: MOV DOWN
+    name_EN: MOV DOWN
+    name_CN: "\u79FB\u52A8\u4E0B\u964D"
+    desc_EN: <sprite="Common" name="MOV"> MOV - X in next X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C<sprite=\"Common\" name=\"MOV\"> \u79FB\u52A8\u529B-X\u3002"
     effectType: 1
     maxLevel: 10
     counterType: 1
     countDownType: 1
     canBeRemoved: 1
     canBeDouble: 1
-    desc: <sprite="Common" name="MOV"> MOV - X in next X turns.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_MOVDOWN
   - id: 6005
-    name: Heal DOWN
+    name_EN: Heal DOWN
+    name_CN: "\u6CBB\u7597\u4E0B\u964D"
+    desc_EN: The amount of recovering <sprite="Common" name="HP"> HP - X when being
+      healed in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C\u53D7\u5230\u6CBB\u7597\u65F6\u6062\u590D\u7684<sprite=\"Common\"
+      name=\"HP\"> \u751F\u547D\u51CF\u5C11X\u70B9\u3002"
     effectType: 1
     maxLevel: 10
     counterType: 1
     countDownType: 0
     canBeRemoved: 1
     canBeDouble: 1
-    desc: The amount of recovering <sprite="Common" name="HP"> HP - X when being
-      healed. Decrease buff by turn.
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_HealDown

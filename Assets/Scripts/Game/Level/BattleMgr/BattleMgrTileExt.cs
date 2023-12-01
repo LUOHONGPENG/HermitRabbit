@@ -84,7 +84,7 @@ public partial class BattleMgr
                 {
                     BurnDelta = 2;
                 }
-                SkillBuffEffectDeal(unitData, 4001, BurnDelta, PublicTool.GetBuffExcelItem(4001).name, SkillEffectType.Harm);
+                SkillBuffEffectDeal(unitData, 4001, BurnDelta, PublicTool.GetBuffExcelItem(4001).GetName(), SkillEffectType.Harm);
 
                 BattleUnitView unitView = unitViewMgr.GetViewFromUnitInfo(burnUnit);
                 unitView.RequestBattleText();
@@ -160,7 +160,7 @@ public partial class BattleMgr
             if (hopeUnit.type != BattleUnitType.None)
             {
                 BattleUnitData unitData = gameData.GetDataFromUnitInfo(hopeUnit);
-                SkillBuffEffectDeal(unitData, 4002, 1, PublicTool.GetBuffExcelItem(4002).name, SkillEffectType.Harm);
+                SkillBuffEffectDeal(unitData, 4002, 1, PublicTool.GetBuffExcelItem(4002).GetName(), SkillEffectType.Harm);
                 BattleUnitView unitView = unitViewMgr.GetViewFromUnitInfo(hopeUnit);
                 unitView.RequestBattleText();
 

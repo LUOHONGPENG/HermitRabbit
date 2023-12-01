@@ -28,7 +28,7 @@ public partial class BattleMgr
                 BuffExcelItem buffItem = skillBattleInfo.listBuffEffect[i];
                 if (buffItem.effectType == effectType)
                 {
-                    SkillBuffEffectDeal(target, buffItem.id, skillBattleInfo.listBuffDelta[i], buffItem.name, effectType);
+                    SkillBuffEffectDeal(target, buffItem.id, skillBattleInfo.listBuffDelta[i], buffItem.GetName(), effectType);
                 }
             }
         }
@@ -269,19 +269,19 @@ public partial class BattleMgr
                 }
                 break;
             case 3002:
-                SkillBuffEffectDeal(target, 4001, delta, PublicTool.GetBuffExcelItem(4001).name, SkillEffectType.Harm);
+                SkillBuffEffectDeal(target, 4001, delta, PublicTool.GetBuffExcelItem(4001).GetName(), SkillEffectType.Harm);
 /*                target.AddBuff(4001, delta);
                 BuffExcelItem buffItem4001 = PublicTool.GetBuffExcelItem(4001);
                 target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, buffItem4001.name, target.posID));*/
                 break;
             case 3003:
-                SkillBuffEffectDeal(source, 1007, delta, PublicTool.GetBuffExcelItem(1007).name, SkillEffectType.Help);
+                SkillBuffEffectDeal(source, 1007, delta, PublicTool.GetBuffExcelItem(1007).GetName(), SkillEffectType.Help);
 /*                source.AddBuff(1007,delta);
                 BuffExcelItem buffItem1007 = PublicTool.GetBuffExcelItem(1007);
                 source.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, buffItem1007.name, source.posID));*/
                 break;
             case 3004:
-                SkillBuffEffectDeal(target, delta, source.curATK, PublicTool.GetBuffExcelItem(delta).name, PublicTool.GetBuffExcelItem(delta).effectType);
+                SkillBuffEffectDeal(target, delta, source.curATK, PublicTool.GetBuffExcelItem(delta).GetName(), PublicTool.GetBuffExcelItem(delta).effectType);
                 break;
             case 5001:
                 target.DoubleAllBuff();
@@ -329,7 +329,7 @@ public partial class BattleMgr
                         target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, string.Format("MOV-{0}", 2), target.posID));
                         break;*/
                 }
-                SkillBuffEffectDeal(target, tempMilkBuffID, 2, PublicTool.GetBuffExcelItem(tempMilkBuffID).name, SkillEffectType.Help);
+                SkillBuffEffectDeal(target, tempMilkBuffID, 2, PublicTool.GetBuffExcelItem(tempMilkBuffID).GetName(), SkillEffectType.Help);
                 break;
             case 9001:
                 int ranFoe = UnityEngine.Random.Range(0, 3);
