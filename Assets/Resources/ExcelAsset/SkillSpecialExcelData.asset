@@ -49,6 +49,10 @@ MonoBehaviour:
     name: DebuffFromATK
     effectType: 1
     timeType: 0
+  - id: 3005
+    name: Reborn
+    effectType: 2
+    timeType: 0
   - id: 5001
     name: Double Buff
     effectType: 2

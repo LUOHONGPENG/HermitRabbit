@@ -15,6 +15,7 @@ MonoBehaviour:
   items:
   - id: 1001
     name: Frogi
+    rarity: 1
     HP: 5
     ATK: 1
     DEF: 0
@@ -26,77 +27,108 @@ MonoBehaviour:
     desc: Attack the foe in range if character hit it with normal attack.
   - id: 1002
     name: Cookee
+    rarity: 2
     HP: 12
     ATK: 3
     DEF: 0
     RES: 1
-    triggerCondition: 1
+    triggerCondition: 2
     skillID: 3101
     essence: 2
     pixelUrl: pp_Cook_Idle
     desc: Apply burning according to ATK every turn.
   - id: 1003
     name: Hero Grass
-    HP: 15
+    rarity: 4
+    HP: 18
     ATK: 0
     DEF: 1
     RES: 1
-    triggerCondition: 2
+    triggerCondition: 3
     skillID: 3201
-    essence: 2
+    essence: 3
     pixelUrl: pp_Hero_Idle
     desc: Attract the attack from foes.
   - id: 1004
     name: Unstable Grass
+    rarity: 2
     HP: 10
     ATK: 4
     DEF: 0
     RES: 1
-    triggerCondition: 1
+    triggerCondition: 2
     skillID: 3102
     essence: 2
     pixelUrl: pp_Unstable_Idle
     desc: Hit nearby tiles with electricity that can be transmitted by water.
   - id: 1005
     name: Void Grass
+    rarity: 2
     HP: 18
     ATK: 3
     DEF: 0
     RES: 0
-    triggerCondition: 3
+    triggerCondition: 4
     skillID: 3301
     essence: 2
     pixelUrl: pp_Void_Idle
     desc: Suicide bombing when the second turn start.
   - id: 1006
     name: Bubblia
+    rarity: 2
     HP: 13
     ATK: 0
     DEF: 0
     RES: 0
-    triggerCondition: 1
+    triggerCondition: 2
     skillID: 3103
     essence: 2
     pixelUrl: pp_Bubble_Idle
     desc: Random effect from giving buff of ATKUP, DEFUP, RESUP.
+  - id: 1007
+    name: Gogo Grass
+    rarity: 4
+    HP: 10
+    ATK: 0
+    DEF: 0
+    RES: 4
+    triggerCondition: 2
+    skillID: 3104
+    essence: 3
+    pixelUrl: pp_Gogo_Idle
+    desc: 
+  - id: 1008
+    name: Alyfen
+    rarity: 4
+    HP: 15
+    ATK: 0
+    DEF: 0
+    RES: 0
+    triggerCondition: 1
+    skillID: 3401
+    essence: 3
+    pixelUrl: pp_Alyfen_Idle
+    desc: 
   - id: 2001
     name: Maleficia
+    rarity: 1
     HP: 3
     ATK: 0
     DEF: 0
     RES: 1
-    triggerCondition: 4
+    triggerCondition: 5
     skillID: -1
     essence: 1
     pixelUrl: pp_Maleficia_Idle
     desc: Increase ATK of units in same row by 1.
   - id: 2002
     name: Beneficia
+    rarity: 1
     HP: 3
     ATK: 0
     DEF: 1
     RES: 0
-    triggerCondition: 4
+    triggerCondition: 5
     skillID: -1
     essence: 1
     pixelUrl: pp_Beneficia_Idle

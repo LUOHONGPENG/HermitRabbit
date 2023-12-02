@@ -741,6 +741,32 @@ MonoBehaviour:
     activeSkillType: 4
     characterID: 0
     unlockNodeID: 0
+  - id: 3104
+    name: Gogo Rabbit's Trap
+    costAP: 0
+    costMOV: 0
+    costHP: 0
+    costMemory: 0
+    range: 3
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 1
+    characterEffect: 0
+    plantEffect: 0
+    damageType: 0
+    damageDeltaStd: 0
+    damageDelta: 0
+    damageModifier: 0
+    listBuffEffect: f1030000
+    listBuffDelta: 01000000
+    listSpecialEffect: 00000000
+    listSpecialDelta: 00000000
+    tileEffectType: 0
+    activeSkillType: 4
+    characterID: 0
+    unlockNodeID: 0
   - id: 3201
     name: Hero Rabbit
     costAP: 0
@@ -788,6 +814,32 @@ MonoBehaviour:
     listBuffEffect: 00000000
     listBuffDelta: 00000000
     listSpecialEffect: 0e270000
+    listSpecialDelta: 00000000
+    tileEffectType: 0
+    activeSkillType: 4
+    characterID: 0
+    unlockNodeID: 0
+  - id: 3401
+    name: Rescuer Rabbit
+    costAP: 0
+    costMOV: 0
+    costHP: 0
+    costMemory: 0
+    range: 3
+    isRangeSelf: 0
+    needExtraTarget: 0
+    radius: 0
+    regionType: 0
+    foeEffect: 0
+    characterEffect: 2
+    plantEffect: 0
+    damageType: 3
+    damageDeltaStd: 9
+    damageDelta: 100
+    damageModifier: 0
+    listBuffEffect: 00000000
+    listBuffDelta: 00000000
+    listSpecialEffect: bd0b0000
     listSpecialDelta: 00000000
     tileEffectType: 0
     activeSkillType: 4

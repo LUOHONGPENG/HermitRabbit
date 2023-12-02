@@ -411,7 +411,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 3001
     name_EN: Tadpole Hair
-    name_CN: Tadpole Hair
+    name_CN: "\u874C\u86AA\u690D\u53D1"
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -419,7 +419,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 3101
     name_EN: Cook Human On Time
-    name_CN: Cook Human On Time
+    name_CN: "\u6309\u65F6\u716E\u4EBA"
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -427,7 +427,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 3102
     name_EN: Unstable Rabbit
-    name_CN: Unstable Rabbit
+    name_CN: "\u4E0D\u7A33\u5154\u5154\u7684\u7535\u6D41"
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -441,9 +441,17 @@ MonoBehaviour:
     listTagType:
     - 0
     listBuffType: 00000000
+  - id: 3104
+    name_EN: Gogo Rabbit's Trap
+    name_CN: "\u8131\u8863\u821E\u5154\u7684\u9677\u9631"
+    desc_EN: 
+    desc_CN: 
+    listTagType:
+    - 0
+    listBuffType: 00000000
   - id: 3201
     name_EN: Hero Rabbit
-    name_CN: Hero Rabbit
+    name_CN: "\u82F1\u96C4\u5154\u5154\u7684\u6311\u8845"
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -451,7 +459,15 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 3301
     name_EN: Void Rabbit
-    name_CN: Void Rabbit
+    name_CN: "\u865A\u65E0\u5154\u5154\u7684\u51B2\u51FB"
+    desc_EN: 
+    desc_CN: 
+    listTagType:
+    - 0
+    listBuffType: 00000000
+  - id: 3401
+    name_EN: Rescuer Rabbit
+    name_CN: "\u6551\u63F4\u5154\u5154\u7684\u727A\u7272"
     desc_EN: 
     desc_CN: 
     listTagType:

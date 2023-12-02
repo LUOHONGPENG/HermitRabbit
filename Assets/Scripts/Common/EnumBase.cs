@@ -190,6 +190,7 @@ public enum SkillDamageDeltaStd
 public enum PlantTriggerType
 {
     CharacterNormalAttack,
+    ActionEndDead,
     TurnStart,
     FirstTurn,
     SecondTurn,

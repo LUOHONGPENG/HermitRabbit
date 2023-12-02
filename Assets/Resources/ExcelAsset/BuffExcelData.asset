@@ -138,6 +138,20 @@ MonoBehaviour:
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Hated
+  - id: 1009
+    name_EN: Charm
+    name_CN: "\u9B45\u60D1"
+    desc_EN: Skill target of foe reverse in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C\u654C\u4EBA\u6280\u80FD\u76EE\u6807\u53D6\u76F8\u53CD\u7C7B\u578B\u3002"
+    effectType: 1
+    maxLevel: 10
+    counterType: 1
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 1
+    firstSpecialEffect: 0
+    firstSpecialDelta: 0
+    iconUrl: imgBuff_Down
   - id: 2001
     name_EN: Fear
     name_CN: "\u6050\u60E7"

@@ -9,6 +9,7 @@ using System.IO;
 public partial class PlantExcelItem : ExcelItemBase
 {
 	public string name;
+	public Rarity rarity;
 	public int HP;
 	public int ATK;
 	public int DEF;
@@ -39,6 +40,7 @@ public class PlantAssetAssignment
 			items[i] = new PlantExcelItem();
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].name = allItemValueRowList[i]["name"];
+			items[i].rarity = (Rarity) Enum.Parse(typeof(Rarity), allItemValueRowList[i]["rarity"], true);
 			items[i].HP = Convert.ToInt32(allItemValueRowList[i]["HP"]);
 			items[i].ATK = Convert.ToInt32(allItemValueRowList[i]["ATK"]);
 			items[i].DEF = Convert.ToInt32(allItemValueRowList[i]["DEF"]);
