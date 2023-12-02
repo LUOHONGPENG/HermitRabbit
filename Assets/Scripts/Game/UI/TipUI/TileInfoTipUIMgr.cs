@@ -35,8 +35,8 @@ public class TileInfoTipUIMgr : MonoBehaviour
     public void UpdateBasicInfo(MapTileType tileType)
     {
         MapTileExcelItem tileItem = PublicTool.GetMapTileItem(tileType);
-        codeName.text = tileItem.name;
-        codeDesc.text = tileItem.desc;
+        codeName.text = tileItem.GetName();
+        codeDesc.text = tileItem.GetDesc();
         imgIcon.sprite = Resources.Load("Sprite/Tile/" + tileItem.iconUrl, typeof(Sprite)) as Sprite;
         objPopup.SetActive(true);
     }
@@ -56,8 +56,8 @@ public class TileInfoTipUIMgr : MonoBehaviour
             }
 
             MapTileExcelItem tileItem = PublicTool.GetMapTileItem(recordTileType);
-            codeName.text = tileItem.name;
-            codeDesc.text = tileItem.desc;
+            codeName.text = tileItem.GetName();
+            codeDesc.text = tileItem.GetDesc();
             imgIcon.sprite = Resources.Load("Sprite/Tile/" + tileItem.iconUrl, typeof(Sprite)) as Sprite;
         }
     }

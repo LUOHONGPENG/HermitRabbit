@@ -9,8 +9,10 @@ using System.IO;
 public partial class MapTileExcelItem : ExcelItemBase
 {
 	public MapTileType tileType;
-	public string name;
-	public string desc;
+	public string name_EN;
+	public string name_CN;
+	public string desc_EN;
+	public string desc_CN;
 	public string iconUrl;
 }
 
@@ -33,8 +35,10 @@ public class MapTileAssetAssignment
 			items[i] = new MapTileExcelItem();
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].tileType = (MapTileType) Enum.Parse(typeof(MapTileType), allItemValueRowList[i]["tileType"], true);
-			items[i].name = allItemValueRowList[i]["name"];
-			items[i].desc = allItemValueRowList[i]["desc"];
+			items[i].name_EN = allItemValueRowList[i]["name_EN"];
+			items[i].name_CN = allItemValueRowList[i]["name_CN"];
+			items[i].desc_EN = allItemValueRowList[i]["desc_EN"];
+			items[i].desc_CN = allItemValueRowList[i]["desc_CN"];
 			items[i].iconUrl = allItemValueRowList[i]["iconUrl"];
 		}
 		MapTileExcelData excelDataAsset = ScriptableObject.CreateInstance<MapTileExcelData>();

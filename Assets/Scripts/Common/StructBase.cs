@@ -107,7 +107,7 @@ public struct SkillBattleInfo
                 if(damageType == SkillDamageType.Magic)
                 {
                     this.costHP++;
-                    damageExtraBonus = 0.6f;
+                    damageExtraBonus = 0.5f;
                 }
             }
         }

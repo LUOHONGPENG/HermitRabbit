@@ -101,7 +101,7 @@ public partial class BattleUnitData
             float temp = 0;
             if (GetCurTileExpressType() == MapTileType.Guard)
             {
-                temp += 0.4f;
+                temp += 0.5f;
             }
             return temp;
         }
