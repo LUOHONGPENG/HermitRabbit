@@ -16,7 +16,7 @@ public struct UnitInfo
 }
 
 
-public struct SkillBattleInfo
+public class SkillBattleInfo
 {
     //Basic
     public int ID;
@@ -94,6 +94,14 @@ public struct SkillBattleInfo
         this.listSpecialDelta = new List<int>(item.listSpecialDelta);
         this.tileEffectType = item.RealTileEffectType;
 
+
+        BuffFilter(unitData);
+        CharmFilter(unitData);
+
+    }
+
+    public void BuffFilter(BattleUnitData unitData)
+    {
         //UnitDataBuff
         if (unitData != null)
         {
@@ -104,15 +112,44 @@ public struct SkillBattleInfo
 
             if (unitData.tileBuffMagicDamageAdd)
             {
-                if(damageType == SkillDamageType.Magic)
+                if (damageType == SkillDamageType.Magic)
                 {
                     this.costHP++;
                     damageExtraBonus = 0.5f;
                 }
             }
         }
-
     }
+
+    public void CharmFilter(BattleUnitData unitData)
+    {
+        if (unitData != null && unitData.battleUnitType == BattleUnitType.Foe && unitData.CheckBuffExist(1009))
+        {
+            if(foeEffect == SkillEffectType.Harm && characterEffect == SkillEffectType.Harm && plantEffect == SkillEffectType.Harm)
+            {
+                //Nothing Change
+            }
+            else if (foeEffect == SkillEffectType.None && characterEffect == SkillEffectType.Harm && plantEffect == SkillEffectType.Harm)
+            {
+                characterEffect = SkillEffectType.None;
+                plantEffect = SkillEffectType.None;
+                foeEffect = SkillEffectType.Harm;
+                isTargetCharacter = false;
+                isTargetPlant = false;
+                isTargetFoe = true;
+            }
+            else if (foeEffect == SkillEffectType.Help && characterEffect == SkillEffectType.None && plantEffect == SkillEffectType.None)
+            {
+                characterEffect = SkillEffectType.Help;
+                plantEffect = SkillEffectType.Help;
+                foeEffect = SkillEffectType.None;
+                isTargetCharacter = true;
+                isTargetPlant = true;
+                isTargetFoe = false;
+            }
+        }
+    }
+
 }
 
 public class FoeFindTargetInfo

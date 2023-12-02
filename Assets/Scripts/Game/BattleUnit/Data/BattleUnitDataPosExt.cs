@@ -363,7 +363,7 @@ public partial class BattleUnitData
                 if(battleUnitType == BattleUnitType.Foe)
                 {
                     BattleFoeData foeData = (BattleFoeData)this;
-                    if(foeData.focusType == FoeFocusType.Friend)
+                    if(foeData.GetTrueFocusType() == FoeFocusType.Friend)
                     {
                         //
                     }

@@ -41,6 +41,22 @@ public class BattleFoeData : BattleUnitData
         return item.skillID;
     }
 
+    public FoeFocusType GetTrueFocusType()
+    {
+        if (CheckBuffExist(1009))
+        {
+            switch (focusType)
+            {
+                case FoeFocusType.Foe:
+                    return FoeFocusType.Friend;
+                case FoeFocusType.Friend:
+                    return FoeFocusType.Foe;
+            }
+
+        }
+        return focusType;
+    }
+
     public int GetSkillTouchRange()
     {
         SkillExcelItem skillItem = PublicTool.GetSkillItem(GetSkillID());

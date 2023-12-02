@@ -195,14 +195,14 @@ public partial class BattleMgr
         foeData.RefreshFoeMoveAllBFSNode();
         //2.Get Target for Foe
         //List<FindPathNode> listFoeTargetNode = new List<FindPathNode>();
-        if(foeData.focusType == FoeFocusType.Foe)
+        if(foeData.GetTrueFocusType() == FoeFocusType.Foe)
         {
             foreach(var unit in gameData.listFoe)
             {
                 listInfo.Add(new FoeFindTargetInfo(foeData,unit));
             }
         }
-        else if(foeData.focusType == FoeFocusType.Friend)
+        else if(foeData.GetTrueFocusType() == FoeFocusType.Friend)
         {
             foreach (var unit in gameData.listCharacter)
             {
