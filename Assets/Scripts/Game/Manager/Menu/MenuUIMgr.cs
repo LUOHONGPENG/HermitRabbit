@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 public class MenuUIMgr : MonoBehaviour
 {
     public SaveLoadGameUIMgr loadGameUIMgr;
+    public CreditUIMgr creditUIMgr;
 
     public Button btnTest;
     public Button btnNewGame;
     public Button btnLoadGame;
+    public Button btnCredit;
     public Button btnQuit;
 
     public Button btnDelete;
@@ -23,6 +25,7 @@ public class MenuUIMgr : MonoBehaviour
     public void Init()
     {
         loadGameUIMgr.Init();
+        creditUIMgr.Init();
 
         btnTest.onClick.RemoveAllListeners();
         btnTest.onClick.AddListener(delegate ()
@@ -34,6 +37,12 @@ public class MenuUIMgr : MonoBehaviour
         btnNewGame.onClick.AddListener(delegate ()
         {
             GameMgr.Instance.LoadScene(SceneName.Game,true);
+        });
+
+        btnCredit.onClick.RemoveAllListeners();
+        btnCredit.onClick.AddListener(delegate ()
+        {
+            creditUIMgr.ShowPopup();
         });
 
         btnLoadGame.onClick.RemoveAllListeners();
