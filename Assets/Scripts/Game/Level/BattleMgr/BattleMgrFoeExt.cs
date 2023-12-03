@@ -125,6 +125,12 @@ public partial class BattleMgr
             //SetCurUnit
             int foeKeyID = stackFoe.Pop();            
             BattleFoeData foeData = gameData.GetBattleFoeData(foeKeyID);
+
+            if(foeData == null || foeData.isDead)
+            {
+                continue;
+            }
+
             gameData.SetCurUnitInfo(new UnitInfo(BattleUnitType.Foe, foeKeyID));
 
             //Move Camera to the cur unit
@@ -199,6 +205,14 @@ public partial class BattleMgr
         {
             foreach(var unit in gameData.listFoe)
             {
+                //When charming, ignore self.
+                if (foeData.CheckBuffExist(1009))
+                {
+                    if(unit == foeData)
+                    {
+                        continue;
+                    }
+                }
                 listInfo.Add(new FoeFindTargetInfo(foeData,unit));
             }
         }
@@ -261,7 +275,6 @@ public partial class BattleMgr
             listValidNode.Add(pair.Value);
         }
         PublicTool.FindPathNodeSortLowestHCost(listValidNode);
-
 
         if (listValidNode.Count > 0)
         {

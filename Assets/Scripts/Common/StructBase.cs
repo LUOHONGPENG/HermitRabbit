@@ -170,7 +170,6 @@ public class FoeFindTargetInfo
     {
         this.findTargetType = foeData.findTargetType;
         this.keyID = unit.keyID;
-        this.unitType = unit.battleUnitType;
         this.posID = unit.posID;
         this.sourceHate = unit.curHate;
         this.HPRate = unit.HPrate;
@@ -216,7 +215,7 @@ public class FoeFindTargetInfo
     {
         //HPrate = 0 -> 1000
         //HPrate = 1 -> 0
-        return (int)(1 - HPRate) * 1000;
+        return Mathf.RoundToInt((1 - HPRate) * 1000);
     }
 
     public int CalculateHateGCostNear()
