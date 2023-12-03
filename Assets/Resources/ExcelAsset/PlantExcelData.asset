@@ -96,7 +96,7 @@ MonoBehaviour:
     skillID: 3104
     essence: 3
     pixelUrl: pp_Gogo_Idle
-    desc: 
+    desc: Can control random foe to hit other foe or help us.
   - id: 1008
     name: Alyfen
     rarity: 4
