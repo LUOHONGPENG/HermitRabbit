@@ -67,7 +67,7 @@ MonoBehaviour:
     desc_CN: "\u706B\u7403\u672F\u4F1A\u6D88\u8017\u6240\u6709 <sprite=\"Common\"
       name=\"AP\"> \u884C\u52A8\u529B\u5E76\u4E14 <sprite=\"Common\" name=\"Radius\">
       \u8303\u56F4-1\u3002\u5982\u679C<sprite=\"Common\" name=\"AP\"> \u884C\u52A8\u529B\u5927\u4E8E1\uFF0C\u5927\u4E8E1\u7684\u6BCF\u70B9
-      <sprite=\"Common\" name=\"AP\"> \u884C\u52A8\u529B\u4F1A\u8FFD\u52A0125% <sprite=\"Common\"
+      <sprite=\"Common\" name=\"AP\"> \u884C\u52A8\u529B\u4F1A\u8FFD\u52A0150% <sprite=\"Common\"
       name=\"ATK\"> \u653B\u51FB\u7684\u4F24\u5BB3"
     listTagType:
     - 0
