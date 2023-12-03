@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mPixelSkyboxDay
+  m_Name: mPixelSkyboxNight
   m_Shader: {fileID: 10700, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BackTex:
-        m_Texture: {fileID: 2800000, guid: 37411f9be95e7d741a02fb4eca5a85a8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 233812a61c7e6f34b9d7d4a4c1382d75, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -45,7 +45,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DownTex:
-        m_Texture: {fileID: 2800000, guid: 2a8e15f352d645844b3e67fd9e770abd, type: 3}
+        m_Texture: {fileID: 2800000, guid: a6314e228059bfc429967553518e7217, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -53,11 +53,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FrontTex:
-        m_Texture: {fileID: 2800000, guid: fa0f8585c3002c046a59e40dc9a3e547, type: 3}
+        m_Texture: {fileID: 2800000, guid: ec6484b38fb19704e8457b862e40fc3d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LeftTex:
-        m_Texture: {fileID: 2800000, guid: e459224f336f10247bd374646d3dfd8d, type: 3}
+        m_Texture: {fileID: 2800000, guid: d16bf84c032e7844db3fb518978487fa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -77,7 +77,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RightTex:
-        m_Texture: {fileID: 2800000, guid: b337c1eaee942dc4d9b3d1db9edd2e27, type: 3}
+        m_Texture: {fileID: 2800000, guid: c1799773b92c29041a25bba39624d504, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -85,7 +85,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _UpTex:
-        m_Texture: {fileID: 2800000, guid: bcf458314b27efb4fb57c4adfa31361c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9f134445a728d334fbec947f2feb9c6c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:

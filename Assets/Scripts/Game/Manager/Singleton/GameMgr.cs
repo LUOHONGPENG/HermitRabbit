@@ -11,6 +11,10 @@ public partial class GameMgr : MonoSingleton<GameMgr>
     public SceneGameMgr curSceneGameMgr = null;
     public SceneName curSceneName = SceneName.Init;
 
+    public Material skyDay;
+    public Material skyNight;
+
+
     public Texture2D cursorTex;
 
     public bool isInit = false;

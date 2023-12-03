@@ -240,5 +240,7 @@ MonoBehaviour:
   curUICamera: {fileID: 0}
   curSceneGameMgr: {fileID: 0}
   curSceneName: 0
+  skyDay: {fileID: 2100000, guid: da58dbe2d20d53f44be09b5d72fbbe58, type: 2}
+  skyNight: {fileID: 2100000, guid: 13d808c565dabd146b0975aad5346d94, type: 2}
   cursorTex: {fileID: 2800000, guid: 012f99d3056424c49b39e0f9172d4c87, type: 3}
   isInit: 0
