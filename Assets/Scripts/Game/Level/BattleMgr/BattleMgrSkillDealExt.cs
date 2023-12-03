@@ -233,6 +233,10 @@ public partial class BattleMgr
         {
             case 1001:
                 target.curAP = target.curAP + delta;
+                if (target.curAP > target.curMaxAP)
+                {
+                    target.curAP = target.curMaxAP;
+                }
                 target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, string.Format("AP+{0}", delta), target.posID));
                 break;
             case 1002:
@@ -245,9 +249,17 @@ public partial class BattleMgr
                 break;
             case 1003:
                 target.curAP = target.curAP + delta;
+                if (target.curAP > target.curMaxAP)
+                {
+                    target.curAP = target.curMaxAP;
+                }
                 break;
             case 1004:
                 target.curMOV = target.curMOV + delta;
+                if (target.curMOV > target.curMaxMOV)
+                {
+                    target.curMOV = target.curMaxMOV;
+                }
                 break;
             case 2001:
                 target.curMOV -= delta;
@@ -282,6 +294,10 @@ public partial class BattleMgr
                 break;
             case 3004:
                 SkillBuffEffectDeal(target, delta, source.curATK, PublicTool.GetBuffExcelItem(delta).GetName(), PublicTool.GetBuffExcelItem(delta).effectType);
+                break;
+            case 3005:
+                target.isDead = false;
+                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Special, "Reborn", target.posID));
                 break;
             case 5001:
                 target.DoubleAllBuff();

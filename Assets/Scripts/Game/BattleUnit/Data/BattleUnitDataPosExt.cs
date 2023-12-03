@@ -386,6 +386,12 @@ public partial class BattleUnitData
             {
                 List<Vector2Int> listCharacterPos = gameData.listTempCharacterPos;
                 CheckWhetherSkillContainTarget(listTemp, listCharacterPos, listViewSkill, skillInfo);
+
+                if(skillInfo.ID == 3401)
+                {
+                    List<Vector2Int> listDeadCharacter = gameData.listTempDeadCharacterPos;
+                    CheckWhetherSkillContainTarget(listTemp, listDeadCharacter, listViewSkill, skillInfo);
+                }
             }
 
             if (skillInfo.isTargetPlant)

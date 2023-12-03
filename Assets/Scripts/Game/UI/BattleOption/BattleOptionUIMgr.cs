@@ -34,8 +34,8 @@ public class BattleOptionUIMgr : MonoBehaviour
         btnMove.Init(BattleBasicBtnItem.BattleBasicBtnType.Move);
         btnMove.InitButton(delegate ()
         {
-            EventCenter.Instance.EventTrigger("InputChangeSkill", null);
             PublicTool.EventChangeInteract(InteractState.CharacterMove);
+            EventCenter.Instance.EventTrigger("InputChangeSkill", null);
         });
 
 

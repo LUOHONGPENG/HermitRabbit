@@ -152,6 +152,20 @@ MonoBehaviour:
     firstSpecialEffect: 0
     firstSpecialDelta: 0
     iconUrl: imgBuff_Down
+  - id: 1010
+    name_EN: Sunrise
+    name_CN: "\u4E1C\u5C71\u518D\u8D77"
+    desc_EN: <sprite="Common" name="AP"> MaxAP + X
+    desc_CN: "<sprite=\"Common\" name=\"AP\"> \u6700\u5927\u884C\u52A8\u529B+X"
+    effectType: 2
+    maxLevel: 10
+    counterType: 0
+    countDownType: 0
+    canBeRemoved: 1
+    canBeDouble: 0
+    firstSpecialEffect: 1003
+    firstSpecialDelta: 1
+    iconUrl: imgBuff_Up
   - id: 2001
     name_EN: Fear
     name_CN: "\u6050\u60E7"

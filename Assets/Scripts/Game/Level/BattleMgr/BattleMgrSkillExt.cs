@@ -92,8 +92,19 @@ public partial class BattleMgr
 
         if (!isBattleEnd)
         {
-            isInFoeSkill = false;
-            isInPlantSkill = false;
+            if(gameData.GetCurUnitType() == BattleUnitType.Plant)
+            {
+                isInPlantSkill = false;
+            }
+            else if (gameData.GetCurUnitType() == BattleUnitType.Foe)
+            {
+                isInFoeSkill = false;
+            }
+            else
+            {
+                isInFoeSkill = false;
+                isInPlantSkill = false;
+            }
 
             if (battleTurnPhase == BattlePhase.CharacterPhase && gameData.GetCurUnitInfo().type == BattleUnitType.Character)
             {
@@ -249,6 +260,7 @@ public partial class BattleMgr
     {
         //If there is no a foe that is not in the dic are hurt
         CheckClearDeadUnitView();
+        CheckCharacterDeadClearBuff();
         RefreshSkillRange();
         RefreshWaterRange();
         mapViewMgr.RefreshTileView();
@@ -277,6 +289,18 @@ public partial class BattleMgr
             {
                 unitViewMgr.RemovePlantView(plantData.keyID);
                 gameData.RemovePlantData(plantData.keyID);
+            }
+        }
+    }
+
+    private void CheckCharacterDeadClearBuff()
+    {
+        for (int i = 0; i < gameData.listCharacter.Count; i++)
+        {
+            BattleCharacterData characterData = gameData.listCharacter[i];
+            if (characterData.isDead)
+            {
+                characterData.ClearAllBuff();
             }
         }
     }

@@ -24,8 +24,8 @@ public class BattleSkillBtnItem : BattleBtnBase
 
         InitButton(delegate ()
         {
-            EventCenter.Instance.EventTrigger("InputChangeSkill", null);
             PublicTool.EventChangeInteract(InteractState.CharacterSkill, skillItem.id);
+            EventCenter.Instance.EventTrigger("InputChangeSkill", null);
         });
     }
 

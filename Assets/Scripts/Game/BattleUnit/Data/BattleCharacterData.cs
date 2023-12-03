@@ -42,6 +42,12 @@ public partial class BattleCharacterData : BattleUnitData
         return item;
     }
 
+    public override void InvokeDead()
+    {
+        base.InvokeDead();        
+    }
+
+
     public override int curATK
     {
         get

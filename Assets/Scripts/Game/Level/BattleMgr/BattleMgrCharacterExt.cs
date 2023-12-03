@@ -90,6 +90,7 @@ public partial class BattleMgr
         if (hasBuffInvoked)
         {
             yield return new WaitForSeconds(GameGlobal.waitTimeText);
+            yield return StartCoroutine(IE_CheckPlantAfterSkill());
             yield return StartCoroutine(IE_AfterSkill());
             yield return StartCoroutine(IE_CheckBattleOver());
         }

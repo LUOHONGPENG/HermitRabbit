@@ -290,7 +290,7 @@ public partial class SkillExcelItem
                 {
                     BattleCharacterData characterData = PublicTool.GetCharacterData(characterID);
 
-                    temp += (-125) + characterData.curAP * 125;
+                    temp += (-150) + characterData.curAP * 150;
                 }
 
                 //Radius Up
