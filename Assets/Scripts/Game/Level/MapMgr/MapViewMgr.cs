@@ -19,6 +19,7 @@ public partial class MapViewMgr : MonoBehaviour
     public void Init()
     {
         gameData = PublicTool.GetGameData();
+        PublicTool.SetDay();
         InitMapTileView();
         isInit = true;
     }

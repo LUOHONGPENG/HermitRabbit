@@ -150,14 +150,14 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
             //End Battle Flow
             isBattleEnd = true;
             gameData.numDay++;
-            gameData.gamePhase = GamePhase.Peace;
+            PublicTool.SetDay();
             PublicTool.EventChangeInteract(InteractState.PeaceNormal);
             EventCenter.Instance.EventTrigger("BattleEnd", null);
         }
         else
         {
             isBattleEnd = true;
-            gameData.gamePhase = GamePhase.Peace;
+            PublicTool.SetDay();
             PublicTool.EventChangeInteract(InteractState.PeaceNormal);
             EventCenter.Instance.EventTrigger("GoodEndStart", null);
         }

@@ -83,7 +83,7 @@ public class TalkUIMgr : MonoBehaviour
                 }
                 break;
             case TalkStep.BattleStart:
-                PublicTool.GetGameData().gamePhase = GamePhase.Battle;
+                PublicTool.SetNight();
                 EventCenter.Instance.EventTrigger("BattleStart", null);
                 Continue();
                 //May cause bug

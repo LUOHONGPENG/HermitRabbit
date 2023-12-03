@@ -19,7 +19,7 @@ public class PeaceInterfaceUIMgr : MonoBehaviour
         btnStartBattle.onClick.RemoveAllListeners();
         btnStartBattle.onClick.AddListener(delegate ()
         {
-            PublicTool.GetGameData().gamePhase = GamePhase.Battle;
+            PublicTool.SetNight();
             EventCenter.Instance.EventTrigger("BattleStart", null);
         });
 
