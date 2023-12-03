@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class TextReplace : MonoBehaviour
 {
     protected TextMeshProUGUI txContent;
+    protected Text txContentOld;
+
 
     void OnEnable()
     {
@@ -15,12 +17,27 @@ public class TextReplace : MonoBehaviour
             txContent = this.gameObject.GetComponent<TextMeshProUGUI>();
         }
 
+        if(txContentOld == null)
+        {
+            txContentOld = this.gameObject.GetComponent<Text>();
+        }
+
         RefreshContent();
     }
 
     private void RefreshContent()
     {
-        txContent.text = PublicTool.GetLanguageText(this.name);
+        if (txContent != null)
+        {
+            txContent.text = PublicTool.GetLanguageText(this.name);
+
+        }
+
+        if (txContentOld != null)
+        {
+            txContentOld.text = PublicTool.GetLanguageText(this.name);
+
+        }
     }
 
 }

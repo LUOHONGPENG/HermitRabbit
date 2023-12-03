@@ -20,14 +20,42 @@ MonoBehaviour:
       English'
     descCN: "Current Language\n\u4E2D\u6587\uFF08\u90E8\u5206\u7FFB\u8BD1\uFF09"
   - id: 2
+    key: tx_menu_credit_title
+    descEN: Credit
+    descCN: "\u5236\u4F5C\u540D\u5355"
+  - id: 3
+    key: tx_menu_credit_joshua
+    descEN: Joshua Rabbit
+    descCN: "\u4E00\u53EA\u7EB8\u5154"
+  - id: 4
+    key: tx_menu_credit_design
+    descEN: Game Designer
+    descCN: "\u7B56\u5212"
+  - id: 5
+    key: tx_menu_credit_program
+    descEN: Programmer
+    descCN: "\u7A0B\u5E8F"
+  - id: 6
+    key: tx_menu_credit_art
+    descEN: Artist
+    descCN: "\u7F8E\u672F"
+  - id: 7
+    key: tx_menu_credit_voice
+    descEN: Voice
+    descCN: "\u914D\u97F3"
+  - id: 8
+    key: tx_menu_credit_portfolio
+    descEN: This is my itch page
+    descCN: "\u8FD9\u662F\u6211\u7684Itch"
+  - id: 9
     key: tx_skill_cost
     descEN: 'Cost:'
     descCN: "\u6280\u80FD\u6D88\u8017"
-  - id: 3
+  - id: 10
     key: tx_tutorial_continue
     descEN: Continue
     descCN: "\u7EE7\u7EED"
-  - id: 4
+  - id: 11
     key: tx_tutorial_finish
     descEN: Finish
     descCN: "\u5B8C\u6210"
