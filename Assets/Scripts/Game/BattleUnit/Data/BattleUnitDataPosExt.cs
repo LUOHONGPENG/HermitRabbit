@@ -248,7 +248,7 @@ public partial class BattleUnitData
             if (rangeNode !=null&&!ququeOpen.Contains(rangeNode) && !listBlock.Contains(rangeNode.pos))
             {
                 ququeOpen.Enqueue(rangeNode);
-                Debug.Log(keyID + " " + rangeNode.pos);
+                //Debug.Log(keyID + " " + rangeNode.pos);
             }
         }
         while (ququeOpen.Count > 0)

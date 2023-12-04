@@ -30,6 +30,7 @@ public class StatusUIMgr : MonoBehaviour
     public Text codeATK;
     public Text codeDEF;
     public Text codeRES;
+    public Text codeMOV;
 
     [Header("SkillNode")]
     public Transform tfNode;
@@ -165,7 +166,7 @@ public class StatusUIMgr : MonoBehaviour
             codeATK.text = characterData.curATK.ToString();
             codeDEF.text = characterData.curDEF.ToString();
             codeRES.text = characterData.curRES.ToString();
-
+            codeMOV.text = characterData.curMOV.ToString();
         }
     }
 
