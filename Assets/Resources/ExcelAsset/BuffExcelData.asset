@@ -141,8 +141,10 @@ MonoBehaviour:
   - id: 1009
     name_EN: Charm
     name_CN: "\u9B45\u60D1"
-    desc_EN: Skill target of foe reverse in X turns.
-    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C\u654C\u4EBA\u6280\u80FD\u76EE\u6807\u53D6\u76F8\u53CD\u7C7B\u578B\u3002"
+    desc_EN: Skill target of foe reverse and <sprite="Common" name="ATK"> ATK + 2
+      in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C\u654C\u4EBA\u6280\u80FD\u76EE\u6807\u53D6\u76F8\u53CD\u7C7B\u578B\u4E14<sprite=\"Common\"
+      name=\"ATK\"> \u653B\u51FB+2\u3002"
     effectType: 1
     maxLevel: 10
     counterType: 1

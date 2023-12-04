@@ -747,7 +747,7 @@ MonoBehaviour:
     costMOV: 0
     costHP: 0
     costMemory: 0
-    range: 3
+    range: 4
     isRangeSelf: 0
     needExtraTarget: 0
     radius: 0
@@ -825,7 +825,7 @@ MonoBehaviour:
     costMOV: 0
     costHP: 0
     costMemory: 0
-    range: 4
+    range: 3
     isRangeSelf: 0
     needExtraTarget: 0
     radius: 0

@@ -152,7 +152,7 @@ MonoBehaviour:
   - id: 1032
     name: Interviewer_M
     desc: Can move fast.
-    HP: 100
+    HP: 45
     ATK: 5
     DEF: 3
     RES: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   - id: 1041
     name: CEO
     desc: Can deal high damage but move slow.
-    HP: 30
+    HP: 50
     ATK: 10
     DEF: 4
     RES: 4
@@ -203,7 +203,7 @@ MonoBehaviour:
   - id: 1043
     name: Secretary_M
     desc: Get 1 level Angry when turn start.
-    HP: 40
+    HP: 75
     ATK: 1
     DEF: 5
     RES: 1
@@ -220,7 +220,7 @@ MonoBehaviour:
   - id: 1099
     name: Interview
     desc: Can summon pressure.
-    HP: 140
+    HP: 120
     ATK: 0
     DEF: 0
     RES: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
   - id: 1097
     name: Sadness
     desc: 
-    HP: 5
+    HP: 16
     ATK: 5
     DEF: 0
     RES: 0
