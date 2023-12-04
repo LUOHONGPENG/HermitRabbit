@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class LightMgr : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class LightMgr : MonoBehaviour
 
     public Light pointLight;
     public List<Light> listDirectionLight;
+
+    public Volume volume;
+    public VolumeProfile profileDay;
+    public VolumeProfile profileNight;
+
 
     public void Init()
     {
@@ -49,6 +55,7 @@ public class LightMgr : MonoBehaviour
         {
             item.intensity = 0.27f;
         }
+        volume.profile = profileDay;
     }
 
     public void SetNight()
@@ -58,5 +65,7 @@ public class LightMgr : MonoBehaviour
         {
             item.intensity = 0.18f;
         }
+        volume.profile = profileNight;
+
     }
 }
