@@ -268,11 +268,17 @@ public partial class BattleMgr
         int touchRange = foeData.GetSkillTouchRange();
         foeData.RefreshDistanceFromAimNode(aimPos, touchRange);
 
-        Debug.Log(foeData.keyID + "dicValidCount " + foeData.dicValidMoveNode.Count +"CurMP " + foeData.curMOV);
+
+
+
+        //Debug.Log(foeData.keyID + "dicValidCount " + foeData.dicValidMoveNode.Count +"CurMP " + foeData.curMOV);
+
         List<FindPathNode> listValidNode = new List<FindPathNode>();
         foreach (KeyValuePair<Vector2Int, FindPathNode> pair in foeData.dicValidMoveNode)
         {
-            listValidNode.Add(pair.Value);
+            FindPathNode validNode = pair.Value;
+            listValidNode.Add(validNode);
+
         }
         PublicTool.FindPathNodeSortLowestHCost(listValidNode);
 

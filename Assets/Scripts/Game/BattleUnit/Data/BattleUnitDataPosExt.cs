@@ -236,7 +236,21 @@ public partial class BattleUnitData
 
         //StartSearching
         FindPathNode startNode = PublicTool.GetFindPathNode(dicBFSAllNode, aimPos);
-        ququeOpen.Enqueue(startNode);
+        if (startNode != null)
+        {
+            ququeOpen.Enqueue(startNode);
+        }
+        //Add extra range node to fix bug.
+        List<Vector2Int> listNode = PublicTool.GetTargetCircleRange(aimPos, touchRange);
+        foreach(Vector2Int rangePos in listNode)
+        {
+            FindPathNode rangeNode = PublicTool.GetFindPathNode(dicBFSAllNode, rangePos);
+            if (rangeNode !=null&&!ququeOpen.Contains(rangeNode) && !listBlock.Contains(rangeNode.pos))
+            {
+                ququeOpen.Enqueue(rangeNode);
+                Debug.Log(keyID + " " + rangeNode.pos);
+            }
+        }
         while (ququeOpen.Count > 0)
         {
             FindPathNode tarNode = ququeOpen.Dequeue();
@@ -244,6 +258,8 @@ public partial class BattleUnitData
             {
                 continue;
             }
+
+            //Valid Node mean the node that in move range?
             FindPathNode validNode = new FindPathNode(new Vector2Int(-1,-1));
             bool haveValidNode = false;
             if(PublicTool.GetFindPathNode(dicValidMoveNode, tarNode.pos) != null)
@@ -251,6 +267,7 @@ public partial class BattleUnitData
                 haveValidNode = true;
                 validNode = PublicTool.GetFindPathNode(dicValidMoveNode, tarNode.pos);
             }
+
             //Calculate hCost
             if (PublicTool.CalculateGlobalDis(tarNode.pos, aimPos) <= touchRange)
             {
@@ -292,9 +309,11 @@ public partial class BattleUnitData
                 {
                     continue;
                 }
+                //Have added
                 if (ququeOpen.Contains(nextNode))
                 {
-                    if(nextNode.hParentNode.hCostReal < tarNode.hCostReal)
+                    if (nextNode.hParentNode == null || nextNode.hParentNode.hCostReal > tarNode.hCostReal)
+                    //if(nextNode.hParentNode.hCostReal < tarNode.hCostReal)
                     {
                         nextNode.hParentNode = tarNode;
                     }
