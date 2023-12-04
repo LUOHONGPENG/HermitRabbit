@@ -8,13 +8,20 @@ public partial class PublicTool
     {
         GetGameData().gamePhase = GamePhase.Peace;
         RenderSettings.skybox = GameMgr.Instance.skyDay;
+        if (GameMgr.Instance.curSceneGameMgr != null)
+        {
+            GameMgr.Instance.curSceneGameMgr.lightMgr.SetDay();
+        }
     }
 
     public static void SetNight()
     {
         GetGameData().gamePhase = GamePhase.Battle;
         RenderSettings.skybox = GameMgr.Instance.skyNight;
-
+        if (GameMgr.Instance.curSceneGameMgr != null)
+        {
+            GameMgr.Instance.curSceneGameMgr.lightMgr.SetNight();
+        }
     }
 
 

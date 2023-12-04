@@ -7,6 +7,9 @@ public class LightMgr : MonoBehaviour
 {
     public Light spotLight;
 
+    public Light pointLight;
+    public List<Light> listDirectionLight;
+
     public void Init()
     {
         spotLight.enabled = false;
@@ -37,5 +40,23 @@ public class LightMgr : MonoBehaviour
     public void HideSpotLight(object arg0)
     {
         spotLight.enabled = false;
+    }
+
+    public void SetDay()
+    {
+        pointLight.enabled = false;
+        foreach(var item in listDirectionLight)
+        {
+            item.intensity = 0.27f;
+        }
+    }
+
+    public void SetNight()
+    {
+        pointLight.enabled = true;
+        foreach (var item in listDirectionLight)
+        {
+            item.intensity = 0.18f;
+        }
     }
 }

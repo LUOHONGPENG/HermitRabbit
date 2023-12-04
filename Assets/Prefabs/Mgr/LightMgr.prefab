@@ -259,7 +259,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 20
+  m_Intensity: 80
   m_Range: 24
   m_SpotAngle: 10
   m_InnerSpotAngle: 10
@@ -609,6 +609,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotLight: {fileID: 1103391283529536511}
+  pointLight: {fileID: 3941615521643631873}
+  listDirectionLight:
+  - {fileID: 4767314418759712025}
+  - {fileID: 366446067327773043}
+  - {fileID: 1736537412245736649}
+  - {fileID: 279782408873216954}
+  - {fileID: 1702622868927315240}
 --- !u!1 &6255541825857680389
 GameObject:
   m_ObjectHideFlags: 0
