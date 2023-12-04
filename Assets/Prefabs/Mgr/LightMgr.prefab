@@ -609,6 +609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotLight: {fileID: 1103391283529536511}
+  characterLight: {fileID: 3393295118660172547}
   pointLight: {fileID: 3941615521643631873}
   listDirectionLight:
   - {fileID: 4767314418759712025}

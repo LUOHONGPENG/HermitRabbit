@@ -477,7 +477,7 @@ MonoBehaviour:
     listCameraTime: 00000000
   - id: 3101
     name: Cook Human On Time
-    totalTime: 0.5
+    totalTime: 1
     listUnitAniState:
     - 0
     listUnitAniTime: 00000000
@@ -491,7 +491,8 @@ MonoBehaviour:
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
-    listCameraTime: 00000000
+    - FocusTarget
+    listCameraTime: 0000000005000000
   - id: 3102
     name: Unstable Rabbit
     totalTime: 1
@@ -513,6 +514,58 @@ MonoBehaviour:
     listCameraTime: 00000000
   - id: 3103
     name: Random MilkTea
+    totalTime: 0.5
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    listCameraTime: 00000000
+  - id: 3104
+    name: Gogo Rabbit's Trap
+    totalTime: 1
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000005000000
+  - id: 3105
+    name: Motorhome Drive
+    totalTime: 0.5
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    listCameraTime: 00000000
+  - id: 3106
+    name: Random Helper
     totalTime: 0.5
     listUnitAniState:
     - 0
@@ -562,6 +615,24 @@ MonoBehaviour:
     listCameraPosType:
     - FocusSubject
     listCameraTime: 00000000
+  - id: 3401
+    name: Rescuer Rabbit
+    totalTime: 1
+    listUnitAniState:
+    - 0
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000005000000
   - id: 9001
     name: Bite
     totalTime: 0.5
@@ -705,6 +776,58 @@ MonoBehaviour:
     listCameraTime: 00000000
   - id: 9301
     name: Emotional Damage
+    totalTime: 0.5
+    listUnitAniState:
+    - Attack
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    listCameraTime: 00000000
+  - id: 9302
+    name: Coffee
+    totalTime: 1
+    listUnitAniState:
+    - Attack
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    - FocusTarget
+    listCameraTime: 0000000005000000
+  - id: 9901
+    name: Summon Darkness
+    totalTime: 0.5
+    listUnitAniState:
+    - Attack
+    listUnitAniTime: 00000000
+    listEffectViewType:
+    - 0
+    listEffectPosType:
+    - 0
+    listEffectViewTime: 00000000
+    listSoundType:
+    - 0
+    listSoundTime: 00000000
+    listCameraPosType:
+    - FocusSubject
+    listCameraTime: 00000000
+  - id: 9902
+    name: Pressure
     totalTime: 0.5
     listUnitAniState:
     - Attack

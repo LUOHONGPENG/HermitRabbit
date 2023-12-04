@@ -388,7 +388,7 @@ public class VictoryUIMgr : MonoBehaviour
         //Draw
         List<int> listPool = ExcelDataMgr.Instance.plantExcelData.GetAllPlantID();
         List<int> listDelete = new List<int>(gameData.listPlantHeld);
-        List<int> listDraw = PublicTool.DrawNum(2, listPool, listDelete);
+        List<int> listDraw = PublicTool.DrawNum(3, listPool, listDelete);
 
         PublicTool.ClearChildItem(tfPlant);
         for (int i = 0; i < listDraw.Count; i++)

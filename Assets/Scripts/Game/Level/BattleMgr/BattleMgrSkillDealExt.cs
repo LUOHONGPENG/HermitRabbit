@@ -299,6 +299,9 @@ public partial class BattleMgr
                 target.isDead = false;
                 target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Special, "Reborn", target.posID));
                 break;
+            case 3006:
+                SkillBuffEffectDeal(target, delta, source.curATK, PublicTool.GetBuffExcelItem(delta).GetName(), PublicTool.GetBuffExcelItem(delta).effectType);
+                break;
             case 5001:
                 target.DoubleAllBuff();
                 target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Buff, string.Format("Buff Extend", delta), target.posID));
@@ -316,36 +319,40 @@ public partial class BattleMgr
                 target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, string.Format("Clear Buff", delta), target.posID));
                 break;
             case 8001:
-                int ranMilkTea = UnityEngine.Random.Range(0, 3);
+                int ranMilk = UnityEngine.Random.Range(0, 3);
                 int tempMilkBuffID = -1;
-                switch (ranMilkTea)
+                int deltaMilk = source.curATK;
+                switch (ranMilk)
                 {
                     case 0:
-                        tempMilkBuffID = 5001;
-                        //SkillBuffEffectDeal(target, 4001, 4, PublicTool.GetBuffExcelItem(4001).name, SkillEffectType.Harm);
-                        /*                        target.AddBuff(4001, 3);
-                                                BuffExcelItem burnBuffItem4001 = PublicTool.GetBuffExcelItem(4001);
-                                                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, burnBuffItem4001.name, target.posID));*/
+                        tempMilkBuffID = 5005;
                         break;
                     case 1:
-                        tempMilkBuffID = 5002;
-                        //SkillBuffEffectDeal(target, 4002, 3, PublicTool.GetBuffExcelItem(4002).name, SkillEffectType.Harm);
-                        /*                        target.AddBuff(2001, 3);
-                                                BuffExcelItem burnBuffItem4002 = PublicTool.GetBuffExcelItem(4002);
-                                                target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, burnBuffItem4002.name, target.posID));*/
+                        tempMilkBuffID = 3001;
                         break;
                     case 2:
-                        tempMilkBuffID = 5003;
+                        tempMilkBuffID = 3002;
+                        deltaMilk++;
                         break;
-/*                        target.curMOV -= 2;
-                        if (target.curMOV < 0)
-                        {
-                            target.curMOV = 0;
-                        }
-                        target.EnqueueBattleText(new EffectBattleTextInfo(BattleTextType.Debuff, string.Format("MOV-{0}", 2), target.posID));
-                        break;*/
                 }
-                SkillBuffEffectDeal(target, tempMilkBuffID, 2, PublicTool.GetBuffExcelItem(tempMilkBuffID).GetName(), SkillEffectType.Help);
+                SkillBuffEffectDeal(target, tempMilkBuffID, deltaMilk, PublicTool.GetBuffExcelItem(tempMilkBuffID).GetName(), SkillEffectType.Help);
+                break;
+            case 8002:
+                int ranHelper = UnityEngine.Random.Range(0, 3);
+                int tempHelperBuffID = -1;
+                switch (ranHelper)
+                {
+                    case 0:
+                        tempHelperBuffID = 5001;
+                        break;
+                    case 1:
+                        tempHelperBuffID = 5002;
+                        break;
+                    case 2:
+                        tempHelperBuffID = 5003;
+                        break;
+                }
+                SkillBuffEffectDeal(target, tempHelperBuffID, source.curATK, PublicTool.GetBuffExcelItem(tempHelperBuffID).GetName(), SkillEffectType.Help);
                 break;
             case 9001:
                 int ranFoe = UnityEngine.Random.Range(0, 3);

@@ -350,8 +350,8 @@ MonoBehaviour:
   - id: 5004
     name_EN: MOV UP
     name_CN: "\u79FB\u52A8\u63D0\u5347"
-    desc_EN: <sprite="Common" name="MOV"> MaxMOV + 1 in X turns.
-    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C<sprite=\"Common\" name=\"MOV\"> \u6700\u5927\u79FB\u52A8\u529B+1\u3002"
+    desc_EN: <sprite="Common" name="MOV"> MaxMOV + 2 in X turns.
+    desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C<sprite=\"Common\" name=\"MOV\"> \u6700\u5927\u79FB\u52A8\u529B+2\u3002"
     effectType: 2
     maxLevel: 10
     counterType: 1
@@ -359,7 +359,7 @@ MonoBehaviour:
     canBeRemoved: 1
     canBeDouble: 1
     firstSpecialEffect: 1004
-    firstSpecialDelta: 1
+    firstSpecialDelta: 2
     iconUrl: imgBuff_MOVUP
   - id: 5005
     name_EN: Heal UP

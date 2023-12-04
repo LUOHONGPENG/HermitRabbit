@@ -7,6 +7,8 @@ using UnityEngine.Rendering;
 public class LightMgr : MonoBehaviour
 {
     public Light spotLight;
+    public Light characterLight;
+
 
     public Light pointLight;
     public List<Light> listDirectionLight;
@@ -19,6 +21,11 @@ public class LightMgr : MonoBehaviour
     public void Init()
     {
         spotLight.enabled = false;
+
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            characterLight.intensity = 50;
+        }
     }
 
 

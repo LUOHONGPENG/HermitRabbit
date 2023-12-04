@@ -24,7 +24,7 @@ MonoBehaviour:
     skillID: 3001
     essence: 1
     pixelUrl: pp_Frog_Idle
-    desc: Attack the foe in range if character hit it with normal attack.
+    desc: Attack the foe in range if character hit the foe with normal attack.
   - id: 1002
     name: Cookee
     rarity: 2
@@ -36,7 +36,7 @@ MonoBehaviour:
     skillID: 3101
     essence: 2
     pixelUrl: pp_Cook_Idle
-    desc: Apply burning according to ATK every turn.
+    desc: Apply Burning according to ATK every turn.
   - id: 1003
     name: Hero Grass
     rarity: 4
@@ -76,39 +76,66 @@ MonoBehaviour:
   - id: 1006
     name: Bubblia
     rarity: 2
-    HP: 13
-    ATK: 0
+    HP: 12
+    ATK: 2
     DEF: 0
-    RES: 0
+    RES: 1
     triggerCondition: 2
     skillID: 3103
     essence: 2
     pixelUrl: pp_Bubble_Idle
-    desc: Random effect from giving buff of ATKUP, DEFUP, RESUP.
+    desc: Random effect from giving buff of HealUP, Regen and Shield. Effect level
+      according to ATK.
   - id: 1007
     name: Gogo Grass
     rarity: 4
-    HP: 10
-    ATK: 0
+    HP: 11
+    ATK: 1
     DEF: 0
     RES: 4
     triggerCondition: 2
     skillID: 3104
     essence: 3
     pixelUrl: pp_Gogo_Idle
-    desc: Can control random foe to hit other foe or help us.
+    desc: Can apply Charm according to ATK every turn, controling random foe to hit
+      other foes.
   - id: 1008
     name: Alyfen
     rarity: 4
     HP: 12
     ATK: 0
-    DEF: 3
-    RES: 0
+    DEF: 1
+    RES: 1
     triggerCondition: 1
     skillID: 3401
     essence: 3
     pixelUrl: pp_Alyfen_Idle
     desc: Revive dead character in range and apply 1 level Sunrise.
+  - id: 1009
+    name: Motorhome
+    rarity: 2
+    HP: 12
+    ATK: 2
+    DEF: 1
+    RES: 0
+    triggerCondition: 2
+    skillID: 3105
+    essence: 2
+    pixelUrl: pp_Motorhome_Idle
+    desc: Giving buff of MOVUP.
+  - id: 1010
+    name: Helper Grass
+    rarity: 2
+    HP: 12
+    ATK: 2
+    DEF: 1
+    RES: 0
+    triggerCondition: 2
+    skillID: 3106
+    essence: 2
+    pixelUrl: pp_Helper_Idle
+    desc: Random effect from giving buff of ATKUP, DEFUP, RESUP. Effect level according
+      to ATK.
   - id: 2001
     name: Maleficia
     rarity: 1

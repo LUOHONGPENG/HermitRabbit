@@ -206,7 +206,7 @@ public partial class BattleUnitData
             }
             if (CheckBuffExist(5004))
             {
-                temp++;
+                temp+=2;
             }
             return temp;
         }

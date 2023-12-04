@@ -53,6 +53,10 @@ MonoBehaviour:
     name: Reborn
     effectType: 2
     timeType: 0
+  - id: 3006
+    name: BuffFromATK
+    effectType: 2
+    timeType: 0
   - id: 5001
     name: Double Buff
     effectType: 2
@@ -71,6 +75,10 @@ MonoBehaviour:
     timeType: 0
   - id: 8001
     name: Random MilkTea
+    effectType: 2
+    timeType: 0
+  - id: 8002
+    name: Random Helper
     effectType: 2
     timeType: 0
   - id: 9001

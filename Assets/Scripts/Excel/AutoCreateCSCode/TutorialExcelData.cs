@@ -11,6 +11,7 @@ public partial class TutorialExcelItem : ExcelItemBase
 	public TutorialGroup group;
 	public string strTitle;
 	public string strContent;
+	public string strContent_cn;
 	public string gifUrl;
 }
 
@@ -35,6 +36,7 @@ public class TutorialAssetAssignment
 			items[i].group = (TutorialGroup) Enum.Parse(typeof(TutorialGroup), allItemValueRowList[i]["group"], true);
 			items[i].strTitle = allItemValueRowList[i]["strTitle"];
 			items[i].strContent = allItemValueRowList[i]["strContent"];
+			items[i].strContent_cn = allItemValueRowList[i]["strContent_cn"];
 			items[i].gifUrl = allItemValueRowList[i]["gifUrl"];
 		}
 		TutorialExcelData excelDataAsset = ScriptableObject.CreateInstance<TutorialExcelData>();

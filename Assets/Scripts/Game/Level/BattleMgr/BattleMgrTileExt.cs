@@ -76,7 +76,7 @@ public partial class BattleMgr
             {
                 BattleUnitData unitData = gameData.GetDataFromUnitInfo(burnUnit);
                 int BurnDelta = 0;
-                if (unitData.CheckBuffExist(4001) && unitData.battleUnitType == BattleUnitType.Foe)
+                if (!unitData.CheckBuffExist(4001) && unitData.battleUnitType == BattleUnitType.Foe)
                 {
                     BurnDelta = 3;
                 }
