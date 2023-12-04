@@ -41,3 +41,31 @@ public partial class TutorialExcelData
     }
 
 }
+
+public partial class TutorialExcelItem
+{
+    public string GetTitle()
+    {
+        if (GameGlobal.languageType == LanguageType.CN)
+        {
+            return strTitle_CN;
+        }
+        else
+        {
+            return strTitle_EN;
+        }
+    }
+
+    public string GetContent()
+    {
+
+        if (GameGlobal.languageType == LanguageType.CN)
+        {
+            return strContent_CN;
+        }
+        else
+        {
+            return strContent_EN;
+        }
+    }
+}

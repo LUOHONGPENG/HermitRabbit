@@ -9,9 +9,10 @@ using System.IO;
 public partial class TutorialExcelItem : ExcelItemBase
 {
 	public TutorialGroup group;
-	public string strTitle;
-	public string strContent;
-	public string strContent_cn;
+	public string strTitle_EN;
+	public string strTitle_CN;
+	public string strContent_EN;
+	public string strContent_CN;
 	public string gifUrl;
 }
 
@@ -34,9 +35,10 @@ public class TutorialAssetAssignment
 			items[i] = new TutorialExcelItem();
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
 			items[i].group = (TutorialGroup) Enum.Parse(typeof(TutorialGroup), allItemValueRowList[i]["group"], true);
-			items[i].strTitle = allItemValueRowList[i]["strTitle"];
-			items[i].strContent = allItemValueRowList[i]["strContent"];
-			items[i].strContent_cn = allItemValueRowList[i]["strContent_cn"];
+			items[i].strTitle_EN = allItemValueRowList[i]["strTitle_EN"];
+			items[i].strTitle_CN = allItemValueRowList[i]["strTitle_CN"];
+			items[i].strContent_EN = allItemValueRowList[i]["strContent_EN"];
+			items[i].strContent_CN = allItemValueRowList[i]["strContent_CN"];
 			items[i].gifUrl = allItemValueRowList[i]["gifUrl"];
 		}
 		TutorialExcelData excelDataAsset = ScriptableObject.CreateInstance<TutorialExcelData>();

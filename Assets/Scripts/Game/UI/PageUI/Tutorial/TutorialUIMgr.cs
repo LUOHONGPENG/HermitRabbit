@@ -209,8 +209,8 @@ public class TutorialUIMgr : MonoBehaviour
             TutorialExcelItem tutorialItem = listCurTutorial[curTutorialID];
 
             //codeTitle.text = tutorialItem.
-            codeTitle.text = tutorialItem.strTitle;
-            codeContent.text = tutorialItem.strContent;
+            codeTitle.text = tutorialItem.GetTitle();
+            codeContent.text = tutorialItem.GetContent();
 
 
             if (tutorialItem.gifUrl.Length > 0)

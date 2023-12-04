@@ -15,148 +15,189 @@ MonoBehaviour:
   items:
   - id: 1
     group: 1
-    strTitle: Camera Control
-    strContent: 'You can press WASD to move the camera.
+    strTitle_EN: Camera Control
+    strTitle_CN: "\u76F8\u673A\u63A7\u5236"
+    strContent_EN: 'You can press WASD to move the camera.
 
-      You can press QE to
-      rotate camera.'
-    strContent_cn: 
+      You can press QE
+      to rotate camera.'
+    strContent_CN: "\u4F60\u53EF\u4EE5\u901A\u8FC7\u6309\u952E\u76D8\u7684 WASD \u6765\u79FB\u52A8\u6444\u50CF\u673A\u3002\n\u6309
+      QE \u6765\u65CB\u8F6C\u6444\u50CF\u673A\u3002"
     gifUrl: CameraControl
   - id: 2
     group: 1
-    strTitle: Move
-    strContent: 'When Move Button selected, you can click tile to move.
+    strTitle_EN: Move
+    strTitle_CN: "\u79FB\u52A8"
+    strContent_EN: 'When Move Button selected, you can click tile to move.
 
       Moving
       character will cost <sprite="Common" name="MOV"> MOV.
 
       (Move Button will
       selected automatically after choosing a character.)'
-    strContent_cn: 
+    strContent_CN: "\u5F53\u79FB\u52A8\u6309\u94AE\u88AB\u9009\u4E2D\uFF0C\u4F60\u53EF\u4EE5\u70B9\u51FB\u5730\u5757\u6765\u79FB\u52A8\u3002\n\u79FB\u52A8\u89D2\u8272\u4F1A\u6D88\u8017
+      <sprite=\"Common\" name=\"MOV\"> \u79FB\u52A8\u529B\u3002\n(\u5F53\u9009\u4E2D\u4E00\u4E2A\u89D2\u8272\u65F6\uFF0C\u79FB\u52A8\u6309\u94AE\u4F1A\u88AB\u81EA\u52A8\u9009\u4E2D)"
     gifUrl: Move
   - id: 3
     group: 1
-    strTitle: Switch Character
-    strContent: 'You can click the character box on the left
+    strTitle_EN: Switch Character
+    strTitle_CN: "\u5207\u6362\u89D2\u8272"
+    strContent_EN: 'You can click the character box on the left
 
-      to select <sprite="Target"
-      name="CUnit"> Character in your turn.'
-    strContent_cn: 
+      to select
+      <sprite="Target" name="CUnit"> Character in your turn.'
+    strContent_CN: "\u5728\u4F60\u7684\u56DE\u5408\uFF0C\u4F60\u53EF\u4EE5\u70B9\u51FB\u5DE6\u8FB9\u7684\u89D2\u8272\u76D2\u6765\u5207\u6362
+      <sprite=\"Target\" name=\"CUnit\"> \u89D2\u8272\u3002"
     gifUrl: SwitchCharacter
   - id: 4
     group: 1
-    strTitle: End Turn
-    strContent: After you finish what you want to do, you can click button to end
-      turn.
-    strContent_cn: 
+    strTitle_EN: End Turn
+    strTitle_CN: "\u7ED3\u675F\u56DE\u5408"
+    strContent_EN: After you finish what you want to do, you can click button to
+      end turn.
+    strContent_CN: "\u5728\u4F60\u5B8C\u6210\u6240\u6709\u4F60\u60F3\u505A\u7684\u4E8B\u60C5\u540E\uFF0C\u53EF\u4EE5\u70B9\u51FB\u6309\u94AE\u7ED3\u675F\u56DE\u5408\u3002"
     gifUrl: EndTurn
   - id: 5
     group: 1
-    strTitle: Attack
-    strContent: 'When Attack Button selected, the <sprite="Common" name="Range">
+    strTitle_EN: Attack
+    strTitle_CN: "\u653B\u51FB"
+    strContent_EN: 'When Attack Button selected, the <sprite="Common" name="Range">
       range will be shown and you can click tile to attack <sprite="Target" name="FUnit">
       Foe in range.
 
-      Attack will cost <sprite="Common" name="AP"> AP'
-    strContent_cn: 
+      Attack will cost 1 <sprite="Common" name="AP"> AP which
+      will recover when turn starts.'
+    strContent_CN: "\u5F53\u653B\u51FB\u6309\u94AE\u88AB\u9009\u4E2D\uFF0C<sprite=\"Common\"
+      name=\"Range\"> \u8303\u56F4\u4F1A\u88AB\u663E\u793A\u7136\u540E\u4F60\u53EF\u4EE5\u70B9\u51FB\u5730\u5757\u653B\u51FB\u8303\u56F4\u5185\u7684
+      <sprite=\"Target\" name=\"FUnit\"> \u654C\u4EBA\u3002\n\u653B\u51FB\u4F1A\u6D88\u80171\u70B9
+      <sprite=\"Common\" name=\"AP\"> \u884C\u52A8\u529B,\u884C\u52A8\u529B\u4F1A\u5728\u56DE\u5408\u5F00\u59CB\u65F6\u56DE\u6EE1\u3002"
     gifUrl: Attack
   - id: 6
     group: 1
-    strTitle: Win and Lose
-    strContent: 'If you kill all the <sprite="Target" name="FUnit"> Foe, you win.
+    strTitle_EN: Win and Lose
+    strTitle_CN: "\u80DC\u8D1F\u6761\u4EF6"
+    strContent_EN: 'If you kill all the <sprite="Target" name="FUnit"> Foe, you win.
 
       If
-      all character''s <sprite="Common" name="HP"> HP become 0, you will lose.'
-    strContent_cn: 
+      all <sprite="Target" name="CUnit"> character''s <sprite="Common" name="HP">
+      HP become 0, you will lose.'
+    strContent_CN: "\u5982\u679C\u4F60\u51FB\u8D25\u4E86\u6240\u6709 <sprite=\"Target\"
+      name=\"FUnit\"> \u654C\u4EBA,\u4F60\u83B7\u80DC\u3002\n\u5982\u679C\u6240\u6709
+      <sprite=\"Target\" name=\"CUnit\"> \u89D2\u8272\u7684 <sprite=\"Common\" name=\"HP\">
+      \u751F\u547D\u5F520\uFF0C\u4F60\u4F1A\u8F93\u3002"
     gifUrl: WinLose
   - id: 7
     group: 1
-    strTitle: Target Detail
-    strContent: 'When you put mouse over the <sprite="Target" name="FUnit"> Foe without
-      selecting skill, you can see the move and attack range of the unit.
+    strTitle_EN: Target Detail
+    strTitle_CN: "\u76EE\u6807\u8BE6\u60C5"
+    strContent_EN: 'When you put mouse over the <sprite="Target" name="FUnit"> Foe
+      without selecting skill, you can see the move and attack range of the unit.
 
       If
       you put mouse over the buff icon, you can read the buff detail.'
-    strContent_cn: 
+    strContent_CN: "\u5F53\u4F60\u628A\u9F20\u6807\u653E\u5728 <sprite=\"Target\"
+      name=\"FUnit\"> \u654C\u4EBA\u8EAB\u4E0A\u4E14\u6CA1\u6709\u9009\u4E2D\u6280\u80FD\u65F6\uFF0C\u4F60\u53EF\u4EE5\u770B\u5230\u8BE5\u5355\u4F4D\u7684\u79FB\u52A8\u653B\u51FB\u8303\u56F4\u3002\n\u5F53\u4F60\u628A\u9F20\u6807\u653E\u5728Buff\u56FE\u6807\u4E0A\uFF0C\u4F60\u53EF\u4EE5\u9605\u8BFB\u8BE6\u60C5\u3002"
     gifUrl: TargetDetail
   - id: 8
     group: 2
-    strTitle: Learn Skill
-    strContent: 'In day time, you can click the SKILL button to open the skill tree
-      page.
+    strTitle_EN: Learn Skill
+    strTitle_CN: "\u5B66\u4E60\u6280\u80FD"
+    strContent_EN: 'In day time, you can click the SKILL button to open the skill
+      tree page.
 
-      Then you can spend <sprite="Common" name="SP"> Confidence to learn
-      Skill.'
-    strContent_cn: 
+      Then you can spend <sprite="Common" name="SP"> Confidence
+      to learn Skill.'
+    strContent_CN: "\u5728\u767D\u5929\uFF0C\u4F60\u53EF\u4EE5\u70B9\u51FB\u6280\u80FD\u6309\u94AE\u6253\u5F00\u6280\u80FD\u6811\u754C\u9762\u3002\n\u7136\u540E\u4F60\u53EF\u4EE5\u6D88\u8017
+      <sprite=\"Common\" name=\"SP\"> \u81EA\u4FE1\u6765\u5B66\u4E60\u6280\u80FD\u3002"
     gifUrl: LearnSkill
   - id: 9
     group: 2
-    strTitle: Reset Skill
-    strContent: You can reset the skill tree without limitation.
-    strContent_cn: 
+    strTitle_EN: Reset Skill
+    strTitle_CN: "\u91CD\u7F6E\u6280\u80FD"
+    strContent_EN: You can reset the skill tree without limitation.
+    strContent_CN: "\u4F60\u53EF\u4EE5\u65E0\u9650\u91CD\u7F6E\u6280\u80FD\u6811\u3002"
     gifUrl: ResetSkill
   - id: 10
     group: 2
-    strTitle: Spell Skill
-    strContent: 'In battle, you can spell skill after you click a skill button and
-      choose the target tile.
+    strTitle_EN: Spell Skill
+    strTitle_CN: "\u91CA\u653E\u6280\u80FD"
+    strContent_EN: 'In battle, you can spell skill after you click a skill button
+      and choose the target tile.
 
       Some skills will have some combination with
       map.'
-    strContent_cn: 
+    strContent_CN: "\u5728\u6218\u6597\u4E2D\uFF0C\u4F60\u53EF\u4EE5\u5728\u9009\u4E2D\u4E00\u4E2A\u6280\u80FD\u5E76\u70B9\u51FB\u5730\u5757\u6765\u91CA\u653E\u6280\u80FD\u3002\n\u4E00\u4E9B\u6280\u80FD\u4F1A\u548C\u5730\u5757\u6709\u914D\u5408\u3002"
     gifUrl: Lightening
   - id: 11
     group: 3
-    strTitle: Select Map
-    strContent: 'You can select mapclips after battle.
+    strTitle_EN: Select MapClip
+    strTitle_CN: "\u83B7\u53D6\u5730\u56FE\u5757"
+    strContent_EN: 'You can select mapclips after battle.
 
-      You can refresh the
-      choices by clicking REFRESH, which cost <sprite="Common" name="Memory"> Memory.'
-    strContent_cn: 
+      You can refresh
+      the choices by clicking REFRESH, which cost <sprite="Common" name="Memory">
+      Memory.'
+    strContent_CN: "\u4F60\u53EF\u4EE5\u5728\u6218\u6597\u540E\u62BD\u53D6\u5730\u56FE\u5757\u3002\n\u4F60\u53EF\u4EE5\u6309\u5237\u65B0\u6309\u94AE\u6765\u5237\u65B0\u62BD\u53D6\u7ED3\u679C\uFF0C\u8FD9\u4F1A\u6D88\u8017
+      <sprite=\"Common\" name=\"Memory\"> \u56DE\u5FC6\u3002"
     gifUrl: SelectMap
   - id: 12
     group: 3
-    strTitle: Tile Function
-    strContent: 'Some tiles can create advantage.
+    strTitle_EN: Tile Function
+    strTitle_CN: "\u5730\u5757\u529F\u80FD"
+    strContent_EN: 'Some tiles can create advantage.
 
       For example, <sprite="Tile"
-      name="GrassT"> Grass tile can burn and hurt unit above when turn starts, <sprite="Tile"
-      name="StoneT"> Stone tile can block the path of foes.'
-    strContent_cn: 
+      name="GrassT"> Grass tile can burn and apply <sprite="BuffS" name="Burn"> Burning
+      above when turn starts, <sprite="Tile" name="StoneT"> Stone tile can block
+      the path of foes.'
+    strContent_CN: "\u4E00\u4E9B\u5730\u5757\u80FD\u5728\u6218\u6597\u4E2D\u9020\u4F18\u3002\n\u4F8B\u5982\uFF0C
+      <sprite=\"Tile\" name=\"GrassT\"> \u8349\u5730\u5757\u80FD\u88AB\u70B9\u71C3\u5E76\u5728\u56DE\u5408\u5F00\u59CB\u65F6\u9644\u52A0
+      <sprite=\"BuffS\" name=\"Burn\"> \u707C\u70E7, <sprite=\"Tile\" name=\"StoneT\">
+      \u77F3\u5730\u5757\u80FD\u963B\u788D\u79FB\u52A8\u3002"
     gifUrl: GrassBurn
   - id: 13
     group: 3
-    strTitle: Set Map
-    strContent: In day time, you can click the MAP button to set mapclips.
-    strContent_cn: 
+    strTitle_EN: Set MapClip
+    strTitle_CN: "\u653E\u7F6E\u5730\u56FE\u5757"
+    strContent_EN: In day time, you can click the MAP button to set mapclips.
+    strContent_CN: "\u5728\u767D\u5929\uFF0C\u4F60\u53EF\u4EE5\u70B9\u51FB\u5730\u56FE\u6309\u94AE\u653E\u7F6E\u5730\u56FE\u5757\u3002"
     gifUrl: SetMap
   - id: 14
     group: 4
-    strTitle: Select Plant
-    strContent: 'You can select 1 plant after battle.
+    strTitle_EN: Select Plant
+    strTitle_CN: "\u83B7\u53D6\u690D\u7269"
+    strContent_EN: 'You can select 1 plant after battle.
 
-      <sprite="Target" name="PUnit">
-      Plant is a special unit without <sprite="Common" name="MOV"> MOV and <sprite="Common"
-      name="AP"> AP, and their skills can be triggered via different condition.'
-    strContent_cn: 
+      <sprite="Target"
+      name="PUnit"> Plant is a special unit without <sprite="Common" name="MOV">
+      MOV and <sprite="Common" name="AP"> AP, and their skills can be triggered via
+      different condition.'
+    strContent_CN: "\u4F60\u53EF\u4EE5\u5728\u6218\u6597\u540E\u83B7\u53D61\u79CD\u690D\u7269\u3002\n<sprite=\"Target\"
+      name=\"PUnit\"> \u690D\u7269\u662F\u4E00\u79CD\u6CA1\u6709 <sprite=\"Common\"
+      name=\"MOV\"> \u79FB\u52A8\u529B <sprite=\"Common\" name=\"AP\"> \u884C\u52A8\u529B\u7684\u7279\u6B8A\u5355\u4F4D\uFF0C\u5B83\u4EEC\u7684\u6280\u80FD\u4F1A\u88AB\u4E0D\u540C\u6761\u4EF6\u89E6\u53D1\u3002"
     gifUrl: SelectPlant
   - id: 15
     group: 4
-    strTitle: Plant Example
-    strContent: '<sprite="Target" name="PUnit"> Plant is useful if the condition
+    strTitle_EN: Plant Example
+    strTitle_CN: "\u690D\u7269\u529F\u80FD"
+    strContent_EN: '<sprite="Target" name="PUnit"> Plant is useful if the condition
       of spelling skill is triggered.
 
       For example, Void Grass will injure
       everyone around it when the second turn starts.'
-    strContent_cn: 
+    strContent_CN: "<sprite=\"Target\" name=\"PUnit\"> \u690D\u7269\u4F1A\u5F88\u6709\u7528\uFF0C\u5F53\u5B83\u4EEC\u7684\u6280\u80FD\u89E6\u53D1\u65F6\u3002\n\u4F8B\u5982\uFF0C\u865A\u65E0\u8349\u4F1A\u5728\u7B2C\u4E8C\u56DE\u5408\u81EA\u7206\u70B8\u4F24\u9644\u8FD1\u7684\u6240\u6709\u5355\u4F4D\u3002"
     gifUrl: PlantBoom
   - id: 16
     group: 4
-    strTitle: Set Plant
-    strContent: 'You can click Plant button to set <sprite="Target" name="PUnit">
+    strTitle_EN: Set Plant
+    strTitle_CN: "\u653E\u7F6E\u690D\u7269"
+    strContent_EN: 'You can click Plant button to set <sprite="Target" name="PUnit">
       Plant.
 
       Setting <sprite="Target" name="PUnit"> Plant will occupy the
       <sprite="Common" name="Essence"> Essence Points.'
-    strContent_cn: 
+    strContent_CN: "\u4F60\u53EF\u4EE5\u70B9\u51FB\u690D\u7269\u6309\u94AE\u5F00\u59CB\u653E\u7F6E
+      <sprite=\"Target\" name=\"PUnit\"> \u690D\u7269\u3002\n\u653E\u7F6E <sprite=\"Target\"
+      name=\"PUnit\"> \u690D\u7269\u4F1A\u5360\u636E <sprite=\"Common\" name=\"Essence\">
+      \u7CBE\u534E\u70B9\u3002"
     gifUrl: SetPlant
