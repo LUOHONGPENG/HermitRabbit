@@ -115,7 +115,7 @@ MonoBehaviour:
     name: Motorhome
     rarity: 2
     HP: 12
-    ATK: 3
+    ATK: 1
     DEF: 1
     RES: 0
     triggerCondition: 2

@@ -94,11 +94,11 @@ MonoBehaviour:
       <sprite="Common" name="MOV"> MOV.
 
       Every <sprite="Common" name="MOV">
-      MOV more than the target will increase 3 damage.'
+      MOV more than the target will increase 2 damage.'
     desc_CN: "\u9020\u6210\u76F8\u5F53\u4E8E <sprite=\"Common\" name=\"ATK\"> \u653B\u51FB-1
       \u7684\u4F24\u5BB3\n\u51CF\u5C11\u76EE\u6807 <sprite=\"Common\" name=\"MOV\">
       \u79FB\u52A8\u529B\n\u6BCF\u6BD4\u5BF9\u65B9\u591A1\u70B9 <sprite=\"Common\"
-      name=\"MOV\"> \u79FB\u52A8\u529B, \u4F24\u5BB3\u63D0\u53473\u70B9\u3002"
+      name=\"MOV\"> \u79FB\u52A8\u529B, \u4F24\u5BB3\u63D0\u53472\u70B9\u3002"
     listTagType:
     - MDmg
     listBuffType: 00000000

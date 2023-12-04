@@ -17,109 +17,133 @@ MonoBehaviour:
     group: 1
     step: 0
     talkSubjectID: 0
-    content: 
+    strContent_EN: 
+    strContent_CN: 
   - id: 2
     group: 1
     step: 1
     talkSubjectID: 1001
-    content: What is going on? Why there are some monsters in my tower?
+    strContent_EN: What is going on? Why there are some monsters in my tower?
+    strContent_CN: "\u53D1\u751F\u4EC0\u4E48\u4E8B\u4E86.jpg \u4E3A\u4EC0\u4E48\u4F1A\u6709\u602A\u7269\u5728\u6211\u7684\u5854\u91CC\uFF1F"
   - id: 3
     group: 1
     step: 1
     talkSubjectID: 1002
-    content: 'These are your fear. '
+    strContent_EN: 'These are your fear. '
+    strContent_CN: "\u8FD9\u662F\u4F60\u7684\u6050\u60E7\u9E2D\u3002"
   - id: 4
     group: 1
     step: 1
     talkSubjectID: 1001
-    content: Who are you?
+    strContent_EN: Who are you?
+    strContent_CN: "\u4F60tm\u662F\u8C01\u554A\uFF0C\u600E\u4E48\u5728\u6211\u5BB6\u554A\uFF1F"
   - id: 5
     group: 1
     step: 1
     talkSubjectID: 1002
-    content: I am here to help you. Let's fight against your fear.
+    strContent_EN: I am here to help you. Let's fight against your fear.
+    strContent_CN: "\u6211\u662F\u6765\u5E2E\u4F60\u7684\uFF0C\u6765\u4E00\u8D77\u6218\u80DC\u6050\u60E7\u5427\uFF01"
   - id: 6
     group: 1
     step: 2
     talkSubjectID: 0
-    content: 
+    strContent_EN: 
+    strContent_CN: 
   - id: 7
     group: 2
     step: 1
     talkSubjectID: 1002
-    content: You need to be confident. You can fight against them.
+    strContent_EN: You need to be confident. You can fight against them.
+    strContent_CN: "\u4F60\u8981\u81EA\u4FE1\u4E00\u70B9\uFF0C\u4F60\u53EF\u4EE5\u6218\u80DC\u4ED6\u4EEC\u7684\u3002"
   - id: 8
     group: 2
     step: 1
     talkSubjectID: 1001
-    content: Why these monsters come to my home? I just research magic in the tower
-      and never hurt them.
+    strContent_EN: Why these monsters come to my home? I just research magic in the
+      tower and never hurt them.
+    strContent_CN: "\u4E3A\u4EC0\u4E48\u8FD9\u4E9B\u602A\u7269\u8981\u6765\u6211\u5BB6\uFF0C\u6211\u53EA\u662F\u5728\u6211\u7684\u5854\u91CC\u5077\u5077\u7814\u7A76\u9B54\u6CD5\uFF0C\u4ECE\u6765\u6CA1\u6709\u4F24\u5BB3\u4ED6\u4EEC\u3002"
   - id: 9
     group: 2
     step: 1
     talkSubjectID: 1002
-    content: Damn it. You are not a wizard. You are a game designer named Joshua
+    strContent_EN: Damn it. You are not a wizard. You are a game designer named Joshua
       Rabbit.
+    strContent_CN: "\u64CD\u3002\u4F60\u4E0D\u662F\u4EC0\u4E48\u6CD5\u5E08\uFF0C\u4F60\u662F\u4E00\u4E2A\u53EB\u4E00\u53EA\u7EB8\u5154\u7684\u6E38\u620F\u5F00\u53D1\u8005\u3002"
   - id: 10
     group: 2
     step: 1
     talkSubjectID: 1001
-    content: No. I am Leo Bright. A talented wizard who experts at Time Magic.
+    strContent_EN: No. I am Leo Bright. A talented wizard who experts at Time Magic.
+    strContent_CN: "\u4E0D\uFF0C\u6211\u53EB\u83B1\u5965\xB7\u5E03\u83B1\u7279\uFF0C\u4E00\u4E2A\u7814\u7A76\u65F6\u95F4\u9B54\u6CD5\u7684\u5929\u624D\u9B54\u6CD5\u5E08\u3002"
   - id: 11
     group: 2
     step: 1
     talkSubjectID: 1002
-    content: Reality is right at the door and it is time for you to seek a job!
+    strContent_EN: Reality is right at the door and it is time for you to seek a
+      job!
+    strContent_CN: "\u73B0\u5B9E\u5C31\u5728\u95E8\u53E3\uFF0C\u800C\u73B0\u5728\u5B83\u8981\u8D70\u8FDB\u6765\u3002\u4F60\u8BE5\u627E\u5DE5\u4F5C\u4E86\u3002"
   - id: 12
     group: 2
     step: 1
     talkSubjectID: 1002
-    content: Enhance your skill and <color="red">Seek a job </color>to start a new
-      fight when you are ready.
+    strContent_EN: Enhance your skill and <color="red">Seek a job </color>to start
+      a new fight when you are ready.
+    strContent_CN: "\u63D0\u5347\u4F60\u7684\u6280\u80FD\u7136\u540E <color=\"red\">Seek
+      a job </color>\u6765\u5F00\u59CB\u65B0\u4E00\u8F6E\u6218\u6597\u5427\uFF01"
   - id: 13
     group: 2
     step: 2
     talkSubjectID: 0
-    content: 
+    strContent_EN: 
+    strContent_CN: 
   - id: 14
     group: 3
     step: 1
     talkSubjectID: 1001
-    content: This is the magic plant and we can plant it to fight against the monster.
+    strContent_EN: This is the magic plant and we can plant it to fight against the
+      monster.
+    strContent_CN: "\u8FD9\u662F\u9B54\u6CD5\u690D\u7269\uFF01\u6211\u4EEC\u53EF\u4EE5\u79CD\u4E0B\u5B83\u6765\u62B5\u5FA1\u654C\u4EBA\u7684\u8FDB\u653B\uFF01"
   - id: 15
     group: 3
     step: 1
     talkSubjectID: 1002
-    content: You call the games that you have developed as plant? Interesting.
+    strContent_EN: You call the games that you have developed as plant? Interesting.
+    strContent_CN: "\u4F60\u628A\u4F60\u505A\u7684\u6E38\u620F\u53EB\u505A\u690D\u7269\uFF1F\u6709\u610F\u601D\u3002"
   - id: 16
     group: 3
     step: 1
     talkSubjectID: 1002
-    content: Anyway, put the games into the portfolio just like put the plants at
-      the garden.
+    strContent_EN: Anyway, put the games into the portfolio just like put the plants
+      at the garden.
+    strContent_CN: "\u603B\u4E4B\uFF0C\u628A\u4F60\u7684\u6E38\u620F\u653E\u5230\u4F5C\u54C1\u96C6\u91CC\uFF0C\u5C31\u50CF\u5728\u82B1\u56ED\u79CD\u690D\u7269\u4E00\u6837\u3002"
   - id: 17
     group: 3
     step: 1
     talkSubjectID: 1002
-    content: Click <color="red">Plant </color> to place them. They will help you
-      to pass the interview.
+    strContent_EN: Click <color="red">Plant </color> to place them. They will help
+      you to pass the interview.
+    strContent_CN: "\u70B9\u51FB <color=\"red\">Plant </color> \u6765\u653E\u7F6E\u4ED6\u4EEC\uFF0C\u4ED6\u4EEC\u4F1A\u5E2E\u4F60\u901A\u8FC7\u9762\u8BD5\u7684jpg"
   - id: 18
     group: 3
     step: 2
     talkSubjectID: 0
-    content: 
+    strContent_EN: 
+    strContent_CN: 
   - id: 19
     group: 4
     step: 1
     talkSubjectID: 1002
-    content: This is the last fight. Let's fight against the interview.
+    strContent_EN: This is the last fight. Let's fight against the interview.
+    strContent_CN: "\u8FD9\u662F\u6700\u540E\u4E00\u573A\u6218\u6597\u4E86\uFF0C\u6765\u6218\u80DC\u9762\u8BD5\u5427\u3002"
   - id: 20
     group: 4
     step: 1
     talkSubjectID: 1001
-    content: Yes.I will try my best!
+    strContent_EN: Yes.I will try my best!
+    strContent_CN: "\u6211\u4F1A\u52AA\u529B\u7684\u3002"
   - id: 21
     group: 4
     step: 2
     talkSubjectID: 0
-    content: 
+    strContent_EN: 
+    strContent_CN: 

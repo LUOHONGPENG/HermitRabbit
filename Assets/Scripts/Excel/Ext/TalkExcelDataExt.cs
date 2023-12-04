@@ -40,3 +40,18 @@ public partial class TalkExcelData
         }
     }
 }
+public partial class TalkExcelItem
+{
+    public string GetContent()
+    {
+        if (GameGlobal.languageType == LanguageType.CN)
+        {
+            return strContent_CN;
+        }
+        else
+        {
+            return strContent_EN;
+        }
+    }
+
+}

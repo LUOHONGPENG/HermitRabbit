@@ -141,6 +141,7 @@ public partial class BattleMgr
 
         damageSource += skillBattleInfo.damageModifier;
         damageSource *= (1 + skillBattleInfo.damageExtraBonus);
+
         //Make sure the damage is not lower than 0
         if (damageSource <= 0)
         {

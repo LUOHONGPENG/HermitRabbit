@@ -11,7 +11,8 @@ public partial class TalkExcelItem : ExcelItemBase
 	public TalkGroup group;
 	public TalkStep step;
 	public int talkSubjectID;
-	public string content;
+	public string strContent_EN;
+	public string strContent_CN;
 }
 
 [CreateAssetMenu(fileName = "TalkExcelData", menuName = "Excel To ScriptableObject/Create TalkExcelData", order = 1)]
@@ -35,7 +36,8 @@ public class TalkAssetAssignment
 			items[i].group = (TalkGroup) Enum.Parse(typeof(TalkGroup), allItemValueRowList[i]["group"], true);
 			items[i].step = (TalkStep) Enum.Parse(typeof(TalkStep), allItemValueRowList[i]["step"], true);
 			items[i].talkSubjectID = Convert.ToInt32(allItemValueRowList[i]["talkSubjectID"]);
-			items[i].content = allItemValueRowList[i]["content"];
+			items[i].strContent_EN = allItemValueRowList[i]["strContent_EN"];
+			items[i].strContent_CN = allItemValueRowList[i]["strContent_CN"];
 		}
 		TalkExcelData excelDataAsset = ScriptableObject.CreateInstance<TalkExcelData>();
 		excelDataAsset.items = items;

@@ -71,7 +71,7 @@ public class TalkUIMgr : MonoBehaviour
         switch (item.step)
         {
             case TalkStep.Text:
-                codeTalk.text = item.content;
+                codeTalk.text = item.GetContent();
                 switch (item.talkSubjectID)
                 {
                     case 1001:
