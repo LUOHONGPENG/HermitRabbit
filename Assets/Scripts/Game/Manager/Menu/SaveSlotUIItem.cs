@@ -25,6 +25,10 @@ public class SaveSlotUIItem : MonoBehaviour
     public Text codeLv1001;
     public Text codeLv1002;
 
+    [Header("PlantInfo")]
+    public Transform tfPlant;
+    public GameObject pfPlant;
+
     private bool isNull = true;
     private SaveSlotName slotName;
     private GameData gameData;
@@ -102,6 +106,14 @@ public class SaveSlotUIItem : MonoBehaviour
             {
                 codeLv1002.text = string.Format("Lv.{0}", Level);
             }
+        }
+
+        PublicTool.ClearChildItem(tfPlant);
+        for(int i = 0; i < saveData.listPlantHeld.Count; i++)
+        {
+            GameObject objPlant = GameObject.Instantiate(pfPlant, tfPlant);
+            SaveSlotPlantUIItem itemPlant = objPlant.GetComponent<SaveSlotPlantUIItem>();
+            itemPlant.Init(saveData.listPlantHeld[i]);
         }
     }
 }

@@ -89,7 +89,6 @@ GameObject:
   - component: {fileID: 3191863341575040011}
   - component: {fileID: 304991744842234347}
   - component: {fileID: 8948097669834273428}
-  - component: {fileID: 8146309332472551318}
   - component: {fileID: 8056224072496522412}
   m_Layer: 5
   m_Name: PeacePlantUIItem
@@ -140,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btnPlant: {fileID: 8948097669834273428}
-  outlinePlant: {fileID: 8146309332472551318}
+  outlinePlant: {fileID: 0}
   canvasPlant: {fileID: 8056224072496522412}
   imgPlant: {fileID: 304991744842234347}
   imgSelected: {fileID: 1051855903371131048}
@@ -218,21 +217,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8146309332472551318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9164108657779411343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1
 --- !u!225 &8056224072496522412
 CanvasGroup:
   m_ObjectHideFlags: 0

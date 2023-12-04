@@ -93,12 +93,12 @@ MonoBehaviour:
       Reduce targets''
       <sprite="Common" name="MOV"> MOV.
 
-      Damage will increase if higher <sprite="Common"
-      name="MOV"> MOV of source and lower <sprite="Common" name="MOV"> MOV of target.'
+      Every <sprite="Common" name="MOV">
+      MOV more than the target will increase 3 damage.'
     desc_CN: "\u9020\u6210\u76F8\u5F53\u4E8E <sprite=\"Common\" name=\"ATK\"> \u653B\u51FB-1
       \u7684\u4F24\u5BB3\n\u51CF\u5C11\u76EE\u6807 <sprite=\"Common\" name=\"MOV\">
-      \u79FB\u52A8\u529B\n\u81EA\u8EAB <sprite=\"Common\" name=\"MOV\"> \u79FB\u52A8\u529B\u8D8A\u9AD8\uFF0C\u76EE\u6807
-      <sprite=\"Common\" name=\"MOV\"> \u79FB\u52A8\u529B\u8D8A\u4F4E\uFF0C\u4F24\u5BB3\u8D8A\u9AD8"
+      \u79FB\u52A8\u529B\n\u6BCF\u6BD4\u5BF9\u65B9\u591A1\u70B9 <sprite=\"Common\"
+      name=\"MOV\"> \u79FB\u52A8\u529B, \u4F24\u5BB3\u63D0\u53473\u70B9\u3002"
     listTagType:
     - MDmg
     listBuffType: 00000000
@@ -491,7 +491,7 @@ MonoBehaviour:
     listBuffType: f2030000
   - id: 9001
     name_EN: Bite
-    name_CN: Bite
+    name_CN: "\u54AC\u4F60\uFF01"
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -499,7 +499,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9002
     name_EN: Write me!
-    name_CN: Write me!
+    name_CN: "\u5199\u6211\uFF01"
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -507,7 +507,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9101
     name_EN: Anxious Nodule
-    name_CN: Anxious Nodule
+    name_CN: "\u7126\u8651\u7EB8\u56E2"
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -515,7 +515,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9102
     name_EN: Anxious Fire
-    name_CN: Anxious Fire
+    name_CN: "\u7126\u8651\u4E4B\u706B"
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -523,7 +523,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9103
     name_EN: Anxious Water
-    name_CN: Anxious Water
+    name_CN: "\u7126\u8651\u4E4B\u6C34"
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -531,7 +531,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9104
     name_EN: Anxious Gravity
-    name_CN: Anxious Gravity
+    name_CN: "\u7126\u8651\u4E4B\u6697"
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -539,15 +539,15 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9201
     name_EN: Vision
-    name_CN: Vision
+    name_CN: "\u8FDC\u89C1"
     desc_EN: 
     desc_CN: 
     listTagType:
     - 0
     listBuffType: 00000000
   - id: 9202
-    name_EN: Cruelty
-    name_CN: Cruelty
+    name_EN: Trial
+    name_CN: "\u62F7\u95EE"
     desc_EN: 
     desc_CN: 
     listTagType:
@@ -555,7 +555,7 @@ MonoBehaviour:
     listBuffType: 00000000
   - id: 9301
     name_EN: Emotional Damage
-    name_CN: Emotional Damage
+    name_CN: "\u5FC3\u7075\u4F24\u5BB3"
     desc_EN: 
     desc_CN: 
     listTagType:

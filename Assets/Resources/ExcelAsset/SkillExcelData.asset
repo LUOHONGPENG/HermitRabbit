@@ -80,7 +80,7 @@ MonoBehaviour:
     characterEffect: 1
     plantEffect: 1
     damageType: 3
-    damageDeltaStd: 12
+    damageDeltaStd: 13
     damageDelta: 250
     damageModifier: 0
     listBuffEffect: 00000000
@@ -132,7 +132,7 @@ MonoBehaviour:
     characterEffect: 0
     plantEffect: 0
     damageType: 2
-    damageDeltaStd: 3
+    damageDeltaStd: 4
     damageDelta: 100
     damageModifier: -1
     listBuffEffect: 00000000
@@ -158,7 +158,7 @@ MonoBehaviour:
     characterEffect: 0
     plantEffect: 2
     damageType: 2
-    damageDeltaStd: 11
+    damageDeltaStd: 12
     damageDelta: 200
     damageModifier: 1
     listBuffEffect: 00000000
@@ -210,7 +210,7 @@ MonoBehaviour:
     characterEffect: 1
     plantEffect: 0
     damageType: 2
-    damageDeltaStd: 4
+    damageDeltaStd: 5
     damageDelta: 100
     damageModifier: 4
     listBuffEffect: 00000000
@@ -470,7 +470,7 @@ MonoBehaviour:
     characterEffect: 2
     plantEffect: 2
     damageType: 3
-    damageDeltaStd: 7
+    damageDeltaStd: 8
     damageDelta: 20
     damageModifier: 0
     listBuffEffect: 00000000
@@ -496,7 +496,7 @@ MonoBehaviour:
     characterEffect: 0
     plantEffect: 0
     damageType: 3
-    damageDeltaStd: 10
+    damageDeltaStd: 11
     damageDelta: 100
     damageModifier: 0
     listBuffEffect: 00000000
@@ -626,7 +626,7 @@ MonoBehaviour:
     characterEffect: 0
     plantEffect: 0
     damageType: 1
-    damageDeltaStd: 8
+    damageDeltaStd: 9
     damageDelta: 100
     damageModifier: 0
     listBuffEffect: 00000000
@@ -722,7 +722,7 @@ MonoBehaviour:
     costHP: 0
     costMemory: 0
     range: 1
-    isRangeSelf: 1
+    isRangeSelf: 0
     needExtraTarget: 0
     radius: 0
     regionType: 0
@@ -886,7 +886,7 @@ MonoBehaviour:
     characterEffect: 2
     plantEffect: 0
     damageType: 3
-    damageDeltaStd: 9
+    damageDeltaStd: 10
     damageDelta: 100
     damageModifier: 0
     listBuffEffect: f2030000
@@ -1198,7 +1198,7 @@ MonoBehaviour:
     characterEffect: 1
     plantEffect: 1
     damageType: 3
-    damageDeltaStd: 9
+    damageDeltaStd: 10
     damageDelta: 100
     damageModifier: 0
     listBuffEffect: d1070000

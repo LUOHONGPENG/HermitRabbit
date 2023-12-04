@@ -69,11 +69,25 @@ public partial class BattleMgr
             case SkillDamageDeltaStd.ATK:
                 damageSource = calculateATK * skillBattleInfo.damageDeltaFloat;
                 break;
-            case SkillDamageDeltaStd.ATKMOV:
+            case SkillDamageDeltaStd.ATKMOV1:
+                damageSource = calculateATK * skillBattleInfo.damageDeltaFloat;
+                if (source.curMOV >= target.curMOV)
+                {
+                    damageSource += 1 * (source.curMOV - target.curMOV);
+                }
+                break;
+            case SkillDamageDeltaStd.ATKMOV2:
                 damageSource = calculateATK * skillBattleInfo.damageDeltaFloat;
                 if (source.curMOV >= target.curMOV)
                 {
                     damageSource += 2 * (source.curMOV - target.curMOV);
+                }
+                break;
+            case SkillDamageDeltaStd.ATKMOV3:
+                damageSource = calculateATK * skillBattleInfo.damageDeltaFloat;
+                if (source.curMOV >= target.curMOV)
+                {
+                    damageSource += 3 * (source.curMOV - target.curMOV);
                 }
                 break;
             case SkillDamageDeltaStd.ATKDISD1:

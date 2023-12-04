@@ -8,7 +8,6 @@ public class PeacePlantUIItem : MonoBehaviour
 {
     public Button btnPlant;
 
-    public Outline outlinePlant;
     public CanvasGroup canvasPlant;
 
     public Image imgPlant;

@@ -84,8 +84,8 @@ MonoBehaviour:
     skillID: 3103
     essence: 2
     pixelUrl: pp_Bubble_Idle
-    desc: Random effect from giving buff of HealUP, Regen and Shield. Effect level
-      according to ATK.
+    desc: Random effect from giving buff of HealUP, Regen and Shield. Buff level
+      equal to ATK.
   - id: 1007
     name: Gogo Grass
     rarity: 4
@@ -97,8 +97,8 @@ MonoBehaviour:
     skillID: 3104
     essence: 3
     pixelUrl: pp_Gogo_Idle
-    desc: Can apply Charm according to ATK every turn, controling random foe to hit
-      other foes.
+    desc: Can apply Charm whose level equal to ATK every turn, controling random
+      foe to hit other foes.
   - id: 1008
     name: Alyfen
     rarity: 4
@@ -115,26 +115,26 @@ MonoBehaviour:
     name: Motorhome
     rarity: 2
     HP: 12
-    ATK: 2
+    ATK: 3
     DEF: 1
     RES: 0
     triggerCondition: 2
     skillID: 3105
     essence: 2
     pixelUrl: pp_Motorhome_Idle
-    desc: Giving buff of MOVUP.
+    desc: Giving buff of MOVUP. Buff level equal to ATK.
   - id: 1010
     name: Helper Grass
     rarity: 2
     HP: 12
-    ATK: 2
+    ATK: 1
     DEF: 1
     RES: 0
     triggerCondition: 2
     skillID: 3106
     essence: 2
     pixelUrl: pp_Helper_Idle
-    desc: Random effect from giving buff of ATKUP, DEFUP, RESUP. Effect level according
+    desc: Random effect from giving buff of ATKUP, DEFUP, RESUP. Buff level according
       to ATK.
   - id: 2001
     name: Maleficia
