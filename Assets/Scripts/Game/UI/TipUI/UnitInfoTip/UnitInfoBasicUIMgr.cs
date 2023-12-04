@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class UnitInfoBasicUIMgr : MonoBehaviour
 {
     [Header("Basic Info")]
     public Text codeName;
-    public Text codeDesc;
+    public TextMeshProUGUI codeDesc;
     public Image imgHPFill;
     public Text codeHP;
     public Text codeATK;

@@ -20,6 +20,7 @@ public class SaveSlotUIItem : MonoBehaviour
     public GameObject objNull;
 
     [Header("Info")]
+    public Text codeDayNum;
     public Text codeMemory;
     public Text codeLv1001;
     public Text codeLv1002;
@@ -86,6 +87,7 @@ public class SaveSlotUIItem : MonoBehaviour
 
     private void RefreshInfo(GameSaveData saveData)
     {
+        codeDayNum.text = string.Format("tx_basic_dayNum".ToLanguageText(), saveData.numDay);
         codeMemory.text = saveData.memory.ToString();
 
         for(int i = 0; i< saveData.listCharacterExp.Count; i++)
