@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Networking.Types;
 using UnityEngine.UI;
@@ -8,7 +9,7 @@ public class PlantPreviewTipUIMgr : ButtonInfoTipUIMgr
 {
     [Header("BasicInfo")]
     public Text codeName;
-    public Text codeDesc;
+    public TextMeshProUGUI codeDesc;
 
     [Header("DataInfo")]
     public Text codeHP;

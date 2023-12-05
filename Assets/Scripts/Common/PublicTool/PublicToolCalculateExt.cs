@@ -245,6 +245,16 @@ public partial class PublicTool
         list.Sort((y, x) => { return x.TotalHate.CompareTo(y.TotalHate); });
     }
 
+    public static void PlantFindTargetSortLowestHPRate(List<BattleUnitData> list)
+    {
+        list.Sort((x, y) => { return x.HPrate.CompareTo(y.HPrate); });
+    }
+
+    public static void PlantFindTargetSortLowestBuffLevel(List<BattleUnitData> list,int delta)
+    {
+        list.Sort((x, y) => { return x.GetBuffLevel(delta).CompareTo(y.GetBuffLevel(delta)); });
+    }
+
     #endregion
 
     #region MapClip

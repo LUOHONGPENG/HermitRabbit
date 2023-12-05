@@ -21,10 +21,13 @@ MonoBehaviour:
     DEF: 0
     RES: 1
     triggerCondition: 0
+    findTargetType: 0
+    findTargetDelta: 0
     skillID: 3001
     essence: 1
     pixelUrl: pp_Frog_Idle
-    desc: Attack the foe in range if character hit the foe with normal attack.
+    desc: Attack the foe in range if character hit the foe with <sprite="SkillType"
+      name="NSkill"> Normal Attack.
   - id: 1002
     name: Cookee
     rarity: 2
@@ -33,10 +36,13 @@ MonoBehaviour:
     DEF: 0
     RES: 1
     triggerCondition: 2
+    findTargetType: 3
+    findTargetDelta: 4001
     skillID: 3101
     essence: 2
     pixelUrl: pp_Cook_Idle
-    desc: Apply Burning according to ATK every turn.
+    desc: Apply <sprite="BuffS" name="Burn"> Burning whose level equal to <sprite="Common"
+      name="ATK"> ATK every turn.
   - id: 1003
     name: Hero Grass
     rarity: 4
@@ -45,10 +51,13 @@ MonoBehaviour:
     DEF: 1
     RES: 1
     triggerCondition: 3
+    findTargetType: 0
+    findTargetDelta: 0
     skillID: 3201
     essence: 3
     pixelUrl: pp_Hero_Idle
-    desc: Attract the attack from foes.
+    desc: Apply 5 <sprite="BuffS" name="Hated"> Hated to attract the attack from
+      foes when battle starts.
   - id: 1004
     name: Unstable Grass
     rarity: 2
@@ -57,10 +66,13 @@ MonoBehaviour:
     DEF: 0
     RES: 1
     triggerCondition: 2
+    findTargetType: 1
+    findTargetDelta: 0
     skillID: 3102
     essence: 2
     pixelUrl: pp_Unstable_Idle
-    desc: Hit nearby tiles with electricity that can be transmitted by water.
+    desc: Hit nearby tiles with electricity that can be transmitted by <sprite="Tile"
+      name="WaterT"> Water tile.
   - id: 1005
     name: Void Grass
     rarity: 2
@@ -69,6 +81,8 @@ MonoBehaviour:
     DEF: 0
     RES: 0
     triggerCondition: 4
+    findTargetType: 0
+    findTargetDelta: 0
     skillID: 3301
     essence: 2
     pixelUrl: pp_Void_Idle
@@ -81,11 +95,14 @@ MonoBehaviour:
     DEF: 0
     RES: 1
     triggerCondition: 2
+    findTargetType: 2
+    findTargetDelta: 0
     skillID: 3103
     essence: 2
     pixelUrl: pp_Bubble_Idle
-    desc: Random effect from giving buff of HealUP, Regen and Shield. Buff level
-      equal to ATK.
+    desc: Random effect from giving buff of <sprite="BuffC" name="HealUP"> HealUP,<sprite="BuffS"
+      name="Regen"> Regen and <sprite="BuffS" name="Shield"> Shield. Buff level equal
+      to ATK.
   - id: 1007
     name: Gogo Grass
     rarity: 4
@@ -94,11 +111,13 @@ MonoBehaviour:
     DEF: 0
     RES: 4
     triggerCondition: 2
+    findTargetType: 3
+    findTargetDelta: 1009
     skillID: 3104
     essence: 3
     pixelUrl: pp_Gogo_Idle
-    desc: Can apply Charm whose level equal to ATK every turn, controling random
-      foe to hit other foes.
+    desc: Can apply <sprite="BuffN" name="Charm"> Charm whose level equal to <sprite="Common"
+      name="ATK"> ATK every turn, controling random foe to hit other foes.
   - id: 1008
     name: Alyfen
     rarity: 4
@@ -107,10 +126,13 @@ MonoBehaviour:
     DEF: 1
     RES: 1
     triggerCondition: 1
+    findTargetType: 0
+    findTargetDelta: 0
     skillID: 3401
     essence: 3
     pixelUrl: pp_Alyfen_Idle
-    desc: Revive dead character in range and apply 1 level Sunrise.
+    desc: Revive dead character in range and apply 1 level <sprite="BuffN" name="Sunrise">
+      Sunrise.
   - id: 1009
     name: Motorhome
     rarity: 2
@@ -119,10 +141,13 @@ MonoBehaviour:
     DEF: 1
     RES: 0
     triggerCondition: 2
+    findTargetType: 0
+    findTargetDelta: 0
     skillID: 3105
     essence: 2
     pixelUrl: pp_Motorhome_Idle
-    desc: Giving buff of MOVUP. Buff level equal to ATK.
+    desc: Giving buff of <sprite="BuffC" name="MOVUP"> MOVUP. Buff level equal to
+      <sprite="Common" name="ATK"> ATK.
   - id: 1010
     name: Helper Grass
     rarity: 2
@@ -131,11 +156,14 @@ MonoBehaviour:
     DEF: 1
     RES: 0
     triggerCondition: 2
+    findTargetType: 0
+    findTargetDelta: 0
     skillID: 3106
     essence: 2
     pixelUrl: pp_Helper_Idle
-    desc: Random effect from giving buff of ATKUP, DEFUP, RESUP. Buff level according
-      to ATK.
+    desc: Random effect from giving buff of <sprite="BuffC" name="ATKUP"> ATKUP,
+      <sprite="BuffC" name="DEFUP"> DEFUP, <sprite="BuffC" name="RESUP"> RESUP. Buff
+      level according to <sprite="Common" name="ATK"> ATK.
   - id: 2001
     name: Maleficia
     rarity: 1
@@ -144,10 +172,12 @@ MonoBehaviour:
     DEF: 0
     RES: 1
     triggerCondition: 5
+    findTargetType: 0
+    findTargetDelta: 0
     skillID: -1
     essence: 1
     pixelUrl: pp_Maleficia_Idle
-    desc: Increase ATK of units in same row by 1.
+    desc: Increase <sprite="Common" name="ATK"> ATK of units in same row by 1.
   - id: 2002
     name: Beneficia
     rarity: 1
@@ -156,7 +186,9 @@ MonoBehaviour:
     DEF: 1
     RES: 0
     triggerCondition: 5
+    findTargetType: 0
+    findTargetDelta: 0
     skillID: -1
     essence: 1
     pixelUrl: pp_Beneficia_Idle
-    desc: Increase DEF of units in same column by 1.
+    desc: Increase <sprite="Common" name="DEF"> DEF of units in same column by 1.

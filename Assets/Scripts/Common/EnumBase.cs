@@ -199,6 +199,15 @@ public enum PlantTriggerType
     Passive
 }
 
+public enum PlantFindTargetType
+{
+    None,
+    Random,
+    LowHP,
+    LowBuff
+}
+
+
 public enum SkillNodeType
 {
     None,

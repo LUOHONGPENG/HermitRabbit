@@ -153,7 +153,7 @@ MonoBehaviour:
     canBeDouble: 1
     firstSpecialEffect: 0
     firstSpecialDelta: 0
-    iconUrl: imgBuff_Down
+    iconUrl: imgBuff_Charm
   - id: 1010
     name_EN: Sunrise
     name_CN: "\u4E1C\u5C71\u518D\u8D77"
@@ -167,7 +167,7 @@ MonoBehaviour:
     canBeDouble: 0
     firstSpecialEffect: 1003
     firstSpecialDelta: 1
-    iconUrl: imgBuff_Up
+    iconUrl: imgBuff_Sunrise
   - id: 2001
     name_EN: Fear
     name_CN: "\u6050\u60E7"

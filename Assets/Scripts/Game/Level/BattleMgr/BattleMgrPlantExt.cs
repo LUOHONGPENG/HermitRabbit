@@ -114,10 +114,46 @@ public partial class BattleMgr
             {
                 gameData.SetCurUnitInfo(new UnitInfo(BattleUnitType.Plant, keyID));
                 BattlePlantData plantData = (BattlePlantData)gameData.GetCurUnitData();
-                if (CheckPossiblePlantSkill(plantData))
+                PlantExcelItem plantItem = PublicTool.GetPlantItem(plantData.typeID);
+                if (plantData != null && plantItem != null && CheckPossiblePlantSkill(plantData))
                 {
-                    int ran = UnityEngine.Random.Range(0, plantData.listValidSkill.Count);
-                    yield return StartCoroutine(IE_ExecutePlantSkillFindTarget(plantData, plantData.listValidSkill[ran]));
+                    List<BattleUnitData> listUnit = new List<BattleUnitData>();
+                    switch (plantItem.findTargetType)
+                    {
+                        case PlantFindTargetType.None:
+                            yield return StartCoroutine(IE_ExecutePlantSkillFindTarget(plantData, plantData.listValidSkill[0]));
+                            break;
+                        case PlantFindTargetType.Random:
+                            int ran = UnityEngine.Random.Range(0, plantData.listValidSkill.Count);
+                            yield return StartCoroutine(IE_ExecutePlantSkillFindTarget(plantData, plantData.listValidSkill[ran]));
+                            break;
+                        case PlantFindTargetType.LowHP:
+                            foreach(var pos in plantData.listValidSkill)
+                            {
+                                BattleUnitData unit = gameData.GetDataFromUnitInfo(gameData.GetUnitInfoFromPosID(pos));
+                                if (unit != null && !unit.isDead)
+                                {
+                                    listUnit.Add(unit);
+                                }
+                            }
+                            PublicTool.PlantFindTargetSortLowestHPRate(listUnit);
+                            yield return StartCoroutine(IE_ExecutePlantSkillFindTarget(plantData, listUnit[0].posID));
+                            break;
+                        case PlantFindTargetType.LowBuff:
+                            foreach (var pos in plantData.listValidSkill)
+                            {
+                                BattleUnitData unit = gameData.GetDataFromUnitInfo(gameData.GetUnitInfoFromPosID(pos));
+                                if (unit != null && !unit.isDead)
+                                {
+                                    listUnit.Add(unit);
+                                }
+                            }
+                            PublicTool.PlantFindTargetSortLowestBuffLevel(listUnit,plantItem.findTargetDelta);
+                            yield return StartCoroutine(IE_ExecutePlantSkillFindTarget(plantData, listUnit[0].posID));
+                            break;
+                    }
+
+
                 }
             }
         }
