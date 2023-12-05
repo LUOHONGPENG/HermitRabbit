@@ -45,3 +45,7 @@ MonoBehaviour:
     effectViewType: 7
     prefabUrl: peCut
     destroyTime: 0.4
+  - id: 9
+    effectViewType: 8
+    prefabUrl: peTadpole
+    destroyTime: 0.85

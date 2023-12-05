@@ -297,7 +297,8 @@ public enum EffectViewType
     ThunderHit,
     EnergyFire,
     Fourtain,
-    Cut
+    Cut,
+    Tadpole
 }
 
 public enum EffectViewPosType

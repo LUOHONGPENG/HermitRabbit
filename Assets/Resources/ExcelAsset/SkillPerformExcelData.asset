@@ -461,20 +461,20 @@ MonoBehaviour:
     listCameraTime: 00000000
   - id: 3001
     name: Tadpole Strike
-    totalTime: 0.5
+    totalTime: 0.8
     listUnitAniState:
     - 0
     listUnitAniTime: 00000000
     listEffectViewType:
-    - 0
+    - Tadpole
     listEffectPosType:
-    - 0
+    - TargetPos
     listEffectViewTime: 00000000
     listSoundType:
     - WhereMom
     listSoundTime: 00000000
     listCameraPosType:
-    - FocusSubject
+    - FocusTarget
     listCameraTime: 00000000
   - id: 3101
     name: Cook Human On Time
