@@ -91,8 +91,9 @@ GameObject:
   - component: {fileID: 6646471178314634268}
   - component: {fileID: 3211893651868223441}
   - component: {fileID: 2853819357103559270}
+  - component: {fileID: 7020320620268180105}
   m_Layer: 5
-  m_Name: txMOV
+  m_Name: tx_attribute_MOV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,6 +161,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: MOV
+--- !u!114 &7020320620268180105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144510329582250523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &607515840830896270
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,8 +663,9 @@ GameObject:
   - component: {fileID: 8426885110417845541}
   - component: {fileID: 953777036926789557}
   - component: {fileID: 5975558872029340087}
+  - component: {fileID: 4349478366626785917}
   m_Layer: 5
-  m_Name: txRES
+  m_Name: tx_attribute_RES
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -719,6 +733,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: RES
+--- !u!114 &4349478366626785917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2627456873732518688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3229588764798130411
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,8 +960,9 @@ GameObject:
   - component: {fileID: 4635941943561886193}
   - component: {fileID: 2025698441231344820}
   - component: {fileID: 5051710731956639406}
+  - component: {fileID: 7851070574766905853}
   m_Layer: 5
-  m_Name: txDEF
+  m_Name: tx_attribute_DEF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1003,6 +1030,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: DEF
+--- !u!114 &7851070574766905853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4906012938284498172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5582990616629828844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,8 +1129,9 @@ GameObject:
   - component: {fileID: 8932558160575418600}
   - component: {fileID: 9165497318104357289}
   - component: {fileID: 7692041165470697000}
+  - component: {fileID: 860073740295468671}
   m_Layer: 5
-  m_Name: txATK
+  m_Name: tx_attribute_ATK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1159,6 +1199,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: ATK
+--- !u!114 &860073740295468671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619859077329083757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5653816266631271010
 GameObject:
   m_ObjectHideFlags: 0
