@@ -54,19 +54,20 @@ MonoBehaviour:
     listCameraTime: 00000000
   - id: 1102
     name: Boom!
-    totalTime: 0.6
+    totalTime: 1
     listUnitAniState:
     - Focus
     - Attack
-    listUnitAniTime: 0000000006000000
+    listUnitAniTime: 000000000a000000
     listEffectViewType:
     - FireBallBoom
     listEffectPosType:
     - AllBurn
-    listEffectViewTime: 06000000
+    listEffectViewTime: 0a000000
     listSoundType:
+    - Explosion
     - Boom
-    listSoundTime: 06000000
+    listSoundTime: 000000000a000000
     listCameraPosType:
     - FocusSubject
     listCameraTime: 00000000
@@ -83,7 +84,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - Shift
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -102,7 +103,7 @@ MonoBehaviour:
     - TargetPos
     listEffectViewTime: 04000000
     listSoundType:
-    - 0
+    - Gravity
     listSoundTime: 00000000
     listCameraPosType:
     - CharacterLeftLow
@@ -121,7 +122,7 @@ MonoBehaviour:
     - AllTile
     listEffectViewTime: 06000000
     listSoundType:
-    - 0
+    - Fourtain
     listSoundTime: 00000000
     listCameraPosType:
     - MiddleLeft
@@ -139,7 +140,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - Origin
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -186,18 +187,18 @@ MonoBehaviour:
     listCameraTime: 0000000006000000
   - id: 1901
     name: Time Expand
-    totalTime: 1.1
+    totalTime: 1.2
     listUnitAniState:
     - Focus
     - Attack
-    listUnitAniTime: 0000000006000000
+    listUnitAniTime: 0000000009000000
     listEffectViewType:
     - 0
     listEffectPosType:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - LordTime
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -216,7 +217,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - Infinity
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -224,7 +225,7 @@ MonoBehaviour:
     listCameraTime: 0000000006000000
   - id: 1903
     name: Final Chant
-    totalTime: 0.6
+    totalTime: 0.8
     listUnitAniState:
     - Focus
     listUnitAniTime: 00000000
@@ -234,7 +235,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - FinalSpell
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -252,25 +253,25 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - Strike
+    - Ola
     listSoundTime: 00000000
     listCameraPosType:
     - 0
     listCameraTime: 00000000
   - id: 2101
     name: Wind Chop
-    totalTime: 0.9
+    totalTime: 1.1
     listUnitAniState:
     - Focus
     - Attack
-    listUnitAniTime: 0000000006000000
+    listUnitAniTime: 0000000008000000
     listEffectViewType:
     - Cut
     listEffectPosType:
     - TargetPos
-    listEffectViewTime: 05000000
+    listEffectViewTime: 07000000
     listSoundType:
-    - 0
+    - WorkWork
     listSoundTime: 00000000
     listCameraPosType:
     - MiddleLeft
@@ -287,7 +288,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - WorkTime
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -305,7 +306,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - GoDie
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -323,7 +324,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - Haha
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -340,7 +341,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - Rest
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -358,7 +359,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - RestRightNow
     listSoundTime: 00000000
     listCameraPosType:
     - CharacterLeftHigh
@@ -376,7 +377,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - Nigelu
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -395,7 +396,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - Tanomu
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -403,7 +404,7 @@ MonoBehaviour:
     listCameraTime: 0000000006000000
   - id: 2901
     name: Final Guard
-    totalTime: 0.6
+    totalTime: 0.9
     listUnitAniState:
     - Focus
     listUnitAniTime: 00000000
@@ -413,7 +414,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - Deadline
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -431,7 +432,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - SuperWorker
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -679,7 +680,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - Hoi
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -697,7 +698,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - Hoi
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -715,7 +716,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - Hoi
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -733,7 +734,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - Hoi
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -751,7 +752,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - Hoi
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject

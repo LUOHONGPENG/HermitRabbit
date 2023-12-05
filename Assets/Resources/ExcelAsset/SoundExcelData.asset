@@ -29,39 +29,115 @@ MonoBehaviour:
     name: 3
     soundUrl: RabbitAttack
     soundStartTime: 0.2
-  - id: 5
-    name: 4
-    soundUrl: Strike
-    soundStartTime: 0.4
   - id: 6
-    name: 5
+    name: 4
     soundUrl: FireBall
     soundStartTime: 0.6
   - id: 7
-    name: 6
+    name: 5
     soundUrl: Boom
     soundStartTime: 0.6
   - id: 8
+    name: 6
+    soundUrl: Explosion
+    soundStartTime: 0.2
+  - id: 9
     name: 7
+    soundUrl: Gravity
+    soundStartTime: 0.3
+  - id: 10
+    name: 8
+    soundUrl: Shift
+    soundStartTime: 0.2
+  - id: 11
+    name: 9
+    soundUrl: Fourtain
+    soundStartTime: 0.2
+  - id: 12
+    name: 10
+    soundUrl: Origin
+    soundStartTime: 0.4
+  - id: 13
+    name: 11
     soundUrl: LightingDestroy
     soundStartTime: 0.3
-  - id: 9
-    name: 8
+  - id: 14
+    name: 12
+    soundUrl: LordTime
+    soundStartTime: 0.3
+  - id: 15
+    name: 13
+    soundUrl: FinalSpell
+    soundStartTime: 0.1
+  - id: 16
+    name: 14
+    soundUrl: Infinity
+    soundStartTime: 0.3
+  - id: 17
+    name: 15
+    soundUrl: Ola
+    soundStartTime: 0.1
+  - id: 18
+    name: 16
+    soundUrl: WorkTime
+    soundStartTime: 0.2
+  - id: 19
+    name: 17
+    soundUrl: WorkWork
+    soundStartTime: 0.2
+  - id: 20
+    name: 18
+    soundUrl: GoDie
+    soundStartTime: 0.4
+  - id: 21
+    name: 19
+    soundUrl: Haha
+    soundStartTime: 0.2
+  - id: 22
+    name: 20
+    soundUrl: Nigelu2
+    soundStartTime: 0.2
+  - id: 23
+    name: 21
+    soundUrl: Tanomu2
+    soundStartTime: 0.2
+  - id: 24
+    name: 22
+    soundUrl: Rest
+    soundStartTime: 0.2
+  - id: 25
+    name: 23
+    soundUrl: RestRightNow
+    soundStartTime: 0.3
+  - id: 26
+    name: 24
+    soundUrl: Deadline
+    soundStartTime: 0.5
+  - id: 27
+    name: 25
+    soundUrl: SuperWorker
+    soundStartTime: 0.1
+  - id: 28
+    name: 26
     soundUrl: FinalWork
     soundStartTime: 0.6
-  - id: 10
-    name: 9
+  - id: 29
+    name: 27
     soundUrl: WhereMom
     soundStartTime: 0.4
-  - id: 11
-    name: 10
+  - id: 30
+    name: 28
     soundUrl: DontStudy
     soundStartTime: 0.8
-  - id: 12
-    name: 11
+  - id: 31
+    name: 29
     soundUrl: GogoOh
     soundStartTime: 0.7
-  - id: 13
-    name: 12
+  - id: 32
+    name: 30
     soundUrl: Bite
     soundStartTime: 0.6
+  - id: 33
+    name: 31
+    soundUrl: Hoi
+    soundStartTime: 0.1

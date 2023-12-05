@@ -8,19 +8,39 @@ public enum SoundType
     UnlockSkillNode,
     Move,
     Victory,
+    //Leo
     RabbitAttack,
-    Strike,
-    //Skill
     FireBall,
     Boom,
+    Explosion,
+    Gravity,
+    Shift,
+    Fourtain,
+    Origin,
     LightingDestroy,
+    LordTime,
+    FinalSpell,
+    Infinity,
+    //Ward
+    Ola,
+    WorkTime,
+    WorkWork,
+    GoDie,
+    Haha,
+    Nigelu,
+    Tanomu,
+    Rest,
+    RestRightNow,
+    Deadline,
+    SuperWorker,
     FinalWork,
     //Plant
     WhereMom,
     DontStudy,
     GogoOh,
     //Foe
-    Bite
+    Bite,
+    Hoi
 }
 
 public enum MusicType
