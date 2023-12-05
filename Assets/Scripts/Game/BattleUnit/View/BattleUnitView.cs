@@ -40,6 +40,12 @@ public partial class BattleUnitView : MonoBehaviour
         {
             Vector3 tilePos = PublicTool.ConvertPosFromID(path[i]);
             this.transform.DOLocalMove(new Vector3(tilePos.x, GameGlobal.commonUnitPosY, tilePos.z), 0.2f);
+/*            if (i % 2 == 1)
+            {
+                PublicTool.PlaySound(SoundType.Move);
+            }*/
+            PublicTool.PlaySound(SoundType.Move);
+
             PublicTool.EventNormalCameraGoPosID(path[i]);
             yield return new WaitForSeconds(0.2f);
         }

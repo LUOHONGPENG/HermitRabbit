@@ -470,7 +470,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - WhereMom
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -487,7 +487,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - DontStudy
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject
@@ -541,7 +541,7 @@ MonoBehaviour:
     - 0
     listEffectViewTime: 00000000
     listSoundType:
-    - 0
+    - GogoOh
     listSoundTime: 00000000
     listCameraPosType:
     - FocusSubject

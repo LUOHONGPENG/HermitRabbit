@@ -6,6 +6,7 @@ using UnityEngine;
 public enum SoundType
 {
     UnlockSkillNode,
+    Move,
     Victory,
     RabbitAttack,
     Strike,
@@ -14,6 +15,10 @@ public enum SoundType
     Boom,
     LightingDestroy,
     FinalWork,
+    //Plant
+    WhereMom,
+    DontStudy,
+    GogoOh,
     //Foe
     Bite
 }
