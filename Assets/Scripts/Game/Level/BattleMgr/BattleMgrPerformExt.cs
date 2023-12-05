@@ -92,5 +92,6 @@ public partial class BattleMgr
     {
         yield return new WaitForSeconds(startTime);
         PublicTool.EventChangeCamera(new ChangeCameraInfo(CameraType.SkillPerformCamera, posType, skillSubject.posID, skillTargetPos, skillTargetPosExtra));
+        PublicTool.EventNormalCameraGoPosID(skillSubject.posID);
     }
 }

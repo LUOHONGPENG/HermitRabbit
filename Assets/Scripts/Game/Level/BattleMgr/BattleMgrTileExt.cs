@@ -67,6 +67,7 @@ public partial class BattleMgr
         }
 
         bool isApplyBurn = false;
+        Vector2Int posRecord = new Vector2Int(-1, -1);
 
         for(int i = 0; i < listBurn.Count; i++)
         {
@@ -85,6 +86,7 @@ public partial class BattleMgr
                     BurnDelta = 2;
                 }
                 SkillBuffEffectDeal(unitData, 4001, BurnDelta, PublicTool.GetBuffExcelItem(4001).GetName(), SkillEffectType.Harm);
+                posRecord = burnPos;
 
                 BattleUnitView unitView = unitViewMgr.GetViewFromUnitInfo(burnUnit);
                 unitView.RequestBattleText();
@@ -95,6 +97,7 @@ public partial class BattleMgr
 
         if (isApplyBurn)
         {
+            PublicTool.EventNormalCameraGoPosID(posRecord);
             yield return new WaitForSeconds(1f);
         }
 
@@ -115,6 +118,7 @@ public partial class BattleMgr
         }
 
         bool isApplyHeal = false;
+        Vector2Int posRecord = new Vector2Int(-1, -1);
 
         for (int i = 0; i < listFlower.Count; i++)
         {
@@ -128,12 +132,14 @@ public partial class BattleMgr
                 BattleUnitView unitView = unitViewMgr.GetViewFromUnitInfo(healUnit);
                 unitView.RequestBattleText();
 
+                posRecord = healPos;
                 isApplyHeal = true;
             }
         }
 
         if (isApplyHeal)
         {
+            PublicTool.EventNormalCameraGoPosID(posRecord);
             yield return new WaitForSeconds(1f);
         }
     }
@@ -152,6 +158,7 @@ public partial class BattleMgr
         }
 
         bool isApplyFragile = false;
+        Vector2Int posRecord = new Vector2Int(-1, -1);
 
         for (int i = 0; i < listHope.Count; i++)
         {
@@ -164,12 +171,14 @@ public partial class BattleMgr
                 BattleUnitView unitView = unitViewMgr.GetViewFromUnitInfo(hopeUnit);
                 unitView.RequestBattleText();
 
+                posRecord = hopePos;
                 isApplyFragile = true;
             }
         }
 
         if (isApplyFragile)
         {
+            PublicTool.EventNormalCameraGoPosID(posRecord);
             yield return new WaitForSeconds(1f);
         }
     }

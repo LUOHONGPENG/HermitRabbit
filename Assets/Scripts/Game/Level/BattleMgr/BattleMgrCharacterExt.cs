@@ -59,11 +59,13 @@ public partial class BattleMgr
     {        
         //If the buff such as burning is triggered 
         bool hasBuffInvoked = false;
+        Vector2Int posRecord = new Vector2Int(-1, -1);
         //Character
-        for(int i = gameData.listCharacter.Count - 1; i >=0; i--)
+        for (int i = gameData.listCharacter.Count - 1; i >=0; i--)
         {
             BattleCharacterData characterData = gameData.listCharacter[i];
             bool isTriggered = characterData.CheckBuffTrigger();
+            posRecord = characterData.posID;
             //Mark that buff is triggered
             if (isTriggered)
             {
@@ -78,6 +80,8 @@ public partial class BattleMgr
         {
             BattlePlantData plantData = gameData.listPlant[i];
             bool isTriggered = plantData.CheckBuffTrigger();
+            posRecord = plantData.posID;
+
             //Mark that buff is triggered
             if (isTriggered)
             {
@@ -89,6 +93,7 @@ public partial class BattleMgr
 
         if (hasBuffInvoked)
         {
+            PublicTool.EventNormalCameraGoPosID(posRecord);
             yield return new WaitForSeconds(GameGlobal.waitTimeText);
             yield return StartCoroutine(IE_CheckPlantAfterSkill());
             yield return StartCoroutine(IE_AfterSkill());
