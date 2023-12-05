@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlantInfoTipUIMgr : UnitInfoTipUIMgr
 {
     public UnitSkillUIMgr skillUIMgr;
+    public Transform tfBuff;
+    public GameObject pfBuff;
 
     protected override void UpdateSpecial(BattleUnitData unitData)
     {
@@ -24,9 +26,29 @@ public class PlantInfoTipUIMgr : UnitInfoTipUIMgr
                 {
                     skillUIMgr.gameObject.SetActive(true);
                     skillUIMgr.Init(plantExcelItem.skillID, BattleUnitType.Plant);
+
+
+                    //BuffUI
+
+                    PublicTool.ClearChildItem(tfBuff);
+
+                    SkillDescExcelItem descItem = PublicTool.GetSkillDescItem(plantExcelItem.skillID);
+                    List<int> listBuff = descItem.listBuffType;
+                    if (listBuff[0] != 0)
+                    {
+                        for (int i = 0; i < listBuff.Count; i++)
+                        {
+                            BuffExcelItem buffItem = PublicTool.GetBuffExcelItem(listBuff[i]);
+                            GameObject objBuff = GameObject.Instantiate(pfBuff, tfBuff);
+                            SkillBuffTipUIMgr buffUI = objBuff.GetComponent<SkillBuffTipUIMgr>();
+                            buffUI.Init(buffItem);
+                        }
+                    }
                 }
                 else
                 {
+                    PublicTool.ClearChildItem(tfBuff);
+
                     skillUIMgr.gameObject.SetActive(false);
                 }
             }

@@ -203,8 +203,8 @@ MonoBehaviour:
   - id: 3002
     name_EN: Shield
     name_CN: "\u62A4\u76FE"
-    desc_EN: Block X damage and buff decrease according to damage. Remove buff when
-      turn start.
+    desc_EN: Block X damage and buff decrease equal to damage. Remove buff when turn
+      start.
     desc_CN: "\u683C\u6321X\u70B9\u4F24\u5BB3\u5E76\u6D88\u8017\u683C\u6321\u4F24\u5BB3\u7684\u5C42\u6570\u3002\u56DE\u5408\u5F00\u59CB\u65F6\u79FB\u9664\u72B6\u6001\u3002"
     effectType: 2
     maxLevel: 10
