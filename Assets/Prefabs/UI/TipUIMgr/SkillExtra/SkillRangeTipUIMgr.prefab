@@ -338,8 +338,9 @@ GameObject:
   - component: {fileID: 1834176088272584475}
   - component: {fileID: 503634511737713486}
   - component: {fileID: 5377983159474804513}
+  - component: {fileID: 2882259587460592676}
   m_Layer: 5
-  m_Name: txRadius
+  m_Name: tx_attribute_radius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,6 +410,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Radius
+--- !u!114 &2882259587460592676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363204510549277162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5351285862974731316
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,8 +433,9 @@ GameObject:
   - component: {fileID: 153853876545189671}
   - component: {fileID: 5737111194660173443}
   - component: {fileID: 3025526853284280019}
+  - component: {fileID: 3289647113061557623}
   m_Layer: 5
-  m_Name: txRange
+  m_Name: tx_attribute_range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -491,6 +505,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Range
+--- !u!114 &3289647113061557623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5351285862974731316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5395372084846647096
 GameObject:
   m_ObjectHideFlags: 0

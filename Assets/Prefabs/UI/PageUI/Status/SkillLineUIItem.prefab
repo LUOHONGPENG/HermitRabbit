@@ -61,6 +61,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rtLine: {fileID: 3549761171860997239}
   imgLine: {fileID: 2932916822823865893}
+  listColor:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.34117648, g: 0.34117648, b: 0.34117648, a: 0.7294118}
+  - {r: 0.8352941, g: 0.9882353, b: 1, a: 1}
+  - {r: 1, g: 0.99215686, b: 0.80784315, a: 1}
 --- !u!114 &2932916822823865893
 MonoBehaviour:
   m_ObjectHideFlags: 0

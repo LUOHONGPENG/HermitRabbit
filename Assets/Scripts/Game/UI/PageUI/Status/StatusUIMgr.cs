@@ -42,6 +42,7 @@ public class StatusUIMgr : MonoBehaviour
     public Transform tfLine;
     public GameObject pfLine;
     public GameObject pfConflict;
+    public List<SkillLineUIItem> listLineUI = new List<SkillLineUIItem>();
 
     private BattleCharacterData characterData;
 
@@ -191,6 +192,7 @@ public class StatusUIMgr : MonoBehaviour
         PublicTool.ClearChildItem(tfLine);
         listNodeUI.Clear();
         dicNodeUI.Clear();
+        listLineUI.Clear();
         //Start Generating Skill Nodes
         List<SkillNodeExcelItem> listSkillNode = ExcelDataMgr.Instance.skillNodeExcelData.GetSkillNodeList(characterID);
         for(int i = 0; i < listSkillNode.Count; i++)
@@ -219,6 +221,9 @@ public class StatusUIMgr : MonoBehaviour
                     GameObject objLine = GameObject.Instantiate(pfLine, tfLine);
                     SkillLineUIItem itemLine = objLine.GetComponent<SkillLineUIItem>();
                     itemLine.Init(itemNode.transform.localPosition, dicNodeUI[endID].transform.localPosition);
+                    itemLine.Record(characterID, nodeItem.id, endID);
+                    itemLine.Refresh();
+                    listLineUI.Add(itemLine);
                 }
             }
 
@@ -242,6 +247,11 @@ public class StatusUIMgr : MonoBehaviour
         for (int i = 0; i < listNodeUI.Count; i++)
         {
             listNodeUI[i].UpdateNodeUI();
+        }
+
+        for(int i = 0; i< listLineUI.Count; i++)
+        {
+            listLineUI[i].Refresh();
         }
     }
     #endregion

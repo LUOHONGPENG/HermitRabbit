@@ -126,7 +126,7 @@ MonoBehaviour:
     iconUrl: imgBuff_Absorb
   - id: 1008
     name_EN: Hated
-    name_CN: "\u5632\u8BBD"
+    name_CN: "\u4F17\u77E2\u4E4B\u7684"
     desc_EN: Attract enemies' attack in X turns.
     desc_CN: "\u5728X\u56DE\u5408\u5185\uFF0C\u5438\u5F15\u654C\u4EBA\u7684\u653B\u51FB\u3002"
     effectType: 2

@@ -27,27 +27,31 @@ public class VictoryMapClipUIItem : MonoBehaviour
 
         mapClipDisplayUI.Init(typeID);
 
-        codeRarity.text = mapClipExcelItem.rarity.ToString();
 
         switch (mapClipExcelItem.rarity)
         {
             case Rarity.Common:
+                codeRarity.text = "tx_rarity_common".ToLanguageText();
                 imgBG.sprite = listSpRare[0];
                 codeRarity.color = listTxColor[0];
                 break;
             case Rarity.UnCommon:
+                codeRarity.text = "tx_rarity_uncommon".ToLanguageText();
                 imgBG.sprite = listSpRare[1];
                 codeRarity.color = listTxColor[1];
                 break;
             case Rarity.Rare:
+                codeRarity.text = "tx_rarity_rare".ToLanguageText();
                 imgBG.sprite = listSpRare[2];
                 codeRarity.color = listTxColor[2];
                 break;
             case Rarity.Epic:
+                codeRarity.text = "tx_rarity_epic".ToLanguageText();
                 imgBG.sprite = listSpRare[3];
                 codeRarity.color = listTxColor[3];
                 break;
             case Rarity.Legendary:
+                codeRarity.text = "tx_rarity_legendary".ToLanguageText();
                 imgBG.sprite = listSpRare[4];
                 codeRarity.color = listTxColor[4];
                 break;
