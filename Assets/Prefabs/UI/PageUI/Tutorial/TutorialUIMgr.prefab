@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 696520277513902216}
   - component: {fileID: 8713010197251305785}
   m_Layer: 5
-  m_Name: tx_tutorial_continue
+  m_Name: tx_common_continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -623,7 +623,7 @@ GameObject:
   - component: {fileID: 924639180444537998}
   - component: {fileID: 1139889203341952172}
   m_Layer: 5
-  m_Name: tx_tutorial_finish
+  m_Name: tx_common_finish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

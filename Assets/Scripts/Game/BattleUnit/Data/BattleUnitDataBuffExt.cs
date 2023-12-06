@@ -196,7 +196,7 @@ public partial class BattleUnitData
     {
         for(int i = 0; i < listBuff.Count; i++)
         {
-            if (listBuff[i].effectType == SkillEffectType.Help)
+            if (listBuff[i].effectType == SkillEffectType.Help && PublicTool.GetBuffExcelItem(listBuff[i].id).canBeDouble)
             {
                 listBuff[i].DoubleLevel();
             }

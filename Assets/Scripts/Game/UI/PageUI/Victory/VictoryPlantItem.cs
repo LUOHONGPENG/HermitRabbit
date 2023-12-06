@@ -26,7 +26,7 @@ public class VictoryPlantItem : MonoBehaviour
         PlantExcelItem plantExcelItem = PublicTool.GetPlantItem(typeID);
         imgPlant.sprite = Resources.Load("Sprite/Plant/" + plantExcelItem.pixelUrl, typeof(Sprite)) as Sprite;
 
-        codeName.text = plantExcelItem.name;
+        codeName.text = plantExcelItem.GetName();
         codeEssence.text = plantExcelItem.essence.ToString();
 
         btnMapClip.onClick.RemoveAllListeners();

@@ -8,7 +8,8 @@ using System.IO;
 [Serializable]
 public partial class PlantExcelItem : ExcelItemBase
 {
-	public string name;
+	public string name_EN;
+	public string name_CN;
 	public Rarity rarity;
 	public int HP;
 	public int ATK;
@@ -20,7 +21,8 @@ public partial class PlantExcelItem : ExcelItemBase
 	public int skillID;
 	public int essence;
 	public string pixelUrl;
-	public string desc;
+	public string desc_EN;
+	public string desc_CN;
 }
 
 [CreateAssetMenu(fileName = "PlantExcelData", menuName = "Excel To ScriptableObject/Create PlantExcelData", order = 1)]
@@ -41,7 +43,8 @@ public class PlantAssetAssignment
 		{
 			items[i] = new PlantExcelItem();
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
-			items[i].name = allItemValueRowList[i]["name"];
+			items[i].name_EN = allItemValueRowList[i]["name_EN"];
+			items[i].name_CN = allItemValueRowList[i]["name_CN"];
 			items[i].rarity = (Rarity) Enum.Parse(typeof(Rarity), allItemValueRowList[i]["rarity"], true);
 			items[i].HP = Convert.ToInt32(allItemValueRowList[i]["HP"]);
 			items[i].ATK = Convert.ToInt32(allItemValueRowList[i]["ATK"]);
@@ -53,7 +56,8 @@ public class PlantAssetAssignment
 			items[i].skillID = Convert.ToInt32(allItemValueRowList[i]["skillID"]);
 			items[i].essence = Convert.ToInt32(allItemValueRowList[i]["essence"]);
 			items[i].pixelUrl = allItemValueRowList[i]["pixelUrl"];
-			items[i].desc = allItemValueRowList[i]["desc"];
+			items[i].desc_EN = allItemValueRowList[i]["desc_EN"];
+			items[i].desc_CN = allItemValueRowList[i]["desc_CN"];
 		}
 		PlantExcelData excelDataAsset = ScriptableObject.CreateInstance<PlantExcelData>();
 		excelDataAsset.items = items;

@@ -210,8 +210,9 @@ GameObject:
   - component: {fileID: 7888500623916309316}
   - component: {fileID: 3878001276104630161}
   - component: {fileID: 3296892341917715478}
+  - component: {fileID: 3518544237657138046}
   m_Layer: 5
-  m_Name: txSkip
+  m_Name: tx_common_skip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,6 +280,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Skip
+--- !u!114 &3518544237657138046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2346344439410462781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2413811058433395841
 GameObject:
   m_ObjectHideFlags: 0

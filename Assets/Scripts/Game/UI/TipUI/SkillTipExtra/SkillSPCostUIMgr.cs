@@ -10,7 +10,7 @@ public class SkillSPCostUIMgr : MonoBehaviour
 
     public void Init(int costNum)
     {
-        codeCost.text = string.Format("Cost: {0}", costNum);
+        codeCost.text = string.Format("tx_skill_costSP".ToLanguageText(), costNum);
     }
 
 

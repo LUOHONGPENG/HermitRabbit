@@ -434,8 +434,9 @@ GameObject:
   - component: {fileID: 8464596328607364295}
   - component: {fileID: 9143328947218583054}
   - component: {fileID: 6607460792439358774}
+  - component: {fileID: 5485770192937122465}
   m_Layer: 5
-  m_Name: tx_ui_putMouseTileTip
+  m_Name: tx_victory_putMouseTileTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -559,6 +560,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5485770192937122465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2390721573563203137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3084635357620488635
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,8 +945,9 @@ GameObject:
   - component: {fileID: 7222866965394438392}
   - component: {fileID: 3702713290388459962}
   - component: {fileID: 2936319429882474977}
+  - component: {fileID: 1883268948753053815}
   m_Layer: 5
-  m_Name: txRefresh
+  m_Name: tx_common_refresh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1001,6 +1015,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Refresh
+--- !u!114 &1883268948753053815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5178036338729990754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5876126201691416138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,8 +1177,9 @@ GameObject:
   - component: {fileID: 7692804948424439650}
   - component: {fileID: 3809352329430872308}
   - component: {fileID: 542514159530457712}
+  - component: {fileID: 8623624748940485604}
   m_Layer: 5
-  m_Name: txVictory
+  m_Name: tx_victory_title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1220,6 +1247,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Victory
+--- !u!114 &8623624748940485604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6135527980298002260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6222567206817183325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,8 +1270,9 @@ GameObject:
   - component: {fileID: 8498457539644698686}
   - component: {fileID: 3596123086616277144}
   - component: {fileID: 8571007612638049814}
+  - component: {fileID: 5408045746720257766}
   m_Layer: 5
-  m_Name: txContinue
+  m_Name: tx_common_continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1300,6 +1340,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Continue
+--- !u!114 &5408045746720257766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6222567206817183325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6337698372185394495
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,6 +1418,7 @@ MonoBehaviour:
   btnSkipMap: {fileID: 23119825174855057}
   costRefreshMap: {fileID: 9206024024495317395}
   costSkipMap: {fileID: 8846626922895494246}
+  txMapClip: {fileID: 316160060403867876}
   tfTileTip: {fileID: 5982233713903556467}
   pfTileTip: {fileID: 8873619924869292342, guid: 3365190ceec88304e967d282ff0286dd,
     type: 3}
@@ -1386,8 +1439,9 @@ GameObject:
   - component: {fileID: 8537957785617415285}
   - component: {fileID: 2509075713858634437}
   - component: {fileID: 9092119364298427335}
+  - component: {fileID: 8671334853254718203}
   m_Layer: 5
-  m_Name: txSkip
+  m_Name: tx_common_skip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1455,6 +1509,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Skip
+--- !u!114 &8671334853254718203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6726429439550637082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6889463246775089831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,8 +1614,9 @@ GameObject:
   - component: {fileID: 7707609735949531020}
   - component: {fileID: 4069354722625573703}
   - component: {fileID: 1080028566238756678}
+  - component: {fileID: 981818995699505970}
   m_Layer: 5
-  m_Name: txSkip
+  m_Name: tx_common_skip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1617,6 +1684,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Skip
+--- !u!114 &981818995699505970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6906193314546880870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7146000307098241458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,8 +1707,9 @@ GameObject:
   - component: {fileID: 2846222910612154387}
   - component: {fileID: 4621335964138188258}
   - component: {fileID: 205431565151739499}
+  - component: {fileID: 7068512472349682840}
   m_Layer: 5
-  m_Name: txRefresh
+  m_Name: tx_common_refresh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1697,6 +1777,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Refresh
+--- !u!114 &7068512472349682840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7146000307098241458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7361505894673222353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,8 +1800,9 @@ GameObject:
   - component: {fileID: 3606583653622583938}
   - component: {fileID: 6518585868166268242}
   - component: {fileID: 4538821066986149737}
+  - component: {fileID: 9185373110164391286}
   m_Layer: 5
-  m_Name: txVictoryPlant
+  m_Name: tx_victory_plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1777,6 +1870,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Choose a plant
+--- !u!114 &9185373110164391286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7361505894673222353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8205932347048705408
 GameObject:
   m_ObjectHideFlags: 0

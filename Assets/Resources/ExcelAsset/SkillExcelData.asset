@@ -171,7 +171,7 @@ MonoBehaviour:
     unlockNodeID: 1301
   - id: 1302
     name: Clean
-    costAP: 2
+    costAP: 1
     costMOV: 0
     costHP: 0
     costMemory: 0

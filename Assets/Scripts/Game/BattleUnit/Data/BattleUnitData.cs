@@ -120,7 +120,7 @@ public partial class BattleUnitData
             }
             if (CheckBuffExist(1009))
             {
-                temp += 2;
+                temp += GetBuffLevel(1009);
             }
             if (CheckBuffExist(3003))
             {

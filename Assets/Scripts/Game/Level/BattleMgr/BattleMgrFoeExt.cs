@@ -40,10 +40,10 @@ public partial class BattleMgr
                             if(numTurn == 1)
                             {
                                 BuffExcelItem buff3004 = PublicTool.GetBuffExcelItem(3004);
-                                SkillBuffEffectDeal(foe, 3004, 6, buff3004.GetName(), buff3004.effectType);
+                                SkillBuffEffectDeal(foe, 3004, 8, buff3004.GetName(), buff3004.effectType);
 
                                 BuffExcelItem buff3005 = PublicTool.GetBuffExcelItem(3005);
-                                SkillBuffEffectDeal(foe, 3005, 6, buff3005.GetName(), buff3005.effectType);
+                                SkillBuffEffectDeal(foe, 3005, 8, buff3005.GetName(), buff3005.effectType);
 
                                 BattleFoeView foeView = unitViewMgr.GetFoeView(foe.keyID);
                                 foeView.RequestBattleText();

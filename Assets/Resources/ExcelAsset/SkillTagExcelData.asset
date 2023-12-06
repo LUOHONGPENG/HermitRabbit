@@ -49,6 +49,8 @@ MonoBehaviour:
     tag: 4
     name_EN: HurtCharacter
     name_CN: "\u53CB\u4F24"
-    desc_EN: Damage will also hurt <sprite="Target" name="CUnit"> Character
-    desc_CN: "\u4F24\u5BB3\u4F1A\u5BF9 <sprite=\"Target\" name=\"CUnit\"> \u6240\u6709\u89D2\u8272\u751F\u6548"
+    desc_EN: Will hurt <sprite="Target" name="CUnit"> Character but won't hurt <sprite="Target"
+      name="PUnit"> Plant.
+    desc_CN: "\u4F24\u5BB3\u4F1A\u5BF9 <sprite=\"Target\" name=\"CUnit\"> \u6240\u6709\u89D2\u8272\u751F\u6548\uFF08<sprite=\"Target\"
+      name=\"PUnit\"> \u690D\u7269\u514D\u75AB\uFF09"
     iconUrl: imgIconHurtCharacter

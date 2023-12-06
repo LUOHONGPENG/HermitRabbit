@@ -32,6 +32,7 @@ public class VictoryUIMgr : MonoBehaviour
     public ResourceCostUIItem costSkipMap;
 
     [Header("MapTile")]
+    public Text txMapClip;
     public Transform tfTileTip;
     public GameObject pfTileTip;
 
@@ -185,9 +186,11 @@ public class VictoryUIMgr : MonoBehaviour
                     PublicTool.StartConditionalTutorial(TutorialGroup.Map,0,-1);
                 }
                 StartMapClipPhase();
+                txMapClip.text = "tx_victory_map".ToLanguageText() + string.Format(" ({0}/{1})", 1, 2);
                 break;
             case VictoryPhase.MapClip2:
                 StartMapClipPhase();
+                txMapClip.text = "tx_victory_map".ToLanguageText() + string.Format(" ({0}/{1})", 2, 2);
                 break;
             case VictoryPhase.Plant:
                 objMapClip.SetActive(false);

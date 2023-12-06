@@ -8,8 +8,10 @@ using System.IO;
 [Serializable]
 public partial class FoeExcelItem : ExcelItemBase
 {
-	public string name;
-	public string desc;
+	public string name_EN;
+	public string name_CN;
+	public string desc_EN;
+	public string desc_CN;
 	public int HP;
 	public int ATK;
 	public int DEF;
@@ -44,8 +46,10 @@ public class FoeAssetAssignment
 		{
 			items[i] = new FoeExcelItem();
 			items[i].id = Convert.ToInt32(allItemValueRowList[i]["id"]);
-			items[i].name = allItemValueRowList[i]["name"];
-			items[i].desc = allItemValueRowList[i]["desc"];
+			items[i].name_EN = allItemValueRowList[i]["name_EN"];
+			items[i].name_CN = allItemValueRowList[i]["name_CN"];
+			items[i].desc_EN = allItemValueRowList[i]["desc_EN"];
+			items[i].desc_CN = allItemValueRowList[i]["desc_CN"];
 			items[i].HP = Convert.ToInt32(allItemValueRowList[i]["HP"]);
 			items[i].ATK = Convert.ToInt32(allItemValueRowList[i]["ATK"]);
 			items[i].DEF = Convert.ToInt32(allItemValueRowList[i]["DEF"]);

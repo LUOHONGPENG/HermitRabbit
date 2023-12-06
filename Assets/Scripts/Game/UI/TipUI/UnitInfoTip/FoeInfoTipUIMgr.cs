@@ -20,7 +20,7 @@ public class FoeInfoTipUIMgr : UnitInfoTipUIMgr
             if (foeExcelItem != null)
             {
                 recordTypeID = unitData.typeID;
-                basicUIMgr.SetNameDesc(foeExcelItem.name, foeExcelItem.desc);
+                basicUIMgr.SetNameDesc(foeExcelItem.GetName(), foeExcelItem.GetDesc());
                 basicUIMgr.SetType(BattleUnitType.Foe);
 
 

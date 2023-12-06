@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - id: 1001
-    name: LinkedList
-    desc: Attack near and dying unit with melee attack.
+    name_EN: LinkedList
+    name_CN: "\u94FE\u8868"
+    desc_EN: Attack near and dying unit with melee attack.
+    desc_CN: Attack near and dying unit with melee attack.
     HP: 8
     ATK: 4
     DEF: 1
@@ -31,8 +33,10 @@ MonoBehaviour:
     pixelUrl: PixelEvilGod
     aniUrl: ani_pf_LinkedList
   - id: 1002
-    name: LinkedList
-    desc: Attack near and dying unit with melee attack.
+    name_EN: LinkedList
+    name_CN: "\u94FE\u8868"
+    desc_EN: Attack near and dying unit with melee attack.
+    desc_CN: Attack near and dying unit with melee attack.
     HP: 15
     ATK: 4
     DEF: 1
@@ -48,8 +52,10 @@ MonoBehaviour:
     pixelUrl: PixelEvilGod
     aniUrl: ani_pf_LinkedList
   - id: 1011
-    name: Resume
-    desc: Can do ranged magic attack.
+    name_EN: Resume
+    name_CN: "\u7B80\u5386"
+    desc_EN: Can do ranged magic attack.
+    desc_CN: Can do ranged magic attack.
     HP: 10
     ATK: 3
     DEF: 0
@@ -65,8 +71,10 @@ MonoBehaviour:
     pixelUrl: PixelEvilBoss
     aniUrl: ani_pf_Resume
   - id: 1021
-    name: HR_Normal
-    desc: Can do ranged physical attack.
+    name_EN: HR_Normal
+    name_CN: "\u666E\u901AHR"
+    desc_EN: Can do ranged physical attack.
+    desc_CN: Can do ranged physical attack.
     HP: 30
     ATK: 5
     DEF: 1
@@ -82,8 +90,10 @@ MonoBehaviour:
     pixelUrl: pixelHR_Black
     aniUrl: ani_pf_HRGray
   - id: 1022
-    name: HR_Red
-    desc: Can spell fire magic and apply Burning.
+    name_EN: HR_Red
+    name_CN: "\u7EA2\u8272HR"
+    desc_EN: Can spell fire magic and apply Burning.
+    desc_CN: Can spell fire magic and apply Burning.
     HP: 25
     ATK: 3
     DEF: 0
@@ -99,8 +109,10 @@ MonoBehaviour:
     pixelUrl: pixelHR_Red
     aniUrl: ani_pf_HRRed
   - id: 1023
-    name: HR_Blue
-    desc: Can spell water magic and recover HP.
+    name_EN: HR_Blue
+    name_CN: "\u84DD\u8272HR"
+    desc_EN: Can spell water magic and recover HP.
+    desc_CN: Can spell water magic and recover HP.
     HP: 25
     ATK: 4
     DEF: 0
@@ -116,8 +128,10 @@ MonoBehaviour:
     pixelUrl: pixelHR_Blue
     aniUrl: ani_pf_HRBlue
   - id: 1024
-    name: HR_Dark
-    desc: Can spell gravity magic to reduce movement.
+    name_EN: HR_Dark
+    name_CN: "\u9ED1\u8272HR"
+    desc_EN: Can spell gravity magic to reduce movement.
+    desc_CN: Can spell gravity magic to reduce movement.
     HP: 25
     ATK: 2
     DEF: 0
@@ -133,8 +147,10 @@ MonoBehaviour:
     pixelUrl: pixelHR_Purple
     aniUrl: ani_pf_HRPurple
   - id: 1031
-    name: Interviewer_F
-    desc: Attack range is super long and will hit farthest unit first.
+    name_EN: Interviewer_F
+    name_CN: "\u9762\u8BD5\u5B98F"
+    desc_EN: Attack range is super long and will hit farthest unit first.
+    desc_CN: Attack range is super long and will hit farthest unit first.
     HP: 30
     ATK: 5
     DEF: 0
@@ -150,8 +166,10 @@ MonoBehaviour:
     pixelUrl: pixelHR_Black
     aniUrl: ani_pf_InterviewF
   - id: 1032
-    name: Interviewer_M
-    desc: Can move fast.
+    name_EN: Interviewer_M
+    name_CN: "\u9762\u8BD5\u5B98M"
+    desc_EN: Can move fast.
+    desc_CN: Can move fast.
     HP: 45
     ATK: 5
     DEF: 3
@@ -167,12 +185,14 @@ MonoBehaviour:
     pixelUrl: PixelEvilBoss
     aniUrl: ani_pf_InterviewM
   - id: 1041
-    name: CEO
-    desc: Can deal high damage but move slow.
+    name_EN: CEO
+    name_CN: CEO
+    desc_EN: Can deal high damage but move slow.
+    desc_CN: Can deal high damage but move slow.
     HP: 50
     ATK: 10
-    DEF: 4
-    RES: 4
+    DEF: 0
+    RES: 0
     MOV: 2
     skillID: 9301
     findTargetType: 0
@@ -184,8 +204,10 @@ MonoBehaviour:
     pixelUrl: PixelEvilBoss
     aniUrl: ani_pf_CEO
   - id: 1042
-    name: Secretary_F
-    desc: Can heal.
+    name_EN: Secretary_F
+    name_CN: "\u79D8\u4E66F"
+    desc_EN: Can heal unit with low HP.
+    desc_CN: "\u80FD\u591F\u6CBB\u7597\u8840\u5C11\u7684\u5355\u4F4D\u3002"
     HP: 25
     ATK: 4
     DEF: 0
@@ -201,8 +223,10 @@ MonoBehaviour:
     pixelUrl: PixelEvilBoss
     aniUrl: ani_pf_InterviewF
   - id: 1043
-    name: Secretary_M
-    desc: Get 1 level Angry when turn start.
+    name_EN: Secretary_M
+    name_CN: "\u79D8\u4E66M"
+    desc_EN: Get 1 level Angry when turn start.
+    desc_CN: Get 1 level Angry when turn start.
     HP: 75
     ATK: 1
     DEF: 5
@@ -218,8 +242,10 @@ MonoBehaviour:
     pixelUrl: PixelEvilBoss
     aniUrl: ani_pf_InterviewM
   - id: 1099
-    name: Interview
-    desc: Can summon pressure.
+    name_EN: Interview
+    name_CN: "\u9762\u8BD5\u7684\u6982\u5FF5"
+    desc_EN: Can summon pressure.
+    desc_CN: Can summon pressure.
     HP: 120
     ATK: 0
     DEF: 0
@@ -235,8 +261,10 @@ MonoBehaviour:
     pixelUrl: PixelEvilBoss
     aniUrl: 
   - id: 1098
-    name: Pressure
-    desc: Can deal damage according to left HP.
+    name_EN: Pressure
+    name_CN: "\u538B\u529B\u602A"
+    desc_EN: Can deal damage according to left HP.
+    desc_CN: Can deal damage according to left HP.
     HP: 8
     ATK: 0
     DEF: 0
@@ -252,8 +280,10 @@ MonoBehaviour:
     pixelUrl: PixelEvilGod
     aniUrl: 
   - id: 1097
-    name: Sadness
-    desc: 
+    name_EN: Sadness
+    name_CN: "\u5624\u5624\u602A"
+    desc_EN: Can heal unit with low HP.
+    desc_CN: "\u80FD\u591F\u6CBB\u7597\u8840\u5C11\u7684\u5355\u4F4D\u3002"
     HP: 16
     ATK: 5
     DEF: 0

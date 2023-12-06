@@ -110,80 +110,108 @@ MonoBehaviour:
   - id: 24
     key: tx_skill_cost
     descEN: 'Cost:'
-    descCN: "\u6D88\u8017\uFF1A"
+    descCN: "\u6280\u80FD\u6D88\u8017\uFF1A"
   - id: 25
+    key: tx_skill_costSP
+    descEN: 'Unlock Cost: {0}'
+    descCN: "\u89E3\u9501\u6D88\u8017\u81EA\u4FE1\uFF1A{0}"
+  - id: 26
     key: tx_skill_type_normal
     descEN: Normal Attack
     descCN: "\u666E\u901A\u653B\u51FB"
-  - id: 26
+  - id: 27
     key: tx_skill_type_hurt
     descEN: Hurt Skill
     descCN: "\u4F24\u5BB3\u6280\u80FD"
-  - id: 27
+  - id: 28
     key: tx_skill_type_support
     descEN: Support Skill
     descCN: "\u652F\u63F4\u6280\u80FD"
-  - id: 28
+  - id: 29
     key: tx_skill_type_ultimate
     descEN: Ultimate Skill
     descCN: "\u7A76\u6781\u6280\u80FD"
-  - id: 29
+  - id: 30
     key: tx_skill_type_passive
     descEN: Passive Skill
     descCN: "\u88AB\u52A8\u6280\u80FD"
-  - id: 30
-    key: tx_tutorial_continue
+  - id: 31
+    key: tx_common_continue
     descEN: Continue
     descCN: "\u7EE7\u7EED"
-  - id: 31
-    key: tx_tutorial_finish
+  - id: 32
+    key: tx_common_finish
     descEN: Finish
     descCN: "\u5B8C\u6210"
-  - id: 32
+  - id: 33
+    key: tx_common_skip
+    descEN: Skip
+    descCN: "\u8DF3\u8FC7"
+  - id: 34
+    key: tx_common_refresh
+    descEN: Refresh
+    descCN: "\u5237\u65B0"
+  - id: 35
     key: tx_day_title_1
     descEN: Sneak Attacked
     descCN: "\u88AB\u5077\u88AD\u4E86\uFF01"
-  - id: 33
+  - id: 36
     key: tx_day_title_2
     descEN: Write Resume
     descCN: "\u5199\u7B80\u5386\uFF01"
-  - id: 34
+  - id: 37
     key: tx_day_title_3
     descEN: CV Screening
     descCN: "\u7B80\u5386\u521D\u7B5B\uFF01"
-  - id: 35
+  - id: 38
     key: tx_day_title_4
     descEN: Group Interview
     descCN: "\u7FA4\u9762\u5F00\u59CB\uFF01"
-  - id: 36
+  - id: 39
     key: tx_day_title_5
     descEN: Second Interview
     descCN: "\u4E8C\u9762\u5F00\u59CB\uFF01"
-  - id: 37
+  - id: 40
     key: tx_day_title_6
     descEN: CEO Interview
     descCN: "CEO\u9762\u5F00\u59CB\uFF01"
-  - id: 38
+  - id: 41
     key: tx_day_title_7
     descEN: Destroy Interview
     descCN: "\u5C06\u9762\u8BD5\u7684\u6982\u5FF5\u6467\u6BC1\uFF01"
-  - id: 39
+  - id: 42
     key: tx_rarity_common
     descEN: Common
     descCN: "\u5E38\u89C1"
-  - id: 40
+  - id: 43
     key: tx_rarity_uncommon
     descEN: Uncommon
     descCN: "\u975E\u5E38\u89C1"
-  - id: 41
+  - id: 44
     key: tx_rarity_rare
     descEN: Rare
     descCN: "\u7A00\u6709"
-  - id: 42
+  - id: 45
     key: tx_rarity_epic
     descEN: Epic
     descCN: "\u5353\u8D8A"
-  - id: 43
+  - id: 46
     key: tx_rarity_legendary
     descEN: Legendary
     descCN: "\u4F20\u8BF4"
+  - id: 47
+    key: tx_victory_title
+    descEN: Victory
+    descCN: "\u9762\u8BD5\u7EC8\u4E86"
+  - id: 48
+    key: tx_victory_map
+    descEN: Select a map clip
+    descCN: "\u9009\u62E9\u4E00\u4E2A\u5730\u56FE\u5757"
+  - id: 49
+    key: tx_victory_plant
+    descEN: Select a plant
+    descCN: "\u9009\u62E9\u4E00\u4E2A\u690D\u7269"
+  - id: 50
+    key: tx_victory_putMouseTileTip
+    descEN: Put the mouse over it to read the detail
+    descCN: "\u9F20\u6807\u653E\u5728\u6807\u7B7E\u4E0A\u53EF\u9605\u8BFB\u5730\u5757\u8BE6\u60C5"
