@@ -590,7 +590,7 @@ MonoBehaviour:
     costAP: 0
     costMOV: 0
     costHP: 0
-    costMemory: 30
+    costMemory: 10
     range: 2
     isRangeSelf: 1
     needExtraTarget: 0

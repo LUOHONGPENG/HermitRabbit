@@ -48,46 +48,114 @@ MonoBehaviour:
     descEN: This is my itch page
     descCN: "\u8FD9\u662F\u6211\u7684Itch"
   - id: 9
+    key: tx_menu_save
+    descEN: Time Record
+    descCN: "\u65F6\u95F4\u8BB0\u5F55"
+  - id: 10
+    key: tx_menu_load
+    descEN: Time Leap
+    descCN: "\u65F6\u95F4\u56DE\u6EAF"
+  - id: 11
+    key: tx_menu_back
+    descEN: Back To Menu
+    descCN: "\u56DE\u5230\u4E3B\u754C\u9762"
+  - id: 12
+    key: tx_menu_delete
+    descEN: Clear Save File
+    descCN: "\u5220\u9664\u5B58\u6863"
+  - id: 13
     key: tx_basic_dayNum
     descEN: Day {0}
     descCN: "\u7B2C{0}\u5929"
-  - id: 10
+  - id: 14
+    key: tx_basic_turnNum
+    descEN: Turn {0}
+    descCN: "\u7B2C{0}\u56DE\u5408"
+  - id: 15
     key: tx_attribute_HP
     descEN: HP
     descCN: "\u751F\u547D"
-  - id: 11
+  - id: 16
     key: tx_attribute_ATK
     descEN: ATK
     descCN: "\u653B\u51FB"
-  - id: 12
+  - id: 17
     key: tx_attribute_DEF
     descEN: DEF
     descCN: "\u9632\u5FA1"
-  - id: 13
+  - id: 18
     key: tx_attribute_RES
     descEN: RES
     descCN: "\u9B54\u9632"
-  - id: 14
+  - id: 19
     key: tx_attribute_MOV
     descEN: MOV
     descCN: "\u79FB\u52A8\u529B"
-  - id: 15
+  - id: 20
     key: tx_attribute_SP
     descEN: Confidence
     descCN: "\u81EA\u4FE1"
-  - id: 16
+  - id: 21
     key: tx_skill_reset
     descEN: Reset
     descCN: "\u91CD\u7F6E\u6280\u80FD"
-  - id: 17
+  - id: 22
     key: tx_skill_cost
     descEN: 'Cost:'
     descCN: "\u6D88\u8017\uFF1A"
-  - id: 18
+  - id: 23
+    key: tx_skill_type_normal
+    descEN: Normal Attack
+    descCN: "\u666E\u901A\u653B\u51FB"
+  - id: 24
+    key: tx_skill_type_hurt
+    descEN: Hurt Skill
+    descCN: "\u4F24\u5BB3\u6280\u80FD"
+  - id: 25
+    key: tx_skill_type_support
+    descEN: Support Skill
+    descCN: "\u652F\u63F4\u6280\u80FD"
+  - id: 26
+    key: tx_skill_type_ultimate
+    descEN: Ultimate Skill
+    descCN: "\u7A76\u6781\u6280\u80FD"
+  - id: 27
+    key: tx_skill_type_passive
+    descEN: Passive Skill
+    descCN: "\u88AB\u52A8\u6280\u80FD"
+  - id: 28
     key: tx_tutorial_continue
     descEN: Continue
     descCN: "\u7EE7\u7EED"
-  - id: 19
+  - id: 29
     key: tx_tutorial_finish
     descEN: Finish
     descCN: "\u5B8C\u6210"
+  - id: 30
+    key: tx_day_title_1
+    descEN: Sneak Attacked
+    descCN: "\u88AB\u5077\u88AD\u4E86\uFF01"
+  - id: 31
+    key: tx_day_title_2
+    descEN: Write Resume
+    descCN: "\u5199\u7B80\u5386\uFF01"
+  - id: 32
+    key: tx_day_title_3
+    descEN: CV Screening
+    descCN: "\u7B80\u5386\u521D\u7B5B\uFF01"
+  - id: 33
+    key: tx_day_title_4
+    descEN: Group Interview
+    descCN: "\u7FA4\u9762\u5F00\u59CB\uFF01"
+  - id: 34
+    key: tx_day_title_5
+    descEN: Second Interview
+    descCN: "\u4E8C\u9762\u5F00\u59CB\uFF01"
+  - id: 35
+    key: tx_day_title_6
+    descEN: CEO Interview
+    descCN: "CEO\u9762\u5F00\u59CB\uFF01"
+  - id: 36
+    key: tx_day_title_7
+    descEN: Destroy Interview
+    descCN: "\u5C06\u9762\u8BD5\u7684\u6982\u5FF5\u6467\u6BC1\uFF01"

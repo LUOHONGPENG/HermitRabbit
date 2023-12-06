@@ -73,8 +73,8 @@ MonoBehaviour:
     - 0
     listBuffType: 00000000
   - id: 1102
-    name_EN: Boom!
-    name_CN: "\u7206\u7834\u672F"
+    name_EN: Explosion
+    name_CN: "\u6838\u7206"
     desc_EN: 'Select All <sprite="BuffS" name="Burn"> Burning Targets.
 
       Deal
@@ -169,9 +169,9 @@ MonoBehaviour:
 
       Fourtain will turn <sprite="Tile"
       name="SoilT"> Soil tile into <sprite="Tile" name="WaterT"> Water tile.'
-    desc_CN: "\u55B7\u6D41\u7684 <sprite=\"Common\" name=\"AP\"> \u884C\u52A8\u529B\u6D88\u8017+1\n\u55B7\u6D41\u4F1A\u8F6C\u5316
+    desc_CN: "\u55B7\u6D41\u7684\u6548\u679C\u91CF-1\u3002\n\u55B7\u6D41\u4F1A\u8F6C\u5316
       <sprite=\"Tile\" name=\"SoilT\"> \u571F\u5730\u5757\u6210 <sprite=\"Tile\"
-      name=\"WaterT\"> \u6C34\u5730\u5757."
+      name=\"WaterT\"> \u6C34\u5730\u5757\u3002"
     listTagType:
     - 0
     listBuffType: 00000000
@@ -227,7 +227,7 @@ MonoBehaviour:
       <sprite=\"BuffS\" name=\"Down\"> \u51CF\u76CA\u5C42\u6570\n\u7FFB\u500D <sprite=\"Target\"
       name=\"CUnit\"> \u89D2\u8272\u6216 <sprite=\"Target\" name=\"PUnit\"> \u690D\u7269\u7684
       <sprite=\"BuffS\" name=\"Up\"> \u589E\u76CA\u5C42\u6570\n\u6765\u81EA <sprite=\"SkillType\"
-      name=\"USkill\"> \u7EC8\u6781\u6280\u80FD\u7684\u72B6\u6001\u4E0D\u53D7\u5F71\u54CD"
+      name=\"USkill\"> \u7A76\u6781\u6280\u80FD\u7684\u72B6\u6001\u4E0D\u53D7\u5F71\u54CD"
     listTagType:
     - 0
     listBuffType: 00000000
@@ -316,9 +316,9 @@ MonoBehaviour:
   - id: 2301
     name_EN: Tea Break
     name_CN: "\u4E09\u70B9\u996E\u8336"
-    desc_EN: Heal <sprite="Target" name="CUnit"> Character equal to <sprite="Common"
+    desc_EN: Heal <sprite="Target" name="CUnit"> a Character equal to <sprite="Common"
       name="HP"> 20%HP of Ward
-    desc_CN: "\u5BF9<sprite=\"Target\" name=\"CUnit\"> \u89D2\u8272\u9020\u6210\u76F8\u5F53\u4E8EWard
+    desc_CN: "\u5BF9<sprite=\"Target\" name=\"CUnit\"> \u4E00\u540D\u89D2\u8272\u9020\u6210\u76F8\u5F53\u4E8EWard
       <sprite=\"Common\" name=\"HP\"> 25%\u751F\u547D\u7684\u6CBB\u7597"
     listTagType:
     - 0

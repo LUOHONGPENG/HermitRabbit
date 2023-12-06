@@ -148,12 +148,26 @@ public class SkillNodeUIItem : MonoBehaviour
     public void UpdateNodeUI()
     {
         RefreshNodeState();
+
+        if (nodeItem == null)
+        {
+            return;
+        }
         switch (nodeState)
         {
             case NodeState.Unlocked:
-                imgFrame.color = listColor[2];
-                imgIcon.color = listColor[2];
-                break;
+                if(nodeItem.nodeType == SkillNodeType.Active && PublicTool.GetSkillItem(nodeItem.id).activeSkillType == ActiveSkillType.UltimateSkill)
+                {
+                    imgFrame.color = listColor[3];
+                    imgIcon.color = listColor[3];
+                    break;
+                }
+                else
+                {
+                    imgFrame.color = listColor[2];
+                    imgIcon.color = listColor[2];
+                    break;
+                }
             case NodeState.CanUnlock:
                 imgFrame.color = listColor[1];
                 imgIcon.color = listColor[1];

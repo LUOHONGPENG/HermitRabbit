@@ -33,15 +33,15 @@ public class SaveLoadGameUIMgr : MonoBehaviour
         switch (saveButtonType)
         {
             case SaveSlotUIItem.SaveButtonType.MenuLoad:
-                codeTitle.text = "Load";
+                codeTitle.text = "tx_menu_load".ToLanguageText();
                 ShowMenuLoad();
                 break;
             case SaveSlotUIItem.SaveButtonType.GameLoad:
-                codeTitle.text = "Load";
+                codeTitle.text = "tx_menu_load".ToLanguageText();
                 ShowGameLoad();
                 break;
             case SaveSlotUIItem.SaveButtonType.GameSave:
-                codeTitle.text = "Save";
+                codeTitle.text = "tx_menu_save".ToLanguageText();
                 ShowGameSave();
                 break;
         }

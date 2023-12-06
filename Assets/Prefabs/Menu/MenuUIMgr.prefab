@@ -427,8 +427,9 @@ GameObject:
   - component: {fileID: 5843670935904804862}
   - component: {fileID: 4685543451581355282}
   - component: {fileID: 2880729939408719043}
+  - component: {fileID: 6009278048053471989}
   m_Layer: 5
-  m_Name: codeDelete
+  m_Name: tx_menu_delete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -496,6 +497,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Clear Save File
+--- !u!114 &6009278048053471989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190027942401987854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1327936069544065296
 GameObject:
   m_ObjectHideFlags: 0

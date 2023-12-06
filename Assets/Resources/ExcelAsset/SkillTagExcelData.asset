@@ -15,28 +15,40 @@ MonoBehaviour:
   items:
   - id: 1
     tag: 0
-    name: PhysicalDamage
-    desc: Damage will reduce because of <sprite="Common" name="DEF"> DEF
+    name_EN: PhysicalDamage
+    name_CN: "\u7269\u7406\u4F24\u5BB3"
+    desc_EN: Damage will reduce because of <sprite="Common" name="DEF"> DEF
+    desc_CN: "\u4F24\u5BB3\u4F1A\u56E0\u4E3A <sprite=\"Common\" name=\"DEF\"> \u9632\u5FA1\u51CF\u514D\u3002"
     iconUrl: imgIconPhysicalDmg
   - id: 2
     tag: 1
-    name: MagicDamage
-    desc: Damage will reduce because of <sprite="Common" name="RES"> RES
+    name_EN: MagicDamage
+    name_CN: "\u9B54\u6CD5\u4F24\u5BB3"
+    desc_EN: Damage will reduce because of <sprite="Common" name="RES"> RES
+    desc_CN: "\u4F24\u5BB3\u4F1A\u56E0\u4E3A <sprite=\"Common\" name=\"RES\"> \u9B54\u9632\u51CF\u514D\u3002"
     iconUrl: imgIconMagicDmg
   - id: 3
     tag: 2
-    name: TrueDamage
-    desc: Damage will ignore <sprite="Common" name="DEF"> DEF and <sprite="Common"
+    name_EN: TrueDamage
+    name_CN: "\u771F\u5B9E\u4F24\u5BB3"
+    desc_EN: Damage will ignore <sprite="Common" name="DEF"> DEF and <sprite="Common"
       name="RES"> RES
+    desc_CN: "\u4F24\u5BB3\u4F1A\u65E0\u89C6 <sprite=\"Common\" name=\"DEF\"> \u9632\u5FA1\u548C
+      <sprite=\"Common\" name=\"RES\"> \u9B54\u9632"
     iconUrl: imgIconTrueDmg
   - id: 4
     tag: 3
-    name: HurtAll
-    desc: Damage will also hurt <sprite="Target" name="CUnit"> Character and <sprite="Target"
+    name_EN: HurtAll
+    name_CN: "\u65E0\u5DEE\u522B\u653B\u51FB"
+    desc_EN: Damage will also hurt <sprite="Target" name="CUnit"> Character and <sprite="Target"
       name="PUnit"> Plant
+    desc_CN: "\u4F24\u5BB3\u4F1A\u5BF9 <sprite=\"Target\" name=\"CUnit\"> \u6240\u6709\u89D2\u8272\u548C
+      <sprite=\"Target\" name=\"PUnit\"> \u690D\u7269\u751F\u6548"
     iconUrl: imgIconHurtAll
   - id: 5
     tag: 4
-    name: HurtCharacter
-    desc: Damage will also hurt <sprite="Target" name="CUnit"> Character
+    name_EN: HurtCharacter
+    name_CN: "\u53CB\u4F24"
+    desc_EN: Damage will also hurt <sprite="Target" name="CUnit"> Character
+    desc_CN: "\u4F24\u5BB3\u4F1A\u5BF9 <sprite=\"Target\" name=\"CUnit\"> \u6240\u6709\u89D2\u8272\u751F\u6548"
     iconUrl: imgIconHurtCharacter

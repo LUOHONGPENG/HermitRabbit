@@ -225,13 +225,13 @@ public class InterfaceUIMgr : MonoBehaviour
         {
             imgDay.sprite = listDay[0];
             txPhase.text = "Peace";
-            txDayInfo.text = String.Format("Day {0}", PublicTool.GetGameData().numDay.ToString());
+            txDayInfo.text = String.Format("tx_basic_dayNum".ToLanguageText(), PublicTool.GetGameData().numDay.ToString());
         }
         else if (PublicTool.GetGameData().gamePhase == GamePhase.Battle)
         {
             imgDay.sprite = listDay[1];
             txPhase.text = "Battle";
-            txDayInfo.text = String.Format("Turn {0}", BattleMgr.Instance.numTurn.ToString());
+            txDayInfo.text = String.Format("tx_basic_turnNum".ToLanguageText(), BattleMgr.Instance.numTurn.ToString());
         }
     }
 }

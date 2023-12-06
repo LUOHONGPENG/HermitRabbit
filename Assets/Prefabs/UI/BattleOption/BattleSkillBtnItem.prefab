@@ -284,8 +284,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imgSelected: {fileID: 7060152973936647318}
-  btnAction: {fileID: 400854233577003286}
   imgIcon: {fileID: 1798906680934182931}
+  imgFrame: {fileID: 1936899322853452354}
+  btnAction: {fileID: 400854233577003286}
+  listColorSelected:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.99514604, g: 1, b: 0.7232704, a: 1}
 --- !u!222 &6190816661824267039
 CanvasRenderer:
   m_ObjectHideFlags: 0

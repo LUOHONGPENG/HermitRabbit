@@ -292,8 +292,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imgSelected: {fileID: 3824470976750706171}
+  imgIcon: {fileID: 7799425590364559178}
+  imgFrame: {fileID: 8297492907004134486}
   btnAction: {fileID: 7582754173209404565}
-  imgBtn: {fileID: 1669607095919301853}
+  listColorSelected:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.78930813, g: 0.9912259, b: 1, a: 1}
   listSpBtn:
   - {fileID: 21300000, guid: 162bf0e895c729d42897d2cceeda6c42, type: 3}
   - {fileID: 21300000, guid: c4ce15dddd7ab3544801b8181621d769, type: 3}

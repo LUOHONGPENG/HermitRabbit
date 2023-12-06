@@ -28,16 +28,16 @@ public class SkillDescTipUIMgr : MonoBehaviour
             switch (skillItem.activeSkillType)
             {
                 case ActiveSkillType.NormalAttack:
-                    codeType.text = string.Format("{0} {1}","<sprite=\"SkillType\" name=\"NSkill\">","Normal Attack").ToString();
+                    codeType.text = string.Format("{0} {1}","<sprite=\"SkillType\" name=\"NSkill\">", "tx_skill_type_normal".ToLanguageText()).ToString();
                     break;
                 case ActiveSkillType.DamageSkill:
-                    codeType.text = string.Format("{0} {1}", "<sprite=\"SkillType\" name=\"HSkill\">", "Hurt Skill").ToString();
+                    codeType.text = string.Format("{0} {1}", "<sprite=\"SkillType\" name=\"HSkill\">", "tx_skill_type_hurt".ToLanguageText()).ToString();
                     break;
                 case ActiveSkillType.SupportSkill:
-                    codeType.text = string.Format("{0} {1}", "<sprite=\"SkillType\" name=\"SSkill\">", "Support Skill").ToString();
+                    codeType.text = string.Format("{0} {1}", "<sprite=\"SkillType\" name=\"SSkill\">", "tx_skill_type_support".ToLanguageText()).ToString();
                     break;
                 case ActiveSkillType.UltimateSkill:
-                    codeType.text = string.Format("{0} {1}", "<sprite=\"SkillType\" name=\"USkill\">", "Ultimate Skill").ToString();
+                    codeType.text = string.Format("{0} {1}", "<sprite=\"SkillType\" name=\"USkill\">", "tx_skill_type_ultimate".ToLanguageText()).ToString();
                     break;
             }
 
@@ -54,7 +54,7 @@ public class SkillDescTipUIMgr : MonoBehaviour
         else
         {
             costTipUIMgr.HideCost();
-            codeType.text = string.Format("{0} {1}", "<sprite=\"SkillType\" name=\"PSkill\">", "Passive Skill").ToString();
+            codeType.text = string.Format("{0} {1}", "<sprite=\"SkillType\" name=\"PSkill\">", "tx_skill_type_passive".ToLanguageText()).ToString();
         }
 
         codeName.text = descExcelItem.GetName();

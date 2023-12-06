@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class BattleSkillBtnItem : BattleBtnBase
 {
-    public Image imgIcon;
-
     private SkillExcelItem skillItem;
 
 

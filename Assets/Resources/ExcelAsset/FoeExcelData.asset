@@ -83,7 +83,7 @@ MonoBehaviour:
     aniUrl: ani_pf_HRGray
   - id: 1022
     name: HR_Red
-    desc: Can spell fire magic and apply .
+    desc: Can spell fire magic and apply Burning.
     HP: 25
     ATK: 3
     DEF: 0

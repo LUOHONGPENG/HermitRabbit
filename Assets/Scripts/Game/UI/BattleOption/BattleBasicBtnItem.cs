@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class BattleBasicBtnItem : BattleBtnBase
 {
+
     public enum BattleBasicBtnType
     {
         Move,
         Attack
     }
 
-    public Image imgBtn;
     public List<Sprite> listSpBtn = new List<Sprite>();
 
     public void Init(BattleBasicBtnType type)

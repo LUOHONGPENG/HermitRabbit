@@ -8,7 +8,6 @@ public partial class BuffExcelItem
 {
     public string GetName()
     {
-
         if (GameGlobal.languageType == LanguageType.CN)
         {
             return name_CN;

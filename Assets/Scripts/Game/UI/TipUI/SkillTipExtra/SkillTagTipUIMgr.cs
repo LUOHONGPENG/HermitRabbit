@@ -15,8 +15,8 @@ public class SkillTagTipUIMgr : MonoBehaviour
         SkillTagExcelItem tagItem = PublicTool.GetSkillTagItem(tag);
 
         imgIcon.sprite = Resources.Load("Sprite/SkillType/" + tagItem.iconUrl, typeof(Sprite)) as Sprite;
-        codeName.text = tagItem.name;
-        codeDesc.text = tagItem.desc;
+        codeName.text = tagItem.GetName();
+        codeDesc.text = tagItem.GetDesc();
     }
 
 
