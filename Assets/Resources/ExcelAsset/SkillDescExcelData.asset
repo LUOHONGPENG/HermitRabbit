@@ -363,7 +363,7 @@ MonoBehaviour:
     name_CN: "\u4EE5\u8001\u5E26\u65B0"
     desc_EN: <sprite="Common" name="Range"> Range + 1 for <sprite="SkillType" name="SSkill">
       Support Skill
-    desc_CN: "<sprite=\"SkillType\" name=\"SSkill\"> \u8F85\u52A9\u6280\u80FD\u7684<sprite=\"Common\"
+    desc_CN: "<sprite=\"SkillType\" name=\"SSkill\"> \u652F\u63F4\u6280\u80FD\u7684<sprite=\"Common\"
       name=\"Range\"> \u5C04\u7A0B+1"
     listTagType:
     - 0

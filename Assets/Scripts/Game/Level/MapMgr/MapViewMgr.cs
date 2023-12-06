@@ -84,24 +84,30 @@ public partial class MapViewMgr : MonoBehaviour
         {
             case InteractState.PeaceNormal:
                 ResetAllTile();
+                ResetHitAlly();
                 break;
             case InteractState.PeacePlant:
                 SetMapUI_Plant();
+                ResetHitAlly();
                 break;
             case InteractState.PeaceMap:
                 SetMapUI_MapClip();
+                ResetHitAlly();
                 break;
             case InteractState.BattleNormal:
                 ResetAllTile();
+                ResetHitAlly();
                 break;
             case InteractState.CharacterMove:
                 SetMapUI_CharacterMove();
+                ResetHitAlly();
                 break;
             case InteractState.CharacterSkill:
                 SetMapUI_Skill();
                 break;
             case InteractState.WaitAction:
                 ResetAllTile();
+                ResetHitAlly();
                 break;
         }
 
@@ -209,6 +215,9 @@ public partial class MapViewMgr : MonoBehaviour
                 mapTile.SetIndicator(MapIndicatorType.Hide);
             }
 
+
+            ResetThisHitAlly(mapTile);
+
             if (isHover)
             {
                 if (isCover)
@@ -216,6 +225,7 @@ public partial class MapViewMgr : MonoBehaviour
                     if (listHoverPos.Contains(mapTile.posID))
                     {
                         mapTile.SetIndicator(MapIndicatorType.AttackCover);
+                        CheckHitAlly(mapTile, skillMapInfo);
                     }
                 }
                 else
@@ -226,6 +236,8 @@ public partial class MapViewMgr : MonoBehaviour
                     }
                 }
             }
+
+
         }
     }
 
@@ -307,6 +319,43 @@ public partial class MapViewMgr : MonoBehaviour
         foreach (MapTileBase mapTile in listMapTile)
         {
             mapTile.SetIndicator(MapIndicatorType.Hide);
+        }
+    }
+
+    private void CheckHitAlly(MapTileBase mapView,SkillBattleInfo skillInfo)
+    {
+        if(skillInfo.characterEffect == SkillEffectType.Harm)
+        {
+            Vector2Int posID = mapView.posID;
+            if(gameData.GetUnitInfoFromPosID(posID).type == BattleUnitType.Character)
+            {
+                mapView.SetHitAlly(true);
+                return;
+            }
+        }
+
+        if (skillInfo.plantEffect == SkillEffectType.Harm)
+        {
+            Vector2Int posID = mapView.posID;
+            if (gameData.GetUnitInfoFromPosID(posID).type == BattleUnitType.Plant)
+            {
+                mapView.SetHitAlly(true);
+                return;
+            }
+        }
+
+        mapView.SetHitAlly(false);
+    }
+
+    private void ResetThisHitAlly(MapTileBase mapTile)
+    {
+        mapTile.SetHitAlly(false);
+    }
+    private void ResetHitAlly()
+    {
+        foreach (MapTileBase mapTile in listMapTile)
+        {
+            ResetThisHitAlly(mapTile);
         }
     }
     #endregion

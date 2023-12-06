@@ -9,6 +9,7 @@ public class MapTileBase : MonoBehaviour
     public SpriteRenderer spPlantRange;
     public SpriteRenderer spFoeMove;
     public SpriteRenderer spFoeAttack;
+    public SpriteRenderer spHurtAlly;
 
     public GameObject objSelect;
 
@@ -99,6 +100,11 @@ public class MapTileBase : MonoBehaviour
                 spIndicator.color = listColorIndicator[3];
                 break;
         }
+    }
+
+    public void SetHitAlly(bool hitAlly)
+    {
+        spHurtAlly.gameObject.SetActive(hitAlly);
     }
 
     public void SetPlantRangeIndicator(bool isPlantRange)
