@@ -152,114 +152,122 @@ MonoBehaviour:
     descEN: Refresh
     descCN: "\u5237\u65B0"
   - id: 35
+    key: tx_common_save
+    descEN: Save
+    descCN: "\u5B58\u50A8"
+  - id: 36
+    key: tx_map_reservePath
+    descEN: Please reserve a path
+    descCN: "\u8BF7\u81F3\u5C11\u7559\u51FA\u4E00\u6761\u8DEF"
+  - id: 37
     key: tx_day_title_1
     descEN: Sneak Attacked
     descCN: "\u88AB\u5077\u88AD\u4E86\uFF01"
-  - id: 36
+  - id: 38
     key: tx_day_title_2
     descEN: Write Resume
     descCN: "\u5199\u7B80\u5386\uFF01"
-  - id: 37
+  - id: 39
     key: tx_day_title_3
     descEN: CV Screening
     descCN: "\u7B80\u5386\u521D\u7B5B\uFF01"
-  - id: 38
+  - id: 40
     key: tx_day_title_4
     descEN: Group Interview
     descCN: "\u7FA4\u9762\u5F00\u59CB\uFF01"
-  - id: 39
+  - id: 41
     key: tx_day_title_5
     descEN: Second Interview
     descCN: "\u4E8C\u9762\u5F00\u59CB\uFF01"
-  - id: 40
+  - id: 42
     key: tx_day_title_6
     descEN: CEO Interview
     descCN: "CEO\u9762\u5F00\u59CB\uFF01"
-  - id: 41
+  - id: 43
     key: tx_day_title_7
     descEN: Destroy Interview
     descCN: "\u5C06\u9762\u8BD5\u7684\u6982\u5FF5\u6467\u6BC1\uFF01"
-  - id: 42
+  - id: 44
     key: tx_rarity_common
     descEN: Common
     descCN: "\u5E38\u89C1"
-  - id: 43
+  - id: 45
     key: tx_rarity_uncommon
     descEN: Uncommon
     descCN: "\u975E\u5E38\u89C1"
-  - id: 44
+  - id: 46
     key: tx_rarity_rare
     descEN: Rare
     descCN: "\u7A00\u6709"
-  - id: 45
+  - id: 47
     key: tx_rarity_epic
     descEN: Epic
     descCN: "\u5353\u8D8A"
-  - id: 46
+  - id: 48
     key: tx_rarity_legendary
     descEN: Legendary
     descCN: "\u4F20\u8BF4"
-  - id: 47
+  - id: 49
     key: tx_victory_title
     descEN: Victory
     descCN: "\u9762\u8BD5\u7EC8\u4E86"
-  - id: 48
+  - id: 50
     key: tx_victory_map
     descEN: Select a map clip
     descCN: "\u9009\u62E9\u4E00\u4E2A\u5730\u56FE\u5757"
-  - id: 49
+  - id: 51
     key: tx_victory_plant
     descEN: Select a plant
     descCN: "\u9009\u62E9\u4E00\u4E2A\u690D\u7269"
-  - id: 50
+  - id: 52
     key: tx_victory_putMouseTileTip
     descEN: Put the mouse over it to read the detail
     descCN: "\u9F20\u6807\u653E\u5728\u6807\u7B7E\u4E0A\u53EF\u9605\u8BFB\u5730\u5757\u8BE6\u60C5"
-  - id: 51
+  - id: 53
     key: btnMainSkill
     descEN: btnMainSkill_EN
     descCN: btnMainSkill_CN
-  - id: 52
+  - id: 54
     key: btnMainMap
     descEN: btnMainMap_EN
     descCN: btnMainMap_CN
-  - id: 53
+  - id: 55
     key: btnMainPlant
     descEN: btnMainPlant_EN
     descCN: btnMainPlant_CN
-  - id: 54
+  - id: 56
     key: btnMainSystem
     descEN: btnMainSystem_EN
     descCN: btnMainSystem_CN
-  - id: 55
+  - id: 57
     key: btnMainHelp
     descEN: btnMainHelp_EN
     descCN: btnMainHelp_CN
-  - id: 56
+  - id: 58
     key: btnMainBattle
     descEN: btnMainBattle_EN
     descCN: btnMainBattle_CN
-  - id: 57
+  - id: 59
     key: btnMainEndTurn
     descEN: btnMainEndTurn_EN
     descCN: btnMainEndTurn_CN
-  - id: 58
+  - id: 60
     key: btnSwitchCharacter
     descEN: btnSwitchCharacter_EN
     descCN: btnSwitchCharacter_CN
-  - id: 59
+  - id: 61
     key: txImgMove
     descEN: txImgMove_EN
     descCN: txImgMove_CN
-  - id: 60
+  - id: 62
     key: txImgAttack
     descEN: txImgAttack_EN
     descCN: txImgAttack_CN
-  - id: 61
+  - id: 63
     key: txImgSkill
     descEN: txImgSkill_EN
     descCN: txImgSkill_CN
-  - id: 62
+  - id: 64
     key: txImgAny
     descEN: txImgAny_EN
     descCN: txImgAny_CN

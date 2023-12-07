@@ -68,8 +68,9 @@ GameObject:
   - component: {fileID: 4210313547062899726}
   - component: {fileID: 6939082873512242439}
   - component: {fileID: 313974262870041580}
+  - component: {fileID: 2516432558617444657}
   m_Layer: 5
-  m_Name: codeSave
+  m_Name: tx_common_save
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,6 +138,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Save
+--- !u!114 &2516432558617444657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394930920740934116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2457306659569768661
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,8 +469,9 @@ GameObject:
   - component: {fileID: 2768646223090481501}
   - component: {fileID: 3562192301462268987}
   - component: {fileID: 7009119526944471285}
+  - component: {fileID: 8745661924368537602}
   m_Layer: 5
-  m_Name: tx_ui_reservePath
+  m_Name: tx_map_reservePath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -540,3 +554,15 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &8745661924368537602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8706635063793518116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

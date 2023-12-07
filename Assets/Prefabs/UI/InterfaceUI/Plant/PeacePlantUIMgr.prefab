@@ -249,8 +249,9 @@ GameObject:
   - component: {fileID: 1732447716110585123}
   - component: {fileID: 3277680807617016326}
   - component: {fileID: 4990354513729503622}
+  - component: {fileID: 5144492365142948259}
   m_Layer: 5
-  m_Name: codeSave
+  m_Name: tx_common_save
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,6 +319,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Save
+--- !u!114 &5144492365142948259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852862710986714121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5089f3527a182f040b416ea8898c2890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4988538575122591777
 GameObject:
   m_ObjectHideFlags: 0

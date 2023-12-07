@@ -31,7 +31,7 @@ public partial class BattleMgr : MonoSingleton<BattleMgr>
     public void StartNewBattle(LevelMgr parent)
     {
         numTurn = 1;
-        EventCenter.Instance.EventTrigger("EffectSkillName", "Interview Start");
+        EventCenter.Instance.EventTrigger("EffectSkillName", ("tx_day_title_" + gameData.numDay).ToLanguageText());
         ResetNewTurnBefore(); 
         PublicTool.RecalculateOccupancy();
         ResetCharacterExp();
