@@ -224,50 +224,54 @@ MonoBehaviour:
     descEN: Put the mouse over it to read the detail
     descCN: "\u9F20\u6807\u653E\u5728\u6807\u7B7E\u4E0A\u53EF\u9605\u8BFB\u5730\u5757\u8BE6\u60C5"
   - id: 53
+    key: tx_detail_tab
+    descEN: Press TAB for more detail
+    descCN: "\u6309\u4F4FTAB\u663E\u793A\u66F4\u591A\u8BE6\u60C5"
+  - id: 54
     key: btnMainSkill
     descEN: btnMainSkill_EN
     descCN: btnMainSkill_CN
-  - id: 54
+  - id: 55
     key: btnMainMap
     descEN: btnMainMap_EN
     descCN: btnMainMap_CN
-  - id: 55
+  - id: 56
     key: btnMainPlant
     descEN: btnMainPlant_EN
     descCN: btnMainPlant_CN
-  - id: 56
+  - id: 57
     key: btnMainSystem
     descEN: btnMainSystem_EN
     descCN: btnMainSystem_CN
-  - id: 57
+  - id: 58
     key: btnMainHelp
     descEN: btnMainHelp_EN
     descCN: btnMainHelp_CN
-  - id: 58
+  - id: 59
     key: btnMainBattle
     descEN: btnMainBattle_EN
     descCN: btnMainBattle_CN
-  - id: 59
+  - id: 60
     key: btnMainEndTurn
     descEN: btnMainEndTurn_EN
     descCN: btnMainEndTurn_CN
-  - id: 60
+  - id: 61
     key: btnSwitchCharacter
     descEN: btnSwitchCharacter_EN
     descCN: btnSwitchCharacter_CN
-  - id: 61
+  - id: 62
     key: txImgMove
     descEN: txImgMove_EN
     descCN: txImgMove_CN
-  - id: 62
+  - id: 63
     key: txImgAttack
     descEN: txImgAttack_EN
     descCN: txImgAttack_CN
-  - id: 63
+  - id: 64
     key: txImgSkill
     descEN: txImgSkill_EN
     descCN: txImgSkill_CN
-  - id: 64
+  - id: 65
     key: txImgAny
     descEN: txImgAny_EN
     descCN: txImgAny_CN

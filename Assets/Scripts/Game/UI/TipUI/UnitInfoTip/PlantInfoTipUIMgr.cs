@@ -9,6 +9,9 @@ public class PlantInfoTipUIMgr : UnitInfoTipUIMgr
     public Transform tfBuff;
     public GameObject pfBuff;
 
+    public GameObject objDetail;
+    public GameObject objDetailText;
+
     protected override void UpdateSpecial(BattleUnitData unitData)
     {
         //This Phase wont change when HP change
@@ -52,6 +55,21 @@ public class PlantInfoTipUIMgr : UnitInfoTipUIMgr
                     skillUIMgr.gameObject.SetActive(false);
                 }
             }
+        }
+    }
+
+    private void Update()
+    {
+        if (InputMgr.Instance.isPressDetail)
+        {
+            objDetail.SetActive(true);
+            objDetailText.SetActive(false);
+        }
+        else
+        {
+            objDetail.SetActive(false);
+            objDetailText.SetActive(true);
+
         }
     }
 }

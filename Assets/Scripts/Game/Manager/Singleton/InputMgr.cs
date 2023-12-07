@@ -15,8 +15,11 @@ public partial class InputMgr : MonoSingleton<InputMgr>
     private InputAction touchAction;
     private InputAction cancelAction;
     private InputAction touchPositionAction;
+    private InputAction detailAction;
 
     private bool isInitInput = false;
+
+    public bool isPressDetail = false;
 
     #region Basic
     public IEnumerator IE_Init()
@@ -35,6 +38,7 @@ public partial class InputMgr : MonoSingleton<InputMgr>
             touchAction = playerInput.Gameplay.Touch;
             cancelAction = playerInput.Gameplay.Cancel;
             touchPositionAction = playerInput.Gameplay.TouchPosition;
+            detailAction = playerInput.Gameplay.Detail;
             isInitInput = true;
         }
     }
@@ -51,6 +55,18 @@ public partial class InputMgr : MonoSingleton<InputMgr>
         camRotateAction.performed += CamRotate_performed;
         touchAction.performed += Touch_performed;
         cancelAction.performed += Cancel_performed;
+        detailAction.performed += Detail_performed;
+        detailAction.canceled += Detail_canceled;
+    }
+
+    private void Detail_canceled(InputAction.CallbackContext context)
+    {
+        isPressDetail = false;
+    }
+
+    private void Detail_performed(InputAction.CallbackContext context)
+    {
+        isPressDetail = true;
     }
 
     private void DisableInput()
@@ -59,6 +75,9 @@ public partial class InputMgr : MonoSingleton<InputMgr>
         camRotateAction.performed -= CamRotate_performed;
         touchAction.performed -= Touch_performed;
         cancelAction.performed -= Cancel_performed;
+        detailAction.performed -= Detail_performed;
+        detailAction.canceled -= Detail_canceled;
+
         if (playerInput != null)
         {
             playerInput.Disable();

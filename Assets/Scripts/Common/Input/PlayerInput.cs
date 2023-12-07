@@ -71,6 +71,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Detail"",
+                    ""type"": ""Button"",
+                    ""id"": ""583732eb-84f0-48d0-9d90-ddf9e57e2f6e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -194,6 +203,17 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5abfd57e-5403-4e06-bc0c-164e127551c5"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Detail"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -207,6 +227,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Gameplay_Touch = m_Gameplay.FindAction("Touch", throwIfNotFound: true);
         m_Gameplay_Cancel = m_Gameplay.FindAction("Cancel", throwIfNotFound: true);
         m_Gameplay_TouchPosition = m_Gameplay.FindAction("TouchPosition", throwIfNotFound: true);
+        m_Gameplay_Detail = m_Gameplay.FindAction("Detail", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -271,6 +292,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Touch;
     private readonly InputAction m_Gameplay_Cancel;
     private readonly InputAction m_Gameplay_TouchPosition;
+    private readonly InputAction m_Gameplay_Detail;
     public struct GameplayActions
     {
         private @PlayerInput m_Wrapper;
@@ -280,6 +302,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @Touch => m_Wrapper.m_Gameplay_Touch;
         public InputAction @Cancel => m_Wrapper.m_Gameplay_Cancel;
         public InputAction @TouchPosition => m_Wrapper.m_Gameplay_TouchPosition;
+        public InputAction @Detail => m_Wrapper.m_Gameplay_Detail;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -304,6 +327,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @TouchPosition.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouchPosition;
                 @TouchPosition.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouchPosition;
                 @TouchPosition.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouchPosition;
+                @Detail.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDetail;
+                @Detail.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDetail;
+                @Detail.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDetail;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -323,6 +349,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @TouchPosition.started += instance.OnTouchPosition;
                 @TouchPosition.performed += instance.OnTouchPosition;
                 @TouchPosition.canceled += instance.OnTouchPosition;
+                @Detail.started += instance.OnDetail;
+                @Detail.performed += instance.OnDetail;
+                @Detail.canceled += instance.OnDetail;
             }
         }
     }
@@ -334,5 +363,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnTouch(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
         void OnTouchPosition(InputAction.CallbackContext context);
+        void OnDetail(InputAction.CallbackContext context);
     }
 }
