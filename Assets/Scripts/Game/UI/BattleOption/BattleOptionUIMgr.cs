@@ -9,6 +9,7 @@ public class BattleOptionUIMgr : MonoBehaviour
 {
     public GameObject objPopup;
     public CanvasGroup groupActionButton;
+    public Image imgBlock;
 
     [Header("CharacterInfo")]
     public Image imgPortrait;
@@ -126,12 +127,14 @@ public class BattleOptionUIMgr : MonoBehaviour
     public void ShowAction()
     {
         groupActionButton.interactable = true;
+        imgBlock.raycastTarget = false;
         groupActionButton.DOFade(1, 0.5f);
     }
 
     public void HideAction()
     {
         groupActionButton.interactable = false;
+        imgBlock.raycastTarget = true;
         groupActionButton.DOFade(0, 0.5f);
     }
 

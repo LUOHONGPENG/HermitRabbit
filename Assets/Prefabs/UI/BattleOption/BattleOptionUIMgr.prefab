@@ -52,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objPopup: {fileID: 5750551539341809449}
   groupActionButton: {fileID: 2365694611119616413}
+  imgBlock: {fileID: 9045929887350525142}
   imgPortrait: {fileID: 5396570573422358038}
   infoBarHealth: {fileID: 3817721915832853694}
   infoBarSkill: {fileID: 1431857536739684035}

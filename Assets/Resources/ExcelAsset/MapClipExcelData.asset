@@ -304,15 +304,15 @@ MonoBehaviour:
   - id: 4003
     rarity: 3
     weight: 6
-    tile0: 2
-    tile1: 2
-    tile2: 2
+    tile0: 3
+    tile1: 4
+    tile2: 3
     tile3: 2
-    tile4: 2
+    tile4: 3
     tile5: 2
-    tile6: 3
-    tile7: 4
-    tile8: 3
+    tile6: 2
+    tile7: 2
+    tile8: 2
     waterValue: 0
     grassValue: 7
     blockValue: 0
@@ -337,13 +337,13 @@ MonoBehaviour:
     rarity: 3
     weight: 6
     tile0: 3
-    tile1: 0
+    tile1: 2
     tile2: 3
     tile3: 3
-    tile4: 0
+    tile4: 2
     tile5: 3
     tile6: 3
-    tile7: 0
+    tile7: 2
     tile8: 3
     waterValue: 0
     grassValue: 0

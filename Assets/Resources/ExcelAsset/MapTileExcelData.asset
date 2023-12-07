@@ -31,13 +31,15 @@ MonoBehaviour:
     tileType: 2
     name_EN: Grass
     name_CN: "\u8349"
-    desc_EN: 'When burnt by fire, apply 2 level <sprite="BuffS" name="Burn"> Burning.
+    desc_EN: 'When burnt by fire, fire will expand and apply 2 level <sprite="BuffS"
+      name="Burn"> Burning.
 
-      <sprite="Common"
-      name="ATK"> ATK+1 for <sprite="Target" name="PUnit"> Plant'
-    desc_CN: "\u88AB\u706B\u70B9\u71C3\u540E, \u9644\u52A02\u5C42 <sprite=\"BuffS\"
-      name=\"Burn\"> \u707C\u70E7\u7ED9\u4E0A\u9762\u5355\u4F4D\u3002\n <sprite=\"Target\"
-      name=\"PUnit\"> \u690D\u7269\u7684<sprite=\"Common\" name=\"ATK\"> \u653B\u51FB+1"
+      <sprite="Common" name="ATK"> ATK+1 for <sprite="Target"
+      name="PUnit"> Plant'
+    desc_CN: "\u88AB\u706B\u70B9\u71C3\u540E, \u706B\u52BF\u4F1A\u8513\u5EF6\u5E76\u9644\u52A02\u5C42
+      <sprite=\"BuffS\" name=\"Burn\"> \u707C\u70E7\u7ED9\u4E0A\u9762\u5355\u4F4D\u3002\n
+      <sprite=\"Target\" name=\"PUnit\"> \u690D\u7269\u7684<sprite=\"Common\" name=\"ATK\">
+      \u653B\u51FB+1"
     iconUrl: imgIconTile_Grass
   - id: 4
     tileType: 3
@@ -50,12 +52,12 @@ MonoBehaviour:
     tileType: 4
     name_EN: Flower
     name_CN: "\u82B1"
-    desc_EN: 'When burnt by fire, apply 2 level <sprite="BuffS" name="Burn"> Burning.
+    desc_EN: 'When burnt by fire, fire will expand and apply 2 level <sprite="BuffS"
+      name="Burn"> Burning.
 
-      Can
-      heal <sprite="Target" name="PUnit"> Plant'
-    desc_CN: "\u88AB\u706B\u70B9\u71C3\u540E, \u9644\u52A02\u5C42 <sprite=\"BuffS\"
-      name=\"Burn\"> \u707C\u70E7\u7ED9\u4E0A\u9762\u5355\u4F4D\u3002\n\u80FD\u6CBB\u7597<sprite=\"Target\"
+      Can heal <sprite="Target" name="PUnit"> Plant'
+    desc_CN: "\u88AB\u706B\u70B9\u71C3\u540E, \u706B\u52BF\u4F1A\u8513\u5EF6\u5E76\u9644\u52A02\u5C42
+      <sprite=\"BuffS\" name=\"Burn\"> \u707C\u70E7\u7ED9\u4E0A\u9762\u5355\u4F4D\u3002\n\u80FD\u6CBB\u7597<sprite=\"Target\"
       name=\"PUnit\"> \u690D\u7269\u3002"
     iconUrl: imgIconTile_Flower
   - id: 6
