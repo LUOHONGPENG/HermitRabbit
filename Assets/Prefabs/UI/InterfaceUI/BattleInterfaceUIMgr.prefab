@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 4402553510043436355}
   - component: {fileID: 8146030703534171386}
   - component: {fileID: 1756619239243644534}
+  - component: {fileID: 4352250385096470073}
   m_Layer: 5
-  m_Name: btnSwitch
+  m_Name: btnSwitchCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5ab9f2d774481794eb3287247a242965, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c39cbd94ce85e24c8018d75b3835d85, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -137,6 +138,18 @@ MonoBehaviour:
   isEnabled: 1
   isHavor: 0
   scaleTf: {fileID: 6589918200405570221}
+--- !u!114 &4352250385096470073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513518299985663377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fced7313db380fd42becec9996c58f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1866500260933631618
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,8 +218,9 @@ GameObject:
   - component: {fileID: 8083023285667042296}
   - component: {fileID: 1908735029351937132}
   - component: {fileID: 4008692404923278746}
+  - component: {fileID: 6832136354210389058}
   m_Layer: 5
-  m_Name: btnEndTurn
+  m_Name: btnMainEndTurn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -260,7 +274,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cd2da545801a5814992fcf6b8c239f8e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5397d1a22fd106640ac8103a52c55f91, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -329,6 +343,18 @@ MonoBehaviour:
   isEnabled: 1
   isHavor: 0
   scaleTf: {fileID: 5654273055584064998}
+--- !u!114 &6832136354210389058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5186067533583554004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fced7313db380fd42becec9996c58f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7149500556529310225
 GameObject:
   m_ObjectHideFlags: 0

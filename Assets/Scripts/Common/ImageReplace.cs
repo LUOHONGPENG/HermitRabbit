@@ -23,8 +23,9 @@ public class ImageReplace : MonoBehaviour
         {
             string url = PublicTool.GetLanguageText(this.name);
 
+            imgContent.sprite = Resources.Load("Sprite/Language/" + url, typeof(Sprite)) as Sprite;
 
         }
-        
+
     }
 }

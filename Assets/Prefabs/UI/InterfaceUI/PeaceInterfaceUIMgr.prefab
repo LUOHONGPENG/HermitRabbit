@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 1091006971088569367}
   - component: {fileID: 3308245084816605106}
   - component: {fileID: 5637950320964205768}
+  - component: {fileID: 5583950985343295267}
   m_Layer: 5
-  m_Name: btnShowStatus
+  m_Name: btnMainSkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 30, y: 40}
-  m_SizeDelta: {x: 205, y: 156}
+  m_SizeDelta: {x: 180, y: 156}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &7979666212311780209
 CanvasRenderer:
@@ -68,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8b9d16b3eac93244bb7ec3b8cd864f1a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f19676f55723bce49b827c9dba1d564b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -137,6 +138,18 @@ MonoBehaviour:
   isEnabled: 1
   isHavor: 0
   scaleTf: {fileID: 7214954718405169021}
+--- !u!114 &5583950985343295267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264374701544528300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fced7313db380fd42becec9996c58f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2466121624567667473
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,8 +219,9 @@ GameObject:
   - component: {fileID: 7741457464576370978}
   - component: {fileID: 4745882615933768658}
   - component: {fileID: 7405890954701484925}
+  - component: {fileID: 2383118817809183431}
   m_Layer: 5
-  m_Name: btnStartPlant
+  m_Name: btnMainPlant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,7 +245,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 430, y: 40}
-  m_SizeDelta: {x: 205, y: 156}
+  m_SizeDelta: {x: 180, y: 156}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &3843817791575404135
 CanvasRenderer:
@@ -261,7 +275,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 21bda4dc51a07394689b3fc846a7b880, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 972040d9539539f4596c6e12ce19e600, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -330,6 +344,18 @@ MonoBehaviour:
   isEnabled: 1
   isHavor: 0
   scaleTf: {fileID: 8296476415684610824}
+--- !u!114 &2383118817809183431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6111845123021751483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fced7313db380fd42becec9996c58f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7253275925604280273
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,8 +459,9 @@ GameObject:
   - component: {fileID: 7777946641038061052}
   - component: {fileID: 6918328529189995932}
   - component: {fileID: 2072416089719516854}
+  - component: {fileID: 155005318310342858}
   m_Layer: 5
-  m_Name: btnStartMap
+  m_Name: btnMainMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,7 +485,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 250, y: 40}
-  m_SizeDelta: {x: 205, y: 156}
+  m_SizeDelta: {x: 180, y: 156}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &1722985636855022499
 CanvasRenderer:
@@ -488,7 +515,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 80a930e15e57d1d4babbdda8be4e163c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55e063d78d93b474a84273c9eb327fd4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -557,6 +584,18 @@ MonoBehaviour:
   isEnabled: 1
   isHavor: 0
   scaleTf: {fileID: 3018254545940536195}
+--- !u!114 &155005318310342858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7857609200947594292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fced7313db380fd42becec9996c58f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8065587140356641022
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,8 +609,9 @@ GameObject:
   - component: {fileID: 4102727838417338425}
   - component: {fileID: 3973975387057541543}
   - component: {fileID: 5367165731176232975}
+  - component: {fileID: 5836770526598904667}
   m_Layer: 5
-  m_Name: btnStartBattle
+  m_Name: btnMainBattle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -625,7 +665,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ad01508fed9d41749a2523d94def3269, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4898ac3db6d31f740ae407345971a50f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -694,3 +734,15 @@ MonoBehaviour:
   isEnabled: 1
   isHavor: 0
   scaleTf: {fileID: 1184648821924860908}
+--- !u!114 &5836770526598904667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8065587140356641022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fced7313db380fd42becec9996c58f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

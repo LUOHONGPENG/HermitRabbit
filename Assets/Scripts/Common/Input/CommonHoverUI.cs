@@ -12,6 +12,7 @@ public class CommonHoverUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         isHavor = true;
     }
+    
 
     
     public void OnPointerExit(PointerEventData eventData)
