@@ -139,7 +139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btnPlant: {fileID: 8948097669834273428}
-  outlinePlant: {fileID: 0}
   canvasPlant: {fileID: 8056224072496522412}
   imgPlant: {fileID: 304991744842234347}
   imgSelected: {fileID: 1051855903371131048}
@@ -163,7 +162,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 5a7cf8a81b6014a4f93ca320573b1774, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
