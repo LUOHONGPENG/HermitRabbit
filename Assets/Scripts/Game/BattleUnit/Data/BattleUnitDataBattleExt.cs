@@ -39,10 +39,13 @@ public partial class BattleUnitData
                 }
             }
 
-            if (CheckBuffExist(1001) && damage > curHP)
+            if (CheckBuffExist(1001))
             {
-                //Final Guard
-                damage = curHP - 1;
+                if(damage >= curHP)
+                {
+                    //Final Guard
+                    damage = curHP - 1;
+                }
             }
             //Curse //Fragile
             if (damage > 0 && CheckBuffExist(2001))

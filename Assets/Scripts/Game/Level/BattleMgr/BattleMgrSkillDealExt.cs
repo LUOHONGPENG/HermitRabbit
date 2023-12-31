@@ -7,6 +7,12 @@ public partial class BattleMgr
 {
     private void SkillEffectRequest(BattleUnitData source, BattleUnitData target, SkillEffectType effectType)
     {
+        if (target.isDead && skillBattleInfo.ID != 3401)
+        {
+            return;
+        }
+
+
         //Special Effect
         if (skillBattleInfo.listSpecialEffect.Count > 0)
         {
