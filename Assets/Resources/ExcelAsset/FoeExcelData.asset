@@ -272,8 +272,8 @@ MonoBehaviour:
     generateType: 0
     pos0: 3
     pos1: 1
-    pixelUrl: PixelEvilBoss
-    aniUrl: 
+    pixelUrl: 
+    aniUrl: ani_pf_God
   - id: 1098
     name_EN: Pressure
     name_CN: "\u538B\u529B\u602A"
@@ -291,7 +291,7 @@ MonoBehaviour:
     generateType: 0
     pos0: 1
     pos1: 0
-    pixelUrl: PixelEvilGod
+    pixelUrl: PixelEvilBoss
     aniUrl: 
   - id: 1097
     name_EN: Sadness
