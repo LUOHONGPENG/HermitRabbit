@@ -45,8 +45,8 @@ MonoBehaviour:
     descCN: "\u914D\u97F3"
   - id: 8
     key: tx_menu_credit_portfolio
-    descEN: This is my itch page
-    descCN: "\u8FD9\u662F\u6211\u7684Itch"
+    descEN: Personal Website
+    descCN: "\u4E2A\u4EBA\u7F51\u7AD9"
   - id: 9
     key: tx_menu_save
     descEN: Time Record
